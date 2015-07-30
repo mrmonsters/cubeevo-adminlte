@@ -13,7 +13,7 @@ class CreateStaticPagesTable extends Migration {
 	public function up()
 	{
 		Schema::dropIfExists('static_pages');
-		
+
 		Schema::create('static_pages', function(Blueprint $table)
 		{
 			$table->increments('page_id');
@@ -22,6 +22,8 @@ class CreateStaticPagesTable extends Migration {
 			$table->text('page_content');
 			$table->string('page_slug')
 				->unique();
+			$table->string('page_locale')
+				->default('en_US');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
