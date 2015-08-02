@@ -15,6 +15,7 @@ class FileController extends Controller {
 	public function index()
 	{
 		//
+		return view('management\file\index');
 	}
 
 	/**
@@ -25,6 +26,7 @@ class FileController extends Controller {
 	public function create()
 	{
 		//
+		return view('management\file\create');
 	}
 
 	/**

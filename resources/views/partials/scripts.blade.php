@@ -6,6 +6,13 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
+<!-- CKEditor -->
+<script type="text/javascript" src="{{ asset('/plugins/ckeditor/ckeditor.js') }}" ></script>
+<script type="text/javascript" src="{{ asset('/plugins/ckeditor/config.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/ckeditor/lang/en.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
+<!-- Addon Scripts -->
+@yield('addon-script')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the

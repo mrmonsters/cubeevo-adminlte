@@ -15,6 +15,23 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
+// Static page routes...
+Route::get('manage/page', 'PageController@index');
+Route::get('manage/page/create', 'PageController@create');
+
+// Section routes...
+Route::get('manage/section', 'SectionController@index');
+Route::get('manage/section/create', 'SectionController@create');
+
+// Menu routes
+Route::get('manage/menu', 'MenuController@index');
+Route::get('manage/menu/create', 'MenuController@create');
+Route::post('manage/menu/store', 'MenuController@store');
+
+// File routes
+Route::get('manage/file', 'FileController@index');
+Route::get('manage/file/create', 'FileController@create');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Menu;
+
 class MenuController extends Controller {
 
 	/**
@@ -15,6 +17,10 @@ class MenuController extends Controller {
 	public function index()
 	{
 		//
+		$menus = Menu::all();
+
+		return view('management\menu\index')
+			->with('menus', $menus);
 	}
 
 	/**
@@ -25,6 +31,10 @@ class MenuController extends Controller {
 	public function create()
 	{
 		//
+		$menus = Menu::all();
+
+		return view('management\menu\create')
+			->with('menus', $menus);
 	}
 
 	/**
@@ -32,9 +42,26 @@ class MenuController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $req)
 	{
 		//
+		$data = $req->input();
+
+		if (is_array($data) && !empty($data))
+		{
+			$menu = new Menu();
+
+			$menu->menu_name = $data['menu_name'];
+			$menu->menu_desc = $data['menu_desc'];
+			if (isset($data['parent_menu_id']))
+			{
+				$menu->parent_menu_id = $data['parent_menu_id'];
+			}
+			$menu->status = '2';
+			$menu->save();
+		}
+
+		return redirect('/manage/menu/')->with('session_msg', 'New menu is added successfully.');
 	}
 
 	/**

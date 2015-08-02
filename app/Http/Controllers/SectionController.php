@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class PageController extends Controller {
+class SectionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,7 +15,7 @@ class PageController extends Controller {
 	public function index()
 	{
 		//
-		return view('management\page\index');
+		return view('management\section\index');
 	}
 
 	/**
@@ -26,7 +26,7 @@ class PageController extends Controller {
 	public function create()
 	{
 		//
-		return view('management\page\create');
+		return view('management\section\create');
 	}
 
 	/**
