@@ -18,10 +18,12 @@ Route::get('home', 'HomeController@index');
 // Static page routes...
 Route::get('manage/page', 'PageController@index');
 Route::get('manage/page/create', 'PageController@create');
+Route::get('manage/page/store', 'PageController@store');
 
 // Section routes...
 Route::get('manage/section', 'SectionController@index');
 Route::get('manage/section/create', 'SectionController@create');
+Route::post('manage/section/store', 'SectionController@store');
 
 // Menu routes
 Route::get('manage/menu', 'MenuController@index');
@@ -31,6 +33,7 @@ Route::post('manage/menu/store', 'MenuController@store');
 // File routes
 Route::get('manage/file', 'FileController@index');
 Route::get('manage/file/create', 'FileController@create');
+Route::post('manage/file/store', 'FileController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

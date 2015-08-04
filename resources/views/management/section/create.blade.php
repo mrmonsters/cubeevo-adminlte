@@ -1,15 +1,15 @@
 @extends('app')
 
 @section('htmlheader_title')
-Page Section Management
+Section Management
 @endsection
 
 @section('contentheader_title')
-Page Section Management
+Section Management
 @endsection
 
 @section('contentheader_description')
-Description for page section management
+Description for section management
 @endsection
 
 @section('main-content')
@@ -19,10 +19,11 @@ Description for page section management
 		<div class="col-md-10 col-offset-md-1">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					<h3 class="box-title">Page Section</h3>
+					<h3 class="box-title">Section</h3>
 				</div>
 
-				<form>
+				<form method="POST" action="{{ url('manage/section/store') }}">
+					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<div class="box-body">
 						<!--
 						<div class="form-group">
@@ -39,10 +40,33 @@ Description for page section management
 							<input id="section_desc" name ="section_desc" type="text" class="form-control" />
 						</div>
 						<div class="form-group">
-							<label for="section_menu" class="control-label">Locale / Language</label>
-							<select id="section_menu" name="section_menu" class="form-control">
+							<label for="section_locale" class="control-label">Locale / Language</label>
+							<select id="section_locale" name="section_locale" class="form-control">
 								<option value="en-us">English</option>
 								<option value="zh-cn">Chinese</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="add_to_page" class="control-label">Add to Page</label>
+							@if (isset($pages) && !$pages->isEmpty())
+							<select id="add_to_page" name="add_to_page" class="form-control">
+							@else
+							<select id="add_to_page" name="add_to_page" class="form-control" disabled>
+							@endif
+								<option value="0">No</option>
+								<option value="1">Yes</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="page_id" class="control-label">Page</label>
+							@if (isset($pages) && !$pages->isEmpty())
+							<select id="page_id" name="page_id" class="form-control">
+							@foreach ($pages as $page)
+								<option value="{{ $page->page_id }}">{{ $page->page_title }}</option>
+							@endforeach
+							@else
+							<select id="page_id" name="page_id" class="form-control" disabled>
+							@endif
 							</select>
 						</div>
 						<div class="form-group">

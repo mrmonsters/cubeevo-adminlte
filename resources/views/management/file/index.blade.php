@@ -36,41 +36,40 @@ Description for file management
 						<th width="10%">Action</th>
 					</thead>
 					<tbody>
+						@if (isset($files) && !$files->isEmpty())
+						@foreach ($files as $file)
 						<tr>
-							<td>1</td>
-							<td>Sample File #1</td>
-							<td>.pdf</td>
-							<td>/image/image1.jpg</td>
-							<td>1024</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
+							<td>{{ $file->file_id }}</td>
+							<td>{{ $file->file_name }}</td>
+							<td>{{ $file->file_type }}</td>
+							<td>{{ $file->file_dir }}</td>
+							<td>{{ $file->file_size }}</td>
+							<td>{{ $file->created_at }}</td>
+							<td>{{ $file->updated_at }}</td>
 							<td>
+								@if ($file->status == '2')
 								<span class="label label-success">Active</span>
-							</td>
-							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>2</td>
-							<td>Sample File #2</td>
-							<td>.jpeg</td>
-							<td>image/image2.jpg</td>
-							<td>2048</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>
+								@elseif ($file->status == '1')
 								<span class="label label-danger">Inactive</span>
+								@else 
+								<span class="label label-warning">Incomplete</span>
+								@endif
 							</td>
 							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
+								<a href="{{ url('manage/file/edit/' . $file->file_id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('manage/file/destroy/' . $file->file_id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
+						@endforeach
+						@endif
 					</tbody>
 				</table>
+			</div>
+
+			<div class="box-footer clearfix">
+				<div style="text-align: center;">
+					Displaying <span class="label label-success">{{ $files->count() }}</span> result(s)
+				</div>	
 			</div>
 		</div>
 	</div>

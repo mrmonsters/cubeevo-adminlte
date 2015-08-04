@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Section;
+use App\Page;
+
 class SectionController extends Controller {
 
 	/**
@@ -15,7 +18,10 @@ class SectionController extends Controller {
 	public function index()
 	{
 		//
-		return view('management\section\index');
+		$sections = Section::all();
+
+		return view('management\section\index')
+			->with('sections', $sections);
 	}
 
 	/**
@@ -26,7 +32,10 @@ class SectionController extends Controller {
 	public function create()
 	{
 		//
-		return view('management\section\create');
+		$pages = Page::all();
+
+		return view('management\section\create')
+			->with('pages', $pages);
 	}
 
 	/**
@@ -34,9 +43,32 @@ class SectionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $req)
 	{
 		//
+		$data = $req->input();
+
+		if (is_array($data) && !empty($data))
+		{
+			$section = new Section;
+			$section->section_title = $data['section_title'];
+			$section->section_desc = $data['section_desc'];
+			$section->section_locale = $data['section_locale'];
+			$section->section_content = $data['section_content'];
+			$section->status = 2;
+			$section->save();
+
+			if (isset($data['add_to_page']) && $data['add_to_page'] == '1' && isset($data['page_id']))
+			{
+				$pageSection = new PageSection;
+				$pageSection->page_id = $data['page_id'];
+				$pageSection->section_id = $data['section_id'];
+				$pageSection->status = 2;
+				$pageSection->save();
+			}
+		}
+
+		return redirect('manage/section')->with('session_msg', 'New section is added successfully.');
 	}
 
 	/**

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStaticPagesTable extends Migration {
+class CreatePagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class CreateStaticPagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('static_pages');
+		Schema::dropIfExists('pages');
 
-		Schema::create('static_pages', function(Blueprint $table)
+		Schema::create('pages', function(Blueprint $table)
 		{
 			$table->increments('page_id');
 			$table->string('page_title');
@@ -40,7 +40,7 @@ class CreateStaticPagesTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('static_pages');
+		Schema::drop('pages');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

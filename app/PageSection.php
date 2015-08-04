@@ -2,18 +2,18 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class PageMenu extends Model {
+class PageSection extends Model {
 
 	//
-	protected $table = 'page_menus';
+	protected $table = 'page_sections';
 
 	public function page()
 	{
 		return $this->belongsTo('App\Page', 'page_id', 'page_id');
 	}
 
-	public function menu()
+	public function section()
 	{
-		return $this->belongsTo('App\Menu', 'menu_id', 'menu_id');
+		return $this->belongsTo('App\Section', 'section_id', 'section_id');
 	}
 }

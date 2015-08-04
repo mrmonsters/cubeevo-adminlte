@@ -35,39 +35,39 @@ Description for section management
 						<th width="15%">Action</th>
 					</thead>
 					<tbody>
+						@if (isset($sections) && !$sections->isEmpty())
+						@foreach ($sections as $section)
 						<tr>
-							<td>1</td>
-							<td>Sample Page Title #1</td>
-							<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-							<td>zh-cn</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
+							<td>{{ $section->section_id }}</td>
+							<td>{{ $section->section_title }}</td>
+							<td>{{ $section->section_desc }}</td>
+							<td>{{ $section->section_locale }}</td>
+							<td>{{ $section->created_at }}</td>
+							<td>{{ $section->updated_at }}</td>
 							<td>
+								@if ($section->status == '2')
 								<span class="label label-success">Active</span>
-							</td>
-							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>2</td>
-							<td>Sample Page Title #2</td>
-							<td>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-							<td>zh-cn</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>
+								@elseif ($section->status == '1')
 								<span class="label label-danger">Inactive</span>
+								@else 
+								<span class="label label-warning">Incomplete</span>
+								@endif
 							</td>
 							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
+								<a href="{{ url('manage/section/edit/' . $section->section_id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('manage/section/destroy/' . $section->section_id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
+						@endforeach
+						@endif
 					</tbody>
 				</table>
+			</div>
+
+			<div class="box-footer clearfix">
+				<div style="text-align: center;">
+					Displaying <span class="label label-success">{{ $sections->count() }}</span> result(s)
+				</div>	
 			</div>
 		</div>
 	</div>

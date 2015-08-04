@@ -22,7 +22,8 @@ Description for file management
 					<h3 class="box-title">Upload New File</h3>
 				</div>
 
-				<form class="form-horizontal">
+				<form method="POST" action="{{ url('manage/file/store') }}" accept-charset="UTF-8" enctype="multipart/form-data" class="form-horizontal">
+					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<div class="box-body">
 						<div class="form-group">
 							<label for="file_new" class="control-label col-md-2">New File</label>
@@ -35,6 +36,13 @@ Description for file management
 							<label for="file_name" class="control-label col-md-2">File Name</label>
 							<div class="col-md-10">
 								<input id="file_name" name="file_name" type="text" class="form-control" />
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="base_dir" class="control-label col-md-2">Directory</label>
+							<div class="col-md-10">
+								<input id="base_dir" name="base_dir" type="text" class="form-control" />
 							</div>
 						</div>
 					</div>

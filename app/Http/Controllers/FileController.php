@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\UploadedFile;
+use File;
+
 class FileController extends Controller {
 
 	/**
@@ -15,7 +18,10 @@ class FileController extends Controller {
 	public function index()
 	{
 		//
-		return view('management\file\index');
+		$files = UploadedFile::all();
+
+		return view('management\file\index')
+			->with('files', $files);
 	}
 
 	/**
@@ -34,9 +40,56 @@ class FileController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $req)
 	{
-		//
+		
+		$files = $req->file();
+		
+		if (!empty($files))
+		{
+			foreach ($files as $file)
+			{
+				if (!$file->getClientSize() || !$file->getClientOriginalName() || !$file->getClientMimeType())
+				{
+					continue;
+				}
+				else
+				{
+					$ext = $file->getClientOriginalExtension();
+					$fileName = ($req->input('file_name')) ? $req->input('file_name').".".$ext : $file->getClientOriginalName();
+					$baseDir = ($req->input('base_dir')) ? "/storage/".$req->input('base_dir') : '/storage/uploaded'; 
+
+					// Save file
+					$newFile = new UploadedFile;
+					$newFile->file_name = $fileName;
+					$newFile->file_type = $file->getClientMimeType();
+					$newFile->file_dir = $baseDir."/".$fileName;
+					$newFile->file_size = $file->getClientSize();
+					$newFile->status = 2;
+					$newFile->save();
+
+					if (!File::exists(public_path().$baseDir))
+					{
+						File::makeDirectory(public_path().$baseDir);
+					}
+
+					$file->move(public_path().$baseDir, $fileName);
+
+					if (File::exists(public_path().$baseDir."/".$fileName))
+					{
+						$msg = 'New file(s) is uploaded successfully.';
+					}
+					else
+					{
+						$msg = 'Failed to upload file(s).';
+						break;
+					}
+				}
+			}
+		}
+
+		return redirect('/manage/file')->with('session_msg', $msg);
+		
 	}
 
 	/**
