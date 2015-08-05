@@ -35,39 +35,39 @@ Description for static page management
 						<th width="15%">Action</th>
 					</thead>
 					<tbody>
+						@if (isset($pages) && !$pages->isEmpty())
+						@foreach ($pages as $page)
 						<tr>
-							<td>1</td>
-							<td>Sample Page Title #1</td>
-							<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
-							<td>zh-cn</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
+							<td>{{ $page->page_id }}</td>
+							<td>{{ $page->page_title }}</td>
+							<td>{{ $page->page_desc }}</td>
+							<td>{{ $page->page_locale }}</td>
+							<td>{{ $page->created_at }}</td>
+							<td>{{ $page->updated_at }}</td>
 							<td>
+								@if ($page->status == '2')
 								<span class="label label-success">Active</span>
-							</td>
-							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
-							</td>
-						</tr>
-
-						<tr>
-							<td>2</td>
-							<td>Sample Page Title #2</td>
-							<td>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
-							<td>zh-cn</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>2-8-2015 17:49:00</td>
-							<td>
+								@elseif ($page->status == '1')
 								<span class="label label-danger">Inactive</span>
+								@else 
+								<span class="label label-warning">Incomplete</span>
+								@endif
 							</td>
 							<td>
-								<a href="#" class="btn btn-default">Edit</a>
-								<a href="#" class="btn btn-danger">Delete</a>
+								<a href="{{ url('manage/page/' . $page->page_id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('manage/page/' . $page->page_id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
+						@endforeach
+						@endif
 					</tbody>
 				</table>
+			</div>
+
+			<div class="box-footer clearfix">
+				<div style="text-align: center;">
+					Displaying <span class="label label-success">{{ $pages->count() }}</span> result(s)
+				</div>	
 			</div>
 		</div>
 	</div>

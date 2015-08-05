@@ -18,7 +18,7 @@ Route::get('home', 'HomeController@index');
 // Static page routes...
 Route::get('manage/page', 'PageController@index');
 Route::get('manage/page/create', 'PageController@create');
-Route::get('manage/page/store', 'PageController@store');
+Route::post('manage/page/store', 'PageController@store');
 
 // Section routes...
 Route::get('manage/section', 'SectionController@index');

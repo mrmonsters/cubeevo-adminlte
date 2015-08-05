@@ -21,14 +21,10 @@ Description for static page management
 				<h3 class="box-title">Static Page</h3>
 			</div>
 
-			<form>
+			<form method="POST" action="{{ url('manage/page/store') }}">
+				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
+				<input id="section_id" name="section_id" type="hidden" value="" />
 				<div class="box-body">
-					<!--
-					<div class="form-group">
-						<label for="" class="control-label"></label>
-						<input id="" name ="" type="" class="form-control" />
-					</div>
-					-->
 					<div class="form-group">
 						<label for="page_title" class="control-label">Title</label>
 						<input id="page_title" name="page_title" type="text" class="form-control" />
@@ -43,22 +39,30 @@ Description for static page management
 					</div>
 					<div class="form-group">
 						<label for="page_locale" class="control-label">Locale / Language</label>
-						<select id="page_locale" name="page_menu" class="form-control">
+						<select id="page_locale" name="page_locale" class="form-control">
 							<option value="en-us">English</option>
 							<option value="zh-cn">Chinese</option>
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="page_menu" class="control-label">Menu / Type</label>
-						<select id="page_menu" name="page_menu" class="form-control">
-							<optgroup label="Parent Cat 1">
-								<option value="child_cat_1">Child Cat 1</option>
-								<option value="child_cat_2">Child Cat 2</option>
+						@if (isset($pMenus) && !$pMenus->isEmpty())
+						<select multiple id="page_menu" name="page_menu[]" class="form-control">
+						@foreach ($pMenus as $menu)
+							<optgroup label="{{ $menu->menu_name }}">
+								<option value="{{ $menu->menu_id }}">{{ $menu->menu_name }}</option>
+								@if (isset($cMenus) && !$cMenus->isEmpty())
+								@foreach ($cMenus as $cMenu)
+								@if ($cMenu->parent_menu_id == $menu->menu_id)
+								<option value="{{ $cMenu->menu_id }}">{{ $cMenu->menu_name }}</option>
+								@endif
+								@endforeach
+								@endif
 							</optgroup>
-							<optgroup label="Parent Cat 2">
-								<option value="child_cat_3">Child Cat 3</option>
-								<option value="child_cat_4">Child Cat 4</option>
-							</optgroup>
+						@endforeach
+						@else
+						<select id="page_menu" name="page_menu" class="form-control" disabled>
+						@endif 
 						</select>
 					</div>
 					<div class="form-group">
@@ -90,14 +94,14 @@ Description for static page management
 						<th>Action</th>
 					</thead>
 					<tbody>
+					@if (isset($sections) && !$sections->isEmpty())
+					@foreach ($sections as $section)
 						<tr>
-							<td>Sample Section #1</td>
-							<td><a href="#" class="btn btn-primary">Add</a></td>
+							<td>{{ $section->section_title }}</td>
+							<td><button type="button" class="btn btn-primary" onclick="addSection('{{ $section->section_id }}', this)">Add</button></td>
 						</tr>
-						<tr>
-							<td>Sample Section #2</td>
-							<td><a href="#" class="btn btn-primary">Add</a></td>
-						</tr>
+					@endforeach
+					@endif
 					</tbody>
 				</table>
 			</div>
@@ -123,5 +127,26 @@ $(document).ready(function()
 {
 	CKEDITOR.replace('page_content');
 });
+
+function addSection(sectionId, btn)
+{
+	var oriSecIds = $('#section_id').val();
+	var secIds = (oriSecIds != '') ? oriSecIds + ", " + sectionId : sectionId;
+	$('#section_id').val(secIds);
+
+	var newHtml = '<button type="button" class="btn btn-danger" onclick="removeSection('+ sectionId +', this)">Remove</button>';
+	$(btn).replaceWith(newHtml);
+}
+
+function removeSection(sectionId, btn)
+{
+	var secIds = $('#section_id').val().replace(sectionId, "");
+	var secIds = secIds.replace(sectionId, "");
+	var secIds = secIds.replace(sectionId + ", ", "");
+	$('#section_id').val(secIds);
+
+	var newHtml = '<button type="button" class="btn btn-primary" onclick="addSection('+ sectionId +', this)">Add</button>';
+	$(btn).replaceWith(newHtml);
+}
 </script>
 @endsection
