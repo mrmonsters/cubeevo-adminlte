@@ -35,8 +35,8 @@ class PageController extends Controller {
 	public function create()
 	{
 		//
-		$pMenus = Menu::all();
-		$cMenus = Menu::all();
+		$pMenus = Menu::whereNull('parent_menu_id')->get();
+		$cMenus = Menu::whereNotNull('parent_menu_id')->get();
 		$sections = Section::all();
 
 		return view('management\page\create')

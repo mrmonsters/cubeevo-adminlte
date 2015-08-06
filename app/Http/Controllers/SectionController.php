@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Section;
 use App\Page;
+use App\PageSection;
 
 class SectionController extends Controller {
 
@@ -91,6 +92,14 @@ class SectionController extends Controller {
 	public function edit($id)
 	{
 		//
+		$section = Section::find($id);
+		$pages = Page::all();
+		$pageSections = PageSection::where('section_id', '=', $id)->get();
+
+		return view('management\section\edit')
+			->with('section', $section)
+			->with('pages', $pages)
+			->with('pageSections', $pageSections);
 	}
 
 	/**
@@ -99,7 +108,7 @@ class SectionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $req, $id)
 	{
 		//
 	}

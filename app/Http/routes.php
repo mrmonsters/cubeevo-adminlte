@@ -23,11 +23,15 @@ Route::post('manage/page/store', 'PageController@store');
 // Section routes...
 Route::get('manage/section', 'SectionController@index');
 Route::get('manage/section/create', 'SectionController@create');
+Route::get('manage/section/edit/{section_id}', 'SectionController@edit');
+Route::put('manage/section/update/{section_id}', 'SectionController@update');
 Route::post('manage/section/store', 'SectionController@store');
 
 // Menu routes
 Route::get('manage/menu', 'MenuController@index');
 Route::get('manage/menu/create', 'MenuController@create');
+Route::get('manage/menu/edit/{menu_id}', 'MenuController@edit');
+Route::put('manage/menu/update/{menu_id}', 'MenuController@update');
 Route::post('manage/menu/store', 'MenuController@store');
 
 // File routes

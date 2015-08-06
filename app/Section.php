@@ -6,6 +6,7 @@ class Section extends Model {
 
 	//
 	protected $table = 'sections';
+	protected $primaryKey = 'section_id';
 
 	public function pageSections()
 	{
