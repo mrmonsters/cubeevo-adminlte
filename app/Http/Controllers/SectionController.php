@@ -111,6 +111,55 @@ class SectionController extends Controller {
 	public function update(Request $req, $id)
 	{
 		//
+		$data = $req->input();
+		$section = Section::find($id);
+		$section->section_title = $data['section_title'];
+		$section->section_name = $data['section_name'];
+		$section->section_locale = $data['section_locale'];
+		$section->section_content = $data['section_content'];
+
+		if ($data['add_to_page'] == '1')
+		{
+			// Save all selected pages
+			foreach ($data['page_id'] as $pageId)
+			{
+				$pageSection = PageSection::where('page_id', '=', $pageId)
+					->where('page_id', '=', $pageId);
+
+				if ($pageSection->isEmpty())
+				{
+					$pSection = new PageSection;
+					$pSection->page_id = $pageId;
+					$pSection->section_id = $id;
+					$pSection->save();
+				}
+			}
+		}
+		else if ($data['add_to_page'] == '0')
+		{
+			// De-activate all relevant records
+			$pageSections = PageSection::where('section_id', '=', $id);
+
+			if (!$pageSections->isEmpty())
+			{
+				foreach ($pageSections as $pageSection)
+				{
+					$pageSection->status = '1';
+					$pageSection->save();
+				}
+			}
+		}
+
+		if ($section->save())
+		{
+			$msg = "Changes are saved successfully.";
+		}
+		else
+		{
+			$msg = "Failed to save changes.";
+		}
+
+		return redirect('manage/section')->with('session_msg', $msg);
 	}
 
 	/**

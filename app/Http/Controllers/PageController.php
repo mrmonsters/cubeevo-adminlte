@@ -124,6 +124,43 @@ class PageController extends Controller {
 	public function edit($id)
 	{
 		//
+		$page = Page::find($id);
+		$menus = PageMenu::where('page_id', '=', $id)->get();
+		$sections = PageSection::where('page_id', '=', $id)->get();
+
+		$pMenus = Menu::whereNull('parent_menu_id')->get();
+		$cMenus = Menu::whereNotNull('parent_menu_id')->get();
+		$pageSections = Section::all();
+		$pageMenuIds = array();
+		$pageSectionIds = array();
+		$sectionIds = '';
+
+		if (!$menus->isEmpty())
+		{
+			foreach ($menus as $menu)
+			{
+				$pageMenuIds[] = $menu->menu_id;
+			}
+		}
+
+		if (!$sections->isEmpty())
+		{
+			foreach ($sections as $section)
+			{
+				$pageSectionIds[] = $section->section_id;
+			}
+
+			$sectionIds = implode(",", $pageSectionIds);
+		}
+
+		return view('management/page/edit')
+			->with('page', $page)
+			->with('pMenus', $pMenus)
+			->with('cMenus', $cMenus)
+			->with('sections', $pageSections)
+			->with('pageMenuIds', $pageMenuIds)
+			->with('pageSectionIds', $pageSectionIds)
+			->with('sectionIds', $sectionIds);
 	}
 
 	/**
@@ -132,9 +169,74 @@ class PageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $req, $id)
 	{
 		//
+		$data = $req->input();
+
+		if (is_array($data) && !empty($data))
+		{
+			// Update page
+			$page = Page::find($id);
+			$page->page_title = $data['page_title'];
+			$page->page_desc = $data['page_desc'];
+			$page->page_slug = $data['page_slug'];
+			$page->page_locale = $data['page_locale'];
+			$page->page_content = $data['page_content'];
+
+			// Save page section
+			if ($data['section_id'])
+			{
+				$sectionIds = explode(",", $data['section_id']);
+
+				foreach ($sectionIds as $sectionId)
+				{
+					$pageSection = PageSection::where('page_id', '=', $id)
+						->where('section_id', '=', $sectionId)
+						->get();
+
+					if ($pageSection->isEmpty())
+					{
+						$pageSection = new PageSection;
+						$pageSection->page_id = $id;
+						$pageSection->section_id = $sectionId;
+						$pageSection->status = 2;
+						$pageSection->save();
+					}
+				}
+			}
+
+			// Save page menu
+			if (isset($data['page_menu']) && is_array($data['page_menu']) && !empty($data['page_menu']))
+			{
+				foreach ($data['page_menu'] as $menuId)
+				{
+					$pageMenu = PageMenu::where('page_id', '=', $id)
+						->where('menu_id', '=', $menuId)
+						->get();
+
+					if ($pageMenu->isEmpty())
+					{
+						$pageMenu = new PageMenu;
+						$pageMenu->page_id = $id;
+						$pageMenu->menu_id = $menuId;
+						$pageMenu->status = 2;
+						$pageMenu->save();
+					}
+				}
+			}
+
+			if ($page->save())
+			{
+				$msg = 'Changes are saved successfully.';
+			}
+			else
+			{
+				$msg = 'Failed to save changes.';
+			}
+		}
+
+		return redirect('manage/page')->with('session_msg', $msg);
 	}
 
 	/**

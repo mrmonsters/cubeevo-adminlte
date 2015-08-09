@@ -18,6 +18,8 @@ Route::get('home', 'HomeController@index');
 // Static page routes...
 Route::get('manage/page', 'PageController@index');
 Route::get('manage/page/create', 'PageController@create');
+Route::get('manage/page/edit/{page_id}', 'PageController@edit');
+Route::put('manage/page/update/{page_id}', 'PageController@update');
 Route::post('manage/page/store', 'PageController@store');
 
 // Section routes...
@@ -37,6 +39,8 @@ Route::post('manage/menu/store', 'MenuController@store');
 // File routes
 Route::get('manage/file', 'FileController@index');
 Route::get('manage/file/create', 'FileController@create');
+Route::get('manage/file/edit/{file_id}', 'FileController@edit');
+Route::put('manage/file/update/{file_id}', 'FileController@update');
 Route::post('manage/file/store', 'FileController@store');
 
 Route::controllers([

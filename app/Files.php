@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model {
+class Files extends Model {
 
 	//
 	protected $table = 'files';
+	protected $primaryKey = 'file_id';
 }

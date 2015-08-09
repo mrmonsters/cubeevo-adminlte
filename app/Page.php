@@ -6,6 +6,7 @@ class Page extends Model {
 
 	//
 	protected $table = 'pages';
+	protected $primaryKey = 'page_id';
 
 	public function pageMenus()
 	{

@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\UploadedFile;
+use App\Files;
 use File;
 
 class FileController extends Controller {
@@ -18,7 +18,7 @@ class FileController extends Controller {
 	public function index()
 	{
 		//
-		$files = UploadedFile::all();
+		$files = Files::all();
 
 		return view('management\file\index')
 			->with('files', $files);
@@ -42,7 +42,7 @@ class FileController extends Controller {
 	 */
 	public function store(Request $req)
 	{
-		
+		//
 		$files = $req->file();
 		
 		if (!empty($files))
@@ -60,7 +60,7 @@ class FileController extends Controller {
 					$baseDir = ($req->input('base_dir')) ? "/storage/".$req->input('base_dir') : '/storage/uploaded'; 
 
 					// Save file
-					$newFile = new UploadedFile;
+					$newFile = new Files;
 					$newFile->file_name = $fileName;
 					$newFile->file_type = $file->getClientMimeType();
 					$newFile->file_dir = $baseDir."/".$fileName;
@@ -89,7 +89,6 @@ class FileController extends Controller {
 		}
 
 		return redirect('/manage/file')->with('session_msg', $msg);
-		
 	}
 
 	/**
@@ -112,6 +111,32 @@ class FileController extends Controller {
 	public function edit($id)
 	{
 		//
+		$imgTypes = array(
+			'image/jpeg',
+			'image/png',
+			'image/gif'
+		);
+		$docTypes = array(
+			'application/pdf'
+		);
+
+		$isImage = false;
+		$isDocument = false;
+		$file = Files::find($id);
+
+		if (in_array($file->file_type, $imgTypes))
+		{
+			$isImage = true;
+		}
+		else if (in_array($file->file_type, $docTypes))
+		{
+			$isDocument = true;
+		}
+
+		return view('management/file/edit')
+			->with('file', $file)
+			->with('isImage', $isImage)
+			->with('isDocument, $isDocument');
 	}
 
 	/**
@@ -120,9 +145,41 @@ class FileController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $req, $id)
 	{
 		//
+		$data = $req->input();
+		$file = Files::find($id);
+		
+		if (!$file->isEmpty())
+		{
+			$rawOldFileDir = str_replace($file->file_name, '', $file->file_dir);
+			$rawNewFileDir = str_replace($data['file_name'], '', $data['file_dir']);
+
+			if (!strcmp($rawOldFileDir, $rawNewFileDir))
+			{
+				if (!File::exists(public_path().$rawNewFileDir))
+				{
+					File::makeDirectory(public_path().$rawNewFileDir);
+				}
+
+				File::move(public_path().$file->file_dir, public_path().$rawNewFileDir.$data['file_name']);
+			}
+			
+			$file->file_name = $data['file_name'];
+			$file->file_dir = $data['file_dir'];
+			
+			if ($file->save())
+			{
+				$msg = 'Changes are saved successfully.';
+			}
+			else
+			{
+				$msg = 'Failed to save changes.';
+			}
+		}
+
+		return redirect('/manage/file')->with('session_msg', $msg);
 	}
 
 	/**
