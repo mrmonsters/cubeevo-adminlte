@@ -55,7 +55,10 @@ Description for file management
 				@if ($isImage)
 				<img src="{{ $file->file_dir }}" alt="{{ $file->file_desc }}" width="100%" />
 				@elseif ($isDocument)
-				<p>Document type file.</p>
+				<div style="text-align: center;">
+					<span><i class="fa fa-file-pdf-o fa-2x"></i></span>
+					<p>Document Type File</p>
+				</div>
 				@endif
 			</div>
 			<div class="box-footer clearfix">

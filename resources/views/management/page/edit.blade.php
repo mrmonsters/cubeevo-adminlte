@@ -89,7 +89,7 @@ Description for static page management
 			</div>
 
 			<div class="box-body">
-				<table class="table">
+				<table id="tbl-section" class="table">
 					<thead>
 						<th width="80%">Name</th>
 						<th>Action</th>
@@ -110,16 +110,6 @@ Description for static page management
 					</tbody>
 				</table>
 			</div>
-
-			<div class="box-footer clearfix">
-				<ul class="pagination pagination-sm no-margin pull-right">
-					<li><a href="#">«</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">»</a></li>
-				</ul>
-			</div>
 		</div>
 	</div>
 
@@ -131,6 +121,11 @@ Description for static page management
 $(document).ready(function()
 {
 	CKEDITOR.replace('page_content');
+
+	$('#tbl-section').DataTable({
+		searching: false,
+		info: false
+	});
 });
 
 function addSection(sectionId, btn)
@@ -150,7 +145,7 @@ function removeSection(sectionId, btn)
 	var secIds = secIds.replace(sectionId + ", ", "");
 	$('#section_id').val(secIds);
 
-	var newHtml = '<button type="button" class="btn btn-primary" onclick="addSection('+ sectionId +', this)">Add</button>';
+	var newHtml = '<button type="button" class="btn btn-sm btn-primary" onclick="addSection('+ sectionId +', this)">Add</button>';
 	$(btn).replaceWith(newHtml);
 }
 </script>

@@ -11,6 +11,7 @@
 <script type="text/javascript" src="{{ asset('/plugins/ckeditor/config.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/plugins/ckeditor/lang/en.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
+<script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <!-- Addon Scripts -->
 @yield('addon-script')
 

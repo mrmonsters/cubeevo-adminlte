@@ -23,7 +23,7 @@ Description for section management
 			</div>
 
 			<div class="box-body">
-				<table class="table">
+				<table id="tbl-section" class="table">
 					<thead>
 						<th width="5%">ID</th>
 						<th width="15%">Title</th>
@@ -63,14 +63,17 @@ Description for section management
 					</tbody>
 				</table>
 			</div>
-
-			<div class="box-footer clearfix">
-				<div style="text-align: center;">
-					Displaying <span class="label label-success">{{ $sections->count() }}</span> result(s)
-				</div>	
-			</div>
 		</div>
 	</div>
 
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#tbl-section').DataTable();
+});
+</script>
 @endsection

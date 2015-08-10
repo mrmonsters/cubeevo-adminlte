@@ -23,7 +23,7 @@ Description for static page management
 			</div>
 
 			<div class="box-body">
-				<table class="table">
+				<table id="tbl-page" class="table">
 					<thead>
 						<th width="5%">ID</th>
 						<th width="15%">Title</th>
@@ -63,14 +63,17 @@ Description for static page management
 					</tbody>
 				</table>
 			</div>
-
-			<div class="box-footer clearfix">
-				<div style="text-align: center;">
-					Displaying <span class="label label-success">{{ $pages->count() }}</span> result(s)
-				</div>	
-			</div>
 		</div>
 	</div>
 
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#tbl-page').DataTable();
+});
+</script>
 @endsection

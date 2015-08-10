@@ -136,7 +136,7 @@ class FileController extends Controller {
 		return view('management/file/edit')
 			->with('file', $file)
 			->with('isImage', $isImage)
-			->with('isDocument, $isDocument');
+			->with('isDocument', $isDocument);
 	}
 
 	/**

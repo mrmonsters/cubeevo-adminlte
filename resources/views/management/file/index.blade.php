@@ -23,17 +23,16 @@ Description for file management
 			</div>
 
 			<div class="box-body">
-				<table class="table">
+				<table id="tbl-file" class="table">
 					<thead>
 						<th width="5%">ID</th>
 						<th width="15%">Name</th>
 						<th width="10%">Type</th>
 						<th width="25%">Directory</th>
-						<th width="10%">Size</th>
 						<th width="10%">Created At</th>
 						<th width="10%">Updated At</th>
-						<th width="5%">Status</th>
-						<th width="10%">Action</th>
+						<th width="10%">Status</th>
+						<th width="15%">Action</th>
 					</thead>
 					<tbody>
 						@if (isset($files) && !$files->isEmpty())
@@ -43,7 +42,6 @@ Description for file management
 							<td>{{ $file->file_name }}</td>
 							<td>{{ $file->file_type }}</td>
 							<td>{{ $file->file_dir }}</td>
-							<td>{{ $file->file_size }}</td>
 							<td>{{ $file->created_at }}</td>
 							<td>{{ $file->updated_at }}</td>
 							<td>
@@ -65,14 +63,17 @@ Description for file management
 					</tbody>
 				</table>
 			</div>
-
-			<div class="box-footer clearfix">
-				<div style="text-align: center;">
-					Displaying <span class="label label-success">{{ $files->count() }}</span> result(s)
-				</div>	
-			</div>
 		</div>
 	</div>
 
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#tbl-file').DataTable();
+});
+</script>
 @endsection

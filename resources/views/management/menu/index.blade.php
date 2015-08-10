@@ -23,7 +23,7 @@ Description for menu management
 			</div>
 
 			<div class="box-body">
-				<table class="table">
+				<table id="tbl-menu" class="table">
 					<thead>
 						<th width="5%">ID</th>
 						<th width="15%">Name</th>
@@ -67,14 +67,17 @@ Description for menu management
 					</tbody>
 				</table>
 			</div>
-
-			<div class="box-footer clearfix">
-				<div style="text-align: center;">
-					Displaying <span class="label label-success">{{ $menus->count() }}</span> result(s)
-				</div>	
-			</div>
 		</div>
 	</div>
 
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('#tbl-menu').DataTable();
+});
+</script>
 @endsection

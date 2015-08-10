@@ -19,6 +19,8 @@
     <link href="{{ asset('/plugins/iCheck/square/blue.css') }}" rel="stylesheet" type="text/css" />
     <!-- CKEditor -->
     <link href="{{ asset('/plugins/ckeditor/skins/moono/editor.css') }}" rel="stylesheet" type="text/css" />
+    <!-- jQuery Data Tables -->
+    <link href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
