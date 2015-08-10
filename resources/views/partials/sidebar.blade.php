@@ -29,29 +29,29 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="active">
+            <li class="link {{ (Request::is('home')) ? 'active' : '' }}">
                 <a href="{{ url('home') }}">
                     <i class='fa fa-link'></i> <span>Home</span>
                 </a>
             </li>
             <li class="header">MANAGEMENT</li>
             <!-- Optionally, you can add icons to the links -->
-            <li>
+            <li class="{{ (Request::is('manage/page') || Request::is('manage/page/*')) ? 'active' : '' }}">
                 <a href="{{ url('manage/page') }}">
                     <i class='fa fa-link'></i> <span>Static Page</span></span>
                 </a>
             </li>
-            <li>
+            <li class="{{ (Request::is('manage/section') || Request::is('manage/section/*')) ? 'active' : '' }}">
                 <a href="{{ url('manage/section') }}">
                     <i class='fa fa-link'></i> <span>Section</span></span>
                 </a>
             </li>
-            <li>
+            <li class="{{ (Request::is('manage/menu') || Request::is('manage/menu/*')) ? 'active' : '' }}">
                 <a href="{{ url('manage/menu') }}">
                     <i class='fa fa-list'></i> <span>Menu</span></span>
                 </a>
             </li>
-            <li>
+            <li class="{{ (Request::is('manage/file') || Request::is('manage/file/*')) ? 'active' : '' }}">
                 <a href="{{ url('manage/file') }}">
                     <i class='fa fa-file'></i> <span>File</span></span>
                 </a>
