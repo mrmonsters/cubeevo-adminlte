@@ -13,15 +13,21 @@ Description for menu management
 @endsection
 
 @section('main-content')
-<div class="row">
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
 
+<div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Menu</h3>
 				<a href="{{ url('manage/menu/create') }}" class="btn btn-primary pull-right">Create</a>
 			</div>
-
 			<div class="box-body">
 				<table id="tbl-menu" class="table">
 					<thead>
@@ -69,7 +75,6 @@ Description for menu management
 			</div>
 		</div>
 	</div>
-
 </div>
 @endsection
 

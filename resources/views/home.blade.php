@@ -6,6 +6,14 @@
 
 
 @section('main-content')
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
+
 <div class="container">
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">

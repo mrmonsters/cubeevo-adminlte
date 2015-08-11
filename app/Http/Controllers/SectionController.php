@@ -12,6 +12,16 @@ use App\PageSection;
 class SectionController extends Controller {
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+	
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -47,6 +57,7 @@ class SectionController extends Controller {
 	public function store(Request $req)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 
 		if (is_array($data) && !empty($data))
@@ -59,17 +70,28 @@ class SectionController extends Controller {
 			$section->status = 2;
 			$section->save();
 
-			if (isset($data['add_to_page']) && $data['add_to_page'] == '1' && isset($data['page_id']))
+			if ($section->save())
 			{
-				$pageSection = new PageSection;
-				$pageSection->page_id = $data['page_id'];
-				$pageSection->section_id = $data['section_id'];
-				$pageSection->status = 2;
-				$pageSection->save();
+				if (isset($data['add_to_page']) && $data['add_to_page'] == '1' && isset($data['page_id']))
+				{
+					$pageSection = new PageSection;
+					$pageSection->page_id = $data['page_id'];
+					$pageSection->section_id = $section->section_id;
+					$pageSection->status = 2;
+					$pageSection->save();
+				}
+
+				$response['status'] = 1;
+				$response['msg'] = 'New section is added successfully.';
+			}
+			else
+			{
+				$response['status'] = 0;
+				$response['msg'] = 'Failed to add new section.';
 			}
 		}
 
-		return redirect('manage/section')->with('session_msg', 'New section is added successfully.');
+		return redirect('manage/section')->with('response', $response);
 	}
 
 	/**
@@ -111,6 +133,7 @@ class SectionController extends Controller {
 	public function update(Request $req, $id)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 		$section = Section::find($id);
 		$section->section_title = $data['section_title'];
@@ -152,14 +175,16 @@ class SectionController extends Controller {
 
 		if ($section->save())
 		{
-			$msg = "Changes are saved successfully.";
+			$response['status'] = 1;
+			$response['msg'] = 'Changes are saved successfully.';
 		}
 		else
 		{
-			$msg = "Failed to save changes.";
+			$response['status'] = 0;
+			$response['msg'] = 'Failed to save changes.';
 		}
 
-		return redirect('manage/section')->with('session_msg', $msg);
+		return redirect('manage/section')->with('response', $response);
 	}
 
 	/**

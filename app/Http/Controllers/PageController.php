@@ -14,6 +14,16 @@ use App\PageSection;
 class PageController extends Controller {
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+	
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -53,7 +63,7 @@ class PageController extends Controller {
 	public function store(Request $req)
 	{
 		//
-		$msg = 'Failed to add new page.';
+		$response = array();
 		$data = $req->input();
 
 		if (is_array($data) && !empty($data))
@@ -97,11 +107,17 @@ class PageController extends Controller {
 					}
 				}
 
-				$msg = 'New page is added successfully.';
+				$response['status'] = 1;
+				$response['msg'] = 'New page is added successfully.';
+			}
+			else
+			{
+				$response['status'] = 0;
+				$response['msg'] = 'Failed to add new page.';
 			}
 		}
 
-		return redirect('manage/page')->with('session_msg', $msg);
+		return redirect('manage/page')->with('response', $response);
 	}
 
 	/**
@@ -172,6 +188,7 @@ class PageController extends Controller {
 	public function update(Request $req, $id)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 
 		if (is_array($data) && !empty($data))
@@ -228,15 +245,17 @@ class PageController extends Controller {
 
 			if ($page->save())
 			{
-				$msg = 'Changes are saved successfully.';
+				$response['status'] = 1;
+				$response['msg'] = 'Changes are saved successfully.';
 			}
 			else
 			{
-				$msg = 'Failed to save changes.';
+				$response['status'] = 0;
+				$respons['msg'] = 'Failed to save changes.';
 			}
 		}
 
-		return redirect('manage/page')->with('session_msg', $msg);
+		return redirect('manage/page')->with('response', $response);
 	}
 
 	/**

@@ -13,14 +13,20 @@ Description for static page management
 @endsection
 
 @section('main-content')
-<div class="row">
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
 
+<div class="row">
 	<div class="col-md-8">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Page #{{ $page->page_id }}</h3>
 			</div>
-
 			<form method="POST" action="{{ url('manage/page/update/' . $page->page_id) }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
@@ -71,7 +77,6 @@ Description for static page management
 						<textarea id="page_content" name="page_content" class="form-control" rows="8">{{ $page->page_content }}</textarea>
 					</div>
 				</div>
-
 				<div class="box-footer clearfix">
 					<div class="pull-right">
 						<a href="{{ url('/manage/page/') }}" class="btn btn-default">Cancel</a>
@@ -81,13 +86,11 @@ Description for static page management
 			</form>
 		</div>
 	</div>
-
 	<div class="col-md-4">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Add From Sections</h3>
 			</div>
-
 			<div class="box-body">
 				<table id="tbl-section" class="table">
 					<thead>
@@ -112,7 +115,6 @@ Description for static page management
 			</div>
 		</div>
 	</div>
-
 </div>
 @endsection
 

@@ -13,9 +13,16 @@ Description for section management
 @endsection
 
 @section('main-content')
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
+
 <div class="container">
 	<div class="row">
-
 		<div class="col-md-10 col-offset-md-1">
 			<div class="box box-primary">
 				<div class="box-header with-border">
@@ -74,7 +81,6 @@ Description for section management
 							<textarea id="section_content" name="section_content" class="form-control" rows="8"></textarea>
 						</div>
 					</div>
-
 					<div class="box-footer clearfix">
 						<div class="pull-right">
 							<a href="{{ url('/manage/section/') }}" class="btn btn-default">Cancel</a>
@@ -84,7 +90,6 @@ Description for section management
 				</form>
 			</div>
 		</div>
-
 	</div>
 </div>
 @endsection

@@ -10,6 +10,16 @@ use App\Menu;
 class MenuController extends Controller {
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+	
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -45,6 +55,7 @@ class MenuController extends Controller {
 	public function store(Request $req)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 
 		if (is_array($data) && !empty($data))
@@ -58,10 +69,20 @@ class MenuController extends Controller {
 				$menu->parent_menu_id = $data['parent_menu_id'];
 			}
 			$menu->status = '2';
-			$menu->save();
+			
+			if ($menu->save())
+			{
+				$response['status'] = 1;
+				$response['msg'] = 'New menu is added successfully.';
+			}
+			else
+			{
+				$response['status'] = 0;
+				$response['msg'] = 'Failed to add new menu.';
+			}
 		}
 
-		return redirect('/manage/menu/')->with('session_msg', 'New menu is added successfully.');
+		return redirect('/manage/menu/')->with('response', $response);
 	}
 
 	/**
@@ -101,6 +122,7 @@ class MenuController extends Controller {
 	public function update(Request $req, $id)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 		$menu = Menu::find($id);
 		$menu->menu_name = $data['menu_name'];
@@ -112,14 +134,16 @@ class MenuController extends Controller {
 
 		if ($menu->save())
 		{
-			$msg = "Changes are saved successfully.";
+			$response['status'] = 1;
+			$response['msg'] = 'Changes are saved successfully.';
 		}
 		else
 		{
-			$msg = "Failed to save changes.";
+			$response['status'] = 0;
+			$response['msg'] = 'Failed to save changes.';
 		}
 		
-		return redirect('manage/menu')->with('session_msg', $msg);
+		return redirect('manage/menu')->with('response', $response);
 	}
 
 	/**

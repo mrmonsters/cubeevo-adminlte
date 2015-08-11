@@ -13,14 +13,20 @@ Description for file management
 @endsection
 
 @section('main-content')
-<div class="row">
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
 
+<div class="row">
 	<div class="col-md-4">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit File #{{ $file->file_id }}</h3>
 			</div>
-
 			<form method="POST" action="{{ url('manage/file/update/' . $file->file_id) }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
@@ -29,13 +35,11 @@ Description for file management
 						<label for="file_name" class="control-label">File Name</label>
 						<input id="file_name" name="file_name" type="text" class="form-control" value="{{ $file->file_name }}" />
 					</div>
-
 					<div class="form-group">
 						<label for="base_dir" class="control-label">Directory</label>
 						<input id="base_dir" name="base_dir" type="text" class="form-control" value="{{ $file->file_dir }}" />
 					</div>
 				</div>
-
 				<div class="box-footer clearfix">
 					<div class="pull-right">
 						<a href="{{ url('/manage/file/') }}" class="btn btn-default">Cancel</a>
@@ -45,7 +49,6 @@ Description for file management
 			</form>
 		</div>
 	</div>
-
 	<div class="col-md-8">
 		<div class="box box-default">
 			<div class="box-header with-border">
@@ -66,6 +69,5 @@ Description for file management
 			</div>
 		</div>
 	</div>
-
 </div>
 @endsection

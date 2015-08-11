@@ -13,15 +13,21 @@ Description for section management
 @endsection
 
 @section('main-content')
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
+
 <div class="container">
 	<div class="row">
-
 		<div class="col-md-10 col-offset-md-1">
 			<div class="box box-primary">
 				<div class="box-header with-border">
 					<h3 class="box-title">Edit Section #{{ $section->section_id }}</h3>
 				</div>
-
 				<form method="POST" action="{{ url('manage/section/update/' . $section->section_id) }}">
 					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<input name="_method" type="hidden" value="PUT" />
@@ -81,7 +87,6 @@ Description for section management
 							<textarea id="section_content" name="section_content" class="form-control" rows="8">{{ $section->section_content }}</textarea>
 						</div>
 					</div>
-
 					<div class="box-footer clearfix">
 						<div class="pull-right">
 							<a href="{{ url('/manage/section/') }}" class="btn btn-default">Cancel</a>
@@ -91,7 +96,6 @@ Description for section management
 				</form>
 			</div>
 		</div>
-
 	</div>
 </div>
 @endsection

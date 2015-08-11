@@ -11,6 +11,16 @@ use File;
 class FileController extends Controller {
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+	
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
@@ -43,6 +53,7 @@ class FileController extends Controller {
 	public function store(Request $req)
 	{
 		//
+		$response = array();
 		$files = $req->file();
 		
 		if (!empty($files))
@@ -77,18 +88,20 @@ class FileController extends Controller {
 
 					if (File::exists(public_path().$baseDir."/".$fileName))
 					{
-						$msg = 'New file(s) is uploaded successfully.';
+						$response['status'] = 1;
+						$response['msg'] = 'New file(s) is uploaded successfully.';
 					}
 					else
 					{
-						$msg = 'Failed to upload file(s).';
+						$response['status'] = 0;
+						$response['msg'] = 'Failed to upload file(s).';
 						break;
 					}
 				}
 			}
 		}
 
-		return redirect('/manage/file')->with('session_msg', $msg);
+		return redirect('/manage/file')->with('response', $response);
 	}
 
 	/**
@@ -148,6 +161,7 @@ class FileController extends Controller {
 	public function update(Request $req, $id)
 	{
 		//
+		$response = array();
 		$data = $req->input();
 		$file = Files::find($id);
 		
@@ -171,15 +185,17 @@ class FileController extends Controller {
 			
 			if ($file->save())
 			{
-				$msg = 'Changes are saved successfully.';
+				$response['status'] = 1;
+				$response['msg'] = 'Changes are saved successfully.';
 			}
 			else
 			{
-				$msg = 'Failed to save changes.';
+				$response['status'] = 0;
+				$response['msg'] = 'Failed to save changes.';
 			}
 		}
 
-		return redirect('/manage/file')->with('session_msg', $msg);
+		return redirect('/manage/file')->with('response', $response);
 	}
 
 	/**

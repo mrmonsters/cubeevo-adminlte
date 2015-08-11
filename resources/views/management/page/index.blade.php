@@ -13,15 +13,21 @@ Description for static page management
 @endsection
 
 @section('main-content')
-<div class="row">
+@if (isset($response) && !empty($response))
+	@if ($response['status'] == 1)
+		@include('partials.msg-success')
+	@elseif ($response['status'] == 0)
+		@include('partials.msg-error')
+	@endif
+@endif
 
+<div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Static Page</h3>
 				<a href="{{ url('manage/page/create') }}" class="btn btn-primary pull-right">Create</a>
 			</div>
-
 			<div class="box-body">
 				<table id="tbl-page" class="table">
 					<thead>
@@ -65,7 +71,6 @@ Description for static page management
 			</div>
 		</div>
 	</div>
-
 </div>
 @endsection
 
