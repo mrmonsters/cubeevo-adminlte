@@ -74,7 +74,7 @@ class PageController extends Controller {
 			$page->page_desc = $data['page_desc'];
 			$page->page_slug = $data['page_slug'];
 			$page->page_locale = $data['page_locale'];
-			$page->page_content = $data['page_content'];
+			$page->page_content = htmlentities($data['page_content']);
 			$page->status = 2;
 
 			if ($page->save())
@@ -117,7 +117,7 @@ class PageController extends Controller {
 			}
 		}
 
-		return redirect('manage/page')->with('response', $response);
+		return redirect('admin/manage/page')->with('response', $response);
 	}
 
 	/**
@@ -199,7 +199,7 @@ class PageController extends Controller {
 			$page->page_desc = $data['page_desc'];
 			$page->page_slug = $data['page_slug'];
 			$page->page_locale = $data['page_locale'];
-			$page->page_content = $data['page_content'];
+			$page->page_content = htmlentities($data['page_content']);
 
 			// Save page section
 			if ($data['section_id'])
@@ -255,7 +255,7 @@ class PageController extends Controller {
 			}
 		}
 
-		return redirect('manage/page')->with('response', $response);
+		return redirect('admin/manage/page')->with('response', $response);
 	}
 
 	/**

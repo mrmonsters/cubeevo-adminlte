@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+use App\Page;
+use App\Section;
+
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +23,17 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('frontend\index');
+		$sections = array();
+		$page = Page::where('page_slug', '=', '/')->first();
+		$secs = $page->pageSections()->get();
+
+		foreach ($secs as $sec)
+		{
+			$item = $sec->section()->first();
+			$sections[] = $item;
+		}
+
+		return view('frontend\index')->with('sections', $sections);
 	}
 
 	public function getAboutUs()

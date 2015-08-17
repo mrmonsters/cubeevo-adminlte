@@ -134,26 +134,11 @@
         </div>
         
     </div>
-    <div class="section" id="section6">
-    	<div class="col-sm-6 maincol-right">
-            <!--<img src="img/Images-41-2.png" width="100%">-->
-        </div>  
-        <div class="col-sm-6 maincol-left">
-            <div class="content-wrapper">
-                <div class="content-section"> 
-                <div class="row">
-                    <div class="col-sm-push-5 col-sm-6">
-                        <h3>贴心</h3>
-                        <p>
-                        形立方聆听客户声音，理解客户需求，务求和谐的合作关系，共创最好的作品！
-                        </p>
-                    </div> 
-                </div> 
-                </div> 
-            </div>
-        </div>
-        
-    </div>
+    @if (isset($sections) && is_array($sections) && !empty($sections))
+    @foreach ($sections as $section)
+    <?php echo html_entity_decode($section->section_content); ?>
+    @endforeach
+    @endif
 </div>   
 
 @include('partials.frontend.navi')

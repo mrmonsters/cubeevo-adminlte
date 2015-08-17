@@ -67,7 +67,7 @@ Description for section management
 						<div class="form-group">
 							<label for="page_id" class="control-label">Page</label>
 							@if (isset($pages) && !$pages->isEmpty())
-							<select multiple id="page_id" name="page_id" class="form-control">
+							<select multiple id="page_id" name="page_id[]" class="form-control">
 							@foreach ($pages as $page)
 							@foreach ($pageSections as $item)
 							@if ($item->page_id == $page->page_id)

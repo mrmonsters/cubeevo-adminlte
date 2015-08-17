@@ -26,7 +26,7 @@ Description for static page management
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Static Page</h3>
-				<a href="{{ url('manage/page/create') }}" class="btn btn-primary pull-right">Create</a>
+				<a href="{{ url('admin/manage/page/create') }}" class="btn btn-primary pull-right">Create</a>
 			</div>
 			<div class="box-body">
 				<table id="tbl-page" class="table">
@@ -60,8 +60,8 @@ Description for static page management
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('manage/page/edit/' . $page->page_id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('manage/page/destroy/' . $page->page_id) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/page/edit/' . $page->page_id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/page/destroy/' . $page->page_id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

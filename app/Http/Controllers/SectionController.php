@@ -66,7 +66,7 @@ class SectionController extends Controller {
 			$section->section_title = $data['section_title'];
 			$section->section_desc = $data['section_desc'];
 			$section->section_locale = $data['section_locale'];
-			$section->section_content = $data['section_content'];
+			$section->section_content = htmlentities($data['section_content']);
 			$section->status = 2;
 			$section->save();
 
@@ -91,7 +91,7 @@ class SectionController extends Controller {
 			}
 		}
 
-		return redirect('manage/section')->with('response', $response);
+		return redirect('admin/manage/section')->with('response', $response);
 	}
 
 	/**
@@ -137,9 +137,9 @@ class SectionController extends Controller {
 		$data = $req->input();
 		$section = Section::find($id);
 		$section->section_title = $data['section_title'];
-		$section->section_name = $data['section_name'];
+		$section->section_desc = $data['section_desc'];
 		$section->section_locale = $data['section_locale'];
-		$section->section_content = $data['section_content'];
+		$section->section_content = htmlentities($data['section_content']);
 
 		if ($data['add_to_page'] == '1')
 		{
@@ -147,9 +147,10 @@ class SectionController extends Controller {
 			foreach ($data['page_id'] as $pageId)
 			{
 				$pageSection = PageSection::where('page_id', '=', $pageId)
-					->where('page_id', '=', $pageId);
+					->where('page_id', '=', $pageId)
+					->first();
 
-				if ($pageSection->isEmpty())
+				if (!$pageSection->page_section_id)
 				{
 					$pSection = new PageSection;
 					$pSection->page_id = $pageId;
@@ -161,7 +162,7 @@ class SectionController extends Controller {
 		else if ($data['add_to_page'] == '0')
 		{
 			// De-activate all relevant records
-			$pageSections = PageSection::where('section_id', '=', $id);
+			$pageSections = PageSection::where('section_id', '=', $id)->get();
 
 			if (!$pageSections->isEmpty())
 			{
@@ -184,7 +185,7 @@ class SectionController extends Controller {
 			$response['msg'] = 'Failed to save changes.';
 		}
 
-		return redirect('manage/section')->with('response', $response);
+		return redirect('admin/manage/section')->with('response', $response);
 	}
 
 	/**
