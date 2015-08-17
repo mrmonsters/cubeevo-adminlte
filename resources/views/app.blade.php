@@ -5,7 +5,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 
-@include('partials.htmlheader')
+@include('partials.admin.htmlheader')
 
 <!--
 BODY TAG OPTIONS:
@@ -30,14 +30,14 @@ desired effect
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
 
-    @include('partials.mainheader')
+    @include('partials.admin.mainheader')
 
-    @include('partials.sidebar')
+    @include('partials.admin.sidebar')
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('partials.contentheader')
+        @include('partials.admin.contentheader')
 
         <!-- Main content -->
         <section class="content">
@@ -46,13 +46,13 @@ desired effect
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
-    @include('partials.controlsidebar')
+    @include('partials.admin.controlsidebar')
 
-    @include('partials.footer')
+    @include('partials.admin.footer')
 
 </div><!-- ./wrapper -->
 
-@include('partials.scripts')
+@include('partials.admin.scripts')
 
 </body>
 </html>

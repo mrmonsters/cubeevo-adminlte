@@ -14,23 +14,48 @@ class HomeController extends Controller {
 	*/
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
-	/**
 	 * Show the application dashboard to the user.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return view('home');
+		return view('frontend\index');
+	}
+
+	public function getAboutUs()
+	{
+		return view('frontend\aboutus');
+	}
+
+	public function getCredential()
+	{
+		return view('frontend\credential');
+	}
+
+	public function getCredentialContent()
+	{
+		return view('frontend\credential_content');
+	}
+
+	public function getSolution()
+	{
+		return view('frontend\solution');
+	}
+
+	public function getResearch()
+	{
+		return view('frontend\research');
+	}
+
+	public function getProcess()
+	{
+		return view('frontend\process');
+	}
+
+	public function getContactUs()
+	{
+		return view('frontend\contactus');
 	}
 
 }

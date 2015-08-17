@@ -7,7 +7,7 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="{{asset('/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image" />
+                <img src="{{ asset('/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
                 <p>{{ Auth::user()->name }}</p>
@@ -29,30 +29,30 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="link {{ (Request::is('home')) ? 'active' : '' }}">
-                <a href="{{ url('home') }}">
+            <li class="link {{ (Request::is('admin')) ? 'active' : '' }}">
+                <a href="{{ url('admin') }}">
                     <i class='fa fa-link'></i> <span>Home</span>
                 </a>
             </li>
             <li class="header">MANAGEMENT</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ (Request::is('manage/page') || Request::is('manage/page/*')) ? 'active' : '' }}">
-                <a href="{{ url('manage/page') }}">
+            <li class="{{ (Request::is('admin/manage/page') || Request::is('admin/manage/page/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/page') }}">
                     <i class='fa fa-link'></i> <span>Static Page</span></span>
                 </a>
             </li>
-            <li class="{{ (Request::is('manage/section') || Request::is('manage/section/*')) ? 'active' : '' }}">
-                <a href="{{ url('manage/section') }}">
+            <li class="{{ (Request::is('admin/manage/section') || Request::is('admin/manage/section/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/section') }}">
                     <i class='fa fa-link'></i> <span>Section</span></span>
                 </a>
             </li>
-            <li class="{{ (Request::is('manage/menu') || Request::is('manage/menu/*')) ? 'active' : '' }}">
-                <a href="{{ url('manage/menu') }}">
+            <li class="{{ (Request::is('admin/manage/menu') || Request::is('admin/manage/menu/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/menu') }}">
                     <i class='fa fa-list'></i> <span>Menu</span></span>
                 </a>
             </li>
-            <li class="{{ (Request::is('manage/file') || Request::is('manage/file/*')) ? 'active' : '' }}">
-                <a href="{{ url('manage/file') }}">
+            <li class="{{ (Request::is('admin/manage/file') || Request::is('admin/manage/file/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/file') }}">
                     <i class='fa fa-file'></i> <span>File</span></span>
                 </a>
             </li>

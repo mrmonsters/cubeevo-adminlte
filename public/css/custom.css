@@ -1,0 +1,312 @@
+/* -------------------------------- 
+
+Custom style
+
+-------------------------------- */
+
+h1 {margin-top:60px;}
+h1.txtorange {color:#f7941a;}
+h1.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
+h1.txtwhite, .txtwhite {color:#fff;}
+h1.txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
+hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-right:0 none; border-top:0 none;}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.cd-section .main h2 {
+	color:#231f20;
+}
+
+.cd-search {
+	border:1px solid #eff2f6;
+	height:35px;
+}
+.cd-search input {
+	background:none;
+	border: 0;
+	padding:10px; 
+	width:60%;
+	float:left;
+}
+.cd-search button {
+	background:url(../img/Images-16.png) right no-repeat;
+	display:inline-block;
+	float:right;
+	border:0 none;
+	cursor:pointer;
+	padding:10px;
+}
+.cd-search button span {
+	display:block;
+	text-indent:-10000px;
+	height:15px;
+	width:15px;
+}
+
+.cd-social {width:100%; margin-top:10px; border-bottom:1px solid #eff2f6;}
+.cd-social ul {
+	margin:0 auto;
+	overflow:hidden;
+}
+.cd-social li {margin:0 8%;	float:left;}
+.cd-social a {
+	text-indent:10000px;
+	display:block;
+	width:30px;
+  	height:30px;
+	border: 0 none !important;
+}
+.cd-social .cd-scfb {
+  background:url(../img/Images-13.png) no-repeat bottom;
+}
+.cd-social .cd-scin {
+  background:url(../img/Images-15.png) no-repeat bottom;
+}
+.cd-social .cd-scyt {
+  background:url(../img/Images-14.png) no-repeat bottom;
+}
+
+.mob-hide {display:inline;}
+.mob-visible {display:none;}
+
+/*---------------- Home -----------------*/
+
+#fullpage .col-sm-6{padding-top: 8px;padding-bottom: 8px;}
+#fullpage .content-wrapper{ 
+	position: relative;
+	padding: 10px;
+	height: 100%;
+	background: url(../img/transBG.png) repeat; 
+	color: #ffffff;
+}
+#section0 .fp-tableCell {
+	background:url(../img/Images-41.png) no-repeat top;
+	  background-size: cover;}
+#section0 .fp-tableCell .col-sm-6 {
+	  color:#000 !important;
+}
+#section0 .fp-tableCell ul li {
+	padding-top:20px;
+	text-align:left;
+}
+.maincol-right {float:right;}
+.maincol-left {}
+.mas-1 {height:100%;}
+
+/* solution page*/
+.sol p, .cre p{
+	margin-bottom: 0px;
+}
+.sol .col-sm-4:hover .greybox,.sol .col-sm-4:hover .hidden-text, .cre .col-sm-4:hover .greybox,.cre .col-sm-4:hover .hidden-text {
+	display: block;
+}
+.sol .hidden-text, .cre .hidden-text{display: none;}
+.sol .contbox {position: relative; padding: 15px 0;}
+.sol .contbox ul {margin-bottom:0; margin-right:30px;}
+.sol .greybox, .cre .greybox {
+	display: none;
+	width: 100%;
+	height: 90%;
+	position: absolute;
+	background:url(../../HTML20150727/img/transBG.png) repeat;
+	z-index:1;
+}
+.sol-1 {background:#eee80a url(../img/Images-36.png); background-position:right;}
+.sol-2 {background:#1f9ea0 url(../img/Images-36.png); background-position:right;}
+.sol-3 {background:#c63f48 url(../img/Images-36.png); background-position:right;}
+.sol-4 {background:#F7941E url(../img/Images-36.png); background-position:right;}
+.sol-5 {background:#45B97C url(../img/Images-36.png); background-position:right;}
+.sol-6 {background:#8F53A1 url(../img/Images-36.png); background-position:right;}
+.sol-7 {background:#8F53A1 url(../img/Images-36.png); background-position:right;}
+.sol-8 {background:#eee80a url(../img/Images-36.png); background-position:right;}
+.sol-9 {background:#1f9ea0 url(../img/Images-36.png); background-position:right;}
+
+.panel-body.overlap {
+	position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 10px 10px 0 10px;
+    margin: 10px;
+}
+.panel-body.overlap p {
+	z-index:1;
+	position:relative;
+	color:#fff;
+}
+.panel-title { padding-left:0px; float:left; font-size:18px;}
+.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:11px; border-left:1px solid #fff;}
+
+/*credential page*/ 
+.cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
+	cursor:pointer;}
+.cre-1 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
+.cre-2 {background:url(../img/Credential%20Thumbnail/Greenology_Thumbnail_Background.jpg);}
+.cre-3 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);}
+.cre-4 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);}
+.cre-5 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
+.cre-6 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
+.cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
+.cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);}
+.cre-9 {background:#666; min-height:281px;}
+.cre .panel-title {text-align:center;}
+.cre .contbox {position: relative; padding: 15px 0;}
+.cre .contbox ul {margin: 0 50px; }
+
+.credential .blankbox{height: 400px; width: 100%;}
+.credential .whitebg {background-color:#ffffff ; }
+.credential .box{position: absolute;bottom:0px; margin-bottom:20px; color:#fff; }
+.credential .box-content{padding:10px;}
+.credential .box-bg{position: absolute;width: 98%;height: 100%;
+	-moz-opacity: 0.85;
+	-khtml-opacity: 0.85;
+	opacity: 0.85;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=85);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85);
+	filter:alpha(opacity=85);}
+.credential .cre-of1 {position:absolute; bottom:0; right:0; z-index:2;}
+.credential .desctitle { font-size:14px; font-weight:bold;}
+.credential .box-content h3 {margin-top:0px; margin-bottom:18px;}
+.credential .box-content p {margin-bottom:5px;}
+.credential .col-ppl .photo {margin-bottom:10px; text-align:center;}
+.credential .col-ppl p {text-align:center; font-size:12px;}
+.credential .crecol-1 {padding-left:0;}
+.cre .comingsoon {}
+
+@media (min-width: 768px) {
+	.section .col-sm-6{height: 100%;} 
+	#fullpage .content-wrapper > .content-section{  
+	  	position:  absolute;
+	    width: 96%;
+	  	bottom: 18%; 
+	}
+	.credential .box-content{ 
+		min-height: 490px;
+	}
+}
+
+.process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
+.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;}
+.process .flow .right {width:50%; height:100px; margin-left:50%; background:url(../img/processflowR.png) no-repeat left;}
+.process .flow .box  {width: 548px; padding:22px 90px; position:relative;}
+.process .flow .left .box {float:right;}
+.process .flow .right .box {flaot:left;}
+.process .flow .left .box span {color: #f7941a; font-size:18px; position: absolute; right: 50px; bottom: 5px;}
+.process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; left: 50px; bottom: 5px;}
+
+.aboutus .tagline {color:#f7941a; font-size:54px;}
+.aboutus .sub-tagline {color:#fff; font-size:22px; margin-bottom:50px;}
+.aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
+.aboutus .about-txt {margin-top :50px; margin-bottom:50px;}
+.aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
+.aboutus .about-img2 {height:253px; display:block; background:url(../img/Images-08-1.png) no-repeat center center; clear:both;}
+.aboutus .about-img3 {clear:both; text-align:center;}
+.aboutus .about-369 {max-width:1300px; margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
+.aboutus .about-369 .about-369txt {margin-top:20px; font-size:12px; line-height:20px;}
+.aboutus .about-369 .about-369img {margin-top:50px}
+.aboutus .about-369 .col-xs-6 {width:100%;}
+.aboutus .team, .aboutus .career {background:#f7941a;}
+.aboutus .team .profilepic img {width:100%;}
+.aboutus .team .profilepic {margin-top:30px;}
+.aboutus .team .profilename {color:#fff; margin:20px 0;}
+.aboutus .team .profiledesc {margin-bottom:30px;}
+.aboutus .career .job {overflow:hidden; margin-bottom: 30px; margin-top:10px;}
+.aboutus .career .job button {border: 1px solid #fff; background: none; color: #fff; padding: 10px 20px; border-radius: 0; float:right;}
+
+.contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;}
+.contactus h5 {font-weight:bold;}
+.contactus ul { list-style:none; padding:0; overflow:hidden;}
+.contactus li {padding-left:26px;}
+.contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}
+.contactus .shopinfo li {float:left; margin-right:5px;}
+.contactus .phone {background:url(../img/Images-19.png) no-repeat left top;}
+.contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -46px;}
+.contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -98px;}
+.contactus .form-control {background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px}
+.contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
+.contactus label {visibility:hidden; margin-top:20px; }
+.contactus label.unhide {visibility:visible; padding-left:40px;}
+.contactus .icon {width:30px; height:30px; display:block; position:absolute;}
+.contactus .cont-name {background:url(../img/Images-18.png) no-repeat 0px 0px;}
+.contactus .cont-mail {background:url(../img/Images-18.png) no-repeat 0px -40px;}
+.contactus .cont-contact {background:url(../img/Images-18.png) no-repeat 0px -80px;}
+.contactus .cont-title {background:url(../img/Images-18.png) no-repeat 0px -120px;}
+.contactus .cont-msg {background:url(../img/Images-18.png) no-repeat 0px -160px;}
+.contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
+
+.scene.orange img{
+	width: 640px;
+}
+	#orangemascott{
+		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Mascot_Animation_B.png') 0 0 no-repeat;
+		width: 640px;
+		height: 380px; 
+		background-size: 3200px 380px;
+	} 
+
+	#light{
+		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Woosh_Animation.png') 0 0 no-repeat;
+		width: 640px;
+		height: 380px; 
+		background-size: 6400px 760px;
+	} 
+
+
+@media (max-width:1024px){
+	.process .flow {margin:40px -75px;}
+	.process .flow .left .box {padding:25px 80px 25px 40px;}
+	.process .flow .right .box {padding:25px 40px 25px 80px;}
+}
+
+@media (max-width:768px){
+
+.scene.orange img{
+	width: 320px;
+}
+	#orangemascott{
+		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Mascot_Animation_B.png') 0 0 no-repeat;
+		width: 320px;
+		height: 190px; 
+		background-size: 1600px 190px;
+	} 
+#light{
+	background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Woosh_Animation.png') 0 0 no-repeat;
+	width: 320px;
+	height: 190px; 
+	background-size: 3200px 380px;
+} 
+	img.mas-1 {height:auto;}
+	#cd-main-nav .inner {padding: 15px 15%; }
+	.maincol-right {float:none;}
+	.maincol-left {}
+	.credential .blankbox {height:auto;}
+	.mob-hide, .mascott {display:none;}
+	.mob-visible {display:inline;}
+	/*.maincol-right img  {max-width:90%;}*/
+	.cre ul.scene, .sol ul.scene {margin-bottom:0;}
+	.credential .box{position:inherit;bottom:0px; margin-bottom:0px; padding-bottom:20px;}
+	.credential .box-bg {width:100%;}
+	.credential .cre-info {padding-left:0; padding-right:0;}
+	.credential .cre-info .col-sm-10 {padding-right:0;}
+	.credential .cre-info .crecol-2 {padding-left:0; }
+	.credential .col-ppl .photo img {max-width:240px;}
+	h1 {margin-top:80px;}
+	.aboutus .tagline {font-size:30px;}
+	.aboutus .team .profilepic {text-align:center;}
+	.aboutus .team .profilepic img {max-width:240px;}
+	.aboutus .team .profilename {text-align:center;}
+	.aboutus .about-369 .col-xs-6 {width:50%;}
+	.aboutus .about-369 .about-369img {margin-top:0;}
+	.aboutus .about-369 .col-sm-4 {margin-top:20px; overflow:hidden;}
+	.aboutus .about-369 .about-369txt {width:100%;}
+	.panel-title-desc {border-left:0 none;}
+	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
+	.process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
+	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:20px 60px 40px !important; position:relative;}
+	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 40px; left:inherit; bottom: 3px;}
+	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;}
+}
+

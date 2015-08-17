@@ -11,35 +11,42 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
+Route::get('/about-us', 'HomeController@getAboutUs');
+Route::get('/credential', 'HomeController@getCredential');
+Route::get('/credential/content', 'HomeController@getCredentialContent');
+Route::get('/solution', 'HomeController@getSolution');
+Route::get('/research', 'HomeController@getResearch');
+Route::get('/process', 'HomeController@getProcess');
+Route::get('/contact-us', 'HomeController@getContactUs');
 
-Route::get('home', 'HomeController@index');
+Route::get('admin', 'AdminController@index');
 
 // Static page routes...
-Route::get('manage/page', 'PageController@index');
-Route::get('manage/page/create', 'PageController@create');
-Route::get('manage/page/edit/{page_id}', 'PageController@edit');
+Route::get('admin/manage/page', 'PageController@index');
+Route::get('admin/manage/page/create', 'PageController@create');
+Route::get('admin/manage/page/edit/{page_id}', 'PageController@edit');
 Route::put('manage/page/update/{page_id}', 'PageController@update');
 Route::post('manage/page/store', 'PageController@store');
 
 // Section routes...
-Route::get('manage/section', 'SectionController@index');
-Route::get('manage/section/create', 'SectionController@create');
-Route::get('manage/section/edit/{section_id}', 'SectionController@edit');
+Route::get('admin/manage/section', 'SectionController@index');
+Route::get('admin/manage/section/create', 'SectionController@create');
+Route::get('admin/manage/section/edit/{section_id}', 'SectionController@edit');
 Route::put('manage/section/update/{section_id}', 'SectionController@update');
 Route::post('manage/section/store', 'SectionController@store');
 
 // Menu routes
-Route::get('manage/menu', 'MenuController@index');
-Route::get('manage/menu/create', 'MenuController@create');
-Route::get('manage/menu/edit/{menu_id}', 'MenuController@edit');
+Route::get('admin/manage/menu', 'MenuController@index');
+Route::get('admin/manage/menu/create', 'MenuController@create');
+Route::get('admin/manage/menu/edit/{menu_id}', 'MenuController@edit');
 Route::put('manage/menu/update/{menu_id}', 'MenuController@update');
 Route::post('manage/menu/store', 'MenuController@store');
 
 // File routes
-Route::get('manage/file', 'FileController@index');
-Route::get('manage/file/create', 'FileController@create');
-Route::get('manage/file/edit/{file_id}', 'FileController@edit');
+Route::get('admin/manage/file', 'FileController@index');
+Route::get('admin/manage/file/create', 'FileController@create');
+Route::get('admin/manage/file/edit/{file_id}', 'FileController@edit');
 Route::put('manage/file/update/{file_id}', 'FileController@update');
 Route::post('manage/file/store', 'FileController@store');
 
