@@ -78,7 +78,7 @@ Description for static page management
 				</div>
 				<div class="box-footer clearfix">
 					<div class="pull-right">
-						<a href="{{ url('/manage/page/') }}" class="btn btn-default">Cancel</a>
+						<a href="{{ url('/admin/manage/page/') }}" class="btn btn-default">Cancel</a>
 						<button type="submit" class="btn btn-primary">Submit</button>
 					</div>
 				</div>
@@ -117,7 +117,7 @@ Description for static page management
 <script type="text/javascript">
 $(document).ready(function()
 {
-	CKEDITOR.replace('page_content');
+	$('#page_content').wysihtml5();
 
 	$('#tbl-section').DataTable({
 		searching: false,

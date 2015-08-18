@@ -6,11 +6,9 @@
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
-<!-- CKEditor -->
-<script type="text/javascript" src="{{ asset('/plugins/ckeditor/ckeditor.js') }}" ></script>
-<script type="text/javascript" src="{{ asset('/plugins/ckeditor/config.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/plugins/ckeditor/lang/en.js') }}"></script>
-<script type="text/javascript" src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
+<!-- ACE Editor -->
+<script type="text/javascript" src="{{ asset('/plugins/ace/src-min/ace.js') }}"></script>
+<!-- jQuery Data Table -->
 <script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <!-- Addon Scripts -->
 @yield('addon-script')

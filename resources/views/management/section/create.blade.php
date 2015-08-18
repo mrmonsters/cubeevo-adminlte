@@ -29,7 +29,7 @@ Description for section management
 					<h3 class="box-title">Section</h3>
 				</div>
 
-				<form method="POST" action="{{ url('manage/section/store') }}">
+				<form id="section-form" method="POST" action="{{ url('manage/section/store') }}">
 					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<div class="box-body">
 						<!--
@@ -78,13 +78,14 @@ Description for section management
 						</div>
 						<div class="form-group">
 							<label for="section_content" class="control-label">Content</label>
-							<textarea id="section_content" name="section_content" class="form-control" rows="8"></textarea>
+							<pre id="section_content" style="height: 375px;"></pre>
+							<input id="hidden_section_content" type="hidden" name="section_content" value="" />
 						</div>
 					</div>
 					<div class="box-footer clearfix">
 						<div class="pull-right">
-							<a href="{{ url('/manage/section/') }}" class="btn btn-default">Cancel</a>
-							<button type="submit" class="btn btn-primary">Create</button>
+							<a href="{{ url('/admin/manage/section/') }}" class="btn btn-default">Cancel</a>
+							<button id="btn-save" type="button" class="btn btn-primary">Create</button>
 						</div>
 					</div>
 				</form>
@@ -98,7 +99,16 @@ Description for section management
 <script type="text/javascript">
 $(document).ready(function()
 {
-	CKEDITOR.replace('section_content');
+	var editor = ace.edit("section_content");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/html");
+    editor.setShowPrintMargin(false);
+
+    $('#btn-save').click(function()
+    {
+    	$('#hidden_section_content').val(editor.getValue());
+    	$('#section-form').submit();
+    });
 });
 </script>
 @endsection

@@ -66,7 +66,7 @@ class SectionController extends Controller {
 			$section->section_title = $data['section_title'];
 			$section->section_desc = $data['section_desc'];
 			$section->section_locale = $data['section_locale'];
-			$section->section_content = htmlentities($data['section_content']);
+			$section->section_content = $data['section_content'];
 			$section->status = 2;
 			$section->save();
 
@@ -139,7 +139,7 @@ class SectionController extends Controller {
 		$section->section_title = $data['section_title'];
 		$section->section_desc = $data['section_desc'];
 		$section->section_locale = $data['section_locale'];
-		$section->section_content = htmlentities($data['section_content']);
+		$section->section_content = $data['section_content'];
 
 		if ($data['add_to_page'] == '1')
 		{
@@ -147,10 +147,10 @@ class SectionController extends Controller {
 			foreach ($data['page_id'] as $pageId)
 			{
 				$pageSection = PageSection::where('page_id', '=', $pageId)
-					->where('page_id', '=', $pageId)
+					->where('section_id', '=', $id)
 					->first();
 
-				if (!$pageSection->page_section_id)
+				if (!$pageSection->id)
 				{
 					$pSection = new PageSection;
 					$pSection->page_id = $pageId;
