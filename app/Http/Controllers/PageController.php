@@ -87,7 +87,7 @@ class PageController extends Controller {
 					foreach ($sectionIds as $id)
 					{
 						$pageSection = new PageSection;
-						$pageSection->page_id = $page->id;
+						$pageSection->page_id = $page->page_id;
 						$pageSection->section_id = $id;
 						$pageSection->status = 2;
 						$pageSection->save();

@@ -141,7 +141,7 @@ class SectionController extends Controller {
 		$section->section_locale = $data['section_locale'];
 		$section->section_content = $data['section_content'];
 
-		if ($data['add_to_page'] == '1')
+		if (isset($data['add_to_page']) && $data['add_to_page'] == '1')
 		{
 			// Save all selected pages
 			foreach ($data['page_id'] as $pageId)
@@ -159,7 +159,7 @@ class SectionController extends Controller {
 				}
 			}
 		}
-		else if ($data['add_to_page'] == '0')
+		else if (isset($data['add_to_page']) && $data['add_to_page'] == '0')
 		{
 			// De-activate all relevant records
 			$pageSections = PageSection::where('section_id', '=', $id)->get();

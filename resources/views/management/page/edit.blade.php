@@ -122,7 +122,16 @@ Description for static page management
 <script type="text/javascript">
 $(document).ready(function()
 {
-	$('#page_content').wysihtml5();
+	var cssSources = [
+		'{{ asset('css/bootstrap.min.css') }}',
+		'{{ asset('css/style.css') }}',
+		'{{ asset('css/jquery.fullPage.css') }}',
+		'{{ asset('css/custom.css') }}'
+	];
+
+	CKEDITOR.config.contentsCss = cssSources;
+	CKEDITOR.config.allowedContent = true;
+	CKEDITOR.replace('page_content');
 
 	$('#tbl-section').DataTable({
 		searching: false,
