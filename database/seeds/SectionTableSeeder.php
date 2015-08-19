@@ -7,6 +7,8 @@ class SectionTableSeeder extends Seeder
 {
 	public function run()
 	{
+		DB::table('sections')->delete();
+
 		$sections = array(
 			// Sections (Home)
 			array(
@@ -100,7 +102,7 @@ class SectionTableSeeder extends Seeder
 				'section_desc'    => 'Section 3 for home page.',
 				'section_content' => '<div class="section" id="section3">
 					<div class="col-sm-6 maincol-right">
-						<!--<img src="img/Images-41-2.png" width="100%">-->
+						<!--<img src="/img/Images-41-2.png" width="100%">-->
 					</div>
 					<div class="col-sm-6 maincol-left">
 						<div class="content-wrapper">
@@ -123,7 +125,7 @@ class SectionTableSeeder extends Seeder
 				'section_desc'    => 'Section 4 for home page.',
 				'section_content' => '<div class="section" id="section4">
 					<div class="col-sm-6 maincol-right">
-						<!--<img src="img/Images-41-2.png" width="100%">-->
+						<!--<img src="/img/Images-41-2.png" width="100%">-->
 					</div>
 					<div class="col-sm-6 maincol-left">
 						<div class="content-wrapper">
@@ -146,7 +148,7 @@ class SectionTableSeeder extends Seeder
 				'section_desc'    => 'Section 5 for home page.',
 				'section_content' => '<div class="section" id="section5">
 					<div class="col-sm-6 maincol-right">
-						<!--<img src="img/Images-41-2.png" width="100%">-->
+						<!--<img src="/img/Images-41-2.png" width="100%">-->
 					</div>
 					<div class="col-sm-6 maincol-left">
 						<div class="content-wrapper">
@@ -169,7 +171,7 @@ class SectionTableSeeder extends Seeder
 				'section_desc'    => 'Section 6 for home page.',
 				'section_content' => '<div class="section" id="section6">
 					<div class="col-sm-6 maincol-right">
-						<!--<img src="img/Images-41-2.png" width="100%">-->
+						<!--<img src="/img/Images-41-2.png" width="100%">-->
 					</div>
 					<div class="col-sm-6 maincol-left">
 						<div class="content-wrapper">
@@ -195,7 +197,7 @@ class SectionTableSeeder extends Seeder
 		        	<div class="contbox">
 		                <div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/Hairdepot_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/Hairdepot_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -214,7 +216,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.50"><img src="img/Credential Thumbnail/Greenology_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.50"><img src="/img/Credential Thumbnail/Greenology_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -233,7 +235,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -252,7 +254,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -271,7 +273,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/HairMilk_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/HairMilk_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -290,7 +292,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/Hairdepot_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/Hairdepot_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -309,7 +311,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/HairMilk_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/HairMilk_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -328,7 +330,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/Credential Thumbnail/PLT_Website_Thumbnail.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-12 hidden-text panel-title">
@@ -367,7 +369,7 @@ class SectionTableSeeder extends Seeder
 		        	<div class="contbox">
 		                <div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon1.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon1.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -389,7 +391,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.50"><img src="img/solutionIcon2.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.50"><img src="/img/solutionIcon2.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -411,7 +413,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon3.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon3.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -433,7 +435,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon4.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon4.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -455,7 +457,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon5.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon5.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -477,7 +479,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon6.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon6.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -499,7 +501,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox">
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon7.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon7.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -521,7 +523,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon8.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon8.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">
@@ -543,7 +545,7 @@ class SectionTableSeeder extends Seeder
 		            <div class="contbox"> 
 		            	<div class="greybox"></div>
 		                <ul class="scene">
-		                    <li class="layer" data-depth="0.30"><img src="img/solutionIcon9.png" width="100%"/></li>
+		                    <li class="layer" data-depth="0.30"><img src="/img/solutionIcon9.png" width="100%"/></li>
 		                </ul> 
 		                <div class="row panel-body overlap">
 		                    <p class="col-sm-4 panel-title">

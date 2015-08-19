@@ -3,10 +3,12 @@
 use Illuminate\Database\Seeder;
 use App\Page;
 
-class PageTableSeeder extends Seeder 
+class PageTableSeeder extends DatabaseSeeder 
 {
 	public function run()
 	{
+		DB::table('pages')->delete();
+
 		$pages = array(
 			// Home
 			array(
@@ -30,7 +32,7 @@ class PageTableSeeder extends Seeder
 			    	</div>
 			    	<div class="row about-txt " style="position:relative;"> 
 			    	 <div class="col-lg-12 mob-visible">
-			        	<div class="about-img3"><img src="img/Images-08.png"></div>
+			        	<div class="about-img3"><img src="/img/Images-08.png"></div>
 			        </div>
 			    	<div class="col-sm-8 col-sm-offset-2">
 			        	<div class="col-sm-6">
@@ -73,23 +75,23 @@ class PageTableSeeder extends Seeder
 			            	<div class="tagline text-center">"激活品牌，展现完美。"</div>
 			                <div class="sub-tagline text-center">创立方秉持"灵活"宗旨，为客户打造完美品牌。</div>
 			    		</div>
-			            <div class="about-img1 mob-hide"><img src="img/Images-17.png"></div>
+			            <div class="about-img1 mob-hide"><img src="/img/Images-17.png"></div>
 			        </div>
 			    	</div>
 			    
 			    	<div class="row about-369"> 
 			        <div class="col-sm-10 col-sm-offset-1 text-center">
 			            <div class="col-sm-4">
-			            	<div class="col-xs-6"><img src="img/Images-09.png"></div>
-			                <div class="col-xs-6 about-369img"><img src="img/Images-09-1.png"></div>
+			            	<div class="col-xs-6"><img src="/img/Images-09.png"></div>
+			                <div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png"></div>
 			            </div>
 			            <div class="col-sm-4">
-			            	<div class="col-xs-6"><img src="img/Images-10.png"></div>
-			                <div class="col-xs-6 about-369img"><img src="img/Transforming-Cube-2.gif"></div>
+			            	<div class="col-xs-6"><img src="/img/Images-10.png"></div>
+			                <div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-2.gif"></div>
 			            </div>
 			            <div class="col-sm-4">
-			            	<div class="col-xs-6"><img src="img/Images-11.png"></div>
-			                <div class="col-xs-6 about-369img"><img src="img/Images-11-1.png" ></div>
+			            	<div class="col-xs-6"><img src="/img/Images-11.png"></div>
+			                <div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png" ></div>
 			                <div class="col-xs-6 about-369txt">
 			                    <div class="col-xs-4 nopadding">
 			                        品牌形象策划<br>
@@ -119,7 +121,7 @@ class PageTableSeeder extends Seeder
 			        
 			        <div class="col-sm-10 col-sm-offset-1">
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -127,7 +129,7 @@ class PageTableSeeder extends Seeder
 			                </div>	
 			            </div>
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -135,7 +137,7 @@ class PageTableSeeder extends Seeder
 			                </div>	
 			            </div>
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -143,7 +145,7 @@ class PageTableSeeder extends Seeder
 			                </div>	
 			            </div>
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -151,7 +153,7 @@ class PageTableSeeder extends Seeder
 			                </div>	
 			            </div>
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -159,7 +161,7 @@ class PageTableSeeder extends Seeder
 			                </div>	
 			            </div>
 			            <div class="col-xs-3">
-			            	<div class="profilepic"><img src="img/Images-08.png"></div>
+			            	<div class="profilepic"><img src="/img/Images-08.png"></div>
 			                <div class="profilename">ALVIN LEE / 策划总监</div>
 			                <div class="profiledesc">
 			                <p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
@@ -243,69 +245,70 @@ class PageTableSeeder extends Seeder
 				'page_desc'    => 'Process page.',
 				'page_slug'    => '/process',
 				'page_content' => '<div class="row" style="position:relative;"> 
-			        <div class="col-sm-10 col-sm-offset-1 process-flow">
-			            <h1 class="txtorange"><span></span>合作流程次序</h1>
-			            <div class="flow">
-			                <div class="left"><div class="box">
-			                    <span>01</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>02</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="left"><div class="box">
-			                    <span>03</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>04</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="left"><div class="box">
-			                    <span>05</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>06</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="left"><div class="box">
-			                    <span>07</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>08</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="left"><div class="box">
-			                    <span>09</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>10</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="left"><div class="box">
-			                    <span>11</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
-			                <div class="right"><div class="box">
-			                    <span>12</span>
-			                    请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
-			                </div></div>
+		        	<div class="col-sm-10 col-sm-offset-1 process-flow">
+		            	<h1 class="txtorange"><span></span>合作流程次序</h1>
+		            	<div class="flow">
+		                	<div class="left"><div class="box">
+		                    	<span>01</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>02</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="left"><div class="box">
+		                    	<span>03</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>04</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="left"><div class="box">
+		                    	<span>05</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>06</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="left"><div class="box">
+		                    	<span>07</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>08</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="left"><div class="box">
+		                    	<span>09</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>10</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="left"><div class="box">
+		                    	<span>11</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+		                    <div class="right"><div class="box">
+		                    	<span>12</span>
+		                    	请现在形立方的店，哦不，是形立方的网页，看看形立方的作品，服务以及评语。
+		                    </div></div>
+
+		                </div>
+		            </div>
+		        	</div>
+		        
+			        <div class="row"> 
+			            <div class="col-sm-8 col-sm-offset-2 mob-hide">
+			                <img src="/img/Images-37.png" width="100%">
 			            </div>
-			        </div>
-			    	</div>
-			    	
-			   		<div class="row"> 
-			        <div class="col-sm-8 col-sm-offset-2 mob-hide">
-			            <img src="img/Images-37.png" width="100%">
-			        </div>
-			        <div class="col-sm-8 col-sm-offset-2 mob-visible">
-			            <img src="img/Images-37-mob.png" width="100%">
-			        </div>
-			    	</div>',
+			            <div class="col-sm-8 col-sm-offset-2 mob-visible">
+			                <img src="/img/Images-37-mob.png" width="100%">
+			            </div>
+			        </div>',
 				'page_locale'  => 'zh-cn',
 				'status'       => '2'
 			),

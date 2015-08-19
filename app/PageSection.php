@@ -6,6 +6,7 @@ class PageSection extends Model {
 
 	//
 	protected $table = 'page_sections';
+	protected $fillable = array('page_id', 'section_id', 'status');
 
 	public function page()
 	{

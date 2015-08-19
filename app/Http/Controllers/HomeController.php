@@ -38,12 +38,24 @@ class HomeController extends Controller {
 
 	public function getAboutUs()
 	{
-		return view('frontend\aboutus');
+		$page = Page::where('page_slug', '=', '/about-us')->first();
+
+		return view('frontend\aboutus')->with('page', $page);
 	}
 
 	public function getCredential()
 	{
-		return view('frontend\credential');
+		$sections = array();
+		$page = Page::where('page_slug', '=', '/credential')->first();
+		$secs = $page->pageSections()->get();
+
+		foreach ($secs as $sec)
+		{
+			$item = $sec->section()->first();
+			$sections[] = $item;
+		}
+
+		return view('frontend\credential')->with('sections', $sections);
 	}
 
 	public function getCredentialContent()
@@ -53,7 +65,17 @@ class HomeController extends Controller {
 
 	public function getSolution()
 	{
-		return view('frontend\solution');
+		$sections = array();
+		$page = Page::where('page_slug', '=', '/solution')->first();
+		$secs = $page->pageSections()->get();
+
+		foreach ($secs as $sec)
+		{
+			$item = $sec->section()->first();
+			$sections[] = $item;
+		}
+
+		return view('frontend\solution')->with('sections', $sections);
 	}
 
 	public function getResearch()
@@ -63,7 +85,9 @@ class HomeController extends Controller {
 
 	public function getProcess()
 	{
-		return view('frontend\process');
+		$page = Page::where('page_slug', '=', '/process')->first();
+
+		return view('frontend\process')->with('page', $page);
 	}
 
 	public function getContactUs()
