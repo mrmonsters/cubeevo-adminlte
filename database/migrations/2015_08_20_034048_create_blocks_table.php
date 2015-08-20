@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilesTable extends Migration {
+class CreateBlocksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,16 @@ class CreateFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('files');
+		Schema::dropIfExists('blocks');
 
-		Schema::create('files', function(Blueprint $table)
+		Schema::create('blocks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('type');
-			$table->string('dir');
-			$table->integer('size');
+			$table->string('title');
+			$table->string('desc');
+			$table->text('content');
+			$table->string('locale')
+				->default('en-us');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -37,7 +38,7 @@ class CreateFilesTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('files');
+		Schema::drop('blocks');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

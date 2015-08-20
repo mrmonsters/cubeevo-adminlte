@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFilesTable extends Migration {
+class CreatePageBlocksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,21 @@ class CreateFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('files');
+		Schema::dropIfExists('page_blocks');
 
-		Schema::create('files', function(Blueprint $table)
+		Schema::create('page_blocks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('type');
-			$table->string('dir');
-			$table->integer('size');
+			$table->integer('page_id')
+				->unsigned();
+			$table->foreign('page_id')
+				->references('id')
+				->on('pages');
+			$table->integer('block_id')
+				->unsigned();
+			$table->foreign('block_id')
+				->references('id')
+				->on('blocks');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -37,7 +43,7 @@ class CreateFilesTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('files');
+		Schema::drop('page_blocks');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

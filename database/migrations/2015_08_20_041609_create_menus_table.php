@@ -16,10 +16,10 @@ class CreateMenusTable extends Migration {
 
 		Schema::create('menus', function(Blueprint $table)
 		{
-			$table->increments('menu_id');
-			$table->string('menu_name');
-			$table->string('menu_desc');
-			$table->integer('parent_menu_id')
+			$table->increments('id');
+			$table->string('name');
+			$table->string('desc');
+			$table->integer('parent_id')
 				->nullable();
 			$table->timestamps('created_at');
 			$table->integer('status')
@@ -37,7 +37,9 @@ class CreateMenusTable extends Migration {
 	 */
 	public function down()
 	{
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Schema::drop('menus');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }

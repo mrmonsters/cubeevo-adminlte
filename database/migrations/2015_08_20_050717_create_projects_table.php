@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSectionsTable extends Migration {
+class CreateProjectsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,21 @@ class CreateSectionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('sections');
+		Schema::dropIfExists('projects');
 
-		Schema::create('sections', function(Blueprint $table)
+		Schema::create('projects', function(Blueprint $table)
 		{
-			$table->increments('section_id');
-			$table->string('section_title');
-			$table->string('section_desc');
-			$table->text('section_content');
-			$table->string('section_locale')
-				->default('en_US');
+			$table->increments('id');
+			$table->string('name');
+			$table->string('desc');
+			$table->string('client');
+			$table->integer('sort_order');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
 			$table->boolean('deleted')
 				->default(false);
+			
 		});
 	}
 
@@ -38,7 +38,7 @@ class CreateSectionsTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('sections');
+		Schema::drop('projects');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

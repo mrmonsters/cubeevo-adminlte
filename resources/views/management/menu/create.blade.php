@@ -32,28 +32,28 @@ Description for menu management
 					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<div class="box-body">
 						<div class="form-group">
-							<label for="menu_name" class="control-label col-md-2">Name</label>
+							<label for="name" class="control-label col-md-2">Name</label>
 							<div class="col-md-10">
-								<input id="menu_name" name="menu_name" type="text" class="form-control" />
+								<input id="name" name="name" type="text" class="form-control" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="menu_desc" class="control-label col-md-2">Description</label>
+							<label for="desc" class="control-label col-md-2">Description</label>
 							<div class="col-md-10">
-								<textarea id="menu_desc" name="menu_desc" class="form-control" rows="5"></textarea>
+								<textarea id="desc" name="desc" class="form-control" rows="5"></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="parent_menu_id" class="control-label col-md-2">Parent Menu</label>
+							<label for="parent_id" class="control-label col-md-2">Parent Menu</label>
 							<div class="col-md-10">
 								@if (isset($menus) && !$menus->isEmpty())
-								<select id="parent_menu_id" name="parent_menu_id" class="form-control">
+								<select id="parent_id" name="parent_id" class="form-control">
 									<option value="">None</option>
 								@foreach ($menus as $menu)
-									<option value="{{ $menu->menu_id }}">{{ $menu->menu_name }}</option>
+									<option value="{{ $menu->id }}">{{ $menu->name }}</option>
 								@endforeach
 								@else
-								<select id="parent_menu_id" name="parent_menu_id" class="form-control" disabled>
+								<select id="parent_id" name="parent_id" class="form-control" disabled>
 								@endif
 								</select>
 							</div>

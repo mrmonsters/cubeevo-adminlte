@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -6,10 +6,10 @@ class Menu extends Model {
 
 	//
 	protected $table = 'menus';
-	protected $primaryKey = 'menu_id';
+	protected $primaryKey = 'id';
 
 	public function pageMenus()
 	{
-		return $this->hasMany('App\PageMenu', 'menu_id', 'menu_id');
+		return $this->hasMany('App\PageMenu', 'menu_id', 'id');
 	}
 }

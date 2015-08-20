@@ -9,7 +9,7 @@ use App\Section;
 use App\Page;
 use App\PageSection;
 
-class SectionController extends Controller {
+class BlockController extends Controller {
 
 	/**
 	 * Create a new controller instance.

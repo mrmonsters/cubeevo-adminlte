@@ -25,56 +25,45 @@ Description for static page management
 	<div class="col-md-8">
 		<div class="box box-primary">
 			<div class="box-header with-border">
-				<h3 class="box-title">Edit Page #{{ $page->page_id }}</h3>
+				<h3 class="box-title">Edit Page #{{ $page->id }}</h3>
 			</div>
-			<form method="POST" action="{{ url('manage/page/update/' . $page->page_id) }}">
+			<form method="POST" action="{{ url('manage/page/update/' . $page->id) }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
-				<input id="section_id" name="section_id" type="hidden" value="{{ $sectionIds }}" />
+				<input id="id" name="id" type="hidden" value="{{ $blockIds }}" />
 				<div class="box-body">
 					<div class="form-group">
-						<label for="page_title" class="control-label">Title</label>
-						<input id="page_title" name="page_title" type="text" class="form-control" value="{{ $page->page_title }}" />
+						<label for="title" class="control-label">Title</label>
+						<input id="title" name="title" type="text" class="form-control" value="{{ $page->title }}" />
 					</div>
 					<div class="form-group">
-						<label for="page_desc" class="control-label">Description</label>
-						<input id="page_desc" name ="page_desc" type="text" class="form-control" value="{{ $page->page_desc }}" />
+						<label for="desc" class="control-label">Description</label>
+						<input id="desc" name ="desc" type="text" class="form-control" value="{{ $page->desc }}" />
 					</div>
 					<div class="form-group">
-						<label for="page_slug" class="control-label">Page Link</label>
-						<input id="page_slug" name ="page_slug" type="text" class="form-control" value="{{ $page->page_slug }}" />
-					</div>
-					<div class="form-group">
-						<label for="page_locale" class="control-label">Locale / Language</label>
-						<select id="page_locale" name="page_locale" class="form-control">
-							<option value="en-us" {{ ($page->page_locale == 'en-us') ? 'selected' : '' }}>English</option>
-							<option value="zh-cn" {{ ($page->page_locale == 'zh-cn') ? 'selected' : '' }}>Chinese</option>
-						</select>
-					</div>
-					<div class="form-group">
-						<label for="page_menu" class="control-label">Menu / Type</label>
+						<label for="menu" class="control-label">Menu / Type</label>
 						@if (isset($pMenus) && !$pMenus->isEmpty())
-						<select multiple id="page_menu" name="page_menu[]" class="form-control">
+						<select multiple id="menu" name="menu[]" class="form-control">
 						@foreach ($pMenus as $menu)
-							<optgroup label="{{ $menu->menu_name }}">
-								<option value="{{ $menu->menu_id }}" {{ (in_array($menu->menu_id, $pageMenuIds)) ? 'selected' : '' }}>{{ $menu->menu_name }}</option>
+							<optgroup label="{{ $menu->name }}">
+								<option value="{{ $menu->id }}" {{ (in_array($menu->id, $pageMenuIds)) ? 'selected' : '' }}>{{ $menu->name }}</option>
 								@if (isset($cMenus) && !$cMenus->isEmpty())
 								@foreach ($cMenus as $cMenu)
-								@if ($cMenu->parent_menu_id == $menu->menu_id)
-								<option value="{{ $cMenu->menu_id }}" {{ (in_array($cMenu->menu_id, $pageMenuIds)) ? 'selected' : '' }}>{{ $cMenu->menu_name }}</option>
+								@if ($cMenu->parent_id == $menu->id)
+								<option value="{{ $cMenu->id }}" {{ (in_array($cMenu->id, $pageMenuIds)) ? 'selected' : '' }}>{{ $cMenu->name }}</option>
 								@endif
 								@endforeach
 								@endif
 							</optgroup>
 						@endforeach
 						@else
-						<select id="page_menu" name="page_menu" class="form-control" disabled>
+						<select id="menu" name="menu" class="form-control" disabled>
 						@endif 
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="page_content" class="control-label">Content</label>
-						<textarea id="page_content" name="page_content" class="form-control" rows="8">{{ $page->page_content }}</textarea>
+						<label for="content" class="control-label">Content</label>
+						<textarea id="content" name="content" class="form-control" rows="8">{{ $page->content }}</textarea>
 					</div>
 				</div>
 				<div class="box-footer clearfix">
@@ -89,23 +78,23 @@ Description for static page management
 	<div class="col-md-4">
 		<div class="box box-primary">
 			<div class="box-header with-border">
-				<h3 class="box-title">Add From Sections</h3>
+				<h3 class="box-title">Add Blocks</h3>
 			</div>
 			<div class="box-body">
-				<table id="tbl-section" class="table">
+				<table id="tbl-block" class="table">
 					<thead>
 						<th width="80%">Name</th>
 						<th>Action</th>
 					</thead>
 					<tbody>
-					@if (isset($sections) && !$sections->isEmpty())
-					@foreach ($sections as $section)
+					@if (isset($blocks) && !$blocks->isEmpty())
+					@foreach ($blocks as $block)
 						<tr>
-							<td>{{ $section->section_title }}</td>
-							@if (in_array($section->section_id, $pageSectionIds))
-							<td><button type="button" class="btn btn-danger" onclick="removeSection('{{ $section->section_id }}', this)">Remove</button></td>
+							<td>{{ $block->title }}</td>
+							@if (in_array($block->id, $pageBlockIds))
+							<td><button type="button" class="btn btn-danger" onclick="removeBlock('{{ $block->id }}', this)">Remove</button></td>
 							@else
-							<td><button type="button" class="btn btn-primary" onclick="addSection('{{ $section->section_id }}', this)">Add</button></td>
+							<td><button type="button" class="btn btn-primary" onclick="addBlock('{{ $block->id }}', this)">Add</button></td>
 							@endif
 						</tr>
 					@endforeach
@@ -131,32 +120,32 @@ $(document).ready(function()
 
 	CKEDITOR.config.contentsCss = cssSources;
 	CKEDITOR.config.allowedContent = true;
-	CKEDITOR.replace('page_content');
+	CKEDITOR.replace('content');
 
-	$('#tbl-section').DataTable({
+	$('#tbl-block').DataTable({
 		searching: false,
 		info: false
 	});
 });
 
-function addSection(sectionId, btn)
+function addBlock(blockId, btn)
 {
-	var oriSecIds = $('#section_id').val();
-	var secIds = (oriSecIds != '') ? oriSecIds + ", " + sectionId : sectionId;
-	$('#section_id').val(secIds);
+	var oriBlockIds = $('#id').val();
+	var blockIds = (oriBlockIds != '') ? oriBlockIds + ", " + blockId : blockId;
+	$('#id').val(blockIds);
 
-	var newHtml = '<button type="button" class="btn btn-danger" onclick="removeSection('+ sectionId +', this)">Remove</button>';
+	var newHtml = '<button type="button" class="btn btn-danger" onclick="removeBlock('+ blockId +', this)">Remove</button>';
 	$(btn).replaceWith(newHtml);
 }
 
-function removeSection(sectionId, btn)
+function removeBlock(blockId, btn)
 {
-	var secIds = $('#section_id').val().replace(sectionId, "");
-	var secIds = secIds.replace(sectionId, "");
-	var secIds = secIds.replace(sectionId + ", ", "");
-	$('#section_id').val(secIds);
+	var blockIds = $('#id').val().replace(blockId, "");
+	var blockIds = blockIds.replace(blockId, "");
+	var blockIds = blockIds.replace(blockId + ", ", "");
+	$('#id').val(blockIds);
 
-	var newHtml = '<button type="button" class="btn btn-sm btn-primary" onclick="addSection('+ sectionId +', this)">Add</button>';
+	var newHtml = '<button type="button" class="btn btn-sm btn-primary" onclick="addBlock('+ blockId +', this)">Add</button>';
 	$(btn).replaceWith(newHtml);
 }
 </script>

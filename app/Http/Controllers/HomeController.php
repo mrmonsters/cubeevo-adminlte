@@ -1,7 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use App\Page;
-use App\Section;
+use Session;
+use App\Models\Page;
+use App\Models\PageContent;
 
 class HomeController extends Controller {
 
@@ -15,6 +16,14 @@ class HomeController extends Controller {
 	| controller as you wish. It is just here to get your app started!
 	|
 	*/
+	public function __construct()
+	{
+		// Set default language
+		if (Session::get('locale') == null)
+		{
+			Session::set('locale', 'zh-cn');
+		}
+	}
 
 	/**
 	 * Show the application dashboard to the user.
@@ -24,16 +33,12 @@ class HomeController extends Controller {
 	public function index()
 	{
 		$sections = array();
-		$page = Page::where('page_slug', '=', '/')->first();
-		$secs = $page->pageSections()->get();
+		$page     = Page::where('slug', '=', '/')->first();
+		$content  = $page->pageContents()
+			->where('locale', Session::get('locale'))
+			->first();
 
-		foreach ($secs as $sec)
-		{
-			$item = $sec->section()->first();
-			$sections[] = $item;
-		}
-
-		return view('frontend\index')->with('sections', $sections);
+		return view('frontend\index')->with('content', $content);
 	}
 
 	public function getAboutUs()

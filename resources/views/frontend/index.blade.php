@@ -2,10 +2,8 @@
 
 @section('frontend-content') 
 <div id="fullpage">
-    @if (isset($sections) && is_array($sections) && !empty($sections))
-	    @foreach ($sections as $section)
-	    	<?php echo html_entity_decode($section->section_content); ?>
-	    @endforeach
+    @if (isset($content))
+    	<?php echo html_entity_decode($content->content); ?>
     @endif
 </div>   
 

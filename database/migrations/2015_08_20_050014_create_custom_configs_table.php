@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePageSectionsTable extends Migration {
+class CreateCustomConfigsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,19 +12,15 @@ class CreatePageSectionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('page_sections');
+		Schema::dropIfExists('custom_configs');
 
-		Schema::create('page_sections', function(Blueprint $table)
+		Schema::create('custom_configs', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('page_id')
-				->unsigned();
-			$table->foreign('page_id')
-				->references('page_id')
-				->on('pages');
-			$table->integer('section_id')
-				->references('section_id')
-				->on('sections');
+			$table->string('name');
+			$table->string('desc');
+			$table->string('value');
+			$table->string('type');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -41,7 +37,7 @@ class CreatePageSectionsTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('page_sections');
+		Schema::drop('custom_configs');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

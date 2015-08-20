@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesTable extends Migration {
+class CreatePageMenusTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,18 +12,21 @@ class CreatePagesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('pages');
+		Schema::dropIfExists('page_menus');
 
-		Schema::create('pages', function(Blueprint $table)
+		Schema::create('page_menus', function(Blueprint $table)
 		{
-			$table->increments('page_id');
-			$table->string('page_title');
-			$table->string('page_desc');
-			$table->text('page_content');
-			$table->string('page_slug')
-				->unique();
-			$table->string('page_locale')
-				->default('en_US');
+			$table->increments('id');
+			$table->integer('page_id')
+				->unsigned();
+			$table->foreign('page_id')
+				->references('id')
+				->on('pages');
+			$table->integer('menu_id')
+				->unsigned();
+			$table->foreign('menu_id')
+				->references('id')
+				->on('menus');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -40,7 +43,7 @@ class CreatePagesTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('pages');
+		Schema::drop('page_menus');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

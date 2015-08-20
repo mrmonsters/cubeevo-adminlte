@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,11 +9,11 @@ class PageMenu extends Model {
 
 	public function page()
 	{
-		return $this->belongsTo('App\Page', 'page_id', 'page_id');
+		return $this->belongsTo('App\Models\Page', 'id', 'page_id');
 	}
 
 	public function menu()
 	{
-		return $this->belongsTo('App\Menu', 'menu_id', 'menu_id');
+		return $this->belongsTo('App\Models\Menu', 'id', 'menu_id');
 	}
 }

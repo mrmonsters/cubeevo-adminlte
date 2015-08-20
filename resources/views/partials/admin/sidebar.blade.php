@@ -29,42 +29,49 @@
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
-            <li class="link {{ (Request::is('admin')) ? 'active' : '' }}">
-                <a href="{{ url('admin') }}">
-                    <i class='fa fa-link'></i> <span>Home</span>
+            <li class="treeview">
+                <a href="#">    
+                    <i class='fa fa-link'></i> 
+                    <span>Static Content</span> 
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('admin/manage/page') }}">Page</a></li>
+                    <li><a href="{{ url('admin/manage/block') }}">Block</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">    
+                    <i class='fa fa-link'></i> 
+                    <span>Credential</span> 
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('admin/manage/category') }}">Category</a></li>
+                    <li><a href="{{ url('admin/manage/project') }}">Project</a></li>
+                </ul>
+            </li>
+            <li class="{{ (Request::is('admin/manage/solution') || Request::is('admin/manage/solution/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/solution') }}">
+                    <i class='fa fa-link'></i> <span>Solution</span></span>
                 </a>
             </li>
-            <li class="header">MANAGEMENT</li>
-            <!-- Optionally, you can add icons to the links -->
-            <li class="{{ (Request::is('admin/manage/page') || Request::is('admin/manage/page/*')) ? 'active' : '' }}">
-                <a href="{{ url('admin/manage/page') }}">
-                    <i class='fa fa-link'></i> <span>Static Page</span></span>
+            <li class="treeview">
+                <a href="#">    
+                    <i class='fa fa-link'></i> 
+                    <span>Setting</span> 
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
-            </li>
-            <li class="{{ (Request::is('admin/manage/section') || Request::is('admin/manage/section/*')) ? 'active' : '' }}">
-                <a href="{{ url('admin/manage/section') }}">
-                    <i class='fa fa-link'></i> <span>Section</span></span>
-                </a>
-            </li>
-            <li class="{{ (Request::is('admin/manage/menu') || Request::is('admin/manage/menu/*')) ? 'active' : '' }}">
-                <a href="{{ url('admin/manage/menu') }}">
-                    <i class='fa fa-list'></i> <span>Menu</span></span>
-                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('admin/manage/setting/site') }}">Site</a></li>
+                    <li><a href="{{ url('admin/manage/setting/user') }}">User</a></li>
+                </ul>
             </li>
             <li class="{{ (Request::is('admin/manage/file') || Request::is('admin/manage/file/*')) ? 'active' : '' }}">
                 <a href="{{ url('admin/manage/file') }}">
                     <i class='fa fa-file'></i> <span>File</span></span>
                 </a>
             </li>
-            <!--
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
-                <ul class="treeview-menu">
-                    <li><a href="#">Link in level 2</a></li>
-                    <li><a href="#">Link in level 2</a></li>
-                </ul>
-            </li>
-            -->
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

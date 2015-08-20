@@ -34,7 +34,6 @@ Description for static page management
 						<th width="5%">ID</th>
 						<th width="15%">Title</th>
 						<th width="30%">Description</th>
-						<th width="10%">Locale</th>
 						<th width="10%">Created At</th>
 						<th width="10%">Updated At</th>
 						<th width="5%">Status</th>
@@ -44,10 +43,9 @@ Description for static page management
 						@if (isset($pages) && !$pages->isEmpty())
 						@foreach ($pages as $page)
 						<tr>
-							<td>{{ $page->page_id }}</td>
-							<td>{{ $page->page_title }}</td>
-							<td>{{ $page->page_desc }}</td>
-							<td>{{ $page->page_locale }}</td>
+							<td>{{ $page->id }}</td>
+							<td>{{ $page->title }}</td>
+							<td>{{ $page->desc }}</td>
 							<td>{{ $page->created_at }}</td>
 							<td>{{ $page->updated_at }}</td>
 							<td>
@@ -60,8 +58,8 @@ Description for static page management
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/page/edit/' . $page->page_id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/page/destroy/' . $page->page_id) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/page/edit/' . $page->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/page/destroy/' . $page->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

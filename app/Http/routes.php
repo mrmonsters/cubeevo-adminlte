@@ -22,19 +22,19 @@ Route::get('/contact-us', 'HomeController@getContactUs');
 
 Route::get('admin', 'AdminController@index');
 
-// Static page routes...
+// page routes...
 Route::get('admin/manage/page', 'PageController@index');
 Route::get('admin/manage/page/create', 'PageController@create');
 Route::get('admin/manage/page/edit/{page_id}', 'PageController@edit');
 Route::put('manage/page/update/{page_id}', 'PageController@update');
 Route::post('manage/page/store', 'PageController@store');
 
-// Section routes...
-Route::get('admin/manage/section', 'SectionController@index');
-Route::get('admin/manage/section/create', 'SectionController@create');
-Route::get('admin/manage/section/edit/{section_id}', 'SectionController@edit');
-Route::put('manage/section/update/{section_id}', 'SectionController@update');
-Route::post('manage/section/store', 'SectionController@store');
+// Block routes...
+Route::get('admin/manage/block', 'BlockController@index');
+Route::get('admin/manage/block/create', 'BlockController@create');
+Route::get('admin/manage/block/edit/{block_id}', 'BlockController@edit');
+Route::put('manage/block/update/{block_id}', 'BlockController@update');
+Route::post('manage/block/store', 'BlockController@store');
 
 // Menu routes
 Route::get('admin/manage/menu', 'MenuController@index');
@@ -49,6 +49,27 @@ Route::get('admin/manage/file/create', 'FileController@create');
 Route::get('admin/manage/file/edit/{file_id}', 'FileController@edit');
 Route::put('manage/file/update/{file_id}', 'FileController@update');
 Route::post('manage/file/store', 'FileController@store');
+
+// Category routes...
+Route::get('admin/manage/category', 'CategoryController@index');
+Route::get('admin/manage/category/create', 'CategoryController@create');
+Route::get('admin/manage/category/edit/{category_id}', 'CategoryController@edit');
+Route::put('manage/category/update/{category_id}', 'CategoryController@update');
+Route::post('manage/category/store', 'CategoryController@store');
+
+// Solution routes...
+Route::get('admin/manage/solution', 'SolutionController@index');
+Route::get('admin/manage/solution/create', 'SolutionController@create');
+Route::get('admin/manage/solution/edit/{block_id}', 'SolutionController@edit');
+Route::put('manage/solution/update/{block_id}', 'SolutionController@update');
+Route::post('manage/solution/store', 'SolutionController@store');
+
+// Setting routes...
+Route::get('admin/manage/setting', 'SettingController@index');
+Route::get('admin/manage/setting/create', 'SettingController@create');
+Route::get('admin/manage/setting/edit/{setting_id}', 'SettingController@edit');
+Route::put('manage/setting/update/{setting_id}', 'SettingController@update');
+Route::post('manage/setting/store', 'SettingController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

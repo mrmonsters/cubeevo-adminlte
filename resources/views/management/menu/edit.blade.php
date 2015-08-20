@@ -26,39 +26,39 @@ Description for menu management
 		<div class="col-md-10 col-offset-md-1">
 			<div class="box box-primary">
 				<div class="box-header with-border">
-					<h3 class="box-title">Edit Menu #{{ $menu->menu_id }}</h3>
+					<h3 class="box-title">Edit Menu #{{ $menu->id }}</h3>
 				</div>
-				<form method="POST" action="{{ url('manage/menu/update/' . $menu->menu_id) }}" class="form-horizontal">
+				<form method="POST" action="{{ url('manage/menu/update/' . $menu->id) }}" class="form-horizontal">
 					<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 					<input name="_method" type="hidden" value="PUT" />
 					<div class="box-body">
 						<div class="form-group">
-							<label for="menu_name" class="control-label col-md-2">Name</label>
+							<label for="name" class="control-label col-md-2">Name</label>
 							<div class="col-md-10">
-								<input id="menu_name" name="menu_name" type="text" class="form-control" value="{{ $menu->menu_name }}" />
+								<input id="name" name="name" type="text" class="form-control" value="{{ $menu->name }}" />
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="menu_desc" class="control-label col-md-2">Description</label>
+							<label for="desc" class="control-label col-md-2">Description</label>
 							<div class="col-md-10">
-								<textarea id="menu_desc" name="menu_desc" class="form-control" rows="5">{{ $menu->menu_desc }}</textarea>
+								<textarea id="desc" name="desc" class="form-control" rows="5">{{ $menu->desc }}</textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="parent_menu_id" class="control-label col-md-2">Parent Menu</label>
+							<label for="parent_id" class="control-label col-md-2">Parent Menu</label>
 							<div class="col-md-10">
 								@if (isset($menus) && !$menus->isEmpty())
-								<select id="parent_menu_id" name="parent_menu_id" class="form-control">
+								<select id="parent_id" name="parent_id" class="form-control">
 									<option value="">None</option>
 									@foreach ($menus as $item)
-									@if (isset($menu->parent_menu_id) && $item->menu_id == $menu->parent_menu_id)
-									<option value="{{ $item->menu_id }}" selected="true">{{ $item->menu_name }}</option>
+									@if (isset($menu->parent_id) && $item->id == $menu->parent_id)
+									<option value="{{ $item->id }}" selected="true">{{ $item->name }}</option>
 									@else
-									<option value="{{ $item->menu_id }}">{{ $item->menu_name }}</option>
+									<option value="{{ $item->id }}">{{ $item->name }}</option>
 									@endif
 									@endforeach
 								@else
-								<select id="parent_menu_id" name="parent_menu_id" class="form-control" disabled>
+								<select id="parent_id" name="parent_id" class="form-control" disabled>
 								@endif
 								</select>
 							</div>
