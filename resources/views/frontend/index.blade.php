@@ -2,7 +2,7 @@
 
 @section('frontend-content') 
 <div id="fullpage">
-    @if (isset($content))
+    @if (isset($content) && isset($content->content))
     	<?php echo html_entity_decode($content->content); ?>
     @endif
 </div>   

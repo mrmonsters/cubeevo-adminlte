@@ -3,6 +3,8 @@
 use Session;
 use App\Models\Page;
 use App\Models\PageContent;
+use App\Models\Category;
+use App\Models\Files;
 
 class HomeController extends Controller {
 
@@ -32,35 +34,30 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$sections = array();
 		$page     = Page::where('slug', '=', '/')->first();
 		$content  = $page->pageContents()
 			->where('locale', Session::get('locale'))
 			->first();
 
-		return view('frontend\index')->with('content', $content);
+		return view('frontend.index')->with('content', $content);
 	}
 
 	public function getAboutUs()
 	{
-		$page = Page::where('page_slug', '=', '/about-us')->first();
+		$page = Page::where('slug', '=', '/about-us')->first();
+		$content = $page->pageContents()
+			->where('locale', Session::get('locale'))
+			->first();
 
-		return view('frontend\aboutus')->with('page', $page);
+		return view('frontend.aboutus')->with('content', $content);
 	}
 
 	public function getCredential()
 	{
-		$sections = array();
-		$page = Page::where('page_slug', '=', '/credential')->first();
-		$secs = $page->pageSections()->get();
+		$categories = Category::where('status', '=', '2')->get()
+			->sortBy('sort_order');
 
-		foreach ($secs as $sec)
-		{
-			$item = $sec->section()->first();
-			$sections[] = $item;
-		}
-
-		return view('frontend\credential')->with('sections', $sections);
+		return view('frontend\credential')->with('categories', $categories);
 	}
 
 	public function getCredentialContent()
@@ -90,9 +87,12 @@ class HomeController extends Controller {
 
 	public function getProcess()
 	{
-		$page = Page::where('page_slug', '=', '/process')->first();
+		$page = Page::where('slug', '=', '/process')->first();
+		$content = $page->pageContents()
+			->where('locale', Session::get('locale'))
+			->first();
 
-		return view('frontend\process')->with('page', $page);
+		return view('frontend.process')->with('content', $content);
 	}
 
 	public function getContactUs()

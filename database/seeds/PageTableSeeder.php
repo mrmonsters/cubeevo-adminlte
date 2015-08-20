@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Models\Page;
 
-class PageTableSeeder extends DatabaseSeeder 
+class PageTableSeeder extends Seeder 
 {
 	public function run()
 	{
@@ -15,8 +15,21 @@ class PageTableSeeder extends DatabaseSeeder
 				'title'   => 'Home',
 				'desc'    => 'Home page.',
 				'slug'    => '/',
-				'content' => '',
-				'status'       => '2'
+				'status'  => '2'
+			),
+			// About Us
+			array(
+				'title'   => 'About Us',
+				'desc'    => 'About us page.',
+				'slug'    => '/about-us',
+				'status'  => '2'
+			),
+			// Process
+			array(
+				'title'   => 'Process',
+				'desc'    => 'Process page.',
+				'slug'    => '/process',
+				'status'  => '2'
 			),
 		);
 

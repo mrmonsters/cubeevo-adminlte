@@ -17,15 +17,21 @@ class CreateCategoriesTable extends Migration {
 		Schema::create('categories', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('locale');
 			$table->string('name');
 			$table->string('desc');
 			$table->integer('sort_order');
+			$table->integer('file_id')
+				->unsigned()
+				->nullable(true);
+			$table->foreign('file_id')
+				->references('id')
+				->on('files');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
 			$table->boolean('deleted')
 				->default(false);
-			
 		});
 	}
 

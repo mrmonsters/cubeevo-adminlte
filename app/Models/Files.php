@@ -6,5 +6,10 @@ class Files extends Model {
 
 	//
 	protected $table = 'files';
-	protected $primaryKey = 'file_id';
+	protected $fillable = array('name', 'type', 'dir', 'size', 'status');
+
+	public function categories()
+	{
+		return $this->belongsToMany('App\Models\Category');
+	}
 }
