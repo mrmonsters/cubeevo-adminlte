@@ -13,6 +13,8 @@
 <script type="text/javascript" src="{{ asset('/plugins/ckeditor/styles.js') }}"></script>
 <!-- jQuery Data Table -->
 <script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<!-- Bootstrap Color Picker -->
+<script type="text/javascript" src="{{ asset('/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
 <!-- Addon Scripts -->
 @yield('addon-script')
 

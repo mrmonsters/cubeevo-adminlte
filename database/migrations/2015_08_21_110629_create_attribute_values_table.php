@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolutionFilesTable extends Migration {
+class CreateAttributeValuesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,29 @@ class CreateSolutionFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('solution_files');
+		//
+		Schema::dropIfExists('attribute_values');
 
-		Schema::create('solution_files', function(Blueprint $table)
+		Schema::create('attribute_values', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('solution_id')
+			$table->integer('attribute_id')
 				->unsigned();
-			$table->foreign('solution_id')
+			$table->foreign('attribute_id')
 				->references('id')
-				->on('solutions');
-			$table->integer('file_id')
+				->on('attributes');
+			$table->integer('entity_instance_id')
 				->unsigned();
-			$table->foreign('file_id')
+			$table->foreign('entity_instance_id')
 				->references('id')
-				->on('files');
+				->on('entity_instances');
+			$table->integer('locale_id')
+				->unsigned()
+				->nullable(true);
+			$table->foreign('locale_id')
+				->references('id')
+				->on('locales');
+			$table->string('value');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -42,8 +50,9 @@ class CreateSolutionFilesTable extends Migration {
 	 */
 	public function down()
 	{
+		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('solution_files');
+		Schema::drop('attribute_values');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

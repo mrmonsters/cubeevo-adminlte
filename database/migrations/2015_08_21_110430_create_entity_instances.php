@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCustomConfigsTable extends Migration {
+class CreateEntityInstances extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,17 @@ class CreateCustomConfigsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('custom_configs');
+		//
+		Schema::dropIfExists('entity_instances');
 
-		Schema::create('custom_configs', function(Blueprint $table)
+		Schema::create('entity_instances', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
-			$table->string('desc');
-			$table->string('value');
-			$table->string('type');
+			$table->integer('entity_id')
+				->unsigned();
+			$table->foreign('entity_id')
+				->references('id')
+				->on('entities');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -36,8 +38,9 @@ class CreateCustomConfigsTable extends Migration {
 	 */
 	public function down()
 	{
+		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('custom_configs');
+		Schema::drop('entity_instances');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

@@ -14,10 +14,15 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 		
+		$this->call('LocaleTableSeeder');
 		$this->call('PageTableSeeder');
 		$this->call('PageContentTableSeeder');
 		$this->call('FileTableSeeder');
+		$this->call('EntityTableSeeder');
+		$this->call('EntityInstanceTableSeeder');
+		$this->call('AttributeTableSeeder');
 		$this->call('CategoryTableSeeder');
+		$this->call('SolutionTableSeeder');
 	}
 
 }

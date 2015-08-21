@@ -161,7 +161,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 					</div> 
 					</div>',
-				'locale'  => 'zh-cn',
+				'locale_id'  => '1',
 				'status'  => '2'
 			),
 			// About us
@@ -348,7 +348,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 					</div>
 					</div>',
-				'locale'  => 'zh-cn',
+				'locale_id'  => '1',
 				'status'  => '2'
 			),
 			// Process
@@ -419,7 +419,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						<img src="/img/Images-37-mob.png" width="100%">
 					</div>
 					</div>',
-				'locale'  => 'zh-cn',
+				'locale_id'  => '1',
 				'status'  => '2'
 			),
 		);

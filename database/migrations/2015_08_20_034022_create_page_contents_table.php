@@ -25,8 +25,11 @@ class CreatePageContentsTable extends Migration {
 			$table->string('title');
 			$table->string('desc');
 			$table->text('content');
-			$table->string('locale')
-				->default('en-us');
+			$table->integer('locale_id')
+				->unsigned();
+			$table->foreign('locale_id')
+				->references('id')
+				->on('locales');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectFilesTable extends Migration {
+class CreateEntityChildrenTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,21 +12,22 @@ class CreateProjectFilesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('project_files');
+		//
+		Schema::dropIfExists('entity_children');
 
-		Schema::create('project_files', function(Blueprint $table)
+		Schema::create('entity_children', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('project_id')
+			$table->integer('parent_id')
 				->unsigned();
-			$table->foreign('project_id')
+			$table->foreign('parent_id')
 				->references('id')
-				->on('projects');
-			$table->integer('file_id')
+				->on('entity_instances');
+			$table->integer('child_id')
 				->unsigned();
-			$table->foreign('file_id')
+			$table->foreign('child_id')
 				->references('id')
-				->on('files');
+				->on('entity_instances');
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);
@@ -42,8 +43,9 @@ class CreateProjectFilesTable extends Migration {
 	 */
 	public function down()
 	{
+		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('project_files');
+		Schema::drop('entity_children');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

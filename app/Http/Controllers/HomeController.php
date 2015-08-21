@@ -4,6 +4,7 @@ use Session;
 use App\Models\Page;
 use App\Models\PageContent;
 use App\Models\Category;
+use App\Models\Solution;
 use App\Models\Files;
 
 class HomeController extends Controller {
@@ -67,17 +68,10 @@ class HomeController extends Controller {
 
 	public function getSolution()
 	{
-		$sections = array();
-		$page = Page::where('page_slug', '=', '/solution')->first();
-		$secs = $page->pageSections()->get();
+		$solutions = Solution::where('status', '=', '2')->get()
+			->sortBy('sort_order');
 
-		foreach ($secs as $sec)
-		{
-			$item = $sec->section()->first();
-			$sections[] = $item;
-		}
-
-		return view('frontend\solution')->with('sections', $sections);
+		return view('frontend\solution')->with('solutions', $solutions);
 	}
 
 	public function getResearch()

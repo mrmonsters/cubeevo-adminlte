@@ -30,13 +30,65 @@ Description for solution management
 			<form method="POST" action="{{ url('manage/solution/store') }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<div class="box-body">
-					<div class="form-group">
-						<label for="title" class="control-label">Title</label>
-						<input id="title" name="title" type="text" class="form-control" />
+					<div class="nav-tabs-custom">
+						<ul class="nav nav-tabs">
+						@if (isset($locales) && !$locales->isEmpty())
+							<?php $count = 0; ?>
+							@foreach ($locales as $locale)
+								<?php $count++; ?>
+								<li class="{{ ($count == 1) ? 'active' : '' }}"><a href="#{{ $locale->code }}" data-toggle="tab">{{ $locale->name }}</a></li>
+							@endforeach
+						@endif
+						</ul>
+						<div class="tab-content">
+						@if (isset($locales) && !$locales->isEmpty())
+							<?php $count = 0; ?>
+							@foreach ($locales as $locale)
+								<?php $count++; ?>
+								<div id="cn" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
+									<div class="form-group">
+										<label for="title" class="control-label">Title</label>
+										<input id="title" name="title[{{ $locale->code }}]" type="text" class="form-control" />
+									</div>
+									<div class="form-group">
+										<label for="desc" class="control-label">Description</label>
+										<input id="desc" name ="desc[{{ $locale->code }}]" type="text" class="form-control" />
+									</div>
+								</div>
+							@endforeach
+						@endif
+						</div>
 					</div>
 					<div class="form-group">
-						<label for="desc" class="control-label">Description</label>
-						<input id="desc" name ="desc" type="text" class="form-control" />
+						<label for="bg_color_code" class="control-label">Background Color</label>
+						<div class="input-group colorpicker-element">
+							<input id="bg_color_code" name ="bg_color_code" type="text" class="form-control" />
+							<div class="input-group-addon">
+								<i style="background-color: rgb(0,0,0);"></i>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sort_order" class="control-label">Image</label>
+						<div class="row">
+							<div class="col-md-6">
+								<a href="#" class="btn btn-block btn-primary">Upload New Image</a>
+							</div>
+							<div class="col-md-6">
+								<a href="#" class="btn btn-block btn-default">Use Existing</a>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sort_order" class="control-label">Background Image</label>
+						<div class="row">
+							<div class="col-md-6">
+								<a href="#" class="btn btn-block btn-primary">Upload New Image</a>
+							</div>
+							<div class="col-md-6">
+								<a href="#" class="btn btn-block btn-default">Use Existing</a>
+							</div>
+						</div>
 					</div>
 					<div class="form-group">
 						<label for="sort_order" class="control-label">Sort Order</label>
@@ -53,4 +105,13 @@ Description for solution management
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	$('.colorpicker-element').colorpicker();
+});
+</script>
 @endsection

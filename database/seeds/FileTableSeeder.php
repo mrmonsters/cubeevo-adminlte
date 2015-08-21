@@ -38,6 +38,76 @@ class FileTableSeeder extends Seeder
 				'size'   => '0',
 				'status' => '2'
 			),
+			array(
+				'name'   => 'solutionIcon1',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon1.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon2',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon2.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon3',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon3.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon4',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon4.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon5',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon5.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon6',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon6.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon7',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon7.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon8',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon8.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'solutionIcon9',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/solutionIcon9.png',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'Images-36',
+				'type'   => 'IMAGE/PNG',
+				'dir'    => '/img/Images-36.png',
+				'size'   => '0',
+				'status' => '2'
+			),
 		);
 
 		foreach ($files as $file)
