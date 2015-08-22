@@ -126,14 +126,14 @@ class SolutionTableSeeder extends Seeder
 				'attribute_id'       => '2',
 				'entity_instance_id' => '17',
 				'locale_id'          => '1',
-				'value'              => '0',
+				'value'              => '我们能为可撰写活动流程，产品特性，品牌故事，新闻稿等等，也涵盖国语，英语与华语的翻译。',
 				'status'             => '2'
 			),
 			array(
 				'attribute_id'       => '2',
 				'entity_instance_id' => '18',
 				'locale_id'          => '1',
-				'value'              => '1',
+				'value'              => '我们提供印刷服务，包括平面印刷，立体制作，布景制作，制服制作等。',
 				'status'             => '2'
 			),
 			// Solutions - Sort Order

@@ -182,6 +182,55 @@ class CategoryTableSeeder extends Seeder
 				'value'              => '',
 				'status'             => '2'
 			),
+			// Categories - Background Image ID
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '1',
+				'value'              => '15',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '2',
+				'value'              => '16',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '3',
+				'value'              => '17',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '4',
+				'value'              => '17',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '5',
+				'value'              => '18',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '6',
+				'value'              => '15',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '7',
+				'value'              => '18',
+				'status'             => '2'
+			),
+			array(
+				'attribute_id'       => '7',
+				'entity_instance_id' => '8',
+				'value'              => '17',
+				'status'             => '2'
+			),
 		);
 
 		foreach ($values as $value)

@@ -1,11 +1,14 @@
 <?php namespace App\Http\Controllers;
 
 use Session;
+use App\Models\Locale;
 use App\Models\Page;
 use App\Models\PageContent;
-use App\Models\Category;
-use App\Models\Solution;
 use App\Models\Files;
+use App\Models\Entity;
+use App\Models\EntityInstance;
+use App\Models\Attribute;
+use App\Models\AttributeValue;
 
 class HomeController extends Controller {
 
@@ -24,7 +27,7 @@ class HomeController extends Controller {
 		// Set default language
 		if (Session::get('locale') == null)
 		{
-			Session::set('locale', 'zh-cn');
+			Session::set('locale', 'cn');
 		}
 	}
 
@@ -55,10 +58,15 @@ class HomeController extends Controller {
 
 	public function getCredential()
 	{
-		$categories = Category::where('status', '=', '2')->get()
-			->sortBy('sort_order');
+		$codes =  array(
+			'name',
+			'img_id',
+			'bg_img_id',
+			'sort_order'
+		);
+		$categories = $this->_getEntityCollection('category', $codes);
 
-		return view('frontend\credential')->with('categories', $categories);
+		return view('frontend.credential')->with('categories', $categories);
 	}
 
 	public function getCredentialContent()
@@ -68,10 +76,17 @@ class HomeController extends Controller {
 
 	public function getSolution()
 	{
-		$solutions = Solution::where('status', '=', '2')->get()
-			->sortBy('sort_order');
+		$codes =  array(
+			'name',
+			'desc',
+			'bg_color_code',
+			'img_id',
+			'bg_img_id',
+			'sort_order'
+		);
+		$solutions = $this->_getEntityCollection('solution', $codes);
 
-		return view('frontend\solution')->with('solutions', $solutions);
+		return view('frontend.solution')->with('solutions', $solutions);
 	}
 
 	public function getResearch()
@@ -92,6 +107,57 @@ class HomeController extends Controller {
 	public function getContactUs()
 	{
 		return view('frontend\contactus');
+	}
+
+	protected function _getEntityCollection($entityCode, $attributeCodes)
+	{
+		$entities = array();
+		$collection = Entity::where('code', '=', $entityCode)->first()
+			->entityInstances()
+			->get();
+
+		foreach ($collection as $item)
+		{
+			$entity = array();
+
+			foreach ($attributeCodes as $code)
+			{
+				$entity[$code] = $this->_getAttribute($code, $item);
+			}
+
+			$entities[] = $entity;
+		}
+
+		if (!empty($entities) && isset($entities[0]['sort_order']))
+		{
+			uasort($entities, array($this, 'cmp'));
+		}
+
+		return $entities;
+	}
+
+	protected function _getAttribute($code, $item)
+	{
+		$locale    = Locale::where('code', '=', Session::get('locale'))->first();
+		$attribute = Attribute::where('code', '=', $code)->first();
+		$value     = $item->attributeValues()
+			->where('attribute_id', $attribute->id)
+			->first();
+
+		if (isset($value->locale_id))
+		{
+			$value = $item->attributeValues()
+				->where('attribute_id', $attribute->id)
+				->where('locale_id', $locale->id)
+				->first();
+		}
+		
+		return (isset($value)) ? $value->value : '';
+	}
+
+	static function cmp($x, $y)
+	{
+		return (intval($x['sort_order']) > intval($y['sort_order'])) ? 1 : -1;	
 	}
 
 }

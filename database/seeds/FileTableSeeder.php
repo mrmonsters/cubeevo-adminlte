@@ -108,6 +108,34 @@ class FileTableSeeder extends Seeder
 				'size'   => '0',
 				'status' => '2'
 			),
+			array(
+				'name'   => 'Hairdepot_Thumbnail_Background',
+				'type'   => 'IMAGE/JPEG',
+				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail_Background.jpg',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'Greenology_Thumbnail_Background',
+				'type'   => 'IMAGE/JPEG',
+				'dir'    => '/img/Credential Thumbnail/Greenology_Thumbnail_Background.jpg',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'PLT_Website_Thumbnail_Background',
+				'type'   => 'IMAGE/JPEG',
+				'dir'    => '/img/Credential Thumbnail/PLT_Website_Thumbnail_Background.jpg',
+				'size'   => '0',
+				'status' => '2'
+			),
+			array(
+				'name'   => 'HairMilk_Thumbnail_Background',
+				'type'   => 'IMAGE/JPEG',
+				'dir'    => '/img/Credential Thumbnail/HairMilk_Thumbnail_Background.jpg',
+				'size'   => '0',
+				'status' => '2'
+			),
 		);
 
 		foreach ($files as $file)
