@@ -236,23 +236,53 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-title {background:url(../img/Images-18.png) no-repeat 0px -120px;}
 .contactus .cont-msg {background:url(../img/Images-18.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
+.scene.mascott{position:relative;left: -70%;top: -2%;}
+.scene.mascott .layer > div{ 
+	width: 1280px;
+	height: 760px; 
+	background-size: 12800px 760px;
+} 
+/* *
+ * 
+ * mascott
+ *
+ * */
+/*orange*/
+#orangemascott{
+	background: transparent url('../img/Mascott/Orange/Orange_Mascot-Animation_A.png') 0 0 no-repeat; 
+} 
+#light{
+	background: transparent url('../img/Mascott/Orange/Orange_Mascot-Animation_C.png') 0 0 no-repeat; 
+} 
 
-.scene.orange img{
-	width: 640px;
+/*yellow*/ 
+#yellowmascott{
+	background: transparent url('../img/Mascott/Yellow/Yellow_Mascot-Animation_A.png') 0 0 no-repeat; 
+} 
+
+/*red*/
+#redmascott{
+	background: transparent url('../img/Mascott/Red/Red_Mascot-Animation_A.png') 0 0 no-repeat; 
+} 
+#knife{
+	background: transparent url('../img/Mascott/Red/Red_Mascot-Animation_C.png') 0 0 no-repeat; 
 }
-	#orangemascott{
-		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Mascot_Animation_B.png') 0 0 no-repeat;
-		width: 640px;
-		height: 380px; 
-		background-size: 3200px 380px;
-	} 
 
-	#light{
-		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Woosh_Animation.png') 0 0 no-repeat;
-		width: 640px;
-		height: 380px; 
-		background-size: 6400px 760px;
-	} 
+/*blue*/ 
+#bluemascott{
+	background: transparent url('../img/Mascott/Blue/10_Frames/Blue_Mascot-Animation_A.png') 0 0 no-repeat; 
+} 
+#blink{
+	background: transparent url('../img/Mascott/Blue/10_Frames/Blue_Mascot-Animation_B.png') 0 0 no-repeat; 
+}
+
+/*green*/
+#greenmascott{
+	background: transparent url('../img/Mascott/Green/Green_Mascot-Animation_A.png') 0 0 no-repeat; 
+} 
+#bird{
+	background: transparent url('../img/Mascott/Green/Green_Mascot-Animation_C.png') 0 0 no-repeat; 
+}
 
 
 @media (max-width:1024px){

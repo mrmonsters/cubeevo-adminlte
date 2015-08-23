@@ -36,6 +36,25 @@ $(document).ready(function() {
     	return false;
   	});
 
+
+  	var cube = $('#cube');
+   	function runIt() { 
+       cube.animate({top:'+=20'}, 1000);
+       cube.animate({top:'-=20'}, 1000, runIt);
+   	} 
+    runIt();
+
   	$('#light').sprite({fps: 9, no_of_frames: 16});
-  	$('#orangemascott').sprite({fps: 4, no_of_frames: 5});
+  	$('#orangemascott').sprite({fps: 9, no_of_frames: 10}); 
+
+  	$('#yellowmascott').sprite({fps: 9, no_of_frames: 10});
+
+  	$('#redmascott').sprite({fps: 9, no_of_frames: 10});
+  	$('#knife').sprite({fps: 9, no_of_frames: 10});
+
+  	$('#bluemascott').sprite({fps: 9, no_of_frames: 10});
+  	$('#blink').sprite({fps: 9, no_of_frames: 10});
+
+  	$('#greenmascott').sprite({fps: 9, no_of_frames: 10});
+  	$('#bird').sprite({fps: 9, no_of_frames: 10});
 });
