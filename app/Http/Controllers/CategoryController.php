@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use App\Models\Locale;
+use App\Services\Retriever;
+
 class CategoryController extends Controller {
 
 	/**
@@ -12,9 +15,18 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Retriever $retriever)
 	{
 		//
+		$codes =  array(
+			'name',
+			'img_id',
+			'bg_img_id',
+			'sort_order'
+		);
+		$categories = $retriever->getEntityCollection('category', $codes);
+
+		return view('management.category.index')->with('categories', $categories);
 	}
 
 	/**
@@ -25,6 +37,9 @@ class CategoryController extends Controller {
 	public function create()
 	{
 		//
+		$locales = Locale::where('status', '=', '2')->get();
+
+		return view('management.category.create')->with('locales', $locales);
 	}
 
 	/**
