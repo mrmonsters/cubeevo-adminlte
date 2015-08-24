@@ -18,10 +18,10 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'content' => '<div class="section" id="section0">
 					<div class="col-md-6 maincol-right">
 						<ul class="scene mob-hide">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%" ></li>
+							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%"  class="home-dna"></li>
 						</ul>
 						<ul class="scene mob-visible">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%" class="home-dna"></li>
+							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 						</ul>
 					</div> 
 					<div class="col-md-6 maincol-left clearfix">
