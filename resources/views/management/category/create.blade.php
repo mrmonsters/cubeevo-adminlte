@@ -28,7 +28,7 @@ Description for category management
 			<div class="box-header with-border">
 				<h3 class="box-title">Category</h3>
 			</div>
-			<form method="POST" action="{{ url('manage/category/store') }}">
+			<form method="POST" action="{{ url('manage/category/store') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input id="id" name="id" type="hidden" value="" />
 				<div class="box-body">
@@ -47,10 +47,10 @@ Description for category management
 							<?php $count = 0; ?>
 							@foreach ($locales as $locale)
 								<?php $count++; ?>
-								<div id="cn" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
+								<div id="{{ $locale->code }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="title" class="control-label">Name</label>
-										<input id="title" name="title[{{ $locale->code }}]" type="text" class="form-control" />
+										<input id="title" name="name[{{ $locale->id }}]" type="text" class="form-control" />
 									</div>
 								</div>
 							@endforeach
@@ -78,7 +78,7 @@ Description for category management
 										<th>Action</th>
 									</thead>
 									<tbody>
-										@if ($files = Files::where('type', 'IMAGE/PNG')->orWhere('type', 'IMAGE/JPEG')->get())
+										@if ($files = Files::where('type', 'image/png')->orWhere('type', 'image/jpeg')->get())
 											@foreach ($files as $file)
 											<tr>
 												<td>{{ $file->id }}</td>
@@ -118,7 +118,7 @@ Description for category management
 										<th>Action</th>
 									</thead>
 									<tbody>
-										@if ($files = Files::where('type', 'IMAGE/PNG')->orWhere('type', 'IMAGE/JPEG')->get())
+										@if ($files = Files::where('type', 'image/png')->orWhere('type', 'image/jpeg')->get())
 											@foreach ($files as $file)
 											<tr>
 												<td>{{ $file->id }}</td>

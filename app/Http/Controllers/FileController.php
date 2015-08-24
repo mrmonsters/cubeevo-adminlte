@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Files;
+use App\Models\Files;
 use File;
 
 class FileController extends Controller {
