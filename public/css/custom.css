@@ -204,10 +204,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
 .aboutus .about-img2 {height:253px; display:block; background:url(../img/Images-08-1.png) no-repeat center center; clear:both;}
 .aboutus .about-img3 {clear:both; text-align:center;}
-.aboutus .about-369 {max-width:1300px; margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
+.aboutus .about-369 {margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
 .aboutus .about-369 .about-369txt {margin-top:20px; font-size:12px; line-height:20px;}
-.aboutus .about-369 .about-369img {margin-top:50px}
+.aboutus .about-369 .about-369img {margin-top:50px;max-width: 150px;}
 .aboutus .about-369 .col-xs-6 {width:100%;}
+.aboutus .about-369heading{max-width: 131px;}
 .aboutus .team, .aboutus .career {background:#f7941a;}
 .aboutus .team .profilepic img {width:100%;}
 .aboutus .team .profilepic {margin-top:30px;}
@@ -239,9 +240,12 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .scene.mascott{position:relative;left: -70%;top: -2%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
-	height: 760px; 
-	background-size: 12800px 760px;
+	height: 760px;   
 } 
+.scene.mascott .layer > img{ 
+	max-height: 760px;
+	max-width: 1280px;
+}
 /* *
  * 
  * mascott
