@@ -239,6 +239,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-msg {background:url(../img/Images-18.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
 .scene.mascott{position:relative;left: -70%;top: -2%;}
+.scene.mascott.purple{top: 2%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
 	height: 760px;   
@@ -290,6 +291,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 
 
+@media (min-width:768px){
+  .cd-vertical-nav {  
+    top: 50%;
+  }
+}
 @media (max-width:1024px){
 	.process .flow {margin:40px -75px;}
 	.process .flow .left .box {padding:25px 80px 25px 40px;}
