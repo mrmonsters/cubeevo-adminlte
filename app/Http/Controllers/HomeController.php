@@ -72,7 +72,7 @@ class HomeController extends Controller {
 
 	public function getCredentialContent()
 	{
-		return view('frontend\credential_content');
+		return view('frontend.credential_content');
 	}
 
 	public function getSolution(Retriever $retriever)
@@ -92,7 +92,7 @@ class HomeController extends Controller {
 
 	public function getResearch()
 	{
-		return view('frontend\research');
+		return view('frontend.research');
 	}
 
 	public function getProcess(Retriever $retriever)
@@ -107,7 +107,7 @@ class HomeController extends Controller {
 
 	public function getContactUs()
 	{
-		return view('frontend\contactus');
+		return view('frontend.contactus');
 	}
 
 }
