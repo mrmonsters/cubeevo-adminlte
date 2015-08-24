@@ -206,9 +206,10 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .about-img3 {clear:both; text-align:center;}
 .aboutus .about-369 {margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
 .aboutus .about-369 .about-369txt {margin-top:20px; font-size:12px; line-height:20px;}
-.aboutus .about-369 .about-369img {margin-top:50px;max-width: 150px;}
+.aboutus .about-369 .about-369img {margin-top:50px;}
+.aboutus .about-369 .about-369img img {max-width: 150px;}
 .aboutus .about-369 .col-xs-6 {width:100%;}
-.aboutus .about-369heading{max-width: 131px;}
+.aboutus .about-369heading img{max-width: 131px;}
 .aboutus .team, .aboutus .career {background:#f7941a;}
 .aboutus .team .profilepic img {width:100%;}
 .aboutus .team .profilepic {margin-top:30px;}
