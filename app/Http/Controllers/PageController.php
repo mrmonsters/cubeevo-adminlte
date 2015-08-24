@@ -5,11 +5,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Page;
-use App\Menu;
-use App\Section;
-use App\PageMenu;
-use App\PageSection;
+use App\Models\Page;
+use App\Models\Menu;
+use App\Models\Section;
+use App\Models\PageMenu;
+use App\Models\PageSection;
 
 class PageController extends Controller {
 
@@ -33,7 +33,7 @@ class PageController extends Controller {
 		//
 		$pages = Page::all();
 
-		return view('management\page\index')
+		return view('management.page.index')
 			->with('pages', $pages);
 	}
 
@@ -49,7 +49,7 @@ class PageController extends Controller {
 		$cMenus = Menu::whereNotNull('parent_menu_id')->get();
 		$sections = Section::all();
 
-		return view('management\page\create')
+		return view('management.page.create')
 			->with('pMenus', $pMenus)
 			->with('cMenus', $cMenus)
 			->with('sections', $sections);
@@ -169,7 +169,7 @@ class PageController extends Controller {
 			$sectionIds = implode(",", $pageSectionIds);
 		}
 
-		return view('management/page/edit')
+		return view('management.page.edit')
 			->with('page', $page)
 			->with('pMenus', $pMenus)
 			->with('cMenus', $cMenus)

@@ -16,7 +16,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'title'   => 'Home',
 				'desc'    => 'Home page.',
 				'content' => '<div class="section" id="section0">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 						<ul class="scene mob-hide">
 							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%" ></li>
 						</ul>
@@ -24,7 +24,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%" ></li>
 						</ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 								<div class="row">
@@ -40,13 +40,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>  
 					</div>
 					<div class="section" id="section1">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott orange">  
 		                    <li class="layer" data-depth="0.8"><div id="light"></div></li> 
 		                    <li class="layer" data-depth="0.3"><div id="orangemascott"></div></li> 
 		                </ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -62,14 +62,14 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section2">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott yellow">  
 		                    <li class="layer" data-depth="0.1"><div id="yellowmascott"></div></li>
 		                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Yellow/Yellow_Mascot_02-Body.png" width="200%" ></li>
 		                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Yellow/Yellow_Mascot_03-Hands.png" width="200%" ></li> 
 		                </ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -85,13 +85,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section3">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott red">  
 		                    <li class="layer" data-depth="0.3"><div id="redmascott"></div></li>
 		                    <li class="layer" data-depth="0.8"><div id="knife"></div></li> 
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -107,14 +107,14 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section4">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott purple">  
 		                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Purple/Purple-Mascot_01-Body.png" width="200%" ></li>
 		                    <li class="layer" data-depth="0.5"><img src="img/Mascott/Purple/Purple-Mascot_02-Hands.png" width="200%" ></li> 
 		                    <li class="layer" data-depth="1"><img src="img/Mascott/Purple/Purple-Mascot_04-Cube.png" id="cube" style="position:relative;" width="200%" ></li> 
 		                </ul>
 					</div>
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -130,13 +130,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>   
 					</div>
 					<div class="section" id="section5">
-					<div class="col-sm-6 maincol-right">  
+					<div class="col-md-6 maincol-right">  
 						<ul class="scene mascott blue">  
 		                    <li class="layer" data-depth="1.00"><div id="blink"></div></li>
 		                    <li class="layer" data-depth="0.30"><div id="bluemascott"></div></li>  
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -152,13 +152,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section6">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott green">  
 		                    <li class="layer" data-depth="1.00"><div id="bird"></div></li>
 		                    <li class="layer" data-depth="0.30"><div id="greenmascott"></div></li>  
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">

@@ -5,9 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\Section;
-use App\Page;
-use App\PageSection;
+use App\Models\Section;
+use App\Models\Page;
+use App\Models\PageSection;
 
 class BlockController extends Controller {
 

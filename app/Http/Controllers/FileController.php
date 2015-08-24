@@ -30,7 +30,7 @@ class FileController extends Controller {
 		//
 		$files = Files::all();
 
-		return view('management\file\index')
+		return view('management.file.index')
 			->with('files', $files);
 	}
 
@@ -42,7 +42,7 @@ class FileController extends Controller {
 	public function create()
 	{
 		//
-		return view('management\file\create');
+		return view('management.file.create');
 	}
 
 	/**
@@ -146,7 +146,7 @@ class FileController extends Controller {
 			$isDocument = true;
 		}
 
-		return view('management/file/edit')
+		return view('management.file.edit')
 			->with('file', $file)
 			->with('isImage', $isImage)
 			->with('isDocument', $isDocument);

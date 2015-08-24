@@ -27,7 +27,7 @@ Description for file management
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit File #{{ $file->file_id }}</h3>
 			</div>
-			<form method="POST" action="{{ url('manage/file/update/' . $file->file_id) }}">
+			<form method="POST" action="{{ url('/admin/manage/file/update/' . $file->file_id) }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
 				<div class="box-body">
@@ -42,7 +42,7 @@ Description for file management
 				</div>
 				<div class="box-footer clearfix">
 					<div class="pull-right">
-						<a href="{{ url('/manage/file/') }}" class="btn btn-default">Cancel</a>
+						<a href="{{ url('/admin/manage/file/') }}" class="btn btn-default">Cancel</a>
 						<button type="submit" class="btn btn-primary">Save</button>
 					</div>
 				</div>
