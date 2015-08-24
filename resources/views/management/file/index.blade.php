@@ -44,10 +44,10 @@ Description for file management
 						@if (isset($files) && !$files->isEmpty())
 						@foreach ($files as $file)
 						<tr>
-							<td>{{ $file->file_id }}</td>
-							<td>{{ $file->file_name }}</td>
-							<td>{{ $file->file_type }}</td>
-							<td>{{ $file->file_dir }}</td>
+							<td>{{ $file->id }}</td>
+							<td>{{ $file->name }}</td>
+							<td>{{ $file->type }}</td>
+							<td>{{ $file->dir }}</td>
 							<td>{{ $file->created_at }}</td>
 							<td>{{ $file->updated_at }}</td>
 							<td>
@@ -60,8 +60,8 @@ Description for file management
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('manage/file/edit/' . $file->file_id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('manage/file/destroy/' . $file->file_id) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('manage/file/edit/' . $file->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('manage/file/destroy/' . $file->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

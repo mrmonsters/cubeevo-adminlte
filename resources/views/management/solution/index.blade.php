@@ -32,7 +32,7 @@ Description for solution management
 				<table id="tbl-solution" class="table">
 					<thead>
 						<th width="5%">ID</th>
-						<th width="15%">Title</th>
+						<th width="15%">Name</th>
 						<th width="30%">Description</th>
 						<th width="10%">Sort Order</th>
 						<th width="10%">Created At</th>
@@ -41,27 +41,27 @@ Description for solution management
 						<th width="15%">Action</th>
 					</thead>
 					<tbody>
-						@if (isset($solutions) && !$solutions->isEmpty())
+						@if (isset($solutions) && is_array($solutions) && !empty($solutions))
 						@foreach ($solutions as $solution)
 						<tr>
-							<td>{{ $solution->id }}</td>
-							<td>{{ $solution->title }}</td>
-							<td>{{ $solution->desc }}</td>
-							<td>{{ $solution->sort_order }}</td>
-							<td>{{ $solution->created_at }}</td>
-							<td>{{ $solution->updated_at }}</td>
+							<td>{{ $solution['id'] }}</td>
+							<td>{{ $solution['name'] }}</td>
+							<td>{{ $solution['desc'] }}</td>
+							<td>{{ $solution['sort_order'] }}</td>
+							<td>{{ $solution['created_at'] }}</td>
+							<td>{{ $solution['updated_at'] }}</td>
 							<td>
-								@if ($solution->status == '2')
+								@if ($solution['status'] == '2')
 								<span class="label label-success">Active</span>
-								@elseif ($solution->status == '1')
+								@elseif ($solution['status'] == '1')
 								<span class="label label-danger">Inactive</span>
 								@else 
 								<span class="label label-warning">Incomplete</span>
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/solution/edit/' . $solution->id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/solution/destroy/' . $solution->id) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/solution/edit/' . $solution['id']) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/solution/destroy/' . $solution['id']) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

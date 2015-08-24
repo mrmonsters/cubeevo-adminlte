@@ -53,7 +53,7 @@
             </li>
             <li class="{{ (Request::is('admin/manage/solution') || Request::is('admin/manage/solution/*')) ? 'active' : '' }}">
                 <a href="{{ url('admin/manage/solution') }}">
-                    <i class='fa fa-link'></i> <span>Solution</span></span>
+                    <i class='fa fa-link'></i> <span>Solution</span>
                 </a>
             </li>
             <li class="treeview">
@@ -69,7 +69,7 @@
             </li>
             <li class="{{ (Request::is('admin/manage/file') || Request::is('admin/manage/file/*')) ? 'active' : '' }}">
                 <a href="{{ url('admin/manage/file') }}">
-                    <i class='fa fa-file'></i> <span>File</span></span>
+                    <i class='fa fa-file'></i> <span>File</span>
                 </a>
             </li>
         </ul><!-- /.sidebar-menu -->

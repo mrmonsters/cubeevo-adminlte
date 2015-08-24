@@ -5,7 +5,7 @@ use App\Models\Locale;
 use App\Models\Entity;
 use App\Models\Attribute;
 
-class Retriever
+class GeneralHelper
 {
 	public function getEntityCollection($entityCode, $attributeCodes)
 	{
@@ -41,7 +41,7 @@ class Retriever
 
 	public function getAttribute($code, $item)
 	{
-		$locale    = Locale::where('code', '=', Session::get('locale'))->first();
+		$locale    = Locale::find($this->getCurrentLocaleId());
 		$attribute = Attribute::where('code', '=', $code)->first();
 		$value     = $item->attributeValues()
 			->where('attribute_id', $attribute->id)

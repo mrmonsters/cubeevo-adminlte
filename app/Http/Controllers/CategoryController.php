@@ -5,17 +5,33 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use File;
+
 use App\Models\Locale;
-use App\Services\Retriever;
+use App\Models\Entity;
+use App\Models\Files;
+
+use App\Services\GeneralHelper;
+use App\Services\CategoryHelper;
 
 class CategoryController extends Controller {
+
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(Retriever $retriever)
+	public function index(GeneralHelper $genHelper)
 	{
 		//
 		$codes =  array(
@@ -24,7 +40,7 @@ class CategoryController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$categories = $retriever->getEntityCollection('category', $codes);
+		$categories = $genHelper->getEntityCollection('category', $codes);
 
 		return view('management.category.index')->with('categories', $categories);
 	}
@@ -47,9 +63,97 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $req, CategoryHelper $catHelper)
 	{
 		//
+		$response = array();
+		$data     = $req->input();
+		$files    = $req->file();
+
+		if (is_array($data) && !empty($data))
+		{
+			$cat     = array();
+			$codes   = array('name');
+			$locales = Locale::where('status', '=', '2')->get();
+
+			foreach ($codes as $code)
+			{
+				$item = array();
+
+				foreach ($locales as $locale)
+				{
+					if ($data[$code][$locale->id] != '')
+					{
+						$item[$locale->id] = $data[$code][$locale->id];
+					}
+				}
+
+				$cat[$code] = $item;
+			}
+
+			$imgId = '';
+			$bgImgId = '';
+
+			if (!empty($files))
+			{
+				foreach ($files as $key => $val)
+				{
+					if (!$val->getClientSize() || !$val->getClientOriginalName() || !$val->getClientMimeType())
+					{
+						continue;
+					}
+					else
+					{
+						$fileName = $val->getClientOriginalName();
+						$baseDir = '/storage/uploaded'; 
+
+						// Save file
+						$newFile = new Files;
+
+						$newFile->name   = $fileName;
+						$newFile->type   = $val->getClientMimeType();
+						$newFile->dir    = $baseDir."/".$fileName;
+						$newFile->size   = $val->getClientSize();
+						$newFile->status = 2;
+						$newFile->save();
+
+						if (!File::exists(public_path().$baseDir))
+						{
+							File::makeDirectory(public_path().$baseDir);
+						}
+
+						$val->move(public_path().$baseDir, $fileName);
+
+						if (File::exists(public_path().$baseDir."/".$fileName))
+						{
+							if ($key == 'img_id')
+							{
+								$imgId = $newFile->id;
+							}
+							else if ($key == 'bg_img_id')
+							{
+								$bgImgId = $newFile->id;
+							}
+						}
+					}
+				}
+			}
+
+			$cat['sort_order'] = $data['sort_order'];
+			$cat['img_id']     = ($data['old_img_id'] != '') ? $data['old_img_id'] : $imgId;
+			$cat['bg_img_id']  = ($data['old_bg_img_id'] != '') ? $data['old_bg_img_id'] : $bgImgId;
+
+			$category = $catHelper->saveNewCategory($cat);
+
+			if ($category != false && $category->id)
+			{
+				// Redirect with success
+			}
+
+			// Redirect with error
+
+			return redirect('admin/manage/category');
+		}
 	}
 
 	/**

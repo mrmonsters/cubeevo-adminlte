@@ -9,7 +9,7 @@ use App\Models\Entity;
 use App\Models\EntityInstance;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
-use App\Services\Retriever;
+use App\Services\GeneralHelper;
 
 class HomeController extends Controller {
 
@@ -37,27 +37,27 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(Retriever $retriever)
+	public function index(GeneralHelper $genHelper)
 	{
 		$page     = Page::where('slug', '=', '/')->first();
 		$content  = $page->pageContents()
-			->where('locale_id', $retriever->getCurrentLocaleId())
+			->where('locale_id', $genHelper->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.index')->with('content', $content);
 	}
 
-	public function getAboutUs(Retriever $retriever)
+	public function getAboutUs(GeneralHelper $genHelper)
 	{
 		$page    = Page::where('slug', '=', '/about-us')->first();
 		$content = $page->pageContents()
-			->where('locale_id', $retriever->getCurrentLocaleId())
+			->where('locale_id', $genHelper->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.aboutus')->with('content', $content);
 	}
 
-	public function getCredential(Retriever $retriever)
+	public function getCredential(GeneralHelper $genHelper)
 	{
 		$codes =  array(
 			'name',
@@ -65,7 +65,7 @@ class HomeController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$categories = $retriever->getEntityCollection('category', $codes);
+		$categories = $genHelper->getEntityCollection('category', $codes);
 
 		return view('frontend.credential')->with('categories', $categories);
 	}
@@ -75,7 +75,7 @@ class HomeController extends Controller {
 		return view('frontend.credential_content');
 	}
 
-	public function getSolution(Retriever $retriever)
+	public function getSolution(GeneralHelper $genHelper)
 	{
 		$codes =  array(
 			'name',
@@ -85,7 +85,7 @@ class HomeController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$solutions = $retriever->getEntityCollection('solution', $codes);
+		$solutions = $genHelper->getEntityCollection('solution', $codes);
 
 		return view('frontend.solution')->with('solutions', $solutions);
 	}
@@ -95,11 +95,11 @@ class HomeController extends Controller {
 		return view('frontend.research');
 	}
 
-	public function getProcess(Retriever $retriever)
+	public function getProcess(GeneralHelper $genHelper)
 	{
 		$page    = Page::where('slug', '=', '/process')->first();
 		$content = $page->pageContents()
-			->where('locale_id', $retriever->getCurrentLocaleId())
+			->where('locale_id', $genHelper->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.process')->with('content', $content);
