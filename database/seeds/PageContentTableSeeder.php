@@ -21,7 +21,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%" ></li>
 						</ul>
 						<ul class="scene mob-visible">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%" ></li>
+							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%" class="home-dna"></li>
 						</ul>
 					</div> 
 					<div class="col-md-6 maincol-left clearfix">
