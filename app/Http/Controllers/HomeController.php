@@ -51,7 +51,7 @@ class HomeController extends Controller {
 	{
 		$page    = Page::where('slug', '=', '/about-us')->first();
 		$content = $page->pageContents()
-			->where('locale_id', 'locale_id', $retriever->getCurrentLocaleId())
+			->where('locale_id', $retriever->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.aboutus')->with('content', $content);
