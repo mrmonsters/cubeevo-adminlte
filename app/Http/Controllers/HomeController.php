@@ -9,6 +9,7 @@ use App\Models\Entity;
 use App\Models\EntityInstance;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
+use App\Services\Retriever;
 
 class HomeController extends Controller {
 
@@ -36,27 +37,27 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Retriever $retriever)
 	{
 		$page     = Page::where('slug', '=', '/')->first();
 		$content  = $page->pageContents()
-			->where('locale', Session::get('locale'))
+			->where('locale_id', $retriever->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.index')->with('content', $content);
 	}
 
-	public function getAboutUs()
+	public function getAboutUs(Retriever $retriever)
 	{
-		$page = Page::where('slug', '=', '/about-us')->first();
+		$page    = Page::where('slug', '=', '/about-us')->first();
 		$content = $page->pageContents()
-			->where('locale', Session::get('locale'))
+			->where('locale_id', 'locale_id', $retriever->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.aboutus')->with('content', $content);
 	}
 
-	public function getCredential()
+	public function getCredential(Retriever $retriever)
 	{
 		$codes =  array(
 			'name',
@@ -64,7 +65,7 @@ class HomeController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$categories = $this->_getEntityCollection('category', $codes);
+		$categories = $retriever->getEntityCollection('category', $codes);
 
 		return view('frontend.credential')->with('categories', $categories);
 	}
@@ -74,7 +75,7 @@ class HomeController extends Controller {
 		return view('frontend\credential_content');
 	}
 
-	public function getSolution()
+	public function getSolution(Retriever $retriever)
 	{
 		$codes =  array(
 			'name',
@@ -84,7 +85,7 @@ class HomeController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$solutions = $this->_getEntityCollection('solution', $codes);
+		$solutions = $retriever->getEntityCollection('solution', $codes);
 
 		return view('frontend.solution')->with('solutions', $solutions);
 	}
@@ -94,11 +95,11 @@ class HomeController extends Controller {
 		return view('frontend\research');
 	}
 
-	public function getProcess()
+	public function getProcess(Retriever $retriever)
 	{
-		$page = Page::where('slug', '=', '/process')->first();
+		$page    = Page::where('slug', '=', '/process')->first();
 		$content = $page->pageContents()
-			->where('locale', Session::get('locale'))
+			->where('locale_id', $retriever->getCurrentLocaleId())
 			->first();
 
 		return view('frontend.process')->with('content', $content);
@@ -107,57 +108,6 @@ class HomeController extends Controller {
 	public function getContactUs()
 	{
 		return view('frontend\contactus');
-	}
-
-	protected function _getEntityCollection($entityCode, $attributeCodes)
-	{
-		$entities = array();
-		$collection = Entity::where('code', '=', $entityCode)->first()
-			->entityInstances()
-			->get();
-
-		foreach ($collection as $item)
-		{
-			$entity = array();
-
-			foreach ($attributeCodes as $code)
-			{
-				$entity[$code] = $this->_getAttribute($code, $item);
-			}
-
-			$entities[] = $entity;
-		}
-
-		if (!empty($entities) && isset($entities[0]['sort_order']))
-		{
-			uasort($entities, array($this, 'cmp'));
-		}
-
-		return $entities;
-	}
-
-	protected function _getAttribute($code, $item)
-	{
-		$locale    = Locale::where('code', '=', Session::get('locale'))->first();
-		$attribute = Attribute::where('code', '=', $code)->first();
-		$value     = $item->attributeValues()
-			->where('attribute_id', $attribute->id)
-			->first();
-
-		if (isset($value->locale_id))
-		{
-			$value = $item->attributeValues()
-				->where('attribute_id', $attribute->id)
-				->where('locale_id', $locale->id)
-				->first();
-		}
-		
-		return (isset($value)) ? $value->value : '';
-	}
-
-	static function cmp($x, $y)
-	{
-		return (intval($x['sort_order']) > intval($y['sort_order'])) ? 1 : -1;	
 	}
 
 }
