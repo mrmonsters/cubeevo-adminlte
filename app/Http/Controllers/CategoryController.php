@@ -9,6 +9,7 @@ use File;
 
 use App\Models\Locale;
 use App\Models\Entity;
+use App\Models\EntityInstance;
 use App\Models\Files;
 
 use App\Services\GeneralHelper;
@@ -173,9 +174,31 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id, GeneralHelper $genHelper)
 	{
 		//
+		$locales = Locale::where('status', '=', '2')->get();
+		$instance = EntityInstance::find($id);
+		$codes = array('name', 'img_id', 'bg_img_id', 'sort_order');
+
+		$category = array();
+
+		foreach ($codes as $code)
+		{
+			$category[$code] = $genHelper->getAttribute($code, $instance);
+		}
+
+		$name = $category['name'];
+		$category['name'] = array();
+
+		foreach ($locales as $locale)
+		{
+			$category['name'][$locale->id] = $name;
+		}
+
+		return view('management.category.edit')
+			->with('category', $category)
+			->with('locales', $locales);
 	}
 
 	/**

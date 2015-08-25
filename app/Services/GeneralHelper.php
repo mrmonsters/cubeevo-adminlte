@@ -60,6 +60,11 @@ class GeneralHelper
 
 	public function getCurrentLocaleId()
 	{
+		if (!Session::get('locale'))
+		{
+			Session::set('locale', 'cn');
+		}
+
 		$locale = Locale::where('code', '=', Session::get('locale'))->first();
 
 		return $locale->id;
