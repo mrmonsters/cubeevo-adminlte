@@ -5,9 +5,41 @@ use App\Models\Attribute;
 use App\Models\AttributeValue;
 use App\Models\Entity;
 use App\Models\EntityInstance;
+use App\Services\GeneralHelper;
 
-class CategoryHelper
+class CategoryHelper extends GeneralHelper
 {
+	public function getCategoryProject($categoryId, $codes)
+	{
+		$entities = array();
+		$collection = EntityInstance::find($categoryId)->instanceChildren()->get();
+
+		foreach ($collection as $item)
+		{
+			$entity = array();
+			$instance = EntityInstance::find($item->child_id);
+
+			$entity['id']         = $instance->id;
+			$entity['status']     = $instance->status;
+			$entity['created_at'] = $instance->created_at;
+			$entity['updated_at'] = $instance->updated_at;
+
+			foreach ($codes as $code)
+			{
+				$entity[$code] = $this->getAttribute($code, $instance);
+			}
+
+			$entities[] = $entity;
+		}
+
+		if (!empty($entities) && isset($entities[0]['sort_order']))
+		{
+			uasort($entities, array($this, 'cmp'));
+		}
+
+		return $entities;
+	}
+
 	public function saveNewCategory($data)
 	{
 		if (is_array($data) && !empty($data))

@@ -14,8 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/about-us', 'HomeController@getAboutUs');
 Route::get('/credential', 'HomeController@getCredential');
-Route::get('/credential/content', 'HomeController@getCredentialContent');
-Route::get('/credential/project', 'HomeController@getCredentialProject');
+Route::get('/credential/{category_id}', 'HomeController@getCredentialProject');
 Route::get('/solution', 'HomeController@getSolution');
 Route::get('/research', 'HomeController@getResearch');
 Route::get('/process', 'HomeController@getProcess');

@@ -462,22 +462,22 @@ class ProjectTableSeeder extends Seeder
 				$child->parent_id = '4';
 			}
 			// Education
-			else if ($count >= 6 || $count <= 7)
+			else if ($count >= 6 && $count <= 7)
 			{
 				$child->parent_id = '5';
 			}
 			// F&B
-			else if ($count >= 8 || $count <= 10)
+			else if ($count >= 8 && $count <= 10)
 			{
 				$child->parent_id = '6';
 			}
 			// IT
-			else if ($count >= 11 || $count <= 12)
+			else if ($count >= 11 && $count <= 12)
 			{
 				$child->parent_id = '7';
 			}
 			// Retailer
-			else if ($count >= 13 || $count <= 16)
+			else if ($count >= 13 && $count <= 16)
 			{
 				$child->parent_id = '8';
 			}

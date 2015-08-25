@@ -10,7 +10,7 @@
             @if ($count % 3 == 1)
                 <?php echo '<div class="row">'; ?>
             @endif
-            <div class="col-sm-4" onClick="location.href='credential_content.html';" style="background: <?php echo ($category['bg_img_id'] != '') ? "url('.." . Files::find($category['bg_img_id'])->dir . "');" : "#666; min-height: 281px;" ?>">
+            <div class="col-sm-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['bg_img_id'] != '') ? "url('.." . Files::find($category['bg_img_id'])->dir . "');" : "#666; min-height: 281px;" ?>">
                 <div class="contbox">
                     <div class="greybox"></div>
                     <ul class="scene">

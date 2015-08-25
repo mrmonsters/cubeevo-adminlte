@@ -10,6 +10,7 @@ use App\Models\EntityInstance;
 use App\Models\Attribute;
 use App\Models\AttributeValue;
 use App\Services\GeneralHelper;
+use App\Services\CategoryHelper;
 
 class HomeController extends Controller {
 
@@ -75,7 +76,7 @@ class HomeController extends Controller {
 		return view('frontend.credential_content');
 	}
 
-	public function getCredentialProject(GeneralHelper $genHelper)
+	public function getCredentialProject($categoryId, CategoryHelper $catHelper)
 	{
 		$codes = array(
 			'name',
@@ -83,7 +84,7 @@ class HomeController extends Controller {
 			'bg_img_id',
 			'sort_order'
 		);
-		$projects = $genHelper->getEntityCollection('project', $codes);
+		$projects = $catHelper->getCategoryProject($categoryId, $codes);
 
 		return view('frontend.project')->with('projects', $projects);
 	}
