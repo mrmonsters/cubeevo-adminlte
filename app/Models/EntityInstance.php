@@ -17,5 +17,10 @@ class EntityInstance extends Model {
 	{
 		return $this->hasMany('App\Models\AttributeValue', 'entity_instance_id', 'id');
 	}
+
+	public function instanceChildren()
+	{
+		return $this->hasMany('App\Models\EntityChild', 'parent_id', 'id');
+	}
 	
 }

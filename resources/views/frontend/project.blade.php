@@ -15,9 +15,9 @@
                     <div class="greybox"></div>
                     <ul class="scene">
                         <li class="layer" data-depth="0.30">
-                        @if ($project['img_id'] != '')
+                            @if ($project['img_id'] != '')
                             <img src="{{ Files::find($project['img_id'])->dir }}" width="100%"/>
-                        @endif
+                            @endif
                         </li>
                     </ul>
                     <div class="row panel-body overlap">
