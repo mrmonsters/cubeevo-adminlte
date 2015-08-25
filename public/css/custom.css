@@ -136,11 +136,13 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	z-index:1;
 	position:relative;
 	color:#fff;
+	min-height: 30px;
 }
 .panel-title { padding-left:0px; float:left; font-size:18px;}
 .panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:11px; border-left:1px solid #fff;}
 
 /*credential page*/ 
+.container-fluid.cre{background:#666;}
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
 	cursor:pointer;}
 .cre-1 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
@@ -150,8 +152,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-5 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-6 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
-.cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);}
-.cre-9 {background:#666; min-height:281px;}
+.cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
 .cre .panel-title {text-align:center;}
 .cre .contbox {position: relative; padding: 15px 0;}
 .cre .contbox ul {margin: 0 50px; }
