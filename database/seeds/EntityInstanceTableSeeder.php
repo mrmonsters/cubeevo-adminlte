@@ -10,7 +10,7 @@ class EntityInstanceTableSeeder extends Seeder
 		DB::table('entity_instances')->delete();
 
 		$instances = array(
-			// Entity instances
+			// Categories
 			array(
 				'entity_id' => '1',
 				'status'    => '2'
@@ -82,6 +82,31 @@ class EntityInstanceTableSeeder extends Seeder
 			),
 			array(
 				'entity_id' => '3',
+				'status'    => '2'
+			),
+			// Projects
+			array(
+				'entity_id' => '2',
+				'status'    => '2'
+			),
+			array(
+				'entity_id' => '2',
+				'status'    => '2'
+			),
+			array(
+				'entity_id' => '2',
+				'status'    => '2'
+			),
+			array(
+				'entity_id' => '2',
+				'status'    => '2'
+			),
+			array(
+				'entity_id' => '2',
+				'status'    => '2'
+			),
+			array(
+				'entity_id' => '2',
 				'status'    => '2'
 			),
 		);

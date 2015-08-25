@@ -15,6 +15,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/about-us', 'HomeController@getAboutUs');
 Route::get('/credential', 'HomeController@getCredential');
 Route::get('/credential/content', 'HomeController@getCredentialContent');
+Route::get('/credential/project', 'HomeController@getCredentialProject');
 Route::get('/solution', 'HomeController@getSolution');
 Route::get('/research', 'HomeController@getResearch');
 Route::get('/process', 'HomeController@getProcess');
@@ -56,6 +57,13 @@ Route::get('admin/manage/category/create', 'CategoryController@create');
 Route::get('admin/manage/category/edit/{category_id}', 'CategoryController@edit');
 Route::put('manage/category/update/{category_id}', 'CategoryController@update');
 Route::post('manage/category/store', 'CategoryController@store');
+
+// Project routes...
+Route::get('admin/manage/project', 'ProjectController@index');
+Route::get('admin/manage/project/create', 'ProjectController@create');
+Route::get('admin/manage/project/edit/{project_id}', 'ProjectController@edit');
+Route::put('manage/project/update/{project_id}', 'ProjectController@update');
+Route::post('manage/project/store', 'ProjectController@store');
 
 // Solution routes...
 Route::get('admin/manage/solution', 'SolutionController@index');

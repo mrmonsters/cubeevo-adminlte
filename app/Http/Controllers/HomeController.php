@@ -75,6 +75,19 @@ class HomeController extends Controller {
 		return view('frontend.credential_content');
 	}
 
+	public function getCredentialProject(GeneralHelper $genHelper)
+	{
+		$codes = array(
+			'name',
+			'img_id',
+			'bg_img_id',
+			'sort_order'
+		);
+		$projects = $genHelper->getEntityCollection('project', $codes);
+
+		return view('frontend.project')->with('projects', $projects);
+	}
+
 	public function getSolution(GeneralHelper $genHelper)
 	{
 		$codes =  array(

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('EntityInstanceTableSeeder');
 		$this->call('AttributeTableSeeder');
 		$this->call('CategoryTableSeeder');
+		$this->call('ProjectTableSeeder');
 		$this->call('SolutionTableSeeder');
 	}
 
