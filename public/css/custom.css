@@ -73,7 +73,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .mob-visible {display:none;}
 
 /*---------------- Home -----------------*/
-
+.home-dna{max-width: 868px;}
 #fullpage .col-sm-6{padding-top: 8px;padding-bottom: 8px;}
 #fullpage .content-wrapper{ 
 	position: relative;
@@ -136,11 +136,13 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	z-index:1;
 	position:relative;
 	color:#fff;
+	min-height: 30px;
 }
 .panel-title { padding-left:0px; float:left; font-size:18px;}
 .panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:11px; border-left:1px solid #fff;}
 
 /*credential page*/ 
+.container-fluid.cre{background:#666;}
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
 	cursor:pointer;}
 .cre-1 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
@@ -150,8 +152,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-5 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-6 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
-.cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);}
-.cre-9 {background:#666; min-height:281px;}
+.cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
 .cre .panel-title {text-align:center;}
 .cre .contbox {position: relative; padding: 15px 0;}
 .cre .contbox ul {margin: 0 50px; }
@@ -176,8 +177,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .crecol-1 {padding-left:0;}
 .cre .comingsoon {}
 
-@media (min-width: 768px) {
-	.section .col-sm-6{height: 100%;} 
+@media (min-width: 992px) {
+	.section .col-md-6{height: 100%;padding:5px 10px;} 
 	#fullpage .content-wrapper > .content-section{  
 	  	position:  absolute;
 	    width: 96%;
@@ -204,10 +205,12 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
 .aboutus .about-img2 {height:253px; display:block; background:url(../img/Images-08-1.png) no-repeat center center; clear:both;}
 .aboutus .about-img3 {clear:both; text-align:center;}
-.aboutus .about-369 {max-width:1300px; margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
+.aboutus .about-369 {margin:50px 0 0; padding-bottom:100px; background:url(../img/Images-40.png) no-repeat bottom center; background-size: 100%;}
 .aboutus .about-369 .about-369txt {margin-top:20px; font-size:12px; line-height:20px;}
-.aboutus .about-369 .about-369img {margin-top:50px}
+.aboutus .about-369 .about-369img {margin-top:50px;}
+.aboutus .about-369 .about-369img img {max-width: 150px;}
 .aboutus .about-369 .col-xs-6 {width:100%;}
+.aboutus .about-369heading img{max-width: 131px;}
 .aboutus .team, .aboutus .career {background:#f7941a;}
 .aboutus .team .profilepic img {width:100%;}
 .aboutus .team .profilepic {margin-top:30px;}
@@ -237,11 +240,15 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-msg {background:url(../img/Images-18.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
 .scene.mascott{position:relative;left: -70%;top: -2%;}
+.scene.mascott.purple{top: 2%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
-	height: 760px; 
-	background-size: 12800px 760px;
+	height: 760px;   
 } 
+.scene.mascott .layer > img{ 
+	max-height: 760px;
+	max-width: 1280px;
+}
 /* *
  * 
  * mascott
@@ -285,6 +292,20 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 
 
+@media (min-width:768px){
+  .cd-vertical-nav {  
+    top: 50%;
+  }
+  .mascott {display:none;}
+}
+
+@media (min-width:992px){
+  .cd-vertical-nav {  
+    top: 50%;
+  }
+  .mascott {display:block;}
+}
+
 @media (max-width:1024px){
 	.process .flow {margin:40px -75px;}
 	.process .flow .left .box {padding:25px 80px 25px 40px;}
@@ -292,25 +313,10 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 
 @media (max-width:768px){
-
-.scene.orange img{
-	width: 320px;
-}
-	#orangemascott{
-		background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Mascot_Animation_B.png') 0 0 no-repeat;
-		width: 320px;
-		height: 190px; 
-		background-size: 1600px 190px;
-	} 
-#light{
-	background: transparent url('../img/Mascott/CubeEvo_Mascot-Orange-Woosh_Animation.png') 0 0 no-repeat;
-	width: 320px;
-	height: 190px; 
-	background-size: 3200px 380px;
-} 
+ 
 	img.mas-1 {height:auto;}
 	#cd-main-nav .inner {padding: 15px 15%; }
-	.maincol-right {float:none;}
+	/*.maincol-right {float:none;}*/
 	.maincol-left {}
 	.credential .blankbox {height:auto;}
 	.mob-hide, .mascott {display:none;}

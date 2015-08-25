@@ -16,15 +16,15 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'title'   => 'Home',
 				'desc'    => 'Home page.',
 				'content' => '<div class="section" id="section0">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 						<ul class="scene mob-hide">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%" ></li>
+							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%"  class="home-dna"></li>
 						</ul>
 						<ul class="scene mob-visible">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%" ></li>
+							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 						</ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 								<div class="row">
@@ -40,13 +40,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>  
 					</div>
 					<div class="section" id="section1">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott orange">  
 		                    <li class="layer" data-depth="0.8"><div id="light"></div></li> 
 		                    <li class="layer" data-depth="0.3"><div id="orangemascott"></div></li> 
 		                </ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -62,14 +62,14 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section2">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott yellow">  
 		                    <li class="layer" data-depth="0.1"><div id="yellowmascott"></div></li>
 		                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Yellow/Yellow_Mascot_02-Body.png" width="200%" ></li>
 		                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Yellow/Yellow_Mascot_03-Hands.png" width="200%" ></li> 
 		                </ul>
 					</div> 
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -85,13 +85,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section3">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott red">  
 		                    <li class="layer" data-depth="0.3"><div id="redmascott"></div></li>
 		                    <li class="layer" data-depth="0.8"><div id="knife"></div></li> 
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -107,14 +107,14 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section4">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott purple">  
 		                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Purple/Purple-Mascot_01-Body.png" width="200%" ></li>
 		                    <li class="layer" data-depth="0.5"><img src="img/Mascott/Purple/Purple-Mascot_02-Hands.png" width="200%" ></li> 
 		                    <li class="layer" data-depth="1"><img src="img/Mascott/Purple/Purple-Mascot_04-Cube.png" id="cube" style="position:relative;" width="200%" ></li> 
 		                </ul>
 					</div>
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -130,13 +130,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>   
 					</div>
 					<div class="section" id="section5">
-					<div class="col-sm-6 maincol-right">  
+					<div class="col-md-6 maincol-right">  
 						<ul class="scene mascott blue">  
 		                    <li class="layer" data-depth="1.00"><div id="blink"></div></li>
 		                    <li class="layer" data-depth="0.30"><div id="bluemascott"></div></li>  
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -152,13 +152,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="section" id="section6">
-					<div class="col-sm-6 maincol-right">
+					<div class="col-md-6 maincol-right">
 		                <ul class="scene mascott green">  
 		                    <li class="layer" data-depth="1.00"><div id="bird"></div></li>
 		                    <li class="layer" data-depth="0.30"><div id="greenmascott"></div></li>  
 		                </ul>
 					</div>  
-					<div class="col-sm-6 maincol-left">
+					<div class="col-md-6 maincol-left clearfix">
 						<div class="content-wrapper">
 							<div class="content-section"> 
 							<div class="row">
@@ -237,28 +237,28 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<div class="row about-369"> 
 					<div class="col-sm-10 col-sm-offset-1 text-center">
 						<div class="col-sm-4">
-							<div class="col-xs-6"><img src="/img/Images-09.png"></div>
-							<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png"></div>
+							<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
+							<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
 						</div>
 						<div class="col-sm-4">
-							<div class="col-xs-6"><img src="/img/Images-10.png"></div>
-							<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-2.gif"></div>
+							<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
+							<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-2.gif" width="100%"></div>
 						</div>
 						<div class="col-sm-4">
-							<div class="col-xs-6"><img src="/img/Images-11.png"></div>
-							<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png" ></div>
+							<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
+							<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
 							<div class="col-xs-6 about-369txt">
-								<div class="col-xs-4 nopadding">
+								<div class="col-xs-12 col-sm-4 nopadding">
 									品牌形象策划<br>
 									广告方案策划<br>
 									广播广告策划<br>
 								</div>
-								<div class="col-xs-4 nopadding">
+								<div class="col-xs-12 col-sm-4 nopadding">
 									品牌形象策划<br>
 									广告方案策划<br>
 									广播广告策划<br>
 								</div>
-								<div class="col-xs-4 nopadding">
+								<div class="col-xs-12 col-sm-4 nopadding">
 									品牌形象策划<br>
 									广告方案策划<br>
 									广播广告策划<br>
@@ -273,7 +273,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡!</p>
 					</div>
 					<div class="col-sm-10 col-sm-offset-1">
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -281,7 +281,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
 							</div>	
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -289,7 +289,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
 							</div>	
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -297,7 +297,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
 							</div>	
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -305,7 +305,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
 							</div>	
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -313,7 +313,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
 							</div>	
 						</div>
-						<div class="col-xs-3">
+						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
 							<div class="profilename">ALVIN LEE / 策划总监</div>
 							<div class="profiledesc">
@@ -330,28 +330,28 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<p>寻找与众不同，勇於追求创新及卓越的挑战，不懈的学习与爱探索的您，欢迎您加入型立方。</p>
 					</div>
 					<div class="col-sm-10 col-sm-offset-1">
-						<div class="col-xs-4">
+						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	
 						</div>
-						<div class="col-xs-4">
+						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	
 						</div>
-						<div class="col-xs-4">
+						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	
 						</div>
-						<div class="col-xs-4">
+						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
@@ -424,10 +424,10 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="row"> 
-					<div class="col-sm-8 col-sm-offset-2 mob-hide">
+					<div class="col-sm-8 col-sm-offset-2 hidden-xs">
 						<img src="/img/Images-37.png" width="100%">
 					</div>
-					<div class="col-sm-8 col-sm-offset-2 mob-visible">
+					<div class="col-sm-8 col-sm-offset-2 visible-xs-block" style="padding-bottom:100px;">
 						<img src="/img/Images-37-mob.png" width="100%">
 					</div>
 					</div>',

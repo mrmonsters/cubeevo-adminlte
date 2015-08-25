@@ -338,10 +338,11 @@ Main Components
   -moz-transition: opacity 0.2s 0s, visibility 0s 0.2s;
   transition: opacity 0.2s 0s, visibility 0s 0.2s;
 }
-@media only screen and (min-width: 1050px) {
-  .cd-vertical-nav {
+  .cd-vertical-nav {    
     display: block;
+    top: 60px;
   }
+@media only screen and (min-width: 1050px) { 
 }
 @-webkit-keyframes cd-slide-in {
   0% {
