@@ -342,32 +342,131 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">加入型立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">平面设计师</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">加入型立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">平面及多媒体实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入型立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">事务或行政实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入型立方</button>
 							</div>	
 						</div>
 					</div>
-					</div>',
+					</div>
+
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">客户端服务及销售执行</h4>
+      </div>
+      <div class="modal-body">
+	      <ul>
+	      	<li>Good understanding in advertising industries.</li>
+	      	<li>Fresh graduates are encouraged to apply.</li>
+	      	<li>Able to work closely with client and creative team.</li>
+	      	<li>Result-oriented and strong organization skills.</li>
+	      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+	      	<li>Fluent in written & spoken English.</li>
+	      	<li>Possess a driving license and own vehicle.</li>
+	      </ul> 
+      </div>
+      <div class="modal-footer"> 
+        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">平面设计师</h4>
+      </div>
+      <div class="modal-body">
+	      <ul>
+	      	<li>Good understanding in advertising industries.</li>
+	      	<li>Fresh graduates are encouraged to apply.</li>
+	      	<li>Able to work closely with client and creative team.</li>
+	      	<li>Result-oriented and strong organization skills.</li>
+	      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+	      	<li>Fluent in written & spoken English.</li>
+	      	<li>Possess a driving license and own vehicle.</li>
+	      </ul> 
+      </div>
+      <div class="modal-footer"> 
+        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">平面及多媒体实习生</h4>
+      </div>
+      <div class="modal-body">
+	      <ul>
+	      	<li>Good understanding in advertising industries.</li>
+	      	<li>Fresh graduates are encouraged to apply.</li>
+	      	<li>Able to work closely with client and creative team.</li>
+	      	<li>Result-oriented and strong organization skills.</li>
+	      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+	      	<li>Fluent in written & spoken English.</li>
+	      	<li>Possess a driving license and own vehicle.</li>
+	      </ul> 
+      </div>
+      <div class="modal-footer"> 
+        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">事务或行政实习生</h4>
+      </div>
+      <div class="modal-body">
+	      <ul>
+	      	<li>Good understanding in advertising industries.</li>
+	      	<li>Fresh graduates are encouraged to apply.</li>
+	      	<li>Able to work closely with client and creative team.</li>
+	      	<li>Result-oriented and strong organization skills.</li>
+	      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+	      	<li>Fluent in written & spoken English.</li>
+	      	<li>Possess a driving license and own vehicle.</li>
+	      </ul> 
+      </div>
+      <div class="modal-footer"> 
+        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+      </div>
+    </div>
+  </div>
+</div>
+',
 				'locale_id'  => '1',
 				'status'  => '2'
 			),
