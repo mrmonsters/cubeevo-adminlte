@@ -238,9 +238,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .phone {background:url(../img/Images-19.png) no-repeat left top;}
 .contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -46px;}
 .contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -98px;}
-.contactus .form-control {background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px}
+.contactus .active .form-control{border-color: #f7941a;}
+.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
+.contactus .form-control {background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px;    margin-bottom: 20px;}
 .contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
-.contactus label {visibility:hidden; margin-top:20px; }
+.contactus label {visibility:hidden;margin-top: 0px;margin-bottom: 18px;}
 .contactus label.unhide {visibility:visible; padding-left:40px;}
 .contactus .icon {width:30px; height:30px; display:block; position:absolute;}
 .contactus .cont-name {background:url(../img/Images-18.png) no-repeat 0px 0px;}

@@ -9,37 +9,39 @@
 	</div>
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-1 text-center">
+			<br/>
+			<br/>
+			<br/>
 			<p>您有任何疑问?您需要一个报价或者建议？<br>
 			如果你想了解更多有关我们的专业服务，我们如何运作，欢迎你发邮件或致电，我们很高兴为您提供服务。
 		</div>
 		<div class="col-sm-10 col-sm-offset-1 text-center">
 			<p><span class="contactus-icon mail"></span>enquire@cubeevo.com</p>
 			<p><span class="contactus-icon phone"></span>+603 9010 9882</p>
+			<br/>
+			<br/>
+			<br/>
 		</div>
 	</div>
 	
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-6">
-				<label>姓名</label>
+			<div class="col-sm-6"> 
 				<span class="icon cont-name"></span>
 				<input type="text" id="inputName" class="form-control" placeholder="姓名" required="" autofocus="">
 			</div>
-			<div class="col-sm-6">
-				<label>电邮</label>
+			<div class="col-sm-6"> 
 				<span class="icon cont-mail"></span>
 				<input type="email" id="inputEmail" class="form-control" placeholder="电邮" required="" autofocus="">
 			</div>
 		</div>
 			
 		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-6">
-				<label>联络号码</label>
+			<div class="col-sm-6"> 
 				<span class="icon cont-contact"></span>
 				<input type="text" id="inputNumber" class="form-control" placeholder="联络号码" required="" autofocus="">
 			</div>
-			<div class="col-sm-6">
-				<label>标题</label>
+			<div class="col-sm-6"> 
 				<span class="icon cont-title"></span>
 				<input type="text" id="inputTitle" class="form-control" placeholder="标题" required="" autofocus="">
 			</div>
@@ -48,13 +50,21 @@
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="col-sm-12">	
 				<label class="unhide">讯息</label>
-				<span class="icon cont-msg" style="top:20px;"></span>
+				<span class="icon cont-msg" style="top:-3px;"></span>
 				<textarea> </textarea>
 			</div>
 		</div>
 		
 		<div class="col-sm-10 col-sm-offset-1 text-center">
+			<br/> 
+			<br/> 
 			<button type="button" class="btn btn-sm btn-default">呈交</button>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
 		</div>	
 	</div>
 		

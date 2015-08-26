@@ -35,6 +35,12 @@ $(document).ready(function() {
     	$.fn.fullpage.moveSectionUp();
     	return false;
   	});
+  	$('.contactus .form-control,.contactus textarea').focus(function(){
+  		$(this).parent().addClass('active');
+  	});
+  	$('.contactus .form-control,.contactus textarea').blur(function(){
+  		$(this).parent().removeClass('active');
+  	});
 
 
   	var cube = $('#cube');
