@@ -194,11 +194,11 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<div class="col-sm-8 col-sm-offset-2">
 						<div class="col-sm-6">
 						<h4>为何形立方会用魔术方块【魔方】为标志？</h4>
-						<p>魔方的魅力在于三三不尽，六六无穷，九九归一的组合变化，这如同品牌形象塑造与广告设计的借镜，既可以天马行空，却不会不切实际。
+						<p>魔方的魅力在于三三不尽、六六无穷、九九归一的组合变化,这如同品牌形象塑造与广告设计的借镜,既可以天马行空,却不会不切实际。</p>
 						</div>
 						<div class="col-sm-6">
 						<h4>形立方与别的广告公司有什么不一样？</h4>
-						<p>形立方是一家品牌兼广告设计公司，务求达致客户期待的目标，遵守一个字【活】。魔方是活的，品牌是活的，形立方也是活的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架，形立方也讲究【活力】，在打造品牌的过程中就是展现活力。
+						<p>形立方是一家品牌兼广告设计公司，务求达致客户期待的目标，遵守一个字【活】。魔方是活的，品牌是活的，形立方也是活的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架，形立方也讲究【活力】，在打造品牌的过程中就是展现活力。</p>
 						</div>
 					</div>
 					<div class="col-lg-12 mob-hide">
@@ -206,12 +206,12 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					<div class="col-sm-8 col-sm-offset-2">
 						<div class="col-sm-6">
-						<h4>为何形立方会用魔术方块【魔方】为标志？</h4>
-						<p>魔方的魅力在于三三不尽，六六无穷，九九归一的组合变化，这如同品牌形象塑造与广告设计的借镜，既可以天马行空，却不会不切实际。
+						<h4>为何取名“形立方”?</h4>
+						<p>形立方之命名,除了表现我们擅长形象建立,更犹如魔方一样千变万化。</p>
 						</div>
 						<div class="col-sm-6">
-						<h4>形立方与别的广告公司有什么不一样？</h4>
-						<p>形立方是一家品牌兼广告设计公司，务求达致客户期待的目标，遵守一个字【活】。魔方是活的，品牌是活的，形立方也是活的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架，形立方也讲究【活力】，在打造品牌的过程中就是展现活力。
+						<h4>形立方的工作目标是什么?</h4>
+						<p>聆听客户需求,规划客户需求,制作客户需求。不做无理花费,提供客户真正需要的方案。</p>
 						</div>
 					</div>
 					</div>
@@ -219,8 +219,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<div class="col-xs-12" style="background-color:#848383">
 						<div class="col-sm-10 col-sm-offset-1">
 							<h1 class="txtwhite"><span></span>愿景</h1>
-							<div class="tagline text-center">"创意因品牌而生，品牌因创新而活。"</div>
-							<div class="sub-tagline text-center">创立方立意要为品牌注入新元素，激活品牌新生命。</div>
+							<div class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</div>
+							<div class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</div>
 						</div>
 					</div>
 					</div>
@@ -228,8 +228,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 					<div class="col-xs-12" style="background-color:#676464">
 						<div class="col-sm-10 col-sm-offset-1">
 							<h1 class="txtwhite"><span></span>使命</h1>
-							<div class="tagline text-center">"激活品牌，展现完美。"</div>
-							<div class="sub-tagline text-center">创立方秉持"灵活"宗旨，为客户打造完美品牌。</div>
+							<div class="tagline text-center">“激活品牌,展现完美。”</div>
+							<div class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</div>
 						</div>
 						<div class="about-img1 mob-hide"><img src="/img/Images-17.png"></div>
 					</div>
@@ -254,20 +254,20 @@ class PageContentTableSeeder extends DatabaseSeeder
 									广播广告策划<br>
 								</div>
 								<div class="col-xs-12 col-sm-4 nopadding">
-									品牌形象策划<br>
-									广告方案策划<br>
-									广播广告策划<br>
+									数码设计<br>
+									平面设计<br>
+									平面摄影<br>
 								</div>
 								<div class="col-xs-12 col-sm-4 nopadding">
-									品牌形象策划<br>
-									广告方案策划<br>
-									广播广告策划<br>
+									包装<br>
+									文案撰写<br>
+									印刷服务<br>
 								</div>
 							</div>
 						</div>
 					</div>
 					</div>
-					<div class="row team"> 
+					<div class="row team hide"> 
 					<div class="col-sm-10 col-sm-offset-1">
 					<h1 class="txtwhite"><span></span>团队成员</h1>
 					<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡!</p>
@@ -283,7 +283,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
-							<div class="profilename">ALVIN LEE / 策划总监</div>
+							<div class="profilename">CHARIS NG / 营运经理</div>
 							<div class="profiledesc">
 							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
@@ -291,7 +291,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
-							<div class="profilename">ALVIN LEE / 策划总监</div>
+							<div class="profilename">KEITH PHANG / 策划总监</div>
 							<div class="profiledesc">
 							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
@@ -299,7 +299,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
-							<div class="profilename">ALVIN LEE / 策划总监</div>
+							<div class="profilename">TIMOTHY TAI / 策划总监</div>
 							<div class="profiledesc">
 							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
@@ -307,7 +307,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
-							<div class="profilename">ALVIN LEE / 策划总监</div>
+							<div class="profilename">FEIXIN LEW / 策划总监</div>
 							<div class="profiledesc">
 							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
@@ -315,7 +315,15 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="profilepic"><img src="/img/Images-08.png"></div>
-							<div class="profilename">ALVIN LEE / 策划总监</div>
+							<div class="profilename">DENYI SIOW / 策划总监</div>
+							<div class="profiledesc">
+							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+							</div>	
+						</div>
+						<div class="col-xs-12 col-sm-3">
+							<div class="profilepic"><img src="/img/Images-08.png"></div>
+							<div class="profilename">LEVAN ANG / 策划总监</div>
 							<div class="profiledesc">
 							<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
 							<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
@@ -324,10 +332,10 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div> 
 					</div>
 					<div class="row career"> 
-					<hr class="whitehr">
+					<hr class="whitehr hide">
 					<div class="col-sm-10 col-sm-offset-1">
 					<h1 class="txtwhite"><span></span>加入团队</h1>
-					<p>寻找与众不同，勇於追求创新及卓越的挑战，不懈的学习与爱探索的您，欢迎您加入型立方。</p>
+					<p>找寻与众不同，勇於追求创新及卓越的挑战，不懈的学习与爱探索的您，欢迎您加入型立方。</p>
 					</div>
 					<div class="col-sm-10 col-sm-offset-1">
 						<div class="col-xs-12 col-sm-3">
@@ -339,21 +347,21 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
-								<p class="txtwhite">客户端服务及销售执行</p>
+								<p class="txtwhite">平面设计师</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
-								<p class="txtwhite">客户端服务及销售执行</p>
+								<p class="txtwhite">平面及多媒体实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
-								<p class="txtwhite">客户端服务及销售执行</p>
+								<p class="txtwhite">事务或行政实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default">加入型立方</button>
 							</div>	

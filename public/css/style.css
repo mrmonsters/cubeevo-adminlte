@@ -81,7 +81,7 @@ Main Components
   transition: transform 0.3s, visibility 0s 0.3s;
 }
 #cd-main-nav .inner {
-	padding: 15%;
+	padding: 30% 15%;
 	text-align:center;
 }
 #cd-nav .logo {
@@ -93,7 +93,7 @@ Main Components
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   width:100%;
-  margin:10px auto;
+  margin:25% auto 0px
 }
 #cd-nav ul li {
   /* Force Hardware Acceleration in WebKit */
@@ -175,7 +175,7 @@ Main Components
   height: 44px;
   background: white;
   border-radius: 0.25em;
-  box-shadow: 0 0 10px #999999;
+  /*box-shadow: 0 0 10px #999999;*/
   /* image replacement */
   /* overflow: hidden; */
   text-indent: 100%;
@@ -187,7 +187,7 @@ Main Components
   position: absolute;
   display: block;
   width: 20px;
-  height: 2px;
+  height: 1px;
   background: #333333;
   top: 50%;
   margin-top: -1px;
