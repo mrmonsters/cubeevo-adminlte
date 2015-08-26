@@ -21,6 +21,8 @@ class CreateFilesTable extends Migration {
 			$table->string('type');
 			$table->string('dir');
 			$table->integer('size');
+			$table->integer('sort_order')
+				->default(0);
 			$table->timestamps('created_at');
 			$table->integer('status')
 				->default(0);

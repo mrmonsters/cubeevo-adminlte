@@ -1,6 +1,7 @@
 @extends('partials.frontend.app')
 
 @section('frontend-content')
+<?php use App\Models\Files; ?>
 <div class="container-fluid credential">
     <div class="row" style="position:relative;"> 
         <div class="col-sm-12 nopadding">
@@ -17,14 +18,14 @@
                         <div class="row">
                             <div class="col-sm-2">
                             	<p class="desctitle" style="color:#8c0039">客户名称</p>
-                            	<p>HAIRDEPOT</p>
+                            	<p>{{ $project['name'] }}</p>
                                 <br>
                                 <p class="desctitle" style="color:#8c0039">合作年份</p>
-                            	<p>2014</p>
+                            	<p>{{ $project['year'] }}</p>
                             </div>
                             <div class="col-sm-10">
                                 <p class="desctitle" style="color:#8c0039">项目名称</p>
-                            	<h3>HAIRDEPOT BRANDING</h3>
+                            	<h3>{{ $project['name'] }}</h3>
                                 
                                 <p class="desctitle" style="color:#8c0039">项目概述</p>
                             	<div class="col-sm-6 crecol-1">当世界进入品牌竞争的时代，当品牌成为中华大地上商界的热点时，品牌设计也成为人们常挂在嘴边的时髦词汇。有人统计说企业每投在品牌形象设计上1美元，所获得的收益是227美元。如此诱人的投资回报率，无怪乎企业界对品牌设计趋之若鹜。那么，品牌设计究竟是什么？其魅力来自何处？<br>
@@ -44,7 +45,7 @@
                             <div class="col-sm-2 col-ppl">
                             	<div class="photo"><img src="{{ asset('img/Images-08.png') }}" width="100%"></div>
                             	<p>Founder / CEO</p>
-                                <p>- Jeff Yong- </p>
+                                <p>-{{ $project['founder'] }}-</p>
                             </div>
                             <div class="col-sm-10">
                                 <p class="desctitle" style="color:#8c0039">客户反馈</p>
@@ -65,69 +66,13 @@
             </div>
         </div>
     </div> 
-    <div class="row whitebg"> 
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-24.png') }}" width="100%">
-        </div>
-    </div>
-    <div class="row whitebg">    
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-25.png') }}" width="100%">
-        </div>
-    </div>
-    <div class="row whitebg"> 
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-26.png') }}" width="100%">
-        </div>
-    </div>
-    <div class="row whitebg"> 
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-27.png') }}" width="100%">
-        </div>
-    </div>
-    <div class="row whitebg"> 
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-28.png') }}" width="100%">
-        </div>
-    </div>
-    <div class="row whitebg"> 
-        <div class="col-sm-8 col-sm-offset-2">
-            <img src="{{ asset('img/Images-29.png') }}" width="100%">
-        </div>
-    </div>
+    <?php $imgIds = explode(",", $project['img_ids']); ?>
+    @foreach ($imgIds as $imgId)
     <div class="row"> 
         <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_Branding_CIS_1920.jpg') }}" width="100%">
+            <img src="{{ Files::find($imgId)->dir }}" width="100%">
         </div>
     </div>
-   <!-- slide -->
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_Branding_Mascot_1920.jpg') }}" width="100%">
-        </div>
-    </div>
-    <!-- END: slide -->
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_Branding_Poster_1920.jpg') }}" width="100%">
-        </div>
-    </div>
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_Branding_Tee_1920.jpg') }}" width="100%">
-        </div>
-    </div>
-    <!-- slide -->
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_BrandManual_01_1920.jpg') }}" width="100%">
-        </div>
-    </div>
-    <!-- END: slide -->
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ asset('img/Hairdepot_Branding/Hairdepot_Branding_MobileApp_1920.jpg') }}" width="100%">
-        </div>
-    </div>
+    @endforeach
 </div> 
 @endsection

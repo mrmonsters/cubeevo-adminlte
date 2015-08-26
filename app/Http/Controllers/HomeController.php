@@ -71,9 +71,26 @@ class HomeController extends Controller {
 		return view('frontend.credential')->with('categories', $categories);
 	}
 
-	public function getProjectContent()
+	public function getProjectContent($projectId, GeneralHelper $genHelper)
 	{
-		return view('frontend.credential_content');
+		$codes =  array(
+			'name',
+			'img_id',
+			'bg_img_id',
+			'img_ids',
+			'founder',
+			'year',
+			'sort_order'
+		);
+		$entity = EntityInstance::find($projectId);
+
+		$project = array();
+		foreach ($codes as $code)
+		{
+			$project[$code] = $genHelper->getAttribute($code, $entity);
+		}
+
+		return view('frontend.project_content')->with('project', $project);
 	}
 
 	public function getCredentialProject($categoryId, CategoryHelper $catHelper)

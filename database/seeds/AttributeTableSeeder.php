@@ -25,8 +25,8 @@ class AttributeTableSeeder extends Seeder
 				'status'     => '2'
 			),
 			array(
-				'name'       => 'Page Slug',
-				'code'       => 'slug',
+				'name'       => 'Branding',
+				'code'       => 'brand',
 				'type'       => 'text',
 				'sort_order' => '3',
 				'status'     => '2'
@@ -57,6 +57,27 @@ class AttributeTableSeeder extends Seeder
 				'code'       => 'bg_img_id',
 				'type'       => 'digit',
 				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Images',
+				'code'       => 'img_ids',
+				'type'       => 'text',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Year',
+				'code'       => 'year',
+				'type'       => 'text',
+				'sort_order' => '10',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Founder',
+				'code'       => 'founder',
+				'type'       => 'text',
+				'sort_order' => '11',
 				'status'     => '2'
 			),
 		);

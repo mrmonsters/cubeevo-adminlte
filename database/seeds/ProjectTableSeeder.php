@@ -31,6 +31,30 @@ class ProjectTableSeeder extends Seeder
 				'status' => '2'
 			),
 			array(
+				'name'       => 'WorldTop_Billboard_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Automotive/World Top/Full Width/WorldTop_Billboard_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WorldTop_Billboard_2012_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Automotive/World Top/Full Width/WorldTop_Billboard_2012_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WorldTop_Flyer_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Automotive/World Top/Full Width/WorldTop_Flyer_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
 				'name'   => 'RHB_FunFacts_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Thumbnail/RHB_FunFacts_Thumbnail.png',
@@ -43,6 +67,118 @@ class ProjectTableSeeder extends Seeder
 				'dir'    => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Thumbnail/RHB_FunFacts_Thumbnail_Background.jpg',
 				'size'   => '0',
 				'status' => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Music_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Music_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Music_19',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Music_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Onion_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Onion_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Onion_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Onion_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Onion_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Onion_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '5',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Onion_04_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Onion_04_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '6',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Recycling_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Recycling_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '7',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Recycling_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Recycling_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Spider_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Spider_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_Spider_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_Spider_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '10',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_VaticanCity_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_VaticanCity_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '11',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_VaticanCity_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_VaticanCity_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '12',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'FunFacts_VaticanCity_04_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/Fun Facts/Full Width/FunFacts_VaticanCity_04_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '13',
+				'status'     => '2'
 			),
 			array(
 				'name'   => 'RHB_WOTD_Thumbnail',
@@ -59,6 +195,134 @@ class ProjectTableSeeder extends Seeder
 				'status' => '2'
 			),
 			array(
+				'name'       => 'WOTD_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Accept&Except_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Accept&Except_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Accept&Except_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Accept&Except_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Accept&Except_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Accept&Except_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Accept&Except_04_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Accept&Except_04_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_College&Collage_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_College&Collage_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_College&Collage_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_College&Collage_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_College&Collage_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_College&Collage_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Complement&Compliment_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Complement&Compliment_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '5',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Complement&Compliment_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Complement&Compliment_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '6',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Complement&Compliment_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Complement&Compliment_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '7',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Complement&Compliment_04_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Complement&Compliment_04_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Message&Massage_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Message&Massage_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Message&Massage_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Message&Massage_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '10',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Whether&Weather_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Whether&Weather_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '11',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'WOTD_Whether&Weather_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Banking/RHB/WOTD/Full Width/WOTD_Whether&Weather_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '12',
+				'status'     => '2'
+			),
+			array(
 				'name'   => 'Sunshine_Website_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Portfolio/Beauty/Sunshine/Thumbnail/Sunshine_Website_Thumbnail.png',
@@ -71,6 +335,38 @@ class ProjectTableSeeder extends Seeder
 				'dir'    => '/img/Credential Portfolio/Beauty/Sunshine/Thumbnail/Sunshine_Website_Thumbnail.jpg',
 				'size'   => '0',
 				'status' => '2'
+			),
+			array(
+				'name'       => 'Sunshine_Website_01',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Beauty/Sunshine/Full Width/Sunshine_Website_01.jpg',
+				'size'       => '0',
+				'sort_order' => '',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Sunshine_Website_02',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Beauty/Sunshine/Full Width/Sunshine_Website_02.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Sunshine_Website_03',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Beauty/Sunshine/Full Width/Sunshine_Website_03.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Sunshine_Website_04',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Beauty/Sunshine/Full Width/Sunshine_Website_04.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
 			),
 			array(
 				'name'   => 'Fortson_Thumbnail',
@@ -87,6 +383,46 @@ class ProjectTableSeeder extends Seeder
 				'status' => '2'
 			),
 			array(
+				'name'       => 'Fortson_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Developer/Fortson/Full Width/Fortson_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Fortson_Branding_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Developer/Fortson/Full Width/Fortson_Branding_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Fortson_Branding_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Developer/Fortson/Full Width/Fortson_Branding_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Fortson_Website_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Developer/Fortson/Full Width/Fortson_Website_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Fortson_Website_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Developer/Fortson/Full Width/Fortson_Website_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
 				'name'   => 'Globbykidz_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Portfolio/Education/Globbykidz/Thumbnail/Globbykidz_Thumbnail.png',
@@ -99,6 +435,94 @@ class ProjectTableSeeder extends Seeder
 				'dir'    => '/img/Credential Portfolio/Education/Globbykidz/Thumbnail/Globbykidz_Thumbnail_Background.jpg',
 				'size'   => '0',
 				'status' => '2'
+			),
+			array(
+				'name'       => 'GlobbyKids_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/GlobbyKids_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'GlobbyKidz_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/GlobbyKidz_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'GlobbyKidz_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/GlobbyKidz_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_BrandManual_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_BrandManual_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_BrandManual_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_BrandManual_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_BrandManual_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_BrandManual_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '5',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_Report_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_Report_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '6',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_Report_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_Report_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '7',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Globbykidz_Report_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/Globbykidz_Report_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'GlobbyKidz_Banner_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/GlobbyKidz_Banner_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'GlobbyKidz_Flyer_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Globbykidz/Full Width/GlobbyKidz_Flyer_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '10',
+				'status'     => '2'
 			),
 			array(
 				'name'   => 'Kostka_Thumbnail',
@@ -115,6 +539,22 @@ class ProjectTableSeeder extends Seeder
 				'status' => '2'
 			),
 			array(
+				'name'       => 'Kostka_Branding_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Kostka/Full Width/Kostka_Branding_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Kostka_Branding_05_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/Education/Kostka/Full Width/Kostka_Branding_05_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '10',
+				'status'     => '2'
+			),
+			array(
 				'name'   => 'Auric_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Portfolio/F&B/Auric Pacific/Thumbnail/Auric_Thumbnail.png',
@@ -127,6 +567,118 @@ class ProjectTableSeeder extends Seeder
 				'dir'    => '/img/Credential Portfolio/F&B/Auric Pacific/Thumbnail/Auric_Thumbnail_Background.jpg',
 				'size'   => '0',
 				'status' => '2'
+			),
+			array(
+				'name'       => 'Auric_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Poster_2014_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Poster_2014_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Booth_2015_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Booth_2015_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2013_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2013_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2013_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2013_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2014_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2014_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '5',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2014_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2014_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '6',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2015_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2015_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '7',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Brochure_2015_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Brochure_2015_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Bunting_2013_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Bunting_2013_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '9',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Bunting_2013_1920_01',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Bunting_2013_1920_01.jpg',
+				'size'       => '0',
+				'sort_order' => '10',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Bunting_2014_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Bunting_2014_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '11',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Bunting_2014_01_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Bunting_2014_01_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '12',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Auric_Bunting_2015_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Auric Pacific/Full Width/Auric_Bunting_2015_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '13',
+				'status'     => '2'
 			),
 			array(
 				'name'   => 'LianSin_Thumbnail',
@@ -143,6 +695,70 @@ class ProjectTableSeeder extends Seeder
 				'status' => '2'
 			),
 			array(
+				'name'       => 'LianSin_Cover_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/LianSin_Cover_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Butterfly_Packaging_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/Butterfly_Packaging_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Butterfly_RedPacket_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/Butterfly_RedPacket_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'CapAmoi_Poster_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/CapAmoi_Poster_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'CapAmoi_PressAd_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/CapAmoi_PressAd_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Chrysanthemum_Packaging_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/Chrysanthemum_Packaging_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '5',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'LianSin_Raya_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/LianSin_Raya_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '6',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'MrThai_Packaging_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/Lian Sin/Full Width/MrThai_Packaging_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '7',
+				'status'     => '2'
+			),
+			array(
 				'name'   => 'TK_Website_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Portfolio/F&B/TK/Thumbnail/TK_Website_Thumbnail.png',
@@ -155,6 +771,46 @@ class ProjectTableSeeder extends Seeder
 				'dir'    => '/img/Credential Portfolio/F&B/TK/Thumbnail/TK_Website_Thumbnail_Background.jpg',
 				'size'   => '0',
 				'status' => '2'
+			),
+			array(
+				'name'       => 'TK_Website_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/TK/Full Width/TK_Website_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '0',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'TK_Website_02_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/TK/Full Width/TK_Website_02_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '1',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'TK_Website_03_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/TK/Full Width/TK_Website_03_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '2',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'TK_Website_04_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/TK/Full Width/TK_Website_04_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '3',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'TK_Website_05_1920',
+				'type'       => 'image/jpeg',
+				'dir'        => '/img/Credential Portfolio/F&B/TK/Full Width/TK_Website_05_1920.jpg',
+				'size'       => '0',
+				'sort_order' => '4',
+				'status'     => '2'
 			),
 			array(
 				'name'   => 'IP_Thumbnail',
@@ -268,6 +924,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'World Top description.',
 				),
+				'img_count' => 3,
 			),
 			array(
 				'name' => array(
@@ -276,6 +933,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Fun Facts (RHB) description.',
 				),
+				'img_count' => 14,
 			),
 			array(
 				'name' => array(
@@ -284,6 +942,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'WOTD (RHB) description.',
 				),
+				'img_count' => 16,
 			),
 			array(
 				'name' => array(
@@ -292,6 +951,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Sunshine description.',
 				),
+				'img_count' => 4,
 			),
 			array(
 				'name' => array(
@@ -300,6 +960,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Fortson description.',
 				),
+				'img_count' => 5,
 			),
 			array(
 				'name' => array(
@@ -308,6 +969,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Globbykidz description.',
 				),
+				'img_count' => 11,
 			),
 			array(
 				'name' => array(
@@ -316,6 +978,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Kostka description.',
 				),
+				'img_count' => 2,
 			),
 			array(
 				'name' => array(
@@ -324,6 +987,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Auric Pacific description.',
 				),
+				'img_count' => 14,
 			),
 			array(
 				'name' => array(
@@ -332,6 +996,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Lian Sin description.',
 				),
+				'img_count' => 8,
 			),
 			array(
 				'name' => array(
@@ -340,7 +1005,9 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'TK description.',
 				),
+				'img_count' => 5,
 			),
+			/*
 			array(
 				'name' => array(
 					'cn' => 'IP Server One',
@@ -348,6 +1015,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'IP Server One description.',
 				),
+				'img_count'   => '3, 4, 5',
 			),
 			array(
 				'name' => array(
@@ -356,6 +1024,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'PLT description.',
 				),
+				'img_count'   => '3, 4, 5',
 			),
 			array(
 				'name' => array(
@@ -363,7 +1032,8 @@ class ProjectTableSeeder extends Seeder
 				),
 				'desc' => array(
 					'cn' => 'Greenology description.',
-				),
+				),,
+				'img_count'   => '3, 4, 5',
 			),
 			array(
 				'name' => array(
@@ -372,6 +1042,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Hair Milk description.',
 				),
+				'img_count'   => '3, 4, 5',
 			),
 			array(
 				'name' => array(
@@ -380,6 +1051,7 @@ class ProjectTableSeeder extends Seeder
 				'desc' => array(
 					'cn' => 'Hairdepot description.',
 				),
+				'img_count'   => '3, 4, 5',
 			),
 			array(
 				'name' => array(
@@ -387,15 +1059,21 @@ class ProjectTableSeeder extends Seeder
 				),
 				'desc' => array(
 					'cn' => 'Midori description.',
-				),
+				),,
+				'img_count'   => '3, 4, 5',
 			),
+			*/
 		);
 
 		$proCount = 0;
 
 		foreach ($projects as $project)
 		{
-			$values = array(
+			$imgId   = ++$lastFileId;
+			$bgImgId = ++$lastFileId;
+			$imgIds  = $this->_getImgIds($project['img_count'], $lastFileId);
+
+			$values  = array(
 				++$lastInstanceId => array(
 					'name' => array(
 						'cn' => $project['name']['cn']
@@ -403,11 +1081,16 @@ class ProjectTableSeeder extends Seeder
 					'desc' => array(
 						'cn' => $project['desc']['cn']
 					),
-					'img_id' 	 => ++$lastFileId,
-					'bg_img_id'  => ++$lastFileId,
+					'img_id'     => $imgId,
+					'bg_img_id'  => $bgImgId,
+					'img_ids'  => implode("," , $imgIds),
+					'founder'    => 'Jerry Young',
+					'year'       => '2014',
 					'sort_order' => $proCount,
-				)
+				),
 			);
+
+			$lastFileId = end($imgIds);
 
 			foreach ($values[$lastInstanceId] as $code => $item)
 			{
@@ -487,6 +1170,18 @@ class ProjectTableSeeder extends Seeder
 
 			$proCount++;
 		}
+	}
+
+	protected function _getImgIds($count, $lastFileId)
+	{
+		$imgIds = array();
+
+		for ($i = 0; $i < $count; $i++)
+		{
+			$imgIds[] = ++$lastFileId;
+		}
+
+		return $imgIds;
 	}
 
 }
