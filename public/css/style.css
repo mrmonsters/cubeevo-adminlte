@@ -9,6 +9,7 @@ Primary style
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
   background-color: #eee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 body::before {
   /* never visible - this is used in jQuery to check the current MQ */
