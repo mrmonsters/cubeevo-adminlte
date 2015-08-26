@@ -1,4 +1,9 @@
 @extends('app')
+<?php
+use App\Models\Locale;
+
+$locales = Locale::where('status', '=', '2')->get();
+?>
 
 @section('htmlheader_title')
 Solution Management
@@ -31,14 +36,12 @@ Description for solution management
 			<div class="box-body">
 				<table id="tbl-solution" class="table">
 					<thead>
-						<th width="5%">ID</th>
-						<th width="15%">Name</th>
-						<th width="30%">Description</th>
-						<th width="10%">Sort Order</th>
-						<th width="10%">Created At</th>
-						<th width="10%">Updated At</th>
-						<th width="5%">Status</th>
-						<th width="15%">Action</th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Created At</th>
+						<th>Updated At</th>
+						<th>Status</th>
+						<th>Action</th>
 					</thead>
 					<tbody>
 						@if (isset($solutions) && is_array($solutions) && !empty($solutions))
@@ -46,8 +49,6 @@ Description for solution management
 						<tr>
 							<td>{{ $solution['id'] }}</td>
 							<td>{{ $solution['name'] }}</td>
-							<td>{{ $solution['desc'] }}</td>
-							<td>{{ $solution['sort_order'] }}</td>
 							<td>{{ $solution['created_at'] }}</td>
 							<td>{{ $solution['updated_at'] }}</td>
 							<td>

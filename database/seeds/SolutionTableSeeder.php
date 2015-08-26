@@ -202,10 +202,10 @@ class SolutionTableSeeder extends Seeder
 					'desc' => array(
 						'cn' => $solution['desc']['cn'],
 					),
-					'bg_color_code' => $solution['bg_color_code'],
-					'bg_img_id'     => $bgImgId,
-					'img_id'        => ++$lastFileId,
-					'sort_order'	=> $solCount,
+					'pri_bg_color_code' => $solution['bg_color_code'],
+					'grid_bg_img_id'    => $bgImgId,
+					'grid_img_id'       => ++$lastFileId,
+					'sort_order'        => $solCount,
 				),
 			);
 

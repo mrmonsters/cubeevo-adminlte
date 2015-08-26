@@ -39,45 +39,66 @@ class AttributeTableSeeder extends Seeder
 				'status'     => '2'
 			),
 			array(
-				'name'       => 'Background Color',
-				'code'       => 'bg_color_code',
+				'name'       => 'Primary Background Color',
+				'code'       => 'pri_bg_color_code',
 				'type'       => 'text',
 				'sort_order' => '6',
 				'status'     => '2'
 			),
 			array(
-				'name'       => 'Image',
-				'code'       => 'img_id',
-				'type'       => 'digit',
+				'name'       => 'Secondary Background Color',
+				'code'       => 'sec_bg_color_code',
+				'type'       => 'text',
 				'sort_order' => '7',
 				'status'     => '2'
 			),
 			array(
-				'name'       => 'Background Image',
-				'code'       => 'bg_img_id',
+				'name'       => 'Grid Image',
+				'code'       => 'grid_img_id',
 				'type'       => 'digit',
 				'sort_order' => '8',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Background Image',
+				'code'       => 'grid_bg_img_id',
+				'type'       => 'digit',
+				'sort_order' => '9',
 				'status'     => '2'
 			),
 			array(
 				'name'       => 'Images',
 				'code'       => 'img_ids',
 				'type'       => 'text',
-				'sort_order' => '9',
+				'sort_order' => '10',
 				'status'     => '2'
 			),
 			array(
 				'name'       => 'Year',
 				'code'       => 'year',
 				'type'       => 'text',
-				'sort_order' => '10',
+				'sort_order' => '11',
 				'status'     => '2'
 			),
 			array(
 				'name'       => 'Founder',
 				'code'       => 'founder',
 				'type'       => 'text',
-				'sort_order' => '11',
+				'sort_order' => '12',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Cover Image',
+				'code'       => 'cover_img_id',
+				'type'       => 'text',
+				'sort_order' => '13',
+				'status'     => '2'
+			),
+			array(
+				'name'       => 'Text Color Code',
+				'code'       => 'txt_color_code',
+				'type'       => 'text',
+				'sort_order' => '14',
 				'status'     => '2'
 			),
 		);

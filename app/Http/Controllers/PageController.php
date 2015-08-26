@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Page;
 use App\Models\Menu;
-use App\Models\Section;
+use App\Models\Block;
 use App\Models\PageMenu;
-use App\Models\PageSection;
+use App\Models\PageBlock;
 
 class PageController extends Controller {
 
@@ -141,42 +141,25 @@ class PageController extends Controller {
 	{
 		//
 		$page = Page::find($id);
-		$menus = PageMenu::where('page_id', '=', $id)->get();
-		$sections = PageSection::where('page_id', '=', $id)->get();
+		$menus = PageMenu::where('id', '=', $id)->get();
 
-		$pMenus = Menu::whereNull('parent_menu_id')->get();
-		$cMenus = Menu::whereNotNull('parent_menu_id')->get();
-		$pageSections = Section::all();
+		$pMenus = Menu::whereNull('parent_id')->get();
+		$cMenus = Menu::whereNotNull('parent_id')->get();
 		$pageMenuIds = array();
-		$pageSectionIds = array();
-		$sectionIds = '';
 
 		if (!$menus->isEmpty())
 		{
 			foreach ($menus as $menu)
 			{
-				$pageMenuIds[] = $menu->menu_id;
+				$pageMenuIds[] = $menu->id;
 			}
-		}
-
-		if (!$sections->isEmpty())
-		{
-			foreach ($sections as $section)
-			{
-				$pageSectionIds[] = $section->section_id;
-			}
-
-			$sectionIds = implode(",", $pageSectionIds);
 		}
 
 		return view('management.page.edit')
 			->with('page', $page)
 			->with('pMenus', $pMenus)
 			->with('cMenus', $cMenus)
-			->with('sections', $pageSections)
-			->with('pageMenuIds', $pageMenuIds)
-			->with('pageSectionIds', $pageSectionIds)
-			->with('sectionIds', $sectionIds);
+			->with('pageMenuIds', $pageMenuIds);
 	}
 
 	/**

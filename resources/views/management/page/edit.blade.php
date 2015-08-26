@@ -1,4 +1,10 @@
 @extends('app')
+<?php
+use App\Models\Locale;
+use App\Models\PageContent;
+
+$locales = Locale::where('status', '=', '2')->get();
+?>
 
 @section('htmlheader_title')
 Static Page Management
@@ -22,7 +28,7 @@ Description for static page management
 @endif
 
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-10 col-md-offset-1">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Page #{{ $page->id }}</h3>
@@ -30,7 +36,6 @@ Description for static page management
 			<form method="POST" action="{{ url('manage/page/update/' . $page->id) }}">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
-				<input id="id" name="id" type="hidden" value="{{ $blockIds }}" />
 				<div class="box-body">
 					<div class="form-group">
 						<label for="title" class="control-label">Title</label>
@@ -61,9 +66,30 @@ Description for static page management
 						@endif 
 						</select>
 					</div>
-					<div class="form-group">
-						<label for="content" class="control-label">Content</label>
-						<textarea id="content" name="content" class="form-control" rows="8">{{ $page->content }}</textarea>
+					<div class="nav-tabs-custom">
+						<ul class="nav nav-tabs">
+						@if (isset($locales) && !$locales->isEmpty())
+							<?php $count = 0; ?>
+							@foreach ($locales as $locale)
+								<?php $count++; ?>
+								<li class="{{ ($count == 1) ? 'active' : '' }}"><a href="#{{ $locale->code }}" data-toggle="tab">{{ $locale->name }}</a></li>
+							@endforeach
+						@endif
+						</ul>
+						<div class="tab-content">
+						@if (isset($locales) && !$locales->isEmpty())
+							<?php $count = 0; ?>
+							@foreach ($locales as $locale)
+								<?php $count++; ?>
+								<div id="{{ $locale->code }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
+									<div class="form-group">
+										<label for="content" class="control-label">Content</label>
+										<textarea id="content" name="content_{{ $locale->id }}" class="form-control" rows="16">{{ ($content = $page->pageContents()->where('locale_id', $locale->id)->first()) ? $content->content : '' }}</textarea>
+									</div>
+								</div>
+							@endforeach
+						@endif
+						</div>
 					</div>
 				</div>
 				<div class="box-footer clearfix">
@@ -73,35 +99,6 @@ Description for static page management
 					</div>
 				</div>
 			</form>
-		</div>
-	</div>
-	<div class="col-md-4">
-		<div class="box box-primary">
-			<div class="box-header with-border">
-				<h3 class="box-title">Add Blocks</h3>
-			</div>
-			<div class="box-body">
-				<table id="tbl-block" class="table">
-					<thead>
-						<th width="80%">Name</th>
-						<th>Action</th>
-					</thead>
-					<tbody>
-					@if (isset($blocks) && !$blocks->isEmpty())
-					@foreach ($blocks as $block)
-						<tr>
-							<td>{{ $block->title }}</td>
-							@if (in_array($block->id, $pageBlockIds))
-							<td><button type="button" class="btn btn-danger" onclick="removeBlock('{{ $block->id }}', this)">Remove</button></td>
-							@else
-							<td><button type="button" class="btn btn-primary" onclick="addBlock('{{ $block->id }}', this)">Add</button></td>
-							@endif
-						</tr>
-					@endforeach
-					@endif
-					</tbody>
-				</table>
-			</div>
 		</div>
 	</div>
 </div>
@@ -120,33 +117,9 @@ $(document).ready(function()
 
 	CKEDITOR.config.contentsCss = cssSources;
 	CKEDITOR.config.allowedContent = true;
-	CKEDITOR.replace('content');
-
-	$('#tbl-block').DataTable({
-		searching: false,
-		info: false
-	});
+	@foreach ($locales as $locale)
+	CKEDITOR.replace('content_{{ $locale->id }}');
+	@endforeach
 });
-
-function addBlock(blockId, btn)
-{
-	var oriBlockIds = $('#id').val();
-	var blockIds = (oriBlockIds != '') ? oriBlockIds + ", " + blockId : blockId;
-	$('#id').val(blockIds);
-
-	var newHtml = '<button type="button" class="btn btn-danger" onclick="removeBlock('+ blockId +', this)">Remove</button>';
-	$(btn).replaceWith(newHtml);
-}
-
-function removeBlock(blockId, btn)
-{
-	var blockIds = $('#id').val().replace(blockId, "");
-	var blockIds = blockIds.replace(blockId, "");
-	var blockIds = blockIds.replace(blockId + ", ", "");
-	$('#id').val(blockIds);
-
-	var newHtml = '<button type="button" class="btn btn-sm btn-primary" onclick="addBlock('+ blockId +', this)">Add</button>';
-	$(btn).replaceWith(newHtml);
-}
 </script>
 @endsection

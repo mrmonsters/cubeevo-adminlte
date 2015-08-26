@@ -62,8 +62,8 @@ class HomeController extends Controller {
 	{
 		$codes =  array(
 			'name',
-			'img_id',
-			'bg_img_id',
+			'grid_img_id',
+			'grid_bg_img_id',
 			'sort_order'
 		);
 		$categories = $genHelper->getEntityCollection('category', $codes);
@@ -75,9 +75,13 @@ class HomeController extends Controller {
 	{
 		$codes =  array(
 			'name',
-			'img_id',
-			'bg_img_id',
+			'cover_img_id',
+			'grid_img_id',
+			'grid_bg_img_id',
 			'img_ids',
+			'pri_bg_color_code',
+			'sec_bg_color_code',
+			'txt_color_code',
 			'founder',
 			'year',
 			'sort_order'
@@ -97,8 +101,8 @@ class HomeController extends Controller {
 	{
 		$codes = array(
 			'name',
-			'img_id',
-			'bg_img_id',
+			'grid_img_id',
+			'grid_bg_img_id',
 			'sort_order'
 		);
 		$projects = $catHelper->getCategoryProject($categoryId, $codes);
@@ -111,9 +115,9 @@ class HomeController extends Controller {
 		$codes =  array(
 			'name',
 			'desc',
-			'bg_color_code',
-			'img_id',
-			'bg_img_id',
+			'pri_bg_color_code',
+			'grid_img_id',
+			'grid_bg_img_id',
 			'sort_order'
 		);
 		$solutions = $genHelper->getEntityCollection('solution', $codes);
