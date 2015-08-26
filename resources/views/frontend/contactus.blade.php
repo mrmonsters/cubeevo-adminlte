@@ -3,7 +3,7 @@
 @section('frontend-content')
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
-		<div class="col-sm-10 col-sm-offset-1">
+		<div class="col-sm-10 col-sm-offset-2">
 			<h1 class="txtorange"><span></span>联络我们</h1>
 		</div>
 	</div>

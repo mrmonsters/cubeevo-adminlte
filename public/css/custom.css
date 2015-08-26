@@ -196,6 +196,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	}
 }
 
+.container-fluid.process{margin: 15px;background-color: #eee;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
 .process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;}
 .process .flow .right {width:50%; height:100px; margin-left:50%; background:url(../img/processflowR.png) no-repeat left;}
@@ -205,6 +206,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .left .box span {color: #f7941a; font-size:18px; position: absolute; right: 50px; bottom: 5px;}
 .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; left: 50px; bottom: 5px;}
 
+.container-fluid.aboutus{margin: 15px;background-color: #eee;}
 .aboutus .tagline {color:#f7941a; font-size:54px;}
 .aboutus .sub-tagline {color:#fff; font-size:22px; margin-bottom:50px;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
@@ -218,7 +220,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .about-369 .about-369img img {max-width: 150px;}
 .aboutus .about-369 .col-xs-6 {width:100%;}
 .aboutus .about-369heading img{max-width: 131px;}
-.aboutus .team, .aboutus .career {background:#f7941a;}
+.aboutus .team,{background:#f7941a;}
 .aboutus .team .profilepic img {width:100%;}
 .aboutus .team .profilepic {margin-top:30px;}
 .aboutus .team .profilename {color:#fff; margin:20px 0;}
@@ -226,6 +228,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .career .job {overflow:hidden; margin-bottom: 30px; margin-top:10px;}
 .aboutus .career .job button {border: 1px solid #fff; background: none; color: #fff; padding: 10px 20px; border-radius: 0; float:right;}
 
+.container-fluid.contactus{margin: 15px;background-color: #eee;}
 .contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;}
 .contactus h5 {font-weight:bold;}
 .contactus ul { list-style:none; padding:0; overflow:hidden;}

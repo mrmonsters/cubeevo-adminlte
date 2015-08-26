@@ -182,7 +182,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'title'   => 'About Us',
 				'desc'    => 'About us page.',
 				'content' => '<div class="row" style="position:relative;"> 
-					<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-sm-9 col-sm-offset-2">
 						<h1 class="txtorange"><span></span>理念</h1>
 						<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡！</p>
 					</div>
@@ -216,8 +216,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="row"> 
-					<div class="col-xs-12" style="background-color:#848383">
-						<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-xs-12" style="background-color:#848383;">
+						<div class="col-sm-9 col-sm-offset-2">
 							<h1 class="txtwhite"><span></span>愿景</h1>
 							<div class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</div>
 							<div class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</div>
@@ -225,8 +225,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div>
 					</div>
 					<div class="row"> 
-					<div class="col-xs-12" style="background-color:#676464">
-						<div class="col-sm-10 col-sm-offset-1">
+					<div class="col-xs-12" style="background-color:#676464;">
+						<div class="col-sm-9 col-sm-offset-2">
 							<h1 class="txtwhite"><span></span>使命</h1>
 							<div class="tagline text-center">“激活品牌,展现完美。”</div>
 							<div class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</div>
@@ -332,6 +332,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div> 
 					</div>
 					<div class="row career"> 
+					<div class="col-xs-12" style="background:#f7941a;">
 					<hr class="whitehr hide">
 					<div class="col-sm-10 col-sm-offset-1">
 					<h1 class="txtwhite"><span></span>加入团队</h1>
@@ -365,7 +366,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
 								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入型立方</button>
 							</div>	
-						</div>
+						</div> 
+					</div>
 					</div>
 					</div>
 
