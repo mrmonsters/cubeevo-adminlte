@@ -5,12 +5,12 @@
 <div class="container-fluid sol">
     @if (isset($solutions) && is_array($solutions) && !empty($solutions))
         <?php $count = 0; ?>
+                <?php echo '<div class="row">'; ?>
         @foreach ($solutions as $solution)
             <?php $count++; ?>
-            @if ($count % 3 == 1)
-                <?php echo '<div class="row">'; ?>
+            @if ($count % 3 == 1) 
             @endif
-            <div class="col-sm-4" style="background: {{ $solution['bg_color_code'] }} url('..{{ Files::find($solution['bg_img_id'])->dir }}'); background-position: right;">
+            <div class="sol-box col-sm-6 col-lg-4" style="background: {{ $solution['bg_color_code'] }} url('..{{ Files::find($solution['bg_img_id'])->dir }}'); background-position: right;">
                 <div class="contbox"> 
                     <div class="greybox"></div>
                     <ul class="scene">
@@ -26,10 +26,10 @@
                     </div> 
                 </div>
             </div>
-            @if (($count % 3 == 0) || ($count == count($solutions)))
-                <?php echo '</div>'; ?>
+            @if (($count % 3 == 0) || ($count == count($solutions))) 
             @endif
         @endforeach
+                <?php echo '</div>'; ?>
     @endif 
 </div> 
 @endsection
