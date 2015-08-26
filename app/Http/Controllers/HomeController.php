@@ -71,7 +71,7 @@ class HomeController extends Controller {
 		return view('frontend.credential')->with('categories', $categories);
 	}
 
-	public function getCredentialContent()
+	public function getProjectContent()
 	{
 		return view('frontend.credential_content');
 	}

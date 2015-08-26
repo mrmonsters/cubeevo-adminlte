@@ -10,7 +10,7 @@
             @if ($count % 2 == 1)
                 <?php echo '<div class="row">'; ?>
             @endif
-            <div class="col-sm-6" onClick="location.href='credential_content.html';" style="background: <?php echo ($project['bg_img_id'] != '') ? "url('.." . Files::find($project['bg_img_id'])->dir . "') no-repeat; background-size: cover;" : "#666; min-height: 281px;" ?>">
+            <div class="col-sm-6" onClick="location.href='{{ url('credential/project/content') }}';" style="background: <?php echo ($project['bg_img_id'] != '') ? "url('.." . Files::find($project['bg_img_id'])->dir . "') no-repeat; background-size: cover;" : "#666; min-height: 281px;" ?>">
                 <div class="contbox">
                     <div class="greybox"></div>
                     <ul class="scene">
