@@ -1,7 +1,5 @@
 @extends('app')
 
-<?php use App\Models\Files; ?>
-
 @section('htmlheader_title')
 Category Management
 @endsection
@@ -33,15 +31,12 @@ Description for category management
 			<div class="box-body">
 				<table id="tbl-category" class="table">
 					<thead>
-						<th width="5%">ID</th>
-						<th width="12%">Name</th>
-						<th width="20%">Image</th>
-						<th width="20%">Background Image</th>
-						<th width="3%">Sort Order</th>
-						<th width="10%">Created At</th>
-						<th width="10%">Updated At</th>
-						<th width="5%">Status</th>
-						<th width="10%">Action</th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Created At</th>
+						<th>Updated At</th>
+						<th>Status</th>
+						<th>Action</th>
 					</thead>
 					<tbody>
 						@if (isset($categories) && is_array($categories) && !empty($categories))
@@ -49,9 +44,6 @@ Description for category management
 						<tr>
 							<td>{{ $category['id'] }}</td>
 							<td>{{ $category['name'] }}</td>
-							<td>{{ ($img = Files::find($category['img_id'])) ? $img->dir : '-' }}</td>
-							<td>{{ ($img = Files::find($category['bg_img_id'])) ? $img->dir : '-' }}</td>
-							<td>{{ $category['sort_order'] }}</td>
 							<td>{{ $category['created_at'] }}</td>
 							<td>{{ $category['updated_at'] }}</td>
 							<td>

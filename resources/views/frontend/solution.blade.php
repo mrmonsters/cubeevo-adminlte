@@ -9,12 +9,12 @@
         @foreach ($solutions as $solution)
             <?php $count++; ?>
             @if ($count % 3 == 1) 
-            @endif
-            <div class="sol-box col-sm-6 col-lg-4" style="background: {{ $solution['bg_color_code'] }} url('..{{ Files::find($solution['bg_img_id'])->dir }}'); background-position: right;">
+            @endif 
+            <div class="sol-box col-sm-6 col-lg-4" style="background: {{ $solution['pri_bg_color_code'] }} url('..{{ Files::find($solution['grid_bg_img_id'])->dir }}'); background-position: right;">
                 <div class="contbox"> 
                     <div class="greybox"></div>
                     <ul class="scene">
-                        <li class="layer" data-depth="0.50"><img src="{{ Files::find($solution['img_id'])->dir }}" width="100%"/></li>
+                        <li class="layer" data-depth="0.50"><img src="{{ Files::find($solution['grid_img_id'])->dir }}" width="100%"/></li>
                     </ul> 
                     <div class="row panel-body overlap">
                         <p class="col-sm-4 panel-title">

@@ -10,13 +10,13 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif
-            <div class="cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['bg_img_id'] != '') ? "url('.." . Files::find($category['bg_img_id'])->dir . "');" : "#666; min-height: 281px;" ?>">
+            <div class="cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['grid_bg_img_id'] != '') ? "url('.." . Files::find($category['grid_bg_img_id'])->dir . "');" : "#666; min-height: 281px;" ?>">
                 <div class="contbox">
                     <div class="greybox"></div>
                     <ul class="scene">
                         <li class="layer" data-depth="0.30">
-                            @if ($category['img_id'] != '')
-                            <img src="{{ Files::find($category['img_id'])->dir }}" width="100%"/>
+                            @if ($category['grid_img_id'] != '')
+                            <img src="{{ Files::find($category['grid_img_id'])->dir }}" width="100%"/>
                             @endif
                         </li>
                     </ul> 

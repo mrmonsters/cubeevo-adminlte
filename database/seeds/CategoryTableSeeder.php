@@ -143,9 +143,9 @@ class CategoryTableSeeder extends Seeder
 						'cn' => $cat['cn'],
 						'en' => $cat['en'],
 					),
-					'img_id' 	 => ++$lastFileId,
-					'bg_img_id'  => ++$lastFileId,
-					'sort_order' => $catCount,
+					'grid_img_id'    => ++$lastFileId,
+					'grid_bg_img_id' => ++$lastFileId,
+					'sort_order'     => $catCount,
 				),
 			);
 

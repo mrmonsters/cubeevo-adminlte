@@ -31,13 +31,12 @@ Description for static page management
 			<div class="box-body">
 				<table id="tbl-page" class="table">
 					<thead>
-						<th width="5%">ID</th>
-						<th width="15%">Title</th>
-						<th width="30%">Description</th>
-						<th width="10%">Created At</th>
-						<th width="10%">Updated At</th>
-						<th width="5%">Status</th>
-						<th width="15%">Action</th>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Created At</th>
+						<th>Updated At</th>
+						<th>Status</th>
+						<th>Action</th>
 					</thead>
 					<tbody>
 						@if (isset($pages) && !$pages->isEmpty())
@@ -45,7 +44,6 @@ Description for static page management
 						<tr>
 							<td>{{ $page->id }}</td>
 							<td>{{ $page->title }}</td>
-							<td>{{ $page->desc }}</td>
 							<td>{{ $page->created_at }}</td>
 							<td>{{ $page->updated_at }}</td>
 							<td>

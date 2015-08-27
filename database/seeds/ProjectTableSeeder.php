@@ -1081,12 +1081,16 @@ class ProjectTableSeeder extends Seeder
 					'desc' => array(
 						'cn' => $project['desc']['cn']
 					),
-					'img_id'     => $imgId,
-					'bg_img_id'  => $bgImgId,
-					'img_ids'  => implode("," , $imgIds),
-					'founder'    => 'Jerry Young',
-					'year'       => '2014',
-					'sort_order' => $proCount,
+					'cover_img_id'   => '16',
+					'grid_img_id'    => $imgId,
+					'grid_bg_img_id' => $bgImgId,
+					'img_ids'        => implode("," , $imgIds),
+					'pri_bg_color_code' => '#6666FF',
+					'sec_bg_color_code' => '#6699FF',
+					'txt_color_code' => '#8c0039',
+					'founder'        => 'Jerry Young',
+					'year'           => '2014',
+					'sort_order'     => $proCount,
 				),
 			);
 

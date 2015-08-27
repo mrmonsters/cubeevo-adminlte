@@ -31,37 +31,33 @@ Description for project management
 			<div class="box-body">
 				<table id="tbl-project" class="table">
 					<thead>
-						<th width="5%">ID</th>
-						<th width="15%">Title</th>
-						<th width="30%">Description</th>
-						<th width="10%">Sort Order</th>
-						<th width="10%">Created At</th>
-						<th width="10%">Updated At</th>
-						<th width="5%">Status</th>
-						<th width="15%">Action</th>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Created At</th>
+						<th>Updated At</th>
+						<th>Status</th>
+						<th>Action</th>
 					</thead>
 					<tbody>
-						@if (isset($projects) && !$projects->isEmpty())
+						@if (isset($projects) && is_array($projects) && !empty($projects))
 						@foreach ($projects as $project)
 						<tr>
-							<td>{{ $project->id }}</td>
-							<td>{{ $project->title }}</td>
-							<td>{{ $project->desc }}</td>
-							<td>{{ $project->sort_order}}</td>
-							<td>{{ $project->created_at }}</td>
-							<td>{{ $project->updated_at }}</td>
+							<td>{{ $project['id'] }}</td>
+							<td>{{ $project['name'] }}</td>
+							<td>{{ $project['created_at'] }}</td>
+							<td>{{ $project['updated_at'] }}</td>
 							<td>
-								@if ($project->status == '2')
+								@if ($project['status'] == '2')
 								<span class="label label-success">Active</span>
-								@elseif ($project->status == '1')
+								@elseif ($project['status'] == '1')
 								<span class="label label-danger">Inactive</span>
 								@else 
 								<span class="label label-warning">Incomplete</span>
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/project/edit/' . $project->id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/project/destroy/' . $project->id) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/project/edit/' . $project['id']) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/project/destroy/' . $project['id']) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach
