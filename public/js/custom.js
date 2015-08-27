@@ -132,19 +132,13 @@ $(document).ready(function() {
   //console.log(event.offset);    
     var rotateY = ((-event.pageX +halfWindowW)/halfWindowW)*maxRotationY,
       rotateX = ((event.pageY-halfWindowH)/halfWindowH)*maxRotationX; 
-      
-      if(rotateY < -11.2){
-        rotateY = rotateY + 20;
+      console.log('start'+rotateY);
+      if(rotateY < -32.9){
+        rotateY = rotateY + 42.5;
+      }else if(rotateY < -11.2){
+        rotateY = rotateY + 22;
       } 
-      if(rotateY < -20){
-        rotateY = rotateY + 30;
-      } 
-      if(rotateY < -30){
-        rotateY = rotateY + 40;
-      }
-      if(rotateY < -40){
-        rotateY = rotateY + 50;
-      }  
+      console.log('end'+rotateY);
 
     if( rotateY > maxRotationY) rotateY = maxRotationY;
     if( rotateY < -maxRotationY ) rotateY = -maxRotationY;
