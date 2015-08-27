@@ -10,12 +10,16 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif 
-            <div class="sol-box col-sm-6 col-lg-4" style="background: {{ $solution['pri_bg_color_code'] }} url('..{{ Files::find($solution['grid_bg_img_id'])->dir }}'); background-position: right;">
+            <div id='cre-box__{{$count}}' class="js-three-d sol-box col-sm-6 col-lg-4" style="background: {{ $solution['pri_bg_color_code'] }} url('..{{ Files::find($solution['grid_bg_img_id'])->dir }}'); background-position: right;">
                 <div class="contbox"> 
-                    <div class="greybox"></div>
-                    <ul class="scene">
-                        <li class="layer" data-depth="0.50"><img src="{{ Files::find($solution['grid_img_id'])->dir }}" width="100%"/></li>
-                    </ul> 
+                    <div class="greybox"></div> 
+
+                    <div class="cd-background-wrapper">
+                        <figure class="cd-floating-background"> 
+                            <img src="{{ Files::find($solution['grid_img_id'])->dir }}" width="100%"/>
+                        </figure>
+                    </div> 
+
                     <div class="row panel-body overlap">
                         <p class="col-sm-4 panel-title">
                             {{ $solution['name'] }}
