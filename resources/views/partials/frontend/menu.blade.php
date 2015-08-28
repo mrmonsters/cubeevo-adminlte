@@ -1,6 +1,24 @@
 <div id="cd-nav">
 	<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 
+    @if(isset($backbtn))
+    <a href="{{$backbtn}}" style="position: fixed;
+    top: 20px;
+    left: 7%;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 0.25em; 
+    text-indent: 100%;
+    white-space: nowrap;
+    z-index: 10;"> 
+        <div class="arrow-left">
+            <div class="arrow-left__top smart-transition"></div>
+            <div class="arrow-left__bottom smart-transition"></div>
+        </div>
+    </a>
+    @endif
+
 	<div id="cd-main-nav">
         <div class="inner">
         
@@ -46,4 +64,4 @@
             </div> 
     	</div>
     </div>
-</div>
+</div> 

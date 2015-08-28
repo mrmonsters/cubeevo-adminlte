@@ -398,6 +398,13 @@ Main Components
   position: relative;
 }
 
+.smart-transition{-webkit-transition: width  0.5s, height  0.5s, background-color  0.5s, -webkit-transform  0.5s;
+    transition: width 0.5s, height  0.5s, background-color  0.5s, transform  0.5s;}
+.arrow-left{position: absolute; transform-style: flat; backface-visibility: hidden; transform: translate3d(10px, 18px, 0px) rotate(-90deg); width: 24px; height: 11px; pointer-events: none;}
+.arrow-left__top{position: absolute; transform-style: flat; backface-visibility: hidden; transform: translate3d(-1px, 4px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);}
+.arrow-left__bottom{position: absolute; transform-style: flat; backface-visibility: hidden; transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);}
+a:hover .arrow-left__top{transform: translate3d(-2px, 4px, 0px) rotate(-25deg);}
+a:hover .arrow-left__bottom{ transform: translate3d(11px, 4px, 0px) rotate(25deg);}
 
 @media (min-width:768px){
   .cd-vertical-nav {  

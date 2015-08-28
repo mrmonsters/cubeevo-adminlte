@@ -12,6 +12,8 @@ use App\Models\AttributeValue;
 use App\Services\GeneralHelper;
 use App\Services\CategoryHelper;
 
+use URL;
+
 class HomeController extends Controller {
 
 	/*
@@ -107,7 +109,7 @@ class HomeController extends Controller {
 		);
 		$projects = $catHelper->getCategoryProject($categoryId, $codes);
 
-		return view('frontend.project')->with('projects', $projects);
+		return view('frontend.project')->with('projects', $projects)->with('backbtn',URL::action('HomeController@getCredential'));
 	}
 
 	public function getSolution(GeneralHelper $genHelper)
