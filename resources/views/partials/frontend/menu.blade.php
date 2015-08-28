@@ -2,7 +2,7 @@
 	<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 
     @if(isset($backbtn))
-    <a href="{{$backbtn}}" style="position: fixed;
+    <a href="{{$backbtn}}" class="smart-object" style="position: fixed;
     top: 20px;
     left: 7%;
     width: 44px;
@@ -12,9 +12,9 @@
     text-indent: 100%;
     white-space: nowrap;
     z-index: 10;"> 
-        <div class="arrow-left">
-            <div class="arrow-left__top smart-transition"></div>
-            <div class="arrow-left__bottom smart-transition"></div>
+        <div class="arrow-left arrow">
+            <div class="arrow-bar-1 smart-transition"></div>
+            <div class="arrow-bar-2 smart-transition"></div>
         </div>
     </a>
     @endif
