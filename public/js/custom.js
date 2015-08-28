@@ -19,6 +19,11 @@ $(document).ready(function() {
 	        }else{ 
 	        	$('.cd-prev').parent().removeClass('hide');
 	        }
+
+          if(index == 2){ 
+            console.log('test');
+            //$('.')
+          }
 	        //using index
 	        if(index == 7){ 
 	        	$('.cd-next').parent().addClass('hide');
@@ -51,7 +56,7 @@ $(document).ready(function() {
        cube.animate({top:'-=20'}, 1000, runIt);
    	} 
     runIt();
-
+/*
   	$('#light').sprite({fps: 9, no_of_frames: 16});
   	$('#orangemascott').sprite({fps: 9, no_of_frames: 10}); 
 
@@ -64,7 +69,7 @@ $(document).ready(function() {
   	$('#blink').sprite({fps: 9, no_of_frames: 10});
 
   	$('#greenmascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#bird').sprite({fps: 9, no_of_frames: 10});
+  	$('#bird').sprite({fps: 9, no_of_frames: 10});*/
 
   if($('.cd-background-wrapper').length){
         //check media query

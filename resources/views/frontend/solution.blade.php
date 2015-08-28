@@ -10,7 +10,10 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif 
-            <div id='cre-box__{{$count}}' class="js-three-d sol-box col-sm-6 col-lg-4" style="background: {{ $solution['pri_bg_color_code'] }} url('..{{ Files::find($solution['grid_bg_img_id'])->dir }}'); background-position: right;">
+            <div id='cre-box__{{$count}}' class="js-three-d sol-box col-sm-6 col-lg-4" style="background: {{ $solution['pri_bg_color_code'] }} url('..{{ Files::find($solution['grid_bg_img_id'])->dir }}') no-repeat center center;  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;background-size: 105% auto;">
                 <div class="contbox"> 
                     <div class="greybox"></div> 
 

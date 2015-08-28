@@ -114,11 +114,14 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .sol p, .cre p{
 	margin-bottom: 0px;
 }
+.sol .sol-box{
+	padding: 0 1.14%;
+}
 .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
 	display: block;
 }
 .sol .hidden-text, .cre .hidden-text{display: none;}
-.sol .contbox {position: relative; padding: 15px 0;min-height: 247px;}
+.sol .contbox {position: relative; padding: 3.6% 0;min-height: 247px;}
 .sol .contbox ul {margin-bottom:0; margin-right:30px;}
 .sol .greybox, .cre .greybox {
 	display: none;
@@ -140,11 +143,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 .panel-body.overlap { 
 	position: absolute;
-   	bottom: 20px; 
+   	bottom: 10%; 
     left: 0;
     right: 0;
-    padding: 10px 10px 0 10px;
-    margin: 10px 0px 0px 0px; 
+    padding: 5% 5% 0 3%;
+    margin:  5% 0px 0px 0px; 
 
 }
 .panel-body.overlap p {
@@ -157,7 +160,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:11px; border-left:1px solid #fff;}
 
 /*credential page*/ 
-.cre-box{cursor: pointer;}
+.cre-box{cursor: pointer;padding: 0 1.14%;} 
 .container-fluid.cre{background:#666;height: 100%;} 	
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
@@ -172,7 +175,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
 .cre .panel-title {text-align:center;}
-.cre .contbox {position: relative; padding: 15px 0;min-height: 260px;}
+.cre .contbox {position: relative;padding: 3.6% 0;;min-height: 260px;}
 .cre .contbox ul {margin: 0 50px; }
 
 .credential .blankbox{height: 400px; width: 100%;}

@@ -10,7 +10,7 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['grid_bg_img_id'] != '') ? "url('.." . Files::find($category['grid_bg_img_id'])->dir . "');" : "#666; min-height: 281px;" ?>">
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['grid_bg_img_id'] != '') ? "url('.." . Files::find($category['grid_bg_img_id'])->dir . "');background-repeat: no-repeat;" : "#666; min-height: 281px;" ?>">
                 <div class="contbox">
                     <div class="greybox"></div> 
 
