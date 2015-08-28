@@ -244,7 +244,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 						<div class="col-sm-4">
 							<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
-							<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-2.gif" width="100%"></div>
+							<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-Mandarin.gif" width="100%"></div>
 						</div>
 						<div class="col-sm-4">
 							<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
@@ -334,7 +334,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 					</div> 
 					</div>
 					<div class="row career"> 
-					<div class="col-xs-12" style="background:#f7941a;">
+					<div class="col-xs-12" style="background:#f7941a;padding-bottom: 30px;">
 					<hr class="whitehr hide">
 					<div class="col-sm-10 col-sm-offset-1">
 					<h1 class="txtwhite"><span></span>加入团队</h1>
@@ -345,28 +345,28 @@ class PageContentTableSeeder extends DatabaseSeeder
 							<div class="job">
 								<p class="txtwhite">客户端服务及销售执行</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">加入形立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">平面设计师</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">加入形立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">平面及多媒体实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入形立方</button>
 							</div>	
 						</div>
 						<div class="col-xs-12 col-sm-3">
 							<div class="job">
 								<p class="txtwhite">事务或行政实习生</p>
 								<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入型立方</button>
+								<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入形立方</button>
 							</div>	
 						</div> 
 					</div>
