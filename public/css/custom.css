@@ -3,12 +3,19 @@
 Custom style
 
 -------------------------------- */
+h1{font-size: 55px;}
+h2{font-size: 40px;}
+h3{font-size: 26px;}
+h4{font-size: 18px;}
+h5{font-size: 16px;}
+p{font-size: 14px;}
+small{font-size: }
 
 h1 {margin-top:60px;}
-h1.txtorange {color:#f7941a;}
-h1.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
-h1.txtwhite, .txtwhite {color:#fff;}
-h1.txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
+.txtorange {color:#f7941a;}
+.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
+.txtwhite {color:#fff;}
+.txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
 hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-right:0 none; border-top:0 none;}
 
 .nopadding {
@@ -221,8 +228,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; left: 50px; bottom: 5px;}
 
 .container-fluid.aboutus{margin: 15px;background-color: #eee;}
-.aboutus .tagline {color:#f7941a; font-size:54px;}
-.aboutus .sub-tagline {color:#fff; font-size:22px; margin-bottom:50px;}
+.aboutus .tagline {color:#f7941a; font-size:55px;}
+.aboutus .sub-tagline {color:#fff; font-size:26px; margin-bottom:50px;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
 .aboutus .about-txt {margin-top :50px; margin-bottom:50px;}
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
