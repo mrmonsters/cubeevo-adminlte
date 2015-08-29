@@ -27,7 +27,7 @@
                             	<h3>{{ $project->name }}</h3>
                                 
                                 <p class="desctitle" style="color:{{ $project->txt_color_code }}">项目概述</p>
-                            	<div class="col-sm-6 crecol-1">{{ $project->desc }}<br>
+                            	<div class="col-sm-6 crecol-1"><?php echo html_entity_decode($project->desc); ?><br>
                                 <br>
                                 品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的视觉沟通，它是一个协助企业发展的形象实体，不仅协助企业正确的把握品牌方向，而且能够使人们正确的、快速的对企业形象进行有效深刻的记忆。品牌设计来源于最初的企业品牌战略顾问和策划顾问对企业进行战略整合以后，通过形象的东西所表现出来的东西，后来慢慢的形成了专业的品牌设计团体对企业品牌形象设计进行有效的规划。</div>
                                 <div class="col-sm-6 crecol-2">设计是冰山一角，却至关重要！如果我们把品牌理解成一座冰山。品牌或企业所属的文化制度、员工行为、组织结构、核心技术、营销方式等要素是构成这座冰山的主体，尽管隐于水下，却是品牌发展最强有力的支撑与原动力。<br>

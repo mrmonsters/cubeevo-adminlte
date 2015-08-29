@@ -35,4 +35,9 @@ class Project extends Model implements TranslatableContract {
 		return $this->hasMany('App\Models\ProjectFile', 'project_id', 'id');
 	}
 
+	public function translations()
+	{
+		return $this->hasMany('App\Models\ProjectTranslation', 'project_id', 'id');
+	}
+
 }

@@ -39,25 +39,25 @@ Description for project management
 						<th>Action</th>
 					</thead>
 					<tbody>
-						@if (isset($projects) && is_array($projects) && !empty($projects))
+						@if (isset($projects) && !$projects->isEmpty())
 						@foreach ($projects as $project)
 						<tr>
-							<td>{{ $project['id'] }}</td>
-							<td>{{ $project['name'] }}</td>
-							<td>{{ $project['created_at'] }}</td>
-							<td>{{ $project['updated_at'] }}</td>
+							<td>{{ $project->id }}</td>
+							<td>{{ $project->name }}</td>
+							<td>{{ $project->created_at }}</td>
+							<td>{{ $project->updated_at }}</td>
 							<td>
-								@if ($project['status'] == '2')
+								@if ($project->status == '2')
 								<span class="label label-success">Active</span>
-								@elseif ($project['status'] == '1')
+								@elseif ($project->status == '1')
 								<span class="label label-danger">Inactive</span>
 								@else 
 								<span class="label label-warning">Incomplete</span>
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/project/edit/' . $project['id']) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/project/destroy/' . $project['id']) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/project/edit/' . $project->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/project/destroy/' . $project->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

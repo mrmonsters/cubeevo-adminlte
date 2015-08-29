@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use File;
 use Redirect;
 use App\Models\Status;
 use App\Models\Locale;
@@ -55,7 +54,7 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req)
+	public function store(Request $req, FileHelper $fileHelper)
 	{
 		$response = array();
 		$data     = $req->input();
@@ -86,7 +85,7 @@ class CategoryController extends Controller {
 			}
 
 			$category->sort_order = $data['sort_order'];
-			//$category->save();
+			$category->save();
 
 			$catData    = array();
 			$attributes = array('name', 'desc');
@@ -179,14 +178,36 @@ class CategoryController extends Controller {
 			$category->sort_order = $data['sort_order'];
 			$category->save();
 
-			foreach ($data['name'] as $key => $val)
+			$catData    = array();
+			$attributes = array('name', 'desc');
+			$locales 	= Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
 			{
-				$catData = array('name' => $val);
-				$category->translations()
+				$catData['category_id'] = $category->id;
+				$catData['locale_id']   = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$catData[$attribute] = $data[$attribute][$locale->id];
+					}
+				}
+
+				$catTranslation = $category->translations()
 					->where('category_id', $category->id)
-					->where('locale_id', $key)
-					->first()
-					->update($catData);
+					->where('locale_id', $locale->id)
+					->first();
+
+				if (isset($catTranslation))
+				{
+					$catTranslation->update($catData);
+				}
+				else
+				{
+					CategoryTranslation::create($catData);
+				}
 			}
 
 			return Redirect::to('admin/manage/category')->with('response', $response);

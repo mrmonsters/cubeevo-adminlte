@@ -5,25 +5,35 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Redirect;
+use App\Models\Status;
 use App\Models\Locale;
-use App\Models\EntityInstance;
-use App\Models\EntityChild;
-use App\Services\GeneralHelper;
+use App\Models\Project;
+use App\Models\ProjectTranslation;
+
+use App\Services\FileHelper;
 
 class ProjectController extends Controller {
+
+	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index(GeneralHelper $genHelper)
+	public function index()
 	{
 		//
-		$codes =  array(
-			'name',
-		);
-		$projects = $genHelper->getEntityCollection('project', $codes);
+		$projects = Project::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
 		return view('management.project.index')->with('projects', $projects);
 	}
@@ -44,65 +54,74 @@ class ProjectController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req, GeneralHelper $genHelper)
+	public function store(Request $req, FileHelper $fileHelper)
 	{
 		//
-		$data = $req->input();
+		$response = array();
+		$data     = $req->input();
 
 		if (isset($data))
 		{
-			$project = array();
-			$codes   = array('name', 'desc');
-			$locales = Locale::where('status', '=', '2')->get();
+			$files = $req->file();
+			$project = new Project;
 
-			foreach ($codes as $code)
+			if (isset($files) && !empty($files))
 			{
-				$item = array();
-
-				foreach ($locales as $locale)
+				foreach ($files as $key => $val)
 				{
-					if ($data[$code][$locale->id] != '')
+					if ($key == 'new_grid_img_id')
 					{
-						$item[$locale->id] = $data[$code][$locale->id];
+						$project->grid_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_grid_bg_img_id')
+					{
+						$project->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_brand_img_id')
+					{
+						$project->brand_img_id = $fileHelper->uploadNewFile($val);
+					}
+				}
+			}
+			else
+			{
+				$project->grid_img_id    = $data['grid_img_id'];
+				$project->grid_bg_img_id = $data['grid_bg_img_id'];
+				$project->brand_img_id 	 = $data['brand_img_id'];
+			}
+
+			$project->category_id    = $data['category_id'];
+			$project->pri_color_code = $data['pri_color_code'];
+			$project->sec_color_code = $data['sec_color_code'];
+			$project->txt_color_code = $data['txt_color_code'];
+			$project->year           = $data['year'];
+			$project->sort_order     = $data['sort_order'];
+			$project->save();
+
+			$projData   = array();
+			$attributes = array('name', 'desc', 'founder', 'client_name');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
+			{
+				$projData['project_id'] = $project->id;
+				$projData['locale_id']  = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$projData[$attribute] = $data[$attribute][$locale->id];
 					}
 				}
 
-				$project[$code] = $item;
+				ProjectTranslation::create($projData);
 			}
 
-			$attrs = array(
-				'founder',
-				'year',
-				'cover_img_id',
-				'grid_img_id',
-				'grid_bg_img_id',
-				'pri_bg_color_code',
-				'sec_bg_color_code',
-				'sort_order'
-			);
-
-			foreach ($attrs as $attr)
-			{
-				$project[$attr] = $data[$attr];
-			}
-
-			if (!empty($project))
-			{
-				$projectObj = $genHelper->saveEntity('project', $project);
-
-				if ($projectObj->id)
-				{
-					$child = new EntityChild;
-					$child->parent_id = $data['parent_id'];
-					$child->child_id = $projectObj->id;
-					$child->save();
-
-					return redirect('admin/manage/project');
-				}
-			}
+			return Redirect::to('admin/manage/project')->with('response', $response);			
 		}
 
-		return redirect('admin/manage/project/create');
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
@@ -122,43 +141,12 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id, GeneralHelper $genHelper)
+	public function edit($id)
 	{
 		//
-		$locales = Locale::where('status', '=', '2')->get();
-		$codes =  array(
-			'name',
-			'desc',
-			'cover_img_id',
-			'grid_img_id',
-			'grid_bg_img_id',
-			'img_ids',
-			'pri_bg_color_code',
-			'sec_bg_color_code',
-			'txt_color_code',
-			'founder',
-			'year',
-			'sort_order'
-		);
-		$entity = EntityInstance::find($id);
+		$project = Project::find($id);
 
-		$project = array();
-		foreach ($codes as $code)
-		{
-			$project[$code] = $genHelper->getAttribute($code, $entity);
-		}
-		$project['id'] = $entity->id;
-
-		$child = EntityChild::where('child_id', '=', $entity->id)->first();
-
-		if (isset($child) && $child->id)
-		{
-			$project['parent_id'] = $child->parent_id;
-		}
-
-		return view('management.project.edit')
-			->with('locales', $locales)
-			->with('project', $project);
+		return view('management.project.edit')->with('project', $project);
 	}
 
 	/**
@@ -167,65 +155,86 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req, GeneralHelper $genHelper)
+	public function update($id, Request $req, FileHelper $fileHelper)
 	{
 		//
-		$data = $req->input();
-		$instance = EntityInstance::find($id);
+		$response = array();
+		$data     = $req->input();
+		$project = Project::find($id);
 
-		if (isset($data) && $instance->id)
+		if (isset($data) && $project->id)
 		{
-			$codes = array(
-				'name',
-				'desc',
-				'founder',
-				'year',
-				'cover_img_id',
-				'grid_img_id',
-				'grid_bg_img_id',
-				'img_ids',
-				'pri_bg_color_code',
-				'sec_bg_color_code',
-				'sort_order'
-			);
+			$files = $req->file();
 
-			$attrs = array();
-			foreach ($codes as $code)
+			if (isset($files) && !empty($files))
 			{
-				if (isset($data[$code]))
+				foreach ($files as $key => $val)
 				{
-					$attrs[$code] = $data[$code];
+					if ($key == 'new_grid_img_id')
+					{
+						$project->grid_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_grid_bg_img_id')
+					{
+						$project->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_brand_img_id')
+					{
+						$project->brand_img_id = $fileHelper->uploadNewFile($val);
+					}
 				}
 			}
-
-			foreach ($attrs as $code => $attr)
+			else
 			{
-				if (is_array($attr))
-				{
-					foreach ($attr as $k => $v)
-					{
-						$locale = Locale::find($k);
+				$project->grid_img_id    = $data['grid_img_id'];
+				$project->grid_bg_img_id = $data['grid_bg_img_id'];
+				$project->brand_img_id 	 = $data['brand_img_id'];
+			}
 
-						if ($locale->id)
-						{
-							$genHelper->saveAttribute($code, $v, $instance, $locale->code);
-						}
+			$project->category_id	 = $data['category_id'];
+			$project->pri_color_code = $data['pri_color_code'];
+			$project->sec_color_code = $data['sec_color_code'];
+			$project->txt_color_code = $data['txt_color_code'];
+			$project->year           = $data['year'];
+			$project->sort_order     = $data['sort_order'];
+			$project->save();
+
+			$projData   = array();
+			$attributes = array('name', 'desc', 'founder', 'client_name');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
+			{
+				$projData['project_id'] = $project->id;
+				$projData['locale_id']  = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$projData[$attribute] = $data[$attribute][$locale->id];
 					}
+				}
+
+				$projTranslation = $project->translations()
+					->where('project_id', $project->id)
+					->where('locale_id', $locale->id)
+					->first();
+
+				if (isset($projTranslation))
+				{
+					$projTranslation->update($projData);
 				}
 				else
 				{
-					$genHelper->saveAttribute($code, $attr, $instance);
+					ProjectTranslation::create($projData);
 				}
 			}
 
-			$child = EntityChild::where('child_id', '=', $instance->id)->first();
-			$child->parent_id = $data['parent_id'];
-			$child->save();
-
-			return redirect('admin/manage/project/');
+			return Redirect::to('admin/manage/project')->with('response', $response);
 		}
 
-		return redirect('admin/manage/project/edit/' . $id);
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
