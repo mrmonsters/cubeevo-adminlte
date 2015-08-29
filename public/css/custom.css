@@ -3,12 +3,19 @@
 Custom style
 
 -------------------------------- */
+.h1,h1{font-size: 55px;}
+.h2,h2{font-size: 40px;}
+.h3,h3{font-size: 26px;}
+.h4,h4{font-size: 18px;}
+.h5,h5{font-size: 16px;}
+.p,p{font-size: 14px;}
+.small,small{font-size: 12px }
 
 h1 {margin-top:60px;}
-h1.txtorange {color:#f7941a;}
-h1.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
-h1.txtwhite, .txtwhite {color:#fff;}
-h1.txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
+.txtorange {color:#f7941a;}
+.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
+.txtwhite {color:#fff;}
+.txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
 hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-right:0 none; border-top:0 none;}
 
 .nopadding {
@@ -50,8 +57,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cd-social ul {
 	margin:0 auto;
 	overflow:hidden;
-}
-.cd-social li {margin:0 7%;	float:left;}
+} 
 .cd-social a {
 	text-indent:10000px;
 	display:block;
@@ -74,6 +80,46 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 /*---------------- Home -----------------*/
 .home-dna{max-width: 868px;}
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#section6,{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+/* Defining each sectino background and styles 
+* --------------------------------------- */
+#section0{
+    background: #efefef; 
+}
+#section1{
+    background: #f7941e;  
+}
+#section2{
+    background: #eee80a; 
+}
+#section3{
+    background: #f04e58; 
+}
+#section4{
+    background: #8f53a1; 
+}
+#section5{
+    background: #27bdbe; 
+}
+#section6{
+    background: #45b97c; 
+}
+#section3 h1{
+    color: #000;
+}
 #fullpage .col-sm-6{padding-top: 8px;padding-bottom: 8px;}
 #fullpage .content-wrapper{ 
 	position: relative;
@@ -91,10 +137,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	z-index: 1;
 	color: #ffffff;
 	display: none;
-}
-#section0 .fp-tableCell {
-	background:url(../img/Images-41.png) no-repeat top;
-	  background-size: cover;}
+} 
 #section0 .fp-tableCell .col-sm-6 {
 	  color:#000 !important;
 }
@@ -157,7 +200,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	min-height: 30px;
 }
 .panel-title { padding-left:0px; float:left; font-size:18px;}
-.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:11px; border-left:1px solid #fff;}
+.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px; border-left:1px solid #fff;}
 
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0 1.14%;} 
@@ -198,31 +241,20 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .crecol-1 {padding-left:0;}
 .cre .comingsoon {}
 
-@media (min-width: 992px) {
-	.section .col-md-6{height: 100%;padding:5px 10px;} 
-	#fullpage .content-wrapper > .content-section{  
-	  	position:  absolute;
-	    width: 96%;
-	  	bottom: 18%; 
-	}
-	.credential .box-content{ 
-		min-height: 490px;
-	}
-}
-
 .container-fluid.process{margin: 15px;background-color: #eee;}
+.process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
-.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;}
-.process .flow .right {width:50%; height:100px; margin-left:50%; background:url(../img/processflowR.png) no-repeat left;}
-.process .flow .box  {width: 548px; padding:22px 90px; position:relative;height: 100%}
+.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;margin-left: 0.5%;}
+.process .flow .right {width:50%; height:100px; margin-left:49.6%; background:url(../img/processflowR.png) no-repeat left;}
+.process .flow .box  {width: 507px; padding:22px 90px; position:relative;height: 100%}
 .process .flow .left .box {float:right;}
-.process .flow .right .box {flaot:left;}
-.process .flow .left .box span {color: #f7941a; font-size:18px; position: absolute; right: 50px; bottom: 5px;}
-.process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; left: 50px; bottom: 5px;}
+/*.process .flow .right .box {float:left;}*/
+.process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
+.process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
 .container-fluid.aboutus{margin: 15px;background-color: #eee;}
-.aboutus .tagline {color:#f7941a; font-size:54px;}
-.aboutus .sub-tagline {color:#fff; font-size:22px; margin-bottom:50px;}
+.aboutus .tagline {color:#f7941a; font-size:55px;}
+.aboutus .sub-tagline {color:#fff; font-size:26px; margin-bottom:50px;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
 .aboutus .about-txt {margin-top :50px; margin-bottom:50px;}
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
@@ -243,29 +275,28 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .career .job button {border: 1px solid #fff; background: none; color: #fff; padding: 10px 20px; border-radius: 0; float:right;}
 
 .container-fluid.contactus{margin: 15px;background-color: #eee;}
-.contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;}
-.contactus h5 {font-weight:bold;}
+.contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;} 
 .contactus ul { list-style:none; padding:0; overflow:hidden;}
 .contactus li {padding-left:26px;}
-.contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}
-.contactus .shopinfo li {float:left; margin-right:5px;}
-.contactus .phone {background:url(../img/Images-19.png) no-repeat left top;}
-.contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -46px;}
-.contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -98px;}
+.contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;} 
+.contactus .phone {background:url(../img/Images-19.png) no-repeat 0px -205px;}
+.contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -283px;}
+.contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -245px;}
+.contactus .handphone {background:url(../img/Images-19.png) no-repeat 0px -325px;}
 .contactus .active .form-control{border-color: #f7941a;}
 .contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
-.contactus .form-control {background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px;    margin-bottom: 20px;}
+.contactus .form-control {font-size:16px;background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px; height:45px;   margin-bottom: 20px;}
 .contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
 .contactus label {visibility:hidden;margin-top: 0px;margin-bottom: 18px;}
 .contactus label.unhide {visibility:visible; padding-left:40px;}
 .contactus .icon {width:30px; height:30px; display:block; position:absolute;}
-.contactus .cont-name {background:url(../img/Images-18.png) no-repeat 0px 0px;}
-.contactus .cont-mail {background:url(../img/Images-18.png) no-repeat 0px -40px;}
-.contactus .cont-contact {background:url(../img/Images-18.png) no-repeat 0px -80px;}
-.contactus .cont-title {background:url(../img/Images-18.png) no-repeat 0px -120px;}
-.contactus .cont-msg {background:url(../img/Images-18.png) no-repeat 0px -160px;}
+.contactus .cont-name {background:url(../img/Images-19.png) no-repeat 0px 0px;}
+.contactus .cont-mail {background:url(../img/Images-19.png) no-repeat 0px -40px;}
+.contactus .cont-contact {background:url(../img/Images-19.png) no-repeat 0px -80px;}
+.contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -120px;}
+.contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
-.scene.mascott{position:relative;left: -70%;top: -2%;}
+.scene.mascott{position:relative;left: -20%;top: -2%;}
 .scene.mascott.purple{top: 2%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
@@ -411,35 +442,82 @@ Main Components
 .smart-object:hover .arrow-bar-1{transform: translate3d(-2px, 5px, 0px) rotate(-25deg);}
 .smart-object:hover .arrow-bar-2{ transform: translate3d(11px, 4px, 0px) rotate(25deg);}
   
-.cd-vertical-nav {  
-top: 50%;     
-}
+.cd-vertical-nav {top: 50%;}
 
 @media (min-width:768px){
-  .cd-vertical-nav {  
-    top: 50%;
-  }
-  .mascott {display:none;}
+  	.cd-vertical-nav {  
+    	top: 50%;
+  	} 
 	.content-wrapper__fixed{  
 		width: 50%; 
 		display: block;
 	}
 	#fullpage .content-wrapper{ 
 		background: none;
-	}
+	} 
 }
 
 @media (min-width:992px){
-  .cd-vertical-nav {  
-    top: 50%;
-  }
-  .mascott {display:block;}
+  	.scene.mascott{left: -70%;top: 15%;}
+	.section .col-md-6{height: 100%;padding:5px 10px;} 
+	#fullpage .content-wrapper > .content-section{  
+	  	position:  absolute;
+	    width: 96%;
+	  	bottom: 18%; 
+	}
+	.credential .box-content{ 
+		min-height: 490px;
+	}
+  	.cd-vertical-nav {  
+    	top: 50%;
+  	} 
+
+	/* Defining each sectino background and styles 
+	* --------------------------------------- */
+	#section0{
+	    background: #efefef url("../img/Programmer Needs-08.png") no-repeat center center;
+	    background-size: 100% auto; 
+	}
+	#section1{
+	    background: #F37022 url("../img/Color Background-01.jpg") no-repeat center center;
+	    background-size: auto 100%;  
+	}
+	#section2{
+	    background: #FFCA08 url("../img/Color Background-02.jpg") no-repeat center center;
+	    background-size: auto 100%; 
+	}
+	#section3{
+	    background: #EF3F3F url("../img/Color Background-03.jpg") no-repeat center center;
+	    background-size: auto 100%; 
+	}
+	#section4{
+	    background: #8F52A0 url("../img/Color Background-04.jpg") no-repeat center center;
+	    background-size: auto 100%; 
+	}
+	#section5{
+	    background: #1FBDBE url("../img/Color Background-05.jpg") no-repeat center center; 
+	    background-size: auto 100%;
+	}
+	#section6{
+	    background: #42BA7C url("../img/Color Background-06.jpg") no-repeat center center;
+	    background-size: auto 100%; 
+	}
+}
+@media (min-width:1200px){
+	.scene.mascott{top:10%;} 
+	.process .flow .box  {width: 549px;}
+}
+
+@media (min-width:1800px){ 
+	.scene.mascott{top:0%;} 
+	.panel-title {font-size:25px;}
+	.panel-title-desc {font-size:16px;} 
 }
 
 @media (max-width:1024px){
 	.process .flow {margin:40px -75px;}
 	.process .flow .left .box {padding:25px 80px 25px 40px;}
-	.process .flow .right .box {padding:25px 40px 25px 80px;}
+	.process .flow .right .box {padding:25px 40px 25px 80px;} 
 }
 
 @media (max-width:768px){
@@ -449,7 +527,7 @@ top: 50%;
 	/*.maincol-right {float:none;}*/
 	.maincol-left {}
 	.credential .blankbox {height:auto;}
-	.mob-hide, .mascott {display:none;}
+	.mob-hide{display:none;}
 	.mob-visible {display:inline;}
 	/*.maincol-right img  {max-width:90%;}*/
 	.cre ul.scene, .sol ul.scene {margin-bottom:0;}
@@ -469,9 +547,10 @@ top: 50%;
 	.aboutus .about-369 .col-sm-4 {margin-top:20px; overflow:hidden;}
 	.aboutus .about-369 .about-369txt {width:100%;}
 	.panel-title-desc {border-left:0 none;}
+	.process-flow{overflow: hidden;}
 	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
 	.process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
-	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 60px 40px !important; position:relative;}
+	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 60px 40px !important; position:relative;clear: both;width: 100%;}
 	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 40px; left:inherit; bottom: 3px;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;}
 }

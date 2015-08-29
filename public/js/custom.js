@@ -10,7 +10,6 @@ $(document).ready(function() {
 
 	if($('#fullpage').length > 0){ 
 		$('#fullpage').fullpage({
-		  sectionsColor: ['#efefef', '#f7941e', '#eee80a', '#f04e58', '#8f53a1', '#27bdbe', '#45b97c'],
 		  afterLoad :  function(anchorLink, index){
 	        var loadedSection = $(this); 
 	        //using index

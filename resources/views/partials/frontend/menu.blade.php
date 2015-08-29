@@ -38,9 +38,9 @@
                 <li><a href="#0">EN</a> | <a href="#0">中文</a></li>
     		</ul> 
             
-            <div style="position: absolute;bottom: 5px;">   
+            <div style="position: absolute;bottom: 5px;width: 70%;">   
                 <div class="cd-social">
-                    <ul class="list-unstyled">
+                    <ul class="list-inline">
                         <li>
                             <a href="#0" class="cd-scfb">FB</a>
                         </li>
@@ -61,6 +61,7 @@
                 <br/>
                 <br/>
                 <p>www.cubeevo.com</p>
+                <br/>
             </div> 
     	</div>
     </div>

@@ -22,11 +22,8 @@ class PageTableSeeder extends Seeder
 						'content' => '<div class="content-wrapper__fixed"></div>
 							<div id="fullpage">
 								<div class="section" id="section0">
-									<div class="col-md-6 maincol-right">
-										<ul class="scene mob-hide">
-											<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%"  class="home-dna"></li>
-										</ul>
-										<ul class="scene mob-visible">
+									<div class="col-md-6 maincol-right"> 
+										<ul class="scene visible-xs-block">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 										</ul>
 									</div> 
@@ -195,8 +192,8 @@ class PageTableSeeder extends Seeder
 						'content' => '<div class="container-fluid aboutus">
 							<div class="row" style="position:relative;"> 
 								<div class="col-sm-9 col-sm-offset-2">
-									<h1 class="txtorange"><span></span>理念</h1>
-									<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡！</p>
+									<h2 class="txtorange"><span></span>理念</h2>
+									<h5>人因梦想伟大，企业因理念而生。</h5>
 								</div>
 								</div>
 								<div class="row about-txt " style="position:relative;"> 
@@ -230,20 +227,24 @@ class PageTableSeeder extends Seeder
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#848383;">
 									<div class="col-sm-9 col-sm-offset-2">
-										<h1 class="txtwhite"><span></span>愿景</h1>
-										<div class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</div>
-										<div class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</div>
+									    <br/>
+										<h2 class="txtwhite"><span></span>愿景</h2>
+										<h1 class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</h1>
+										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</h3>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#676464;">
 									<div class="col-sm-9 col-sm-offset-2">
-										<h1 class="txtwhite"><span></span>使命</h1>
-										<div class="tagline text-center">“激活品牌,展现完美。”</div>
-										<div class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</div>
+									    <br/>
+										<h2 class="txtwhite"><span></span>使命</h2>
+										<h1 class="tagline text-center">“激活品牌,展现完美。”</h1>
+										<h3 class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</h3>
 									</div>
-									<div class="about-img1 mob-hide"><img src="/img/Images-17.png"></div>
+									<div class="col-sm-2 hidden-xs pull-right">
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+									</div>
 								</div>
 								</div>
 								<div class="row about-369"> 
@@ -261,19 +262,19 @@ class PageTableSeeder extends Seeder
 										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-12 col-sm-4 nopadding">
-												品牌形象策划<br>
+												<small>品牌形象策划<br>
 												广告方案策划<br>
-												广播广告策划<br>
+												广播广告策划<br></small>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												数码设计<br>
+												<small>数码设计<br>
 												平面设计<br>
-												平面摄影<br>
+												平面摄影<br></small>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												包装<br>
+												<small>包装<br>
 												文案撰写<br>
-												印刷服务<br>
+												印刷服务<br></small>
 											</div>
 										</div>
 									</div>
@@ -281,7 +282,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row team hide"> 
 								<div class="col-sm-10 col-sm-offset-1">
-								<h1 class="txtwhite"><span></span>团队成员</h1>
+								<h2 class="txtwhite"><span></span>团队成员</h2>
 								<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡!</p>
 								</div>
 								<div class="col-sm-10 col-sm-offset-1">
@@ -344,143 +345,160 @@ class PageTableSeeder extends Seeder
 								</div> 
 								</div>
 								<div class="row career"> 
-								<div class="col-xs-12" style="background:#f7941a;padding-bottom: 30px;">
+								<div class="col-xs-12" style="background:#f7941a;padding-bottom: 50px;padding-top: 50px;">
 								<hr class="whitehr hide">
-								<div class="col-sm-10 col-sm-offset-1">
-								<h1 class="txtwhite"><span></span>加入团队</h1>
-								<p>找寻与众不同，勇於追求创新及卓越的挑战，不懈的学习与爱探索的您，欢迎您加入型立方。</p>
-								</div>
-								<div class="col-sm-10 col-sm-offset-1">
-									<div class="col-xs-12 col-sm-3">
-										<div class="job">
-											<p class="txtwhite">客户端服务及销售执行</p>
-											<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-											<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">加入形立方</button>
-										</div>	
+								<div class="col-sm-9 col-sm-offset-2">  
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 class="txtwhite"><span></span>加入团队</h2>
+											<h5>找寻与众不同，勇於追求创新及卓越的挑战，不懈的学习与爱探索的您，欢迎您加入形立方。</p>
+											</h5>
+											<br/>
+											<br/>
+										</div>
 									</div>
-									<div class="col-xs-12 col-sm-3">
-										<div class="job">
-											<p class="txtwhite">平面设计师</p>
-											<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-											<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">加入形立方</button>
-										</div>	
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">客户端服务及销售执行</h5>
+												<p>你想不想体验为客户构思品牌和广告能带来多大的成就感？
+				你想不想知道看见客户满意的笑容会让你快乐多久？那么你有没有跟客户感同身受的理解力？有没有跟设计师共享信息的沟通能力？别等，赶紧搭上我们品牌与广告的刺激旅途吧！</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">加入形立方</button>
+											</div>	
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">平面设计师</h5>
+												<p>你想不想体验成功勾画客户需要的品牌和广告蓝图的成就感？
+				你想不想跟上形立方大胆创造力？那么你有没有跟内部同事共创灵感的沟通力？有没有设计师应有大胆创作小心细节的功力？
+				别等，赶紧搭上我们品牌与广告的刺激旅途吧！</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">加入形立方</button>
+											</div>	
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">平面及多媒体实习生</h5>
+												<p>你还在学习课堂上的知识？给你机会看看企业社会的实际要求，你敢不敢来验证你的设计功力是否到家？别等，赶紧搭上我们
+				品牌与广告的刺激旅途吧！</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入形立方</button>
+											</div>	
+										</div>
 									</div>
-									<div class="col-xs-12 col-sm-3">
-										<div class="job">
-											<p class="txtwhite">平面及多媒体实习生</p>
-											<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-											<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入形立方</button>
-										</div>	
-									</div>
-									<div class="col-xs-12 col-sm-3">
-										<div class="job">
-											<p class="txtwhite">事务或行政实习生</p>
-											<p>你了解广告设计？你有一年以上的工作经验？您是否能与客户和同事合作，实现销售收入和带领我们？如果以上介是，欢迎您加入型立方。</p>
-											<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入形立方</button>
-										</div>	
-									</div> 
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">事务或行政实习生</h5>
+												<p>你喜欢品牌与广告吗？你对市场的了解深吗？你敢不敢来验证你的广告业务学问是否准确？别等，赶紧搭上我们品牌与广告的刺激旅途吧！</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入形立方</button>
+											</div>	
+										</div> 
+									</div>  
+							</div>
+							<div class="row"> 
+								<div class="col-xs-6 pull-right noppading">
+								<img src="/img/Programmer Needs-04.png"  width="100%" style="margin-top:-150px;margin-left:15px;"/>
 								</div>
-								</div>
-								</div>
+							</div>
+						</div>
 
-								<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								        <h4 class="modal-title" id="myModalLabel">客户端服务及销售执行</h4>
-								      </div>
-								      <div class="modal-body">
-									      <ul>
-									      	<li>Good understanding in advertising industries.</li>
-									      	<li>Fresh graduates are encouraged to apply.</li>
-									      	<li>Able to work closely with client and creative team.</li>
-									      	<li>Result-oriented and strong organization skills.</li>
-									      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-									      	<li>Fluent in written & spoken English.</li>
-									      	<li>Possess a driving license and own vehicle.</li>
-									      </ul> 
-								      </div>
-								      <div class="modal-footer"> 
-								        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
-								      </div>
-								    </div>
-								  </div>
-								</div>
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">客户端服务及销售执行</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
 
-								<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								        <h4 class="modal-title" id="myModalLabel">平面设计师</h4>
-								      </div>
-								      <div class="modal-body">
-									      <ul>
-									      	<li>Good understanding in advertising industries.</li>
-									      	<li>Fresh graduates are encouraged to apply.</li>
-									      	<li>Able to work closely with client and creative team.</li>
-									      	<li>Result-oriented and strong organization skills.</li>
-									      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-									      	<li>Fluent in written & spoken English.</li>
-									      	<li>Possess a driving license and own vehicle.</li>
-									      </ul> 
-								      </div>
-								      <div class="modal-footer"> 
-								        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
-								      </div>
-								    </div>
-								  </div>
-								</div>
-								<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								        <h4 class="modal-title" id="myModalLabel">平面及多媒体实习生</h4>
-								      </div>
-								      <div class="modal-body">
-									      <ul>
-									      	<li>Good understanding in advertising industries.</li>
-									      	<li>Fresh graduates are encouraged to apply.</li>
-									      	<li>Able to work closely with client and creative team.</li>
-									      	<li>Result-oriented and strong organization skills.</li>
-									      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-									      	<li>Fluent in written & spoken English.</li>
-									      	<li>Possess a driving license and own vehicle.</li>
-									      </ul> 
-								      </div>
-								      <div class="modal-footer"> 
-								        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
-								      </div>
-								    </div>
-								  </div>
-								</div>
-								<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-								  <div class="modal-dialog" role="document">
-								    <div class="modal-content">
-								      <div class="modal-header">
-								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								        <h4 class="modal-title" id="myModalLabel">事务或行政实习生</h4>
-								      </div>
-								      <div class="modal-body">
-									      <ul>
-									      	<li>Good understanding in advertising industries.</li>
-									      	<li>Fresh graduates are encouraged to apply.</li>
-									      	<li>Able to work closely with client and creative team.</li>
-									      	<li>Result-oriented and strong organization skills.</li>
-									      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-									      	<li>Fluent in written & spoken English.</li>
-									      	<li>Possess a driving license and own vehicle.</li>
-									      </ul> 
-								      </div>
-								      <div class="modal-footer"> 
-								        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
-								      </div>
-								    </div>
-								  </div>
-								</div>
-							</div>',
+						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">平面设计师</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">平面及多媒体实习生</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">事务或行政实习生</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						</div>',
 					),
 				),
 			),
@@ -492,9 +510,13 @@ class PageTableSeeder extends Seeder
 						'name'    => 'Process',
 						'desc'    => 'Process page.',
 						'content' => '<div class="container-fluid process">
-							<div class="row" style="position:relative;"> 
-								<div class="col-sm-10 col-sm-offset-1 process-flow">
-									<h1 class="txtorange"><span></span>合作流程次序</h1>
+							<div class="row"> 
+								<div class="col-sm-10 col-sm-offset-2">
+									<h2 class="txtorange"><span></span>合作流程次序</h2>
+								</div>
+								</div>
+								<div class="row">
+								<div class="col-sm-11 col-sm-offset-1 process-flow">
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>
@@ -547,15 +569,26 @@ class PageTableSeeder extends Seeder
 									</div>
 								</div>
 								</div>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
 								<div class="row"> 
-									<div class="col-sm-8 col-sm-offset-2 hidden-xs">
-										<img src="/img/Images-37.png" width="100%">
-									</div>
-									<div class="col-sm-8 col-sm-offset-2 visible-xs-block" style="padding-bottom:100px;">
-										<img src="/img/Images-37-mob.png" width="100%">
-									</div>
+								<div class="col-sm-8 col-sm-offset-2 hidden-xs">
+									<img src="/img/Programmer Needs-02.png" width="100%">
 								</div>
-							</div>
+								<div class="col-sm-8 col-sm-offset-2 visible-xs-block" style="padding-bottom:100px;">
+									<img src="/img/Images-37-mob.png" width="100%">
+								</div>
+								</div>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
 							</div>',
 					),
 				),
