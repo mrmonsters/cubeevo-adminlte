@@ -485,34 +485,36 @@ top: 50%;
 	}
 	#section1{
 	    background: #F37022 url("../img/Color Background-01.jpg") no-repeat center center;
-	    background-size: 100% auto;  
+	    background-size: auto 100%;  
 	}
 	#section2{
 	    background: #FFCA08 url("../img/Color Background-02.jpg") no-repeat center center;
-	    background-size: 100% auto; 
+	    background-size: auto 100%; 
 	}
 	#section3{
 	    background: #EF3F3F url("../img/Color Background-03.jpg") no-repeat center center;
-	    background-size: 100% auto; 
+	    background-size: auto 100%; 
 	}
 	#section4{
 	    background: #8F52A0 url("../img/Color Background-04.jpg") no-repeat center center;
-	    background-size: 100% auto; 
+	    background-size: auto 100%; 
 	}
 	#section5{
 	    background: #1FBDBE url("../img/Color Background-05.jpg") no-repeat center center; 
-	    background-size: 100% auto;
+	    background-size: auto 100%;
 	}
 	#section6{
 	    background: #42BA7C url("../img/Color Background-06.jpg") no-repeat center center;
-	    background-size: 100% auto; 
+	    background-size: auto 100%; 
 	}
 }
-
+@media (min-width:1200px){
+	.scene.mascott{top:10%;}
+}
 @media (max-width:1024px){
 	.process .flow {margin:40px -75px;}
 	.process .flow .left .box {padding:25px 80px 25px 40px;}
-	.process .flow .right .box {padding:25px 40px 25px 80px;}
+	.process .flow .right .box {padding:25px 40px 25px 80px;} 
 }
 
 @media (max-width:768px){
