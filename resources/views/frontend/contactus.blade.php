@@ -108,8 +108,7 @@
 		</div>
 	</div>	 
 			
-	<div class="row contactdetails" style="position:relative;padding:0px;"> 
-		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<div class="row contactdetails" style="position:relative;padding:0px;">  
 		<div style="overflow:hidden;height:500px;width:100%;">
 			<div id="map-canvas" style="height:500px;width:100%;"></div>
 			<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
@@ -118,74 +117,53 @@
 	</div>
 </div>
 		
-@section('frontend-addon-script')
-<script type="text/javascript"> 
-function initialize() {
+@section('frontend-addon-script') 
+    <script>
+    function initMap() { 
+	  
+	  var image = 'img/Images-20.png'; 
+	  var styles = [
+	   {
+	     featureType: "all",
+	     elementType: "all",
+	      "stylers": [
+		      { "saturation": -100 },
+		      { "lightness": 14 },
+		      { "gamma": 0.31 } 
+		    ] 
+	   }
+	  ];
+	    
+	  // Create a new StyledMapType object, passing it the array of styles,
+	  // as well as the name to be displayed on the map type control.
+	  var styledMap = new google.maps.StyledMapType(styles,
+	    {name: "Styled Map"});
 
-	// Create an array of styles.
-	var styles = [
-		{
-			stylers: [ 
-				{ saturation: -100 }
-			]
-		},{
-			featureType: "road",
-			elementType: "geometry",
-			stylers: [
-				{ lightness: 100 },
-				{ visibility: "simplified" }
-			]
-		},{
-			featureType: "road",
-			elementType: "labels",
-			stylers: [
-				{ visibility: "off" }
-			]
-		}
-	];
+	  // Create a map object, and include the MapTypeId to add
+	  // to the map type control.
+	  var mapOptions = {
+	    zoom: 18,
+	   	center: {lat: 3.0542421, lng: 101.78809419999993},
+	    mapTypeControlOptions: {
+	      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+	    }
+	  };
+	  var map = new google.maps.Map(document.getElementById('map-canvas'),
+	    mapOptions);
 
-	// Create a new StyledMapType object, passing it the array of styles,
-	// as well as the name to be displayed on the map type control.
-	var styledMap = new google.maps.StyledMapType(styles,
-		{name: "Styled Map"});
+	  var beachMarker = new google.maps.Marker({
+	   position: {lat: 3.0542421, lng: 101.78809419999993},
+	   map: map,
+	   icon: image
+	    });
+	    
 
-	// Create a map object, and include the MapTypeId to add
-	// to the map type control.
-	var mapOptions = {
-		zoom: 18,
-		center: new google.maps.LatLng(3.0542421, 101.78809419999993),
-		mapTypeControlOptions: {
-			mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-		}
-	};
-	var map = new google.maps.Map(document.getElementById('map-canvas'),
-		mapOptions);
-	
-	var contentString = '<div id="content">'+
-			'<div id="siteNotice">'+
-			'</div>'+
-			'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-			'<div id="bodyContent">'+
-			'<p>CUBEevo Advertising Sdn. Bhd.</p>'+
-		'<p>Jalan Temenggung 21/9, Bandar Mahkota Cheras</p>'+
-		'<p>43200 Kuala Lumpur</p>'+
-			'</div>'+
-			'</div>';
+	  //Associate the styled map with the MapTypeId and set it to display.
+	  map.mapTypes.set('map_style', styledMap);
+	  map.setMapTypeId('map_style');
 
-	var infowindow = new google.maps.InfoWindow({
-			content: contentString
-	});
-
-	var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map,
-			title: 'CUBEevo Advertising Sdn. Bhd.'
-	});
-
-	//Associate the styled map with the MapTypeId and set it to display.
-	map.mapTypes.set('map_style', styledMap);
-	map.setMapTypeId('map_style');
-}
-initialize();
-</script>
+  	} 
+    </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+   async defer></script>
 @endsection	
