@@ -81,6 +81,46 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 /*---------------- Home -----------------*/
 .home-dna{max-width: 868px;}
+#section0,
+#section1,
+#section2,
+#section3,
+#section4,
+#section5,
+#section6,{
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
+/* Defining each sectino background and styles 
+* --------------------------------------- */
+#section0{
+    background: #efefef; 
+}
+#section1{
+    background: #f7941e;  
+}
+#section2{
+    background: #eee80a; 
+}
+#section3{
+    background: #f04e58; 
+}
+#section4{
+    background: #8f53a1; 
+}
+#section5{
+    background: #27bdbe; 
+}
+#section6{
+    background: #45b97c; 
+}
+#section3 h1{
+    color: #000;
+}
 #fullpage .col-sm-6{padding-top: 8px;padding-bottom: 8px;}
 #fullpage .content-wrapper{ 
 	position: relative;
@@ -98,10 +138,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	z-index: 1;
 	color: #ffffff;
 	display: none;
-}
-#section0 .fp-tableCell {
-	background:url(../img/Images-41.png) no-repeat top;
-	  background-size: cover;}
+} 
 #section0 .fp-tableCell .col-sm-6 {
 	  color:#000 !important;
 }
@@ -219,13 +256,13 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 .container-fluid.process{margin: 15px;background-color: #eee;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
-.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;}
-.process .flow .right {width:50%; height:100px; margin-left:50%; background:url(../img/processflowR.png) no-repeat left;}
+.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;margin-left: 0.5%;}
+.process .flow .right {width:50%; height:100px; margin-left:49.6%; background:url(../img/processflowR.png) no-repeat left;}
 .process .flow .box  {width: 548px; padding:22px 90px; position:relative;height: 100%}
 .process .flow .left .box {float:right;}
 .process .flow .right .box {flaot:left;}
-.process .flow .left .box span {color: #f7941a; font-size:18px; position: absolute; right: 50px; bottom: 5px;}
-.process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; left: 50px; bottom: 5px;}
+.process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
+.process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
 .container-fluid.aboutus{margin: 15px;background-color: #eee;}
 .aboutus .tagline {color:#f7941a; font-size:55px;}
@@ -431,7 +468,7 @@ top: 50%;
 	}
 	#fullpage .content-wrapper{ 
 		background: none;
-	}
+	} 
 }
 
 @media (min-width:992px){
@@ -439,6 +476,37 @@ top: 50%;
     top: 50%;
   }
   .mascott {display:block;}
+
+	/* Defining each sectino background and styles 
+	* --------------------------------------- */
+	#section0{
+	    background: #efefef url("../img/Programmer Needs-08.png") no-repeat center center;
+	    background-size: 100% auto; 
+	}
+	#section1{
+	    background: #f7941e url("../img/Color Background-01.jpg") no-repeat center center;
+	    background-size: 100% auto;  
+	}
+	#section2{
+	    background: #eee80a url("../img/Color Background-02.jpg") no-repeat center center;
+	    background-size: 100% auto; 
+	}
+	#section3{
+	    background: #f04e58 url("../img/Color Background-03.jpg") no-repeat center center;
+	    background-size: 100% auto; 
+	}
+	#section4{
+	    background: #8f53a1 url("../img/Color Background-04.jpg") no-repeat center center;
+	    background-size: 100% auto; 
+	}
+	#section5{
+	    background: #27bdbe url("../img/Color Background-05.jpg") no-repeat center center; 
+	    background-size: 100% auto;
+	}
+	#section6{
+	    background: #45b97c url("../img/Color Background-06.jpg") no-repeat center center;
+	    background-size: 100% auto; 
+	}
 }
 
 @media (max-width:1024px){

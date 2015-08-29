@@ -16,11 +16,8 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'title'   => 'Home',
 				'desc'    => 'Home page.',
 				'content' => '<div class="section" id="section0">
-					<div class="col-md-6 maincol-right">
-						<ul class="scene mob-hide">
-							<li class="layer" data-depth="0.50"><img src="/img/Images-41-2.png" width="100%"  class="home-dna"></li>
-						</ul>
-						<ul class="scene mob-visible">
+					<div class="col-md-6 maincol-right"> 
+						<ul class="scene visible-xs-block">
 							<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 						</ul>
 					</div> 
@@ -502,7 +499,7 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'desc'    => 'Process page.',
 				'content' => '<div class="row" style="position:relative;"> 
 					<div class="col-sm-10 col-sm-offset-1 process-flow">
-						<h1 class="txtorange"><span></span>合作流程次序</h1>
+						<h2 class="txtorange"><span></span>合作流程次序</h2>
 						<div class="flow">
 							<div class="left"><div class="box">
 								<span>01</span>
@@ -555,14 +552,26 @@ class PageContentTableSeeder extends DatabaseSeeder
 						</div>
 					</div>
 					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
 					<div class="row"> 
 					<div class="col-sm-8 col-sm-offset-2 hidden-xs">
-						<img src="/img/Images-37.png" width="100%">
+						<img src="/img/Programmer Needs-02.png" width="100%">
 					</div>
 					<div class="col-sm-8 col-sm-offset-2 visible-xs-block" style="padding-bottom:100px;">
 						<img src="/img/Images-37-mob.png" width="100%">
 					</div>
-					</div>',
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>',
 				'locale_id'  => '1',
 				'status'  => '2'
 			),
