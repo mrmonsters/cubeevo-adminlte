@@ -80,7 +80,7 @@
 					<p><i>Account Director</i><br>
 					策划总监</p>
 					<ul>
-						<li class="phone">+6017 331 8916</li>
+						<li class="handphone">+6017 331 8916</li>
 						<li class="mail">alvin@cubeevo.com</li>
 					</ul>
 				</div>
@@ -90,7 +90,7 @@
 					<p><i>Account Manager</i><br>
 					客户经理</p>
 					<ul>
-						<li class="phone">+6017 321 6004</li>
+						<li class="handphone">+6017 321 6004</li>
 						<li class="mail">timothy@cubeevo.com</li>
 					</ul>
 				</div>
@@ -100,7 +100,7 @@
 					<p><i>Branding Manager</i><br>
 					品牌经理</p>
 					<ul>
-						<li class="phone">+6018 352 4300</li>
+						<li class="handphone">+6018 352 4300</li>
 						<li class="mail">keith@cubeevo.com</li>
 					</ul>
 				</div>

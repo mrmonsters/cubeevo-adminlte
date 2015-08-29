@@ -497,9 +497,13 @@ class PageContentTableSeeder extends DatabaseSeeder
 				'page_id' => '3',
 				'title'   => 'Process',
 				'desc'    => 'Process page.',
-				'content' => '<div class="row" style="position:relative;"> 
-					<div class="col-sm-10 col-sm-offset-1 process-flow">
+				'content' => '<div class="row"> 
+					<div class="col-sm-10 col-sm-offset-2">
 						<h2 class="txtorange"><span></span>合作流程次序</h2>
+					</div>
+					</div>
+					<div class="row">
+					<div class="col-sm-11 col-sm-offset-1 process-flow">
 						<div class="flow">
 							<div class="left"><div class="box">
 								<span>01</span>
