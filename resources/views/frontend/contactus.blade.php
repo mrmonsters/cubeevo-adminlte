@@ -4,26 +4,17 @@
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-2">
-			<h1 class="txtorange"><span></span>联络我们</h1>
+			<h2 class="txtorange"><span></span>联络我们</h2>
+			<h5>任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！</h5>
 		</div>
-	</div>
-	<div class="row" style="position:relative;"> 
-		<div class="col-sm-10 col-sm-offset-1 text-center">
-			<br/>
-			<br/>
-			<br/>
-			<p>您有任何疑问?您需要一个报价或者建议？<br>
-			如果你想了解更多有关我们的专业服务，我们如何运作，欢迎你发邮件或致电，我们很高兴为您提供服务。
-		</div>
-		<div class="col-sm-10 col-sm-offset-1 text-center">
-			<p><span class="contactus-icon mail"></span>enquire@cubeevo.com</p>
-			<p><span class="contactus-icon phone"></span>+603 9010 9882</p>
-			<br/>
-			<br/>
-			<br/>
-		</div>
-	</div>
-	
+	</div> 
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-8 col-sm-offset-2">
 			<div class="col-sm-6"> 
@@ -69,16 +60,18 @@
 	</div>
 		
 	<div class="row contactdetails" style="position:relative;"> 
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="col-sm-5">
-				<h4>CUBEevo Advertising Sdn. Bhd.<span class=" smalltext">(949017-T)</span></h4>
+		<div class="col-sm-11 col-sm-offset-1">
+			<div class="col-sm-5 nopadding">
+				<h4>CUBEevo Advertising Sdn. Bhd.<span class="p">(949017-T)</span></h4>
 				<h4>形立方广告有限公司</h4>
-				<p>No 43-2, Jalan Temenggung 21/9, Bandar Mahkota Cheras<br/>
-				43200 Batu Cheras 9 Cheras, Selangor, Kuala Lumpur</p>
-				<ul class="shopinfo">
-					<li class="phone">+603 90109882</li>
-					<li class="fax">+603 9075 9882</li>
-					<li class="mail">enquire@cubeevo.com</li>
+				<br/>
+				<h5>No 43-2, Jalan Temenggung 21/9, Bandar Mahkota Cheras<br/>
+				43200 Batu Cheras 9 Cheras, Selangor, Kuala Lumpur</h5>
+				<br/>
+				<ul class="list-inline">
+					<li class="phone"><h5 class="nopadding">+603 90109882</h5></li>
+					<li class="fax"><h5 class="nopadding">+603 9075 9882</h5></li>
+					<li class="mail"><h5 class="nopadding">enquire@cubeevo.com</h5></li>
 				</ul>
 			</div>
 			<div class="col-sm-7 contact-person">
@@ -115,7 +108,7 @@
 		</div>
 	</div>	 
 			
-	<div class="row contactdetails" style="position:relative;"> 
+	<div class="row contactdetails" style="position:relative;padding:0px;"> 
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<div style="overflow:hidden;height:500px;width:100%;">
 			<div id="map-canvas" style="height:500px;width:100%;"></div>
