@@ -217,7 +217,6 @@ class ProjectController extends Controller {
 				}
 
 				$projTranslation = $project->translations()
-					->where('project_id', $project->id)
 					->where('locale_id', $locale->id)
 					->first();
 

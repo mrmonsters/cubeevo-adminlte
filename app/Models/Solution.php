@@ -24,4 +24,9 @@ class Solution extends Model implements TranslatableContract {
 	{
 		return $this->hasOne('App\Models\Files', 'id', 'grid_img_id');
 	}
+
+	public function translations()
+	{
+		return $this->hasMany('App\Models\SolutionTranslation', 'solution_id', 'id');
+	}
 }

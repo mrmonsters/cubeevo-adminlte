@@ -71,19 +71,10 @@ Description for category management
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="grid_img" class="img-thumbnail" src="{{ $category->frontImage->dir }}" alt="{{ $category->frontImage->name }}">
-								<hr />
-								<div class="caption">
-									<div class="row">
-										<div class="col-md-5">
-											<strong>Grid Front Image</strong>
-										</div>
-										<div class="col-md-7">
-											<div class="pull-right">
-												<a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
-												<a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
-											</div>
-										</div>
-									</div>
+								<div class="caption" style="text-align: center;">
+									<p><strong>Grid Front Image</strong></p>
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
 								</div>
 							</div>
 						</div>
@@ -91,19 +82,10 @@ Description for category management
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="grid_bg_img" class="img-thumbnail" src="{{ $category->backgroundImage->dir }}" alt="{{ $category->backgroundImage->name }}">
-								<hr />
-								<div class="caption">
-									<div class="row">
-										<div class="col-md-5">
-											<strong>Grid Background Image</strong>
-										</div>
-										<div class="col-md-7">
-											<div class="pull-right">
-												<a href="#" class="btn btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
-												<a href="#" class="btn btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
-											</div>
-										</div>
-									</div>
+								<div class="caption" style="text-align: center;">
+									<p><strong>Grid Background Image</strong></p>
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
 								</div>
 							</div>
 						</div>

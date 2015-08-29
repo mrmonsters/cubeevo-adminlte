@@ -2,4 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class SolutionTranslation extends Model {}
+class SolutionTranslation extends Model {
+
+	protected $fillable = ['solution_id', 'locale_id', 'name', 'desc'];
+}

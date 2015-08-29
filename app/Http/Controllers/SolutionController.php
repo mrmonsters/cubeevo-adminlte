@@ -5,13 +5,13 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use File;
-
+use Redirect;
+use App\Models\Status;
 use App\Models\Locale;
-use App\Models\EntityInstance;
-use App\Models\Files;
+use App\Models\Solution;
+use App\Models\SolutionTranslation;
 
-use App\Services\GeneralHelper;
+use App\Services\FileHelper;
 
 class SolutionController extends Controller {
 
@@ -30,14 +30,10 @@ class SolutionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(GeneralHelper $genHelper)
+	public function index()
 	{
 		//
-		$codes =  array(
-			'name',
-			'sort_order'
-		);
-		$solutions = $genHelper->getEntityCollection('solution', $codes);
+		$solutions = Solution::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
 		return view('management.solution.index')->with('solutions', $solutions);
 	}
@@ -58,147 +54,65 @@ class SolutionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req)
+	public function store(Request $req, FileHelper $fileHelper)
 	{
 		//
-		$data = $req->input();
+		$response = array();
+		$data     = $req->input();
 
 		if (isset($data))
 		{
-			$solution = array();
-			$codes   = array('name', 'desc');
-			$locales = Locale::where('status', '=', '2')->get();
+			$files = $req->file();
+			$solution = new Solution;
 
-			foreach ($codes as $code)
-			{
-				$item = array();
-
-				foreach ($locales as $locale)
-				{
-					if ($data[$code][$locale->id] != '')
-					{
-						$item[$locale->id] = $data[$code][$locale->id];
-					}
-				}
-
-				$solution[$code] = $item;
-			}
-
-			$attrs = array(
-				'grid_img_id', 
-				'grid_bg_img_id', 
-				'pri_bg_color_code',
-				'sort_order'
-			);
-
-			foreach ($attrs as $attr)
-			{
-				$solution[$attr] = $data[$attr];
-			}
-
-			if (!empty($category))
-			{
-				$solutionObj = $genHelper->saveEntity('solution', $solution);
-
-				if ($solutionObj->id)
-				{
-					return redirect('admin/manage/solution');
-				}
-			}
-		}
-
-		return redirect('admin/manage/solution/create');
-		/*
-		$response = array();
-		$data     = $req->input();
-		$files    = $req->file();
-
-		if (is_array($data) && !empty($data))
-		{
-			$sol     = array();
-			$codes   = array('name', 'desc');
-			$locales = Locale::where('status', '=', '2')->get();
-
-			foreach ($codes as $code)
-			{
-				$item = array();
-
-				foreach ($locales as $locale)
-				{
-					if ($data[$code][$locale->id] != '')
-					{
-						$item[$locale->id] = $data[$code][$locale->id];
-					}
-				}
-
-				$sol[$code] = $item;
-			}
-
-			$imgId = '';
-			$bgImgId = '';
-
-			if (!empty($files))
+			if (isset($files) && !empty($files))
 			{
 				foreach ($files as $key => $val)
 				{
-					if (!$val->getClientSize() || !$val->getClientOriginalName() || !$val->getClientMimeType())
+					if ($key == 'new_grid_img_id')
 					{
-						continue;
+						$solution->grid_img_id = $fileHelper->uploadNewFile($val);
 					}
-					else
+					else if ($key == 'new_grid_bg_img_id')
 					{
-						$fileName = $val->getClientOriginalName();
-						$baseDir = '/storage/uploaded'; 
-
-						// Save file
-						$newFile = new Files;
-
-						$newFile->name   = $fileName;
-						$newFile->type   = $val->getClientMimeType();
-						$newFile->dir    = $baseDir."/".$fileName;
-						$newFile->size   = $val->getClientSize();
-						$newFile->status = 2;
-						$newFile->save();
-
-						if (!File::exists(public_path().$baseDir))
-						{
-							File::makeDirectory(public_path().$baseDir);
-						}
-
-						$val->move(public_path().$baseDir, $fileName);
-
-						if (File::exists(public_path().$baseDir."/".$fileName))
-						{
-							if ($key == 'img_id')
-							{
-								$imgId = $newFile->id;
-							}
-							else if ($key == 'bg_img_id')
-							{
-								$bgImgId = $newFile->id;
-							}
-						}
+						$solution->grid_bg_img_id = $fileHelper->uploadNewFile($val);
 					}
 				}
 			}
-
-			$sol['sort_order']    = $data['sort_order'];
-			$sol['img_id']        = ($data['old_img_id'] != '') ? $data['old_img_id'] : $imgId;
-			$sol['bg_img_id']     = ($data['old_bg_img_id'] != '') ? $data['old_bg_img_id'] : $bgImgId;
-			$sol['bg_color_code'] = $data['bg_color_code'];
-
-			$solution = $solHelper->saveNewSolution($sol);
-
-			if ($solution != false && $solution->id)
+			else
 			{
-				// Redirect with success
+				$solution->grid_img_id    = $data['grid_img_id'];
+				$solution->grid_bg_img_id = $data['grid_bg_img_id'];
 			}
 
-			// Redirect with error
+			$solution->pri_color_code = $data['pri_color_code'];
+			$solution->sort_order     = $data['sort_order'];
+			$solution->save();
 
-			return redirect('admin/manage/solution');
+			$solData    = array();
+			$attributes = array('name', 'desc');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
+			{
+				$solData['solution_id'] = $solution->id;
+				$solData['locale_id']  = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$solData[$attribute] = $data[$attribute][$locale->id];
+					}
+				}
+
+				SolutionTranslation::create($solData);
+			}
+
+			return Redirect::to('admin/manage/solution')->with('response', $response);			
 		}
-		*/
+
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
@@ -218,25 +132,10 @@ class SolutionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id, GeneralHelper $genHelper)
+	public function edit($id)
 	{
 		//
-		$instance = EntityInstance::find($id);
-		$codes = array(
-			'name', 
-			'desc',
-			'grid_img_id', 
-			'grid_bg_img_id', 
-			'pri_bg_color_code',
-			'sort_order'
-		);
-
-		$solution = array();
-		foreach ($codes as $code)
-		{
-			$solution[$code] = $genHelper->getAttribute($code, $instance);
-		}
-		$solution['id'] = $instance->id;
+		$solution = Solution::find($id);
 
 		return view('management.solution.edit')->with('solution', $solution);
 	}
@@ -247,56 +146,76 @@ class SolutionController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req, GeneralHelper $genHelper)
+	public function update($id, Request $req, FileHelper $fileHelper)
 	{
 		//
-		$data = $req->input();
-		$instance = EntityInstance::find($id);
+		$response = array();
+		$data     = $req->input();
+		$solution = Solution::find($id);
 
-		if (isset($data) && $instance->id)
+		if (isset($data) && $solution->id)
 		{
-			$codes = array(
-				'name', 
-				'desc',
-				'grid_img_id', 
-				'grid_bg_img_id', 
-				'pri_bg_color_code',
-				'sort_order'
-			);
+			$files = $req->file();
 
-			$attrs = array();
-			foreach ($codes as $code)
+			if (isset($files) && !empty($files))
 			{
-				if (isset($data[$code]))
+				foreach ($files as $key => $val)
 				{
-					$attrs[$code] = $data[$code];
+					if ($key == 'new_grid_img_id')
+					{
+						$solution->grid_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_grid_bg_img_id')
+					{
+						$solution->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+					}
 				}
 			}
-
-			foreach ($attrs as $code => $attr)
+			else
 			{
-				if (is_array($attr))
-				{
-					foreach ($attr as $k => $v)
-					{
-						$locale = Locale::find($k);
+				$solution->grid_img_id    = $data['grid_img_id'];
+				$solution->grid_bg_img_id = $data['grid_bg_img_id'];
+			}
 
-						if ($locale->id)
-						{
-							$genHelper->saveAttribute($code, $v, $instance, $locale->code);
-						}
+			$solution->pri_color_code = $data['pri_color_code'];
+			$solution->sort_order     = $data['sort_order'];
+			$solution->save();
+
+			$solData    = array();
+			$attributes = array('name', 'desc');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
+			{
+				$solData['solution_id'] = $solution->id;
+				$solData['locale_id']   = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$solData[$attribute] = $data[$attribute][$locale->id];
 					}
+				}
+
+				$solTranslation = $solution->translations()
+					->where('locale_id', $locale->id)
+					->first();
+
+				if (isset($solTranslation))
+				{
+					$solTranslation->update($solData);
 				}
 				else
 				{
-					$genHelper->saveAttribute($code, $attr, $instance);
+					SolutionTranslation::create($solData);
 				}
 			}
 
-			return redirect('admin/manage/solution/');
+			return Redirect::to('admin/manage/solution')->with('response', $response);
 		}
 
-		return redirect('admin/manage/solution/edit/' . $id);
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**

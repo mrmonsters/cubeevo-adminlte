@@ -1,9 +1,4 @@
 @extends('app')
-<?php
-use App\Models\Locale;
-
-$locales = Locale::where('status', '=', '2')->get();
-?>
 
 @section('htmlheader_title')
 Solution Management
@@ -44,25 +39,25 @@ Description for solution management
 						<th>Action</th>
 					</thead>
 					<tbody>
-						@if (isset($solutions) && is_array($solutions) && !empty($solutions))
+						@if (isset($solutions) && !$solutions->isEmpty())
 						@foreach ($solutions as $solution)
 						<tr>
-							<td>{{ $solution['id'] }}</td>
-							<td>{{ $solution['name'] }}</td>
-							<td>{{ $solution['created_at'] }}</td>
-							<td>{{ $solution['updated_at'] }}</td>
+							<td>{{ $solution->id }}</td>
+							<td>{{ $solution->name }}</td>
+							<td>{{ $solution->created_at }}</td>
+							<td>{{ $solution->updated_at }}</td>
 							<td>
-								@if ($solution['status'] == '2')
+								@if ($solution->status == '2')
 								<span class="label label-success">Active</span>
-								@elseif ($solution['status'] == '1')
+								@elseif ($solution->status == '1')
 								<span class="label label-danger">Inactive</span>
 								@else 
 								<span class="label label-warning">Incomplete</span>
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/solution/edit/' . $solution['id']) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/solution/destroy/' . $solution['id']) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/solution/edit/' . $solution->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/solution/destroy/' . $solution->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

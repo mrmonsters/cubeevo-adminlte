@@ -196,7 +196,6 @@ class CategoryController extends Controller {
 				}
 
 				$catTranslation = $category->translations()
-					->where('category_id', $category->id)
 					->where('locale_id', $locale->id)
 					->first();
 
