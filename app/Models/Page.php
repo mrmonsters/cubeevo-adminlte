@@ -1,13 +1,19 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Vinkla\Translator\Translatable;
+use Vinkla\Translator\Contracts\Translatable as TranslatableContract;
 
-class Page extends Model {
+class Page extends Model implements TranslatableContract {
 
 	//
-	protected $table      = 'pages';
-	protected $primaryKey = 'id';
-	protected $fillable   = array('title', 'desc', 'slug', 'status');
+	use Translatable;
+
+	protected $table                = 'pages';
+	protected $primaryKey           = 'id';
+	protected $fillable             = ['name', 'desc', 'content', 'slug', 'status'];
+	protected $translator           = 'App\Models\PageTranslation';
+	protected $translatedAttributes = ['name', 'desc', 'content'];
 
 	public function pageMenus()
 	{
@@ -19,8 +25,4 @@ class Page extends Model {
 		return $this->hasMany('App\Models\PageBlock', 'page_id', 'id');
 	}
 
-	public function pageContents()
-	{
-		return $this->hasMany('App\Models\PageContent', 'page_id', 'id');
-	}
 }

@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use File;
-
+use Redirect;
+use App\Models\Status;
 use App\Models\Locale;
-use App\Models\EntityInstance;
-use App\Models\Files;
+use App\Models\Category;
+use App\Models\CategoryTranslation;
 
-use App\Services\GeneralHelper;
+use App\Services\FileHelper;
 
 class CategoryController extends Controller {
 
@@ -30,13 +31,10 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(GeneralHelper $genHelper)
+	public function index()
 	{
 		//
-		$codes =  array(
-			'name',
-		);
-		$categories = $genHelper->getEntityCollection('category', $codes);
+		$categories = Category::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
 		return view('management.category.index')->with('categories', $categories);
 	}
@@ -59,143 +57,61 @@ class CategoryController extends Controller {
 	 */
 	public function store(Request $req)
 	{
-		$data = $req->input();
+		$response = array();
+		$data     = $req->input();
 
 		if (isset($data))
 		{
-			$category = array();
-			$codes   = array('name');
-			$locales = Locale::where('status', '=', '2')->get();
+			$files = $req->file();
+			$category = new Category;
 
-			foreach ($codes as $code)
-			{
-				$item = array();
-
-				foreach ($locales as $locale)
-				{
-					if ($data[$code][$locale->id] != '')
-					{
-						$item[$locale->id] = $data[$code][$locale->id];
-					}
-				}
-
-				$category[$code] = $item;
-			}
-
-			$attrs = array(
-				'grid_img_id',
-				'grid_bg_img_id',
-				'sort_order'
-			);
-
-			foreach ($attrs as $attr)
-			{
-				$category[$attr] = $data[$attr];
-			}
-
-			if (!empty($category))
-			{
-				$categoryObj = $genHelper->saveEntity('category', $category);
-
-				if ($categoryObj->id)
-				{
-					return redirect('admin/manage/category');
-				}
-			}
-		}
-
-		return redirect('admin/manage/category/create');
-		//
-		/*
-		$response = array();
-		$data     = $req->input();
-		$files    = $req->file();
-
-		if (is_array($data) && !empty($data))
-		{
-			$cat     = array();
-			$codes   = array('name');
-			$locales = Locale::where('status', '=', '2')->get();
-
-			foreach ($codes as $code)
-			{
-				$item = array();
-
-				foreach ($locales as $locale)
-				{
-					if ($data[$code][$locale->id] != '')
-					{
-						$item[$locale->id] = $data[$code][$locale->id];
-					}
-				}
-
-				$cat[$code] = $item;
-			}
-
-			$imgId = '';
-			$bgImgId = '';
-
-			if (!empty($files))
+			if (isset($files) && !empty($files))
 			{
 				foreach ($files as $key => $val)
 				{
-					if (!$val->getClientSize() || !$val->getClientOriginalName() || !$val->getClientMimeType())
+					if ($key == 'new_grid_img_id')
 					{
-						continue;
+						$category->grid_img_id = $fileHelper->uploadNewFile($val);
 					}
-					else
+					else if ($key == 'new_grid_bg_img_id')
 					{
-						$fileName = $val->getClientOriginalName();
-						$baseDir = '/storage/uploaded'; 
-
-						// Save file
-						$newFile = new Files;
-
-						$newFile->name   = $fileName;
-						$newFile->type   = $val->getClientMimeType();
-						$newFile->dir    = $baseDir."/".$fileName;
-						$newFile->size   = $val->getClientSize();
-						$newFile->status = 2;
-						$newFile->save();
-
-						if (!File::exists(public_path().$baseDir))
-						{
-							File::makeDirectory(public_path().$baseDir);
-						}
-
-						$val->move(public_path().$baseDir, $fileName);
-
-						if (File::exists(public_path().$baseDir."/".$fileName))
-						{
-							if ($key == 'img_id')
-							{
-								$imgId = $newFile->id;
-							}
-							else if ($key == 'bg_img_id')
-							{
-								$bgImgId = $newFile->id;
-							}
-						}
+						$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
 					}
 				}
 			}
-
-			$cat['sort_order'] = $data['sort_order'];
-			$cat['img_id']     = ($data['old_img_id'] != '') ? $data['old_img_id'] : $imgId;
-			$cat['bg_img_id']  = ($data['old_bg_img_id'] != '') ? $data['old_bg_img_id'] : $bgImgId;
-
-			$category = $catHelper->saveNewCategory($cat);
-
-			if ($category != false && $category->id)
+			else
 			{
-				// Redirect with success
+				$category->grid_img_id    = $data['grid_img_id'];
+				$category->grid_bg_img_id = $data['grid_bg_img_id'];
 			}
 
-			// Redirect with error
+			$category->sort_order = $data['sort_order'];
+			//$category->save();
 
-			return redirect('admin/manage/category');
+			$catData    = array();
+			$attributes = array('name', 'desc');
+			$locales 	= Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
+			{
+				$catData['category_id'] = $category->id;
+				$catData['locale_id']   = $locale->id;
+
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
+					{
+						$catData[$attribute] = $data[$attribute][$locale->id];
+					}
+				}
+
+				CategoryTranslation::create($catData);
+			}
+
+			return Redirect::to('admin/manage/category')->with('response', $response);			
 		}
-		*/
+
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
@@ -215,23 +131,10 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id, GeneralHelper $genHelper)
+	public function edit($id)
 	{
 		//
-		$instance = EntityInstance::find($id);
-		$codes = array(
-			'name', 
-			'grid_img_id', 
-			'grid_bg_img_id', 
-			'sort_order'
-		);
-
-		$category = array();
-		foreach ($codes as $code)
-		{
-			$category[$code] = $genHelper->getAttribute($code, $instance);
-		}
-		$category['id'] = $instance->id;
+		$category = Category::find($id);
 
 		return view('management.category.edit')->with('category', $category);
 	}
@@ -242,54 +145,54 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req, GeneralHelper $genHelper)
+	public function update($id, Request $req, FileHelper $fileHelper)
 	{
 		//
-		$data = $req->input();
-		$instance = EntityInstance::find($id);
+		$response = array();
+		$data     = $req->input();
+		$category = Category::find($id);
 
-		if (isset($data) && $instance->id)
+		if (isset($data) && $category->id)
 		{
-			$codes = array(
-				'name',
-				'grid_img_id',
-				'grid_bg_img_id',
-				'sort_order'
-			);
+			$files = $req->file();
 
-			$attrs = array();
-			foreach ($codes as $code)
+			if (isset($files) && !empty($files))
 			{
-				if (isset($data[$code]))
+				foreach ($files as $key => $val)
 				{
-					$attrs[$code] = $data[$code];
-				}
-			}
-
-			foreach ($attrs as $code => $attr)
-			{
-				if (is_array($attr))
-				{
-					foreach ($attr as $k => $v)
+					if ($key == 'new_grid_img_id')
 					{
-						$locale = Locale::find($k);
-
-						if ($locale->id)
-						{
-							$genHelper->saveAttribute($code, $v, $instance, $locale->code);
-						}
+						$category->grid_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_grid_bg_img_id')
+					{
+						$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
 					}
 				}
-				else
-				{
-					$genHelper->saveAttribute($code, $attr, $instance);
-				}
+			}
+			else
+			{
+				$category->grid_img_id    = $data['grid_img_id'];
+				$category->grid_bg_img_id = $data['grid_bg_img_id'];
 			}
 
-			return redirect('admin/manage/category/');
+			$category->sort_order = $data['sort_order'];
+			$category->save();
+
+			foreach ($data['name'] as $key => $val)
+			{
+				$catData = array('name' => $val);
+				$category->translations()
+					->where('category_id', $category->id)
+					->where('locale_id', $key)
+					->first()
+					->update($catData);
+			}
+
+			return Redirect::to('admin/manage/category')->with('response', $response);
 		}
 
-		return redirect('admin/manage/category/edit/' . $id);
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**

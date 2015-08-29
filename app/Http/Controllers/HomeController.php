@@ -1,18 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use URL;
 use Session;
+use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
-use App\Models\PageContent;
-use App\Models\Files;
-use App\Models\Entity;
-use App\Models\EntityInstance;
-use App\Models\Attribute;
-use App\Models\AttributeValue;
-use App\Services\GeneralHelper;
-use App\Services\CategoryHelper;
-
-use URL;
+use App\Models\Category;
+use App\Models\Project;
+use App\Models\Solution;
 
 class HomeController extends Controller {
 
@@ -29,10 +24,12 @@ class HomeController extends Controller {
 	public function __construct()
 	{
 		// Set default language
+		/*
 		if (Session::get('locale') == null)
 		{
 			Session::set('locale', 'cn');
 		}
+		*/
 	}
 
 	/**
@@ -40,106 +37,55 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(GeneralHelper $genHelper)
+	public function index()
 	{
-		$page     = Page::where('slug', '=', '/')->first();
-		$content  = $page->pageContents()
-			->where('locale_id', $genHelper->getCurrentLocaleId())
-			->first();
+		$page = Page::where('slug', '=', '/')->where('status', STATUS::ACTIVE)->first();
 
-		return view('frontend.index')->with('content', $content);
+		return view('frontend.index')->with('page', $page);
 	}
 
-	public function getAboutUs(GeneralHelper $genHelper)
+	public function getAboutUs()
 	{
-		$page    = Page::where('slug', '=', '/about-us')->first();
-		$content = $page->pageContents()
-			->where('locale_id', $genHelper->getCurrentLocaleId())
-			->first();
+		$page = Page::where('slug', '=', '/about-us')->where('status', STATUS::ACTIVE)->first();
 
-		return view('frontend.aboutus')->with('content', $content);
+		return view('frontend.index')->with('page', $page);
 	}
 
-	public function getCredential(GeneralHelper $genHelper)
+	public function getCredential()
 	{
-		$codes =  array(
-			'name',
-			'grid_img_id',
-			'grid_bg_img_id',
-			'sort_order'
-		);
-		$categories = $genHelper->getEntityCollection('category', $codes);
+		$categories = Category::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
 		return view('frontend.credential')->with('categories', $categories);
 	}
 
-	public function getProjectContent($projectId, GeneralHelper $genHelper)
+	public function getProjectContent($projectId)
 	{
-		$codes =  array(
-			'name',
-			'cover_img_id',
-			'grid_img_id',
-			'grid_bg_img_id',
-			'img_ids',
-			'pri_bg_color_code',
-			'sec_bg_color_code',
-			'txt_color_code',
-			'founder',
-			'year',
-			'sort_order'
-		);
-		$entity = EntityInstance::find($projectId);
-
-		$project = array();
-		foreach ($codes as $code)
-		{
-			$project[$code] = $genHelper->getAttribute($code, $entity);
-		}
+		$project = Project::find($projectId);
 
 		return view('frontend.project_content')->with('project', $project);
 	}
 
-	public function getCredentialProject($categoryId, CategoryHelper $catHelper)
+	public function getCredentialProject($categoryId)
 	{
-		$codes = array(
-			'name',
-			'grid_img_id',
-			'grid_bg_img_id',
-			'sort_order'
-		);
-		$projects = $catHelper->getCategoryProject($categoryId, $codes);
+		$projects = Category::find($categoryId)->projects()->where('status', STATUS::ACTIVE)
+			->orderBy('sort_order')
+			->get();
 
-		return view('frontend.project')->with('projects', $projects)->with('backbtn',URL::action('HomeController@getCredential'));
+		return view('frontend.project')->with('projects', $projects)->with('backbtn', URL::action('HomeController@getCredential'));
 	}
 
-	public function getSolution(GeneralHelper $genHelper)
+	public function getSolution()
 	{
-		$codes =  array(
-			'name',
-			'desc',
-			'pri_bg_color_code',
-			'grid_img_id',
-			'grid_bg_img_id',
-			'sort_order'
-		);
-		$solutions = $genHelper->getEntityCollection('solution', $codes);
+		$solutions = Solution::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
 		return view('frontend.solution')->with('solutions', $solutions);
 	}
 
-	public function getResearch()
+	public function getProcess()
 	{
-		return view('frontend.research');
-	}
+		$page = Page::where('slug', '=', '/process')->where('status', STATUS::ACTIVE)->first();
 
-	public function getProcess(GeneralHelper $genHelper)
-	{
-		$page    = Page::where('slug', '=', '/process')->first();
-		$content = $page->pageContents()
-			->where('locale_id', $genHelper->getCurrentLocaleId())
-			->first();
-
-		return view('frontend.process')->with('content', $content);
+		return view('frontend.index')->with('page', $page);
 	}
 
 	public function getContactUs()

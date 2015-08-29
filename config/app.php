@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'cn',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -150,6 +150,11 @@ return [
 		 * Admin LTE Template Provider
 		 */
 		'Acacha\AdminLTETemplateLaravel\app\Providers\AdminLTETemplateServiceProvider',
+
+		/*
+		 * Vinkla Translator
+		 */
+		'Vinkla\Translator\TranslatorServiceProvider',
 	],
 
 	/*

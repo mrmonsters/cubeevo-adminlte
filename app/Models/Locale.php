@@ -6,10 +6,6 @@ class Locale extends Model {
 
 	//
 	protected $table = 'locales';
-	protected $fillable = array('name', 'code', 'status');
+	protected $fillable = array('language', 'status');
 	
-	public function attributeValues()
-	{
-		return $this->hasMany('App\Models\AttributeValue', 'locale_id', 'id');
-	}
 }

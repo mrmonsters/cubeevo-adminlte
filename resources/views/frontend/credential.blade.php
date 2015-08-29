@@ -1,38 +1,37 @@
 @extends('partials.frontend.app')
 
 @section('frontend-content')
-<?php use App\Models\Files; ?>
 <div class="container-fluid cre">
-    @if (isset($categories) && is_array($categories) && !empty($categories))
+    @if (isset($categories) && !$categories->isEmpty())
         <?php $count = 0; ?>
-                <?php echo '<div class="row">'; ?>
+        <?php echo '<div class="row">'; ?>
         @foreach ($categories as $category)
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category['id']) }}';" style="background: <?php echo ($category['grid_bg_img_id'] != '') ? "url('.." . Files::find($category['grid_bg_img_id'])->dir . "');background-repeat: no-repeat;" : "#666; min-height: 281px;" ?>">
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category->id) }}';" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
                     <div class="greybox"></div> 
 
                     <div class="cd-background-wrapper">
                         <figure class="cd-floating-background">
-                            @if ($category['grid_img_id'] != '')
-                            <img src="{{ Files::find($category['grid_img_id'])->dir }}" width="100%"/>
+                            @if ($dir = $category->frontImage->dir)
+                            <img src="{{ $dir }}" width="100%"/>
                             @endif
                         </figure>
                     </div> 
 
                     <div class="row panel-body overlap">
                         <p class="col-sm-12 hidden-text panel-title">
-                            {{ $category['name'] }}
+                            {{ $category->name }}
                         </p>
                     </div>  
                 </div>
             </div>
-            @if (($count % 3 == 0) || ($count == count($categories))) 
+            @if (($count % 3 == 0) || ($count == $categories->count())) 
             @endif
         @endforeach
-                <?php echo '</div>'; ?>
+        <?php echo '</div>'; ?>
     @endif
 </div> 
 @endsection

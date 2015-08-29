@@ -9,22 +9,11 @@ class LocaleTableSeeder extends Seeder
 	{
 		DB::table('locales')->delete();
 
-		$locales = array(
-			array(
-				'name'   => 'Chinese',
-				'code'   => 'cn',
-				'status' => '2'
-			),
-			array(
-				'name'   => 'English',
-				'code'   => 'en',
-				'status' => '2'
-			),
-		);
+		$locales = array('cn', 'en');
 
 		foreach ($locales as $locale)
 		{
-			Locale::create($locale);
+			Locale::create(['language' => $locale]);
 		}
 	}
 

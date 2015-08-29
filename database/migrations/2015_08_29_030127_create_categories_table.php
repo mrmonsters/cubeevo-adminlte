@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocalesTable extends Migration {
+class CreateCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,12 +13,16 @@ class CreateLocalesTable extends Migration {
 	public function up()
 	{
 		//
-		Schema::dropIfExists('locales');
+		Schema::dropIfExists('categories');
 
-		Schema::create('locales', function(Blueprint $table)
+		Schema::create('categories', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('language')->nullable(false);
+			$table->integer('grid_img_id')->unsigned(true);
+			$table->foreign('grid_img_id')->references('id')->on('files');
+			$table->integer('grid_bg_img_id')->unsigned(true);
+			$table->foreign('grid_bg_img_id')->references('id')->on('files');
+			$table->integer('sort_order');
 			$table->integer('status')->default(2);
 			$table->timestamps();
 		});
@@ -33,7 +37,7 @@ class CreateLocalesTable extends Migration {
 	{
 		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('locales');
+		Schema::drop('categories');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

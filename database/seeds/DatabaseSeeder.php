@@ -16,9 +16,6 @@ class DatabaseSeeder extends Seeder {
 		
 		$this->call('LocaleTableSeeder');
 		$this->call('PageTableSeeder');
-		$this->call('PageContentTableSeeder');
-		$this->call('EntityTableSeeder');
-		$this->call('AttributeTableSeeder');
 		$this->call('CategoryTableSeeder');
 		$this->call('ProjectTableSeeder');
 		$this->call('SolutionTableSeeder');

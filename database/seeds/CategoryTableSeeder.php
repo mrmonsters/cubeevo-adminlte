@@ -3,10 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Models\Locale;
 use App\Models\Files;
-use App\Models\Entity;
-use App\Models\EntityInstance;
-use App\Models\Attribute;
-use App\Models\AttributeValue;
+use App\Models\Category;
+use App\Models\CategoryTranslation;
 
 class CategoryTableSeeder extends Seeder 
 {
@@ -20,57 +18,41 @@ class CategoryTableSeeder extends Seeder
 				'name'   => 'Hairdepot_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail.png',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'Hairdepot_Thumbnail_Background',
 				'type'   => 'image/jpeg',
 				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail_Background.jpg',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'Greenology_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Thumbnail/Greenology_Thumbnail.png',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'Greenology_Thumbnail_Background',
 				'type'   => 'image/jpeg',
 				'dir'    => '/img/Credential Thumbnail/Greenology_Thumbnail_Background.jpg',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'PLT_Website_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Thumbnail/PLT_Website_Thumbnail.png',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'PLT_Website_Thumbnail_Background',
 				'type'   => 'image/jpeg',
 				'dir'    => '/img/Credential Thumbnail/PLT_Website_Thumbnail_Background.jpg',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'HairMilk_Thumbnail',
 				'type'   => 'image/png',
 				'dir'    => '/img/Credential Thumbnail/HairMilk_Thumbnail.png',
-				'size'   => '0',
-				'status' => '2'
 			),
 			array(
 				'name'   => 'HairMilk_Thumbnail_Background',
 				'type'   => 'image/jpeg',
 				'dir'    => '/img/Credential Thumbnail/HairMilk_Thumbnail_Background.jpg',
-				'size'   => '0',
-				'status' => '2'
 			),
 		);
 
@@ -79,57 +61,92 @@ class CategoryTableSeeder extends Seeder
 			Files::create($file);
 		}
 
-		// First instance to be seeded
-		$lastInstanceId = 0;
-
-		$instance = array(
-			'entity_id' => '1',
-			'status'    => '2'
-		);
-
-		for ($i = 0; $i < 8; $i++)
-		{
-			EntityInstance::create($instance);
-		}
-
 		$categories = array(
 			array(
-				'cn' => '型在汽车业',
-				'en' => 'Automotive',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在汽车业',
+					),
+					'en' => array(
+						'name' => 'Automotive',
+					),
+				),
 			),
 			array(
-				'cn' => '型在金融业',
-				'en' => 'Banking',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在金融业',
+					),
+					'en' => array(
+						'name' => 'Banking',
+					),
+				),
 			),
 			array(
-				'cn' => '型在美容业',
-				'en' => 'Beauty',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在美容业',
+					),
+					'en' => array(
+						'name' => 'Beauty',
+					),
+				),
 			),
 			array(
-				'cn' => '型在房产业',
-				'en' => 'Developer',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在房产业',
+					),
+					'en' => array(
+						'name' => 'Developer',
+					),
+				),
 			),
 			array(
-				'cn' => '型在教学业',
-				'en' => 'Education',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在教学业',
+					),
+					'en' => array(
+						'name' => 'Education',
+					),
+				),
 			),
 			array(
-				'cn' => '型在餐饮业',
-				'en' => 'F&B',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在餐饮业',
+					),
+					'en' => array(
+						'name' => 'F&B',
+					),
+				),
 			),
 			array(
-				'cn' => '型在电子业',
-				'en' => 'IT',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在电子业',
+					),
+					'en' => array(
+						'name' => 'IT',
+					),
+				),
 			),
 			array(
-				'cn' => '型在零售业',
-				'en' => 'Retailer',
+				'translation' => array(
+					'cn' => array(
+						'name' => '型在零售业',
+					),
+					'en' => array(
+						'name' => 'Retailer',
+					),
+				),
 			),
 		);
 
-		$catCount = 0;
+		$count = 0;
 
-		foreach ($categories as $cat)
+		foreach ($categories as $category)
 		{
 			// Reset to reuse image
 			if ($lastFileId == 8)
@@ -137,47 +154,22 @@ class CategoryTableSeeder extends Seeder
 				$lastFileId = 0;
 			}
 
-			$value = array(
-				++$lastInstanceId => array(
-					'name' => array(
-						'cn' => $cat['cn'],
-						'en' => $cat['en'],
-					),
-					'grid_img_id'    => ++$lastFileId,
-					'grid_bg_img_id' => ++$lastFileId,
-					'sort_order'     => $catCount,
-				),
-			);
+			$cat = New Category;
+			$cat->grid_img_id    = ++$lastFileId;
+			$cat->grid_bg_img_id = ++$lastFileId;
+			$cat->sort_order     = $count++;
+			$cat->save();
 
-			foreach ($value[$lastInstanceId] as $code => $item)
+			foreach ($category['translation'] as $key => $val)
 			{
-				$attr = Attribute::where('code', '=', $code)->first();
+				$locale = Locale::where('language', '=', $key)->first();
 
-				if (is_array($item))
-				{
-					foreach ($item as $loc => $value)
-					{
-						$locale = Locale::where('code', '=', $loc)->first();
-
-						$attrValue = new AttributeValue;
-						$attrValue->attribute_id = $attr->id;
-						$attrValue->entity_instance_id = $lastInstanceId;
-						$attrValue->value = $value;
-						$attrValue->locale_id = $locale->id;
-						$attrValue->save();
-					}
-				}
-				else
-				{
-					$attrValue = new AttributeValue;
-					$attrValue->attribute_id = $attr->id;
-					$attrValue->entity_instance_id = $lastInstanceId;
-					$attrValue->value = $item;
-					$attrValue->save();
-				}
+				$catTranslation = new CategoryTranslation;
+				$catTranslation->category_id = $cat->id;
+				$catTranslation->locale_id   = $locale->id;
+				$catTranslation->name        = $val['name'];
+				$catTranslation->save();
 			}
-
-			$catCount++;
 		}
 	}
 

@@ -39,25 +39,25 @@ Description for category management
 						<th>Action</th>
 					</thead>
 					<tbody>
-						@if (isset($categories) && is_array($categories) && !empty($categories))
+						@if (isset($categories) && !$categories->isEmpty())
 						@foreach ($categories as $category)
 						<tr>
-							<td>{{ $category['id'] }}</td>
-							<td>{{ $category['name'] }}</td>
-							<td>{{ $category['created_at'] }}</td>
-							<td>{{ $category['updated_at'] }}</td>
+							<td>{{ $category->id }}</td>
+							<td>{{ $category->name }}</td>
+							<td>{{ $category->created_at }}</td>
+							<td>{{ $category->updated_at }}</td>
 							<td>
-								@if ($category['status'] == '2')
+								@if ($category->status == '2')
 								<span class="label label-success">Active</span>
-								@elseif ($category['status'] == '1')
+								@elseif ($category->status == '1')
 								<span class="label label-danger">Inactive</span>
 								@else 
 								<span class="label label-warning">Incomplete</span>
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/category/edit/' . $category['id']) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/category/destroy/' . $category['id']) }}" class="btn btn-danger">Delete</a>
+								<a href="{{ url('admin/manage/category/edit/' . $category->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/category/destroy/' . $category->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

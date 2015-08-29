@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocalesTable extends Migration {
+class CreateProjectFilesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,12 +13,16 @@ class CreateLocalesTable extends Migration {
 	public function up()
 	{
 		//
-		Schema::dropIfExists('locales');
+		Schema::dropIfExists('project_files');
 
-		Schema::create('locales', function(Blueprint $table)
+		Schema::create('project_files', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('language')->nullable(false);
+			$table->integer('project_id')->unsigned(true);
+			$table->foreign('project_id')->references('id')->on('projects');
+			$table->integer('img_id')->unsigned(true);
+			$table->foreign('img_id')->references('id')->on('files');
+			$table->integer('sort_order');
 			$table->integer('status')->default(2);
 			$table->timestamps();
 		});
@@ -33,7 +37,7 @@ class CreateLocalesTable extends Migration {
 	{
 		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('locales');
+		Schema::drop('project_files');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

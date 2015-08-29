@@ -17,21 +17,12 @@ class CreatePageBlocksTable extends Migration {
 		Schema::create('page_blocks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('page_id')
-				->unsigned();
-			$table->foreign('page_id')
-				->references('id')
-				->on('pages');
-			$table->integer('block_id')
-				->unsigned();
-			$table->foreign('block_id')
-				->references('id')
-				->on('blocks');
-			$table->timestamps('created_at');
-			$table->integer('status')
-				->default(0);
-			$table->boolean('deleted')
-				->default(false);
+			$table->integer('page_id')->unsigned();
+			$table->foreign('page_id')->references('id')->on('pages');
+			$table->integer('block_id')->unsigned();
+			$table->foreign('block_id')->references('id')->on('blocks');
+			$table->integer('status')->default(2);
+			$table->timestamps();
 		});
 	}
 
