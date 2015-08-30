@@ -41,6 +41,8 @@ desired effect
 
         <!-- Main content -->
         <section class="content">
+            <!-- Alert -->
+            @include('partials.admin.alert')
             <!-- Your Page Content Here -->
             @yield('main-content')
         </section><!-- /.content -->

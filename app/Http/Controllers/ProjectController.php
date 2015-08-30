@@ -10,6 +10,7 @@ use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
+use App\Models\ProjectFile;
 
 use App\Services\FileHelper;
 
@@ -62,8 +63,9 @@ class ProjectController extends Controller {
 
 		if (isset($data))
 		{
-			$files = $req->file();
-			$project = new Project;
+			$files     = $req->file();
+			$project   = new Project;
+			$newImgIds = array();
 
 			if (isset($files) && !empty($files))
 			{
@@ -80,6 +82,13 @@ class ProjectController extends Controller {
 					else if ($key == 'new_brand_img_id')
 					{
 						$project->brand_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_project_img_id')
+					{
+						foreach ($val as $img)
+						{
+							$newImgIds[] = $FileHelper->uploadNewFile($img);
+						}
 					}
 				}
 			}
@@ -118,8 +127,55 @@ class ProjectController extends Controller {
 				ProjectTranslation::create($projData);
 			}
 
+			if (!empty($newImgIds))
+			{
+				foreach ($newImgIds as $id)
+				{
+					$newImg = array();
+					$newImg['project_id'] = $project->id;
+					$newImg['img_id']     = $id;
+
+					ProjectFile::create($newImg);
+				}
+			}
+
+			if ($data['project_img_ids'] && $data['project_img_sort_order'])
+			{
+				$imgIds     = explode(",", $data['project_img_ids']);
+				$sortOrders = explode(",", $data['project_img_sort_order']);
+				$projFiles  = array();
+
+				foreach ($project->projectImages()->get() as $item)
+				{
+					$projFiles[] = $item;
+				}
+
+				for ($i = 0; $i < count($imgIds); $i++)
+				{
+					$img = array();
+					$img['project_id'] = $project->id;
+					$img['img_id']     = $imgIds[$i];
+					$img['sort_order'] = $sortOrders[$i];
+
+					if (isset($projFiles[$i]))
+					{
+						$projFiles[$i]->update($img);
+					}
+					else
+					{
+						ProjectFile::create($img);
+					}
+				}
+			}
+
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Project [#".$project->id."] has been created successfully.";
+
 			return Redirect::to('admin/manage/project')->with('response', $response);			
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to create new project.";
 
 		return Redirect::back()->with('response', $response);
 	}
@@ -158,9 +214,10 @@ class ProjectController extends Controller {
 	public function update($id, Request $req, FileHelper $fileHelper)
 	{
 		//
-		$response = array();
-		$data     = $req->input();
-		$project = Project::find($id);
+		$response  = array();
+		$data      = $req->input();
+		$project   = Project::find($id);
+		$newImgIds = array();
 
 		if (isset($data) && $project->id)
 		{
@@ -181,6 +238,13 @@ class ProjectController extends Controller {
 					else if ($key == 'new_brand_img_id')
 					{
 						$project->brand_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_project_img_id')
+					{
+						foreach ($val as $img)
+						{
+							$newImgIds[] = $FileHelper->uploadNewFile($img);
+						}
 					}
 				}
 			}
@@ -230,8 +294,55 @@ class ProjectController extends Controller {
 				}
 			}
 
+			if (!empty($newImgIds))
+			{
+				foreach ($newImgIds as $id)
+				{
+					$newImg               = array();
+					$newImg['project_id'] = $project->id;
+					$newImg['img_id']     = $id;
+
+					ProjectFile::create($newImg);
+				}
+			}
+
+			if ($data['project_img_ids'] && $data['project_img_sort_order'])
+			{
+				$imgIds     = explode(",", $data['project_img_ids']);
+				$sortOrders = explode(",", $data['project_img_sort_order']);
+				$projFiles  = array();
+
+				foreach ($project->projectImages()->get() as $item)
+				{
+					$projFiles[] = $item;
+				}
+
+				for ($i = 0; $i < count($imgIds); $i++)
+				{
+					$img = array();
+					$img['project_id'] = $project->id;
+					$img['img_id']     = $imgIds[$i];
+					$img['sort_order'] = $sortOrders[$i];
+
+					if (isset($projFiles[$i]))
+					{
+						$projFiles[$i]->update($img);
+					}
+					else
+					{
+						ProjectFile::create($img);
+					}
+				}
+			}
+
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Project [#".$project->id."] has been updated successfully.";
+
 			return Redirect::to('admin/manage/project')->with('response', $response);
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to update project.";
 
 		return Redirect::back()->with('response', $response);
 	}

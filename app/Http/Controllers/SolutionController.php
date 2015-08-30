@@ -109,8 +109,14 @@ class SolutionController extends Controller {
 				SolutionTranslation::create($solData);
 			}
 
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Solution [#".$solution->id."] has been created successfully.";
+
 			return Redirect::to('admin/manage/solution')->with('response', $response);			
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to created new solution.";
 
 		return Redirect::back()->with('response', $response);
 	}
@@ -212,8 +218,14 @@ class SolutionController extends Controller {
 				}
 			}
 
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Solution [#".$solution->id."] has been updated successfully.";
+
 			return Redirect::to('admin/manage/solution')->with('response', $response);
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to update solution.";
 
 		return Redirect::back()->with('response', $response);
 	}
