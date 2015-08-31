@@ -72,11 +72,8 @@ Route::put('manage/solution/update/{block_id}', 'SolutionController@update');
 Route::post('manage/solution/store', 'SolutionController@store');
 
 // Setting routes...
-Route::get('admin/manage/setting', 'SettingController@index');
-Route::get('admin/manage/setting/create', 'SettingController@create');
-Route::get('admin/manage/setting/edit/{setting_id}', 'SettingController@edit');
-Route::put('manage/setting/update/{setting_id}', 'SettingController@update');
-Route::post('manage/setting/store', 'SettingController@store');
+Route::get('admin/manage/setting', 'SettingController@edit');
+Route::put('manage/setting/update/', 'SettingController@update');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

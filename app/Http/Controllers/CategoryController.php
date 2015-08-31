@@ -107,8 +107,14 @@ class CategoryController extends Controller {
 				CategoryTranslation::create($catData);
 			}
 
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Category [#".$category->id."] has been created successfully.";
+
 			return Redirect::to('admin/manage/category')->with('response', $response);			
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to save new category.";
 
 		return Redirect::back()->with('response', $response);
 	}
@@ -209,8 +215,14 @@ class CategoryController extends Controller {
 				}
 			}
 
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = "Category [#".$category->id."] has been updated successfully.";
+
 			return Redirect::to('admin/manage/category')->with('response', $response);
 		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg']  = "Unable to update category.";
 
 		return Redirect::back()->with('response', $response);
 	}

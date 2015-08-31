@@ -22,14 +22,6 @@ Description for project management
 @endsection
 
 @section('main-content')
-@if (isset($response) && !empty($response))
-	@if ($response['status'] == 1)
-		@include('partials.msg-success')
-	@elseif ($response['status'] == 0)
-		@include('partials.msg-error')
-	@endif
-@endif
-
 <div class="row">
 	<div class="col-md-10 col-md-offset-1">
 		<div class="box box-primary">
@@ -157,6 +149,17 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="brand_img_id" name="brand_img_id" />
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<div class="caption" style="text-align: center;">
+									<p><strong>Project Images</strong></p>
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="useExist('project_img_id')">Use Existing</a>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="project_img_ids" name="project_img_ids" />
+						<input type="hidden" id="project_img_sort_order" name="project_img_sort_order" />
 					</div>
 				</div>
 				<input type="hidden" id="selected_img" value="" />
@@ -226,6 +229,27 @@ Description for project management
 						</div>
 					</div>
 				</div>
+				<!-- New Project Image - Modal -->
+				<div class="modal fade" id="modal-new-project-img" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="modal">Upload new project images</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group" id="new_project_img_container">
+									<label for="new_project_img_id" class="control-label">New Project Image</label>
+									<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id[]" />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" onclick="addProjectImg()">Add More</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
 			</form>
 		</div>
 	</div>
@@ -260,6 +284,45 @@ Description for project management
 		</div>
 	</div>
 </div>
+
+<!-- Project Image - Modal -->
+<div class="modal fade" id="modal-project-img" tabindex="-1" role="dialog" aria-labelledby="modal-project-img">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="modal">Choose from existing image collection</h4>
+			</div>
+			<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
+				<?php $count = 0; ?>
+				<?php $images = Files::where('status', '=', STATUS::ACTIVE)->get(); ?>
+				@foreach ($images as $image)
+				<?php $count++; ?>
+				@if ($count % 4 == 1)
+				<div class="row">
+				@endif
+					<div class="col-xs-6 col-md-3">
+						<div class="thumbnail" style="text-align: center;">
+							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail">
+							<input type="checkbox" class="project_img" value="{{ $image->id }}" onclick="selectProjectImg()" />
+							<span><b>Use</b></span>
+							<div id="img_sort_order_container_{{ $image->id }}" style="display: none;">
+								<label for="img_sort_order">Sort Order</label>
+								<input type="text" class="form-control img_sort_order" id="img_sort_order" />
+							</div>
+						</div>
+					</div>
+				@if (($count % 4 == 0) || ($count == $images->count())) 
+				</div>
+        		@endif
+				@endforeach
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+			</div>
+		</div>
+	</div>
+</div>
 @endsection
 
 @section('addon-script')
@@ -271,6 +334,11 @@ $(document).ready(function()
 	@foreach ($locales as $locale)
 	CKEDITOR.replace('desc_{{ $locale->id }}');
 	@endforeach
+
+	$('.img_sort_order').on('keyup', function()
+	{
+		setImgSortOrder();
+	});
 });
 
 function useExist(imgType)
@@ -299,6 +367,57 @@ function selectImg(imgId, imgSrc)
 			$('#brand_img').attr('src', imgSrc);
 		}
 	}
+}
+
+function selectProjectImg()
+{
+	var imgIds = [];
+
+	$('.project_img').each(function()
+	{
+		var imgId = $(this).val();
+
+		if ($(this).is(':checked'))
+		{
+			imgIds.push(imgId);
+			$('#img_sort_order_container_' + imgId).show();
+		}
+		else
+		{
+			$('#img_sort_order_' + imgId).val('');
+			$('#img_sort_order_container_' + imgId).hide();
+		}
+	});
+
+	$('#project_img_ids').val(imgIds.join(','));
+	setImgSortOrder();
+}
+
+function setImgSortOrder()
+{
+	var sortOrder = [];
+
+	$('.img_sort_order').each(function()
+	{
+		if ($(this).closest('.thumbnail').find('.project_img').is(':checked'))
+		{
+			if ($(this).val() != '')
+			{
+				sortOrder.push($(this).val());
+			}
+			else
+			{
+				sortOrder.push(0);
+			}
+		}
+	});
+
+	$('#project_img_sort_order').val(sortOrder.join(','));
+}
+
+function addProjectImg()
+{
+	$('.new_project_img:last').clone().appendTo('#new_project_img_container');
 }
 </script>
 @endsection

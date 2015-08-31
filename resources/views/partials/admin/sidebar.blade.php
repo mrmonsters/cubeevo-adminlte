@@ -56,16 +56,10 @@
                     <i class='fa fa-link'></i> <span>Solution</span>
                 </a>
             </li>
-            <li class="treeview">
-                <a href="#">    
-                    <i class='fa fa-link'></i> 
-                    <span>Setting</span> 
-                    <i class="fa fa-angle-left pull-right"></i>
+            <li class="{{ (Request::is('admin/manage/setting')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/setting') }}">
+                    <i class='fa fa-gear'></i> <span>Settings</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li><a href="{{ url('admin/manage/setting/site') }}">Site</a></li>
-                    <li><a href="{{ url('admin/manage/setting/user') }}">User</a></li>
-                </ul>
             </li>
             <li class="{{ (Request::is('admin/manage/file') || Request::is('admin/manage/file/*')) ? 'active' : '' }}">
                 <a href="{{ url('admin/manage/file') }}">

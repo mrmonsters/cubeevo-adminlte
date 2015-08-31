@@ -1,6 +1,12 @@
 @extends('partials.frontend.app')
 
 @section('frontend-content')
+<?php
+use App\Models\Status;
+use App\Models\Setting;
+
+$settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
+?>
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-2">
@@ -65,13 +71,12 @@
 				<h4>CUBEevo Advertising Sdn. Bhd.<span class="p">(949017-T)</span></h4>
 				<h4>形立方广告有限公司</h4>
 				<br/>
-				<h5>No 43-2, Jalan Temenggung 21/9, Bandar Mahkota Cheras<br/>
-				43200 Batu Cheras 9 Cheras, Selangor, Kuala Lumpur</h5>
+				<h5>{{ $settings->where('code', 'address')->first()->value }}</h5>
 				<br/>
 				<ul class="list-inline">
-					<li class="phone"><h5 class="nopadding">+603 90109882</h5></li>
-					<li class="fax"><h5 class="nopadding">+603 9075 9882</h5></li>
-					<li class="mail"><h5 class="nopadding">enquire@cubeevo.com</h5></li>
+					<li class="phone"><h5 class="nopadding">{{ $settings->where('code', 'phone')->first()->value }}</h5></li>
+					<li class="fax"><h5 class="nopadding">{{ $settings->where('code', 'fax')->first()->value }}</h5></li>
+					<li class="mail"><h5 class="nopadding">{{ $settings->where('code', 'email')->first()->value }}</h5></li>
 				</ul>
 			</div>
 			<div class="col-sm-7 contact-person">
@@ -143,7 +148,7 @@
 	  // to the map type control.
 	  var mapOptions = {
 	    zoom: 18,
-	   	center: {lat: 3.0542421, lng: 101.78809419999993},
+	   	center: {lat: {{ $settings->where('code', 'gmaps_lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps_lng')->first()->value }} },
 	    mapTypeControlOptions: {
 	      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
 	    }
@@ -152,7 +157,7 @@
 	    mapOptions);
 
 	  var beachMarker = new google.maps.Marker({
-	   position: {lat: 3.0542421, lng: 101.78809419999993},
+	   position: {lat: {{ $settings->where('code', 'gmaps_lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps_lng')->first()->value }} },
 	   map: map,
 	   icon: image
 	    });
