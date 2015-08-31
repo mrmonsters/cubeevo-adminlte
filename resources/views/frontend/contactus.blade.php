@@ -13,7 +13,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 			<h2 class="txtorange"><span></span>联络我们</h2>
 			<h5>任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！</h5>
 		</div>
-	</div> dd
+	</div> 
 	<br/>
 	<br/>
 	<br/>

@@ -44,17 +44,17 @@
                         <li>
                             <a href="{{$site_settings->where('code', 'facebook_link')->first()->value}}" class="cd-scfb" target="_blank">FB</a>
                         </li>
-                        @endif;
+                        @endif
                         @if(!empty($site_settings->where('code', 'youtube_link')->first()->value))
                         <li>
                             <a href="{{$site_settings->where('code', 'youtube_link')->first()->value}}" class="cd-scyt" target="_blank">Youtube</a>
                         </li>
-                        @endif;
+                        @endif
                         @if(!empty($site_settings->where('code', 'instagram_link')->first()->value))
                         <li>
                             <a href="{{$site_settings->where('code', 'instagram_link')->first()->value}}" class="cd-scin" target="_blank">Instagram</a>
                         </li>
-                        @endif;
+                        @endif
                     </ul>
                 </div>
                 
