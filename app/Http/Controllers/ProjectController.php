@@ -108,7 +108,7 @@ class ProjectController extends Controller {
 			$project->save();
 
 			$projData   = array();
-			$attributes = array('name', 'desc', 'founder', 'client_name');
+			$attributes = array('name', 'background', 'challenge', 'result', 'founder', 'client_name');
 			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
 
 			foreach ($locales as $locale)
@@ -264,7 +264,7 @@ class ProjectController extends Controller {
 			$project->save();
 
 			$projData   = array();
-			$attributes = array('name', 'desc', 'founder', 'client_name');
+			$attributes = array('name', 'background', 'challenge', 'result', 'founder', 'client_name');
 			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
 
 			foreach ($locales as $locale)

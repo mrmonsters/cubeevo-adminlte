@@ -21,7 +21,7 @@
                     </div> 
                     <div class="row panel-body overlap">
                         <p class="col-sm-12 hidden-text panel-title">
-                            {{ $project->name }}
+                            {{ $project->translate(Session::get('locale'))->client_name }}
                         </p>
                     </div>  
                 </div>

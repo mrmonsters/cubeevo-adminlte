@@ -7,7 +7,9 @@
             <img src="{{ $project->brandImage->dir }}" width="100%">
         </div>
         <div class="col-sm-12 blankbox" style="background-color:{{ $project->pri_color_code }}">
+        <?php /*
         	<div class="cre-of1"><img src="{{ asset('img/Images-42.png') }}" class="mascott"></div>
+        */ ?>
         </div>
         <div class="col-sm-12 cre-info">
             <div class="box">
@@ -16,27 +18,27 @@
                     <div class="col-sm-9 col-sm-9 col-sm-offset-2">
                         <div class="row">
                             <div class="col-sm-2">
-                            	<p class="desctitle" style="color:{{ $project->txt_color_code }}">客户名称</p>
-                            	<p>{{ $project->client_name }}</p>
+                            	<p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'CLIENT' : '客户名称' }}</p>
+                            	<p>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->client_name) : $project->translate(Session::get('locale'))->client_name }}</p>
                                 <br>
-                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">合作年份</p>
+                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'YEARS' : '合作年份' }}</p>
                             	<p>{{ $project->year }}</p>
                             </div>
                             <div class="col-sm-10">
-                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">项目名称</p>
-                            	<h3>{{ $project->name }}</h3>
+                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
+                            	<h3>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
                                 
-                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">项目概述</p>
-                            	<div class="col-sm-6 crecol-1"><?php echo html_entity_decode($project->desc); ?><br>
+                            	<div class="col-sm-6 crecol-1">
+                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'BACKGROUND' : '客户细节' }}</p>
+                                {{ $project->translate(Session::get('locale'))->background }}
                                 <br>
-                                品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的视觉沟通，它是一个协助企业发展的形象实体，不仅协助企业正确的把握品牌方向，而且能够使人们正确的、快速的对企业形象进行有效深刻的记忆。品牌设计来源于最初的企业品牌战略顾问和策划顾问对企业进行战略整合以后，通过形象的东西所表现出来的东西，后来慢慢的形成了专业的品牌设计团体对企业品牌形象设计进行有效的规划。</div>
-                                <div class="col-sm-6 crecol-2">设计是冰山一角，却至关重要！如果我们把品牌理解成一座冰山。品牌或企业所属的文化制度、员工行为、组织结构、核心技术、营销方式等要素是构成这座冰山的主体，尽管隐于水下，却是品牌发展最强有力的支撑与原动力。<br>
                                 <br>
-                                但这一切都必须通过一系列完整有效的视觉设计与品牌推广来被大众所认知。<br>
-                                <br>
-                                想想设计究竟有多重要！
+                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE CHALLENGE' : '项目概述' }}</p>
+                                {{ $project->translate(Session::get('locale'))->challenge }}</div>
+                                <div class="col-sm-6 crecol-2">
+                                <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE RESULT' : '最终成果' }}</p>
+                                {{ $project->translate(Session::get('locale'))->result }}
                                 </div>
-                                
                             </div>
                         </div>
                         <br><br>
@@ -59,12 +61,12 @@
                             	<p>品牌设计是在企业自身正确定位的基础之上，基于正确品牌定义下的视觉沟通</p>
 								</div>
                         </div>
-                        
                     </div> 
                 </div>
             </div>
         </div>
     </div> 
+    @include('partials.frontend.carousel')
     @foreach ($project->projectImages()->orderBy('sort_order')->get() as $image)
     <div class="row"> 
         <div class="col-xs-12 nopadding">

@@ -30,8 +30,7 @@ class FileController extends Controller {
 		//
 		$files = Files::all();
 
-		return view('management.file.index')
-			->with('files', $files);
+		return view('management.file.index')->with('files', $files);
 	}
 
 	/**
@@ -113,17 +112,6 @@ class FileController extends Controller {
 	public function show($id)
 	{
 		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
 		$imgTypes = array(
 			'image/jpeg',
 			'image/png',
@@ -146,10 +134,21 @@ class FileController extends Controller {
 			$isDocument = true;
 		}
 
-		return view('management.file.edit')
+		return view('management.file.view')
 			->with('file', $file)
 			->with('isImage', $isImage)
 			->with('isDocument', $isDocument);
+	}
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		//
 	}
 
 	/**

@@ -28,14 +28,14 @@
             </div>               
             
     		<ul class="list-unstyled">
-    			<li><a href="{{ url('/') }}">形立方性格</a></li>
-    			<li><a href="{{ url('/about-us') }}">关于我们</a></li>
-    			<li><a href="{{ url('/credential') }}">案例与反馈</a></li>
-    			<li><a href="{{ url('/solution') }}">专业服务</a></li>
-    			<li><a href="{{ url('/research') }}" class="hide">品牌洞察</a></li>
-                <li><a href="{{ url('/process') }}">合作流程</a></li>
-                <li><a href="{{ url('/contact-us') }}">联络我们</a></li>
-                <li><a href="#0">EN</a> | <a href="#0">中文</a></li>
+    			<li><a href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
+    			<li><a href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
+    			<li><a href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
+    			<li><a href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
+    			<li><a href="{{ url('/research') }}" class="hide">{{ (Session::get('locale') == 'en') ? 'RESEARCH' : '品牌洞察' }}</a></li>
+                <li><a href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a></li>
+                <li><a href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a></li>
+                <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             
             <div style="position: absolute;bottom: 5px;width: 70%;">   

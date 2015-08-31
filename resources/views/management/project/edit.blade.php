@@ -60,8 +60,16 @@ Description for project management
 										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->name }}" />
 									</div>
 									<div class="form-group">
-										<label for="desc_{{ $locale->id }}" class="control-label">Description</label>
-										<textarea id="desc_{{ $locale->id }}" name="desc[{{ $locale->id }}]" class="form-control" rows="8">{{ $project->translate($locale->language)->desc }}</textarea>
+										<label for="background" class="control-label">Background</label>
+										<textarea id="background" name="background[{{ $locale->id }}]" type="text" class="form-control" rows="4">{{ $project->translate($locale->language)->background }}</textarea>
+									</div>
+									<div class="form-group">
+										<label for="challenge" class="control-label">Challenge</label>
+										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4">{{ $project->translate($locale->language)->challenge }}</textarea>
+									</div>
+									<div class="form-group">
+										<label for="result" class="control-label">Result</label>
+										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4">{{ $project->translate($locale->language)->result }}</textarea>
 									</div>
 									<div class="form-group">
 										<label for="founder" class="control-label">Founder</label>
@@ -343,10 +351,6 @@ Description for project management
 $(document).ready(function()
 {
 	$('.colorpicker-element').colorpicker();
-
-	@foreach ($locales as $locale)
-	CKEDITOR.replace('desc_{{ $locale->id }}');
-	@endforeach
 
 	$('.img_sort_order').on('keyup', function()
 	{
