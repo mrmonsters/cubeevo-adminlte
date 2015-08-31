@@ -30,6 +30,7 @@ class HomeController extends Controller {
 			Session::set('locale', 'cn');
 		}
 		*/
+		parent::__construct();
 	}
 
 	/**

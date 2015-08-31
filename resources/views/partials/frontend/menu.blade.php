@@ -36,20 +36,25 @@
                 <li><a href="{{ url('/process') }}">合作流程</a></li>
                 <li><a href="{{ url('/contact-us') }}">联络我们</a></li>
                 <li><a href="#0">EN</a> | <a href="#0">中文</a></li>
-    		</ul> 
-            
+    		</ul>  
             <div style="position: absolute;bottom: 5px;width: 70%;">   
                 <div class="cd-social">
                     <ul class="list-inline">
+                        @if(!empty($site_settings->where('code', 'facebook_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scfb">FB</a>
+                            <a href="{{$site_settings->where('code', 'facebook_link')->first()->value}}" class="cd-scfb" target="_blank">FB</a>
                         </li>
+                        @endif;
+                        @if(!empty($site_settings->where('code', 'youtube_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scyt">Youtube</a>
+                            <a href="{{$site_settings->where('code', 'youtube_link')->first()->value}}" class="cd-scyt" target="_blank">Youtube</a>
                         </li>
+                        @endif;
+                        @if(!empty($site_settings->where('code', 'instagram_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scin">Instagram</a>
+                            <a href="{{$site_settings->where('code', 'instagram_link')->first()->value}}" class="cd-scin" target="_blank">Instagram</a>
                         </li>
+                        @endif;
                     </ul>
                 </div>
                 

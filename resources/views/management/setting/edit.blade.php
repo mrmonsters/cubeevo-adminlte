@@ -60,6 +60,18 @@ Description for setting management
 									<label for="email" class="control-label">{{ $settings->where('code', 'email')->first()->name }}</label>
 									<input id="email" name="email" type="text" class="form-control" value="{{ $settings->where('code', 'email')->first()->value }}" />
 								</div>
+								<div class="form-group">
+									<label for="facebook_link" class="control-label">{{ $settings->where('code', 'facebook_link')->first()->name }}</label>
+									<input id="facebook_link" name="facebook_link" type="text" class="form-control" value="{{ $settings->where('code', 'facebook_link')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="youtube_link" class="control-label">{{ $settings->where('code', 'youtube_link')->first()->name }}</label>
+									<input id="youtube_link" name="youtube_link" type="text" class="form-control" value="{{ $settings->where('code', 'youtube_link')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="instagram_link" class="control-label">{{ $settings->where('code', 'instagram_link')->first()->name }}</label>
+									<input id="instagram_link" name="instagram_link" type="text" class="form-control" value="{{ $settings->where('code', 'instagram_link')->first()->value }}" />
+								</div>
 							</div>
 						</div>
 					</div>
