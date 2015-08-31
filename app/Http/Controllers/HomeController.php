@@ -3,6 +3,7 @@
 use URL;
 use Session;
 use Redirect;
+use Config;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
@@ -27,7 +28,7 @@ class HomeController extends Controller {
 		// Set default language
 		if (Session::get('locale') == null)
 		{
-			Session::set('locale', App::getLocale());
+			Session::set('locale', Config::get('locale'));
 		}
 	}
 
