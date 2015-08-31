@@ -41,19 +41,19 @@ class SettingTableSeeder extends Seeder {
 			),
 			array(
 				'name'  => 'Google Analytics Key',
-				'code'  => 'google-analytics',
+				'code'  => 'ga_key',
 				'type'  => Setting::SITE,
 				'value' => '',
 			),
 			array(
 				'name'  => 'Google Maps Latitude',
-				'code'  => 'gmaps-lat',
+				'code'  => 'gmaps_lat',
 				'type'  => Setting::SITE,
 				'value' => '3.0542421',
 			),
 			array(
 				'name'  => 'Google Maps Longitude',
-				'code'  => 'gmaps-lng',
+				'code'  => 'gmaps_lng',
 				'type'  => Setting::SITE,
 				'value' => '101.78809419999993',
 			),

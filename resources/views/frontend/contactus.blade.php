@@ -148,7 +148,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 	  // to the map type control.
 	  var mapOptions = {
 	    zoom: 18,
-	   	center: {lat: {{ $settings->where('code', 'gmaps-lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps-lng')->first()->value }} },
+	   	center: {lat: {{ $settings->where('code', 'gmaps_lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps_lng')->first()->value }} },
 	    mapTypeControlOptions: {
 	      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
 	    }
@@ -157,7 +157,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 	    mapOptions);
 
 	  var beachMarker = new google.maps.Marker({
-	   position: {lat: {{ $settings->where('code', 'gmaps-lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps-lng')->first()->value }} },
+	   position: {lat: {{ $settings->where('code', 'gmaps_lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps_lng')->first()->value }} },
 	   map: map,
 	   icon: image
 	    });

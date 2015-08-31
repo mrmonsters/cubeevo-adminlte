@@ -5,6 +5,11 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Redirect;
+
+use App\Models\Status;
+use App\Models\Setting;
+
 class SettingController extends Controller {
 
 	/**
@@ -54,9 +59,12 @@ class SettingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit()
 	{
 		//
+		$settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
+
+		return view('management.setting.edit')->with('settings', $settings);
 	}
 
 	/**
@@ -65,9 +73,44 @@ class SettingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $req)
 	{
 		//
+		$response = array();
+		$data     = $req->input();
+
+		if (isset($data) && !empty($data))
+		{
+			$settings = array();
+			$settings['ga_key']    = $data['ga_key'];
+			$settings['gmaps_lat'] = $data['gmaps_lat'];
+			$settings['gmaps_lng'] = $data['gmaps_lng'];
+			$settings['address']   = $data['address'];
+			$settings['phone']     = $data['phone'];
+			$settings['fax']       = $data['fax'];
+			$settings['email']     = $data['email'];
+
+			foreach ($settings as $key => $val)
+			{
+				$config = Setting::where('code', '=', $key)->first();
+
+				if (isset($config))
+				{
+					$config->value = $val;
+					$config->save();
+				}
+			}
+
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg'] = "Settings have been saved successfully.";
+
+			return Redirect::to('admin/manage/setting')->with('response', $response);
+		}
+
+		$response['code'] = STATUS::ERROR;
+		$response['msg'] = "Unable to save settings.";
+
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
