@@ -28,6 +28,7 @@
             </div>               
             
     		<ul class="list-unstyled">
+<<<<<<< HEAD
     			<li><a href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
     			<li><a href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
     			<li><a href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
@@ -38,18 +39,35 @@
                 <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             
+=======
+    			<li><a href="{{ url('/') }}">形立方性格</a></li>
+    			<li><a href="{{ url('/about-us') }}">关于我们</a></li>
+    			<li><a href="{{ url('/credential') }}">案例与反馈</a></li>
+    			<li><a href="{{ url('/solution') }}">专业服务</a></li>
+    			<li><a href="{{ url('/research') }}" class="hide">品牌洞察</a></li>
+                <li><a href="{{ url('/process') }}">合作流程</a></li>
+                <li><a href="{{ url('/contact-us') }}">联络我们</a></li>
+                <li><a href="#0">EN</a> | <a href="#0">中文</a></li>
+    		</ul>  
+>>>>>>> c451dd4ed2a3ed67ea688033af74d118d9c12f7d
             <div style="position: absolute;bottom: 5px;width: 70%;">   
                 <div class="cd-social">
                     <ul class="list-inline">
+                        @if(!empty($site_settings->where('code', 'facebook_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scfb">FB</a>
+                            <a href="{{$site_settings->where('code', 'facebook_link')->first()->value}}" class="cd-scfb" target="_blank">FB</a>
                         </li>
+                        @endif
+                        @if(!empty($site_settings->where('code', 'youtube_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scyt">Youtube</a>
+                            <a href="{{$site_settings->where('code', 'youtube_link')->first()->value}}" class="cd-scyt" target="_blank">Youtube</a>
                         </li>
+                        @endif
+                        @if(!empty($site_settings->where('code', 'instagram_link')->first()->value))
                         <li>
-                            <a href="#0" class="cd-scin">Instagram</a>
+                            <a href="{{$site_settings->where('code', 'instagram_link')->first()->value}}" class="cd-scin" target="_blank">Instagram</a>
                         </li>
+                        @endif
                     </ul>
                 </div>
                 

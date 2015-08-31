@@ -15,25 +15,65 @@ class CategoryTableSeeder extends Seeder
 
 		$files = array(
 			array(
-				'name'   => 'Hairdepot_Thumbnail',
+				'name'   => 'WorldTop_Thumbnail',
 				'type'   => 'image/png',
-				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail.png',
+				'dir'    => '/img/Credential Thumbnail/WorldTop_Thumbnail.png',
 			),
 			array(
-				'name'   => 'Hairdepot_Thumbnail_Background',
+				'name'   => 'WorldTop_Thumbnail_Background',
 				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail_Background.jpg',
-			),
+				'dir'    => '/img/Credential Thumbnail/WorldTop_Thumbnail_Background.jpg',
+			), 
 			array(
-				'name'   => 'Greenology_Thumbnail',
+				'name'   => 'RHB_FunFacts_Thumbnail',
 				'type'   => 'image/png',
-				'dir'    => '/img/Credential Thumbnail/Greenology_Thumbnail.png',
+				'dir'    => '/img/Credential Thumbnail/RHB_FunFacts_Thumbnail.png',
 			),
 			array(
-				'name'   => 'Greenology_Thumbnail_Background',
+				'name'   => 'RHB_FunFacts_Thumbnail_Background',
 				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Thumbnail/Greenology_Thumbnail_Background.jpg',
+				'dir'    => '/img/Credential Thumbnail/RHB_FunFacts_Thumbnail_Background.jpg',
+			), 
+			array(
+				'name'   => 'Sunshine_Website_Thumbnail',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Thumbnail/Sunshine_Website_Thumbnail.png',
 			),
+			array(
+				'name'   => 'Sunshine_Website_Background',
+				'type'   => 'image/jpeg',
+				'dir'    => '/img/Credential Thumbnail/Sunshine_Website_Thumbnail.jpg',
+			),
+			array(
+				'name'   => 'Fortson_Thumbnail',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Thumbnail/Fortson_Thumbnail.png',
+			),
+			array(
+				'name'   => 'Fortson_Thumbnail_Background',
+				'type'   => 'image/jpeg',
+				'dir'    => '/img/Credential Thumbnail/Fortson_Thumbnail_Background.jpg',
+			), 
+			array(
+				'name'   => 'Globbykidz_Thumbnail',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Thumbnail/Globbykidz_Thumbnail.png',
+			),
+			array(
+				'name'   => 'Globbykidz_Thumbnail_Background',
+				'type'   => 'image/jpeg',
+				'dir'    => '/img/Credential Thumbnail/Globbykidz_Thumbnail_Background.jpg',
+			),  
+			array(
+				'name'   => 'LianSin_Thumbnail',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Thumbnail/LianSin_Thumbnail.png',
+			),
+			array(
+				'name'   => 'LianSin_Thumbnail_Background',
+				'type'   => 'image/jpeg',
+				'dir'    => '/img/Credential Thumbnail/LianSin_Thumbnail.jpg',
+			), 
 			array(
 				'name'   => 'PLT_Website_Thumbnail',
 				'type'   => 'image/png',
@@ -43,22 +83,27 @@ class CategoryTableSeeder extends Seeder
 				'name'   => 'PLT_Website_Thumbnail_Background',
 				'type'   => 'image/jpeg',
 				'dir'    => '/img/Credential Thumbnail/PLT_Website_Thumbnail_Background.jpg',
-			),
+			), 
 			array(
-				'name'   => 'HairMilk_Thumbnail',
+				'name'   => 'Hairdepot_Thumbnail',
 				'type'   => 'image/png',
-				'dir'    => '/img/Credential Thumbnail/HairMilk_Thumbnail.png',
+				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail.png',
 			),
 			array(
-				'name'   => 'HairMilk_Thumbnail_Background',
+				'name'   => 'Hairdepot_Thumbnail_Background',
 				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Thumbnail/HairMilk_Thumbnail_Background.jpg',
+				'dir'    => '/img/Credential Thumbnail/Hairdepot_Thumbnail_Background.jpg',
 			),
 		);
 
+		$counter = 0 ;
 		foreach ($files as $file)
 		{
-			Files::create($file);
+			$file = Files::create($file);
+			if($counter == 0):
+				$increment_file_id = $file->id;
+				$counter++;
+			endif;
 		}
 
 		$categories = array(
@@ -71,6 +116,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Automotive',
 					),
 				),
+				'sort_order' => '7',
 			),
 			array(
 				'translation' => array(
@@ -81,6 +127,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Banking',
 					),
 				),
+				'sort_order' => '4',
 			),
 			array(
 				'translation' => array(
@@ -91,6 +138,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Beauty',
 					),
 				),
+				'sort_order' => '2',
 			),
 			array(
 				'translation' => array(
@@ -101,6 +149,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Developer',
 					),
 				),
+				'sort_order' => '6',
 			),
 			array(
 				'translation' => array(
@@ -111,6 +160,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Education',
 					),
 				),
+				'sort_order' => '5',
 			),
 			array(
 				'translation' => array(
@@ -121,6 +171,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'F&B',
 					),
 				),
+				'sort_order' => '1',
 			),
 			array(
 				'translation' => array(
@@ -131,6 +182,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'IT',
 					),
 				),
+				'sort_order' => '3',
 			),
 			array(
 				'translation' => array(
@@ -141,23 +193,18 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Retailer',
 					),
 				),
+				'sort_order' => '0',
 			),
 		);
 
 		$count = 0;
-
+		$increment_file_id = $increment_file_id - 1;
 		foreach ($categories as $category)
-		{
-			// Reset to reuse image
-			if ($lastFileId == 8)
-			{
-				$lastFileId = 0;
-			}
-
+		{ 
 			$cat = New Category;
-			$cat->grid_img_id    = ++$lastFileId;
-			$cat->grid_bg_img_id = ++$lastFileId;
-			$cat->sort_order     = $count++;
+			$cat->grid_img_id    = ++$increment_file_id;
+			$cat->grid_bg_img_id = ++$increment_file_id;
+			$cat->sort_order     = $category['sort_order'];
 			$cat->save();
 
 			foreach ($category['translation'] as $key => $val)

@@ -9,7 +9,7 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category->id) }}';" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;' : '#666; min-height: 281px;' }}">
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category->id) }}';" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;background-size:cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
                     <div class="greybox"></div> 
 

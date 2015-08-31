@@ -89,6 +89,9 @@ class SettingController extends Controller {
 			$settings['phone']     = $data['phone'];
 			$settings['fax']       = $data['fax'];
 			$settings['email']     = $data['email'];
+			$settings['facebook_link']    = $data['facebook_link'];
+			$settings['youtube_link']     = $data['youtube_link'];
+			$settings['instagram_link']   = $data['instagram_link'];
 
 			foreach ($settings as $key => $val)
 			{

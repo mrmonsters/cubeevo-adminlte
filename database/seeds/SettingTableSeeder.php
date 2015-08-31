@@ -40,6 +40,24 @@ class SettingTableSeeder extends Seeder {
 				'value' => 'enquire@cubeevo.com',
 			),
 			array(
+				'name'  => 'Facebook Link',
+				'code'  => 'facebook_link',
+				'type'  => Setting::USER,
+				'value' => 'https://www.facebook.com/CubeEvo',
+			),
+			array(
+				'name'  => 'Youtube Link',
+				'code'  => 'youtube_link',
+				'type'  => Setting::USER,
+				'value' => 'https://www.youtube.com/user/cubeevo/videos',
+			),
+			array(
+				'name'  => 'Instagram Link',
+				'code'  => 'instagram_link',
+				'type'  => Setting::USER,
+				'value' => 'https://instagram.com/cubeevo_advertising/',
+			),
+			array(
 				'name'  => 'Google Analytics Key',
 				'code'  => 'ga_key',
 				'type'  => Setting::SITE,
