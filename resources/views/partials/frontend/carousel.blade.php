@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12 nopadding">
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height: 980px;">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <?php $count = 0; ?>
