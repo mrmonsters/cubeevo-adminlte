@@ -205,7 +205,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0 1.14%;} 
-.container-fluid.cre{background:#666;height: 100%;} 	
+.container-fluid.cre{background:#666;} 	
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
