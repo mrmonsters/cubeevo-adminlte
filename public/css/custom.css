@@ -173,6 +173,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	position: absolute;
 	background:url(../img/transBG.png) repeat;
 	z-index:1;
+    margin-top: 3.3%;
 }
 .sol-1 {background:#eee80a url(../img/Images-36.png); background-position:right;}
 .sol-2 {background:#1f9ea0 url(../img/Images-36.png); background-position:right;}
@@ -218,7 +219,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
 .cre .panel-title {text-align:center;}
-.cre .contbox {position: relative;padding: 3.6% 0;;min-height: 260px;}
+.cre .contbox {position: relative;min-height: 260px;}
 .cre .contbox ul {margin: 0 50px; }
 
 .credential .blankbox{height: 400px; width: 100%;}
