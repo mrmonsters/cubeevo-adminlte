@@ -24,9 +24,8 @@ Description for solution management
 				<table id="tbl-solution" class="table">
 					<thead>
 						<th>ID</th>
-						<th>Name</th>
-						<th>Created At</th>
-						<th>Updated At</th>
+						<th>Grid Front Image</th> 
+						<th>Name</th> 
 						<th>Status</th>
 						<th>Action</th>
 					</thead>
@@ -35,9 +34,8 @@ Description for solution management
 						@foreach ($solutions as $solution)
 						<tr>
 							<td>{{ $solution->id }}</td>
-							<td>{{ $solution->name }}</td>
-							<td>{{ $solution->created_at }}</td>
-							<td>{{ $solution->updated_at }}</td>
+							<td class="col-xs-2"><img id="grid_img" class="img-thumbnail" src="{{ $solution->frontImage->dir }}" alt="{{ $solution->frontImage->name }}" width="150"></td> 
+							<td class="col-xs-6">{{ $solution->name }}</td> 
 							<td>
 								@if ($solution->status == '2')
 								<span class="label label-success">Active</span>

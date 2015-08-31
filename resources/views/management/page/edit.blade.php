@@ -21,7 +21,7 @@ Description for static page management
 
 @section('main-content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Page #{{ $page->id }}</h3>

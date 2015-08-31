@@ -11,6 +11,7 @@ use App\Models\Locale;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
 use App\Models\ProjectFile;
+use App\Models\Category;
 
 use App\Services\FileHelper;
 
@@ -36,7 +37,9 @@ class ProjectController extends Controller {
 		//
 		$projects = Project::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
 
-		return view('management.project.index')->with('projects', $projects);
+		$categories = Category::where('status', '=', STATUS::ACTIVE)->get(); 
+		
+		return view('management.project.index')->with('projects', $projects)->with('categories', $categories);
 	}
 
 	/**

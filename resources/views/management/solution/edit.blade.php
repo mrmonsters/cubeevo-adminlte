@@ -21,7 +21,7 @@ Description for solution management
 
 @section('main-content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Solution #{{ $solution->id }}</h3>
@@ -78,8 +78,14 @@ Description for solution management
 								<img id="grid_img" class="img-thumbnail" src="{{ $solution->frontImage->dir }}" alt="{{ $solution->frontImage->name }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Front Image</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -89,8 +95,15 @@ Description for solution management
 								<img id="grid_bg_img" class="img-thumbnail" src="{{ $solution->backgroundImage->dir }}" alt="{{ $solution->backgroundImage->name }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Background Image</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
+									
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

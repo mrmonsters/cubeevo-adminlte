@@ -24,9 +24,9 @@ Description for category management
 				<table id="tbl-category" class="table">
 					<thead>
 						<th>ID</th>
-						<th>Name</th>
-						<th>Created At</th>
-						<th>Updated At</th>
+						<th>Grid Front Image</th>
+						<th>Name</th> 
+						<th>Sort Order</th> 
 						<th>Status</th>
 						<th>Action</th>
 					</thead>
@@ -35,9 +35,9 @@ Description for category management
 						@foreach ($categories as $category)
 						<tr>
 							<td>{{ $category->id }}</td>
-							<td>{{ $category->name }}</td>
-							<td>{{ $category->created_at }}</td>
-							<td>{{ $category->updated_at }}</td>
+							<td class="col-xs-2"><img id="grid_img" class="img-thumbnail" src="{{ $category->frontImage->dir }}" alt="{{ $category->frontImage->name }}" width="150"></td> 
+							<td class="col-xs-5">{{ $category->name }}</td> 
+							<td class="col-xs-1">{{ $category->sort_order }}</td> 
 							<td>
 								@if ($category->status == '2')
 								<span class="label label-success">Active</span>

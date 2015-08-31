@@ -30,7 +30,7 @@ Description for project management
 
 @section('main-content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Project #{{ $project->id }}</h3>
@@ -102,30 +102,32 @@ Description for project management
 						<input id="img_ids" name="img_ids" type="text" class="form-control" value="" />
 					</div>
 					-->
-					<div class="form-group">
-						<label for="pri_color_code" class="control-label">Primary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" value="{{ $project->pri_color_code }}" />
-							<div class="input-group-addon">
-								<i style="background-color: {{ $project->pri_color_code }};"></i>
+					<div class="row"> 
+						<div class="form-group col-sm-4">
+							<label for="pri_color_code" class="control-label">Primary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" value="{{ $project->pri_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: {{ $project->pri_color_code }};"></i>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="sec_color_code" class="control-label">Secondary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" value="{{ $project->sec_color_code }}" />
-							<div class="input-group-addon">
-								<i style="background-color: {{ $project->sec_color_code }};"></i>
+						<div class="form-group col-sm-4">
+							<label for="sec_color_code" class="control-label">Secondary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" value="{{ $project->sec_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: {{ $project->sec_color_code }};"></i>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="txt_color_code" class="control-label">Text Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="{{ $project->txt_color_code }}" />
-							<div class="input-group-addon">
-								<i style="background-color: {{ $project->txt_color_code }};"></i>
+						<div class="form-group col-sm-4">
+							<label for="txt_color_code" class="control-label">Text Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="{{ $project->txt_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: {{ $project->txt_color_code }};"></i>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -133,14 +135,21 @@ Description for project management
 						<label for="sort_order" class="control-label">Sort Order</label>
 						<input id="sort_order" name ="sort_order" type="text" class="form-control" value="{{ $project->sort_order }}" />
 					</div>
+					<legend><b>Images</b></legend>
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Front Image</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div> 
+									</div>
 								</div>
 							</div>
 						</div>
@@ -150,8 +159,14 @@ Description for project management
 								<img id="grid_bg_img" class="img-thumbnail" src="{{ $project->backgroundImage->dir }}" alt="{{ $project->backgroundImage->name }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Background Image</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -161,8 +176,14 @@ Description for project management
 								<img id="brand_img" class="img-thumbnail" src="{{ $project->brandImage->dir }}" alt="{{ $project->brandImage->name }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Brand Image</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -173,8 +194,14 @@ Description for project management
 							<div class="thumbnail">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Project Images</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="useExist('project_img_id')">Use Existing</a>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="useExist('project_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

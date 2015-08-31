@@ -12,7 +12,7 @@ Project Management
 Description for project management
 @endsection
 
-@section('main-content')
+@section('main-content') 
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
@@ -24,9 +24,10 @@ Description for project management
 				<table id="tbl-project" class="table">
 					<thead>
 						<th>ID</th>
-						<th>Name</th>
-						<th>Created At</th>
-						<th>Updated At</th>
+						<th>Grid Front Image</th>
+						<th>Client Name</th>
+						<th>Project Name</th> 
+						<th>Category</th> 
 						<th>Status</th>
 						<th>Action</th>
 					</thead>
@@ -35,9 +36,16 @@ Description for project management
 						@foreach ($projects as $project)
 						<tr>
 							<td>{{ $project->id }}</td>
-							<td>{{ $project->name }}</td>
-							<td>{{ $project->created_at }}</td>
-							<td>{{ $project->updated_at }}</td>
+							<td ><img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}" width="100px"></td>
+							<td class="col-md-3">{{ $project->client_name }}</td>
+							<td>{{ $project->name }}</td> 
+							<td>	
+							@foreach ($categories as $category)
+								@if(isset($project->category_id) && $project->category_id == $category->id)
+									{{ $category->name }}
+								@endif
+							@endforeach
+							</td> 
 							<td>
 								@if ($project->status == '2')
 								<span class="label label-success">Active</span>

@@ -1,10 +1,10 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        @yield('contentheader_title', 'Page Header here')
+        @yield('contentheader_title', 'Cubeevo Admin Panel')
         <small>@yield('contentheader_description')</small>
     </h1>
-    <ol class="breadcrumb">
+    <ol class="breadcrumb hide">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
         <li class="active">Here</li>
     </ol>
