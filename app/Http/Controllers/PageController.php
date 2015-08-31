@@ -5,11 +5,12 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Redirect;
+
+use App\Models\Status;
+use App\Models\Locale;
 use App\Models\Page;
-use App\Models\Menu;
-use App\Models\Block;
-use App\Models\PageMenu;
-use App\Models\PageBlock;
+use App\Models\PageTranslation;
 
 class PageController extends Controller {
 
@@ -33,8 +34,7 @@ class PageController extends Controller {
 		//
 		$pages = Page::all();
 
-		return view('management.page.index')
-			->with('pages', $pages);
+		return view('management.page.index')->with('pages', $pages);
 	}
 
 	/**
@@ -45,14 +45,7 @@ class PageController extends Controller {
 	public function create()
 	{
 		//
-		$pMenus = Menu::whereNull('parent_menu_id')->get();
-		$cMenus = Menu::whereNotNull('parent_menu_id')->get();
-		$sections = Section::all();
-
-		return view('management.page.create')
-			->with('pMenus', $pMenus)
-			->with('cMenus', $cMenus)
-			->with('sections', $sections);
+		return view('management.page.create');
 	}
 
 	/**
@@ -68,56 +61,49 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			// Save new page
+			// Create new page
 			$page = new Page;
-			$page->page_title = $data['page_title'];
-			$page->page_desc = $data['page_desc'];
-			$page->page_slug = $data['page_slug'];
-			$page->page_locale = $data['page_locale'];
-			$page->page_content = htmlentities($data['page_content']);
-			$page->status = 2;
+			$page->name = $data['name'];
+			$page->slug = "/".str_replace(" ", "-", strtolower($data['name']));
+			$page->save();
 
-			if ($page->save())
+			$pageData   = array();
+			$attributes = array('desc', 'content');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
 			{
-				// Save page section
-				if ($data['section_id'])
-				{
-					$sectionIds = explode(",", $data['section_id']);
+				$pageData['page_id']   = $page->id;
+				$pageData['locale_id'] = $locale->id;
 
-					foreach ($sectionIds as $id)
+				foreach ($attributes as $attribute)
+				{
+					if (isset($data[$attribute][$locale->id]))
 					{
-						$pageSection = new PageSection;
-						$pageSection->page_id = $page->page_id;
-						$pageSection->section_id = $id;
-						$pageSection->status = 2;
-						$pageSection->save();
+						if ($attribute == 'content')
+						{
+							$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+						}
+						else
+						{
+							$pageData[$attribute] = $data[$attribute][$locale->id];
+						}
 					}
 				}
 
-				// Save page menu
-				if (isset($data['page_menu']) && is_array($data['page_menu']) && !empty($data['page_menu']))
-				{
-					foreach ($data['page_menu'] as $id)
-					{
-						$pageMenu = new PageMenu;
-						$pageMenu->page_id = $page->id;
-						$pageMenu->menu_id = $id;
-						$pageMenu->status = 2;
-						$pageMenu->save();
-					}
-				}
+				PageTranslation::create($pageData);
+			}
 
-				$response['status'] = 1;
-				$response['msg'] = 'New page is added successfully.';
-			}
-			else
-			{
-				$response['status'] = 0;
-				$response['msg'] = 'Failed to add new page.';
-			}
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = 'Page [#'.$page->id.'] has been created successfully.';
+
+			return Redirect::to('admin/manage/page')->with('response', $response);
 		}
 
-		return redirect('admin/manage/page')->with('response', $response);
+		$response['code'] = STATUS::ERROR;
+		$respons['msg']   = 'Unable to create new page.';
+
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**
@@ -141,25 +127,8 @@ class PageController extends Controller {
 	{
 		//
 		$page = Page::find($id);
-		$menus = PageMenu::where('id', '=', $id)->get();
 
-		$pMenus = Menu::whereNull('parent_id')->get();
-		$cMenus = Menu::whereNotNull('parent_id')->get();
-		$pageMenuIds = array();
-
-		if (!$menus->isEmpty())
-		{
-			foreach ($menus as $menu)
-			{
-				$pageMenuIds[] = $menu->id;
-			}
-		}
-
-		return view('management.page.edit')
-			->with('page', $page)
-			->with('pMenus', $pMenus)
-			->with('cMenus', $cMenus)
-			->with('pageMenuIds', $pageMenuIds);
+		return view('management.page.edit')->with('page', $page);
 	}
 
 	/**
@@ -168,7 +137,7 @@ class PageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $req, $id)
+	public function update($id, Request $req)
 	{
 		//
 		$response = array();
@@ -178,67 +147,58 @@ class PageController extends Controller {
 		{
 			// Update page
 			$page = Page::find($id);
-			$page->page_title = $data['page_title'];
-			$page->page_desc = $data['page_desc'];
-			$page->page_slug = $data['page_slug'];
-			$page->page_locale = $data['page_locale'];
-			$page->page_content = htmlentities($data['page_content']);
+			$page->name = $data['name'];
+			$page->slug = "/".str_replace(" ", "-", strtolower($data['name']));
+			$page->save();
 
-			// Save page section
-			if ($data['section_id'])
+			$pageData   = array();
+			$attributes = array('desc', 'content');
+			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
+
+			foreach ($locales as $locale)
 			{
-				$sectionIds = explode(",", $data['section_id']);
+				$pageData['page_id']   = $page->id;
+				$pageData['locale_id'] = $locale->id;
 
-				foreach ($sectionIds as $sectionId)
+				foreach ($attributes as $attribute)
 				{
-					$pageSection = PageSection::where('page_id', '=', $id)
-						->where('section_id', '=', $sectionId)
-						->get();
-
-					if ($pageSection->isEmpty())
+					if (isset($data[$attribute][$locale->id]))
 					{
-						$pageSection = new PageSection;
-						$pageSection->page_id = $id;
-						$pageSection->section_id = $sectionId;
-						$pageSection->status = 2;
-						$pageSection->save();
+						if ($attribute == 'content')
+						{
+							$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+						}
+						else
+						{
+							$pageData[$attribute] = $data[$attribute][$locale->id];
+						}
 					}
+				}
+
+				$pageTranslation = $page->translations()
+					->where('locale_id', $locale->id)
+					->first();
+
+				if (isset($pageTranslation))
+				{
+					$pageTranslation->update($pageData);
+				}
+				else
+				{
+					PageTranslation::create($pageData);
 				}
 			}
 
-			// Save page menu
-			if (isset($data['page_menu']) && is_array($data['page_menu']) && !empty($data['page_menu']))
-			{
-				foreach ($data['page_menu'] as $menuId)
-				{
-					$pageMenu = PageMenu::where('page_id', '=', $id)
-						->where('menu_id', '=', $menuId)
-						->get();
+			$response['code'] = STATUS::SUCCESS;
+			$response['msg']  = 'Page [#'.$page->id.'] has been updated successfully.';
 
-					if ($pageMenu->isEmpty())
-					{
-						$pageMenu = new PageMenu;
-						$pageMenu->page_id = $id;
-						$pageMenu->menu_id = $menuId;
-						$pageMenu->status = 2;
-						$pageMenu->save();
-					}
-				}
-			}
-
-			if ($page->save())
-			{
-				$response['status'] = 1;
-				$response['msg'] = 'Changes are saved successfully.';
-			}
-			else
-			{
-				$response['status'] = 0;
-				$respons['msg'] = 'Failed to save changes.';
-			}
+			return Redirect::to('admin/manage/page')->with('response', $response);
 		}
 
-		return redirect('admin/manage/page')->with('response', $response);
+		$response['code'] = STATUS::ERROR;
+		$respons['msg']   = 'Unable to update page.';
+
+		return Redirect::back()->with('response', $response);
 	}
 
 	/**

@@ -22,7 +22,6 @@ class CreatePageTranslationsTable extends Migration {
 			$table->foreign('page_id')->references('id')->on('pages');
 			$table->integer('locale_id')->unsigned();
 			$table->foreign('locale_id')->references('id')->on('locales');
-			$table->string('name');
 			$table->string('desc');
 			$table->text('content');
 			$table->integer('status')->default(2);

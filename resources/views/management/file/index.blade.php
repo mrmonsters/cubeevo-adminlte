@@ -13,28 +13,17 @@ Description for file management
 @endsection
 
 @section('main-content')
-@if (isset($response) && !empty($response))
-	@if ($response['status'] == 1)
-		@include('partials.msg-success')
-	@elseif ($response['status'] == 0)
-		@include('partials.msg-error')
-	@endif
-@endif
-
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">File</h3>
-				<a href="{{ url('admin/manage/file/create') }}" class="btn btn-primary pull-right">Create</a>
 			</div>
 			<div class="box-body">
 				<table id="tbl-file" class="table">
 					<thead>
 						<th width="5%">ID</th>
 						<th width="15%">Name</th>
-						<th width="10%">Type</th>
-						<th width="25%">Directory</th>
 						<th width="10%">Created At</th>
 						<th width="10%">Updated At</th>
 						<th width="10%">Status</th>
@@ -46,8 +35,6 @@ Description for file management
 						<tr>
 							<td>{{ $file->id }}</td>
 							<td>{{ $file->name }}</td>
-							<td>{{ $file->type }}</td>
-							<td>{{ $file->dir }}</td>
 							<td>{{ $file->created_at }}</td>
 							<td>{{ $file->updated_at }}</td>
 							<td>
@@ -60,7 +47,7 @@ Description for file management
 								@endif
 							</td>
 							<td>
-								<a href="{{ url('admin/manage/file/edit/' . $file->id) }}" class="btn btn-default">Edit</a>
+								<a href="{{ url('admin/manage/file/show/' . $file->id) }}" class="btn btn-default">View</a>
 								<a href="{{ url('admin/manage/file/destroy/' . $file->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>

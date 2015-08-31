@@ -78,7 +78,6 @@ Description for setting management
 				</div>
 				<div class="box-footer clearfix">
 					<div class="pull-right">
-						<a href="{{ url('/admin/manage/setting/') }}" class="btn btn-default">Cancel</a>
 						<button type="submit" class="btn btn-primary">Save</button>
 					</div>
 				</div>

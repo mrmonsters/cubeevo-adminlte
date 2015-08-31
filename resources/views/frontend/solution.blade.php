@@ -24,10 +24,10 @@
 
                     <div class="row panel-body overlap">
                         <p class="col-sm-4 panel-title">
-                            {{ $solution->name }}
+                            {{ $solution->translate(Session::get('locale'))->name }}
                         </p>
                         <p class="col-sm-8 hidden-text panel-title-desc">
-                            {{ $solution->desc }}
+                            {{ $solution->translate(Session::get('locale'))->desc }}
                         </p>
                     </div> 
                 </div>

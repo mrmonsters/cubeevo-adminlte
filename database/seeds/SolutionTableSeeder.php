@@ -81,6 +81,10 @@ class SolutionTableSeeder extends Seeder
 						'name' => '品牌形象策划',
 						'desc' => '从标志，采色，构图，字形到标语，我们的责任就是为客户塑造显著的品牌视觉形象。',
 					),
+					'en' => array(
+						'name' => 'Branding Strategy',
+						'desc' => 'From branding, choice of colours, compositions, typography, to slogan, we are equally vigilant and focused on creating the best Brand Image for you.',
+					),
 				),
 			),
 			array(
@@ -89,6 +93,10 @@ class SolutionTableSeeder extends Seeder
 					'cn' => array(
 						'name' => '广告方案策划',
 						'desc' => '我们能按照客户需求与预算安排广告策划，包括平面媒体，户外媒体，广播媒体和网络媒体。',
+					),
+					'en' => array(
+						'name' => 'Advertising Planning',
+						'desc' => 'We are able to prepare an advertising plan in accordance to our clients\' needs and budget. This includes printed, outdoor, broadcasted, and web media advertising. ',
 					),
 				),
 			),
@@ -99,6 +107,10 @@ class SolutionTableSeeder extends Seeder
 						'name' => '广播广告策划',
 						'desc' => '包办广播电台广告与电视广告的脚本撰写，演员道具准备以及拍摄录制。',
 					),
+					'en' => array(
+						'name' => 'Broadcast Ad Planning',
+						'desc' => 'This package involves script writing, preparations of props and talents, and production stages.',
+					),
 				),
 			),
 			array(
@@ -107,6 +119,10 @@ class SolutionTableSeeder extends Seeder
 					'cn' => array(
 						'name' => '包装设计',
 						'desc' => '我们为客户设计产品包装，无论是盒装或是标签设计都在服务范畴。',
+					),
+					'en' => array(
+						'name' => 'Packaging Design',
+						'desc' => 'We offer clients the benefit of having a wide range of packaging designs from box containers to product labels.',
 					),
 				),
 			),
@@ -117,6 +133,10 @@ class SolutionTableSeeder extends Seeder
 						'name' => '数码设计',
 						'desc' => '泛指数码媒体上的设计，含括网页，手机应用程序网络宣传主图，以及动态图设计。',
 					),
+					'en' => array(
+						'name' => 'Digital Graphic Design',
+						'desc' => 'Looking for something more dynamic? Well CubeEvo covers webpages, mobile apps, web posters, and even animated visuals designs.',
+					),
 				),
 			),
 			array(
@@ -125,6 +145,10 @@ class SolutionTableSeeder extends Seeder
 					'cn' => array(
 						'name' => '平面设计',
 						'desc' => '我们平面设计包括宣传单，海报，折页，画册，布条，挂条，平面广告，招牌，广告牌，书刊等。',
+					),
+					'en' => array(
+						'name' => 'Graphic Design',
+						'desc' => 'Our graphic design feild includes flyers, posters, brochures, catalogues, buntings, banners, print ads, signages , booklets, etc.',
 					),
 				),
 			),
@@ -135,6 +159,10 @@ class SolutionTableSeeder extends Seeder
 						'name' => '平面摄影',
 						'desc' => '我们能为客户的产品，代言人和活动安排摄影。',
 					),
+					'en' => array(
+						'name' => 'Photography',
+						'desc' => 'If you need product shooting, or talent shooting, or certain activities photographed, hey! We can help!',
+					),
 				),
 			),
 			array(
@@ -144,6 +172,10 @@ class SolutionTableSeeder extends Seeder
 						'name' => '文案撰写',
 						'desc' => '我们能为可撰写活动流程，产品特性，品牌故事，新闻稿等等，也涵盖国语，英语与华语的翻译。',
 					),
+					'en' => array(
+						'name' => 'Copywriting',
+						'desc' => 'We are capable of preparing program flows, product features, brand stories, press releases, etc. in multiple languages like Bahasa, English, and Mandarin.',
+					),
 				),
 			),
 			array(
@@ -152,6 +184,10 @@ class SolutionTableSeeder extends Seeder
 					'cn' => array(
 						'name' => '打印服务',
 						'desc' => '我们提供印刷服务，包括平面印刷，立体制作，布景制作，制服制作等。',
+					),
+					'en' => array(
+						'name' => 'Printing & Production',
+						'desc' => 'We offer printing services, 3D modelings, backdrop productions, uniform designs and much more.',
 					),
 				),
 			),

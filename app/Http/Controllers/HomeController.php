@@ -2,6 +2,8 @@
 
 use URL;
 use Session;
+use Redirect;
+use Config;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
@@ -24,13 +26,10 @@ class HomeController extends Controller {
 	public function __construct()
 	{
 		// Set default language
-		/*
 		if (Session::get('locale') == null)
 		{
-			Session::set('locale', 'cn');
+			Session::set('locale', Config::get('locale'));
 		}
-		*/
-		parent::__construct();
 	}
 
 	/**
@@ -92,6 +91,18 @@ class HomeController extends Controller {
 	public function getContactUs()
 	{
 		return view('frontend.contactus');
+	}
+
+	public function switchLocale($code)
+	{
+		$locale = Locale::where('language', '=', $code)->first();
+
+		if (isset($locale))
+		{
+			Session::set('locale', $locale->language);
+		}
+
+		return Redirect::back();
 	}
 
 }

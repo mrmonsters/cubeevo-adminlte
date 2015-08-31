@@ -10,8 +10,8 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-2">
-			<h2 class="txtorange"><span></span>联络我们</h2>
-			<h5>任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！</h5>
+			<h2 class="txtorange"><span></span>{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</h2>
+			<h5>{{ (Session::get('locale') == 'en') ? 'If there\'s anything that you need from our service, feel free to leave us your contact and information. We can\'t wait to get in touch with you.' : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！' }}</h5>
 		</div>
 	</div> 
 	<br/>
@@ -22,47 +22,50 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 	<br/>
 	<br/>
 	<div class="row" style="position:relative;"> 
-		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-6"> 
-				<span class="icon cont-name"></span>
-				<input type="text" id="inputName" class="form-control" placeholder="姓名" required="" autofocus="">
+		<form id="form-contact-us" method="POST" action="{{ url('contact-us/submit') }}" />
+		<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-6"> 
+					<span class="icon cont-name"></span>
+					<input type="text" id="inputName" class="form-control" name="name" placeholder="{{ (Session::get('locale') == 'en') ? 'NAME' : '姓名' }}" required="" autofocus="">
+				</div>
+				<div class="col-sm-6"> 
+					<span class="icon cont-mail"></span>
+					<input type="email" id="inputEmail" class="form-control" name="email" placeholder="{{ (Session::get('locale') == 'en') ? 'EMAIL' : '电邮' }}" required="" autofocus="">
+				</div>
 			</div>
-			<div class="col-sm-6"> 
-				<span class="icon cont-mail"></span>
-				<input type="email" id="inputEmail" class="form-control" placeholder="电邮" required="" autofocus="">
+				
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-6"> 
+					<span class="icon cont-contact"></span>
+					<input type="text" id="inputNumber" class="form-control" name="phone" placeholder="{{ (Session::get('locale') == 'en') ? 'CONTACT NO' : '联络号码' }}" required="" autofocus="">
+				</div>
+				<div class="col-sm-6"> 
+					<span class="icon cont-title"></span>
+					<input type="text" id="inputTitle" class="form-control" name="subject" placeholder="{{ (Session::get('locale') == 'en') ? 'SUBJECT' : '标题' }}" required="" autofocus="">
+				</div>
 			</div>
-		</div>
 			
-		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-6"> 
-				<span class="icon cont-contact"></span>
-				<input type="text" id="inputNumber" class="form-control" placeholder="联络号码" required="" autofocus="">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-12">	
+					<label class="unhide">{{ (Session::get('locale') == 'en') ? 'MESSAGE' : '讯息' }}</label>
+					<span class="icon cont-msg" style="top:-3px;"></span>
+					<textarea name="content"> </textarea>
+				</div>
 			</div>
-			<div class="col-sm-6"> 
-				<span class="icon cont-title"></span>
-				<input type="text" id="inputTitle" class="form-control" placeholder="标题" required="" autofocus="">
-			</div>
-		</div>
-		
-		<div class="col-sm-8 col-sm-offset-2">
-			<div class="col-sm-12">	
-				<label class="unhide">讯息</label>
-				<span class="icon cont-msg" style="top:-3px;"></span>
-				<textarea> </textarea>
-			</div>
-		</div>
-		
-		<div class="col-sm-10 col-sm-offset-1 text-center">
-			<br/> 
-			<br/> 
-			<button type="button" class="btn btn-sm btn-default">呈交</button>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-			<br/>
-		</div>	
+			
+			<div class="col-sm-10 col-sm-offset-1 text-center">
+				<br/> 
+				<br/> 
+				<a href="mailto:enquire@cubeevo.com" class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</a>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+				<br/>
+			</div>	
+		</form>
 	</div>
 		
 	<div class="row contactdetails" style="position:relative;"> 
@@ -171,4 +174,11 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
     </script>
   <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
    async defer></script>
+
+<script type="text/javascript">
+function submitForm()
+{
+	$('#form-contact-us').submit();
+}
+</script>
 @endsection	

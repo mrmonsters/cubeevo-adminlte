@@ -13,14 +13,6 @@ Description for static page management
 @endsection
 
 @section('main-content')
-@if (isset($response) && !empty($response))
-	@if ($response['status'] == 1)
-		@include('partials.msg-success')
-	@elseif ($response['status'] == 0)
-		@include('partials.msg-error')
-	@endif
-@endif
-
 <div class="row">
 	<div class="col-md-12">
 		<div class="box box-primary">
@@ -32,7 +24,8 @@ Description for static page management
 				<table id="tbl-page" class="table">
 					<thead>
 						<th>ID</th>
-						<th>Title</th>
+						<th>Name</th>
+						<th>Slug</th>
 						<th>Created At</th>
 						<th>Updated At</th>
 						<th>Status</th>
@@ -43,7 +36,8 @@ Description for static page management
 						@foreach ($pages as $page)
 						<tr>
 							<td>{{ $page->id }}</td>
-							<td>{{ $page->title }}</td>
+							<td>{{ $page->name }}</td>
+							<td>{{ $page->slug }}</td>
 							<td>{{ $page->created_at }}</td>
 							<td>{{ $page->updated_at }}</td>
 							<td>

@@ -52,8 +52,16 @@ Description for project management
 										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" />
 									</div>
 									<div class="form-group">
-										<label for="desc_{{ $locale->id }}" class="control-label">Description</label>
-										<textarea id="desc_{{ $locale->id }}" name="desc[{{ $locale->id }}]" class="form-control" rows="8"></textarea>
+										<label for="background" class="control-label">Background</label>
+										<textarea id="background" name="background[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="challenge" class="control-label">Challenge</label>
+										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
+									</div>
+									<div class="form-group">
+										<label for="result" class="control-label">Result</label>
+										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
 									</div>
 									<div class="form-group">
 										<label for="founder" class="control-label">Founder</label>
@@ -330,10 +338,6 @@ Description for project management
 $(document).ready(function()
 {
 	$('.colorpicker-element').colorpicker();
-
-	@foreach ($locales as $locale)
-	CKEDITOR.replace('desc_{{ $locale->id }}');
-	@endforeach
 
 	$('.img_sort_order').on('keyup', function()
 	{

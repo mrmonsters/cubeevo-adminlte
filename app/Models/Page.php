@@ -13,7 +13,7 @@ class Page extends Model implements TranslatableContract {
 	protected $primaryKey           = 'id';
 	protected $fillable             = ['name', 'desc', 'content', 'slug', 'status'];
 	protected $translator           = 'App\Models\PageTranslation';
-	protected $translatedAttributes = ['name', 'desc', 'content'];
+	protected $translatedAttributes = ['desc', 'content'];
 
 	public function pageMenus()
 	{

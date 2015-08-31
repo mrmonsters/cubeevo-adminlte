@@ -14,10 +14,10 @@ class PageTableSeeder extends Seeder
 		$pages = array(
 			// Home
 			array(
+				'name'        => 'Home',
 				'slug'        => '/',
 				'translation' => array(
 					'cn' => array(
-						'name'    => 'Home',
 						'desc'    => 'Home page.',
 						'content' => '<div class="content-wrapper__fixed"></div>
 							<div id="fullpage">
@@ -45,9 +45,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section1">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott orange">  
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Orange/CubeEvo_Mascot-Orange_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Orange/CubeEvo_Mascot-Orange_Legs.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Orange/CubeEvo_Mascot-Orange_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Legs.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Hands.png" width="150%" ></li> 
 						                </ul>
 									</div> 
 									<div class="col-md-6 maincol-left clearfix">
@@ -68,9 +68,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section2">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott yellow">    
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Legs.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Legs.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Hands.png" width="150%" ></li> 
 						                </ul>
 									</div> 
 									<div class="col-md-6 maincol-left clearfix">
@@ -91,8 +91,8 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section3">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott red">   
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Red/CubeEvo_Mascot-Red_Body.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Red/CubeEvo_Mascot-Red_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Hands.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -113,9 +113,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
-						                    <li class="layer" data-depth="0.5"><img src="img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="1"><img src="img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
 						                </ul>
 									</div>
 									<div class="col-md-6 maincol-left clearfix">
@@ -136,8 +136,8 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -158,9 +158,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.3"><img src="img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -180,14 +180,177 @@ class PageTableSeeder extends Seeder
 								</div>
 							</div>',
 					),
+					'en' => array(
+						'desc'    => 'Home page.',
+						'content' => '<div class="content-wrapper__fixed"></div>
+							<div id="fullpage">
+								<div class="section" id="section0">
+									<div class="col-md-6 maincol-right"> 
+										<ul class="scene visible-xs-block">
+											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
+										</ul>
+									</div> 
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+												<div class="row">
+													<div class="col-sm-push-5 col-sm-6">
+														<h3>CUBEEVO</h3>
+														<p>
+														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
+														</p>
+													</div> 
+												</div>
+											</div> 
+										</div>
+									</div>  
+									</div>
+									<div class="section" id="section1">
+									<div class="col-md-6 maincol-right">
+						                <ul class="scene mascott orange">  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Legs.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Hands.png" width="150%" ></li> 
+						                </ul>
+									</div> 
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Flexibility</h3>
+													<p>
+													We at Cubeevo believe in flexibility is being both quick-witted and spontaneous when it comes to delivering the best for our clients. 
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div>
+									</div>
+									<div class="section" id="section2">
+									<div class="col-md-6 maincol-right">
+						                <ul class="scene mascott yellow">    
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Legs.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Hands.png" width="150%" ></li> 
+						                </ul>
+									</div> 
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Energetic</h3>
+													<p>
+													Like a power source, we are a surge of positive energy flooding up Cubeevo ready to provide for your business.
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div>
+									</div>
+									<div class="section" id="section3">
+									<div class="col-md-6 maincol-right">
+						                <ul class="scene mascott red">   
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Hands.png" width="150%" ></li> 
+						                </ul>
+									</div>  
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Adventurous</h3>
+													<p>
+													Instead of thinking outside the box, we tear it up. So that ideas would not limit us in creating something special.
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div>
+									</div>
+									<div class="section" id="section4">
+									<div class="col-md-6 maincol-right">
+						                <ul class="scene mascott purple">  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                </ul>
+									</div>
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Aesthetics</h3>
+													<p>
+													Aesthetics is a sense. Design is a craft. Combine those together and that\'s how Perfection is forged.
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div>   
+									</div>
+									<div class="section" id="section5">
+									<div class="col-md-6 maincol-right">  
+										<ul class="scene mascott blue">  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                </ul>
+									</div>  
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Creativity</h3>
+													<p>
+													And yes, creativity is heavenly bestowed upon us. Our work is exceptionally wielded by its holliness.
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div>
+									</div>
+									<div class="section" id="section6">
+									<div class="col-md-6 maincol-right">
+						                <ul class="scene mascott green">  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                </ul>
+									</div>  
+									<div class="col-md-6 maincol-left clearfix">
+										<div class="content-wrapper">
+											<div class="content-section"> 
+											<div class="row">
+												<div class="col-sm-push-5 col-sm-6">
+													<h3>Considerate</h3>
+													<p>
+													And Hey! We\'re good listeners too. We know that the way to maintain our trust with you, the CLIENT is by understanding what you need and delivering it so that you can have the BEST!
+													</p>
+												</div> 
+											</div> 
+											</div> 
+										</div>
+									</div> 
+								</div>
+							</div>',
+					),
 				),
 			),
 			// About Us
 			array(
+				'name'        => 'About Us',
 				'slug'        => '/about-us',
 				'translation' => array(
 					'cn' => array(
-						'name'    => 'About Us',
 						'desc'    => 'About us page.',
 						'content' => '<div class="container-fluid aboutus">
 							<div class="row" style="position:relative;"> 
@@ -500,14 +663,323 @@ class PageTableSeeder extends Seeder
 						</div>
 						</div>',
 					),
+					'en' => array(
+						'desc'    => 'About us page.',
+						'content' => '<div class="container-fluid aboutus">
+							<div class="row" style="position:relative;"> 
+								<div class="col-sm-9 col-sm-offset-2">
+									<h2 class="txtorange"><span></span>PHILOSOPHY</h2>
+									<h5>Dreams maketh men, Ideas maketh businesses.</h5>
+								</div>
+								</div>
+								<div class="row about-txt " style="position:relative;"> 
+								<div class="col-lg-12 mob-visible">
+									<div class="about-img3"><img src="/img/Images-08.png"></div>
+								</div>
+								<div class="col-sm-8 col-sm-offset-2">
+									<div class="col-sm-6">
+									<h4>Why are we using Rubik\'s Cube as a symbol?</h4>
+									<p>Just like the laws of physics, the Rubik\'s Cube is a law of CubeEvo. Dramatically, its code gave CubeEvo purpose. The cube\'s 3-Dness gave infinities, its hexad surfaces gave possibilities, and its nine faces gave unity and originality. In a world of Branding and Advertising, this code functions by giving every design infinite possibilities while retaining originality.</p>
+									</div>
+									<div class="col-sm-6">
+									<h4>What makes us stand out from the rest?</h4>
+									<p>Yeah ,we get that a lot. CubeEvo is a company that does Branding and Adveritisng. We believe in "life", giving "life" to the work we do, and putting smiles to our clients. To us, every brand has "life", the Rubik\'s cube has "life", and even CubeEvo has "life". We want to be flexible when it comes to understanding our clients needs, and fulfilling them. We also exercise passion and dedication when it comes to Branding for our clients.</p>
+									</div>
+								</div>
+								<div class="col-lg-12 mob-hide">
+									<div class="about-img2"></div>
+								</div>
+								<div class="col-sm-8 col-sm-offset-2">
+									<div class="col-sm-6">
+									<h4>Why name ourselves Cubeevo?</h4>
+									<p>This shows that we are a firm establishment that is ever-evolving just like a Rubik\'s Cube.</p>
+									</div>
+									<div class="col-sm-6">
+									<h4>What do we hope to achieve?</h4>
+									<p>We listen to our clients, learn about them, study them. Then we come up with a hassle-free solution for our clients, without them having to spend more than intended. </p>
+									</div>
+								</div>
+								</div>
+								<div class="row"> 
+								<div class="col-xs-12" style="background-color:#848383;">
+									<div class="col-sm-9 col-sm-offset-2">
+									    <br/>
+										<h2 class="txtwhite"><span></span>VISION</h2>
+										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
+										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand.</h3>
+									</div>
+								</div>
+								</div>
+								<div class="row"> 
+								<div class="col-xs-12" style="background-color:#676464;">
+									<div class="col-sm-9 col-sm-offset-2">
+									    <br/>
+										<h2 class="txtwhite"><span></span>MISSION</h2>
+										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
+										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand. </h3>
+									</div>
+									<div class="col-sm-2 hidden-xs pull-right">
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+									</div>
+								</div>
+								</div>
+								<div class="row about-369"> 
+								<div class="col-sm-10 col-sm-offset-1 text-center">
+									<div class="col-sm-4">
+										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
+									</div>
+									<div class="col-sm-4">
+										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-Mandarin.gif" width="100%"></div>
+									</div>
+									<div class="col-sm-4">
+										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
+										<div class="col-xs-6 about-369txt">
+											<div class="col-xs-12 col-sm-4 nopadding">
+												<small>Branding Strategy<br>
+												Advertising Planning<br>
+												Broadcast Ad Planning<br></small>
+											</div>
+											<div class="col-xs-12 col-sm-4 nopadding">
+												<small>Digital Graphic Design<br>
+												Graphic Design<br>
+												Photography<br></small>
+											</div>
+											<div class="col-xs-12 col-sm-4 nopadding">
+												<small>Packaging Design<br>
+												Copywriting<br>
+												Printing & Production<br></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								</div>
+								<div class="row team hide"> 
+								<div class="col-sm-10 col-sm-offset-1">
+								<h2 class="txtwhite"><span></span>团队成员</h2>
+								<p>形立方是由一群热爱生活追求梦想的优秀设计师组成，我们拒绝平庸，我们希望创造不凡!</p>
+								</div>
+								<div class="col-sm-10 col-sm-offset-1">
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">ALVIN LEE / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">CHARIS NG / 营运经理</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">KEITH PHANG / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">TIMOTHY TAI / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">FEIXIN LEW / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">DENYI SIOW / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+									<div class="col-xs-12 col-sm-3">
+										<div class="profilepic"><img src="/img/Images-08.png"></div>
+										<div class="profilename">LEVAN ANG / 策划总监</div>
+										<div class="profiledesc">
+										<p>形立方公司创始人，品牌人，设计师，CEO，多年来成功为国内外多个品牌设计终端形象，并获得客户一致好评及业内同行认可。</p>
+										<p>自创建形立方品牌以来领导和培养了一批批优秀的设计师。</p>
+										</div>	
+									</div>
+								</div> 
+								</div>
+								<div class="row career"> 
+								<div class="col-xs-12" style="background:#f7941a;padding-bottom: 50px;padding-top: 50px;">
+								<hr class="whitehr hide">
+								<div class="col-sm-9 col-sm-offset-2">  
+									<div class="row">
+										<div class="col-xs-12">
+											<h2 class="txtwhite"><span></span>JOIN THE TEAM</h2>
+											<h5>Are you the one we are looking for? Is your will strong enough to brave new challenges? Do you wish to learn and discover the unknown? Well, you\'re in luck. Because we at Cubeevo are welcoming talents to join our cause.</p>
+											</h5>
+											<br/>
+											<br/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">CLIENT SERVICE & SALES EXECUTIVE</h5>
+												<p>Do you hold knowledge about advertising? Have you forged your skills for more than 1 year? Are you able to work with clients and colleagues to achieve sales revenue and take us higher? Can you stand together with the clients and understand their needs? And put smiles on them after? If so, you may proceed with the details.</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal1">JOIN</button>
+											</div>	
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">GRAPHIC DESIGNER</h5>
+												<p>You are the light. You are the flame. You are the cache of ideas. Your creativity is only limited by the boundaries of your imagination. If you possess this illuminati, do proceed with further details.</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal2">JOIN</button>
+											</div>	
+										</div>
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">INTERNSHIP FOR GRAPHIC DESIGN AND MULTIMEDIA</h5>
+												<p>Want to experience hand-to-hand comba-…we mean first hand experience in the advertising field? Look no further, join us and we shall venture into the veil of creativity! Details at the click of the button below.</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">JOIN</button>
+											</div>	
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12 col-sm-4">
+											<div class="job">
+												<h5 class="txtwhite">INTERNSHIP FOR BUSINESS OR ADMINISTRATION</h5>
+												<p>Are your fluent in multi languages including English, Malay, Chinese, etc.? Are you looking to seek internship? Are you able to confront with clients? The button below will reveal more details.</p>
+												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">JOIN</button>
+											</div>	
+										</div> 
+									</div>  
+							</div>
+							<div class="row"> 
+								<div class="col-xs-6 pull-right noppading">
+								<img src="/img/Programmer Needs-04.png"  width="100%" style="margin-top:-150px;margin-left:15px;"/>
+								</div>
+							</div>
+						</div>
+
+						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">CLIENT SERVICE & SALES EXECUTIVE</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
+						<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">GRAPHIC DESIGNER</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR GRAPHIC DESIGN AND MULTIMEDIA</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR BUSINESS OR ADMINISTRATION</h4>
+						      </div>
+						      <div class="modal-body">
+							      <ul>
+							      	<li>Good understanding in advertising industries.</li>
+							      	<li>Fresh graduates are encouraged to apply.</li>
+							      	<li>Able to work closely with client and creative team.</li>
+							      	<li>Result-oriented and strong organization skills.</li>
+							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
+							      	<li>Fluent in written & spoken English.</li>
+							      	<li>Possess a driving license and own vehicle.</li>
+							      </ul> 
+						      </div>
+						      <div class="modal-footer"> 
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+						</div>',
+					),
 				),
 			),
 			// Process
 			array(
+				'name'        => 'Process',
 				'slug'        => '/process',
 				'translation' => array(
 					'cn' => array(
-						'name'    => 'Process',
 						'desc'    => 'Process page.',
 						'content' => '<div class="container-fluid process">
 							<div class="row"> 
@@ -591,6 +1063,90 @@ class PageTableSeeder extends Seeder
 								<br/>
 							</div>',
 					),
+					'en' => array(
+						'desc'    => 'Process page.',
+						'content' => '<div class="container-fluid process">
+							<div class="row"> 
+								<div class="col-sm-10 col-sm-offset-2">
+									<h2 class="txtorange"><span></span>Let\'s start working together</h2>
+								</div>
+								</div>
+								<div class="row">
+								<div class="col-sm-11 col-sm-offset-1 process-flow">
+									<div class="flow">
+										<div class="left"><div class="box">
+											<span>01</span>
+											Step inside, you are most welcome to browse around and see what people think about us.
+										</div></div>
+										<div class="right"><div class="box">
+											<span>02</span>
+											Give us a call, or by all means, send us an email once you learn about us.
+										</div></div>
+										<div class="left"><div class="box">
+											<span>03</span>
+											And now it\'s time for CubeEvo to get to know you. You can appoint us anytime to describe your business.
+										</div></div>
+										<div class="right"><div class="box">
+											<span>04</span>
+											CubeEvo promises to deliver exceptional results and surpass your expectations with the right amount of resources and we would not exclude the possibilities of a pitching job.
+										</div></div>
+										<div class="left"><div class="box">
+											<span>05</span>
+											Before we begin any project, we start by quoting the prices for all the tasks that you require us to do. 
+										</div></div>
+										<div class="right"><div class="box">
+											<span>06</span>
+											Once we have come to an agreement, a contract will be prepared for our confirmation.
+										</div></div>
+										<div class="left"><div class="box">
+											<span>07</span>
+											The client has to make a 50% down payment 3 working days after an agreement has been confirmed before we begin our work.
+										</div></div>
+										<div class="right"><div class="box">
+											<span>08</span>
+											We at CubeEvo will put this 3 working days to good use by analyzing, understanding and doing further research on an initial basis.
+										</div></div>
+										<div class="left"><div class="box">
+											<span>09</span>
+											The client will receive a project timeline once payment is received on CubeEvo\'s end. Rest assured, we deliver on time.
+										</div></div>
+										<div class="right"><div class="box">
+											<span>10</span>
+											You can ring us up or email us any time you like if you have any thoughts about the project. We are flexible about that.
+										</div></div>
+										<div class="left"><div class="box">
+											<span>11</span>
+											The only thing that is not flexible about us is our copyright material source files which will be stored as uneditable PDF or AI format  upon delivery.
+										</div></div>
+										<div class="right"><div class="box">
+											<span>12</span>
+											In the end, let\'s be clear. It all comes down to what you need, we engage you to work with us because we promise you it will be an unforgettable experience.
+										</div></div>
+									</div>
+								</div>
+								</div>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<div class="row"> 
+								<div class="col-sm-8 col-sm-offset-2 hidden-xs">
+									<img src="/img/Programmer Needs-02.png" width="100%">
+								</div>
+								<div class="col-sm-8 col-sm-offset-2 visible-xs-block" style="padding-bottom:100px;">
+									<img src="/img/Images-37-mob.png" width="100%">
+								</div>
+								</div>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+								<br/>
+							</div>',
+					),
 				),
 			),
 		);
@@ -598,6 +1154,7 @@ class PageTableSeeder extends Seeder
 		foreach ($pages as $page)
 		{
 			$pg = New Page;
+			$pg->name = $page['name'];
 			$pg->slug = $page['slug'];
 			$pg->save();
 
@@ -608,7 +1165,6 @@ class PageTableSeeder extends Seeder
 				$pgTranslation = new PageTranslation;
 				$pgTranslation->page_id   = $pg->id;
 				$pgTranslation->locale_id = $locale->id;
-				$pgTranslation->name      = $val['name'];
 				$pgTranslation->desc      = $val['desc'];
 				$pgTranslation->content   = $val['content'];
 				$pgTranslation->save();

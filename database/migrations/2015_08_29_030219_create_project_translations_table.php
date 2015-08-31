@@ -23,9 +23,11 @@ class CreateProjectTranslationsTable extends Migration {
 			$table->integer('locale_id')->unsigned(true);
 			$table->foreign('locale_id')->references('id')->on('locales');
 			$table->string('name');
-			$table->text('desc');
-			$table->string('founder');
 			$table->string('client_name');
+			$table->text('background');
+			$table->text('challenge');
+			$table->text('result');
+			$table->string('founder');
 			$table->integer('status')->default(2);
 			$table->timestamps();
 		});

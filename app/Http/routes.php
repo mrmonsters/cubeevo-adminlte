@@ -18,7 +18,9 @@ Route::get('/credential/{category_id}', 'HomeController@getCredentialProject');
 Route::get('/credential/project/{project_id}', 'HomeController@getProjectContent');
 Route::get('/solution', 'HomeController@getSolution');
 Route::get('/process', 'HomeController@getProcess');
+Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
+Route::post('/contact-us/submit', 'HomeController@submitMessage');
 
 Route::get('admin', 'AdminController@index');
 
@@ -36,19 +38,15 @@ Route::get('admin/manage/block/edit/{block_id}', 'BlockController@edit');
 Route::put('manage/block/update/{block_id}', 'BlockController@update');
 Route::post('manage/block/store', 'BlockController@store');
 
-// Menu routes
-Route::get('admin/manage/menu', 'MenuController@index');
-Route::get('admin/manage/menu/create', 'MenuController@create');
-Route::get('admin/manage/menu/edit/{menu_id}', 'MenuController@edit');
-Route::put('manage/menu/update/{menu_id}', 'MenuController@update');
-Route::post('manage/menu/store', 'MenuController@store');
-
 // File routes
 Route::get('admin/manage/file', 'FileController@index');
-Route::get('admin/manage/file/create', 'FileController@create');
-Route::get('admin/manage/file/edit/{file_id}', 'FileController@edit');
-Route::put('manage/file/update/{file_id}', 'FileController@update');
-Route::post('manage/file/store', 'FileController@store');
+Route::get('admin/manage/file/show/{file_id}', 'FileController@show');
+Route::put('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
+
+// Contact us routes
+Route::get('admin/manage/message', 'MessageController@index');
+Route::get('admin/manage/message/show/{msg_id}', 'MessageController@show');
+Route::put('admin/manage/message/destroy/{msg_id}', 'MessageController@destroy');
 
 // Category routes...
 Route::get('admin/manage/category', 'CategoryController@index');

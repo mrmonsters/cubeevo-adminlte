@@ -2,4 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class PageTranslation extends Model {}
+class PageTranslation extends Model {
+
+	protected $fillable = ['page_id', 'locale_id', 'desc', 'content'];
+}
