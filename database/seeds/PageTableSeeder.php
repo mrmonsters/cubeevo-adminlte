@@ -585,7 +585,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -610,7 +610,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -634,7 +634,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -658,7 +658,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -894,7 +894,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -919,7 +919,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -943,7 +943,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -967,7 +967,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
