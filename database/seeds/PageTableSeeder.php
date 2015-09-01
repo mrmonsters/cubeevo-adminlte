@@ -31,10 +31,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 												<div class="row">
-													<div class="col-sm-push-5 col-sm-6">
-														<h3>形立方</h3>
-														<p>
-														形立方的标志概念和灵感是基于最基本的设计元素， 魔术方块，形状，格框以及线条所组成的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架；形立方也讲究【活力】，在打造品牌的过程中就是展现活力。
+													<div class="col-sm-push-5 col-sm-7">
+														<h3 class="text-black">形立方</h3>
+														<p class="text-black">
+														形立方的标志概念和灵感是基于最基本的设计元素， <br/>魔术方块，形状，格框以及线条所组成的。形立方<br/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br/>不必要的框架；形立方也讲究【活力】，在打造<br/>品牌的过程中就是展现活力。
 														</p>
 													</div> 
 												</div>
@@ -196,8 +196,8 @@ class PageTableSeeder extends Seeder
 											<div class="content-section"> 
 												<div class="row">
 													<div class="col-sm-push-5 col-sm-6">
-														<h3>CUBEEVO</h3>
-														<p>
+														<h3 class="text-black">CUBEEVO</h3>
+														<p class="text-black">
 														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
 														</p>
 													</div> 
@@ -365,12 +365,12 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-visible">
 									<div class="about-img3"><img src="/img/Images-08.png"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>为何形立方会用魔术方块【魔方】为标志？</h4>
 									<p>魔方的魅力在于三三不尽、六六无穷、九九归一的组合变化,这如同品牌形象塑造与广告设计的借镜,既可以天马行空,却不会不切实际。</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>形立方与别的广告公司有什么不一样？</h4>
 									<p>形立方是一家品牌兼广告设计公司，务求达致客户期待的目标，遵守一个字【活】。魔方是活的，品牌是活的，形立方也是活的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架，形立方也讲究【活力】，在打造品牌的过程中就是展现活力。</p>
 									</div>
@@ -378,37 +378,37 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-hide">
 									<div class="about-img2"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>为何取名“形立方”?</h4>
 									<p>形立方之命名,除了表现我们擅长形象建立,更犹如魔方一样千变万化。</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>形立方的工作目标是什么?</h4>
 									<p>聆听客户需求,规划客户需求,制作客户需求。不做无理花费,提供客户真正需要的方案。</p>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#848383;">
+								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
-										<h1 class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</h1>
-										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</h3>
+										<h1 class="tagline text-center">“创意因品牌而生, &nbsp;品牌因创新而活。”</h1>
+										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素, 激活品牌新生命。</h3>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#676464;">
+								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>使命</h2>
-										<h1 class="tagline text-center">“激活品牌,展现完美。”</h1>
-										<h3 class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</h3>
+										<h1 class="tagline text-center">“激活品牌, &nbsp;展现完美。”</h1>
+										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, 为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -62%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -426,20 +426,20 @@ class PageTableSeeder extends Seeder
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
 										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>品牌形象策划<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p style="margin-left: -25px;">品牌形象策划<br>
 												广告方案策划<br>
-												广播广告策划<br></small>
+												广播广告策划<br></p>
 											</div>
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>数码设计<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p>数码设计<br>
 												平面设计<br>
-												平面摄影<br></small>
+												平面摄影<br></p>
 											</div>
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>包装<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p>包装设计<br>
 												文案撰写<br>
-												印刷服务<br></small>
+												印刷服务<br></p>
 											</div>
 										</div>
 									</div>
@@ -678,12 +678,12 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-visible">
 									<div class="about-img3"><img src="/img/Images-08.png"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>Why are we using Rubik\'s Cube as a symbol?</h4>
 									<p>Just like the laws of physics, the Rubik\'s Cube is a law of CubeEvo. Dramatically, its code gave CubeEvo purpose. The cube\'s 3-Dness gave infinities, its hexad surfaces gave possibilities, and its nine faces gave unity and originality. In a world of Branding and Advertising, this code functions by giving every design infinite possibilities while retaining originality.</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>What makes us stand out from the rest?</h4>
 									<p>Yeah ,we get that a lot. CubeEvo is a company that does Branding and Adveritisng. We believe in "life", giving "life" to the work we do, and putting smiles to our clients. To us, every brand has "life", the Rubik\'s cube has "life", and even CubeEvo has "life". We want to be flexible when it comes to understanding our clients needs, and fulfilling them. We also exercise passion and dedication when it comes to Branding for our clients.</p>
 									</div>
@@ -691,19 +691,19 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-hide">
 									<div class="about-img2"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>Why name ourselves Cubeevo?</h4>
 									<p>This shows that we are a firm establishment that is ever-evolving just like a Rubik\'s Cube.</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>What do we hope to achieve?</h4>
 									<p>We listen to our clients, learn about them, study them. Then we come up with a hassle-free solution for our clients, without them having to spend more than intended. </p>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#848383;">
+								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
@@ -713,7 +713,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#676464;">
+								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>MISSION</h2>
@@ -721,7 +721,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -62%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -740,19 +740,19 @@ class PageTableSeeder extends Seeder
 										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Branding Strategy<br>
+												<p class="text-left">Branding Strategy<br>
 												Advertising Planning<br>
-												Broadcast Ad Planning<br></small>
+												Broadcast Ad Planning<br></p>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Digital Graphic Design<br>
+												<p class="text-left">Digital Graphic Design<br>
 												Graphic Design<br>
-												Photography<br></small>
+												Photography<br></p>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Packaging Design<br>
+												<p class="text-left">Packaging Design<br>
 												Copywriting<br>
-												Printing & Production<br></small>
+												Printing & Production<br></p>
 											</div>
 										</div>
 									</div>

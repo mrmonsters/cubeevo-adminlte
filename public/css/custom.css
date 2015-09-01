@@ -11,6 +11,7 @@ Custom style
 .p,p{font-size: 14px;}
 .small,small{font-size: 12px }
 
+.text-black{color: #000;}
 h1 {margin-top:60px;}
 .txtorange {color:#f7941a;}
 .txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
@@ -137,10 +138,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	z-index: 1;
 	color: #ffffff;
 	display: none;
-} 
-#section0 .fp-tableCell .col-sm-6 {
-	  color:#000 !important;
-}
+}  
+
 #section0 .fp-tableCell ul li {
 	padding-top:20px;
 	text-align:left;
@@ -253,11 +252,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
 .process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
-.container-fluid.aboutus{margin: 15px;background-color: #eee;}
+.container-fluid.aboutus{margin: 15px;background-color: #eee;padding-top: 80px;}
 .aboutus .tagline {color:#f7941a; font-size:55px;}
 .aboutus .sub-tagline {color:#fff; font-size:26px; margin-bottom:50px;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
-.aboutus .about-txt {margin-top :50px; margin-bottom:50px;}
+.aboutus .about-txt {margin-top :50px; margin-bottom:80px;}
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
 .aboutus .about-img2 {height:253px; display:block; background:url(../img/Images-08-1.png) no-repeat center center; clear:both;}
 .aboutus .about-img3 {clear:both; text-align:center;}
@@ -543,10 +542,10 @@ Main Components
 	.aboutus .team .profilepic {text-align:center;}
 	.aboutus .team .profilepic img {max-width:240px;}
 	.aboutus .team .profilename {text-align:center;}
-	.aboutus .about-369 .col-xs-6 {width:50%;}
-	.aboutus .about-369 .about-369img {margin-top:0;}
-	.aboutus .about-369 .col-sm-4 {margin-top:20px; overflow:hidden;}
-	.aboutus .about-369 .about-369txt {width:100%;}
+	.aboutus .about-369 .col-xs-6 {width:50%;padding-top: 20px;}
+	.aboutus .about-369 .about-369img {margin-top:0;padding: 0px;}
+	.aboutus .about-369 .col-sm-4 {margin-top:30px; overflow:hidden;}
+	.aboutus .about-369 .about-369txt {width:100%;padding: 0px;margin-left: 10%;}
 	.panel-title-desc {border-left:0 none;}
 	.process-flow{overflow: hidden;}
 	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}

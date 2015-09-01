@@ -38,7 +38,7 @@
                 <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             
-            <div style="position: absolute;bottom: 5px;width: 70%;">   
+            <div>   
                 <div class="cd-social">
                     <ul class="list-inline">
                         <?php use App\Models\Setting; ?>
@@ -64,11 +64,6 @@
                 &copy; 2015 COPYRIGHT BY <br>
                 CUBEEVO ADVERTISING SDN. BHD.
                 </div>
-                <br/>
-                <br/>
-                <br/>
-                <p>www.cubeevo.com</p>
-                <br/>
             </div> 
     	</div>
     </div>
