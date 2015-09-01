@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use App\Models\Status;
 use App\Models\Locale;
+use App\Models\Block;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
 use App\Models\ProjectFile;
@@ -63,6 +64,8 @@ class ProjectController extends Controller {
 		//
 		$response = array();
 		$data     = $req->input();
+
+		dd($data);
 
 		if (isset($data))
 		{
@@ -130,6 +133,7 @@ class ProjectController extends Controller {
 				ProjectTranslation::create($projData);
 			}
 
+			/*
 			if (!empty($newImgIds))
 			{
 				foreach ($newImgIds as $id)
@@ -169,6 +173,41 @@ class ProjectController extends Controller {
 						ProjectFile::create($img);
 					}
 				}
+				*/
+
+				if (isset($data['block']) && !empty($data['block']))
+				{
+					for ($i = 0; $i < count($data['block']['type']); $i++)
+					{
+						$block = new Block;
+						$block->project_id = $project->id;
+						$block->sort_order = $data['block']['sort_order'][$i];
+						switch ($data['block']['type'][$i])
+						{
+							case Block::IMAGE:
+								$block->type = Block::IMAGE;
+								$block->value = $data['block']['value'][$i];
+								break;
+							case Block::GALLERY:
+								$block->type = Block::GALLERY;
+								$imgIds = explode(",", $data['block']['value'][$i]);
+								$sortOrders = explode(",", $data['block']['project_img_sort_order'][$i]);
+								$images = array();
+								for ($x = 0; $x < count($imgIds); $x++)
+								{
+									$images[$sortOrders[$x]] = $imgIds[$x];
+								}
+								$images = ksort($images);
+								$block->value = implode(",", $images);
+								break;
+							case Block::VIDEO:
+								$block->type = Block::VIDEO;
+								$block->value = $data['block']['value'][$i];
+								break;
+						}
+						$block->save();
+					}
+				}	
 			}
 
 			$response['code'] = STATUS::SUCCESS;

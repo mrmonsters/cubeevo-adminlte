@@ -17,11 +17,13 @@ class CreateBlocksTable extends Migration {
 		Schema::create('blocks', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('locale_id')->unsigned(true);
-			$table->foreign('locale_id')->references('id')->on('locales');
-			$table->string('name');
-			$table->text('content');
+			$table->integer('project_id')->unsigned(true);
+			$table->foreign('project_id')->references('id')->on('projects');
+			$table->string('type');
+			$table->string('value');
+			$table->integer('sort_order');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

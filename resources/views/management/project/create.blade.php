@@ -157,6 +157,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="brand_img_id" name="brand_img_id" />
+						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<div class="caption" style="text-align: center;">
@@ -168,6 +169,7 @@ Description for project management
 						</div>
 						<input type="hidden" id="project_img_ids" name="project_img_ids" />
 						<input type="hidden" id="project_img_sort_order" name="project_img_sort_order" />
+						-->
 					</div>
 				</div>
 				<input type="hidden" id="selected_img" value="" />
@@ -247,6 +249,7 @@ Description for project management
 					</div>
 				</div>
 				<!-- New Project Image - Modal -->
+				<!--
 				<div class="modal fade" id="modal-new-project-img" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
@@ -267,6 +270,7 @@ Description for project management
 						</div>
 					</div>
 				</div>
+				-->
 			</form>
 		</div>
 	</div>
@@ -350,7 +354,8 @@ $(document).ready(function()
 
 	$('.img_sort_order').on('keyup', function()
 	{
-		setImgSortOrder();
+		var fields = $('#current-modal-field').val().split(',');
+		setImgSortOrder(fields[1]);
 	});
 });
 
@@ -445,9 +450,8 @@ function prepareModal(img, sort)
 
 	$('.project_img').each(function()
 	{
-		if (imgIds.length < 1 && $.inArray($(this).val(), imgIds) != -1)
+		if (imgIds.length > 0 && $.inArray($(this).val(), imgIds) != -1)
 		{
-			console.log('in!');
 			$(this).prop('checked', true);
 			$('#img_sort_order_' + $(this).val()).val(sorts[count]);
 			$('#img_sort_order_container_' + $(this).val()).show();
@@ -467,7 +471,11 @@ function addBlock()
 	var count = parseInt($('#block-count').val());
 	$('#block-count').val(count+1);
 
-	var blockInput = '<div class="form-group">'
+	var blockInput = '<div class="box-header with-border">'
+		+ '<h4 class="box-title">Block #' + (count+1) + '</h4>'
+		+ '<button type="button" class="btn btn-danger pull-right">Remove</button>'
+		+ '</div>'
+		+ '<div class="form-group">'
 		+ '<label for="block-type" class="control-label">Type</label>'
 		+ '<select id="block-type" class="form-control block-type" name="block[type][]" onchange="toggleInput('+count+', this)">'
 		+ '	<option value="img">Single Image</option>'
@@ -478,8 +486,8 @@ function addBlock()
 		+ '<div class="form-group">'
 		+ '	<label for="block-value-'+count+'" class="control-label">Value</label>'
 		+ ' <div class="input-group">'
-		+ '	<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" disabled />'
-		+ ' <input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order_'+count+'" />' 
+		+ '	<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" readonly />'
+		+ ' <input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
 		+ ' <span class="input-group-btn">'
 		+ ' <button type="button" id="btn-upload-'+count+'" class="btn btn-primary">Upload</button>'
 		+ ' <button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
@@ -497,13 +505,13 @@ function toggleInput(count, select)
 {
 	if ($(select).val() == 'vid')
 	{
-		$('#project_img_ids_' + count).attr('disabled', false);
+		$('#project_img_ids_' + count).attr('readonly', false);
 		$('#btn-upload-' + count).attr('disabled', true);
 		$('#btn-choose-' + count).attr('disabled', true);
 	}
 	else
 	{
-		$('#project_img_ids_' + count).attr('disabled', true);
+		$('#project_img_ids_' + count).attr('readonly', true);
 		$('#btn-upload-' + count).attr('disabled', false);
 		$('#btn-choose-' + count).attr('disabled', false);
 	}

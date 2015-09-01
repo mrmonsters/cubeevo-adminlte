@@ -6,9 +6,14 @@ class Block extends Model {
 
 	//
 	protected $table = 'blocks';
+	protected $fillable = ['project_id', 'type', 'value', 'sort_order', 'status', 'delete'];
 
-	public function pageBlocks()
+	const IMAGE   = 'img';
+	const VIDEO   = 'vid';
+	const GALLERY = 'gal';
+
+	public function project()
 	{
-		return $this->hasMany('App\PageBlock', 'block_id', 'id');
+		return $this->belongsTo('App\Models\Project');
 	}
 }

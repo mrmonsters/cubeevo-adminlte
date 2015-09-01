@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Files;
+use App\Models\Block;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
 use App\Models\ProjectFile;
