@@ -732,23 +732,23 @@ class ProjectTableSeeder extends Seeder
 			),
 			array(
 				'name'   => 'Images-24',
-				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-24.jpg',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-24.png',
 			),
 			array(
 				'name'   => 'Images-25',
-				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-25.jpg',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-25.png',
 			),
 			array(
 				'name'   => 'Images-26',
-				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-26.jpg',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-26.png',
 			),
 			array(
 				'name'   => 'Images-27',
-				'type'   => 'image/jpeg',
-				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-27.jpg',
+				'type'   => 'image/png',
+				'dir'    => '/img/Credential Portfolio/Retailer/Hairdepot/Full Width/Images-27.png',
 			),
 			array(
 				'name'   => 'Hairdepot_Branding_CIS_1920',
@@ -826,9 +826,9 @@ class ProjectTableSeeder extends Seeder
 				'dir'  => '/img/Credential Portfolio/Retailer/Midori/Full Width/Midori_Magazine_01_1920x1068.jpg',
 			),
 			array(
-				'name' => 'Midori_Magazine_02_1920x1068',
+				'name' => 'Midori_Brochure_1920',
 				'type' => 'image/jpeg',
-				'dir'  => '/img/Credential Portfolio/Retailer/Midori/Full Width/Midori_Magazine_02_1920x1068.jpg',
+				'dir'  => '/img/Credential Portfolio/Retailer/Midori/Full Width/Midori_Brochure_1920.jpg',
 			),
 			array(
 				'name' => 'Midori_PaperBag_1920',

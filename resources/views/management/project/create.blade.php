@@ -23,7 +23,7 @@ Description for project management
 
 @section('main-content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Create New Project</h3>
@@ -162,7 +162,7 @@ Description for project management
 								<div class="caption" style="text-align: center;">
 									<p><strong>Project Images</strong></p>
 									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img">Upload New</a> 
-									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="useExist('project_img_id')">Use Existing</a>
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids', 'project_img_sort_order')">Use Existing</a>
 								</div>
 							</div>
 						</div>
@@ -171,6 +171,15 @@ Description for project management
 					</div>
 				</div>
 				<input type="hidden" id="selected_img" value="" />
+				<hr />
+				<div class="box-header with-border">
+					<h3 class="box-title">Project Block</h3>
+					<button type="button" class="btn btn-success pull-right" onclick="addBlock()">Add Block</button>
+				</div>
+				<div id="block-box-body" class="box-body">
+					<input type="hidden" id="block-count" value="0" />
+					<input type="hidden" id="current-modal-field" />
+				</div>
 				<div class="box-footer clearfix">
 					<div class="pull-right">
 						<a href="{{ url('/admin/manage/project/') }}" class="btn btn-default">Cancel</a>
@@ -376,6 +385,8 @@ function selectImg(imgId, imgSrc)
 function selectProjectImg()
 {
 	var imgIds = [];
+	var fields = $('#current-modal-field').val().split(',');
+	console.log(fields);
 
 	$('.project_img').each(function()
 	{
@@ -393,11 +404,11 @@ function selectProjectImg()
 		}
 	});
 
-	$('#project_img_ids').val(imgIds.join(','));
-	setImgSortOrder();
+	$('#' + fields[0]).val(imgIds.join(','));
+	setImgSortOrder(fields[1]);
 }
 
-function setImgSortOrder()
+function setImgSortOrder(field)
 {
 	var sortOrder = [];
 
@@ -416,12 +427,86 @@ function setImgSortOrder()
 		}
 	});
 
-	$('#project_img_sort_order').val(sortOrder.join(','));
+	$('#' + field).val(sortOrder.join(','));
 }
 
 function addProjectImg()
 {
 	$('.new_project_img:last').clone().appendTo('#new_project_img_container');
+}
+
+function prepareModal(img, sort)
+{
+	$('#current-modal-field').val(img + "," + sort);
+
+	var imgIds = $('#' + img).val().split(',');
+	var sorts  = $('#' + sort).val().split(',');
+	var count  = 0;
+
+	$('.project_img').each(function()
+	{
+		if (imgIds.length < 1 && $.inArray($(this).val(), imgIds) != -1)
+		{
+			console.log('in!');
+			$(this).prop('checked', true);
+			$('#img_sort_order_' + $(this).val()).val(sorts[count]);
+			$('#img_sort_order_container_' + $(this).val()).show();
+			count++;
+		}
+		else
+		{
+			$(this).prop('checked', false);
+			$('#img_sort_order_' + $(this).val()).val('');
+			$('#img_sort_order_container_' + $(this).val()).hide();
+		}
+	});
+}
+
+function addBlock()
+{
+	var count = parseInt($('#block-count').val());
+	$('#block-count').val(count+1);
+
+	var blockInput = '<div class="form-group">'
+		+ '<label for="block-type" class="control-label">Type</label>'
+		+ '<select id="block-type" class="form-control block-type" name="block[type][]" onchange="toggleInput('+count+', this)">'
+		+ '	<option value="img">Single Image</option>'
+		+ '	<option value="vid">Video</option>'
+		+ '	<option value="gal">Gallery</option>'
+		+ '</select>'
+		+ '</div>'
+		+ '<div class="form-group">'
+		+ '	<label for="block-value-'+count+'" class="control-label">Value</label>'
+		+ ' <div class="input-group">'
+		+ '	<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" disabled />'
+		+ ' <input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order_'+count+'" />' 
+		+ ' <span class="input-group-btn">'
+		+ ' <button type="button" id="btn-upload-'+count+'" class="btn btn-primary">Upload</button>'
+		+ ' <button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
+		+ ' </span>'
+		+ ' </div>'
+		+ '</div>'
+		+ '<div class="form-group">'
+		+ '	<label for="block-sort" class="control-label">Sort Order</label>'
+		+ '	<input type="text" class="form-control" name="block[sort][]" />'
+		+ '</div><hr />';
+	$('#block-box-body').append(blockInput);
+}
+
+function toggleInput(count, select)
+{
+	if ($(select).val() == 'vid')
+	{
+		$('#project_img_ids_' + count).attr('disabled', false);
+		$('#btn-upload-' + count).attr('disabled', true);
+		$('#btn-choose-' + count).attr('disabled', true);
+	}
+	else
+	{
+		$('#project_img_ids_' + count).attr('disabled', true);
+		$('#btn-upload-' + count).attr('disabled', false);
+		$('#btn-choose-' + count).attr('disabled', false);
+	}
 }
 </script>
 @endsection

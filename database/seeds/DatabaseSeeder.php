@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 		
+		$this->call('UserTableSeeder');
 		$this->call('LocaleTableSeeder');
 		$this->call('PageTableSeeder');
 		$this->call('CategoryTableSeeder');
