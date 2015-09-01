@@ -130,7 +130,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 .content-wrapper__fixed{ 
 	position: fixed;
-	margin: 10px;
+	margin: 0.8%;
 	width: 100%;
 	height: 97%;
 	background: url(../img/transBG.png) repeat; 
@@ -298,7 +298,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
 .scene.mascott{position:relative;left: -20%;top: -2%;}
-.scene.mascott.purple{top: 2%;}
+.scene.mascott.purple{top: 11%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
 	height: 760px;   
@@ -340,7 +340,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 #blink{
 	background: transparent url('../img/Mascott/Blue/10_Frames/Blue_Mascot-Animation_B.png') 0 0 no-repeat; 
 }
-
+/*purple*/ 
 /*green*/
 #greenmascott{
 	background: transparent url('../img/Mascott/Green/Green_Mascot-Animation_A.png') 0 0 no-repeat; 
@@ -459,7 +459,7 @@ Main Components
 }
 
 @media (min-width:992px){
-  	.scene.mascott{left: -70%;top: 15%;}
+  	.scene.mascott{left: -24%;top: 15%;}
 	.section .col-md-6{height: 100%;padding:5px 10px;} 
 	#fullpage .content-wrapper > .content-section{  
 	  	position:  absolute;
