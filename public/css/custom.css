@@ -163,7 +163,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	margin-bottom: 0px;
 }
 .sol .sol-box{
-	padding: 0 1.14%;
+	padding: 0;
 }
 .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
 	display: block;
@@ -173,12 +173,14 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .sol .contbox ul {margin-bottom:0; margin-right:30px;}
 .sol .greybox, .cre .greybox {
 	display: none;
-	width: 100%;
+	width: 94%;
 	height: 90%;
 	position: absolute;
-	background:url(../img/transBG_box.png) repeat;
+	/*background:url(../img/transBG_box.png) repeat;*/
 	z-index:1;
-    margin-top: 3.3%;
+	opacity: 0.5;
+    margin: 2.8%; 
+    background-color: #000;
 } 
 .sol-1 {background:#eee80a url(../img/Images-36.png); background-position:right;}
 .sol-2 {background:#1f9ea0 url(../img/Images-36.png); background-position:right;}
@@ -205,11 +207,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	color:#fff;
 	min-height: 30px;
 }
-.panel-title { padding-left:0px; float:left; font-size:18px;}
+.panel-title { float:left; font-size:18px;}
 .panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px; border-left:1px solid #fff;}
 
 /*credential page*/ 
-.cre-box{cursor: pointer;padding: 0 1.14%;} 
+.cre-box{cursor: pointer;padding: 0px;} 
 .container-fluid.cre{background:#666;} 	
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
