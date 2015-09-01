@@ -452,7 +452,15 @@ Main Components
 .smart-object:hover .arrow-bar-2{ transform: translate3d(11px, 4px, 0px) rotate(25deg);}
   
 .cd-vertical-nav {top: 50%;}
-
+.btn-back{    position: fixed;
+    top: 40px;
+    left: 7%;
+    width: 44px;
+    height: 44px;
+    background: white;
+    text-indent: 100%;
+    white-space: nowrap;
+    z-index: 10;}
 @media (min-width:768px){
   	.cd-vertical-nav {  
     	top: 50%; 
@@ -481,7 +489,7 @@ Main Components
 	.credential .box-content{ 
 		min-height: 490px;
 		padding-top: 50px;
-    	padding-bottom: 675px;
+    	padding-bottom: 125px;
 	}
   	.cd-vertical-nav {  
     	top: 50%;
