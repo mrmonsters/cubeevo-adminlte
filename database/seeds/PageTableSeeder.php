@@ -54,10 +54,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>灵活</h3>
 													<p>
-													形立方追求灵活，弹性，务必让合作过程更加灵活，只为达致客户最理想的成果。
+													形立方追求灵活，弹性，务必让合作过程更加灵活，<br/>只为达致客户最理想的成果。
 													</p>
 												</div> 
 											</div> 
@@ -77,7 +77,7 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>活力</h3>
 													<p>
 													形立方无时无刻都精力充沛，为企业带来正能量！
@@ -99,10 +99,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>破格</h3>
 													<p>
-													形立方在创业上不仅仅是大胆，还会打破框框，为客户打造专属形象！
+													形立方在创业上不仅仅是大胆，还会打破框框，<br/>为客户打造专属形象！
 													</p>
 												</div> 
 											</div> 
@@ -122,10 +122,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>美感</h3>
 													<p>
-													形立方的根本是创意设计，大前提必须是美感触觉，为客户建立完美形象！
+													形立方的根本是创意设计，大前提必须是美感触觉，<br/>为客户建立完美形象！
 													</p>
 												</div> 
 											</div> 
@@ -136,18 +136,19 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_LeftHand.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>创意</h3>
 													<p>
-													形立方的创意是一种天赋，精心打造独一无二的作品便是最大成就！
+													形立方的创意是一种天赋，精心打造独一无二的作品<br/>便是最大成就！
 													</p>
 												</div> 
 											</div> 
@@ -157,9 +158,9 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
-						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                <ul class="scene mascott green">   
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
 						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
@@ -167,10 +168,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
+												<div class="col-sm-push-5 col-sm-7">
 													<h3>贴心</h3>
 													<p>
-													形立方聆听客户声音，理解客户需求，务求和谐的合作关系，共创最好的作品！
+													形立方聆听客户声音，理解客户需求，务求和谐的<br/>合作关系，共创最好的作品！
 													</p>
 												</div> 
 											</div> 
@@ -299,8 +300,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_LeftHand.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li>
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -321,8 +323,8 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
 						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
