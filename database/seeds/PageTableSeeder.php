@@ -994,31 +994,31 @@ class PageTableSeeder extends Seeder
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>
-											请先在形立方的店,哦不,是形立方的网页,看看形立方的作品、服务以及评语。
+											请先在形立方的店, 哦不, 是形立方的网页, 看看形立方的<br/>作品、服务以及评语。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>02</span>
-											了解之后,给形立方打个电话,发邮件也行。
+											了解之后, 给形立方打个电话, 发邮件也行。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>03</span>
-											接下来就是形立方来了解你,你可以选择书面解释你的项目内容,或面谈也行。
+											接下来就是形立方来了解你, 你可以选择书面解释你的项目内容, 或面谈也行。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>04</span>
-											形立方不排斥竞标,但别期待投入的资源是最终作品品质,否则对现有客户不公平。
+											形立方不排斥竞标, 但别期待投入的资源是最终作品品质,<br/> 否则对现有客户不公平。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>05</span>
-											在确认合作之前,形立方会按项目任务作出报价单。
+											在确认合作之前, 形立方会按项目任务作出报价单。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>06</span>
-											当合作意愿敲定之后,双方会先签订合同,以示委托确认。
+											当合作意愿敲定之后, 双方会先签订合同, 以示委托确认。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>07</span>
-											客户需在答应委托的3个工作天后先支付50%预付金,形立方才会正式开工。
+											客户需在答应委托的3个工作天后先支付50%预付金,<br/> 形立方才会正式开工。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>08</span>
@@ -1026,19 +1026,19 @@ class PageTableSeeder extends Seeder
 										</div></div>
 										<div class="left"><div class="box">
 											<span>09</span>
-											支付预付金之后,客户会收到形立方的工作表,任务也会按时完成。
+											支付预付金之后, 客户会收到形立方的工作表, 任务也会按时完成。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>10</span>
-											在形立方[灵活]的特性之下,客户可以随时来电或发电邮提出任何想法。
+											在形立方[灵活]的特性之下, 客户可以随时来电或发电邮提出任何想法。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>11</span>
-											形立方会将所有作品储存为PDF或Ai不可改的文档,源文件为素材版权恕不交付。此为形立方最不灵活之处。
+											形立方会将所有作品储存为PDF或Ai不可改的文档, 源文件为素材版权恕不交付。此为形立方最不灵活之处。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>12</span>
-											更详细的流程,因人而异,欢迎找我们试试看,你会发现与众不同的合作体验。
+											更详细的流程,因人而异, 欢迎找我们试试看, 你会发现与众不同的合作体验。
 										</div></div>
 									</div>
 								</div>

@@ -23,7 +23,7 @@
         <div class="inner">
         
         	<div class="logo">
-            	<img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;">
+            	<a href="{{url('/')}}"><img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;"></a>
                 <img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob">
             </div>               
             

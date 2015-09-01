@@ -71,7 +71,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 	<div class="row contactdetails" style="position:relative;"> 
 		<div class="col-sm-11 col-sm-offset-1">
 			<div class="col-sm-5 nopadding">
-				<h4>CUBEevo Advertising Sdn. Bhd.<span class="p">(949017-T)</span></h4>
+				<h4>CUBEevo Advertising Sdn. Bhd. <span class="p">(949017-T)</span></h4>
 				<h4>形立方广告有限公司</h4>
 				<br/>
 				<h5>{{ $settings->where('code', 'address')->first()->value }}</h5>
