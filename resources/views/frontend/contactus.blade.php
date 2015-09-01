@@ -57,7 +57,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 			<div class="col-sm-10 col-sm-offset-1 text-center">
 				<br/> 
 				<br/> 
-				<a href="mailto:enquire@cubeevo.com" class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</a>
+				<button href="mailto:enquire@cubeevo.com" class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</button>
 				<br/>
 				<br/>
 				<br/>

@@ -62,7 +62,7 @@ class HomeController extends Controller {
 	{
 		$project = Project::find($projectId);
 
-		return view('frontend.project_content')->with('project', $project);
+		return view('frontend.project_content')->with('project', $project)->with('backbtn',URL::previous());
 	}
 
 	public function getCredentialProject($categoryId)

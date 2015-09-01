@@ -3,12 +3,11 @@
 
     @if(isset($backbtn))
     <a href="{{$backbtn}}" class="smart-object" style="position: fixed;
-    top: 20px;
+    top: 40px;
     left: 7%;
     width: 44px;
     height: 44px;
-    background: white;
-    border-radius: 0.25em; 
+    background: white; 
     text-indent: 100%;
     white-space: nowrap;
     z-index: 10;"> 
@@ -18,23 +17,22 @@
         </div>
     </a>
     @endif
-
+ 
 	<div id="cd-main-nav">
         <div class="inner">
         
         	<div class="logo">
             	<a href="{{url('/')}}"><img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;"></a>
                 <img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob">
-            </div>               
-            
+            </div>                
     		<ul class="list-unstyled">
-    			<li><a href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
-    			<li><a href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
-    			<li><a href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
-    			<li><a href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
-    			<li><a href="{{ url('/research') }}" class="hide">{{ (Session::get('locale') == 'en') ? 'RESEARCH' : '品牌洞察' }}</a></li>
-                <li><a href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a></li>
-                <li><a href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/')) active @endif " href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/about-us')) active @endif " href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/credential')) active @endif " href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/solution')) active @endif " href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/research')) active @endif " href="{{ url('/research') }}" class="hide">{{ (Session::get('locale') == 'en') ? 'RESEARCH' : '品牌洞察' }}</a></li>
+                <li><a class="@if(Request::url() === url('/process')) active @endif " href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a></li>
+                <li><a class="@if(Request::url() === url('/contact-us')) active @endif " href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a></li>
                 <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             

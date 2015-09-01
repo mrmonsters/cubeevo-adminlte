@@ -72,14 +72,18 @@ a {
 Main Components 
 
 -------------------------------- */
-
+#cd-nav{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
 #cd-main-nav {
   /* mobile first */
   position: fixed;
   width: 90%;
   max-width: 260px;
-  height: 98.5%;
-  left: 0.7%;
+  height: 100%;
+  left: 0%;
   top: 0px;
   color:#fff;
   font-size:14px;
@@ -188,6 +192,7 @@ Main Components
   border-bottom: 1px solid #eff2f6;
   color:#ffffff;
 }
+#cd-nav li a.active{color:#f7941a;}
 #cd-nav li a:hover, #cd-nav li a:active, #cd-nav li a.selected {
 	color:#f7941e;
 }
@@ -197,9 +202,7 @@ Main Components
 }
 
 .cd-nav-trigger {
-  position: fixed;
-  top: 5%;
-  left: 3%;
+  position: fixed; 
   width: 44px;
   height: 44px;
   background: white; 
