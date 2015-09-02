@@ -24,7 +24,7 @@ $(document).ready(function() {
             $('.scene.orange').removeClass('animated fadeOut').addClass('animated slideInRight');
           } 
           if(index == 3){ 
-            $('.scene.yellow').removeClass('animated fadeOut').addClass('animated bounceInUp');
+            $('.scene.yellow').removeClass('animated fadeOut').addClass('animated slideInUp');
           } 
           if(index == 4){ 
             $('.scene.red').removeClass('animated fadeOut').addClass('animated fadeInRight');
@@ -59,7 +59,7 @@ $(document).ready(function() {
             $('.scene.orange').removeClass('animated slideInRight').addClass('animated fadeOut');
           }
           if(index == 3){  
-            $('.scene.yellow').removeClass('animated bounceInUp').addClass('animated fadeOut');
+            $('.scene.yellow').removeClass('animated slideInUp').addClass('animated fadeOut');
           }
           if(index == 4){  
             $('.scene.red').removeClass('animated fadeInRight').addClass('animated fadeOut');
