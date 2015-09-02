@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBlocksTable extends Migration {
+class CreateProjectBlocksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class CreateBlocksTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::dropIfExists('blocks');
+		Schema::dropIfExists('project_blocks');
 
-		Schema::create('blocks', function(Blueprint $table)
+		Schema::create('project_blocks', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('project_id')->unsigned(true);
@@ -36,7 +36,7 @@ class CreateBlocksTable extends Migration {
 	public function down()
 	{
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('blocks');
+		Schema::drop('project_blocks');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

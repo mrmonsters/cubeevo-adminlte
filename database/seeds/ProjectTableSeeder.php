@@ -1285,7 +1285,6 @@ class ProjectTableSeeder extends Seeder
 				$projTranslation->background  = $val['background'];
 				$projTranslation->challenge   = $val['challenge'];
 				$projTranslation->result      = $val['result'];
-				$projTranslation->founder     = 'Jerry Young';
 				$projTranslation->client_name = $val['client_name'];
 				$projTranslation->save();
 			}
@@ -1301,12 +1300,22 @@ class ProjectTableSeeder extends Seeder
 
 		for ($i = 0; $i < $count; $i++)
 		{
+			/*
 			$projFile = New ProjectFile;
 			$projFile->project_id = $projectId;
 			$projFile->img_id     = ++$lastFileId;
 			$projFile->sort_order = $cnt++;
 			$projFile->save();
+			*/
+			$block = new Block;
+			$block->project_id = $projectId;
+			$block->type = Block::IMAGE;
+			$block->value = ++$lastFileId;
+			$block->sort_order = $cnt++;
+			$block->save();
 		}
+
+
 
 		return $lastFileId;
 	}

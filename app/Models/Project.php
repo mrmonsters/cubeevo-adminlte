@@ -11,9 +11,9 @@ class Project extends Model implements TranslatableContract {
 
 	protected $table                = 'projects';
 	protected $primaryKey           = 'id';
-	protected $fillable             = ['name', 'desc', 'founder', 'client_name', 'grid_img_id', 'grid_bg_img_id', 'brand_img_id', 'pri_color_code', 'sec_color_code', 'txt_color_code', 'year', 'sort_order', 'status'];
+	protected $fillable             = ['name', 'background', 'challenge', 'result', 'sub_heading', 'client_name', 'web_link', 'grid_img_id', 'grid_bg_img_id', 'brand_img_id', 'pri_color_code', 'sec_color_code', 'txt_color_code', 'year', 'sort_order', 'status'];
 	protected $translator           = 'App\Models\ProjectTranslation';
-	protected $translatedAttributes = ['name', 'desc', 'founder', 'client_name'];
+	protected $translatedAttributes = ['name', 'background', 'challenge', 'result', 'sub_heading', 'client_name'];
 
 	public function backgroundImage()
 	{

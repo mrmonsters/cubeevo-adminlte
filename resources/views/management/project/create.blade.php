@@ -64,12 +64,12 @@ Description for project management
 										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
 									</div>
 									<div class="form-group">
-										<label for="founder" class="control-label">Founder</label>
-										<input id="founder" name="founder[{{ $locale->id }}]" type="text" class="form-control" />
-									</div>
-									<div class="form-group">
 										<label for="client_name" class="control-label">Client Name</label>
 										<input id="client_name" name="client_name[{{ $locale->id }}]" type="text" class="form-control" />
+									</div>
+									<div class="form-group">
+										<label for="sub_heading" class="control-label">Sub Heading</label>
+										<input id="sub_heading" name="sub_heading[{{ $locale->id }}]" type="text" class="form-control" />
 									</div>
 								</div>
 							@endforeach
@@ -85,12 +85,12 @@ Description for project management
 						</select>
 					</div>
 					<div class="form-group">
-						<label for="year" class="control-label">Year</label>
-						<input id="year" name="year" type="text" class="form-control" />
+						<label for="web_link" class="control-label">Website Link</label>
+						<input id="web_link" name="web_link" type="text" class="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="img_ids" class="control-label">Banners</label>
-						<input id="img_ids" name="img_ids" type="text" class="form-control" />
+						<label for="year" class="control-label">Year</label>
+						<input id="year" name="year" type="text" class="form-control" />
 					</div>
 					<div class="form-group">
 						<label for="pri_color_code" class="control-label">Primary Color</label>
@@ -157,6 +157,28 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="brand_img_id" name="brand_img_id" />
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img id="mascott_img" class="img-thumbnail" src="" alt="">
+								<div class="caption" style="text-align: center;">
+									<p><strong>Mascott Image</strong></p>
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')">Use Existing</a>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="mascott_img_id" name="mascott_img_id" />
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img id="video_img" class="img-thumbnail" src="" alt="">
+								<div class="caption" style="text-align: center;">
+									<p><strong>Video Image</strong></p>
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-video-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('video_img_id')">Use Existing</a>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="video_img_id" name="video_img_id" />
 						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
@@ -240,6 +262,46 @@ Description for project management
 								<div class="form-group">
 									<label for="new_brand_img_id" class="control-label">New Brand Image</label>
 									<input type="file" class="form-control" id="new_brand_img_id" name="new_brand_img_id" />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Mascott Image - Modal -->
+				<div class="modal fade" id="modal-mascott-img" tabindex="-1" role="dialog" aria-labelledby="modal-mascott-img">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="modal">Upload new mascott image</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="new_mascott_img_id" class="control-label">New Mascott Image</label>
+									<input type="file" class="form-control" id="new_mascott_img_id" name="new_mascott_img_id" />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Video Image - Modal -->
+				<div class="modal fade" id="modal-video-img" tabindex="-1" role="dialog" aria-labelledby="modal-video-img">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="modal">Upload new video image</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="new_video_img_id" class="control-label">New Video Image</label>
+									<input type="file" class="form-control" id="new_video_img_id" name="new_video_img_id" />
 								</div>
 							</div>
 							<div class="modal-footer">
@@ -435,9 +497,9 @@ function setImgSortOrder(field)
 	$('#' + field).val(sortOrder.join(','));
 }
 
-function addProjectImg()
+function addProjectImg(cnt)
 {
-	$('.new_project_img:last').clone().appendTo('#new_project_img_container');
+	$('.new_project_img:last').clone().appendTo('#new_project_img_container_'+cnt);
 }
 
 function prepareModal(img, sort)
@@ -478,26 +540,46 @@ function addBlock()
 		+ '<div class="form-group">'
 		+ '<label for="block-type" class="control-label">Type</label>'
 		+ '<select id="block-type" class="form-control block-type" name="block[type][]" onchange="toggleInput('+count+', this)">'
-		+ '	<option value="img">Single Image</option>'
-		+ '	<option value="vid">Video</option>'
-		+ '	<option value="gal">Gallery</option>'
+		+ '<option value="img">Single Image</option>'
+		+ '<option value="vid">Video</option>'
+		+ '<option value="gal">Gallery</option>'
 		+ '</select>'
 		+ '</div>'
 		+ '<div class="form-group">'
-		+ '	<label for="block-value-'+count+'" class="control-label">Value</label>'
-		+ ' <div class="input-group">'
-		+ '	<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" readonly />'
-		+ ' <input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
-		+ ' <span class="input-group-btn">'
-		+ ' <button type="button" id="btn-upload-'+count+'" class="btn btn-primary">Upload</button>'
-		+ ' <button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
-		+ ' </span>'
-		+ ' </div>'
+		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
+		+ '<div class="input-group">'
+		+ '<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" readonly />'
+		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
+		+ '<span class="input-group-btn">'
+		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
+		+ '</span>'
+		+ '</div>'
 		+ '</div>'
 		+ '<div class="form-group">'
-		+ '	<label for="block-sort" class="control-label">Sort Order</label>'
-		+ '	<input type="text" class="form-control" name="block[sort][]" />'
-		+ '</div><hr />';
+		+ '<label for="block-sort" class="control-label">Sort Order</label>'
+		+ '<input type="text" class="form-control" name="block[sort][]" />'
+		+ '</div><hr />'
+		+ '<div class="modal fade" id="modal-new-project-img-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">'
+		+ '<div class="modal-dialog" role="document">'
+		+ '<div class="modal-content">'
+		+ '<div class="modal-header">'
+		+ '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+		+ '<h4 class="modal-title" id="modal">Upload new project images</h4>'
+		+ '</div>'
+		+ '<div class="modal-body">'
+		+ '<div class="form-group" id="new_project_img_container_'+count+'">'
+		+ '<label for="new_project_img_id" class="control-label">New Project Image</label>'
+		+ '<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id['+count+'][]" />'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal-footer">'
+		+ '<button type="button" class="btn btn-default" onclick="addProjectImg('+count+')">Add More</button>'
+		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>';
 	$('#block-box-body').append(blockInput);
 }
 

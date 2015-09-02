@@ -1,4 +1,5 @@
 @extends('partials.frontend.app')
+<?php use App\Models\Block; ?>
 
 @section('frontend-content')
 <div class="container-fluid credential">
@@ -66,13 +67,14 @@
             </div>
         </div>
     </div> 
-    @include('partials.frontend.carousel')
-    @foreach ($project->projectImages()->orderBy('sort_order')->get() as $image)
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ $image->image->dir }}" width="100%">
-        </div>
-    </div>
+    @foreach ($project->blocks()->orderBy('sort_order')->get() as $block)
+    @if ($block->type == Block::IMAGE)
+        @include('partials.frontend.image')
+    @elseif ($block->type == Block::GALLERY)
+        @include('partials.frontend.carousel')
+    @elseif ($block->type == Block::VIDEO)
+        @include('partials.frontend.video')
+    @endif
     @endforeach
 </div> 
 @endsection

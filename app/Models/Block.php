@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Block extends Model {
 
 	//
-	protected $table = 'blocks';
+	protected $table = 'project_blocks';
 	protected $fillable = ['project_id', 'type', 'value', 'sort_order', 'status', 'delete'];
 
 	const IMAGE   = 'img';

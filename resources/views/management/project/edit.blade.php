@@ -79,6 +79,10 @@ Description for project management
 										<label for="client_name" class="control-label">Client Name</label>
 										<input id="client_name" name="client_name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->client_name }}" />
 									</div>
+									<div class="form-group">
+										<label for="sub_heading" class="control-label">Sub Heading</label>
+										<input id="sub_heading" name="sub_heading[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->sub_heading }}" />
+									</div>
 								</div>
 							@endforeach
 						@endif
@@ -93,15 +97,13 @@ Description for project management
 						</select>
 					</div>
 					<div class="form-group">
+						<label for="web_link" class="control-label">Website Link</label>
+						<input id="web_link" name="web_link" type="text" class="form-control" value="{{ $project->web_link }}" />
+					</div>
+					<div class="form-group">
 						<label for="year" class="control-label">Year</label>
 						<input id="year" name="year" type="text" class="form-control" value="{{ $project->year }}" />
 					</div>
-					<!--
-					<div class="form-group">
-						<label for="img_ids" class="control-label">Banners</label>
-						<input id="img_ids" name="img_ids" type="text" class="form-control" value="" />
-					</div>
-					-->
 					<div class="row"> 
 						<div class="form-group col-sm-4">
 							<label for="pri_color_code" class="control-label">Primary Color</label>

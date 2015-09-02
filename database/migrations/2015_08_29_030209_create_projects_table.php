@@ -26,9 +26,14 @@ class CreateProjectsTable extends Migration {
 			$table->foreign('grid_bg_img_id')->references('id')->on('files');
 			$table->integer('brand_img_id')->unsigned(true);
 			$table->foreign('brand_img_id')->references('id')->on('files');
+			$table->integer('mascott_img_id')->unsigned(true)->nullable(true);
+			$table->foreign('mascott_img_id')->references('id')->on('files');
+			$table->integer('video_img_id')->unsigned(true)->nullable(true);
+			$table->foreign('video_img_id')->references('id')->on('files');
 			$table->string('pri_color_code');
 			$table->string('sec_color_code');
 			$table->string('txt_color_code');
+			$table->string('web_link');
 			$table->string('year');
 			$table->integer('sort_order');
 			$table->integer('status')->default(2);
