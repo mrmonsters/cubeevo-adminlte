@@ -9,8 +9,7 @@ $(document).ready(function() {
 	});
 
 	if($('#fullpage').length > 0){ 
-    $('#fullpage').fullpage({
-      sectionsColor: ['#efefef', '#f7941e', '#eee80a', '#f04e58', '#8f53a1', '#27bdbe', '#45b97c'],
+    $('#fullpage').fullpage({ 
       afterLoad :  function(anchorLink, index){
           var loadedSection = $(this); 
           //using index
@@ -20,7 +19,7 @@ $(document).ready(function() {
             $('.cd-prev').parent().removeClass('hide');
           }
           if(index == 2){ 
-            $('.scene.orange').removeClass('animated lightSpeedIn').addClass('animated lightSpeedIn');
+            $('.scene.orange').removeClass('animated lightSpeedOut').addClass('animated lightSpeedIn');
           } 
           if(index == 3){ 
             $('.scene.yellow').removeClass('animated bounceOutDown').addClass('animated bounceInUp');
@@ -64,7 +63,7 @@ $(document).ready(function() {
       }
     });
   }
-  
+
   var superman = $('.yellow.mascott');
   function fly() { 
      superman.animate({top:'+=20'}, 1000);
