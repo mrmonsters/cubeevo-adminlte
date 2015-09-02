@@ -401,14 +401,14 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>使命</h2>
 										<h1 class="tagline text-center">“激活品牌, &nbsp;展现完美。”</h1>
 										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, 为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -62%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -416,7 +416,7 @@ class PageTableSeeder extends Seeder
 								<div class="col-sm-10 col-sm-offset-1 text-center">
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-05.png" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
@@ -424,7 +424,7 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-4 col-sm-4 nopadding">
 												<p style="margin-left: -25px;">品牌形象策划<br>
@@ -714,14 +714,14 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>MISSION</h2>
 										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
 										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -62%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -729,7 +729,7 @@ class PageTableSeeder extends Seeder
 								<div class="col-sm-10 col-sm-offset-1 text-center">
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-11.png" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
@@ -737,7 +737,7 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-12 col-sm-4 nopadding">
 												<p class="text-left">Branding Strategy<br>
