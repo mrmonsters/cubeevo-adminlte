@@ -19,19 +19,19 @@ $(document).ready(function() {
             $('.cd-prev').parent().removeClass('hide');
           }
           if(index == 2){ 
-            $('.scene.orange').removeClass('animated slideOutRight').addClass('animated slideInRight');
+            $('.scene.orange').removeClass('animated fadeOut').addClass('animated slideInRight');
           } 
           if(index == 3){ 
-            $('.scene.yellow').removeClass('animated bounceOutDown').addClass('animated bounceInUp');
+            $('.scene.yellow').removeClass('animated fadeOut').addClass('animated bounceInUp');
           } 
           if(index == 4){ 
-            $('.scene.red').removeClass('animated fadeOutLeft').addClass('animated fadeInRight');
+            $('.scene.red').removeClass('animated fadeOut').addClass('animated fadeInRight');
           } 
           if(index == 5){ 
-            $('.scene.purple').removeClass('animated zoomOutUp').addClass('animated zoomInDown');
+            $('.scene.purple').removeClass('animated fadeOut').addClass('animated zoomInDown');
           }  
           if(index == 6){ 
-            $('.scene.blue').removeClass('animated slideOutRight').addClass('animated slideInRight');
+            $('.scene.blue').removeClass('animated fadeOut').addClass('animated slideInRight');
           }  
           //using index
           if(index == 7){ 
