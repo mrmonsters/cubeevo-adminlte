@@ -75,7 +75,9 @@ $(document).ready(function() {
       }
     });
   }
-
+  
+  $('#fullpage').fullpage.reBuild();
+  
   var superman = $('.yellow.mascott');
   function fly() { 
      superman.animate({top:'+=20'}, 1000);
