@@ -185,7 +185,7 @@ class PageTableSeeder extends Seeder
 						'desc'    => 'Home page.',
 						'content' => '<div class="content-wrapper__fixed"></div>
 							<div id="fullpage">
-								<div class="section" id="section0">
+								<div class="section en" id="section0">
 									<div class="col-md-6 maincol-right"> 
 										<ul class="scene visible-xs-block">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>

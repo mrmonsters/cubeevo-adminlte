@@ -28,7 +28,7 @@
                 <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             
-            <div>   
+            <div class="social-block">   
                 <div class="cd-social">
                     <ul class="list-inline">
                         <?php use App\Models\Setting; ?>
