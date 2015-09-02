@@ -19,7 +19,7 @@ $(document).ready(function() {
             $('.cd-prev').parent().removeClass('hide');
           }
           if(index == 2){ 
-            $('.scene.orange').removeClass('animated lightSpeedOut').addClass('animated lightSpeedIn');
+            $('.scene.orange').removeClass('animated slideOutRight').addClass('animated slideInRight');
           } 
           if(index == 3){ 
             $('.scene.yellow').removeClass('animated bounceOutDown').addClass('animated bounceInUp');
@@ -43,7 +43,7 @@ $(document).ready(function() {
       },
       onLeave: function(index, nextIndex, direction){  
           if(index == 2){  
-            $('.scene.orange').removeClass('animated lightSpeedIn').addClass('animated lightSpeedOut');
+            $('.scene.orange').removeClass('animated slideInRight').addClass('animated slideOutRight');
           }
           if(index == 3){  
             $('.scene.yellow').removeClass('animated bounceInUp').addClass('animated bounceOutDown');
