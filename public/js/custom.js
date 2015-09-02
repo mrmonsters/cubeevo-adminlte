@@ -43,22 +43,22 @@ $(document).ready(function() {
       },
       onLeave: function(index, nextIndex, direction){  
           if(index == 2){  
-            $('.scene.orange').removeClass('animated slideInRight').addClass('animated slideOutRight');
+            $('.scene.orange').removeClass('animated slideInRight');
           }
           if(index == 3){  
-            $('.scene.yellow').removeClass('animated bounceInUp').addClass('animated bounceOutDown');
+            $('.scene.yellow').removeClass('animated bounceInUp');
           }
           if(index == 4){  
-            $('.scene.red').removeClass('animated fadeInRight').addClass('animated fadeOutLeft');
+            $('.scene.red').removeClass('animated fadeInRight');
           }
           if(index == 5){  
-            $('.scene.purple').removeClass('animated zoomInDown').addClass('animated zoomOutUp');
+            $('.scene.purple').removeClass('animated zoomInDown');
           }
           if(index == 6){  
-            $('.scene.blue').removeClass('animated slideInRight').addClass('animated slideOutRight');
+            $('.scene.blue').removeClass('animated slideInRight');
           } 
           if(index == 7){  
-            $('.scene.green').removeClass('animated fadeIn').addClass('animated fadeOut');
+            $('.scene.green').removeClass('animated fadeIn');
           } 
       }
     });
