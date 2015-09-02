@@ -113,9 +113,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer cube" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
 						                </ul>
 									</div>
 									<div class="col-md-6 maincol-left clearfix">
@@ -159,9 +159,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">   
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -277,9 +277,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer cube" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
 						                </ul>
 									</div>
 									<div class="col-md-6 maincol-left clearfix">
@@ -323,9 +323,9 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">

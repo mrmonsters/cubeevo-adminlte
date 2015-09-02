@@ -28,14 +28,24 @@ $(document).ready(function() {
             $('.scene.red').removeClass('animated fadeOut').addClass('animated fadeInRight');
           } 
           if(index == 5){ 
-            $('.scene.purple').removeClass('animated fadeOut').addClass('animated zoomInDown');
+            $('.scene.purple .body').removeClass('animated fadeOut').addClass('animated zoomInDown');
+            $('.scene.purple .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
+              setTimeout(function () {
+                $('.scene.purple .cube').removeClass('animated fadeOut').addClass('animated bounceInDown');
+              }, 1000
+            ));
           }  
           if(index == 6){ 
             $('.scene.blue').removeClass('animated fadeOut').addClass('animated slideInRight');
           }  
           //using index
           if(index == 7){ 
-            $('.scene.green').removeClass('animated fadeOut').addClass('animated fadeIn');
+            $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn'); 
+            $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
+              setTimeout(function () {
+                $('.scene.green .plant').removeClass('animated fadeOut').addClass('animated fadeInUp');
+              }, 1000
+            ));
             $('.cd-next').parent().addClass('hide');
           }else{ 
             $('.cd-next').parent().removeClass('hide');
@@ -52,13 +62,15 @@ $(document).ready(function() {
             $('.scene.red').removeClass('animated fadeInRight').addClass('animated fadeOut');
           }
           if(index == 5){  
-            $('.scene.purple').removeClass('animated zoomInDown').addClass('animated fadeOut');
+            $('.scene.purple .body').removeClass('animated zoomInDown').addClass('animated fadeOut');
+            $('.scene.purple .cube').removeClass('animated bounceInDown').addClass('animated fadeOut');
           }
           if(index == 6){  
             $('.scene.blue').removeClass('animated slideInRight').addClass('animated fadeOut');
           } 
           if(index == 7){  
-            $('.scene.green').removeClass('animated fadeIn').addClass('animated fadeOut');
+            $('.scene.green .body').removeClass('animated fadeIn').addClass('animated fadeOut');
+            $('.scene.green .plant').removeClass('animated fadeInUp').addClass('animated fadeOut');
           } 
       }
     });
@@ -92,21 +104,7 @@ $(document).ready(function() {
        cube.animate({top:'+=20'}, 1000);
        cube.animate({top:'-=20'}, 1000, runIt);
    	} 
-    runIt();
-/*
-  	$('#light').sprite({fps: 9, no_of_frames: 16});
-  	$('#orangemascott').sprite({fps: 9, no_of_frames: 10}); 
-
-  	$('#yellowmascott').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#redmascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#knife').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#bluemascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#blink').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#greenmascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#bird').sprite({fps: 9, no_of_frames: 10});*/
+    runIt(); 
 
   if($('.cd-background-wrapper').length){
         //check media query
