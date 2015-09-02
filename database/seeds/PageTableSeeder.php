@@ -19,7 +19,11 @@ class PageTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'desc'    => 'Home page.',
-						'content' => '<div class="content-wrapper__fixed"></div>
+						'content' => ' 
+						<div class="content-wrapper__fixed">
+							<div class="home-content"> 
+							</div>
+						</div>
 							<div id="fullpage">
 								<div class="section" id="section0">
 									<div class="col-md-6 maincol-right"> 
@@ -183,7 +187,10 @@ class PageTableSeeder extends Seeder
 					),
 					'en' => array(
 						'desc'    => 'Home page.',
-						'content' => '<div class="content-wrapper__fixed"></div>
+						'content' => ' 
+							<div class="content-wrapper__fixed">
+								<div class="home-content"></div>
+							</div>
 							<div id="fullpage">
 								<div class="section en" id="section0">
 									<div class="col-md-6 maincol-right"> 

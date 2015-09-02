@@ -12,6 +12,8 @@ $(document).ready(function() {
     $('#fullpage').fullpage({ 
       afterLoad :  function(anchorLink, index){
           var loadedSection = $(this); 
+          var contentSection = loadedSection.find('.content-section').html(); 
+          $('.home-content').html('').removeClass('animated fadeOutUp').append(contentSection).addClass('animated fadeInUp'); 
           //using index
           if(index == 1){ 
             $('.cd-prev').parent().addClass('hide');
@@ -52,6 +54,7 @@ $(document).ready(function() {
           }
       },
       onLeave: function(index, nextIndex, direction){  
+          $('.home-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
           if(index == 2){  
             $('.scene.orange').removeClass('animated slideInRight').addClass('animated fadeOut');
           }
