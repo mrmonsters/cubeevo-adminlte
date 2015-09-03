@@ -12,6 +12,7 @@ use App\Models\Project;
 use App\Models\Solution;
 use App\Models\Message;
 use App\Models\Setting;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller {
 
@@ -109,8 +110,7 @@ class HomeController extends Controller {
 
 	public function submitMessage(Request $req)
 	{
-		$data = $req->input();
-
+		$data = $req->input(); 
 		if (isset($data) && !empty($data))
 		{
 			$message = array();
@@ -119,13 +119,14 @@ class HomeController extends Controller {
 			$message['email']   = $data['email'];
 			$message['subject'] = $data['subject'];
 			$message['content'] = $data['content'];
-			Message::create($message);
+			$return = Message::create($message);
 
 			$email = Setting::where('code', '=', 'email')->first();
 
 			if (isset($email) && isset($email->value) && $email->value != '')
 			{
-				mail($email->value, $data['subject'], $data['content']);
+				$result = mail($email->value, $data['subject'], $data['content']);
+				return Redirect::back();
 			}
 		}
 	}

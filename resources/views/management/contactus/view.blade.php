@@ -45,7 +45,7 @@ Description for contact us management
 			<div class="box-footer clearfix">
 				<div class="pull-right">
 					<a href="{{ url('/admin/manage/message/') }}" class="btn btn-default">Cancel</a>
-					<a href="{{ url('/admin/manage/message/destroy/' . $file->id) }}" class="btn btn-danger">Delete</a>
+					<a href="{{ url('/admin/manage/message/destroy/' . $message->id) }}" class="btn btn-danger">Delete</a>
 				</div>
 			</div>
 		</div>
