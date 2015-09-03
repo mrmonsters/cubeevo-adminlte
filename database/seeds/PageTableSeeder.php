@@ -1001,7 +1001,7 @@ class PageTableSeeder extends Seeder
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>
-											请先在形立方的店, 哦不, 是形立方的网页, 看看形立方的<br/>作品、服务以及评语。
+											请先在形立方的店, 哦不, 是形立方的网页, 看看形立方的<br class="hidden-xs"/>作品、服务以及评语。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>02</span>
@@ -1013,7 +1013,7 @@ class PageTableSeeder extends Seeder
 										</div></div>
 										<div class="right"><div class="box">
 											<span>04</span>
-											形立方不排斥竞标, 但别期待投入的资源是最终作品品质,<br/> 否则对现有客户不公平。
+											形立方不排斥竞标, 但别期待投入的资源是最终作品品质,<br class="hidden-xs"/> 否则对现有客户不公平。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>05</span>
@@ -1025,7 +1025,7 @@ class PageTableSeeder extends Seeder
 										</div></div>
 										<div class="left"><div class="box">
 											<span>07</span>
-											客户需在答应委托的3个工作天后先支付50%预付金,<br/> 形立方才会正式开工。
+											客户需在答应委托的3个工作天后先支付50%预付金,<br class="hidden-xs"/> 形立方才会正式开工。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>08</span>
