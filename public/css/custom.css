@@ -146,7 +146,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   margin-top: 10%;
 }
 #fullpage .content-wrapper .row{padding: 0px 10px;} 
-#fullpage .content-wrapper .row h3{ margin: 10px 0px 0px 0px;}
+#fullpage .content-wrapper .row h3{ margin: 10px 0px 10px 0px;}
 .content-wrapper__fixed{ 
 	position: fixed;
 	margin: 0.8%;
@@ -451,15 +451,57 @@ Main Components
   position: relative;
 }
 
-.smart-transition{-webkit-transition: width  0.5s, height  0.5s, background-color  0.5s, -webkit-transform  0.5s;
-    transition: width 0.5s, height  0.5s, background-color  0.5s, transform  0.5s;}
+.smart-transition{
+  -webkit-transition: width  0.5s, height  0.5s, background-color  0.5s, -webkit-transform  0.5s;
+  -moz-transition: width  0.5s, height  0.5s, background-color  0.5s, -moz-transform  0.5s;
+  -o-transition: width  0.5s, height  0.5s, background-color  0.5s, -o-transform  0.5s;
+  -ms-transition: width  0.5s, height  0.5s, background-color  0.5s, -ms-transform  0.5s;
+  transition: width 0.5s, height  0.5s, background-color  0.5s, transform  0.5s;
+}
 .arrow{position: absolute; transform-style: flat; backface-visibility: hidden;width: 24px; height: 11px; pointer-events: none;}
-.arrow-left{transform: translate3d(10px, 18px, 0px) rotate(-90deg); }
-.arrow-down{transform: translate3d(11px, 18px, 0px) rotate(180deg);}
-.arrow-bar-1 { transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);}
-.arrow-bar-2{transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);}
-.smart-object:hover .arrow-bar-1{transform: translate3d(-2px, 5px, 0px) rotate(-25deg);}
-.smart-object:hover .arrow-bar-2{ transform: translate3d(11px, 4px, 0px) rotate(25deg);} 
+.arrow-left{
+  transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+  -webkit-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+  -moz-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+  -o-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+  -ms-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+}
+.arrow-down{
+  transform: translate3d(11px, 18px, 0px) rotate(180deg);
+  -webkit-transform: translate3d(11px, 18px, 0px) rotate(180deg);
+  -moz-transform: translate3d(11px, 18px, 0px) rotate(180deg);
+  -o-transform: translate3d(11px, 18px, 0px) rotate(180deg);
+  -ms-transform: translate3d(11px, 18px, 0px) rotate(180deg);
+}
+.arrow-bar-1 { 
+  transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -webkit-transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -moz-transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -o-transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -ms-transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  transform: translate3d(-1px, 5px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+}
+.arrow-bar-2{
+  transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -webkit-transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -moz-transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -o-transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+  -ms-transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(0, 0, 0);
+}
+.smart-object:hover .arrow-bar-1{
+  transform: translate3d(-2px, 5px, 0px) rotate(-25deg);
+  -webkit-transform: translate3d(-2px, 5px, 0px) rotate(-25deg);
+  -moz-transform: translate3d(-2px, 5px, 0px) rotate(-25deg);
+  -o-transform: translate3d(-2px, 5px, 0px) rotate(-25deg);
+  -mstransform: translate3d(-2px, 5px, 0px) rotate(-25deg);
+}
+.smart-object:hover .arrow-bar-2{ 
+  transform: translate3d(11px, 4px, 0px) rotate(25deg);
+  -webkit-transform: translate3d(11px, 4px, 0px) rotate(25deg);
+  -moz-transform: translate3d(11px, 4px, 0px) rotate(25deg);
+  -o-transform: translate3d(11px, 4px, 0px) rotate(25deg);
+  -mstransform: translate3d(11px, 4px, 0px) rotate(25deg);
+} 
 .cd-vertical-nav {top: 50%;}
 .btn-back{    position: fixed;
     top: 40px;
