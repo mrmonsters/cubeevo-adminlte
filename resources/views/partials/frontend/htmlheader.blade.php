@@ -11,6 +11,9 @@
     <style type="text/css">
       body{
         font-family: "Conv_DINNextLTPro-Light", sans-serif;
+      } 
+      b{
+        font-family: "Conv_DINNextLTPro-Bold", sans-serif;
       }
     </style>
     @endif 
