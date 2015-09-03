@@ -3,7 +3,7 @@
 	@include('partials.frontend.htmlheader')
 
 	<body>
-		<div class="blanket" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999; background-color: #5c5756;">
+		<div class="blanket" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999; background-color: #676464;">
 	    <div class="loader" style="position: absolute;
 		    top: 50%;
 		    left: 50%;
@@ -15,7 +15,7 @@
 		    animation-timing-function: ease;
 		    -webkit-animation: spin 1.5s infinite linear;
 		    -webkit-animation-timing-function: ease;">
-		    <img src="{{ url('/img/Programmer Needs-06.png')}}">
+		    <img src="{{ url('/img/LoaderIcon.png')}}" width="100%">
 		</div>
 		</div>
 		<!-- Navigation -->
