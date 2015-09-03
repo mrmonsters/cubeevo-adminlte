@@ -36,14 +36,39 @@
             @if (($count % 3 == 0) || ($count == $categories->count())) 
             @endif
         @endforeach
-        <div id='cre-box' class="js-three-d cre-box col-sm-6 col-lg-4" style="background:red">
-            <div style="position:absolute;right:2%;bottom:3%">
-             <p class="text-white">We have proven our worthiness.</p>
-             <p class="text-white">Work with us.</p>
-             <p class="text-white">Together we shall create masterpieces.</p>
-             <small>Please Contact</small> 
-             </div>
-        </div>
+
+        @if($count % 3 != 0)
+            <?php
+            $leftoutclass = 3 - ($count % 3) ;
+            switch ($leftoutclass) {
+                case '1':
+                    # code...
+                    $class = 'cre-box hidden-xs hidden-sm col-sm-6 col-lg-4';
+                    break;
+
+                case '2':
+                    # code...
+                    $class = 'cre-box hidden-xs col-sm-6 col-lg-8';
+                    break; 
+            }
+            ?>
+
+            <div id='cre-box' class="{{$class}}">
+                <div style="position:absolute;right:5%;bottom:0;padding-bottom:5%;">
+                @if(Session::get('locale') == 'en') 
+                 <p class="text-white">We have proven our worthiness.<br/>Work with us.<br/>Together we shall create masterpieces.</p>
+                 <small>Please Contact</small> 
+                 @else
+                 <p class="text-white">希望这些作品能提高您对我们的信心<br/>更多的精彩作品，只待您跟我们一同完成，<br/>欢迎前来咨询</p>
+                 <small class="text-white">请联络</small> 
+                 @endif
+                 <br/>
+                 <a href="tel:+60390109882" class="text-orange">+603 9010 9882</a><br/>
+                 <a href="mailto:enquire@cubeevo.com" class="text-orange">enquire@cubeevo.com</a>
+                 </div>
+            </div>
+        @endif
+
         <?php echo '</div>'; ?>
 
     @endif
