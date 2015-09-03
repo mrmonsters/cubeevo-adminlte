@@ -15,7 +15,17 @@
 		    animation-timing-function: ease;
 		    -webkit-animation: spin 1.5s infinite linear;
 		    -webkit-animation-timing-function: ease;">
-		    <img src="{{ url('/img/LoaderIcon.png')}}" width="100%">
+		    <div class="loader">
+			  <div class="square" ></div>
+			  <div class="square"></div>
+			  <div class="square last"></div>
+			  <div class="square clear"></div>
+			  <div class="square"></div>
+			  <div class="square last"></div>
+			  <div class="square clear"></div>
+			  <div class="square "></div>
+			  <div class="square last"></div>
+			</div> 
 		</div>
 		</div>
 		<!-- Navigation -->

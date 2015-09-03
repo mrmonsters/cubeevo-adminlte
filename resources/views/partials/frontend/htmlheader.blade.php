@@ -6,6 +6,7 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 	 <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <!--<link rel="stylesheet" href="css/reset.css"> --> 
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
     @if(Session::get('locale') == 'en') 
     <style type="text/css">
@@ -19,7 +20,7 @@
     @endif 
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
-    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- Custom style -->
 	<script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
   	
