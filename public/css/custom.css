@@ -299,11 +299,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;} 
 .contactus ul { list-style:none; padding:0; overflow:hidden;}
 .contactus li {padding-left:26px;}
-.contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;} 
-.contactus .phone {background:url(../img/Images-19.png) no-repeat 0px -205px;}
-.contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -283px;}
-.contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -245px;}
-.contactus .handphone {background:url(../img/Images-19.png) no-repeat 0px -325px;}
+.contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}  
 .contactus .active .form-control{border-color: #f7941a;}
 .contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
 .contactus .form-control {font-size:16px;background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px; height:45px;   margin-bottom: 20px;}
@@ -318,6 +314,14 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -120px;}
 .contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
+
+/* Icon */
+.list-with-icon{text-indent: 26px;line-height: 1.4em;}
+.phone {background:url(../img/Images-19.png) no-repeat 0px -205px;}
+.mail {background:url(../img/Images-19.png) no-repeat 0px -283px;}
+.fax {background:url(../img/Images-19.png) no-repeat 0px -245px;}
+.handphone {background:url(../img/Images-19.png) no-repeat 0px -325px;}
+
 .scene.mascott{position:relative;left: -27%;top: -2%;}
 .scene.mascott.purple{top: 11%;}
 .scene.mascott .layer > div{ 

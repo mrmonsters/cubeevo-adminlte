@@ -70,11 +70,12 @@
                      <small class="text-white">Please Contact</small> 
                      @else
                      <p class="text-white">希望这些作品能提高您对我们的信心<br/>更多的精彩作品，只待您跟我们一同完成，<br/>欢迎前来咨询</p>
-                     <small class="text-white">请联络</small> 
-                     @endif
-                     <br/>
-                     <a href="tel:+60390109882" class="text-orange">+603 9010 9882</a><br/>
-                     <a href="mailto:enquire@cubeevo.com" class="text-orange">enquire@cubeevo.com</a>
+                     <small class="text-white" style="padding:10px 0px 10px 0px;display:block;">请联络</small> 
+                     @endif 
+                     <ul class="list-unstyled list-with-icon">
+                        <li class="phone"> <a href="tel:+60390109882" class="text-orange">+603 9010 9882</a></li>
+                        <li class="mail"> <a href="mailto:enquire@cubeevo.com" class="text-orange">enquire@cubeevo.com</a></li>
+                    </ul> 
                      </div>
                  </div>
             </div>
