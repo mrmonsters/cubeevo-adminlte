@@ -530,7 +530,7 @@ Main Components
   display: none;
 }
 @media (min-width:768px){
-  .panel-body.overlap p
+  .panel-body.overlap p{
     padding-left:15px;
   }
   .brandImage{
