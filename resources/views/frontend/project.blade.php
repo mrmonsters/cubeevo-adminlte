@@ -33,7 +33,45 @@
             </div>
             @if (($count % 2 == 0) || ($count == $projects->count())) 
             @endif
-        @endforeach  
+        @endforeach   
+        @if($count < 9)
+
+            <?php
+            $leftoutclass = 3 - ($count % 3) ;
+            switch ($leftoutclass) {
+                case '1':
+                    # code...
+                    $class = 'hidden-sm hidden-md col-sm-6 col-lg-4';
+                    break;
+
+                case '2':
+                    # code...
+                    $class = 'col-sm-6 col-lg-8';
+                    break; 
+
+
+                case '3':
+                    # code...
+                    $class = 'col-sm-6 hidden-md hidden-sm col-lg-4';
+                    break; 
+
+                default:
+                    $class = '';
+                    break;
+            } 
+            $totalmissingbox = 9 - $count; ?>
+            @for($i= 1 ;$i <= $totalmissingbox; $i++)
+
+            <div id='cre-box' class="extra-info-box cre-box hidden-xs 
+                @if($i % 2 != 0)
+                    odd
+                @else
+                    even
+                @endif  {{$class}}"> 
+            
+            </div>
+            @endfor
+        @endif
         <?php echo '</div>'; ?>
     @endif
 </div> 

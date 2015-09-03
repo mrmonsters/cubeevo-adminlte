@@ -224,7 +224,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0px;} 
 .cre .panel-body.overlap {margin: -25% 0px 0px 0px;}
-.container-fluid.cre{background:#666;} 	
+.container-fluid.cre{background:#A9A6A6;} 	
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
@@ -542,6 +542,10 @@ Main Components
     background-color: #fff;
 }
 .cre-info{padding: 0px 0.7%;}
+.extra-info-box{background-color:#c5c4c4;padding:1%;}
+.extra-info-box.even{background-color: #A9A6A6;}
+.extra-info-box__wrapper{background-color: #404b54;height: 100%;}
+.extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){
   .panel-body.overlap {margin: -21% 0px 0px 0px;}
   .scene.mascott{left: -20%;}
