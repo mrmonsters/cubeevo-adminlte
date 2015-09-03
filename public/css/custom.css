@@ -468,7 +468,7 @@ Main Components
     white-space: nowrap;
     z-index: 10;}
 .mascott{ visibility: hidden; }.animated { visibility: visible !important; }
-.home-content{margin-top: 60%;}
+.home-content{position: absolute;bottom: 10%;}
 .brandImage{
     position: relative;
     transform-style: flat;
