@@ -27,7 +27,7 @@ class PageTableSeeder extends Seeder
 							<div id="fullpage">
 								<div class="section" id="section0">
 									<div class="col-md-6 maincol-right"> 
-										<ul class="scene visible-xs-block">
+										<ul class="scene visible-xs-block" style="padding-left: 0px;">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 										</ul>
 									</div> 
@@ -194,7 +194,7 @@ class PageTableSeeder extends Seeder
 							<div id="fullpage">
 								<div class="section en" id="section0">
 									<div class="col-md-6 maincol-right"> 
-										<ul class="scene visible-xs-block">
+										<ul class="scene visible-xs-block" style="padding-left: 0px;">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 										</ul>
 									</div> 

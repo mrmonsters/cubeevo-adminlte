@@ -143,8 +143,9 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	height: 100%;
     background: url(../img/transBG.png) repeat;  
 	color: #ffffff;
+  margin-top: 10%;
 }
-#fullpage .content-wrapper .row{padding: 0px 10px;}
+#fullpage .content-wrapper .row{padding: 0px 10px;} 
 #fullpage .content-wrapper .row h3{ margin: 10px 0px 0px 0px;}
 .content-wrapper__fixed{ 
 	position: fixed;
