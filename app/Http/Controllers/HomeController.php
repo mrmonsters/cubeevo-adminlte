@@ -10,6 +10,8 @@ use App\Models\Page;
 use App\Models\Category;
 use App\Models\Project;
 use App\Models\Solution;
+use App\Models\Message;
+use App\Models\Setting;
 
 class HomeController extends Controller {
 
@@ -58,16 +60,16 @@ class HomeController extends Controller {
 		return view('frontend.credential')->with('categories', $categories);
 	}
 
-	public function getProjectContent($projectId)
+	public function getProjectContent($slug)
 	{
-		$project = Project::find($projectId);
+		$project = Project::where('slug', '=', $slug)->first();
 
 		return view('frontend.project_content')->with('project', $project);
 	}
 
-	public function getCredentialProject($categoryId)
+	public function getCredentialProject($slug)
 	{
-		$projects = Category::find($categoryId)->projects()->where('status', STATUS::ACTIVE)
+		$projects = Category::where('slug', '=', $slug)->first()->projects()->where('status', STATUS::ACTIVE)
 			->orderBy('sort_order')
 			->get();
 
@@ -103,6 +105,29 @@ class HomeController extends Controller {
 		}
 
 		return Redirect::back();
+	}
+
+	public function submitMessage(Request $req)
+	{
+		$data = $req->input();
+
+		if (isset($data) && !empty($data))
+		{
+			$message = array();
+			$message['name']    = $data['name'];
+			$message['phone']   = $data['phone'];
+			$message['email']   = $data['email'];
+			$message['subject'] = $data['subject'];
+			$message['content'] = $data['content'];
+			Message::create($message);
+
+			$email = Setting::where('code', '=', 'email')->first();
+
+			if (isset($email) && isset($email->value) && $email->value != '')
+			{
+				mail($email->value, $data['subject'], $data['content']);
+			}
+		}
 	}
 
 }

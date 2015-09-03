@@ -22,8 +22,10 @@ class CreateCategoriesTable extends Migration {
 			$table->foreign('grid_img_id')->references('id')->on('files');
 			$table->integer('grid_bg_img_id')->unsigned(true);
 			$table->foreign('grid_bg_img_id')->references('id')->on('files');
+			$table->string('slug')->unique();
 			$table->integer('sort_order');
 			$table->integer('status')->default(2);
+			$table->integer('delete')->default(0);
 			$table->timestamps();
 		});
 	}

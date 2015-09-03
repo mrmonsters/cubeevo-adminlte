@@ -273,7 +273,7 @@ Description for project management
 							<label for="block-value-{{ $blockCount }}" class="control-label">Value</label>
 							<div class="input-group">
 								<input type="text" id="project_img_ids_{{ $blockCount }}" class="form-control" name="block[value][{{ $block->id }}]" value="{{ $block->value }}" readonly />
-								<input type="hidden" id="project_img_sort_order_{{ $blockCount }}" name="project_img_sort_order[]" />
+								<input type="hidden" id="project_img_sort_order_{{ $blockCount }}" name="project_img_sort_order[{{ $block->id }}]" />
 								<span class="input-group-btn">
 									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-{{ $blockCount }}">Upload</button>
 									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids_{{ $blockCount }}', 'project_img_sort_order_{{ $blockCount }}')">Choose</button>
@@ -684,7 +684,7 @@ function addBlock()
 		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
 		+ '<div class="input-group">'
 		+ '<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value]['+count+']" readonly />'
-		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
+		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order['+count+']" />' 
 		+ '<span class="input-group-btn">'
 		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
 		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'

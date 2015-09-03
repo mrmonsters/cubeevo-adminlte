@@ -169,46 +169,53 @@ class ProjectController extends Controller {
 
 			if (isset($data['block']) && !empty($data['block']))
 			{
-				for ($i = 0; $i < count($data['block']['type']); $i++)
+				foreach ($data['block']['type'] as $k => $v)
 				{
-					$block = new Block;
-					$block->project_id = $project->id;
-					$block->sort_order = $data['block']['sort'][$i];
+					$block['id'] = $k;
+					$block['project_id'] = $project->id;
+					$block['sort_order'] = $data['block']['sort'][$k];
 
-					if ($data['block']['type'][$i] == Block::IMAGE || $data['block']['type'][$i] == Block::VIDEO)
+					switch ($data['block']['type'][$k])
 					{
-						$block->type = Block::VIDEO;
-						$block->value = $data['block']['value'][$i];
-					}
-					else if ($data['block']['type'][$i] == Block::GALLERY)
-					{
-						$block->type = Block::GALLERY;
-						if (!empty($newImgIds) && isset($newImgIds[$i]))
-						{
-							$images = $newImgIds[$i];
-						}
-						else
-						{
-							$imgIds = explode(",", $data['block']['value'][$i]);
-							$sortOrders = explode(",", $data['block']['project_img_sort_order'][$i]);
-							$images = array();
-							if (count($imgIds) == count($sortOrders))
+						case Block::IMAGE:
+							$block['type']  = Block::IMAGE;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::VIDEO:
+							$block['type']  = Block::VIDEO;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::GALLERY:
+							$block['type'] = Block::GALLERY;
+							if (!empty($newImgIds) && isset($newImgIds[$k]) && $newImgIds[$k] != '')
 							{
-								for ($x = 0; $x < count($imgIds); $x++)
-								{
-									$images[$sortOrders[$x]] = $imgIds[$x];
-								}
-								$images = implode(",", ksort($images));
+								$images = $newImgIds[$k];
 							}
 							else
 							{
-								$images = $imgIds;
+								$imgIds = explode(",", $data['block']['value'][$k]);
+								$sortOrders = explode(",", $data['project_img_sort_order'][$k]);
+								$images = array();
+								if (count($imgIds) == count($sortOrders))
+								{
+									for ($x = 0; $x < count($imgIds); $x++)
+									{
+										$images[$sortOrders[$x]] = $imgIds[$x];
+									}
+									ksort($images);
+								}
+								else
+								{
+									$images = $imgIds;
+								}
+								$images = implode(",", $images);
 							}
-						}
-						$block->value = $images;
+
+							$block['value'] = $images;
+							break;
 					}
 
-					$block->save();
+					Block::create($block);	
 				}
 			}	
 
@@ -260,7 +267,6 @@ class ProjectController extends Controller {
 		//
 		$response  = array();
 		$data      = $req->input();
-		dd($data);
 		$project   = Project::find($id);
 		$newImgIds = array();
 
@@ -294,9 +300,21 @@ class ProjectController extends Controller {
 					}
 					else if ($key == 'new_project_img_id')
 					{
-						foreach ($val as $img)
+						foreach ($val as $id => $img)
 						{
-							$newImgIds[] = $FileHelper->uploadNewFile($img);
+							if (is_array($img) && !empty($img))
+							{
+								$imgs = array();
+								foreach ($img as $k => $v)
+								{
+									if (isset($v))
+									{
+										$imgs[] = $fileHelper->uploadNewFile($v);
+									}
+								}
+
+								$newImgIds[$id] = implode(",", $imgs);
+							}
 						}
 					}
 				}
@@ -365,59 +383,62 @@ class ProjectController extends Controller {
 
 			if (isset($data['block']) && !empty($data['block']))
 			{
-				$projBlocks = array();
-				foreach ($project->blocks()->get() as $item)
+				foreach ($data['block']['type'] as $k => $v)
 				{
-					$projBlocks[] = $item;
-				}
-
-				for ($i = 0; $i < count($data['block']['type']); $i++)
-				{
-					$block = array();
+					$block['id'] = $k;
 					$block['project_id'] = $project->id;
-					$block['sort_order'] = $data['block']['sort_order'][$i];
+					$block['sort_order'] = $data['block']['sort'][$k];
 
-					if ($data['block']['type'][$i] == Block::IMAGE || $data['block']['type'][$i] == Block::VIDEO)
+					switch ($data['block']['type'][$k])
 					{
-						$block['type']  = Block::VIDEO;
-						$block['value'] = $data['block']['value'][$i];
-					}
-					else if ($data['block']['type'][$i] == Block::GALLERY)
-					{
-						$block['type'] = Block::GALLERY;
-						if (!empty($newImgIds) && isset($newImgIds[$i]))
-						{
-							$images = $newImgIds[$i];
-						}
-						else
-						{
-							$imgIds = explode(",", $data['block']['value'][$i]);
-							$sortOrders = explode(",", $data['block']['project_img_sort_order'][$i]);
-							$images = array();
-							if (count($imgIds) == count($sortOrders))
+						case Block::IMAGE:
+							$block['type']  = Block::IMAGE;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::VIDEO:
+							$block['type']  = Block::VIDEO;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::GALLERY:
+							$block['type'] = Block::GALLERY;
+							if (!empty($newImgIds) && isset($newImgIds[$k]) && $newImgIds[$k] != '')
 							{
-								for ($x = 0; $x < count($imgIds); $x++)
-								{
-									$images[$sortOrders[$x]] = $imgIds[$x];
-								}
-								$images = implode(",", ksort($images));
+								$images = $newImgIds[$k];
 							}
 							else
 							{
-								$images = $imgIds;
+								$imgIds = explode(",", $data['block']['value'][$k]);
+								$sortOrders = explode(",", $data['project_img_sort_order'][$k]);
+								$images = array();
+								if (count($imgIds) == count($sortOrders))
+								{
+									for ($x = 0; $x < count($imgIds); $x++)
+									{
+										$images[$sortOrders[$x]] = $imgIds[$x];
+									}
+									ksort($images);
+								}
+								else
+								{
+									$images = $imgIds;
+								}
+								$images = implode(",", $images);
 							}
-						}
-						$block['value'] = $images;
+
+							$block['value'] = $images;
+							break;
 					}
 
-					if (isset($projBlocks[$i]))
+					$blockObject = Block::find($k);
+
+					if (isset($blockObject))
 					{
-						$projBlocks[$i]->update($block);
-					}
+						$blockObject->update($block);
+					}	
 					else
 					{
 						Block::create($block);
-					}
+					}	
 				}
 			}
 
@@ -426,10 +447,10 @@ class ProjectController extends Controller {
 				$blockIds = explode(",", $data['deleted_block']);
 				foreach ($blockIds as $id)
 				{
-					if (!isset($data['block']['type'][$id]))
+					if (!isset($data['block']['type'][$id]) && $id != '')
 					{
 						$block = Block::find($id);
-						$block->deleted = true;
+						$block->delete = true;
 						$block->save();
 					}
 				}
