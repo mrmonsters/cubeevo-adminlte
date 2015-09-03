@@ -84,7 +84,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>活力</b></h3>
 													<p>
-													形立方无时无刻都精力充沛，为企业带来正能量！
+													形立方无时无刻都精力充沛，<br class="visible-xs-block"/为企业带来正能量！
 													</p>
 												</div> 
 											</div> 
