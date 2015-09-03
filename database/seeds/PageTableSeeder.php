@@ -714,7 +714,7 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
-										<h1 class="tagline text-center">“Be Transformed to Transform”</h1>
+										<h1 class="tagline text-center">“Be Transformed <br class="visible-xs"/>to Transform”</h1>
 										<h3 class="sub-tagline text-center">We at CubeEvo want our to have the element of creativity to bring out the lifeliness of every brand.</h3>
 									</div>
 								</div>

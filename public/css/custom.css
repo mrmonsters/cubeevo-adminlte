@@ -546,6 +546,7 @@ Main Components
     background-color: #fff;
 }
 .cre-info{padding: 0px 0.7%;}
+.modal.in .modal-dialog{padding: 3%;}
 .extra-info-box{background-color:#c5c4c4;padding:1%;}
 .extra-info-box.even{background-color: #A9A6A6;}
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
