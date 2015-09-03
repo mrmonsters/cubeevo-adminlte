@@ -473,6 +473,8 @@ Main Components
 	}
 	#cd-nav .logo {
 		text-align:right;
+    position: relative;
+    top: 12px;
 	}
 	#cd-nav .logo img.logo-mob {width:80%; display:inline;}
 	#cd-nav .logo img.logo-nav {display:none;}

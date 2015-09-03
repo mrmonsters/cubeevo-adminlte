@@ -401,8 +401,8 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
-										<h1 class="tagline text-center">“创意因品牌而生, &nbsp;品牌因创新而活。”</h1>
-										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素, 激活品牌新生命。</h3>
+										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="visible-xs"/>品牌因创新而活。 ”</h1>
+										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素, <br class="visible-xs"/>激活品牌新生命。</h3>
 									</div>
 								</div>
 								</div>
@@ -411,8 +411,8 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>使命</h2>
-										<h1 class="tagline text-center">“激活品牌, &nbsp;展现完美。”</h1>
-										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, 为客户打造完美品牌。</h3>
+										<h1 class="tagline text-center">“ 激活品牌, &nbsp;<br class="visible-xs"/>展现完美。 ”</h1>
+										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, <br class="visible-xs"/>为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
 										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>

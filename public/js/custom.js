@@ -77,9 +77,9 @@ $(document).ready(function() {
           } 
       }
     });
+      $('#fullpage').fullpage.reBuild();
   }
   
-  $('#fullpage').fullpage.reBuild();
   
   var superman = $('.yellow.mascott');
   function fly() { 

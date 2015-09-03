@@ -30,6 +30,15 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .modal-backdrop {
    background-color: #F7941A;
 }
+.modal-content .btn{   
+    background-color: #F7941A; 
+    width: 150px;
+    border: 1px solid #f7941a;
+    background: none;
+    color: #f7941a;
+    padding: 10px 30px;
+    border-radius: 0;
+    margin-bottom: 20px;}
 .cd-section .main h2 {
 	color:#231f20;
 }
@@ -263,7 +272,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 .container-fluid.aboutus{margin: 15px;background-color: #eee;padding-top: 80px;}
 .aboutus .tagline {color:#f7941a; font-size:55px;}
-.aboutus .sub-tagline {color:#fff; font-size:26px; margin-bottom:50px;}
+.aboutus .sub-tagline {color:#fff; font-size:20px; margin-bottom:50px;font-weight: lighter;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
 .aboutus .about-txt {margin-top :50px; margin-bottom:80px;}
 .aboutus .about-txt h4 {color:#f7941a; font-size:18px; margin-top:20px;}
@@ -552,7 +561,8 @@ Main Components
 }
 
 @media (max-width:768px){
- 
+  .project-client-name,.project-name{padding-top: 20px;}
+  .crecol-2{padding-top: 50px;}
 	img.mas-1 {height:auto;}
 	#cd-main-nav .inner {padding: 15px 15%; }
 	/*.maincol-right {float:none;}*/
@@ -573,16 +583,16 @@ Main Components
 	.aboutus .team .profilepic {text-align:center;}
 	.aboutus .team .profilepic img {max-width:240px;}
 	.aboutus .team .profilename {text-align:center;}
-	.aboutus .about-369 .col-xs-6 {width:50%;padding-top: 20px;}
+	.aboutus .about-369 .col-xs-6 {width:50%;padding-top: 20px;margin-bottom: 25px;}
 	.aboutus .about-369 .about-369img {margin-top:0;padding: 0px;}
-	.aboutus .about-369 .col-sm-4 {margin-top:30px; overflow:hidden;}
+	.aboutus .about-369 .col-sm-4 {margin-top:30px;}
 	.aboutus .about-369 .about-369txt {width:100%;padding: 0px;margin-left: 10%;}
 	.panel-title-desc {border-left:0 none;}
 	.process-flow{overflow: hidden;}
 	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
 	.process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
 	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 60px 40px !important; position:relative;clear: both;width: 100%;}
-	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 40px; left:inherit; bottom: 3px;}
+	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 40px; left:inherit; line-height: 1.5em;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;}
 }
 

@@ -23,20 +23,21 @@
                         <div class="col-sm-9 col-sm-9 col-sm-offset-2">
                             <div class="row">
                                 <div class="col-sm-2">
-                                	<p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'CLIENT' : '客户名称' }}</p>
+                                	<p class="desctitle project-client-name" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'CLIENT' : '客户名称' }}</p>
                                 	<p>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->client_name) : $project->translate(Session::get('locale'))->client_name }}</p>
                                     <br>
-                                    <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'YEARS' : '合作年份' }}</p>
+                                    <p class="desctitle project-year" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'YEARS' : '合作年份' }}</p>
                                 	<p>{{ $project->year }}</p>
                                 </div>
                                 <div class="col-sm-10">
-                                    <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
+                                    <p class="desctitle project-name" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
                                 	<h3>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
                                     
                                     <div style="padding-top:14%;">
                                     	<div class="col-sm-6 crecol-1">
                                         <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'BACKGROUND' : '客户细节' }}</p>
                                         {{ $project->translate(Session::get('locale'))->background }}
+                                        <br>
                                         <br>
                                         <br>
                                         <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE CHALLENGE' : '项目概述' }}</p>
