@@ -74,7 +74,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 				<h4>CUBEevo Advertising Sdn. Bhd. <span class="p">(949017-T)</span></h4>
 				<h4>形立方广告有限公司</h4>
 				<br/>
-				<h5>{{ $settings->where('code', 'address')->first()->value }}</h5>
+				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
 				<br/>
 				<ul class="list-inline">
 					<li class="phone"><h5 class="nopadding">{{ $settings->where('code', 'phone')->first()->value }}</h5></li>

@@ -14,8 +14,9 @@
         <div class="inner">
         
         	<div class="logo">
-            	<a href="{{url('/')}}"><img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;"></a>
-                <img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob">
+            	<a href="{{url('/')}}"><img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;" alt="logo"/></a>
+                
+                <a href="{{url('/')}}"><img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob" alt="logo"/></a>
             </div>                
     		<ul class="list-unstyled">
     			<li><a class="@if(Request::url() === url('/')) active @endif " href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
