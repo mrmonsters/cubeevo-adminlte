@@ -38,7 +38,7 @@ html {
 
 body {
   font-size: 1.4rem;
-  font-family: "微軟正黑體","Conv_DINNextLTPro-Regular", sans-serif;
+  font-family: "微軟正黑體","Conv_DINNextLTPro-Light", sans-serif;
   color: #000000;
   background-color: #eae9e8;
   -webkit-font-smoothing: antialiased;
@@ -72,17 +72,21 @@ a {
 Main Components 
 
 -------------------------------- */
-
+#cd-nav{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
 #cd-main-nav {
   /* mobile first */
   position: fixed;
   width: 90%;
   max-width: 260px;
   height: 100%;
-  left: 0.7%;
+  left: 0%;
   top: 0px;
   color:#fff;
-  font-size:1.1rem;
+  font-size:14px;
   visibility: hidden;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.85)), color-stop(100%,rgba(0,0,0,0.35)));
   background: -webkit-linear-gradient(top, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.35) 100%);
@@ -188,6 +192,7 @@ Main Components
   border-bottom: 1px solid #eff2f6;
   color:#ffffff;
 }
+#cd-nav li a.active{color:#f7941a;}
 #cd-nav li a:hover, #cd-nav li a:active, #cd-nav li a.selected {
 	color:#f7941e;
 }
@@ -197,13 +202,10 @@ Main Components
 }
 
 .cd-nav-trigger {
-  position: fixed;
-  top: 20px;
-  left: 3%;
+  position: fixed; 
   width: 44px;
   height: 44px;
-  background: white;
-  border-radius: 0.25em;
+  background: white; 
   /*box-shadow: 0 0 10px #999999;*/
   /* image replacement */
   /* overflow: hidden; */
@@ -471,6 +473,8 @@ Main Components
 	}
 	#cd-nav .logo {
 		text-align:right;
+    position: relative;
+    top: 12px;
 	}
 	#cd-nav .logo img.logo-mob {width:80%; display:inline;}
 	#cd-nav .logo img.logo-nav {display:none;}

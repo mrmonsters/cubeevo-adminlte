@@ -1,37 +1,97 @@
-$(document).ready(function() {
+  $(window).load(function() {
+    $('.blanket').fadeOut();
+  });
+
+  $(document).ready(function() {
 
 	if($('.scene').length > 0){ 
-		$('.scene').parallax(); 
-  	}
+		var $scene = $('.scene').parallax(); 
+    $scene.parallax('scalar',12, 2); 
+  }
 
 	$('.cd-nav-trigger').click(function(){
 		return false;
 	});
 
 	if($('#fullpage').length > 0){ 
-		$('#fullpage').fullpage({
-		  afterLoad :  function(anchorLink, index){
-	        var loadedSection = $(this); 
-	        //using index
-	        if(index == 1){ 
-	        	$('.cd-prev').parent().addClass('hide');
-	        }else{ 
-	        	$('.cd-prev').parent().removeClass('hide');
-	        }
-
-          if(index == 2){ 
-            console.log('test');
-            //$('.')
+    $('#fullpage').fullpage({ 
+      afterLoad :  function(anchorLink, index){
+          var loadedSection = $(this); 
+          var contentSection = loadedSection.find('.content-section').html(); 
+          $('.home-content').html('').removeClass('animated fadeOutUp').append(contentSection).addClass('animated fadeInUp'); 
+          //using index
+          if(index == 1){ 
+            $('.cd-prev').parent().addClass('hide');
+          }else{ 
+            $('.cd-prev').parent().removeClass('hide');
           }
-	        //using index
-	        if(index == 7){ 
-	        	$('.cd-next').parent().addClass('hide');
-	        }else{ 
-	        	$('.cd-next').parent().removeClass('hide');
-	        }
-	    }
-		});
-	} 
+          if(index == 2){ 
+            $('.scene.orange').removeClass('animated fadeOut').addClass('animated slideInRight');
+          } 
+          if(index == 3){ 
+            $('.scene.yellow').removeClass('animated fadeOut').addClass('animated slideInUp');
+          } 
+          if(index == 4){ 
+            $('.scene.red').removeClass('animated fadeOut').addClass('animated fadeInRight');
+          } 
+          if(index == 5){ 
+            $('.scene.purple .body').removeClass('animated fadeOut').addClass('animated zoomInDown');
+            $('.scene.purple .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
+              setTimeout(function () {
+                $('.scene.purple .cube').removeClass('animated fadeOut').addClass('animated bounceInDown');
+              }, 1000
+            ));
+          }  
+          if(index == 6){ 
+            $('.scene.blue').removeClass('animated fadeOut').addClass('animated slideInRight');
+          }  
+          //using index
+          if(index == 7){ 
+            $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn'); 
+            $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
+              setTimeout(function () {
+                $('.scene.green .plant').removeClass('animated fadeOut').addClass('animated fadeIn');
+              }, 1000
+            ));
+            $('.cd-next').parent().addClass('hide');
+          }else{ 
+            $('.cd-next').parent().removeClass('hide');
+          }
+      },
+      onLeave: function(index, nextIndex, direction){  
+          $('.home-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
+          if(index == 2){  
+            $('.scene.orange').removeClass('animated slideInRight').addClass('animated fadeOut');
+          }
+          if(index == 3){  
+            $('.scene.yellow').removeClass('animated slideInUp').addClass('animated fadeOut');
+          }
+          if(index == 4){  
+            $('.scene.red').removeClass('animated fadeInRight').addClass('animated fadeOut');
+          }
+          if(index == 5){  
+            $('.scene.purple .body').removeClass('animated zoomInDown').addClass('animated fadeOut');
+            $('.scene.purple .cube').removeClass('animated bounceInDown').addClass('animated fadeOut');
+          }
+          if(index == 6){  
+            $('.scene.blue').removeClass('animated slideInRight').addClass('animated fadeOut');
+          } 
+          if(index == 7){  
+            $('.scene.green .body').removeClass('animated fadeIn').addClass('animated fadeOut');
+            $('.scene.green .plant').removeClass('animated fadeIn').addClass('animated fadeOut');
+          } 
+      }
+    });
+      $('#fullpage').fullpage.reBuild();
+  }
+  
+  
+  var superman = $('.yellow.mascott');
+  function fly() { 
+     superman.animate({top:'+=20'}, 1000);
+     superman.animate({top:'-=20'}, 1000, fly);
+  } 
+  fly();
  
 	$('.cd-next').click(function(){ 
     	$.fn.fullpage.moveSectionDown();
@@ -54,22 +114,8 @@ $(document).ready(function() {
        cube.animate({top:'+=20'}, 1000);
        cube.animate({top:'-=20'}, 1000, runIt);
    	} 
-    runIt();
+    runIt(); 
 /*
-  	$('#light').sprite({fps: 9, no_of_frames: 16});
-  	$('#orangemascott').sprite({fps: 9, no_of_frames: 10}); 
-
-  	$('#yellowmascott').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#redmascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#knife').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#bluemascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#blink').sprite({fps: 9, no_of_frames: 10});
-
-  	$('#greenmascott').sprite({fps: 9, no_of_frames: 10});
-  	$('#bird').sprite({fps: 9, no_of_frames: 10});*/
-
   if($('.cd-background-wrapper').length){
         //check media query
     var mediaQuery = window.getComputedStyle(document.querySelector('.cd-background-wrapper'), '::before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, ""),
@@ -160,13 +206,13 @@ $(document).ready(function() {
         'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
       });
     }
-  }
+  }*/
 });
 
 
 /*  Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
   https://github.com/Modernizr/Modernizr/issues/762 */
-(function getPerspective(){
+/*(function getPerspective(){
   var element = document.createElement('p'),
       html = document.getElementsByTagName('html')[0],
       body = document.getElementsByTagName('body')[0],
@@ -199,3 +245,4 @@ $(document).ready(function() {
     document.body.removeChild(element);
 
 })();
+*/

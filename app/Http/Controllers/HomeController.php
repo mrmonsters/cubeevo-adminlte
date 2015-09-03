@@ -64,7 +64,7 @@ class HomeController extends Controller {
 	{
 		$project = Project::where('slug', '=', $slug)->first();
 
-		return view('frontend.project_content')->with('project', $project);
+		return view('frontend.project_content')->with('project', $project)->with('backbtn',URL::previous());
 	}
 
 	public function getCredentialProject($slug)

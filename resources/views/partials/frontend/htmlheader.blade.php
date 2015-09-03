@@ -4,11 +4,23 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
+	 <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <!--<link rel="stylesheet" href="css/reset.css"> --> 
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
+    @if(Session::get('locale') == 'en') 
+    <style type="text/css">
+      body{
+        font-family: "Conv_DINNextLTPro-Light", sans-serif;
+      } 
+      b{
+        font-family: "Conv_DINNextLTPro-Bold", sans-serif;
+      }
+    </style>
+    @endif 
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- Custom style -->
 	<script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
   	

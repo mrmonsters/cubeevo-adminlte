@@ -19,13 +19,13 @@ class SettingTableSeeder extends Seeder {
 				'name'  => 'Company Address',
 				'code'  => 'address',
 				'type'  => Setting::USER,
-				'value' => 'No 43-2, Jalan Temenggung 21/9, Bandar Mahkota Cheras, 43200 Batu Cheras 9 Cheras, Selangor, Kuala Lumpur',
+				'value' => 'No 43-2, Jalan Temenggung 21/9,<br/> Bandar Mahkota Cheras, 43200 Batu Cheras 9 Cheras, Selangor',
 			),
 			array(
 				'name'  => 'Company Phone Number',
 				'code'  => 'phone',
 				'type'  => Setting::USER,
-				'value' => '+603 90109882',
+				'value' => '+603 9010 9882',
 			),
 			array(
 				'name'  => 'Company Fax Number',

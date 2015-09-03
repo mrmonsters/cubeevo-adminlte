@@ -57,7 +57,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 			<div class="col-sm-10 col-sm-offset-1 text-center">
 				<br/> 
 				<br/> 
-				<a href="mailto:enquire@cubeevo.com" class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</a>
+				<button href="mailto:enquire@cubeevo.com" class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</button>
 				<br/>
 				<br/>
 				<br/>
@@ -71,15 +71,15 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 	<div class="row contactdetails" style="position:relative;"> 
 		<div class="col-sm-11 col-sm-offset-1">
 			<div class="col-sm-5 nopadding">
-				<h4>CUBEevo Advertising Sdn. Bhd.<span class="p">(949017-T)</span></h4>
+				<h4>CUBEevo Advertising Sdn. Bhd. <span class="p">(949017-T)</span></h4>
 				<h4>形立方广告有限公司</h4>
 				<br/>
-				<h5>{{ $settings->where('code', 'address')->first()->value }}</h5>
+				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
 				<br/>
 				<ul class="list-inline">
-					<li class="phone"><h5 class="nopadding">{{ $settings->where('code', 'phone')->first()->value }}</h5></li>
+					<li class="phone"><h5 class="nopadding"><a class="text-black" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></li>
 					<li class="fax"><h5 class="nopadding">{{ $settings->where('code', 'fax')->first()->value }}</h5></li>
-					<li class="mail"><h5 class="nopadding">{{ $settings->where('code', 'email')->first()->value }}</h5></li>
+					<li class="mail"><h5 class="nopadding"><a class="text-black" href="mailto:{{ $settings->where('code', 'email')->first()->value }}">{{ $settings->where('code', 'email')->first()->value }}</a></h5></li>
 				</ul>
 			</div>
 			<div class="col-sm-7 contact-person">
@@ -88,8 +88,8 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 					<p><i>Account Director</i><br>
 					策划总监</p>
 					<ul>
-						<li class="handphone">+6017 331 8916</li>
-						<li class="mail">alvin@cubeevo.com</li>
+						<li class="handphone"><a class="text-black" href="tel:+60173318916">+6017 331 8916</a></li>
+						<li class="mail"><a class="text-black" href="mailto:alvin@cubeevo.com">alvin@cubeevo.com</a></li>
 					</ul>
 				</div>
 				
@@ -98,8 +98,8 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 					<p><i>Account Manager</i><br>
 					客户经理</p>
 					<ul>
-						<li class="handphone">+6017 321 6004</li>
-						<li class="mail">timothy@cubeevo.com</li>
+						<li class="handphone"><a class="text-black" href="tel:+60173216004">+6017 321 6004</a></li>
+						<li class="mail"><a class="text-black" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
 					</ul>
 				</div>
 				
@@ -108,8 +108,8 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 					<p><i>Branding Manager</i><br>
 					品牌经理</p>
 					<ul>
-						<li class="handphone">+6018 352 4300</li>
-						<li class="mail">keith@cubeevo.com</li>
+						<li class="handphone"><a class="text-black" href="tel:+6018 352 4300">+6018 352 4300</a></li>
+						<li class="mail"><a class="text-black" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
 					</ul>
 				</div>
 			</div>

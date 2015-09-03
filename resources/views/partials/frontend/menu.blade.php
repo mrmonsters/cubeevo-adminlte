@@ -2,43 +2,34 @@
 	<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
 
     @if(isset($backbtn))
-    <a href="{{$backbtn}}" class="smart-object" style="position: fixed;
-    top: 20px;
-    left: 7%;
-    width: 44px;
-    height: 44px;
-    background: white;
-    border-radius: 0.25em; 
-    text-indent: 100%;
-    white-space: nowrap;
-    z-index: 10;"> 
+    <a href="{{$backbtn}}" class="smart-object btn-back"> 
         <div class="arrow-left arrow">
             <div class="arrow-bar-1 smart-transition"></div>
             <div class="arrow-bar-2 smart-transition"></div>
         </div>
     </a>
     @endif
-
+  
 	<div id="cd-main-nav">
         <div class="inner">
         
         	<div class="logo">
-            	<img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;">
-                <img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob">
-            </div>               
-            
+            	<a href="{{url('/')}}"><img src="{{ asset('img/Images-07.png') }}" width="110%" class="logo-nav" style="margin-left: -5%;" alt="logo"/></a>
+                
+                <a href="{{url('/')}}"><img src="{{ asset('img/Images-07-mob.png')}}" class="logo-mob" alt="logo"/></a>
+            </div>                
     		<ul class="list-unstyled">
-    			<li><a href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
-    			<li><a href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
-    			<li><a href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
-    			<li><a href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
-    			<li><a href="{{ url('/research') }}" class="hide">{{ (Session::get('locale') == 'en') ? 'RESEARCH' : '品牌洞察' }}</a></li>
-                <li><a href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a></li>
-                <li><a href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/')) active @endif " href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/about-us')) active @endif " href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
+    			<li><a class="@if(substr(Route::currentRouteAction(), (strpos(Route::currentRouteAction(), '@') + 1) ) == 'getCredential' || substr(Route::currentRouteAction(), (strpos(Route::currentRouteAction(), '@') + 1) ) == 'getCredentialProject' )) active @endif " href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/solution')) active @endif " href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/research')) active @endif hide " href="{{ url('/research') }}">{{ (Session::get('locale') == 'en') ? 'RESEARCH' : '品牌洞察' }}</a></li>
+                <li><a class="@if(Request::url() === url('/process')) active @endif " href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a></li>
+                <li><a class="@if(Request::url() === url('/contact-us')) active @endif " href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a></li>
                 <li><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a></li>
     		</ul> 
             
-            <div style="position: absolute;bottom: 5px;width: 70%;">   
+            <div class="social-block">   
                 <div class="cd-social">
                     <ul class="list-inline">
                         <?php use App\Models\Setting; ?>
@@ -64,11 +55,6 @@
                 &copy; 2015 COPYRIGHT BY <br>
                 CUBEEVO ADVERTISING SDN. BHD.
                 </div>
-                <br/>
-                <br/>
-                <br/>
-                <p>www.cubeevo.com</p>
-                <br/>
             </div> 
     	</div>
     </div>

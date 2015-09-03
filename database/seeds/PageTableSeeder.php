@@ -19,22 +19,26 @@ class PageTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'desc'    => 'Home page.',
-						'content' => '<div class="content-wrapper__fixed"></div>
+						'content' => ' 
+						<div class="content-wrapper__fixed">
+							<div class="home-content"> 
+							</div>
+						</div>
 							<div id="fullpage">
 								<div class="section" id="section0">
-									<div class="col-md-6 maincol-right"> 
-										<ul class="scene visible-xs-block">
+									<div class="col-xs-12 col-md-6 maincol-right"> 
+										<ul class="scene visible-xs-block" style="padding-left: 0px;">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 										</ul>
 									</div> 
-									<div class="col-md-6 maincol-left clearfix">
+									<div class="col-xs-12 col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 												<div class="row">
-													<div class="col-sm-push-5 col-sm-6">
-														<h3>形立方</h3>
-														<p>
-														形立方的标志概念和灵感是基于最基本的设计元素， 魔术方块，形状，格框以及线条所组成的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架；形立方也讲究【活力】，在打造品牌的过程中就是展现活力。
+													<div class="col-sm-push-4 col-md-push-5 col-sm-7">
+														<h3 class="text-black"><b>形立方</b></h3>
+														<p class="text-black">
+														形立方的标志概念和灵感是基于最基本的设计元素， <br class="hidden-xs"/>魔术方块，形状，格框以及线条所组成的。形立方<br class="hidden-xs"/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="hidden-xs"/>不必要的框架；形立方也讲究【活力】，在打造<br class="hidden-xs"/>品牌的过程中就是展现活力。
 														</p>
 													</div> 
 												</div>
@@ -54,10 +58,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>灵活</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>灵活</b></h3>
 													<p>
-													形立方追求灵活，弹性，务必让合作过程更加灵活，只为达致客户最理想的成果。
+													形立方追求灵活，弹性，务必让合作过程更加灵活，<br class="hidden-xs"/>只为达致客户最理想的成果。
 													</p>
 												</div> 
 											</div> 
@@ -77,10 +81,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>活力</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>活力</b></h3>
 													<p>
-													形立方无时无刻都精力充沛，为企业带来正能量！
+													形立方无时无刻都精力充沛，<br class="visible-xs"/>为企业带来正能量！
 													</p>
 												</div> 
 											</div> 
@@ -99,10 +103,10 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>破格</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>破格</b></h3>
 													<p>
-													形立方在创业上不仅仅是大胆，还会打破框框，为客户打造专属形象！
+													形立方在创业上不仅仅是大胆，还会打破框框，<br class="hidden-xs"/>为客户打造专属形象！
 													</p>
 												</div> 
 											</div> 
@@ -113,19 +117,19 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer cube" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
 						                </ul>
 									</div>
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>美感</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>美感</b></h3>
 													<p>
-													形立方的根本是创意设计，大前提必须是美感触觉，为客户建立完美形象！
+													形立方的根本是创意设计，大前提必须是美感触觉，<br class="hidden-xs"/>为客户建立完美形象！
 													</p>
 												</div> 
 											</div> 
@@ -136,18 +140,19 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_LeftHand.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>创意</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>创意</b></h3>
 													<p>
-													形立方的创意是一种天赋，精心打造独一无二的作品便是最大成就！
+													形立方的创意是一种天赋，精心打造独一无二的作品<br class="hidden-xs"/>便是最大成就！
 													</p>
 												</div> 
 											</div> 
@@ -157,20 +162,20 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
-						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                <ul class="scene mascott green">   
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>贴心</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
+													<h3><b>贴心</b></h3>
 													<p>
-													形立方聆听客户声音，理解客户需求，务求和谐的合作关系，共创最好的作品！
+													形立方聆听客户声音，理解客户需求，务求和谐的<br class="hidden-xs"/>合作关系，共创最好的作品！
 													</p>
 												</div> 
 											</div> 
@@ -182,21 +187,24 @@ class PageTableSeeder extends Seeder
 					),
 					'en' => array(
 						'desc'    => 'Home page.',
-						'content' => '<div class="content-wrapper__fixed"></div>
+						'content' => ' 
+							<div class="content-wrapper__fixed">
+								<div class="home-content"></div>
+							</div>
 							<div id="fullpage">
-								<div class="section" id="section0">
+								<div class="section en" id="section0">
 									<div class="col-md-6 maincol-right"> 
-										<ul class="scene visible-xs-block">
+										<ul class="scene visible-xs-block" style="padding-left: 0px;">
 											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
 										</ul>
 									</div> 
-									<div class="col-md-6 maincol-left clearfix">
+									<div class="col-xs-12 col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 												<div class="row">
-													<div class="col-sm-push-5 col-sm-6">
-														<h3>CUBEEVO</h3>
-														<p>
+													<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+														<h3 class="text-black"><b>CUBEEVO</b></h3>
+														<p class="text-black">
 														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
 														</p>
 													</div> 
@@ -206,7 +214,7 @@ class PageTableSeeder extends Seeder
 									</div>  
 									</div>
 									<div class="section" id="section1">
-									<div class="col-md-6 maincol-right">
+									<div class="col-xs-12 col-md-6 maincol-right">
 						                <ul class="scene mascott orange">  
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Body.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Legs.png" width="150%" ></li> 
@@ -217,8 +225,8 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Flexibility</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Flexibility</b></h3>
 													<p>
 													We at Cubeevo believe in flexibility is being both quick-witted and spontaneous when it comes to delivering the best for our clients. 
 													</p>
@@ -240,8 +248,8 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Energetic</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Energetic</b></h3>
 													<p>
 													Like a power source, we are a surge of positive energy flooding up Cubeevo ready to provide for your business.
 													</p>
@@ -262,8 +270,8 @@ class PageTableSeeder extends Seeder
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Adventurous</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Adventurous</b></h3>
 													<p>
 													Instead of thinking outside the box, we tear it up. So that ideas would not limit us in creating something special.
 													</p>
@@ -276,17 +284,17 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
+						                    <li class="layer cube" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
 						                </ul>
 									</div>
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Aesthetics</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Aesthetics</b></h3>
 													<p>
 													Aesthetics is a sense. Design is a craft. Combine those together and that\'s how Perfection is forged.
 													</p>
@@ -299,16 +307,17 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_LeftHand.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li>  
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li>
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Creativity</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Creativity</b></h3>
 													<p>
 													And yes, creativity is heavenly bestowed upon us. Our work is exceptionally wielded by its holliness.
 													</p>
@@ -321,17 +330,17 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
 										<div class="content-wrapper">
 											<div class="content-section"> 
 											<div class="row">
-												<div class="col-sm-push-5 col-sm-6">
-													<h3>Considerate</h3>
+												<div class="col-sm-push-4 col-md-push-5  col-sm-6">
+													<h3><b>Considerate</b></h3>
 													<p>
 													And Hey! We\'re good listeners too. We know that the way to maintain our trust with you, the CLIENT is by understanding what you need and delivering it so that you can have the BEST!
 													</p>
@@ -363,12 +372,12 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-visible">
 									<div class="about-img3"><img src="/img/Images-08.png"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>为何形立方会用魔术方块【魔方】为标志？</h4>
 									<p>魔方的魅力在于三三不尽、六六无穷、九九归一的组合变化,这如同品牌形象塑造与广告设计的借镜,既可以天马行空,却不会不切实际。</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>形立方与别的广告公司有什么不一样？</h4>
 									<p>形立方是一家品牌兼广告设计公司，务求达致客户期待的目标，遵守一个字【活】。魔方是活的，品牌是活的，形立方也是活的。形立方追求【灵活】，聆听客户意见，灵活变通，跳脱不必要的框架，形立方也讲究【活力】，在打造品牌的过程中就是展现活力。</p>
 									</div>
@@ -376,37 +385,37 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-hide">
 									<div class="about-img2"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>为何取名“形立方”?</h4>
 									<p>形立方之命名,除了表现我们擅长形象建立,更犹如魔方一样千变万化。</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>形立方的工作目标是什么?</h4>
 									<p>聆听客户需求,规划客户需求,制作客户需求。不做无理花费,提供客户真正需要的方案。</p>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#848383;">
+								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
-										<h1 class="tagline text-center">“创意因品牌而生,品牌因创新而活。”</h1>
-										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素,激活品牌新生命。</h3>
+										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="visible-xs"/>品牌因创新而活。 ”</h1>
+										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素, <br class="visible-xs"/>激活品牌新生命。</h3>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#676464;">
-									<div class="col-sm-9 col-sm-offset-2">
+								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>使命</h2>
-										<h1 class="tagline text-center">“激活品牌,展现完美。”</h1>
-										<h3 class="sub-tagline text-center">形立方秉持“灵活”宗旨,为客户打造完美品牌。</h3>
+										<h1 class="tagline text-center">“ 激活品牌, &nbsp;<br class="visible-xs"/>展现完美。 ”</h1>
+										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, <br class="visible-xs"/>为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -414,7 +423,7 @@ class PageTableSeeder extends Seeder
 								<div class="col-sm-10 col-sm-offset-1 text-center">
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-05.png" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
@@ -422,22 +431,22 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>品牌形象策划<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p style="margin-left: -25px;">品牌形象策划<br>
 												广告方案策划<br>
-												广播广告策划<br></small>
+												广播广告策划<br></p>
 											</div>
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>数码设计<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p>数码设计<br>
 												平面设计<br>
-												平面摄影<br></small>
+												平面摄影<br></p>
 											</div>
-											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>包装<br>
+											<div class="col-xs-4 col-sm-4 nopadding">
+												<p>包装设计<br>
 												文案撰写<br>
-												印刷服务<br></small>
+												印刷服务<br></p>
 											</div>
 										</div>
 									</div>
@@ -583,7 +592,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -608,7 +617,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -632,7 +641,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -656,7 +665,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -676,12 +685,12 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-visible">
 									<div class="about-img3"><img src="/img/Images-08.png"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>Why are we using Rubik\'s Cube as a symbol?</h4>
 									<p>Just like the laws of physics, the Rubik\'s Cube is a law of CubeEvo. Dramatically, its code gave CubeEvo purpose. The cube\'s 3-Dness gave infinities, its hexad surfaces gave possibilities, and its nine faces gave unity and originality. In a world of Branding and Advertising, this code functions by giving every design infinite possibilities while retaining originality.</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>What makes us stand out from the rest?</h4>
 									<p>Yeah ,we get that a lot. CubeEvo is a company that does Branding and Adveritisng. We believe in "life", giving "life" to the work we do, and putting smiles to our clients. To us, every brand has "life", the Rubik\'s cube has "life", and even CubeEvo has "life". We want to be flexible when it comes to understanding our clients needs, and fulfilling them. We also exercise passion and dedication when it comes to Branding for our clients.</p>
 									</div>
@@ -689,37 +698,37 @@ class PageTableSeeder extends Seeder
 								<div class="col-lg-12 mob-hide">
 									<div class="about-img2"></div>
 								</div>
-								<div class="col-sm-8 col-sm-offset-2">
-									<div class="col-sm-6">
+								<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-5">
 									<h4>Why name ourselves Cubeevo?</h4>
 									<p>This shows that we are a firm establishment that is ever-evolving just like a Rubik\'s Cube.</p>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-5 col-sm-offset-1">
 									<h4>What do we hope to achieve?</h4>
 									<p>We listen to our clients, learn about them, study them. Then we come up with a hassle-free solution for our clients, without them having to spend more than intended. </p>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#848383;">
+								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
-										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
-										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand.</h3>
+										<h1 class="tagline text-center">“Be Transformed to Transform”</h1>
+										<h3 class="sub-tagline text-center">We at CubeEvo want our to have the element of creativity to bring out the lifeliness of every brand.</h3>
 									</div>
 								</div>
 								</div>
 								<div class="row"> 
-								<div class="col-xs-12" style="background-color:#676464;">
-									<div class="col-sm-9 col-sm-offset-2">
+								<div class="col-xs-12" style="background-color:#676464;padding:50px 0px;">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>MISSION</h2>
-										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
-										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand. </h3>
+										<h1 class="tagline text-center">“Transforming Brands Into Perfection”</h1>
+										<h3 class="sub-tagline text-center">CubeEvo upholds "flexibility" by creating the perfect Branding for our clients. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width:519px;width: 126%;margin-left: -19%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -727,7 +736,7 @@ class PageTableSeeder extends Seeder
 								<div class="col-sm-10 col-sm-offset-1 text-center">
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-09-1.png" width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-11.png" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
@@ -735,22 +744,22 @@ class PageTableSeeder extends Seeder
 									</div>
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
-										<div class="col-xs-6 about-369img"><img src="/img/Images-11-1.png"  width="100%"></div>
+										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Branding Strategy<br>
+												<p class="text-left">Branding Strategy<br>
 												Advertising Planning<br>
-												Broadcast Ad Planning<br></small>
+												Broadcast Ad Planning<br></p>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Digital Graphic Design<br>
+												<p class="text-left">Digital Graphic Design<br>
 												Graphic Design<br>
-												Photography<br></small>
+												Photography<br></p>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<small>Packaging Design<br>
+												<p class="text-left">Packaging Design<br>
 												Copywriting<br>
-												Printing & Production<br></small>
+												Printing & Production<br></p>
 											</div>
 										</div>
 									</div>
@@ -866,7 +875,7 @@ class PageTableSeeder extends Seeder
 										</div> 
 									</div>  
 							</div>
-							<div class="row"> 
+							<div class="row hidden-xs"> 
 								<div class="col-xs-6 pull-right noppading">
 								<img src="/img/Programmer Needs-04.png"  width="100%" style="margin-top:-150px;margin-left:15px;"/>
 								</div>
@@ -892,7 +901,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -917,7 +926,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -941,7 +950,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -965,7 +974,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
 						      </div>
 						    </div>
 						  </div>
@@ -992,31 +1001,31 @@ class PageTableSeeder extends Seeder
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>
-											请先在形立方的店,哦不,是形立方的网页,看看形立方的作品、服务以及评语。
+											请先在形立方的店, 哦不, 是形立方的网页, 看看形立方的<br class="hidden-xs"/>作品、服务以及评语。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>02</span>
-											了解之后,给形立方打个电话,发邮件也行。
+											了解之后, 给形立方打个电话, 发邮件也行。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>03</span>
-											接下来就是形立方来了解你,你可以选择书面解释你的项目内容,或面谈也行。
+											接下来就是形立方来了解你, 你可以选择书面解释你的项目内容, 或面谈也行。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>04</span>
-											形立方不排斥竞标,但别期待投入的资源是最终作品品质,否则对现有客户不公平。
+											形立方不排斥竞标, 但别期待投入的资源是最终作品品质,<br class="hidden-xs"/> 否则对现有客户不公平。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>05</span>
-											在确认合作之前,形立方会按项目任务作出报价单。
+											在确认合作之前, 形立方会按项目任务作出报价单。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>06</span>
-											当合作意愿敲定之后,双方会先签订合同,以示委托确认。
+											当合作意愿敲定之后, 双方会先签订合同, 以示委托确认。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>07</span>
-											客户需在答应委托的3个工作天后先支付50%预付金,形立方才会正式开工。
+											客户需在答应委托的3个工作天后先支付50%预付金,<br class="hidden-xs"/> 形立方才会正式开工。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>08</span>
@@ -1024,19 +1033,19 @@ class PageTableSeeder extends Seeder
 										</div></div>
 										<div class="left"><div class="box">
 											<span>09</span>
-											支付预付金之后,客户会收到形立方的工作表,任务也会按时完成。
+											支付预付金之后, 客户会收到形立方的工作表, 任务也会按时完成。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>10</span>
-											在形立方[灵活]的特性之下,客户可以随时来电或发电邮提出任何想法。
+											在形立方[灵活]的特性之下, 客户可以随时来电或发电邮提出任何想法。
 										</div></div>
 										<div class="left"><div class="box">
 											<span>11</span>
-											形立方会将所有作品储存为PDF或Ai不可改的文档,源文件为素材版权恕不交付。此为形立方最不灵活之处。
+											形立方会将所有作品储存为PDF或Ai不可改的文档, 源文件为素材版权恕不交付。此为形立方最不灵活之处。
 										</div></div>
 										<div class="right"><div class="box">
 											<span>12</span>
-											更详细的流程,因人而异,欢迎找我们试试看,你会发现与众不同的合作体验。
+											更详细的流程,因人而异, 欢迎找我们试试看, 你会发现与众不同的合作体验。
 										</div></div>
 									</div>
 								</div>

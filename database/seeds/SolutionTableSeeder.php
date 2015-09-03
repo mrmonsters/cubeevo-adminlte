@@ -114,7 +114,7 @@ class SolutionTableSeeder extends Seeder
 				),
 			),
 			array(
-				'pri_color_code' => '#45B97C',
+				'pri_color_code' => '#f7941e',
 				'translation' => array(
 					'cn' => array(
 						'name' => '包装设计',
@@ -153,7 +153,7 @@ class SolutionTableSeeder extends Seeder
 				),
 			),
 			array(
-				'pri_color_code' => '#8F53A1',
+				'pri_color_code' => '#27BDBE',
 				'translation' => array(
 					'cn' => array(
 						'name' => '平面摄影',
@@ -179,7 +179,7 @@ class SolutionTableSeeder extends Seeder
 				),
 			),
 			array(
-				'pri_color_code' => '#1f9ea0',
+				'pri_color_code' => '#f7941e',
 				'translation' => array(
 					'cn' => array(
 						'name' => '打印服务',
