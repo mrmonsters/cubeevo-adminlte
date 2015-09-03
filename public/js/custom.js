@@ -45,7 +45,7 @@ $(document).ready(function() {
             $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn'); 
             $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
               setTimeout(function () {
-                $('.scene.green .plant').removeClass('animated fadeOut').addClass('animated fadeInUp');
+                $('.scene.green .plant').removeClass('animated fadeOut').addClass('animated fadeIn');
               }, 1000
             ));
             $('.cd-next').parent().addClass('hide');
@@ -73,7 +73,7 @@ $(document).ready(function() {
           } 
           if(index == 7){  
             $('.scene.green .body').removeClass('animated fadeIn').addClass('animated fadeOut');
-            $('.scene.green .plant').removeClass('animated fadeInUp').addClass('animated fadeOut');
+            $('.scene.green .plant').removeClass('animated fadeIn').addClass('animated fadeOut');
           } 
       }
     });
