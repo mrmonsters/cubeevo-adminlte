@@ -1,5 +1,5 @@
   $(window).load(function() {
-    $('.blanket').addClass('animate fadeOut');
+    $('.blanket').fadeOut();
   });
 
   $(document).ready(function() {
