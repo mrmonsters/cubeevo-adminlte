@@ -875,7 +875,7 @@ class PageTableSeeder extends Seeder
 										</div> 
 									</div>  
 							</div>
-							<div class="row"> 
+							<div class="row hidden-xs"> 
 								<div class="col-xs-6 pull-right noppading">
 								<img src="/img/Programmer Needs-04.png"  width="100%" style="margin-top:-150px;margin-left:15px;"/>
 								</div>
