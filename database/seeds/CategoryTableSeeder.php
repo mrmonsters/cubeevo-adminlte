@@ -116,6 +116,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Automotive',
 					),
 				),
+				'slug'       => 'automotive',
 				'sort_order' => '7',
 			),
 			array(
@@ -127,6 +128,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Banking',
 					),
 				),
+				'slug'       => 'banking',
 				'sort_order' => '4',
 			),
 			array(
@@ -138,6 +140,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Beauty',
 					),
 				),
+				'slug'       => 'beauty',
 				'sort_order' => '2',
 			),
 			array(
@@ -149,6 +152,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Developer',
 					),
 				),
+				'slug'       => 'developer',
 				'sort_order' => '6',
 			),
 			array(
@@ -160,6 +164,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Education',
 					),
 				),
+				'slug'       => 'education',
 				'sort_order' => '5',
 			),
 			array(
@@ -171,6 +176,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'F&B',
 					),
 				),
+				'slug'       => 'f&b',
 				'sort_order' => '1',
 			),
 			array(
@@ -182,6 +188,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'IT',
 					),
 				),
+				'slug'       => 'it',
 				'sort_order' => '3',
 			),
 			array(
@@ -193,6 +200,7 @@ class CategoryTableSeeder extends Seeder
 						'name' => 'Retailer',
 					),
 				),
+				'slug'       => 'retailer',
 				'sort_order' => '0',
 			),
 		);
@@ -204,6 +212,7 @@ class CategoryTableSeeder extends Seeder
 			$cat = New Category;
 			$cat->grid_img_id    = ++$increment_file_id;
 			$cat->grid_bg_img_id = ++$increment_file_id;
+			$cat->slug 			 = $category['slug'];
 			$cat->sort_order     = $category['sort_order'];
 			$cat->save();
 

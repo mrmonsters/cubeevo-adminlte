@@ -4,6 +4,7 @@ use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Files;
 use App\Models\Category;
+use App\Models\Block;
 
 $locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
 $categories = Category::where('status', '=', STATUS::ACTIVE)->get();
@@ -72,12 +73,12 @@ Description for project management
 										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4">{{ $project->translate($locale->language)->result }}</textarea>
 									</div>
 									<div class="form-group">
-										<label for="founder" class="control-label">Founder</label>
-										<input id="founder" name="founder[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->founder }}" />
-									</div>
-									<div class="form-group">
 										<label for="client_name" class="control-label">Client Name</label>
 										<input id="client_name" name="client_name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->client_name }}" />
+									</div>
+									<div class="form-group">
+										<label for="sub_heading" class="control-label">Sub Heading</label>
+										<input id="sub_heading" name="sub_heading[{{ $locale->id }}]" type="text" class="form-control" value="{{ $project->translate($locale->language)->sub_heading }}" />
 									</div>
 								</div>
 							@endforeach
@@ -93,15 +94,13 @@ Description for project management
 						</select>
 					</div>
 					<div class="form-group">
+						<label for="web_link" class="control-label">Website Link</label>
+						<input id="web_link" name="web_link" type="text" class="form-control" value="{{ $project->web_link }}" />
+					</div>
+					<div class="form-group">
 						<label for="year" class="control-label">Year</label>
 						<input id="year" name="year" type="text" class="form-control" value="{{ $project->year }}" />
 					</div>
-					<!--
-					<div class="form-group">
-						<label for="img_ids" class="control-label">Banners</label>
-						<input id="img_ids" name="img_ids" type="text" class="form-control" value="" />
-					</div>
-					-->
 					<div class="row"> 
 						<div class="form-group col-sm-4">
 							<label for="pri_color_code" class="control-label">Primary Color</label>
@@ -192,6 +191,43 @@ Description for project management
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
+								<img id="mascott_img" class="img-thumbnail" src="{{ ($project->mascott_img_id) ? $project->mascottImage->dir : '' }}" alt="{{ ($project->mascott_img_id) ? $project->mascottImage->name : '' }}">
+								<div class="caption" style="text-align: center;">
+									<p><strong>Mascott Image</strong></p>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img"><i class="fa fa-cloud-upload"></i> Upload New</a>
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="mascott_img_id" name="mascott_img_id" value="{{ ($project->mascott_img_id) ? $project->mascott_img_id : '' }}" />
+						<div class="col-md-4">
+							<div class="thumbnail">
+								<img id="video_img" class="img-thumbnail" src="{{ ($project->video_img_id) ? $project->videoImage->dir : '' }}" alt="{{ ($project->video_img_id) ? $project->videoImage->name : '' }}">
+								<div class="caption" style="text-align: center;">
+									<p><strong>Video Image</strong></p>
+									<div class="row">
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-video-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+										</div>
+										<div class="col-xs-6">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('video_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="video_img_id" name="video_img_id" value="{{ ($project->video_img_id) ? $project->video_img_id : '' }}" />
+					</div>
+					<!--
+					<div class="row">
+						<div class="col-md-4">
+							<div class="thumbnail">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Project Images</strong></p>
 									<div class="row">
@@ -208,8 +244,71 @@ Description for project management
 						<input type="hidden" id="project_img_ids" name="project_img_ids" value="{{ implode(",", $imgIds) }}" />
 						<input type="hidden" id="project_img_sort_order" name="project_img_sort_order" value="{{ implode(",", $sortOrders) }}" />
 					</div>
-				</div>
+					-->
 				<input type="hidden" id="selected_img" value="" />
+				<legend>
+					<b>Project Block(s)</b>
+					<button type="button" class="btn btn-xs btn-success pull-right" onclick="addBlock()">Add Block</button>
+				</legend>
+				<input type="hidden" id="deleted_block" name="deleted_block" value="" />
+				<div id="block-box-body">
+					<input type="hidden" id="block-count" value="{{ $project->blocks()->get()->last()->id + 1}}" />
+					<input type="hidden" id="current-modal-field" />
+					<?php $blockCount = 0; ?>
+					@foreach ($project->blocks()->get() as $block)
+					<div id="new_block_{{ $blockCount }}">
+						<div class="box-header with-border">
+							<h4 class="box-title">Block #{{ $blockCount + 1 }}</h4>
+							<button type="button" class="btn btn-danger pull-right" onclick="removeBlock({{ $blockCount }}, {{ $block->id }})">Remove</button>
+						</div>
+						<div class="form-group">
+							<label for="block-type" class="control-label">Type</label>
+							<select id="block-type-{{ $blockCount }}" class="form-control block-type" name="block[type][{{ $block->id }}]" onchange="toggleInput({{ $blockCount }}, this)">
+								<option value="{{ Block::IMAGE }}" {{ ($block->type == Block::IMAGE) ? 'selected' : '' }}>Single Image</option>
+								<option value="{{ Block::VIDEO }}" {{ ($block->type == Block::VIDEO) ? 'selected' : '' }}>Video</option>
+								<option value="{{ Block::GALLERY }}" {{ ($block->type == Block::GALLERY) ? 'selected' : '' }}>Gallery</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="block-value-{{ $blockCount }}" class="control-label">Value</label>
+							<div class="input-group">
+								<input type="text" id="project_img_ids_{{ $blockCount }}" class="form-control" name="block[value][{{ $block->id }}]" value="{{ $block->value }}" readonly />
+								<input type="hidden" id="project_img_sort_order_{{ $blockCount }}" name="project_img_sort_order[{{ $block->id }}]" />
+								<span class="input-group-btn">
+									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-{{ $blockCount }}">Upload</button>
+									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids_{{ $blockCount }}', 'project_img_sort_order_{{ $blockCount }}')">Choose</button>
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="block-sort" class="control-label">Sort Order</label>
+							<input type="text" id="project_block_sort_{{ $blockCount }}" class="form-control" name="block[sort][{{ $block->id }}]" value="{{ $block->sort_order }}" />
+						</div>
+						<hr />
+						<div class="modal fade" id="modal-new-project-img-{{ $blockCount }}" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="modal">Upload new project images</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group" id="new_project_img_container_{{ $blockCount }}">
+											<label for="new_project_img_id" class="control-label">New Project Image</label>
+											<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id[{{ $blockCount }}][]" />
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $blockCount }}})">Add More</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<?php $blockCount++; ?>
+					@endforeach
+				</div>
 				<div class="box-footer clearfix">
 					<div class="pull-right">
 						<a href="{{ url('/admin/manage/project/') }}" class="btn btn-default">Cancel</a>
@@ -276,7 +375,48 @@ Description for project management
 						</div>
 					</div>
 				</div>
+				<!-- Mascott Image - Modal -->
+				<div class="modal fade" id="modal-mascott-img" tabindex="-1" role="dialog" aria-labelledby="modal-mascott-img">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="modal">Upload new mascott image</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="new_mascott_img_id" class="control-label">New Mascott Image</label>
+									<input type="file" class="form-control" id="new_mascott_img_id" name="new_mascott_img_id" />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Video Image - Modal -->
+				<div class="modal fade" id="modal-video-img" tabindex="-1" role="dialog" aria-labelledby="modal-video-img">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="modal">Upload new video image</h4>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<label for="new_video_img_id" class="control-label">New Video Image</label>
+									<input type="file" class="form-control" id="new_video_img_id" name="new_video_img_id" />
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+							</div>
+						</div>
+					</div>
+				</div>
 				<!-- New Project Image - Modal -->
+				<!--
 				<div class="modal fade" id="modal-new-project-img" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
@@ -297,6 +437,7 @@ Description for project management
 						</div>
 					</div>
 				</div>
+				-->
 			</form>
 		</div>
 	</div>
@@ -381,7 +522,8 @@ $(document).ready(function()
 
 	$('.img_sort_order').on('keyup', function()
 	{
-		setImgSortOrder();
+		var fields = $('#current-modal-field').val().split(',');
+		setImgSortOrder(fields[1]);
 	});
 });
 
@@ -410,12 +552,21 @@ function selectImg(imgId, imgSrc)
 		{
 			$('#brand_img').attr('src', imgSrc);
 		}
+		else if (imgType == 'mascott_img_id')
+		{
+			$('#mascott_img').attr('src', imgSrc);
+		}
+		else if (imgType == 'video_img_id')
+		{
+			$('#video_img').attr('src', imgSrc);
+		}
 	}
 }
 
 function selectProjectImg()
 {
 	var imgIds = [];
+	var fields = $('#current-modal-field').val().split(',');
 
 	$('.project_img').each(function()
 	{
@@ -433,11 +584,11 @@ function selectProjectImg()
 		}
 	});
 
-	$('#project_img_ids').val(imgIds.join(','));
-	setImgSortOrder();
+	$('#' + fields[0]).val(imgIds.join(','));
+	setImgSortOrder(fields[1]);
 }
 
-function setImgSortOrder()
+function setImgSortOrder(field)
 {
 	var sortOrder = [];
 
@@ -456,12 +607,158 @@ function setImgSortOrder()
 		}
 	});
 
-	$('#project_img_sort_order').val(sortOrder.join(','));
+	$('#' + field).val(sortOrder.join(','));
+}
+
+function setImgSortOrder(field)
+{
+	var sortOrder = [];
+
+	$('.img_sort_order').each(function()
+	{
+		if ($(this).closest('.thumbnail').find('.project_img').is(':checked'))
+		{
+			if ($(this).val() != '')
+			{
+				sortOrder.push($(this).val());
+			}
+			else
+			{
+				sortOrder.push(0);
+			}
+		}
+	});
+
+	$('#' + field).val(sortOrder.join(','));
 }
 
 function addProjectImg()
 {
 	$('.new_project_img:last').clone().appendTo('#new_project_img_container');
+}
+
+function prepareModal(img, sort)
+{
+	$('#current-modal-field').val(img + "," + sort);
+
+	var imgIds = $('#' + img).val().split(',');
+	var sorts  = $('#' + sort).val().split(',');
+	var count  = 0;
+
+	$('.project_img').each(function()
+	{
+		if (imgIds.length > 0 && $.inArray($(this).val(), imgIds) != -1)
+		{
+			$(this).prop('checked', true);
+			$('#img_sort_order_' + $(this).val()).val(sorts[count]);
+			$('#img_sort_order_container_' + $(this).val()).show();
+			count++;
+		}
+		else
+		{
+			$(this).prop('checked', false);
+			$('#img_sort_order_' + $(this).val()).val('');
+			$('#img_sort_order_container_' + $(this).val()).hide();
+		}
+	});
+}
+
+function addBlock()
+{
+	var count = parseInt($('#block-count').val());
+	$('#block-count').val(count+1);
+
+	var blockInput = '<div id="new_block_'+count+'"><div class="box-header with-border">'
+		+ '<h4 class="box-title">Block #'+(count+1)+'</h4>'
+		+ '<button type="button" class="btn btn-danger pull-right" onclick="removeBlock('+count+', \'\')">Remove</button>'
+		+ '</div>'
+		+ '<div class="form-group">'
+		+ '<label for="block-type" class="control-label">Type</label>'
+		+ '<select id="block-type-'+count+'" class="form-control block-type" name="block[type]['+count+']" onchange="toggleInput('+count+', this)">'
+		+ '<option value="img">Single Image</option>'
+		+ '<option value="vid">Video</option>'
+		+ '<option value="gal">Gallery</option>'
+		+ '</select>'
+		+ '</div>'
+		+ '<div class="form-group">'
+		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
+		+ '<div class="input-group">'
+		+ '<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value]['+count+']" readonly />'
+		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order['+count+']" />' 
+		+ '<span class="input-group-btn">'
+		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
+		+ '</span>'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="form-group">'
+		+ '<label for="block-sort" class="control-label">Sort Order</label>'
+		+ '<input type="text" id="project_block_sort_'+count+'" class="form-control" name="block[sort]['+count+']" />'
+		+ '</div><hr />'
+		+ '<div class="modal fade" id="modal-new-project-img-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">'
+		+ '<div class="modal-dialog" role="document">'
+		+ '<div class="modal-content">'
+		+ '<div class="modal-header">'
+		+ '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+		+ '<h4 class="modal-title" id="modal">Upload new project images</h4>'
+		+ '</div>'
+		+ '<div class="modal-body">'
+		+ '<div class="form-group" id="new_project_img_container_'+count+'">'
+		+ '<label for="new_project_img_id" class="control-label">New Project Image</label>'
+		+ '<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id['+count+'][]" />'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal-footer">'
+		+ '<button type="button" class="btn btn-default" onclick="addProjectImg('+count+')">Add More</button>'
+		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>';
+	$('#block-box-body').append(blockInput);
+}
+
+function toggleInput(count, select)
+{
+	if ($(select).val() == 'vid')
+	{
+		$('#project_img_ids_' + count).attr('readonly', false);
+		$('#btn-upload-' + count).attr('disabled', true);
+		$('#btn-choose-' + count).attr('disabled', true);
+	}
+	else
+	{
+		$('#project_img_ids_' + count).attr('readonly', true);
+		$('#btn-upload-' + count).attr('disabled', false);
+		$('#btn-choose-' + count).attr('disabled', false);
+	}
+}
+
+function removeBlock(count, blockId)
+{
+	if (blockId != '')
+	{
+		var value = $('#deleted_block').val();
+		if (value != '')
+		{
+			blockIds = value.split(",");
+		}
+		else
+		{
+			var blockIds = [];
+		}
+
+		blockIds.push(blockId);
+		$('#deleted_block').val(blockIds.join(","));
+	}
+
+	$('#new_block_' + count).hide();
+	$('#block-type-' + count).attr('disabled', true);
+	$('#project_img_ids_' + count).attr('disabled', true);
+	$('#project_img_sort_order_' + count).attr('disabled', true);
+	$('#project_block_sort_' + count).attr('disabled', true);
+	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
 }
 </script>
 @endsection

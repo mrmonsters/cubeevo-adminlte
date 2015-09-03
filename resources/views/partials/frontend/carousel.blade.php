@@ -1,10 +1,15 @@
+<?php
+use App\Models\Files;
+
+$imgIds = explode(",", $block->value);
+?>
 <div class="row">
     <div class="col-xs-12 nopadding">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
                 <?php $count = 0; ?>
-                @foreach ($project->projectImages()->orderBy('sort_order')->get() as $image)
+                @foreach ($imgIds as $id)
                 <li class="{{ ($count == 0) ? 'active' : '' }}" data-target="#carousel-example-generic" data-slide-to="{{ $count++ }}"></li>
                 @endforeach
             </ol>
@@ -12,9 +17,9 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <?php $count = 0; ?>
-                @foreach ($project->projectImages()->orderBy('sort_order')->get() as $image)
+                @foreach ($imgIds as $id)
                 <div class="item {{ ($count++ == 0) ? 'active' : '' }}" style="max-height: 980px;">
-                    <img src="{{ $image->image->dir }}" alt="{{ $image->image->name }}" width="100%">
+                    <img src="{{ Files::find($id)->dir }}" alt="{{ Files::find($id)->name }}" width="100%">
                 </div>
                 @endforeach
             </div>

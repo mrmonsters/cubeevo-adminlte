@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use App\Models\Status;
 use App\Models\Locale;
+use App\Models\Block;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
 use App\Models\ProjectFile;
@@ -86,32 +87,68 @@ class ProjectController extends Controller {
 					{
 						$project->brand_img_id = $fileHelper->uploadNewFile($val);
 					}
+					else if ($key == 'new_mascott_img_id')
+					{
+						$project->mascott_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_video_img_id')
+					{
+						$project->video_img_id = $fileHelper->uploadNewFile($val);
+					}
 					else if ($key == 'new_project_img_id')
 					{
-						foreach ($val as $img)
+						foreach ($val as $id => $img)
 						{
-							$newImgIds[] = $FileHelper->uploadNewFile($img);
+							if (is_array($img) && !empty($img))
+							{
+								$imgs = array();
+								foreach ($img as $k => $v)
+								{
+									if (isset($v))
+									{
+										$imgs[] = $fileHelper->uploadNewFile($v);
+									}
+								}
+
+								$newImgIds[$id] = implode(",", $imgs);
+							}
 						}
 					}
 				}
 			}
-			else
+
+			if (isset($data['grid_img_id']) && $data['grid_img_id'] != null)
 			{
 				$project->grid_img_id    = $data['grid_img_id'];
+			}
+			if (isset($data['grid_bg_img_id']) && $data['grid_bg_img_id'] != null)
+			{
 				$project->grid_bg_img_id = $data['grid_bg_img_id'];
+			}
+			if (isset($data['brand_img_id']) && $data['brand_img_id'] != null)
+			{
 				$project->brand_img_id 	 = $data['brand_img_id'];
+			}
+			if (isset($data['video_img_id']) && $data['video_img_id'] != null)
+			{
+				$project->video_img_id   = $data['video_img_id'];
+			}
+			if (isset($data['mascott_img_id']) && $data['mascott_img_id'] != null)
+			{
+				$project->mascott_img_id = $data['mascott_img_id'];
 			}
 
 			$project->category_id    = $data['category_id'];
 			$project->pri_color_code = $data['pri_color_code'];
 			$project->sec_color_code = $data['sec_color_code'];
 			$project->txt_color_code = $data['txt_color_code'];
+			$project->web_link		 = $data['web_link'];
 			$project->year           = $data['year'];
 			$project->sort_order     = $data['sort_order'];
 			$project->save();
 
 			$projData   = array();
-			$attributes = array('name', 'background', 'challenge', 'result', 'founder', 'client_name');
+			$attributes = array('name', 'background', 'challenge', 'result', 'sub_heading', 'client_name');
 			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
 
 			foreach ($locales as $locale)
@@ -130,46 +167,57 @@ class ProjectController extends Controller {
 				ProjectTranslation::create($projData);
 			}
 
-			if (!empty($newImgIds))
+			if (isset($data['block']) && !empty($data['block']))
 			{
-				foreach ($newImgIds as $id)
+				foreach ($data['block']['type'] as $k => $v)
 				{
-					$newImg = array();
-					$newImg['project_id'] = $project->id;
-					$newImg['img_id']     = $id;
+					$block['id'] = $k;
+					$block['project_id'] = $project->id;
+					$block['sort_order'] = $data['block']['sort'][$k];
 
-					ProjectFile::create($newImg);
-				}
-			}
-
-			if ($data['project_img_ids'] && $data['project_img_sort_order'])
-			{
-				$imgIds     = explode(",", $data['project_img_ids']);
-				$sortOrders = explode(",", $data['project_img_sort_order']);
-				$projFiles  = array();
-
-				foreach ($project->projectImages()->get() as $item)
-				{
-					$projFiles[] = $item;
-				}
-
-				for ($i = 0; $i < count($imgIds); $i++)
-				{
-					$img = array();
-					$img['project_id'] = $project->id;
-					$img['img_id']     = $imgIds[$i];
-					$img['sort_order'] = $sortOrders[$i];
-
-					if (isset($projFiles[$i]))
+					switch ($data['block']['type'][$k])
 					{
-						$projFiles[$i]->update($img);
+						case Block::IMAGE:
+							$block['type']  = Block::IMAGE;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::VIDEO:
+							$block['type']  = Block::VIDEO;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::GALLERY:
+							$block['type'] = Block::GALLERY;
+							if (!empty($newImgIds) && isset($newImgIds[$k]) && $newImgIds[$k] != '')
+							{
+								$images = $newImgIds[$k];
+							}
+							else
+							{
+								$imgIds = explode(",", $data['block']['value'][$k]);
+								$sortOrders = explode(",", $data['project_img_sort_order'][$k]);
+								$images = array();
+								if (count($imgIds) == count($sortOrders))
+								{
+									for ($x = 0; $x < count($imgIds); $x++)
+									{
+										$images[$sortOrders[$x]] = $imgIds[$x];
+									}
+									ksort($images);
+								}
+								else
+								{
+									$images = $imgIds;
+								}
+								$images = implode(",", $images);
+							}
+
+							$block['value'] = $images;
+							break;
 					}
-					else
-					{
-						ProjectFile::create($img);
-					}
+
+					Block::create($block);	
 				}
-			}
+			}	
 
 			$response['code'] = STATUS::SUCCESS;
 			$response['msg']  = "Project [#".$project->id."] has been created successfully.";
@@ -242,32 +290,68 @@ class ProjectController extends Controller {
 					{
 						$project->brand_img_id = $fileHelper->uploadNewFile($val);
 					}
+					else if ($key == 'new_mascott_img_id')
+					{
+						$project->mascott_img_id = $fileHelper->uploadNewFile($val);
+					}
+					else if ($key == 'new_video_img_id')
+					{
+						$project->video_img_id = $fileHelper->uploadNewFile($val);
+					}
 					else if ($key == 'new_project_img_id')
 					{
-						foreach ($val as $img)
+						foreach ($val as $id => $img)
 						{
-							$newImgIds[] = $FileHelper->uploadNewFile($img);
+							if (is_array($img) && !empty($img))
+							{
+								$imgs = array();
+								foreach ($img as $k => $v)
+								{
+									if (isset($v))
+									{
+										$imgs[] = $fileHelper->uploadNewFile($v);
+									}
+								}
+
+								$newImgIds[$id] = implode(",", $imgs);
+							}
 						}
 					}
 				}
 			}
-			else
+			
+			if (isset($data['grid_img_id']) && $data['grid_img_id'] != null)
 			{
 				$project->grid_img_id    = $data['grid_img_id'];
+			}
+			if (isset($data['grid_bg_img_id']) && $data['grid_bg_img_id'] != null)
+			{
 				$project->grid_bg_img_id = $data['grid_bg_img_id'];
+			}
+			if (isset($data['brand_img_id']) && $data['brand_img_id'] != null)
+			{
 				$project->brand_img_id 	 = $data['brand_img_id'];
+			}
+			if (isset($data['video_img_id']) && $data['video_img_id'] != null)
+			{
+				$project->video_img_id   = $data['video_img_id'];
+			}
+			if (isset($data['mascott_img_id']) && $data['mascott_img_id'] != null)
+			{
+				$project->mascott_img_id = $data['mascott_img_id'];
 			}
 
 			$project->category_id	 = $data['category_id'];
 			$project->pri_color_code = $data['pri_color_code'];
 			$project->sec_color_code = $data['sec_color_code'];
 			$project->txt_color_code = $data['txt_color_code'];
+			$project->web_link		 = $data['web_link'];
 			$project->year           = $data['year'];
 			$project->sort_order     = $data['sort_order'];
 			$project->save();
 
 			$projData   = array();
-			$attributes = array('name', 'background', 'challenge', 'result', 'founder', 'client_name');
+			$attributes = array('name', 'background', 'challenge', 'result', 'sub_heading', 'client_name');
 			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
 
 			foreach ($locales as $locale)
@@ -297,43 +381,77 @@ class ProjectController extends Controller {
 				}
 			}
 
-			if (!empty($newImgIds))
+			if (isset($data['block']) && !empty($data['block']))
 			{
-				foreach ($newImgIds as $id)
+				foreach ($data['block']['type'] as $k => $v)
 				{
-					$newImg               = array();
-					$newImg['project_id'] = $project->id;
-					$newImg['img_id']     = $id;
+					$block['id'] = $k;
+					$block['project_id'] = $project->id;
+					$block['sort_order'] = $data['block']['sort'][$k];
 
-					ProjectFile::create($newImg);
+					switch ($data['block']['type'][$k])
+					{
+						case Block::IMAGE:
+							$block['type']  = Block::IMAGE;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::VIDEO:
+							$block['type']  = Block::VIDEO;
+							$block['value'] = $data['block']['value'][$k];
+							break;
+						case Block::GALLERY:
+							$block['type'] = Block::GALLERY;
+							if (!empty($newImgIds) && isset($newImgIds[$k]) && $newImgIds[$k] != '')
+							{
+								$images = $newImgIds[$k];
+							}
+							else
+							{
+								$imgIds = explode(",", $data['block']['value'][$k]);
+								$sortOrders = explode(",", $data['project_img_sort_order'][$k]);
+								$images = array();
+								if (count($imgIds) == count($sortOrders))
+								{
+									for ($x = 0; $x < count($imgIds); $x++)
+									{
+										$images[$sortOrders[$x]] = $imgIds[$x];
+									}
+									ksort($images);
+								}
+								else
+								{
+									$images = $imgIds;
+								}
+								$images = implode(",", $images);
+							}
+
+							$block['value'] = $images;
+							break;
+					}
+
+					$blockObject = Block::find($k);
+
+					if (isset($blockObject))
+					{
+						$blockObject->update($block);
+					}	
+					else
+					{
+						Block::create($block);
+					}	
 				}
 			}
 
-			if ($data['project_img_ids'] && $data['project_img_sort_order'])
+			if (isset($data['deleted_block']))
 			{
-				$imgIds     = explode(",", $data['project_img_ids']);
-				$sortOrders = explode(",", $data['project_img_sort_order']);
-				$projFiles  = array();
-
-				foreach ($project->projectImages()->get() as $item)
+				$blockIds = explode(",", $data['deleted_block']);
+				foreach ($blockIds as $id)
 				{
-					$projFiles[] = $item;
-				}
-
-				for ($i = 0; $i < count($imgIds); $i++)
-				{
-					$img = array();
-					$img['project_id'] = $project->id;
-					$img['img_id']     = $imgIds[$i];
-					$img['sort_order'] = $sortOrders[$i];
-
-					if (isset($projFiles[$i]))
+					if (!isset($data['block']['type'][$id]) && $id != '')
 					{
-						$projFiles[$i]->update($img);
-					}
-					else
-					{
-						ProjectFile::create($img);
+						$block = Block::find($id);
+						$block->delete = true;
+						$block->save();
 					}
 				}
 			}

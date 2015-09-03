@@ -1,4 +1,5 @@
 @extends('partials.frontend.app')
+<?php use App\Models\Block; ?>
 
 @section('frontend-content')
 <style>
@@ -32,7 +33,7 @@
                                 </div>
                                 <div class="col-sm-10">
                                     <p class="desctitle project-name" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
-                                	<h3>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
+                                	<h3>{{ (Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
                                     
                                     <div style="padding-top:14%;">
                                     	<div class="col-sm-6 crecol-1">
@@ -57,13 +58,27 @@
             </div>
         </div>
     </div> 
-    @include('partials.frontend.carousel')
-    @foreach ($project->projectImages()->orderBy('sort_order')->get() as $image)
-    <div class="row"> 
-        <div class="col-xs-12 nopadding">
-            <img src="{{ $image->image->dir }}" width="100%">
-        </div>
-    </div>
+    @foreach ($project->blocks()->orderBy('sort_order')->get() as $block)
+    @if ($block->type == Block::IMAGE)
+        @include('partials.frontend.image')
+    @elseif ($block->type == Block::GALLERY)
+        @include('partials.frontend.carousel')
+    @elseif ($block->type == Block::VIDEO)
+        @include('partials.frontend.video')
+    @endif
     @endforeach
 </div> 
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(function(){
+  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+
+  // If you want to keep full screen on window resize
+  $(window).resize(function(){
+    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+  });
+});
+</script>
 @endsection

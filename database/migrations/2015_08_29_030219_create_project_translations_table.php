@@ -27,7 +27,7 @@ class CreateProjectTranslationsTable extends Migration {
 			$table->text('background');
 			$table->text('challenge');
 			$table->text('result');
-			$table->string('founder');
+			$table->string('sub_heading');
 			$table->integer('status')->default(2);
 			$table->timestamps();
 		});

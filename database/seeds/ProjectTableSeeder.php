@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Files;
+use App\Models\Block;
 use App\Models\Project;
 use App\Models\ProjectTranslation;
 use App\Models\ProjectFile;
@@ -916,6 +917,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2014',
+				'slug'		  => 'world-top',
 				'img_count'   => 2,
 				'category_id' => 1,
 			),
@@ -937,6 +939,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2014',
+				'slug'		  => 'rhb-fun-facts',
 				'img_count'   => 13,
 				'category_id' => 2,
 			),
@@ -958,6 +961,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2014',
+				'slug'		  => 'rhb-word-of-the-day',
 				'img_count'   => 15,
 				'category_id' => 2,
 			),
@@ -979,6 +983,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2014',
+				'slug'		  => 'sunshine-touch',
 				'img_count'   => 3,
 				'category_id' => 3,
 			),
@@ -1000,6 +1005,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2012',
+				'slug'		  => 'fortson',
 				'img_count'   => 4,
 				'category_id' => 4,
 			),
@@ -1021,6 +1027,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2014',
+				'slug'		  => 'globbykidz',
 				'img_count'   => 10,
 				'category_id' => 5,
 			),
@@ -1042,6 +1049,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'        => '2010',
+				'slug'		  => 'kostka-studio',
 				'img_count'   => 1,
 				'category_id' => 5,
 			),
@@ -1063,6 +1071,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2013',
+				'slug'		  => 'auric-pacific',
 				'img_count'   => 13,
 				'category_id' => 6,
 			),
@@ -1084,6 +1093,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'liansin',
 				'img_count'   => 7,
 				'category_id' => 6,
 			),
@@ -1105,6 +1115,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'tk-bakery',
 				'img_count'   => 4,
 				'category_id' => 6,
 			),
@@ -1126,6 +1137,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2015',
+				'slug'		  => 'ip-server-one',
 				'img_count'   => 13,
 				'category_id' => 7,
 			),
@@ -1147,6 +1159,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'pacific-linktel',
 				'img_count'   => 4,
 				'category_id' => 7,
 			),
@@ -1168,6 +1181,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'greenology',
 				'img_count'   => 4,
 				'category_id' => 8,
 			),
@@ -1189,6 +1203,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'hairmilk',
 				'img_count'   => 5,
 				'category_id' => 8,
 			),
@@ -1210,6 +1225,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2007',
+				'slug'		  => 'hairdepot',
 				'img_count'   => 15,
 				'category_id' => 8,
 			),
@@ -1231,6 +1247,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2012',
+				'slug'		  => 'midori',
 				'img_count'   => 5,
 				'category_id' => 8,
 			),
@@ -1252,6 +1269,7 @@ class ProjectTableSeeder extends Seeder
 					),
 				),
 				'year'		  => '2014',
+				'slug'		  => 'ben-cao-ji',
 				'img_count'   => 2,
 				'category_id' => 8,
 			),
@@ -1270,6 +1288,7 @@ class ProjectTableSeeder extends Seeder
 			$proj->sec_color_code = '#6699FF';
 			$proj->txt_color_code = '#8C0039';
 			$proj->year           = $project['year'];
+			$proj->slug 		  = $project['slug'];
 			$proj->sort_order     = $count++;
 			$proj->save();
 
@@ -1284,7 +1303,6 @@ class ProjectTableSeeder extends Seeder
 				$projTranslation->background  = $val['background'];
 				$projTranslation->challenge   = $val['challenge'];
 				$projTranslation->result      = $val['result'];
-				$projTranslation->founder     = 'Jerry Young';
 				$projTranslation->client_name = $val['client_name'];
 				$projTranslation->save();
 			}
@@ -1300,12 +1318,22 @@ class ProjectTableSeeder extends Seeder
 
 		for ($i = 0; $i < $count; $i++)
 		{
+			/*
 			$projFile = New ProjectFile;
 			$projFile->project_id = $projectId;
 			$projFile->img_id     = ++$lastFileId;
 			$projFile->sort_order = $cnt++;
 			$projFile->save();
+			*/
+			$block = new Block;
+			$block->project_id = $projectId;
+			$block->type = Block::IMAGE;
+			$block->value = ++$lastFileId;
+			$block->sort_order = $cnt++;
+			$block->save();
 		}
+
+
 
 		return $lastFileId;
 	}
