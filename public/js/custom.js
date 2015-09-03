@@ -5,8 +5,9 @@
   $(document).ready(function() {
 
 	if($('.scene').length > 0){ 
-		$('.scene').parallax(); 
-  	}
+		var $scene = $('.scene').parallax(); 
+    $scene.parallax('scalar',12, 2); 
+  }
 
 	$('.cd-nav-trigger').click(function(){
 		return false;

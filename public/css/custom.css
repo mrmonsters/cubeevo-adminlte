@@ -203,26 +203,25 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .sol-9 {background:#1f9ea0 url(../img/Images-36.png); background-position:right;}
 
 .panel-body.overlap { 
-	position: absolute;
-   	bottom: 18%; 
+	position: absolute; 
     left: 0;
     right: 0;
     padding: 5% 5% 0 3%;
-    margin:  5% 0px 0px 0px; 
+    margin:  -25% 0px 0px 0px; 
 
 }
 .panel-body.overlap p {
 	z-index:1;
 	position:relative;
-	color:#fff;
-	min-height: 30px;
+	color:#fff; 
   padding-left: 5px;
 }
-.panel-title { float:left; font-size:18px;}
+.panel-title { float:left; font-size:18px;padding-right: 0px;}
 .panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px; border-left:1px solid #fff;}
 
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0px;} 
+.cre .panel-body.overlap {margin: -25% 0px 0px 0px;}
 .container-fluid.cre{background:#666;} 	
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
@@ -540,6 +539,7 @@ Main Components
     background-color: #fff;
 }
 @media (min-width:768px){
+  .panel-body.overlap {margin: -21% 0px 0px 0px;}
   .scene.mascott{left: -20%;}
   .panel-body.overlap p{
     padding-left:15px;
