@@ -1,4 +1,8 @@
-$(document).ready(function() {
+  $(window).load(function() {
+    $('.blanket').addClass('animate fadeOut');
+  });
+
+  $(document).ready(function() {
 
 	if($('.scene').length > 0){ 
 		$('.scene').parallax(); 
