@@ -261,7 +261,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .crecol-1,.credential .crecol-2{text-align: justify;}
 .cre .comingsoon {}
 
-.container-fluid.process{margin: 15px;background-color: #eee;padding-top: 80px;}
+.container-fluid.process{margin: 0.8%;background-color: #eee;padding-top: 80px;}
 .process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
 .process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;margin-left: 0.5%;}
@@ -272,7 +272,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
 .process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
-.container-fluid.aboutus{margin: 15px;background-color: #eee;padding-top: 80px;}
+.container-fluid.aboutus{margin: 0.8%;background-color: #eee;padding-top: 80px;}
 .aboutus .tagline {color:#f7941a; font-size:55px;}
 .aboutus .sub-tagline {color:#fff; font-size:20px; margin-bottom:50px;font-weight: lighter;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
@@ -294,7 +294,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .career .job {overflow:hidden; margin-bottom: 30px; margin-top:10px;}
 .aboutus .career .job button {border: 1px solid #fff; background: none; color: #fff; padding: 10px 20px; border-radius: 0; float:right;}
 
-.container-fluid.contactus{margin: 15px;background-color: #eee;padding-top: 80px;}
+.container-fluid.contactus{margin: 0.8%;background-color: #eee;padding-top: 80px;}
 .contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;} 
 .contactus ul { list-style:none; padding:0; overflow:hidden;}
 .contactus li {padding-left:26px;}
