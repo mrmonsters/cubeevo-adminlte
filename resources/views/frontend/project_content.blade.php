@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="col-sm-10">
                                     <p class="desctitle project-name" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
-                                	<h3>{{ (Session::get('locale') == 'en') ? strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
+                                	<h3>{{ (Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
                                     
                                     <div style="padding-top:14%;">
                                     	<div class="col-sm-6 crecol-1">
