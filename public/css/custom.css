@@ -317,7 +317,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -120px;}
 .contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
-.scene.mascott{position:relative;left: -20%;top: -2%;}
+.scene.mascott{position:relative;left: -27%;top: -2%;}
 .scene.mascott.purple{top: 11%;}
 .scene.mascott .layer > div{ 
 	width: 1280px;
@@ -530,6 +530,7 @@ Main Components
   display: none;
 }
 @media (min-width:768px){
+  .scene.mascott{left: -20%;}
   .panel-body.overlap p{
     padding-left:15px;
   }
