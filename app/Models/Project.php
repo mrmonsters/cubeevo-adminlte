@@ -30,6 +30,16 @@ class Project extends Model implements TranslatableContract {
 		return $this->hasOne('App\Models\Files', 'id', 'brand_img_id');
 	}
 
+	public function mascottImage()
+	{
+		return $this->hasOne('App\Models\Files', 'id', 'mascott_img_id');
+	}
+
+	public function videoImage()
+	{
+		return $this->hasOne('App\Models\Files', 'id', 'video_img_id');
+	}
+
 	public function projectImages()
 	{
 		return $this->hasMany('App\Models\ProjectFile', 'project_id', 'id');
@@ -42,7 +52,7 @@ class Project extends Model implements TranslatableContract {
 
 	public function blocks()
 	{
-		return $this->hasMany('App\Models\Block', 'project_id', 'id');
+		return $this->hasMany('App\Models\Block', 'project_id', 'id')->where('delete', false);
 	}
 
 }

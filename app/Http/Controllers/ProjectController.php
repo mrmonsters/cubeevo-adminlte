@@ -260,6 +260,7 @@ class ProjectController extends Controller {
 		//
 		$response  = array();
 		$data      = $req->input();
+		dd($data);
 		$project   = Project::find($id);
 		$newImgIds = array();
 
@@ -300,12 +301,25 @@ class ProjectController extends Controller {
 					}
 				}
 			}
-			else
+			
+			if (isset($data['grid_img_id']) && $data['grid_img_id'] != null)
 			{
 				$project->grid_img_id    = $data['grid_img_id'];
+			}
+			if (isset($data['grid_bg_img_id']) && $data['grid_bg_img_id'] != null)
+			{
 				$project->grid_bg_img_id = $data['grid_bg_img_id'];
+			}
+			if (isset($data['brand_img_id']) && $data['brand_img_id'] != null)
+			{
 				$project->brand_img_id 	 = $data['brand_img_id'];
+			}
+			if (isset($data['video_img_id']) && $data['video_img_id'] != null)
+			{
 				$project->video_img_id   = $data['video_img_id'];
+			}
+			if (isset($data['mascott_img_id']) && $data['mascott_img_id'] != null)
+			{
 				$project->mascott_img_id = $data['mascott_img_id'];
 			}
 
@@ -403,6 +417,20 @@ class ProjectController extends Controller {
 					else
 					{
 						Block::create($block);
+					}
+				}
+			}
+
+			if (isset($data['deleted_block']))
+			{
+				$blockIds = explode(",", $data['deleted_block']);
+				foreach ($blockIds as $id)
+				{
+					if (!isset($data['block']['type'][$id]))
+					{
+						$block = Block::find($id);
+						$block->deleted = true;
+						$block->save();
 					}
 				}
 			}

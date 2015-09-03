@@ -156,6 +156,8 @@ Description for project management
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="row">
 						<input type="hidden" id="brand_img_id" name="brand_img_id" />
 						<div class="col-md-4">
 							<div class="thumbnail">
@@ -446,6 +448,14 @@ function selectImg(imgId, imgSrc)
 		{
 			$('#brand_img').attr('src', imgSrc);
 		}
+		else if (imgType == 'mascott_img_id')
+		{
+			$('#mascott_img').attr('src', imgSrc);
+		}
+		else if (imgType == 'video_img_id')
+		{
+			$('#video_img').attr('src', imgSrc);
+		}
 	}
 }
 
@@ -453,7 +463,6 @@ function selectProjectImg()
 {
 	var imgIds = [];
 	var fields = $('#current-modal-field').val().split(',');
-	console.log(fields);
 
 	$('.project_img').each(function()
 	{
@@ -533,13 +542,13 @@ function addBlock()
 	var count = parseInt($('#block-count').val());
 	$('#block-count').val(count+1);
 
-	var blockInput = '<div class="box-header with-border">'
+	var blockInput = '<div id="new_block_'+count+'"><div class="box-header with-border">'
 		+ '<h4 class="box-title">Block #' + (count+1) + '</h4>'
 		+ '<button type="button" class="btn btn-danger pull-right">Remove</button>'
 		+ '</div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-type" class="control-label">Type</label>'
-		+ '<select id="block-type" class="form-control block-type" name="block[type][]" onchange="toggleInput('+count+', this)">'
+		+ '<select id="block-type-'+count+'" class="form-control block-type" name="block[type][]" onchange="toggleInput('+count+', this)">'
 		+ '<option value="img">Single Image</option>'
 		+ '<option value="vid">Video</option>'
 		+ '<option value="gal">Gallery</option>'
@@ -558,7 +567,7 @@ function addBlock()
 		+ '</div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-sort" class="control-label">Sort Order</label>'
-		+ '<input type="text" class="form-control" name="block[sort][]" />'
+		+ '<input type="text" id="project_block_sort_'+count+'" class="form-control" name="block[sort][]" />'
 		+ '</div><hr />'
 		+ '<div class="modal fade" id="modal-new-project-img-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">'
 		+ '<div class="modal-dialog" role="document">'
@@ -576,6 +585,7 @@ function addBlock()
 		+ '<div class="modal-footer">'
 		+ '<button type="button" class="btn btn-default" onclick="addProjectImg('+count+')">Add More</button>'
 		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
+		+ '</div>'
 		+ '</div>'
 		+ '</div>'
 		+ '</div>'
@@ -597,6 +607,16 @@ function toggleInput(count, select)
 		$('#btn-upload-' + count).attr('disabled', false);
 		$('#btn-choose-' + count).attr('disabled', false);
 	}
+}
+
+function removeBlock(count)
+{
+	$('#new_block_' + count).hide();
+	$('#block-type-' + count).attr('disabled', true);
+	$('#project_img_ids_' + count).attr('disabled', true);
+	$('#project_img_sort_order_' + count).attr('disabled', true);
+	$('#project_block_sort_' + count).attr('disabled', true);
+	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
 }
 </script>
 @endsection
