@@ -12,7 +12,7 @@
             <div id='cre-box__{{$count}}' class="js-three-d sol-box col-sm-6 col-lg-4" style="background: {{ $solution->pri_color_code }} url('..{{ $solution->backgroundImage->dir }}') no-repeat center center;  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;background-size: 105% auto;">
+  background-size: cover;background-size: 110% auto;">
                 <div class="contbox"> 
                     <div class="greybox"></div> 
 
@@ -25,10 +25,10 @@
                     </div> 
 
                     <div class="row panel-body overlap">
-                        <p class="col-sm-4 panel-title">
+                        <p class="col-xs-12 col-sm-4 panel-title">
                             {{ $solution->translate(Session::get('locale'))->name }}
                         </p>
-                        <p class="col-sm-8 hidden-text panel-title-desc">
+                        <p class="col-xs-12 col-sm-8 hidden-text panel-title-desc">
                             {{ $solution->translate(Session::get('locale'))->desc }}
                         </p>
                     </div> 
