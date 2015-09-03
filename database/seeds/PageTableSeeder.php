@@ -38,7 +38,7 @@ class PageTableSeeder extends Seeder
 													<div class="col-sm-push-5 col-sm-7">
 														<h3 class="text-black"><b>形立方</b></h3>
 														<p class="text-black">
-														形立方的标志概念和灵感是基于最基本的设计元素， <br class="hidden-xs"/>魔术方块，形状，格框以及线条所组成的。形立方<br/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br/>不必要的框架；形立方也讲究【活力】，在打造<br/>品牌的过程中就是展现活力。
+														形立方的标志概念和灵感是基于最基本的设计元素， <br class="hidden-xs"/>魔术方块，形状，格框以及线条所组成的。形立方<br class="hidden-xs"/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="hidden-xs"/>不必要的框架；形立方也讲究【活力】，在打造<br class="hidden-xs"/>品牌的过程中就是展现活力。
 														</p>
 													</div> 
 												</div>
@@ -61,7 +61,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>灵活</b></h3>
 													<p>
-													形立方追求灵活，弹性，务必让合作过程更加灵活，<br/>只为达致客户最理想的成果。
+													形立方追求灵活，弹性，务必让合作过程更加灵活，<br class="hidden-xs"/>只为达致客户最理想的成果。
 													</p>
 												</div> 
 											</div> 
@@ -106,7 +106,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>破格</b></h3>
 													<p>
-													形立方在创业上不仅仅是大胆，还会打破框框，<br/>为客户打造专属形象！
+													形立方在创业上不仅仅是大胆，还会打破框框，<br class="hidden-xs"/>为客户打造专属形象！
 													</p>
 												</div> 
 											</div> 
@@ -129,7 +129,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>美感</b></h3>
 													<p>
-													形立方的根本是创意设计，大前提必须是美感触觉，<br/>为客户建立完美形象！
+													形立方的根本是创意设计，大前提必须是美感触觉，<br class="hidden-xs"/>为客户建立完美形象！
 													</p>
 												</div> 
 											</div> 
@@ -152,7 +152,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>创意</b></h3>
 													<p>
-													形立方的创意是一种天赋，精心打造独一无二的作品<br/>便是最大成就！
+													形立方的创意是一种天赋，精心打造独一无二的作品<br class="hidden-xs"/>便是最大成就！
 													</p>
 												</div> 
 											</div> 
@@ -175,7 +175,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-5 col-sm-7">
 													<h3><b>贴心</b></h3>
 													<p>
-													形立方聆听客户声音，理解客户需求，务求和谐的<br/>合作关系，共创最好的作品！
+													形立方聆听客户声音，理解客户需求，务求和谐的<br class="hidden-xs"/>合作关系，共创最好的作品！
 													</p>
 												</div> 
 											</div> 
