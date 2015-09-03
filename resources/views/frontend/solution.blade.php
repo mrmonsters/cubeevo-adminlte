@@ -18,7 +18,9 @@
 
                     <div class="cd-background-wrapper">
                         <figure class="cd-floating-background"> 
-                            <img src="{{ $solution->frontImage->dir }}" width="100%"/>
+                            <ul class="scene">
+                                <li class="layer" data-depth="0.30"><img src="{{ $solution->frontImage->dir }}" width="100%"/></li>
+                            </ul>   
                         </figure>
                     </div> 
 

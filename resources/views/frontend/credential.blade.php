@@ -15,8 +15,10 @@
 
                     <div class="cd-background-wrapper">
                         <figure class="cd-floating-background">
-                            @if ($dir = $category->frontImage->dir)
-                            <img src="{{ $dir }}" width="100%"/>
+                            @if ($dir = $category->frontImage->dir) 
+                            <ul class="scene">
+                                <li class="layer" data-depth="0.30"><img src="{{ $dir }}" width="100%"/></li>
+                            </ul>  
                             @endif
                         </figure>
                     </div> 

@@ -16,6 +16,7 @@
     @endif 
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- Custom style -->
 	<script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
   	
