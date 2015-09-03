@@ -110,7 +110,7 @@ $(document).ready(function() {
        cube.animate({top:'-=20'}, 1000, runIt);
    	} 
     runIt(); 
-
+/*
   if($('.cd-background-wrapper').length){
         //check media query
     var mediaQuery = window.getComputedStyle(document.querySelector('.cd-background-wrapper'), '::before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, ""),
@@ -201,13 +201,13 @@ $(document).ready(function() {
         'transform': 'rotateX(' + rotateX + 'deg' + ') rotateY(' + rotateY + 'deg' + ') translateZ(0)',
       });
     }
-  }
+  }*/
 });
 
 
 /*  Detect "transform-style: preserve-3d" support, or update csstransforms3d for IE10 ? #762
   https://github.com/Modernizr/Modernizr/issues/762 */
-(function getPerspective(){
+/*(function getPerspective(){
   var element = document.createElement('p'),
       html = document.getElementsByTagName('html')[0],
       body = document.getElementsByTagName('body')[0],
@@ -240,3 +240,4 @@ $(document).ready(function() {
     document.body.removeChild(element);
 
 })();
+*/

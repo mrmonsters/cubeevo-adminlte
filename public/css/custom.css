@@ -232,8 +232,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
 .cre .panel-title {text-align:left;}
-.cre .contbox {position: relative;;min-height: 260px;}
-.cre .contbox ul {margin: 0 50px; }
+.cre .contbox {position: relative;;min-height: 260px;} 
 
 .credential .blankbox{height: 400px; width: 100%;}
 .credential .whitebg {background-color:#ffffff ; }
