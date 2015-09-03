@@ -4,8 +4,9 @@
 
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
+	 <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <!--<link rel="stylesheet" href="css/reset.css"> --> 
+    <link rel="stylesheet" href="{{ asset('css/atebits.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
     @if(Session::get('locale') == 'en') 
     <style type="text/css">
