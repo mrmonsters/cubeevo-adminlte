@@ -15,9 +15,7 @@
 		    animation-timing-function: ease;
 		    -webkit-animation: spin 1.5s infinite linear;
 		    -webkit-animation-timing-function: ease;">
-		    <div class="atebits-loader">
-			  Loading…
-			</div>
+		    <img src="{{ url('/img/LoaderIcon.png')}}" width="100%">
 		</div>
 		</div>
 		<!-- Navigation -->
