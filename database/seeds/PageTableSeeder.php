@@ -714,8 +714,8 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
-										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
-										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand.</h3>
+										<h1 class="tagline text-center">“Be Transformed to Transform”</h1>
+										<h3 class="sub-tagline text-center">We at CubeEvo want our to have the element of creativity to bring out the lifeliness of every brand.</h3>
 									</div>
 								</div>
 								</div>
@@ -724,8 +724,8 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>MISSION</h2>
-										<h1 class="tagline text-center">“Brands give creativity a definition, innovativity give Brands an evolution.”</h1>
-										<h3 class="sub-tagline text-center">We at CubeEvo want our work to have the element of creativity to bring out the lifeliness of every brand. </h3>
+										<h1 class="tagline text-center">“Transforming Brands Into Perfection”</h1>
+										<h3 class="sub-tagline text-center">CubeEvo upholds "flexibility" by creating the perfect Branding for our clients. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
 										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
