@@ -36,7 +36,16 @@
             @if (($count % 3 == 0) || ($count == $categories->count())) 
             @endif
         @endforeach
+        <div id='cre-box' class="js-three-d cre-box col-sm-6 col-lg-4" style="background:red">
+            <div style="position:absolute;right:2%;bottom:3%">
+             <p class="text-white">We have proven our worthiness.</p>
+             <p class="text-white">Work with us.</p>
+             <p class="text-white">Together we shall create masterpieces.</p>
+             <small>Please Contact</small> 
+             </div>
+        </div>
         <?php echo '</div>'; ?>
+
     @endif
 </div> 
 @endsection
