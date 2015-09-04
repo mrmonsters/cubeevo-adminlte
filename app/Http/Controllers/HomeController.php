@@ -33,6 +33,8 @@ class HomeController extends Controller {
 		{
 			Session::set('locale', Config::get('locale'));
 		}
+
+		return parent::__construct();
 	}
 
 	/**
