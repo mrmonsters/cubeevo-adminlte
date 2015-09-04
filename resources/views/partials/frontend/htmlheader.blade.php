@@ -1,10 +1,22 @@
+<?php  
+use App\Models\Files;
+?>
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{$site_settings->where('code', 'meta_desc')->first()->value}}" />
+  <meta name="keywords" content="{{$site_settings->where('code', 'meta_keyword')->first()->value}}" />
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <!-- Facebook title & description-->
+  <meta property="og:title" content="{{$site_settings->where('code', 'site_title')->first()->value}}" />
+  <meta property="og:site_name" content="{{$site_settings->where('code', 'site_title')->first()->value}}"/>
+  <meta property="og:image" content="{{ Files::find($site_settings->where('code', 'meta_img_id')->first()->value)->dir}}" />
+  <meta property="og:description" content="{{$site_settings->where('code', 'meta_desc')->first()->value}}" />
+
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-	 <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
+	  <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <!--<link rel="stylesheet" href="css/reset.css"> --> 
     <link rel="stylesheet" href="{{ asset('css/loader.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
@@ -21,10 +33,11 @@
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- Custom style -->
-	<script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}"> <!-- Custom style --> 
+
+	  <script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
   	
-	<title>CUBEevo | 形立方</title>
+	<title>{{$site_settings->where('code', 'site_title')->first()->value}}</title>
     <?php use App\Models\Setting; ?>
     @if(!empty(Setting::where('code', '=', 'ga_key')->first()->value))
     <script>
