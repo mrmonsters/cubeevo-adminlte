@@ -12,6 +12,8 @@ Custom style
 .small,small{font-size: 12px }
 
 .btn{border-radius: 0px;}
+.bg-white{background-color: #fff;}
+.bg-orange{background-color: #f7941a;}
 .text-black{color: #000;}
 .text-white{color: #fff;}
 .text-orange{color: #f7941a;}
@@ -262,6 +264,14 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .crecol-1,.credential .crecol-2{text-align: justify;}
 .cre .comingsoon {}
 
+.project-block-content > .row{background-color: #fff;}
+.slick-dots{bottom: 0px;}
+.slick-dots li button:before{font-size: 11px;}
+.slick-slider{margin-bottom: 0px}
+.slick-arrow{width: 44px;height: 44px;}
+.slick-prev-wrapper{cursor:pointer;position: absolute;right: 5%;top: 43%;z-index: 5}
+.slick-next-wrapper{cursor:pointer;position: absolute;right: 5%;top: 50%;z-index: 5}
+
 .container-fluid.process{margin: 0.8%;background-color: #eee;padding-top: 80px;}
 .process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
@@ -473,6 +483,13 @@ Main Components
   -moz-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
   -o-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
   -ms-transform: translate3d(10px, 18px, 0px) rotate(-90deg); 
+}
+.arrow-right{
+  transform: translate3d(10px, 18px, 0px) rotate(90deg); 
+  -webkit-transform: translate3d(10px, 18px, 0px) rotate(90deg); 
+  -moz-transform: translate3d(10px, 18px, 0px) rotate(90deg); 
+  -o-transform: translate3d(10px, 18px, 0px) rotate(90deg); 
+  -ms-transform: translate3d(10px, 18px, 0px) rotate(90deg); 
 }
 .arrow-down{
   transform: translate3d(11px, 18px, 0px) rotate(180deg);

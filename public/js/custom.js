@@ -132,4 +132,10 @@
   	$('.contactus .form-control,.contactus textarea').blur(function(){
   		$(this).parent().removeClass('active');
   	}); 
+
+      var _slickcarousl = $('.slick-carousel').slick({
+          dots: true,
+          prevArrow : '<div class="bg-orange slick-prev-wrapper"><div class="arrow-left arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
+          nextArrow : '<div class="bg-orange slick-next-wrapper"><div class="arrow-right arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
+      }); 
 });

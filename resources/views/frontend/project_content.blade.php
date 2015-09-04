@@ -66,6 +66,7 @@
             </div>
         </div>
     </div> 
+    <div class="project-block-content">
     @foreach ($project->blocks()->orderBy('sort_order')->get() as $block)
     @if ($block->type == Block::IMAGE)
         @include('partials.frontend.image')
@@ -75,6 +76,7 @@
         @include('partials.frontend.video')
     @endif
     @endforeach
+    </div>
 </div> 
 @endsection
 
