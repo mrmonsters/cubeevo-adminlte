@@ -8,12 +8,7 @@
       $(window).resize(function() { 
         builtboxsize(); 
       });
-    } 
-
-    if($('.home-content').length > 0){
-        var _topmargin = ($('.content-wrapper__fixed').height() * 60) / 100;  
-        $('.home-content').css('margin-top', _topmargin); 
-    }
+    }  
     $('.blanket').fadeOut();
   });
 
