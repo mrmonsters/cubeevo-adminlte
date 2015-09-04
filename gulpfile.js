@@ -1,18 +1,34 @@
-var elixir = require('laravel-elixir');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Less
- | file for our application, as well as publishing vendor resources.
- |
- */
 
+/* 
+Author: Yc Ang
+
+Installation :
+1. read http://laravel.com/docs/5.0/elixir#gulp
+
+2. install gulp dependency
+npm install gulp gulp-less gulp-sass gulp-minify-css gulp-concat gulp-uglify gulp-rename gulp-phpunit --save-dev
+
+command list :
+1. watch file save event changes and compile css
+gulp --production
+
+*/
+var gulp = require('gulp');
+var rename = require('gulp-rename');
+var minifyCss = require('gulp-minify-css');
+var elixir = require('laravel-elixir'); 
+
+elixir.config.sourcemaps = false;
 elixir(function(mix) {
-    mix.less('app.less');
-    mix.less('admin-lte/AdminLTE.less');
-    mix.less('bootstrap/bootstrap.less');
-});
+	mix.styles([
+        "style.css",
+        "animate.css", 
+        "jquery.fullPage.css", 
+        "slick.css",
+        "slick-theme.css",
+        "custom.css",
+    ], 'public/css/all.css', 'public/css');  
+});   
+ 
+gulp.task('default', ['watch']);
