@@ -1,5 +1,5 @@
   $(window).load(function() {
-    if($('.cre-box')){
+    if($('.cre-box').length > 0){
       function builtboxsize(){  
         var _boxheight = $('.cre-box').height();  
         $('.extra-info-box').css('height', _boxheight);  
@@ -10,6 +10,10 @@
       });
     } 
 
+    if($('.home-content').length > 0){
+        var _boxheight = $('.content-wrapper__fixed').height();  
+        $('.home-content').css('margin-top', '60%'); 
+    }
     $('.blanket').fadeOut();
   });
 
