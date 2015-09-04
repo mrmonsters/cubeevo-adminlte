@@ -58,12 +58,14 @@ Description for solution management
 						@endif
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="pri_color_code" class="control-label">Primary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" />
-							<div class="input-group-addon">
-								<i style="background-color: rgb(0,0,0);"></i>
+					<div class="row">
+						<div class="col-sm-6 form-group">
+							<label for="pri_color_code" class="control-label">Primary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" />
+								<div class="input-group-addon">
+									<i style="background-color: rgb(0,0,0);"></i>
+								</div>
 							</div>
 						</div>
 					</div>

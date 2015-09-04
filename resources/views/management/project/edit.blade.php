@@ -124,6 +124,8 @@ Description for project management
 								</div>
 							</div>
 						</div>
+					</div>
+					<div class="row">
 						<div class="form-group col-sm-4">
 							<label for="txt_color_code" class="control-label">Text Color</label>
 							<div class="input-group colorpicker-element">
@@ -142,7 +144,7 @@ Description for project management
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}">
+								<img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
@@ -159,7 +161,7 @@ Description for project management
 						<input type="hidden" id="grid_img_id" name="grid_img_id" value="{{ $project->grid_img_id }}" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="grid_bg_img" class="img-thumbnail" src="{{ $project->backgroundImage->dir }}" alt="{{ $project->backgroundImage->name }}">
+								<img id="grid_bg_img" class="img-thumbnail" src="{{ $project->backgroundImage->dir }}" alt="{{ $project->backgroundImage->name }}" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
@@ -176,7 +178,7 @@ Description for project management
 						<input type="hidden" id="grid_bg_img_id" name="grid_bg_img_id" value="{{ $project->grid_bg_img_id }}" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="brand_img" class="img-thumbnail" src="{{ $project->brandImage->dir }}" alt="{{ $project->brandImage->name }}">
+								<img id="brand_img" class="img-thumbnail" src="{{ $project->brandImage->dir }}" alt="{{ $project->brandImage->name }}" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Brand Image</strong></p>
 									<div class="row">
@@ -195,7 +197,7 @@ Description for project management
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="mascott_img" class="img-thumbnail" src="{{ ($project->mascott_img_id) ? $project->mascottImage->dir : '' }}" alt="{{ ($project->mascott_img_id) ? $project->mascottImage->name : '' }}">
+								<img id="mascott_img" class="img-thumbnail" src="{{ ($project->mascott_img_id) ? $project->mascottImage->dir : '' }}" alt="{{ ($project->mascott_img_id) ? $project->mascottImage->name : '' }}" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Mascott Image</strong></p>
 									<div class="row">
@@ -210,6 +212,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="mascott_img_id" name="mascott_img_id" value="{{ ($project->mascott_img_id) ? $project->mascott_img_id : '' }}" />
+						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="video_img" class="img-thumbnail" src="{{ ($project->video_img_id) ? $project->videoImage->dir : '' }}" alt="{{ ($project->video_img_id) ? $project->videoImage->name : '' }}">
@@ -226,6 +229,7 @@ Description for project management
 								</div>
 							</div>
 						</div>
+						-->
 						<input type="hidden" id="video_img_id" name="video_img_id" value="{{ ($project->video_img_id) ? $project->video_img_id : '' }}" />
 					</div>
 					<!--

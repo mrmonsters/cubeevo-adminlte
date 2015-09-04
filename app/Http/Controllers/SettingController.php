@@ -100,7 +100,7 @@ class SettingController extends Controller {
 			$settings['facebook_link']  = $data['facebook_link'];
 			$settings['youtube_link']   = $data['youtube_link'];
 			$settings['instagram_link'] = $data['instagram_link'];
-			$settings['meta_title']     = $data['meta_title'];
+			$settings['site_title']     = $data['site_title'];
 			$settings['meta_keyword']   = $data['meta_keyword'];
 			$settings['meta_desc']      = $data['meta_desc'];
 			$settings['meta_img_id']    = (isset($metaImgId) && $metaImgId != '') ? $metaImgId : $data['meta_img_id'];

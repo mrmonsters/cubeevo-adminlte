@@ -34,6 +34,22 @@ Description for static page management
 						<label for="name" class="control-label">Name</label>
 						<input id="name" name="name" type="text" class="form-control" value="{{ $page->name }}" />
 					</div>
+					<div class="form-group">
+						<label for="slug" class="control-label">Slug</label>
+						<input id="slug" name="slug" type="text" class="form-control" value="{{ $page->slug }}" />
+					</div>
+					<div class="form-group">
+						<label for="meta_title" class="control-label">Meta Title</label>
+						<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $page->meta_title }}" />
+					</div>
+					<div class="form-group">
+						<label for="meta_keyword" class="control-label">Meta Keyword</label>
+						<input id="meta_keyword" name="meta_keyword" type="text" class="form-control" value="{{ $page->meta_keyword }}" />
+					</div>
+					<div class="form-group">
+						<label for="meta_desc" class="control-label">Meta Description</label>
+						<input id="meta_desc" name="meta_desc" type="text" class="form-control" value="{{ $page->meta_desc }}" />
+					</div>
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
 						@if (isset($locales) && !$locales->isEmpty())

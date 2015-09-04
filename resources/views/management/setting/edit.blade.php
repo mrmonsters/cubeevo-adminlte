@@ -46,6 +46,32 @@ Description for setting management
 									<label for="gmaps_lng" class="control-label">{{ $settings->where('code', 'gmaps_lng')->first()->name }}</label>
 									<input id="gmaps_lng" name="gmaps_lng" type="text" class="form-control" value="{{ $settings->where('code', 'gmaps_lng')->first()->value }}" />
 								</div>
+								<div class="form-group">
+									<label for="site_title" class="control-label">{{ $settings->where('code', 'site_title')->first()->name }}</label>
+									<input id="site_title" name="site_title" type="text" class="form-control" value="{{ $settings->where('code', 'site_title')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="meta_keyword" class="control-label">{{ $settings->where('code', 'meta_keyword')->first()->name }}</label>
+									<input id="meta_keyword" name="meta_keyword" type="text" class="form-control" value="{{ $settings->where('code', 'meta_keyword')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="meta_desc" class="control-label">{{ $settings->where('code', 'meta_desc')->first()->name }}</label>
+									<input id="meta_desc" name="meta_desc" type="text" class="form-control" value="{{ $settings->where('code', 'meta_desc')->first()->value }}" />
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="thumbnail">
+											<?php $metaImgId = $settings->where('code', 'meta_img_id')->first()->value; ?>
+											<img id="meta_img" src="{{ ($metaImgId != '') ? Files::find($metaImgId)->dir : '' }}" alt="{{ ($metaImgId != '') ? Files::find($metaImgId)->name : '' }}" class="img-thumbnail" width="100%" />
+											<div class="caption" style="text-align: center;">
+												<p><strong>Meta Image</strong></p>
+												<input type="file" class="form-control" id="new_meta_img_id" name="new_meta_img_id" />
+												<input type="hidden" id="meta_img_id" name="meta_img_id" class="form-control" value="{{ $settings->where('code', 'meta_img_id')->first()->value }}" />
+												<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload">Use Existing</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div id="user" class="tab-pane">
 								<div class="form-group">
@@ -75,32 +101,6 @@ Description for setting management
 								<div class="form-group">
 									<label for="instagram_link" class="control-label">{{ $settings->where('code', 'instagram_link')->first()->name }}</label>
 									<input id="instagram_link" name="instagram_link" type="text" class="form-control" value="{{ $settings->where('code', 'instagram_link')->first()->value }}" />
-								</div>
-								<div class="form-group">
-									<label for="meta_title" class="control-label">{{ $settings->where('code', 'meta_title')->first()->name }}</label>
-									<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $settings->where('code', 'meta_title')->first()->value }}" />
-								</div>
-								<div class="form-group">
-									<label for="meta_keyword" class="control-label">{{ $settings->where('code', 'meta_keyword')->first()->name }}</label>
-									<input id="meta_keyword" name="meta_keyword" type="text" class="form-control" value="{{ $settings->where('code', 'meta_keyword')->first()->value }}" />
-								</div>
-								<div class="form-group">
-									<label for="meta_desc" class="control-label">{{ $settings->where('code', 'meta_desc')->first()->name }}</label>
-									<input id="meta_desc" name="meta_desc" type="text" class="form-control" value="{{ $settings->where('code', 'meta_desc')->first()->value }}" />
-								</div>
-								<div class="row">
-									<div class="col-md-4">
-										<div class="thumbnail">
-											<?php $metaImgId = $settings->where('code', 'meta_img_id')->first()->value; ?>
-											<img id="meta_img" src="{{ ($metaImgId != '') ? Files::find($metaImgId)->dir : '' }}" alt="{{ ($metaImgId != '') ? Files::find($metaImgId)->name : '' }}" class="img-thumbnail" width="100%" />
-											<div class="caption" style="text-align: center;">
-												<p><strong>Meta Image</strong></p>
-												<input type="file" class="form-control" id="new_meta_img_id" name="new_meta_img_id" />
-												<input type="hidden" id="meta_img_id" name="meta_img_id" class="form-control" value="{{ $settings->where('code', 'meta_img_id')->first()->value }}" />
-												<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload">Use Existing</a>
-											</div>
-										</div>
-									</div>
 								</div>
 							</div>
 						</div>

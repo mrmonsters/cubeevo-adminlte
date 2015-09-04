@@ -59,12 +59,14 @@ Description for solution management
 						@endif
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="pri_color_code" class="control-label">Primary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" value="{{ $solution->pri_color_code }}" />
-							<div class="input-group-addon">
-								<i style="background-color: {{ $solution->pri_color_code }};"></i>
+					<div class="row">
+						<div class="col-sm-4 form-group">
+							<label for="pri_color_code" class="control-label">Primary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" value="{{ $solution->pri_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: {{ $solution->pri_color_code }};"></i>
+								</div>
 							</div>
 						</div>
 					</div>

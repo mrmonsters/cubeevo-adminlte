@@ -76,10 +76,10 @@ class SettingTableSeeder extends Seeder {
 				'value' => '101.78809419999993',
 			),
 			array(
-				'name'  => 'Meta Title',
-				'code'  => 'meta_title',
+				'name'  => 'Site Title',
+				'code'  => 'site_title',
 				'type'  => Setting::SITE,
-				'value' => '',
+				'value' => 'CUBEevo | 形立方',
 			),
 			array(
 				'name'  => 'Meta Keyword',

@@ -96,30 +96,34 @@ Description for project management
 						<label for="year" class="control-label">Year</label>
 						<input id="year" name="year" type="text" class="form-control" />
 					</div>
-					<div class="form-group">
-						<label for="pri_color_code" class="control-label">Primary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" />
-							<div class="input-group-addon">
-								<i style="background-color: rgb(0,0,0);"></i>
+					<div class="row">
+						<div class="col-sm-4 form-group">
+							<label for="pri_color_code" class="control-label">Primary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" />
+								<div class="input-group-addon">
+									<i style="background-color: rgb(0,0,0);"></i>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 form-group">
+							<label for="sec_color_code" class="control-label">Secondary Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" />
+								<div class="input-group-addon">
+									<i style="background-color: rgb(0,0,0);"></i>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="sec_color_code" class="control-label">Secondary Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" />
-							<div class="input-group-addon">
-								<i style="background-color: rgb(0,0,0);"></i>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label for="txt_color_code" class="control-label">Text Color</label>
-						<div class="input-group colorpicker-element">
-							<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" />
-							<div class="input-group-addon">
-								<i style="background-color: rgb(0,0,0);"></i>
+					<div class="row">
+						<div class="form-group col-sm-4">
+							<label for="txt_color_code" class="control-label">Text Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="{{ $project->txt_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: rgb(0,0,0);"></i>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -130,7 +134,7 @@ Description for project management
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="grid_img" class="img-thumbnail" src="" alt="">
+								<img id="grid_img" class="img-thumbnail" src="" alt="" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Front Image</strong></p>
 									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
@@ -141,7 +145,7 @@ Description for project management
 						<input type="hidden" id="grid_img_id" name="grid_img_id" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="grid_bg_img" class="img-thumbnail" src="" alt="">
+								<img id="grid_bg_img" class="img-thumbnail" src="" alt="" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Background Image</strong></p>
 									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
@@ -152,7 +156,7 @@ Description for project management
 						<input type="hidden" id="grid_bg_img_id" name="grid_bg_img_id" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="brand_img" class="img-thumbnail" src="" alt="">
+								<img id="brand_img" class="img-thumbnail" src="" alt="" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Brand Image</strong></p>
 									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img">Upload New</a> 
@@ -165,7 +169,7 @@ Description for project management
 						<input type="hidden" id="brand_img_id" name="brand_img_id" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="mascott_img" class="img-thumbnail" src="" alt="">
+								<img id="mascott_img" class="img-thumbnail" src="" alt="" width="100%">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Mascott Image</strong></p>
 									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img">Upload New</a> 
@@ -174,6 +178,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="mascott_img_id" name="mascott_img_id" />
+						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="video_img" class="img-thumbnail" src="" alt="">
@@ -185,6 +190,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="video_img_id" name="video_img_id" />
+						-->
 						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">

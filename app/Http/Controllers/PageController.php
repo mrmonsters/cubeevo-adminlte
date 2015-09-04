@@ -72,8 +72,11 @@ class PageController extends Controller {
 			{
 				// Create new page
 				$page = new Page;
-				$page->name = $data['name'];
-				$page->slug = str_replace(" ", "-", $data['slug']);
+				$page->name         = $data['name'];
+				$page->meta_title   = $data['meta_title'];
+				$page->meta_keyword = $data['meta_keyword'];
+				$page->meta_desc    = $data['meta_desc'];
+				$page->slug         = str_replace(" ", "-", $data['slug']);
 				$page->save();
 
 				$pageData   = array();
@@ -177,8 +180,11 @@ class PageController extends Controller {
 			{
 				// Update page
 				$page = Page::find($id);
-				$page->name = $data['name'];
-				$page->slug = str_replace(" ", "-", $data['slug']);
+				$page->name         = $data['name'];
+				$page->meta_title   = $data['meta_title'];
+				$page->meta_keyword = $data['meta_keyword'];
+				$page->meta_desc    = $data['meta_desc'];
+				$page->slug         = str_replace(" ", "-", $data['slug']);
 				$page->save();
 
 				$pageData   = array();
