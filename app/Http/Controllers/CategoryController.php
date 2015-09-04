@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Redirect;
+use Validator;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Category;
@@ -33,7 +34,7 @@ class CategoryController extends Controller {
 	public function index()
 	{
 		//
-		$categories = Category::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
+		$categories = Category::where('delete', '=', false)->orderBy('sort_order')->get();
 
 		return view('management.category.index')->with('categories', $categories);
 	}
@@ -59,61 +60,72 @@ class CategoryController extends Controller {
 		$response = array();
 		$data     = $req->input();
 
-		if (isset($data))
+		if (isset($data) && !empty($data))
 		{
-			$files = $req->file();
-			$category = new Category;
-
-			if (isset($files) && !empty($files))
+			if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
 			{
-				foreach ($files as $key => $val)
-				{
-					if ($key == 'new_grid_img_id')
-					{
-						$category->grid_img_id = $fileHelper->uploadNewFile($val);
-					}
-					else if ($key == 'new_grid_bg_img_id')
-					{
-						$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
-					}
-				}
+				$response['code'] = Status::ERROR;
+				$response['msg']  = "URL key already exist.";
+
+				return Redirect::back()->with('response', $response);
 			}
 			else
-			{
-				$category->grid_img_id    = $data['grid_img_id'];
-				$category->grid_bg_img_id = $data['grid_bg_img_id'];
-			}
+			{	
+				$files = $req->file();
+				$category = new Category;
 
-			$category->sort_order = $data['sort_order'];
-			$category->save();
-
-			$catData    = array();
-			$attributes = array('name', 'desc');
-			$locales 	= Locale::where('status', '=', STATUS::ACTIVE)->get();
-
-			foreach ($locales as $locale)
-			{
-				$catData['category_id'] = $category->id;
-				$catData['locale_id']   = $locale->id;
-
-				foreach ($attributes as $attribute)
+				if (isset($files) && !empty($files))
 				{
-					if (isset($data[$attribute][$locale->id]))
+					foreach ($files as $key => $val)
 					{
-						$catData[$attribute] = $data[$attribute][$locale->id];
+						if ($key == 'new_grid_img_id')
+						{
+							$category->grid_img_id = $fileHelper->uploadNewFile($val);
+						}
+						else if ($key == 'new_grid_bg_img_id')
+						{
+							$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+						}
 					}
 				}
+				else
+				{
+					$category->grid_img_id    = $data['grid_img_id'];
+					$category->grid_bg_img_id = $data['grid_bg_img_id'];
+				}
 
-				CategoryTranslation::create($catData);
-			}
+				$category->slug 	  = str_replace(" ", "-", $data['slug']);
+				$category->sort_order = $data['sort_order'];
+				$category->save();
 
-			$response['code'] = STATUS::SUCCESS;
-			$response['msg']  = "Category [#".$category->id."] has been created successfully.";
+				$catData    = array();
+				$attributes = array('name');
+				$locales 	= Locale::where('status', '=', Status::ACTIVE)->get();
 
-			return Redirect::to('admin/manage/category')->with('response', $response);			
+				foreach ($locales as $locale)
+				{
+					$catData['category_id'] = $category->id;
+					$catData['locale_id']   = $locale->id;
+
+					foreach ($attributes as $attribute)
+					{
+						if (isset($data[$attribute][$locale->id]))
+						{
+							$catData[$attribute] = $data[$attribute][$locale->id];
+						}
+					}
+
+					CategoryTranslation::create($catData);
+				}
+
+				$response['code'] = Status::SUCCESS;
+				$response['msg']  = "Category [#".$category->id."] has been created successfully.";
+
+				return Redirect::to('admin/manage/category')->with('response', $response);
+			}			
 		}
 
-		$response['code'] = STATUS::ERROR;
+		$response['code'] = Status::ERROR;
 		$response['msg']  = "Unable to save new category.";
 
 		return Redirect::back()->with('response', $response);
@@ -139,9 +151,20 @@ class CategoryController extends Controller {
 	public function edit($id)
 	{
 		//
-		$category = Category::find($id);
+		$response = array();
+		$category = Category::where('id', '=', $id)->where('delete', false)->first();
 
-		return view('management.category.edit')->with('category', $category);
+		if (isset($category) && isset($category->id))
+		{
+			return view('management.category.edit')->with('category', $category);
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = 'Category not found.';
+			
+			return Redirect::back()->with('response', $response);
+		}
 	}
 
 	/**
@@ -159,69 +182,80 @@ class CategoryController extends Controller {
 
 		if (isset($data) && $category->id)
 		{
-			$files = $req->file();
-
-			if (isset($files) && !empty($files))
+			if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 1)
 			{
-				foreach ($files as $key => $val)
-				{
-					if ($key == 'new_grid_img_id')
-					{
-						$category->grid_img_id = $fileHelper->uploadNewFile($val);
-					}
-					else if ($key == 'new_grid_bg_img_id')
-					{
-						$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
-					}
-				}
+				$response['code'] = Status::ERROR;
+				$response['msg']  = "URL key already exist.";
+
+				return Redirect::back()->with('response', $response);
 			}
 			else
 			{
-				$category->grid_img_id    = $data['grid_img_id'];
-				$category->grid_bg_img_id = $data['grid_bg_img_id'];
-			}
+				$files = $req->file();
 
-			$category->sort_order = $data['sort_order'];
-			$category->save();
-
-			$catData    = array();
-			$attributes = array('name', 'desc');
-			$locales 	= Locale::where('status', '=', STATUS::ACTIVE)->get();
-
-			foreach ($locales as $locale)
-			{
-				$catData['category_id'] = $category->id;
-				$catData['locale_id']   = $locale->id;
-
-				foreach ($attributes as $attribute)
+				if (isset($files) && !empty($files))
 				{
-					if (isset($data[$attribute][$locale->id]))
+					foreach ($files as $key => $val)
 					{
-						$catData[$attribute] = $data[$attribute][$locale->id];
+						if ($key == 'new_grid_img_id')
+						{
+							$category->grid_img_id = $fileHelper->uploadNewFile($val);
+						}
+						else if ($key == 'new_grid_bg_img_id')
+						{
+							$category->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+						}
 					}
-				}
-
-				$catTranslation = $category->translations()
-					->where('locale_id', $locale->id)
-					->first();
-
-				if (isset($catTranslation))
-				{
-					$catTranslation->update($catData);
 				}
 				else
 				{
-					CategoryTranslation::create($catData);
+					$category->grid_img_id    = $data['grid_img_id'];
+					$category->grid_bg_img_id = $data['grid_bg_img_id'];
 				}
+
+				$category->slug 	  = str_replace(" ", "-", $data['slug']);
+				$category->sort_order = $data['sort_order'];
+				$category->save();
+
+				$catData    = array();
+				$attributes = array('name');
+				$locales 	= Locale::where('status', '=', Status::ACTIVE)->get();
+
+				foreach ($locales as $locale)
+				{
+					$catData['category_id'] = $category->id;
+					$catData['locale_id']   = $locale->id;
+
+					foreach ($attributes as $attribute)
+					{
+						if (isset($data[$attribute][$locale->id]))
+						{
+							$catData[$attribute] = $data[$attribute][$locale->id];
+						}
+					}
+
+					$catTranslation = $category->translations()
+						->where('locale_id', $locale->id)
+						->first();
+
+					if (isset($catTranslation))
+					{
+						$catTranslation->update($catData);
+					}
+					else
+					{
+						CategoryTranslation::create($catData);
+					}
+				}
+
+				$response['code'] = Status::SUCCESS;
+				$response['msg']  = "Category [#".$category->id."] has been updated successfully.";
+
+				return Redirect::to('admin/manage/category')->with('response', $response);
 			}
-
-			$response['code'] = STATUS::SUCCESS;
-			$response['msg']  = "Category [#".$category->id."] has been updated successfully.";
-
-			return Redirect::to('admin/manage/category')->with('response', $response);
 		}
 
-		$response['code'] = STATUS::ERROR;
+		$response['code'] = Status::ERROR;
 		$response['msg']  = "Unable to update category.";
 
 		return Redirect::back()->with('response', $response);
@@ -236,6 +270,24 @@ class CategoryController extends Controller {
 	public function destroy($id)
 	{
 		//
+		$response = array();
+		$category = Category::find($id);
+
+		if (isset($category) && isset($category->id))
+		{
+			$category->delete = true;
+			$category->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg'] = "Category [#".$category->id."] has been deleted successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg'] = "Category not found.";
+		}
+
+		return Redirect::to('admin/manage/category')->with('response', $response);
 	}
 
 }

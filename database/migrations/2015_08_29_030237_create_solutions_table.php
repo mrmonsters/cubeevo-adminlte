@@ -25,6 +25,7 @@ class CreateSolutionsTable extends Migration {
 			$table->string('pri_color_code');
 			$table->integer('sort_order')->default(0);
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

@@ -32,7 +32,7 @@ class PageController extends Controller {
 	public function index()
 	{
 		//
-		$pages = Page::all();
+		$pages = Page::where('delete', '=', false)->get();
 
 		return view('management.page.index')->with('pages', $pages);
 	}
@@ -61,46 +61,56 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			// Create new page
-			$page = new Page;
-			$page->name = $data['name'];
-			$page->slug = "/".str_replace(" ", "-", strtolower($data['name']));
-			$page->save();
-
-			$pageData   = array();
-			$attributes = array('desc', 'content');
-			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
-
-			foreach ($locales as $locale)
+			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
 			{
-				$pageData['page_id']   = $page->id;
-				$pageData['locale_id'] = $locale->id;
+				$response['code'] = Status::ERROR;
+				$response['msg']  = "URL key already exist.";
 
-				foreach ($attributes as $attribute)
+				return Redirect::back()->with('response', $response);
+			}
+			else
+			{
+				// Create new page
+				$page = new Page;
+				$page->name = $data['name'];
+				$page->slug = str_replace(" ", "-", $data['slug']);
+				$page->save();
+
+				$pageData   = array();
+				$attributes = array('desc', 'content');
+				$locales    = Locale::where('status', '=', Status::ACTIVE)->get();
+
+				foreach ($locales as $locale)
 				{
-					if (isset($data[$attribute][$locale->id]))
+					$pageData['page_id']   = $page->id;
+					$pageData['locale_id'] = $locale->id;
+
+					foreach ($attributes as $attribute)
 					{
-						if ($attribute == 'content')
+						if (isset($data[$attribute][$locale->id]))
 						{
-							$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
-						}
-						else
-						{
-							$pageData[$attribute] = $data[$attribute][$locale->id];
+							if ($attribute == 'content')
+							{
+								$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+							}
+							else
+							{
+								$pageData[$attribute] = $data[$attribute][$locale->id];
+							}
 						}
 					}
+
+					PageTranslation::create($pageData);
 				}
 
-				PageTranslation::create($pageData);
+				$response['code'] = Status::SUCCESS;
+				$response['msg']  = 'Page [#'.$page->id.'] has been created successfully.';
+
+				return Redirect::to('admin/manage/page')->with('response', $response);
 			}
-
-			$response['code'] = STATUS::SUCCESS;
-			$response['msg']  = 'Page [#'.$page->id.'] has been created successfully.';
-
-			return Redirect::to('admin/manage/page')->with('response', $response);
 		}
 
-		$response['code'] = STATUS::ERROR;
+		$response['code'] = Status::ERROR;
 		$respons['msg']   = 'Unable to create new page.';
 
 		return Redirect::back()->with('response', $response);
@@ -126,9 +136,20 @@ class PageController extends Controller {
 	public function edit($id)
 	{
 		//
-		$page = Page::find($id);
+		$response = array();
+		$page = Page::where('id', '=', $id)->where('delete', false)->first();
 
-		return view('management.page.edit')->with('page', $page);
+		if (isset($page) && isset($page->id))
+		{
+			return view('management.page.edit')->with('page', $page);
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = 'Page not found.';
+			
+			return Redirect::back()->with('response', $response);
+		}
 	}
 
 	/**
@@ -145,57 +166,67 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			// Update page
-			$page = Page::find($id);
-			$page->name = $data['name'];
-			$page->slug = "/".str_replace(" ", "-", strtolower($data['name']));
-			$page->save();
-
-			$pageData   = array();
-			$attributes = array('desc', 'content');
-			$locales    = Locale::where('status', '=', STATUS::ACTIVE)->get();
-
-			foreach ($locales as $locale)
+			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
 			{
-				$pageData['page_id']   = $page->id;
-				$pageData['locale_id'] = $locale->id;
+				$response['code'] = Status::ERROR;
+				$response['msg']  = "URL key already exist.";
 
-				foreach ($attributes as $attribute)
+				return Redirect::back()->with('response', $response);
+			}
+			else
+			{
+				// Update page
+				$page = Page::find($id);
+				$page->name = $data['name'];
+				$page->slug = str_replace(" ", "-", $data['slug']);
+				$page->save();
+
+				$pageData   = array();
+				$attributes = array('desc', 'content');
+				$locales    = Locale::where('status', '=', Status::ACTIVE)->get();
+
+				foreach ($locales as $locale)
 				{
-					if (isset($data[$attribute][$locale->id]))
+					$pageData['page_id']   = $page->id;
+					$pageData['locale_id'] = $locale->id;
+
+					foreach ($attributes as $attribute)
 					{
-						if ($attribute == 'content')
+						if (isset($data[$attribute][$locale->id]))
 						{
-							$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+							if ($attribute == 'content')
+							{
+								$pageData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+							}
+							else
+							{
+								$pageData[$attribute] = $data[$attribute][$locale->id];
+							}
 						}
-						else
-						{
-							$pageData[$attribute] = $data[$attribute][$locale->id];
-						}
+					}
+
+					$pageTranslation = $page->translations()
+						->where('locale_id', $locale->id)
+						->first();
+
+					if (isset($pageTranslation))
+					{
+						$pageTranslation->update($pageData);
+					}
+					else
+					{
+						PageTranslation::create($pageData);
 					}
 				}
 
-				$pageTranslation = $page->translations()
-					->where('locale_id', $locale->id)
-					->first();
+				$response['code'] = Status::SUCCESS;
+				$response['msg']  = 'Page [#'.$page->id.'] has been updated successfully.';
 
-				if (isset($pageTranslation))
-				{
-					$pageTranslation->update($pageData);
-				}
-				else
-				{
-					PageTranslation::create($pageData);
-				}
+				return Redirect::to('admin/manage/page')->with('response', $response);
 			}
-
-			$response['code'] = STATUS::SUCCESS;
-			$response['msg']  = 'Page [#'.$page->id.'] has been updated successfully.';
-
-			return Redirect::to('admin/manage/page')->with('response', $response);
 		}
 
-		$response['code'] = STATUS::ERROR;
+		$response['code'] = Status::ERROR;
 		$respons['msg']   = 'Unable to update page.';
 
 		return Redirect::back()->with('response', $response);
@@ -210,6 +241,24 @@ class PageController extends Controller {
 	public function destroy($id)
 	{
 		//
+		$response = array();
+		$page     = Page::find($id);
+
+		if (isset($page) && isset($page->id))
+		{
+			$page->delete = true;
+			$page->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Page [#".$project->id."] has been deleted successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Page not found.";
+		}
+
+		return Redirect::to('admin/manage/page')->with('response', $response);
 	}
 
 }

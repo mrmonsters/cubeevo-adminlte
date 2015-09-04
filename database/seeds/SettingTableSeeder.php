@@ -75,6 +75,30 @@ class SettingTableSeeder extends Seeder {
 				'type'  => Setting::SITE,
 				'value' => '101.78809419999993',
 			),
+			array(
+				'name'  => 'Meta Title',
+				'code'  => 'meta_title',
+				'type'  => Setting::SITE,
+				'value' => '',
+			),
+			array(
+				'name'  => 'Meta Keyword',
+				'code'  => 'meta_keyword',
+				'type'  => Setting::SITE,
+				'value' => '',
+			),
+			array(
+				'name'  => 'Meta Description',
+				'code'  => 'meta_desc',
+				'type'  => Setting::SITE,
+				'value' => '',
+			),
+			array(
+				'name'  => 'Meta Image',
+				'code'  => 'meta_img_id',
+				'type'  => Setting::SITE,
+				'value' => '',
+			),
 		);
 
 		foreach ($settings as $setting)

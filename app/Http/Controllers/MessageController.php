@@ -19,7 +19,7 @@ class MessageController extends Controller {
 	public function index()
 	{
 		//
-		$messages = Message::all();
+		$messages = Message::where('delete', '=', false)->get();
 
 		return view('management.contactus.index')->with('messages', $messages);
 	}
@@ -39,35 +39,9 @@ class MessageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req)
+	public function store()
 	{
 		//
-		$response = array();
-		$data = $req->input();
-
-		if (isset($data) && !empty($data))
-		{
-			$message = new Message;
-			$message->subject = $data['subject'];
-			$message->name    = $data['name'];
-			$message->phone   = $data['phone'];
-			$message->email   = $data['email'];
-			$message->content = $data['content'];
-			$message->save();
-
-			if ($message->id)
-			{
-				$response['code'] = STATUS::SUCCESS;
-				$response['msg']  = "Message has been submitted successfully.";
-
-				return Redirect::to('/contact-us')->with('response', $response);
-			}
-		}
-
-		$response['code'] = STATUS::ERROR;
-		$response['msg']  = "Unable to submit message.";
-
-		return Redirect::to('/contact-us')->with('response', $response);
 	}
 
 	/**
@@ -116,16 +90,20 @@ class MessageController extends Controller {
 	{
 		//
 		$response = array();
-		$message = Message::find($id);
-		$message->status = STATUS::INACTIVE;
+		$message  = Message::find($id);
 
-		if ($message->save())
+		if (isset($message) && isset($message->id))
 		{
-			$response['code'] = "Message has been deleted successfully.";
+			$message->delete = true;
+			$message->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Message [#".$message->id."] has been deleted successfully.";
 		}
 		else
 		{
-			$response['msg'] = "Unable to delete message";
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Message not found."
 		}
 
 		return Redirect::to('admin/manage/message')->with('response', $response);

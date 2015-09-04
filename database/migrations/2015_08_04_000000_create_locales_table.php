@@ -20,6 +20,7 @@ class CreateLocalesTable extends Migration {
 			$table->increments('id');
 			$table->string('language')->nullable(false);
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

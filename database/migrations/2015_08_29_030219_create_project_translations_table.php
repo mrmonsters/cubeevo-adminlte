@@ -29,6 +29,7 @@ class CreateProjectTranslationsTable extends Migration {
 			$table->text('result');
 			$table->string('sub_heading');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

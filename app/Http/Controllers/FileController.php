@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Redirect;
+use App\Models\Status;
 use App\Models\Files;
 use File;
 
@@ -66,15 +68,14 @@ class FileController extends Controller {
 				else
 				{
 					$ext = $file->getClientOriginalExtension();
-					$fileName = ($req->input('file_name')) ? $req->input('file_name').".".$ext : $file->getClientOriginalName();
+					$fileName = ($req->input('name')) ? $req->input('name').".".$ext : $file->getClientOriginalName();
 					$baseDir = ($req->input('base_dir')) ? "/storage/".$req->input('base_dir') : '/storage/uploaded'; 
 
 					// Save file
 					$newFile = new Files;
-					$newFile->file_name = $fileName;
-					$newFile->file_type = $file->getClientMimeType();
-					$newFile->file_dir = $baseDir."/".$fileName;
-					$newFile->file_size = $file->getClientSize();
+					$newFile->name   = $fileName;
+					$newFile->type   = $file->getClientMimeType();
+					$newFile->dir    = $baseDir."/".$fileName;
 					$newFile->status = 2;
 					$newFile->save();
 
@@ -87,20 +88,20 @@ class FileController extends Controller {
 
 					if (File::exists(public_path().$baseDir."/".$fileName))
 					{
-						$response['status'] = 1;
-						$response['msg'] = 'New file(s) is uploaded successfully.';
+						$response['code'] = Status::SUCCESS;
+						$response['msg']  = 'New file(s) has been uploaded successfully.';
 					}
 					else
 					{
-						$response['status'] = 0;
-						$response['msg'] = 'Failed to upload file(s).';
+						$response['code'] = Status::ERROR;
+						$response['msg']  = 'Unable to upload file(s).';
 						break;
 					}
 				}
 			}
 		}
 
-		return redirect('/manage/file')->with('response', $response);
+		return Redirect::to('admin/manage/file')->with('response', $response);
 	}
 
 	/**
@@ -125,11 +126,11 @@ class FileController extends Controller {
 		$isDocument = false;
 		$file = Files::find($id);
 
-		if (in_array($file->file_type, $imgTypes))
+		if (in_array($file->type, $imgTypes))
 		{
 			$isImage = true;
 		}
-		else if (in_array($file->file_type, $docTypes))
+		else if (in_array($file->type, $docTypes))
 		{
 			$isDocument = true;
 		}
@@ -166,7 +167,7 @@ class FileController extends Controller {
 		
 		if (!$file->isEmpty())
 		{
-			$rawOldFileDir = str_replace($file->file_name, '', $file->file_dir);
+			$rawOldFileDir = str_replace($file->name, '', $file->dir);
 			$rawNewFileDir = str_replace($data['file_name'], '', $data['file_dir']);
 
 			if (!strcmp($rawOldFileDir, $rawNewFileDir))
@@ -176,25 +177,25 @@ class FileController extends Controller {
 					File::makeDirectory(public_path().$rawNewFileDir);
 				}
 
-				File::move(public_path().$file->file_dir, public_path().$rawNewFileDir.$data['file_name']);
+				File::move(public_path().$file->dir, public_path().$rawNewFileDir.$data['name']);
 			}
 			
-			$file->file_name = $data['file_name'];
-			$file->file_dir = $data['file_dir'];
+			$file->name = $data['name'];
+			$file->dir  = $data['dir'];
 			
 			if ($file->save())
 			{
-				$response['status'] = 1;
-				$response['msg'] = 'Changes are saved successfully.';
+				$response['code'] = Status::SUCCESS;
+				$response['msg']  = 'File [#'.$file->id.'] has been updated successfully.';
 			}
 			else
 			{
-				$response['status'] = 0;
-				$response['msg'] = 'Failed to save changes.';
+				$response['code'] = Status::ERROR;
+				$response['msg']  = 'Unable to update file.';
 			}
 		}
 
-		return redirect('/manage/file')->with('response', $response);
+		return Redirect::to('admin/manage/file')->with('response', $response);
 	}
 
 	/**
@@ -206,6 +207,24 @@ class FileController extends Controller {
 	public function destroy($id)
 	{
 		//
+		$response = array();
+		$file     = Files::find($id);
+
+		if (isset($file) && isset($file->id))
+		{
+			$file->delete = true;
+			$file->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "File [#".$file->id."] has been deleted successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "File not found.";
+		}
+
+		return Redirect::to('admin/manage/file')->with('response', $response);
 	}
 
 }

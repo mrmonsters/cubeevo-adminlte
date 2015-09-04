@@ -13,9 +13,9 @@
             <img src="{{ $project->brandImage->dir }}" width="100%">
         </div>
         <div class="col-sm-12 blankbox" style="background-color:{{ $project->pri_color_code }}">
-        <?php /*
-        	<div class="cre-of1"><img src="{{ asset('img/Images-42.png') }}" class="mascott"></div>
-        */ ?>
+        @if (isset($project->mascottImage->dir))
+    	<div class="cre-of1"><img src="{{ $project->mascottImage->dir }}" class="project-mascott"></div>
+        @endif
         </div>
         <div class="col-sm-12 cre-info">
             <div class="box">
@@ -43,7 +43,15 @@
                                         <br>
                                         <br>
                                         <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE CHALLENGE' : '项目概述' }}</p>
-                                        {{ $project->translate(Session::get('locale'))->challenge }}</div>
+                                        {{ $project->translate(Session::get('locale'))->challenge }}
+                                        @if (isset($project->web_link) && $project->web_link != '')
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'WEBSITE' : '网址' }}</p>
+                                        {{ $project->web_link }}
+                                        @endif
+                                        </div>
                                         <div class="col-sm-5 col-sm-offset-1 crecol-2">
                                         <p class="desctitle" style="color:{{ $project->txt_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE RESULT' : '最终成果' }}</p>
                                         {{ $project->translate(Session::get('locale'))->result }}
