@@ -1,19 +1,15 @@
   $(window).load(function() {
     if($('.cre-box')){
-      function builtboxsize(isResize){ 
-        if(isResize == true){ 
-          var _boxheight = $('.cre-box').height(); 
-        }else{ 
-          var _boxheight = $('.cre-box').height()-20; 
-        } 
+      function builtboxsize(){  
+        var _boxheight = $('.cre-box').height();  
         $('.extra-info-box').css('height', _boxheight);  
       }   
       builtboxsize(); 
       $(window).resize(function() { 
-        builtboxsize(true); 
+        builtboxsize(); 
       });
     } 
-    
+
     $('.blanket').fadeOut();
   });
 
