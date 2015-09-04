@@ -1,9 +1,4 @@
   $(window).load(function() {
-    $('.blanket').fadeOut();
-  });
-
-  $(document).ready(function() {
-
     if($('.cre-box')){
       function builtboxsize(isResize){ 
         if(isResize == true){ 
@@ -18,6 +13,12 @@
         builtboxsize(true); 
       });
     } 
+    
+    $('.blanket').fadeOut();
+  });
+
+  $(document).ready(function() {
+
 
   $('.cd-nav-trigger').click(function(){
     if($('.btn-back').length > 0){
