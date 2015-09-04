@@ -398,7 +398,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
 										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="visible-xs"/>品牌因创新而活。 ”</h1>
@@ -711,7 +711,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
 										<h1 class="tagline text-center">“Be Transformed <br class="visible-xs"/>to Transform”</h1>

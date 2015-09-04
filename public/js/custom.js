@@ -11,8 +11,8 @@
     } 
 
     if($('.home-content').length > 0){
-        var _boxheight = $('.content-wrapper__fixed').height();  
-        $('.home-content').css('margin-top', '60%'); 
+        var _topmargin = ($('.content-wrapper__fixed').height() * 60) / 100;  
+        $('.home-content').css('margin-top', _topmargin); 
     }
     $('.blanket').fadeOut();
   });
