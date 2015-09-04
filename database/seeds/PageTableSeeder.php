@@ -398,7 +398,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
 										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="visible-xs"/>品牌因创新而活。 ”</h1>
@@ -415,7 +415,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, <br class="visible-xs"/>为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -711,7 +711,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row"> 
 								<div class="col-xs-12" style="background-color:#848383;padding:50px 0px;">
-									<div class="col-sm-9 col-sm-offset-2">
+									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>VISION</h2>
 										<h1 class="tagline text-center">“Be Transformed <br class="visible-xs"/>to Transform”</h1>
@@ -728,7 +728,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">CubeEvo upholds "flexibility" by creating the perfect Branding for our clients. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>

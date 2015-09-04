@@ -1,23 +1,19 @@
   $(window).load(function() {
+    if($('.cre-box').length > 0){
+      function builtboxsize(){  
+        var _boxheight = $('.cre-box').height();  
+        $('.extra-info-box').css('height', _boxheight);  
+      }   
+      builtboxsize(); 
+      $(window).resize(function() { 
+        builtboxsize(); 
+      });
+    }  
     $('.blanket').fadeOut();
   });
 
   $(document).ready(function() {
 
-    if($('.cre-box')){
-      function builtboxsize(isResize){ 
-        if(isResize == true){ 
-          var _boxheight = $('.cre-box').height(); 
-        }else{ 
-          var _boxheight = $('.cre-box').height()-20; 
-        } 
-        $('.extra-info-box').css('height', _boxheight);  
-      }   
-      builtboxsize(); 
-      $(window).resize(function() { 
-        builtboxsize(true); 
-      });
-    } 
 
   $('.cd-nav-trigger').click(function(){
     if($('.btn-back').length > 0){
