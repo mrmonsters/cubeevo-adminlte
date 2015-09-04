@@ -269,7 +269,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .slick-dots li button:before{font-size: 11px;}
 .slick-slider{margin-bottom: 0px}
 .slick-arrow{width: 44px;height: 44px;}
-.slick-prev-wrapper{cursor:pointer;position: absolute;right: 5%;top: 43%;z-index: 5}
+.slick-prev-wrapper{cursor:pointer;position: absolute;right: 5%;top: 33%;z-index: 5}
 .slick-next-wrapper{cursor:pointer;position: absolute;right: 5%;top: 50%;z-index: 5}
 
 .container-fluid.process{margin: 0.8%;background-color: #eee;padding-top: 80px;}
@@ -569,6 +569,7 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){
+  .slick-prev-wrapper{top: 43%;}
   .panel-body.overlap {margin: -21% 0px 0px 0px;}
   .scene.mascott{left: -20%;}
   .panel-body.overlap p{
