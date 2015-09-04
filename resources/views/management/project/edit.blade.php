@@ -98,6 +98,10 @@ Description for project management
 						<input id="web_link" name="web_link" type="text" class="form-control" value="{{ $project->web_link }}" />
 					</div>
 					<div class="form-group">
+						<label for="slug" class="control-label">URL Key</label>
+						<input id="slug" name="slug" type="text" class="form-control" value="{{ $project->slug }}" required />
+					</div>
+					<div class="form-group">
 						<label for="year" class="control-label">Year</label>
 						<input id="year" name="year" type="text" class="form-control" value="{{ $project->year }}" />
 					</div>
@@ -269,6 +273,18 @@ Description for project management
 								<option value="{{ Block::GALLERY }}" {{ ($block->type == Block::GALLERY) ? 'selected' : '' }}>Gallery</option>
 							</select>
 						</div>
+						@if ($block->type == Block::IMAGE || $block->type == Block::GALLERY)
+						<div id="selected-img-container-{{ $blockCount }}" class="row">
+						<?php $imgIds = explode(",", $block->value); ?>
+						@foreach ($imgIds as $id)
+						@if ($id != '')
+							<div class="col-md-3">
+								<img src="{{ Files::find($id)->dir }}" class="img-thumbnail" width="100%" />
+							</div>
+						@endif
+						@endforeach
+						</div>
+						@endif
 						<div class="form-group">
 							<label for="block-value-{{ $blockCount }}" class="control-label">Value</label>
 							<div class="input-group">
@@ -276,7 +292,7 @@ Description for project management
 								<input type="hidden" id="project_img_sort_order_{{ $blockCount }}" name="project_img_sort_order[{{ $block->id }}]" />
 								<span class="input-group-btn">
 									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-{{ $blockCount }}">Upload</button>
-									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids_{{ $blockCount }}', 'project_img_sort_order_{{ $blockCount }}')">Choose</button>
+									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids_{{ $blockCount }}', 'project_img_sort_order_{{ $blockCount }}', 'selected-img-container-{{ $blockCount }}')">Choose</button>
 								</span>
 							</div>
 						</div>
@@ -295,11 +311,11 @@ Description for project management
 									<div class="modal-body">
 										<div class="form-group" id="new_project_img_container_{{ $blockCount }}">
 											<label for="new_project_img_id" class="control-label">New Project Image</label>
-											<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id[{{ $blockCount }}][]" />
+											<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id[{{ $block->id }}][]" />
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $blockCount }}})">Add More</button>
+										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $blockCount }})">Add More</button>
 										<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
 									</div>
 								</div>
@@ -483,7 +499,7 @@ Description for project management
 			</div>
 			<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
 				<?php $count = 0; ?>
-				<?php $images = Files::where('status', '=', STATUS::ACTIVE)->get(); ?>
+				<?php $images = Files::where('delete', '=', false)->get(); ?>
 				@foreach ($images as $image)
 				<?php $count++; ?>
 				<?php $projImage = $project->projectImages()->where('img_id', $image->id)->first(); ?>
@@ -493,7 +509,7 @@ Description for project management
 					<div class="col-xs-6 col-md-3">
 						<div class="thumbnail" style="text-align: center;">
 							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail">
-							<input type="checkbox" class="project_img" value="{{ $image->id }}" onclick="selectProjectImg()" {{ (isset($projImage)) ? 'checked' : '' }} />
+							<input type="checkbox" class="project_img" value="{{ $image->id }}" data-img="{{ $image->dir }}" onclick="selectProjectImg()" {{ (isset($projImage)) ? 'checked' : '' }} />
 							<span><b>Use</b></span>
 							<div id="img_sort_order_container_{{ $image->id }}" style="display: {{ (isset($projImage)) ? '' : 'none' }};">
 								<label for="img_sort_order">Sort Order</label>
@@ -566,6 +582,7 @@ function selectImg(imgId, imgSrc)
 function selectProjectImg()
 {
 	var imgIds = [];
+	var imgUrl = [];
 	var fields = $('#current-modal-field').val().split(',');
 
 	$('.project_img').each(function()
@@ -576,6 +593,7 @@ function selectProjectImg()
 		{
 			imgIds.push(imgId);
 			$('#img_sort_order_container_' + imgId).show();
+			imgUrl.push($(this).data('img'));
 		}
 		else
 		{
@@ -586,6 +604,13 @@ function selectProjectImg()
 
 	$('#' + fields[0]).val(imgIds.join(','));
 	setImgSortOrder(fields[1]);
+	console.log(fields);
+	var thumbnails = '';
+	for (var x = 0; x < imgUrl.length; x++)
+	{
+		thumbnails += '<div class="col-md-3"><img src="'+imgUrl[x]+'" class="img-thumbnail" width="100%" /></div>';
+	}
+	$('#' + fields[2]).html(thumbnails);
 }
 
 function setImgSortOrder(field)
@@ -632,14 +657,14 @@ function setImgSortOrder(field)
 	$('#' + field).val(sortOrder.join(','));
 }
 
-function addProjectImg()
+function addProjectImg(cnt)
 {
-	$('.new_project_img:last').clone().appendTo('#new_project_img_container');
+	$('.new_project_img:last').clone().appendTo('#new_project_img_container_'+cnt);
 }
 
-function prepareModal(img, sort)
+function prepareModal(img, sort, thumbnail)
 {
-	$('#current-modal-field').val(img + "," + sort);
+	$('#current-modal-field').val(img + "," + sort + "," + thumbnail);
 
 	var imgIds = $('#' + img).val().split(',');
 	var sorts  = $('#' + sort).val().split(',');

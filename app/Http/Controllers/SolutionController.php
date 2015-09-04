@@ -33,7 +33,7 @@ class SolutionController extends Controller {
 	public function index()
 	{
 		//
-		$solutions = Solution::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
+		$solutions = Solution::where('delete', '=', false)->orderBy('sort_order')->get();
 
 		return view('management.solution.index')->with('solutions', $solutions);
 	}
@@ -239,6 +239,24 @@ class SolutionController extends Controller {
 	public function destroy($id)
 	{
 		//
+		$response = array();
+		$solution = Solution::find($id);
+
+		if (isset($solution) && isset($solution->id))
+		{
+			$solution->delete = true;
+			$solution->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Solution [#".$solution->id."] has been deleted successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Solution not found.";
+		}
+
+		return Redirect::to('admin/manage/solution')->with('response', $response);
 	}
 
 }

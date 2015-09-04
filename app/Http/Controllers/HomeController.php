@@ -42,51 +42,68 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$page = Page::where('slug', '=', '/')->where('status', STATUS::ACTIVE)->first();
+		$page = Page::where('slug', '=', '/')->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
 
 		return view('frontend.index')->with('page', $page);
 	}
 
 	public function getAboutUs()
 	{
-		$page = Page::where('slug', '=', '/about-us')->where('status', STATUS::ACTIVE)->first();
+		$page = Page::where('slug', '=', '/about-us')->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
 
 		return view('frontend.index')->with('page', $page);
 	}
 
 	public function getCredential()
 	{
-		$categories = Category::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
+		$categories = Category::where('status', '=', Status::ACTIVE)->where('delete', false)
+			->orderBy('sort_order')
+			->get();
 
 		return view('frontend.credential')->with('categories', $categories);
 	}
 
 	public function getProjectContent($slug)
 	{
-		$project = Project::where('slug', '=', $slug)->first();
+		$project = Project::where('slug', '=', $slug)->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
 
-		return view('frontend.project_content')->with('project', $project)->with('backbtn',URL::previous());
+		return view('frontend.project_content')->with('project', $project)
+			->with('backbtn', URL::previous());
 	}
 
 	public function getCredentialProject($slug)
 	{
-		$projects = Category::where('slug', '=', $slug)->first()->projects()->where('status', STATUS::ACTIVE)
+		$projects = Category::where('slug', '=', $slug)->first()
+			->projects()
+			->where('status', Status::ACTIVE)
+			->where('delete', false)
 			->orderBy('sort_order')
 			->get();
 
-		return view('frontend.project')->with('projects', $projects)->with('backbtn', URL::action('HomeController@getCredential'));
+		return view('frontend.project')->with('projects', $projects)
+			->with('backbtn', URL::action('HomeController@getCredential'));
 	}
 
 	public function getSolution()
 	{
-		$solutions = Solution::where('status', '=', STATUS::ACTIVE)->orderBy('sort_order')->get();
+		$solutions = Solution::where('status', '=', Status::ACTIVE)->where('delete', false)
+			->orderBy('sort_order')
+			->get();
 
 		return view('frontend.solution')->with('solutions', $solutions);
 	}
 
 	public function getProcess()
 	{
-		$page = Page::where('slug', '=', '/process')->where('status', STATUS::ACTIVE)->first();
+		$page = Page::where('slug', '=', '/process')->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
 
 		return view('frontend.index')->with('page', $page);
 	}
@@ -98,7 +115,9 @@ class HomeController extends Controller {
 
 	public function switchLocale($code)
 	{
-		$locale = Locale::where('language', '=', $code)->first();
+		$locale = Locale::where('language', '=', $code)->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
 
 		if (isset($locale))
 		{

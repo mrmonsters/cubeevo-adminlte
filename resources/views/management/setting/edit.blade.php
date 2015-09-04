@@ -1,4 +1,8 @@
 @extends('app')
+<?php 
+use App\Models\Status;
+use App\Models\Files; 
+?>
 
 @section('htmlheader_title')
 Setting Management
@@ -19,7 +23,7 @@ Description for setting management
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Setting</h3>
 			</div>
-			<form method="POST" action="{{ url('manage/setting/update') }}">
+			<form method="POST" action="{{ url('manage/setting/update') }}" accept-charset="UTF-8" enctype="multipart/form-data">
 				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
 				<input name="_method" type="hidden" value="PUT" />
 				<div class="box-body">
@@ -72,6 +76,32 @@ Description for setting management
 									<label for="instagram_link" class="control-label">{{ $settings->where('code', 'instagram_link')->first()->name }}</label>
 									<input id="instagram_link" name="instagram_link" type="text" class="form-control" value="{{ $settings->where('code', 'instagram_link')->first()->value }}" />
 								</div>
+								<div class="form-group">
+									<label for="meta_title" class="control-label">{{ $settings->where('code', 'meta_title')->first()->name }}</label>
+									<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $settings->where('code', 'meta_title')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="meta_keyword" class="control-label">{{ $settings->where('code', 'meta_keyword')->first()->name }}</label>
+									<input id="meta_keyword" name="meta_keyword" type="text" class="form-control" value="{{ $settings->where('code', 'meta_keyword')->first()->value }}" />
+								</div>
+								<div class="form-group">
+									<label for="meta_desc" class="control-label">{{ $settings->where('code', 'meta_desc')->first()->name }}</label>
+									<input id="meta_desc" name="meta_desc" type="text" class="form-control" value="{{ $settings->where('code', 'meta_desc')->first()->value }}" />
+								</div>
+								<div class="row">
+									<div class="col-md-4">
+										<div class="thumbnail">
+											<?php $metaImgId = $settings->where('code', 'meta_img_id')->first()->value; ?>
+											<img id="meta_img" src="{{ ($metaImgId != '') ? Files::find($metaImgId)->dir : '' }}" alt="{{ ($metaImgId != '') ? Files::find($metaImgId)->name : '' }}" class="img-thumbnail" width="100%" />
+											<div class="caption" style="text-align: center;">
+												<p><strong>Meta Image</strong></p>
+												<input type="file" class="form-control" id="new_meta_img_id" name="new_meta_img_id" />
+												<input type="hidden" id="meta_img_id" name="meta_img_id" class="form-control" value="{{ $settings->where('code', 'meta_img_id')->first()->value }}" />
+												<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload">Use Existing</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -85,4 +115,44 @@ Description for setting management
 		</div>
 	</div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-upload" tabindex="-1" role="dialog" aria-labelledby="modal-upload">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="modal">Choose from existing image collection</h4>
+			</div>
+			<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
+				<?php $count = 0; ?>
+				<?php $images = Files::where('delete', '=', false)->where('status', Status::ACTIVE)->get(); ?>
+				@foreach ($images as $image)
+				<?php $count++; ?>
+				@if ($count % 4 == 1)
+				<div class="row">
+				@endif
+					<div class="col-xs-6 col-md-3">
+						<button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
+							<img src="{{ $image->dir }}" alt="{{ $image->name }}">
+						</button>
+					</div>
+				@if (($count % 4 == 0) || ($count == $images->count())) 
+				</div>
+        		@endif
+				@endforeach
+			</div>
+		</div>
+	</div>
+</div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+function selectImg(imgId, imgSrc)
+{
+	$('#meta_img_id').val(imgId);
+	$('#meta_img').attr('src', imgSrc);
+}
+</script>
 @endsection

@@ -25,6 +25,7 @@ class CreateCategoryTranslationsTable extends Migration {
 			$table->string('name');
 			$table->string('desc');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

@@ -9,6 +9,7 @@ use Redirect;
 
 use App\Models\Status;
 use App\Models\Setting;
+use App\Services\FileHelper;
 
 class SettingController extends Controller {
 
@@ -62,7 +63,7 @@ class SettingController extends Controller {
 	public function edit()
 	{
 		//
-		$settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
+		$settings = Setting::where('delete', '=', false)->get();
 
 		return view('management.setting.edit')->with('settings', $settings);
 	}
@@ -73,7 +74,7 @@ class SettingController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Request $req)
+	public function update(Request $req, FileHelper $fileHelper)
 	{
 		//
 		$response = array();
@@ -81,6 +82,13 @@ class SettingController extends Controller {
 
 		if (isset($data) && !empty($data))
 		{
+			$files = $req->file();
+
+			if (isset($files) && isset($files['new_meta_img_id']))
+			{
+				$metaImgId = $fileHelper->uploadNewFile($files['new_meta_img_id']);
+			}
+
 			$settings = array();
 			$settings['ga_key']    = $data['ga_key'];
 			$settings['gmaps_lat'] = $data['gmaps_lat'];
@@ -89,9 +97,13 @@ class SettingController extends Controller {
 			$settings['phone']     = $data['phone'];
 			$settings['fax']       = $data['fax'];
 			$settings['email']     = $data['email'];
-			$settings['facebook_link']    = $data['facebook_link'];
-			$settings['youtube_link']     = $data['youtube_link'];
-			$settings['instagram_link']   = $data['instagram_link'];
+			$settings['facebook_link']  = $data['facebook_link'];
+			$settings['youtube_link']   = $data['youtube_link'];
+			$settings['instagram_link'] = $data['instagram_link'];
+			$settings['meta_title']     = $data['meta_title'];
+			$settings['meta_keyword']   = $data['meta_keyword'];
+			$settings['meta_desc']      = $data['meta_desc'];
+			$settings['meta_img_id']    = (isset($metaImgId) && $metaImgId != '') ? $metaImgId : $data['meta_img_id'];
 
 			foreach ($settings as $key => $val)
 			{
@@ -104,13 +116,13 @@ class SettingController extends Controller {
 				}
 			}
 
-			$response['code'] = STATUS::SUCCESS;
+			$response['code'] = Status::SUCCESS;
 			$response['msg'] = "Settings have been saved successfully.";
 
 			return Redirect::to('admin/manage/setting')->with('response', $response);
 		}
 
-		$response['code'] = STATUS::ERROR;
+		$response['code'] = Status::ERROR;
 		$response['msg'] = "Unable to save settings.";
 
 		return Redirect::back()->with('response', $response);

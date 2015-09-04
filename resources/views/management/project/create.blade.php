@@ -89,6 +89,10 @@ Description for project management
 						<input id="web_link" name="web_link" type="text" class="form-control" />
 					</div>
 					<div class="form-group">
+						<label for="slug" class="control-label">URL Key</label>
+						<input id="slug" name="slug" type="text" class="form-control" required />
+					</div>
+					<div class="form-group">
 						<label for="year" class="control-label">Year</label>
 						<input id="year" name="year" type="text" class="form-control" />
 					</div>
@@ -389,7 +393,7 @@ Description for project management
 					<div class="col-xs-6 col-md-3">
 						<div class="thumbnail" style="text-align: center;">
 							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail">
-							<input type="checkbox" class="project_img" value="{{ $image->id }}" onclick="selectProjectImg()" />
+							<input type="checkbox" class="project_img" value="{{ $image->id }}" onclick="selectProjectImg()" data-img="{{ $image->dir }}" />
 							<span><b>Use</b></span>
 							<div id="img_sort_order_container_{{ $image->id }}" style="display: none;">
 								<label for="img_sort_order">Sort Order</label>
@@ -462,6 +466,7 @@ function selectImg(imgId, imgSrc)
 function selectProjectImg()
 {
 	var imgIds = [];
+	var imgUrl = [];
 	var fields = $('#current-modal-field').val().split(',');
 
 	$('.project_img').each(function()
@@ -472,6 +477,7 @@ function selectProjectImg()
 		{
 			imgIds.push(imgId);
 			$('#img_sort_order_container_' + imgId).show();
+			imgUrl.push($(this).data('img'));
 		}
 		else
 		{
@@ -482,6 +488,13 @@ function selectProjectImg()
 
 	$('#' + fields[0]).val(imgIds.join(','));
 	setImgSortOrder(fields[1]);
+
+	var thumbnails = '';
+	for (var x = 0; x < imgUrl.length; x++)
+	{
+		thumbnails += '<div class="col-md-3"><img src="'+imgUrl[x]+'" class="thumbnail" width="100%" /></div>';
+	}
+	$('#' + fields[2]).html(thumbnails);
 }
 
 function setImgSortOrder(field)
@@ -511,9 +524,9 @@ function addProjectImg(cnt)
 	$('.new_project_img:last').clone().appendTo('#new_project_img_container_'+cnt);
 }
 
-function prepareModal(img, sort)
+function prepareModal(img, sort, thumbnail)
 {
-	$('#current-modal-field').val(img + "," + sort);
+	$('#current-modal-field').val(img + "," + sort + "," + thumbnail);
 
 	var imgIds = $('#' + img).val().split(',');
 	var sorts  = $('#' + sort).val().split(',');
@@ -554,6 +567,7 @@ function addBlock()
 		+ '<option value="gal">Gallery</option>'
 		+ '</select>'
 		+ '</div>'
+		+ '<div id="selected-img-container-'+count+'" class="row"></div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
 		+ '<div class="input-group">'
@@ -561,7 +575,7 @@ function addBlock()
 		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
 		+ '<span class="input-group-btn">'
 		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
-		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\',\'selected-img-container-'+count+'\')">Choose</button>'
 		+ '</span>'
 		+ '</div>'
 		+ '</div>'

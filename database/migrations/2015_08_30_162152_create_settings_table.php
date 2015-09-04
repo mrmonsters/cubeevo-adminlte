@@ -23,6 +23,7 @@ class CreateSettingsTable extends Migration {
 			$table->string('type');
 			$table->string('value');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

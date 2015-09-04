@@ -25,6 +25,7 @@ class CreatePageTranslationsTable extends Migration {
 			$table->string('desc');
 			$table->text('content');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

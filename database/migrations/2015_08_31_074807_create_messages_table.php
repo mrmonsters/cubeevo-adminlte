@@ -24,6 +24,7 @@ class CreateMessagesTable extends Migration {
 			$table->string('email');
 			$table->string('content');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}

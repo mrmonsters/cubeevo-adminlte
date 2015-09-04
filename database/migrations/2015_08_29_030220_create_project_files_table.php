@@ -24,6 +24,7 @@ class CreateProjectFilesTable extends Migration {
 			$table->foreign('img_id')->references('id')->on('files');
 			$table->integer('sort_order');
 			$table->integer('status')->default(2);
+			$table->boolean('delete')->default(0);
 			$table->timestamps();
 		});
 	}
