@@ -415,7 +415,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, <br class="visible-xs"/>为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
@@ -728,7 +728,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">CubeEvo upholds "flexibility" by creating the perfect Branding for our clients. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -79%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
 									</div>
 								</div>
 								</div>
