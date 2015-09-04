@@ -103,7 +103,7 @@ class MessageController extends Controller {
 		else
 		{
 			$response['code'] = Status::ERROR;
-			$response['msg']  = "Message not found."
+			$response['msg']  = "Message not found.";
 		}
 
 		return Redirect::to('admin/manage/message')->with('response', $response);
