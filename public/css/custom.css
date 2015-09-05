@@ -585,6 +585,7 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){
+  #cd-nav ul {margin: 25% auto 0px;}
   .slick-prev-wrapper{top: 43%;}
   .panel-body.overlap {margin: -21% 0px 0px 0px;}
   .scene.mascott{left: -20%;}

@@ -94,7 +94,7 @@ Main Components
   background: -ms-linear-gradient(top, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.35) 100%);
   background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.35) 100%);
   /* remove overflow:hidden if you want to create a drop-down menu - but then remember to fix/eliminate the list items animation */
-  overflow: hidden;
+  overflow: auto;
   z-index: 8;
   /* Force Hardware Acceleration in WebKit */
   -webkit-backface-visibility: hidden;
@@ -126,7 +126,7 @@ Main Components
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   width:100%;
-  margin:25% auto 0px
+  margin:15% auto 0px
 }
 #cd-nav ul li {
   /* Force Hardware Acceleration in WebKit */
