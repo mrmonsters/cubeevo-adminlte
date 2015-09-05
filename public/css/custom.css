@@ -554,7 +554,7 @@ Main Components
     z-index: 10;}
 .mascott{ visibility: hidden; }.animated { visibility: visible !important; }
 .home-content{height: 100%;}
-.home-content > .row{position: absolute;bottom: 15%;}
+.home-content > .row{position: absolute;bottom: 15%;width: 100%;}
 .brandImage{
     position: relative;
     transform-style: flat;
