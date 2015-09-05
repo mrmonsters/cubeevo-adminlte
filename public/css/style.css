@@ -126,7 +126,7 @@ Main Components
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   width:100%;
-  margin:15% auto 0px
+  margin:25% auto 0px
 }
 #cd-nav ul li {
   /* Force Hardware Acceleration in WebKit */
