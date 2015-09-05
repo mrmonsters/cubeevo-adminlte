@@ -39,8 +39,8 @@ Description for static page management
 						<input id="slug" name="slug" type="text" class="form-control" value="{{ $page->slug }}" />
 					</div>
 					<div class="form-group">
-						<label for="meta_title" class="control-label">Meta Title</label>
-						<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $page->meta_title }}" />
+						<label for="site_title" class="control-label">Site Title</label>
+						<input id="site_title" name="site_title" type="text" class="form-control" value="{{ $page->site_title }}" />
 					</div>
 					<div class="form-group">
 						<label for="meta_keyword" class="control-label">Meta Keyword</label>
@@ -68,11 +68,11 @@ Description for static page management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="desc" class="control-label">Description</label>
-										<input id="desc" name ="desc" type="text" class="form-control" value="{{ $page->translate($locale->language)->desc }}" />
+										<input id="desc" name ="desc[{{ $locale->id }}]" type="text" class="form-control" value="{{ $page->translate($locale->language)->desc }}" />
 									</div>
 									<div class="form-group">
-										<label for="content" class="control-label">Content</label>
-										<textarea id="content" name="content_{{ $locale->id }}" class="form-control" rows="8">{{ $page->translate($locale->language)->content }}</textarea>
+										<label for="content_{{ $locale->id }}" class="control-label">Content</label>
+										<textarea id="content_{{ $locale->id }}" name="content[{{ $locale->id }}]" class="form-control" rows="8"><?php echo html_entity_decode($page->translate($locale->language)->content); ?></textarea>
 									</div>
 								</div>
 							@endforeach

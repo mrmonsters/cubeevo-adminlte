@@ -11,7 +11,7 @@ class Page extends Model implements TranslatableContract {
 
 	protected $table                = 'pages';
 	protected $primaryKey           = 'id';
-	protected $fillable             = ['name', 'desc', 'content', 'slug', 'status', 'meta_title', 'meta_keyword', 'meta_desc'];
+	protected $fillable             = ['name', 'desc', 'content', 'slug', 'status', 'site_title', 'meta_keyword', 'meta_desc'];
 	protected $translator           = 'App\Models\PageTranslation';
 	protected $translatedAttributes = ['desc', 'content'];
 

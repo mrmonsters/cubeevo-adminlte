@@ -19,7 +19,7 @@ class CreatePagesTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->string('slug')->unique();
-			$table->string('meta_title');
+			$table->string('site_title');
 			$table->string('meta_keyword');
 			$table->string('meta_desc');
 			$table->integer('status')->default(2);

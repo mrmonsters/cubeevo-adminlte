@@ -120,7 +120,7 @@ Description for project management
 						<div class="form-group col-sm-4">
 							<label for="txt_heading_color_code" class="control-label">Text Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="txt_heading_color_code" name ="txt_heading_color_code" type="text" class="form-control" value="{{ $project->txt_heading_color_code }}" />
+								<input id="txt_heading_color_code" name ="txt_heading_color_code" type="text" class="form-control" value="" />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
@@ -129,7 +129,7 @@ Description for project management
 						<div class="form-group col-sm-4">
 							<label for="txt_color_code" class="control-label">Text Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="{{ $project->txt_color_code }}" />
+								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="" />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
@@ -536,7 +536,7 @@ function setImgSortOrder(field)
 
 function addProjectImg(cnt)
 {
-	$('.new_project_img:last').clone().appendTo('#new_project_img_container_'+cnt);
+	$('#new_project_img_container_'+cnt).append('<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id['+cnt+'][]" />');
 }
 
 function prepareModal(img, sort, thumbnail)
@@ -572,7 +572,7 @@ function addBlock()
 
 	var blockInput = '<div id="new_block_'+count+'"><div class="box-header with-border">'
 		+ '<h4 class="box-title">Block #' + (count+1) + '</h4>'
-		+ '<button type="button" class="btn btn-danger pull-right">Remove</button>'
+		+ '<button type="button" class="btn btn-danger pull-right" onclick="removeBlock('+count+', \'\')">Remove</button>'
 		+ '</div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-type" class="control-label">Type</label>'

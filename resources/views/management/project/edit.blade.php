@@ -672,7 +672,7 @@ function setImgSortOrder(field)
 
 function addProjectImg(cnt)
 {
-	$('.new_project_img:last').clone().appendTo('#new_project_img_container_'+cnt);
+	$('#new_project_img_container_'+cnt).append('<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id['+cnt+'][]" />');
 }
 
 function prepareModal(img, sort, thumbnail)
