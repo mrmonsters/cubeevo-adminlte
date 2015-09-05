@@ -322,13 +322,13 @@ Description for project management
 										<h4 class="modal-title" id="modal">Upload new project images</h4>
 									</div>
 									<div class="modal-body">
-										<div class="form-group" id="new_project_img_container_{{ $blockCount }}">
+										<div class="form-group" id="new_project_img_container_{{ $block->id }}">
 											<label for="new_project_img_id" class="control-label">New Project Image</label>
 											<input type="file" class="form-control new_project_img" id="new_project_img_id" name="new_project_img_id[{{ $block->id }}][]" />
 										</div>
 									</div>
 									<div class="modal-footer">
-										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $blockCount }})">Add More</button>
+										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $block->id }})">Add More</button>
 										<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
 									</div>
 								</div>
