@@ -73,7 +73,7 @@ class PageController extends Controller {
 				// Create new page
 				$page = new Page;
 				$page->name         = $data['name'];
-				$page->site_title   = $data['site_title'];
+				$page->meta_title   = $data['meta_title'];
 				$page->meta_keyword = $data['meta_keyword'];
 				$page->meta_desc    = $data['meta_desc'];
 				$page->slug         = $data['slug'];;
@@ -181,7 +181,7 @@ class PageController extends Controller {
 				// Update page
 				$page = Page::find($id);
 				$page->name         = $data['name'];
-				$page->site_title   = $data['site_title'];
+				$page->meta_title   = $data['meta_title'];
 				$page->meta_keyword = $data['meta_keyword'];
 				$page->meta_desc    = $data['meta_desc'];
 				$page->slug         = $data['slug'];
