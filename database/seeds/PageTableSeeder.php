@@ -786,15 +786,15 @@ class PageTableSeeder extends Seeder
 								<div class="row about-369"> 
 								<div class="col-sm-10 col-sm-offset-1 text-center">
 									<div class="col-sm-4">
-										<div class="col-xs-6 about-369heading"><img src="/img/Images-09.png" width="100%"></div>
+										<div class="col-xs-6 about-369heading"><img src="/img/3.png" width="100%"></div>
 										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-11.png" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
-										<div class="col-xs-6 about-369heading"><img src="/img/Images-10.png" width="100%"></div>
+										<div class="col-xs-6 about-369heading"><img src="/img/6.png" width="100%"></div>
 										<div class="col-xs-6 about-369img"><img src="/img/Transforming-Cube-English.gif" width="100%"></div>
 									</div>
 									<div class="col-sm-4">
-										<div class="col-xs-6 about-369heading"><img src="/img/Images-11.png" width="100%"></div>
+										<div class="col-xs-6 about-369heading"><img src="/img/9.png" width="100%"></div>
 										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
 										<div class="col-xs-6 about-369txt">
 											<div class="col-xs-12 col-sm-4 nopadding">
