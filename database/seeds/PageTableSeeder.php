@@ -223,9 +223,10 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section1">
 									<div class="col-xs-12 col-md-6 maincol-right">
 						                <ul class="scene mascott orange">  
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Orange/Orange_Bg.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Body.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Legs.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Orange/CubeEvo_Mascot-Orange_Hands.png" width="150%" ></li>  
 						                </ul>
 									</div> 
 									<div class="col-md-6 maincol-left clearfix">
@@ -246,9 +247,10 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section2">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott yellow">    
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Yellow/Yellow_Bg.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Body.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Legs.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Hands.png" width="150%" ></li> 
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Yellow/CubeEvo_Mascot-Yellow_Hands.png" width="150%" ></li>
 						                </ul>
 									</div> 
 									<div class="col-md-6 maincol-left clearfix">
@@ -269,6 +271,7 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section3">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott red">   
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Red/Red_Bg.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Body.png" width="150%" ></li>  
 						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Red/CubeEvo_Mascot-Red_Hands.png" width="150%" ></li> 
 						                </ul>
@@ -291,6 +294,7 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section4">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott purple">  
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Purple/Purple_Bg.png" width="150%" ></li> 
 						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Body.png" width="150%" ></li>
 						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Hands.png" width="150%" ></li> 
 						                    <li class="layer cube" data-depth="1"><img src="/img/Mascott/Purple/CubeEvo_Mascot-Purple_Cube.png" id="cube" style="position:relative;" width="150%" ></li> 
@@ -314,9 +318,10 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section5">
 									<div class="col-md-6 maincol-right">  
 										<ul class="scene mascott blue">  
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Blue/Blue_Bg.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_LeftHand.png" width="150%" ></li> 
 						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_body.png" width="150%" ></li>  
-						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li>
+						                    <li class="layer" data-depth="0.8"><img src="/img/Mascott/Blue/CubeEvo_Mascot-Blue_RightHand.png" width="150%" ></li> 
 						                </ul>
 									</div>  
 									<div class="col-md-6 maincol-left clearfix">
@@ -337,6 +342,7 @@ class PageTableSeeder extends Seeder
 									<div class="section" id="section6">
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
+						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Green/Green_Bg.png" width="150%" ></li> 
 						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
 						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
 						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
