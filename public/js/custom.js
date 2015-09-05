@@ -68,6 +68,7 @@
               $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
                 setTimeout(function () {
                   $('.scene.green .plant').removeClass('animated fadeIn').addClass('animated fadeIn');
+                  $('.scene.green .bg').removeClass('animated fadeOut').addClass('animated fadeIn');
                 }, 1000
               ));
               $('.cd-next').parent().addClass('hide');
