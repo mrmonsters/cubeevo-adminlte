@@ -458,7 +458,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">形立方秉持 “灵活” 宗旨, <br class="visible-xs"/>为客户打造完美品牌。</h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -29%;"></div>
 									</div>
 								</div>
 								</div>
@@ -592,7 +592,7 @@ class PageTableSeeder extends Seeder
 										</div>
 										<div class="col-xs-12 col-sm-4">
 											<div class="job">
-												<h5 class="txtwhite">平面及多媒体实习生</h5>
+												<h5 class="txtwhite">业务或行政实习生</h5>
 												<p>你还在学习课堂上的知识？给你机会看看企业社会的实际要求，你敢不敢来验证你的设计功力是否到家？别等，赶紧搭上我们
 				品牌与广告的刺激旅途吧！</p>
 												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal3">加入形立方</button>
@@ -602,7 +602,7 @@ class PageTableSeeder extends Seeder
 									<div class="row">
 										<div class="col-xs-12 col-sm-4">
 											<div class="job">
-												<h5 class="txtwhite">事务或行政实习生</h5>
+												<h5 class="txtwhite">平面设计与多媒体设计实习生</h5>
 												<p>你喜欢品牌与广告吗？你对市场的了解深吗？你敢不敢来验证你的广告业务学问是否准确？别等，赶紧搭上我们品牌与广告的刺激旅途吧！</p>
 												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入形立方</button>
 											</div>	
@@ -625,17 +625,17 @@ class PageTableSeeder extends Seeder
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+								    <li>了解广告行业</li> 
+									<li> 能与客户和创意部门合作融洽</li> 
+									<li> 重视成果，有良好的组织力</li> 
+									<li> 为公司建立业绩，也能处理客户诉求</li> 
+									<li> 流畅的英语书写与会话能力</li> 
+									<li> 有车有驾照</li>
+									<li> 欢迎毕业生投书申请</li> 
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
 						      </div>
 						    </div>
 						  </div>
@@ -650,70 +650,78 @@ class PageTableSeeder extends Seeder
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>能构思、设计、创作创意美术作品
+							      	</li><li> 负责各种阶段的概念与设计工作
+							      	</li><li> 能同时处理数个项目
+							      	</li><li> 学业资格最低为平面设计文凭班毕业
+							      	</li><li> 当过平面设计师至少1至2年
+							      	</li><li> 需具备技能（精通）： Adobe Illustrator、PhotoShop 和 InDesign 
+							      	</li><li> 追求作品品质、精神素质，不会忽略任务细节
+							      	</li><li> 能独立工作，对工作热情，有团队精神之余，也能在无人监督下好好完成工作
+							      	</li><li> 需具备语言能力：英文与中文
+							      	</li><li> 申请人必须是马来西亚公民
+							      	</li><li> 申请人必须愿意在蕉赖区工作
+							      	</li><li> 欢迎毕业生投书申请</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
 						      </div>
 						    </div>
 						  </div>
-						</div>
+						</div> 
 						<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">平面及多媒体实习生</h4>
+						        <h4 class="modal-title" id="myModalLabel">业务或行政实习生</h4>
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>申请人应有或至少还在就读商学系/行政/管理、人事管理、财务/会计/金融、秘书或相关行业的文凭或学士文凭。
+									</li><li> 需具备技能：MS Office / MS SQL Server. 
+									</li><li> 需具备语言能力：英文与中文 
+									</li><li> 追求作品品质、精神素质，不会忽略任务细节  
+									</li><li> 能独立工作，对工作热情，有团队精神之余，也能在无人监督下好好完成工作 
+									</li><li> 申请人必须是马来西亚公民 
+									</li><li> 申请人必须愿意在蕉赖皇冠城工作（靠近双溪龙）</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
 						      </div>
 						    </div>
 						  </div>
 						</div>
+
 						<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">事务或行政实习生</h4>
+						        <h4 class="modal-title" id="myModalLabel">平面设计与多媒体设计实习生</h4>
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>申请人应有或至少还在就读设计类或多媒体的文凭或学士文凭。
+							      	</li><li>需具备技能：Adobe Illustrator、PhotoShop 和 InDesign 
+							      	</li><li>需具备语言能力：英文与中文
+							      	</li><li>追求作品品质、精神素质，不会忽略任务细节
+							      	</li><li>能独立工作，对工作热情，有团队精神之余，也能在无人监督下好好完成工作
+							      	</li><li>申请人必须是马来西亚公民
+							      	</li><li>申请人必须愿意在蕉赖皇冠城工作（靠近双溪龙）</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">Apply</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
 						      </div>
 						    </div>
 						  </div>
+						</div> 
+
 						</div>
-						</div>',
+						',
 					),
 					'en' => array(
 						'desc'    => 'About us page.',
@@ -771,7 +779,7 @@ class PageTableSeeder extends Seeder
 										<h3 class="sub-tagline text-center">CubeEvo upholds "flexibility" by creating the perfect Branding for our clients. </h3>
 									</div>
 									<div class="col-sm-2 hidden-xs pull-right">
-										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -21%;"></div>
+										<div class="about-img1 "><img src="/img/Programmer Needs-03.png" width="100%" style="max-width: 519px;width: 185%;margin-left: -80%;margin-bottom: -29%;"></div>
 									</div>
 								</div>
 								</div>
@@ -934,13 +942,13 @@ class PageTableSeeder extends Seeder
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>Good understanding in advertising industries.
+</li><li> Able to work closely with client and creative team.
+</li><li> Result-oriented and strong organization skills.
+</li><li> Achieve sales revenue through new sales and management of existing clientele.
+</li><li> Fluent in written & spoken English.
+</li><li> Possess a driving license and own vehicle.
+</li><li> Fresh graduates are encouraged to apply.</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
@@ -959,13 +967,18 @@ class PageTableSeeder extends Seeder
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>Able to conceptualize, design and produce creative artwork</li>
+							      	<li> Responsible for every level of concept and design</li>
+<li>Manage multiple projects simultaneously</li>
+<li> Minimum Diploma in Graphic Design</li>
+<li>At least 1-2 year(s) experience as a graphic designer</li>
+<li> Required skill(s):  Expert in Adobe Illustrator,  PhotoShop & InDesign</li>
+<li> Pride in quality, excellence of work and attention to detail.</li>
+<li> Able to work independently, motivated, working with minimum supervision, and as a team player as well.</li>
+<li> Required language(s): English and Mandarin</li>
+<li> Applicant should be Malaysian citizens</li>
+<li> Applicant must be willing to work in Cheras</li>
+<li> Fresh graduates are encouraged to apply</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
@@ -979,17 +992,18 @@ class PageTableSeeder extends Seeder
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR GRAPHIC DESIGN AND MULTIMEDIA</h4>
+						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR BUSINESS OR ADMINISTRATION</h4>
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>Candidate must possess or currently pursuing a Diploma or Bachelor\'s Degree In BusinessStudies / Administration / Management, Human Resource Management , Finance / Accountancy / Banking, Secretarial or equivalent.
+</li><li> Required skill(s): MS Office.
+</li><li> Preferred skill(s): MS SQL Server.
+</li><li> Required language(s): Chinese, English
+</li><li> Pride in quality, excellence of work and attention to detail.
+</li><li> Able to work independently, motivated, working with minimum supervision, and as a team player as well.
+</li><li> Applicant should be Malaysian citizens. 
+</li><li> Applicants must be willing to work in Bandar Mahkota Cheras (Near to Sg Long).</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
@@ -1003,17 +1017,17 @@ class PageTableSeeder extends Seeder
 						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR BUSINESS OR ADMINISTRATION</h4>
+						        <h4 class="modal-title" id="myModalLabel">INTERNSHIP FOR GRAPHIC DESIGN AND MULTIMEDIA</h4>
 						      </div>
 						      <div class="modal-body">
 							      <ul>
-							      	<li>Good understanding in advertising industries.</li>
-							      	<li>Fresh graduates are encouraged to apply.</li>
-							      	<li>Able to work closely with client and creative team.</li>
-							      	<li>Result-oriented and strong organization skills.</li>
-							      	<li>Achieve sales revenue through new sales and management of existing clientele.</li>
-							      	<li>Fluent in written & spoken English.</li>
-							      	<li>Possess a driving license and own vehicle.</li>
+							      	<li>Candidate must possess or currently pursuing a Diploma or Bachelor\'s Degree In Graphic Design/ Multimedia.
+</li><li> Required skill(s): Adobe Illustrator,  PhotoShop & InDesign
+</li><li> Required language(s): Chinese, English
+</li><li> Pride in quality, excellence of work and attention to detail.
+</li><li> Able to work independently, motivated, working with minimum supervision, and as a team player as well.
+</li><li> Applicant should be Malaysian citizens.
+</li><li> Applicants must be willing to work in Bandar Mahkota Cheras (Near to Sg Long).</li>
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
@@ -1021,7 +1035,7 @@ class PageTableSeeder extends Seeder
 						      </div>
 						    </div>
 						  </div>
-						</div>
+						</div> 
 						</div>',
 					),
 				),
