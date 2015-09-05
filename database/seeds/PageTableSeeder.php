@@ -373,8 +373,8 @@ class PageTableSeeder extends Seeder
 									<div class="col-md-6 maincol-right">
 						                <ul class="scene mascott green">  
 						                    <li class="layer bg" data-depth="0.1"><img src="/img/Mascott/Green/Green_Bg.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
-						                    <li class="layer" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
+						                    <li class="layer body" data-depth="0.3"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Body.png" width="150%" ></li> 
+						                    <li class="layer body" data-depth="0.5"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Hands.png" width="150%" ></li>  
 						                    <li class="layer plant" data-depth="0.8"><img src="/img/Mascott/Green/CubeEvo_Mascot-Green_Plants.png" width="150%" ></li> 
 						                </ul>
 									</div>  
