@@ -128,8 +128,11 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 @section('frontend-addon-script') 
     <script>
     function initMap() { 
-	  
-	  var image = 'img/Images-20.png'; 
+	  @if(Session::get('locale') == 'en')
+	  var image = 'img/Programmer-Needs-09_2.png'; 
+	  @elseif(Session::get('locale') == 'cn')
+	  var image = 'img/Programmer-Needs-09_1.png'; 
+	  @endif
 	  var styles = [
 	   {
 	     featureType: "all",
