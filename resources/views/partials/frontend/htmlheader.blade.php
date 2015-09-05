@@ -18,6 +18,7 @@ use App\Models\Files;
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
     <!--<link rel="stylesheet" href="css/reset.css"> --> 
     <link rel="stylesheet" href="{{ asset('css/loader.css') }}"> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
     @if(Session::get('locale') == 'en') 
     <style type="text/css">

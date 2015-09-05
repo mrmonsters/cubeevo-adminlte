@@ -35,7 +35,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
 }
 h1 {margin-top:60px;}
 .txtorange {color:#f7941a;}
-.txtorange span {width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
+.txtorange span {display:none;width:100px; border-bottom:1px solid #333; position:absolute; margin-left: -110px; margin-top: 20px;}
 .txtwhite {color:#fff;}
 .txtwhite span {width:100px; border-bottom:1px solid #fff; position:absolute; margin-left: -110px; margin-top: 20px;}
 hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-right:0 none; border-top:0 none;}
@@ -258,11 +258,11 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre .contbox {position: relative;;min-height: 260px;}
 .sol .contbox ul,.cre .contbox ul {margin: 0px;padding: 0px; }
 
-.credential .blankbox{height: 400px; width: 100%;}
+.credential .blankbox{height: 600px; width: 100%;}
 .credential .whitebg {background-color:#ffffff ; }
-.credential .box{position: absolute;bottom:0px; margin-bottom:0.8%; color:#fff; }
+.credential .box{position: absolute;bottom:0px; margin-bottom:2%; color:#fff; }
 .credential .box-content{padding:10px;width: 99%;}
-.credential .box-bg{position: absolute;width: 99.4%;height: 100%;
+.credential .box-bg{position: absolute;width: 98%;height: 100%;
 	-moz-opacity: 0.85;
 	-khtml-opacity: 0.85;
 	opacity: 0.85;
@@ -326,18 +326,18 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus li {padding-left:26px;}
 .contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}  
 .contactus .active .form-control{border-color: #f7941a;}
-.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -38px;}
+.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
 .contactus .form-control {font-size:16px;background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:40px; height:45px;   margin-bottom: 20px;}
 .contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
 .contactus .active textarea{border:1px solid #f7941a;outline:transparent;}
 .contactus label {visibility:hidden;margin-top: 0px;margin-bottom: 18px;}
 .contactus label.unhide {visibility:visible; padding-left:40px;}
 .contactus .icon {width:30px; height:30px; display:block; position:absolute;}
-.contactus .cont-name {background:url(../img/Images-19.png) no-repeat 0px 0px;background-size: 250% auto;}
-.contactus .cont-mail {background:url(../img/Images-19.png) no-repeat 0px -31px;background-size: 250% auto;}
-.contactus .cont-contact {background:url(../img/Images-19.png) no-repeat 0px -71px;background-size: 250% auto;}
-.contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -111px;background-size: 250% auto;}
-.contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -151px;background-size: 250% auto;}
+.contactus .cont-name {background:url(../img/Images-19.png) no-repeat 0px 0px;}
+.contactus .cont-mail {background:url(../img/Images-19.png) no-repeat 0px -35px;}
+.contactus .cont-contact {background:url(../img/Images-19.png) no-repeat 0px -81px;}
+.contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -119px;}
+.contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -161px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
 
 /* Icon */
@@ -578,13 +578,15 @@ Main Components
     -ms-transform: matrix(1, 0, 0, 1, 0, 0);
     background-color: #fff;
 }
-.cre-info{padding: 0px 0.7%;}
+.cre-info{padding: 0px 3.8%;}
 .modal.in .modal-dialog{padding: 3%;}
 .extra-info-box{background-color:#c5c4c4;padding:1%;}
 .extra-info-box.even{background-color: #A9A6A6;}
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){ 
+  .cre-info{padding: 0px 1.8%;}
+  .txtorange span{display: block;}
   .slick-prev-wrapper{top: 43%;}
   .panel-body.overlap {margin: -21% 0px 0px 0px;}
   .scene.mascott{left: -20%;}

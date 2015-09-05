@@ -25,7 +25,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 		<form id="form-contact-us" method="POST" action="{{ url('contact-us/submit') }}" />
 		<input type="hidden" name="_token" value="{{ csrf_token() }}" />
 			<div class="col-sm-8 col-sm-offset-2">
-				<div class="col-sm-6"> 
+				<div class="col-sm-6">  
 					<span class="icon cont-name"></span>
 					<input type="text" id="inputName" class="form-control" name="name" placeholder="{{ (Session::get('locale') == 'en') ? 'NAME' : '姓名' }}" required="" autofocus="">
 				</div>

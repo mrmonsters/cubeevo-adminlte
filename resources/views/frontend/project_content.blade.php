@@ -9,7 +9,7 @@
 .container-fluid.credential{background-color:{{ $project->pri_color_code }}  }
 </style>
 <div class="container-fluid credential">
-    <div class="row" style="position:relative;top:1px;"> 
+    <div class="row"> 
         <div class="col-sm-12 nopadding brandImage" style="background-image:url('{{ $project->brandImage->dir }}');">
             <img src="{{ $project->brandImage->dir }}" width="100%">
         </div>
@@ -51,7 +51,7 @@
                                         <br>
                                         <br>
                                         <p class="desctitle" style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'WEBSITE' : '网址' }}</p>
-                                        {{ $project->web_link }}
+                                        <a href="{{ $project->web_link }}">{{ $project->web_link }}</a>
                                         @endif
                                         </div>
                                         <div class="col-sm-5 col-sm-offset-1 crecol-2">

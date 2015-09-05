@@ -31,7 +31,7 @@ class HomeController extends Controller {
 		// Set default language
 		if (Session::get('locale') == null)
 		{
-			Session::set('locale', Config::get('locale'));
+			Session::set('locale', 'en');
 		}
 
 		return parent::__construct();

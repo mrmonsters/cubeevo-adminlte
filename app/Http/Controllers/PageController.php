@@ -169,7 +169,7 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
+			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('id','!=',$id)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
