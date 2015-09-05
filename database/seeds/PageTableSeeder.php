@@ -796,9 +796,9 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-4">
 										<div class="col-xs-6 about-369heading"><img src="/img/9.png" width="100%"></div>
 										<div class="col-xs-6 about-369img"><img src="/img/Programmer Needs-06.png"  width="100%"></div>
-										<div class="col-xs-6 about-369txt">
+										<div class="col-xs-6 about-369txt nopadding">
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<p class="text-left">Branding Strategy<br>
+												<p class="text-left">Branding<br>
 												Advertising Planning<br>
 												Broadcast Ad Planning<br></p>
 											</div>
