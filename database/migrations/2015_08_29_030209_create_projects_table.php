@@ -33,6 +33,7 @@ class CreateProjectsTable extends Migration {
 			$table->string('pri_color_code');
 			$table->string('sec_color_code');
 			$table->string('txt_color_code');
+			$table->string('txt_heading_color_code');
 			$table->string('web_link');
 			$table->string('year');
 			$table->string('slug')->unique();

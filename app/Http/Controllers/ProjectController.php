@@ -150,6 +150,7 @@ class ProjectController extends Controller {
 				$project->category_id    = $data['category_id'];
 				$project->pri_color_code = $data['pri_color_code'];
 				$project->sec_color_code = $data['sec_color_code'];
+				$project->txt_heading_color_code = $data['txt_heading_color_code'];
 				$project->txt_color_code = $data['txt_color_code'];
 				$project->web_link		 = $data['web_link'];
 				$project->year           = $data['year'];
@@ -407,6 +408,7 @@ class ProjectController extends Controller {
 				$project->pri_color_code = $data['pri_color_code'];
 				$project->sec_color_code = $data['sec_color_code'];
 				$project->txt_color_code = $data['txt_color_code'];
+				$project->txt_heading_color_code = $data['txt_heading_color_code'];
 				$project->web_link		 = $data['web_link'];
 				$project->year           = $data['year'];
 				$project->slug 			 = str_replace(" ", "-", $data['slug']);
@@ -435,7 +437,7 @@ class ProjectController extends Controller {
 						->first();
 
 					if (isset($projTranslation))
-					{
+					{ 
 						$projTranslation->update($projData);
 					}
 					else

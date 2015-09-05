@@ -56,6 +56,7 @@
             $('.scene.purple .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
               setTimeout(function () {
                 $('.scene.purple .cube').removeClass('animated fadeOut').addClass('animated bounceInDown');
+                $('.scene.purple .bg').removeClass('animated fadeOut').addClass('animated fadeIn');
               }, 1000
             ));
             break;
@@ -66,7 +67,7 @@
               $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn'); 
               $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', 
                 setTimeout(function () {
-                  $('.scene.green .plant').removeClass('animated fadeOut').addClass('animated fadeIn');
+                  $('.scene.green .plant').removeClass('animated fadeIn').addClass('animated fadeIn');
                 }, 1000
               ));
               $('.cd-next').parent().addClass('hide');
@@ -91,9 +92,10 @@
             case 5:
               $('.scene.purple .body').removeClass('animated zoomInDown').addClass('animated fadeOut');
               $('.scene.purple .cube').removeClass('animated bounceInDown').addClass('animated fadeOut');
+              $('.scene.purple .bg').removeClass('animated fadeIn').addClass('animated fadeOut');
             break;
             case 6:
-              $('.scene.blue').removeClass('animated slideInRight').addClass('animated fadeOut');
+              $('.scene.blue').removeClass('animated slideInRight').addClass('animated fadeOut'); 
             break;
             case 7:
               $('.scene.green .body').removeClass('animated fadeIn').addClass('animated fadeOut');

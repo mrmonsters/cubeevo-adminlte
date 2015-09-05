@@ -127,6 +127,15 @@ Description for project management
 					</div>
 					<div class="row">
 						<div class="form-group col-sm-4">
+							<label for="txt_heading_color_code" class="control-label">Text Heading Color</label>
+							<div class="input-group colorpicker-element">
+								<input id="txt_heading_color_code" name ="txt_heading_color_code" type="text" class="form-control" value="{{ $project->txt_heading_color_code }}" />
+								<div class="input-group-addon">
+									<i style="background-color: {{ $project->txt_heading_color_code }};"></i>
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-sm-4">
 							<label for="txt_color_code" class="control-label">Text Color</label>
 							<div class="input-group colorpicker-element">
 								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="{{ $project->txt_color_code }}" />
