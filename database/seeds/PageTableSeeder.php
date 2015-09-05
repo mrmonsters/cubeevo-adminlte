@@ -215,7 +215,7 @@ class PageTableSeeder extends Seeder
 														<p class="text-black">
 														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
 														</p>
-														<a href="#" class="text-black"><i class="icon-btn-link"></i> More Information</a><br/>
+														<a href="#" class="text-black"><i class="icon-btn-link"></i> More Information</a><br/><br/>
 														<iframe width="120" frameBorder="0" height="84"src="http://www.youtube.com/embed/SwwXrNGZE2Q"></iframe>
 													</div> 
 												</div>

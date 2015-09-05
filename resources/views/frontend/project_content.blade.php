@@ -5,6 +5,7 @@
 <style>
 .btn-back{background-color: {{ $project->pri_color_code }};}
 .box-content{color:{{ $project->txt_color_code }};}
+.box-content a{color:{{ $project->txt_color_code }};}
 .arrow-bar-1,.arrow-bar-2{background-color:#fff;} 
 .container-fluid.credential{background-color:{{ $project->pri_color_code }}  }
 </style>
