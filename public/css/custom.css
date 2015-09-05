@@ -29,6 +29,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
   position: relative;
   top: 1.2em;
   margin-top: -1.2em;
+  margin-left: -3px;
 }
 .icon-btn-link:hover{
   background-position:-94px 0px;
@@ -58,6 +59,17 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
     padding: 10px 30px;
     border-radius: 0;
     margin-bottom: 20px;}
+
+.modal-dialog.homevideo{
+  margin: 5% auto;
+}
+.modal.in .modal-dialog.homevideo{
+  padding: 0px;
+  width: 630px;
+}
+.modal.in .modal-dialog.homevideo .modal-header{
+  border:0px;
+}
 .cd-section .main h2 {
 	color:#231f20;
 }
@@ -171,7 +183,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	position: fixed;
 	margin: 1.3%;
 	width: 100%;
-	height: 97%;
+	height: 95.4%;
 	background: url(../img/transBG.png) repeat; 
 	z-index: 1;
 	color: #ffffff;
@@ -202,8 +214,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .sol .contbox ul {margin-bottom:0; margin-right:30px;}
 .sol .greybox, .cre .greybox {
 	display: none;
-	width: 92%;
-	height: 91%;
+	width: 92.5%;
+	height: 90.5%;
 	position: absolute;
 	/*background:url(../img/transBG_box.png) repeat;*/
 	z-index:1;
