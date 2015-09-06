@@ -11,6 +11,7 @@ class SolutionTableSeeder extends Seeder
 {
 	public function run()
 	{
+   		DB::statement('SET FOREIGN_KEY_CHECKS=0');
 		$lastFileId = ($id = Files::where('status', '=', STATUS::ACTIVE)->get()->last()->id) ? $id : 0;
 
 		$files = array(
@@ -79,7 +80,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '品牌形象策划',
-						'desc' => '从标志，采色，构图，字形到标语，我们的责任就是为客户塑造显著的品牌视觉形象。',
+						'desc' => '从标志，采色，构图，字形到标语，我们<br class="hidden-xs"/>的责任就是为客户塑造显著的品牌视觉形象。',
 					),
 					'en' => array(
 						'name' => 'Branding Strategy',
@@ -92,7 +93,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '广告方案策划',
-						'desc' => '我们能按照客户需求与预算安排广告策划，包括平面媒体，户外媒体，广播媒体和网络媒体。',
+						'desc' => '我们能按照客户需求与预算安排广告策划，<br class="visible-xs"/>包括平面媒体，<br class="hidden-xs"/>户外媒体，广播媒体和网络媒体。',
 					),
 					'en' => array(
 						'name' => 'Advertising Planning',
@@ -105,7 +106,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '广播广告策划',
-						'desc' => '包办广播电台广告与电视广告的脚本撰写，演员道具准备以及拍摄录制。',
+						'desc' => '包办广播电台广告与电视广告的脚本撰写，<br/>演员道具准备以及拍摄录制。',
 					),
 					'en' => array(
 						'name' => 'Broadcast Ad Planning',
@@ -118,7 +119,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '包装设计',
-						'desc' => '我们为客户设计产品包装，无论是盒装或是标签设计都在服务范畴。',
+						'desc' => '我们为客户设计产品包装，<br/>无论是盒装或是标签设计都在服务范畴。',
 					),
 					'en' => array(
 						'name' => 'Packaging Design',
@@ -131,7 +132,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '数码设计',
-						'desc' => '泛指数码媒体上的设计，含括网页，手机应用程序网络宣传主图，以及动态图设计。',
+						'desc' => '泛指数码媒体上的设计，含括网页，<br class="hidden-xs"/>手机应用程序网络宣传主图，以及动态图设计。',
 					),
 					'en' => array(
 						'name' => 'Digital Graphic Design',
@@ -144,7 +145,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '平面设计',
-						'desc' => '我们平面设计包括宣传单，海报，折页，画册，布条，挂条，平面广告，招牌，广告牌，书刊等。',
+						'desc' => '我们平面设计包括宣传单，海报，折页，<br class="visible-xs"/>画册，布条，<br class="hidden-xs"/>挂条，平面广告，招牌，广告牌，书刊等。',
 					),
 					'en' => array(
 						'name' => 'Graphic Design',
@@ -157,7 +158,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '平面摄影',
-						'desc' => '我们能为客户的产品，代言人和活动安排摄影。',
+						'desc' => '我们能为客户的产品，<br/>代言人和活动安排摄影。',
 					),
 					'en' => array(
 						'name' => 'Photography',
@@ -170,7 +171,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '文案撰写',
-						'desc' => '我们能为可撰写活动流程，产品特性，品牌故事，新闻稿等等，也涵盖国语，英语与华语的翻译。',
+						'desc' => '我们能为可撰写活动流程，产品特性，<br/>品牌故事，新闻稿等等，也涵盖国语，英语与华语的翻译。',
 					),
 					'en' => array(
 						'name' => 'Copywriting',
@@ -183,7 +184,7 @@ class SolutionTableSeeder extends Seeder
 				'translation' => array(
 					'cn' => array(
 						'name' => '打印服务',
-						'desc' => '我们提供印刷服务，包括平面印刷，立体制作，布景制作，制服制作等。',
+						'desc' => '我们提供印刷服务，包括平面印刷，<br class="visible-xs"/>立体制作，<br class="hidden-xs"/>布景制作，制服制作等。',
 					),
 					'en' => array(
 						'name' => 'Printing & Production',
@@ -222,6 +223,7 @@ class SolutionTableSeeder extends Seeder
 				$solTranslation->save();
 			}
 		}
+    	DB::statement('SET FOREIGN_KEY_CHECKS=1');
 	}
 
 }

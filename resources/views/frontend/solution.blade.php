@@ -33,7 +33,7 @@
                         <div class="clearfix"></div>
                         <br/> 
                         <p class="col-xs-12 hidden-text text-center panel-title-desc">
-                            {{ $solution->translate(Session::get('locale'))->desc }}
+                            <?php echo $solution->translate(Session::get('locale'))->desc;?>
                         </p> 
                     </div> 
                     <div class="row" style="position: absolute;bottom: 12%;left: 8%;z-index:1;">

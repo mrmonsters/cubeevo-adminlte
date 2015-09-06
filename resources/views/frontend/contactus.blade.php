@@ -77,9 +77,9 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
 				<br/>
 				<ul class="list-inline">
-					<li><i class="icon phone"></i><h5 class="nopadding"><a class="text-orange" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></li>
-					<li><i class="icon fax"></i><h5 class="nopadding">{{ $settings->where('code', 'fax')->first()->value }}</h5></li>
-					<li><i class="icon mail"></i><h5 class="nopadding"><a class="text-orange" href="mailto:{{ $settings->where('code', 'email')->first()->value }}">{{ $settings->where('code', 'email')->first()->value }}</a></h5></li>
+					<li><i class="icon phone"></i><h5 class="nopadding"><a class="text-orange" href="tel:{{ $settings->where('code', 'phone')->first()->value }}"><small>{{ $settings->where('code', 'phone')->first()->value }}</small></a></h5></li>
+					<li><i class="icon fax"></i><h5 class="nopadding"><small>{{ $settings->where('code', 'fax')->first()->value }}</small></h5></li>
+					<li><i class="icon mail" style="margin-top: -3px;"></i><h5 class="nopadding"><a class="text-orange" href="mailto:{{ $settings->where('code', 'email')->first()->value }}"><small>{{ $settings->where('code', 'email')->first()->value }}</small></a></h5></li>
 				</ul>
 			</div>
 			<div class="col-sm-7 contact-person">
