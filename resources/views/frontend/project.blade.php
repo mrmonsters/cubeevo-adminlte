@@ -9,10 +9,10 @@
             <?php $count++; ?>
             @if ($count % 2 == 1) 
             @endif
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" style="background: {{ ($dir = $project->backgroundImage->dir) ? 'url(\'..'.$dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($dir = $project->backgroundImage->dir) ? 'url(\'..'.$dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
-                    <div class="greybox"></div>
-                    <div class="cd-background-wrapper">
+                    <div class="greybox" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" ></div>
+                    <div class="cd-background-wrapper" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" >
                         <figure class="cd-floating-background">
                             @if ($dir = $project->frontImage->dir)
                              <ul class="scene">
@@ -21,7 +21,7 @@
                             @endif
                         </figure>
                     </div> 
-                    <div class="row panel-body overlap">
+                    <div class="row panel-body overlap" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" >
                         <p class="col-sm-12 hidden-text panel-title">
                             {{ $project->translate(Session::get('locale'))->client_name }}
                         </p>
