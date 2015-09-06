@@ -269,7 +269,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-box{cursor: pointer;padding: 0px;} 
 .cre .panel-body.overlap {margin: -25% 0px 0px 0px;}
 .container-fluid.cre{background:#A9A6A6;} 	
-.container-fluid.cre .panel-body.overlap{position: absolute;top: 45%;width: 100%;margin: 0px}
+.container-fluid.cre .panel-body.overlap{position: absolute;top: 40%;width: 100%;margin: 0px}
 .container-fluid.cre > .row{height: 100%;}
 .container-fluid.cre > .row > div{min-height: 262px;}
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
@@ -282,9 +282,13 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre-6 {background:url(../img/Credential%20Thumbnail/Hairdepot_Thumbnail_Background.jpg);}
 .cre-7 {background:url(../img/Credential%20Thumbnail/HairMilk_Thumbnail_Background.jpg);}
 .cre-8 {background:url(../img/Credential%20Thumbnail/PLT_Website_Thumbnail_Background.jpg);} 
-.cre .panel-title {text-align:left;}
+.cre .panel-title {text-align:center;width: 100%;}
 .cre .contbox {position: relative;;min-height: 260px;}
 .sol .contbox ul,.cre .contbox ul {margin: 0px;padding: 0px; }
+
+  .sol .hidden-text, .cre .hidden-text{
+    display: none;
+  }
 
 .credential .blankbox{height: 600px; width: 100%;}
 .credential .whitebg {background-color:#ffffff ; }
@@ -595,17 +599,7 @@ Main Components
 }
 .brandImage img{
   display: none;
-} 
-.threedot{
-    position: absolute;
-    opacity: 1;
-    transform: matrix(1, 0, 0, 1, 0, 0);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-    -moz-transform: matrix(1, 0, 0, 1, 0, 0);
-    -o-transform: matrix(1, 0, 0, 1, 0, 0);
-    -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-    background-color: #fff;
-}
+}  
 .cre-info{padding: 0px 3.8%;}
 .modal.in .modal-dialog{padding: 3%;}
 .extra-info-box{background-color:#c5c4c4;padding:1.1%;}
@@ -633,10 +627,7 @@ Main Components
   }
   .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
     display: block;
-  }
-  .sol .hidden-text, .cre .hidden-text{
-    display: none;
-  }
+  } 
   .content-section{display: none;}
   .cd-vertical-nav {  
   	top: 50%; 
