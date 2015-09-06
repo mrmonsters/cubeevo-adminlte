@@ -11,7 +11,7 @@
             @endif
             <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;background-size:cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
-                    <div class="greybox"></div> 
+                    <div class="greybox" onClick="location.href='{{ url('credential/' . $category->slug) }}';"></div> 
 
                     <div class="cd-background-wrapper" onClick="location.href='{{ url('credential/' . $category->slug) }}';">
                         <figure class="cd-floating-background">
