@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="174.5px" height="191.3px" viewBox="0 0 174.5 191.3" style="enable-background:new 0 0 174.5 191.3;" xml:space="preserve"
+	>
+<style type="text/css">
+	.st0{opacity:0.8;fill:#F7941E;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:1.7808;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:1.1872;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{fill:#FFFFFF;}
+	.st5{font-family:'DINPro-Regular';}
+	.st6{font-size:16.6208;}
+	.st7{font-family:'MicrosoftYaHeiUI';}
+	.st8{font-size:13;}
+</style>
+<font horiz-adv-x="2048">
+<!-- Microsoft YaHei is a trademark of the Microsoft group of companies. -->
+<!-- Copyright: Copyright 2015 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="MicrosoftYaHeiUI" units-per-em="2048" underline-position="-178" underline-thickness="129"/>
+<missing-glyph horiz-adv-x="1428" d="M179,0l0,1510l1069,0l0,-1510M339,160l750,0l0,1190l-750,0z"/>
+<glyph unicode=" " horiz-adv-x="606"/>
+<glyph unicode="&#x5F62;" horiz-adv-x="2048" d="M56,847l270,0l0,568l-214,0l0,144l1096,0l0,-144l-246,0l0,-568l310,0l0,-144l-310,0l0,-956l-154,0l0,956l-329,0C480,262 363,-62 130,-269C98,-222 63,-178 24,-137C227,32 327,312 325,703l-269,0M480,847l328,0l0,568l-328,0M2022,433C1811,180 1536,-54 1196,-267C1173,-231 1136,-187 1084,-135C1412,40 1686,263 1906,535M1964,1015C1775,799 1549,604 1286,431C1258,470 1223,510 1182,551C1430,704 1652,892 1848,1115M1932,1579C1752,1382 1533,1204 1276,1045C1252,1080 1219,1122 1176,1173C1424,1313 1637,1482 1816,1681z"/>
+<glyph unicode="&#x65B9;" horiz-adv-x="2048" d="M62,1357l960,0C955,1485 902,1578 864,1637l156,74C1057,1654 1113,1560 1188,1431l-146,-74l948,0l0,-152l-1213,0C772,1084 767,980 762,895l966,0C1712,606 1695,354 1676,141C1661,-100 1544,-221 1324,-221C1223,-221 1087,-216 918,-205C911,-154 901,-93 888,-21C1057,-44 1195,-55 1300,-55C1423,-55 1491,18 1506,163C1522,322 1536,516 1548,745l-797,0C714,305 510,-36 140,-279C104,-236 63,-191 18,-143C370,89 559,400 584,789C593,894 601,1033 607,1205l-545,0z"/>
+<glyph unicode="&#x7ACB;" horiz-adv-x="2048" d="M58,11l1039,0C1252,312 1397,670 1532,1085l182,-66C1577,644 1436,308 1292,11l700,0l0,-154l-1934,0M108,1323l1836,0l0,-154l-1836,0M346,999l158,64C627,782 743,496 854,207l-178,-74C568,449 458,738 346,999M808,1645l146,82C1018,1638 1085,1536 1154,1423l-158,-92C943,1431 880,1536 808,1645z"/>
+</font>
+
+	<font horiz-adv-x="1000">
+<!-- 2005 Albert-Jan Pool published by FSI Fonts und Software GmbH -->
+<!-- Copyright: Copyright 2015 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="DINPro-Regular" units-per-em="1000" underline-position="-135" underline-thickness="51"/>
+<missing-glyph horiz-adv-x="562" d="M90,0l382,0l0,712l-382,0M141,51l0,610l280,0l0,-610z"/>
+<glyph unicode="B" horiz-adv-x="668" d="M592,197C592,282 544,341 476,366C536,388 581,447 581,522C581,641 495,712 371,712l-268,0l0,-712l277,0C506,0 592,68 592,197M516,199C516,119 461,68 373,68l-194,0l0,261l194,0C461,329 516,279 516,199M505,521C505,436 444,397 365,397l-186,0l0,247l186,0C444,644 505,606 505,521z"/>
+<glyph unicode="C" horiz-adv-x="637" d="M572,206l-76,0C477,119 414,62 325,62C278,62 233,80 202,112C157,158 152,207 152,356C152,505 157,554 202,600C233,632 278,650 325,650C414,650 475,593 494,506l78,0C548,640 453,718 325,718C255,718 191,692 143,644C76,577 76,507 76,356C76,205 76,135 143,68C191,20 255,-6 325,-6C452,-6 549,72 572,206z"/>
+<glyph unicode="E" horiz-adv-x="600" d="M545,0l0,68l-366,0l0,257l312,0l0,68l-312,0l0,251l366,0l0,68l-442,0l0,-712z"/>
+<glyph unicode="U" horiz-adv-x="683" d="M590,235l0,477l-76,0l0,-471C514,133 445,62 341,62C237,62 169,133 169,241l0,471l-76,0l0,-477C93,93 197,-6 341,-6C485,-6 590,93 590,235z"/>
+<glyph unicode="e" horiz-adv-x="530" d="M467,227l0,33C467,406 392,498 265,498C140,498 63,405 63,246C63,72 148,-6 278,-6C362,-6 408,20 458,70l-49,43C370,74 337,57 280,57C186,57 135,119 135,227M395,281l-260,0C137,321 139,336 150,363C169,408 213,437 265,437C317,437 361,408 380,363C391,336 393,321 395,281z"/>
+<glyph unicode="o" horiz-adv-x="530" d="M466,246C466,322 456,391 406,442C372,476 325,498 265,498C205,498 158,476 124,442C74,391 64,322 64,246C64,170 74,101 124,50C158,16 205,-6 265,-6C325,-6 372,16 406,50C456,101 466,170 466,246M394,246C394,191 391,130 355,94C332,71 300,58 265,58C230,58 199,71 176,94C140,130 136,191 136,246C136,301 140,362 176,398C199,421 230,434 265,434C300,434 332,421 355,398C391,362 394,301 394,246z"/>
+<glyph unicode="v" horiz-adv-x="447" d="M436,492l-78,0l-135,-395l-134,395l-78,0l180,-492l64,0z"/>
+</font>
+
+	<g>
+	<polygon class="st0" points="174.5,0 0,0 0,174.5 77.5,174.5 87.2,191.3 96.9,174.5 174.5,174.5 	"/>
+	<g>
+		<g>
+			<polyline class="st1" points="59.9,64.4 79.4,79.1 79.1,65.9 50.8,45.7 53.3,71.3 87.2,98.3 121.1,71.3 125,32.9 87.2,12.6 
+				49.5,32.9 			"/>
+			<g>
+				<line class="st2" x1="87.2" y1="58.4" x2="55.8" y2="37.2"/>
+				<line class="st2" x1="87.2" y1="58.4" x2="118.7" y2="37.2"/>
+				<line class="st2" x1="68.6" y1="30.2" x2="93.5" y2="45.9"/>
+				<line class="st2" x1="74.6" y1="49.9" x2="105.9" y2="30.2"/>
+				<line class="st2" x1="68.8" y1="37.5" x2="99.8" y2="19.3"/>
+				<line class="st2" x1="91.5" y1="29.2" x2="112.4" y2="41.4"/>
+				<line class="st2" x1="74.6" y1="19.3" x2="87.2" y2="26.7"/>
+				<line class="st2" x1="87.2" y1="58.4" x2="87.2" y2="98.3"/>
+			</g>
+		</g>
+	</g>
+	<line class="st3" x1="9.8" y1="108.5" x2="164.7" y2="108.5"/>
+	<text transform="matrix(1 0 0 1 53.1993 136.0684)"><tspan x="0" y="0" class="st4 st5 st6">CUBEevo</tspan><tspan x="10.7" y="15.6" class="st4 st7 st8">形 立 方</tspan></text>
+</g>
+</svg>

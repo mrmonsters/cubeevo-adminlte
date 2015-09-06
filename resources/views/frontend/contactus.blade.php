@@ -129,9 +129,9 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
     <script>
     function initMap() { 
 	  @if(Session::get('locale') == 'en')
-	  var image = 'img/Programmer-Needs-09_2.png'; 
+	  var image = 'img/Map_Pointer.svg'; 
 	  @elseif(Session::get('locale') == 'cn')
-	  var image = 'img/Programmer-Needs-09_1.png'; 
+	  var image = 'img/Map_Pointer.svg'; 
 	  @endif
 	  var styles = [
 	   {
