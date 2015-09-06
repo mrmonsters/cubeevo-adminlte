@@ -18,7 +18,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
 .text-black{color: #000;}
 .text-white{color: #fff;}
 .text-orange{color: #f7941a;}
-.btn-orange{background-color: #F7941A;border:0px;} 
+.btn-orange{background-color: #F7941A;border:0px;}  
 .icon-btn-link{
   width: 45px;
   height: 45px;
@@ -32,6 +32,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
   margin-left: -3px;
 }
 .active.icon-btn-link{background-position-x:-47px;}
+.icon-btn-link-white{background-position-x:-141px;}
 .icon-video-play-link{ 
   width: 45px;
   height: 45px;
@@ -243,13 +244,13 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .sol .contbox ul {margin-bottom:0; margin-right:30px;}
 .sol .greybox, .cre .greybox {
 	display: none;
-	width: 92.5%;
-	height: 90.5%;
+	width: 92.1%;
+  height: 89.5%;
 	position: absolute;
 	/*background:url(../img/transBG_box.png) repeat;*/
 	z-index:1;
 	opacity: 0.5;
-    margin: 3.6%; 
+    margin: 3.9%; 
     background-color: #000;
 } 
 .sol-1 {background:#eee80a url(../img/Images-36.png); background-position:right;}
