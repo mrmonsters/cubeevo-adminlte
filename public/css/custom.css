@@ -86,7 +86,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
     color: #f7941a;
     padding: 10px 30px;
     border-radius: 0;
-    margin-bottom: 20px;}
+  }
 
 .modal-dialog.homevideo{
   margin: 5% auto;
@@ -206,7 +206,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   margin-top: 10%;
 }
 #fullpage .content-wrapper .row{padding: 0px 10px;} 
-#fullpage .content-wrapper .row h3{ margin: 10px 0px 10px 0px;}
+#fullpage .content-wrapper .row h3{ margin: 20px 0px 0px 0px;}
 #fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;}
 .content-wrapper__fixed{ 
 	position: fixed;
