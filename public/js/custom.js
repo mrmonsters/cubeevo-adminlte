@@ -22,6 +22,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   $('.js-showtitle').click(function(){
     if($(this).hasClass('active')){
       $(this).removeClass('active'); 
+      $(this).find('.icon-btn-link').removeClass('active'); 
       var _parent = $(this).parent().parent().parent();
       _parent.find('.greybox').fadeOut();
       _parent.find('.panel-title').fadeOut(); 
@@ -30,6 +31,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       _parent.find('.greybox').fadeIn();
       _parent.find('.panel-title').fadeIn(); 
       $(this).addClass('active');
+      $(this).find('.icon-btn-link').addClass('active'); 
     }
   });
 

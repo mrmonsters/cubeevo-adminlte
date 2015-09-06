@@ -31,7 +31,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
   margin-top: -1.2em;
   margin-left: -3px;
 }
-.active .icon-btn-link{background-position-x:-47px;}
+.active.icon-btn-link{background-position-x:-47px;}
 .icon-video-play-link{ 
   width: 45px;
   height: 45px;
@@ -205,9 +205,9 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	color: #ffffff;
   margin-top: 10%;
 }
-#fullpage .content-wrapper .row{padding: 0px 10px;} 
+#fullpage .content-wrapper .row{padding: 0px 10px 10px 10px} 
 #fullpage .content-wrapper .row h3{ margin: 20px 0px 0px 0px;}
-#fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;line-height: 1.3em;    padding-bottom: 10px;}
+#fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;line-height: 1.3em;}
 .content-wrapper__fixed{ 
 	position: fixed;
 	margin: 1.3%;
