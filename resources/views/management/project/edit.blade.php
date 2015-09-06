@@ -508,7 +508,13 @@ Description for project management
 				@endif
 					<div class="col-xs-6 col-md-3">
 						<button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
-							<img src="{{ $image->dir }}" alt="{{ $image->name }}">
+							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
+							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail" width="100%">
+							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
+							<video width="100%">
+								<source src="{{ $image->dir }}" />
+							</video>
+							@endif
 						</button>
 					</div>
 				@if (($count % 4 == 0) || ($count == $images->count())) 
@@ -539,9 +545,15 @@ Description for project management
 				@endif
 					<div class="col-xs-6 col-md-3">
 						<div class="thumbnail" style="text-align: center;">
-							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail">
+							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
+							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail" width="100%">
+							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
+							<video width="100%">
+								<source src="{{ $image->dir }}" />
+							</video>
+							@endif
 							<input type="checkbox" class="project_img" value="{{ $image->id }}" data-img="{{ $image->dir }}" data-type="{{ substr($image->type, 0, 5) }}" onclick="selectProjectImg()" {{ (isset($projImage)) ? 'checked' : '' }} />
-							<span><b>Use</b></span>
+							<span><b>Use {{ (isset($image->type) && substr($image->type, 0, 5) == 'video') ? 'Video' : 'Image' }}</b></span>
 							<div id="img_sort_order_container_{{ $image->id }}" style="display: {{ (isset($projImage)) ? '' : 'none' }};">
 								<label for="img_sort_order">Sort Order</label>
 								<input type="text" class="form-control img_sort_order" id="img_sort_order" value="{{ (isset($projImage)) ? $projImage->sort_order : '' }}" />
