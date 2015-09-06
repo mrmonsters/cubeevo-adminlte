@@ -207,7 +207,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 #fullpage .content-wrapper .row{padding: 0px 10px;} 
 #fullpage .content-wrapper .row h3{ margin: 20px 0px 0px 0px;}
-#fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;}
+#fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;line-height: 1.3em;    padding-bottom: 10px;}
 .content-wrapper__fixed{ 
 	position: fixed;
 	margin: 1.3%;
