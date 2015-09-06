@@ -277,11 +277,12 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   padding-left: 5px;
 }
 .panel-title { float:left; font-size:18px;padding-right: 0px;}
-.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px; border-left:1px solid #fff;}
+.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px;}
 
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0px;} 
 .cre .panel-body.overlap {margin: -25% 0px 0px 0px;}
+.sol .panel-body.overlap {margin: -50% auto 0px auto;width: 80%;}
 .container-fluid.cre{background:#A9A6A6;} 	
 .container-fluid.cre .panel-body.overlap{position: absolute;top: 40%;width: 100%;margin: 0px}
 .container-fluid.cre > .row{height: 100%;}
@@ -303,7 +304,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .blankbox{height: 600px; width: 100%;margin-bottom: -1px;}
 .credential .whitebg {background-color:#ffffff ; }
 .credential .box{position: absolute;bottom:0px; margin-bottom:1.3%; color:#fff; }
-.credential .box-content{padding:10px;width: 99%;}
+.credential .box-content{padding:10px 20px;width: 99%;}
 .credential .box-bg{position: absolute;width: 98.7%;height: 100%;
 	-moz-opacity: 0.85;
 	-khtml-opacity: 0.85;
@@ -395,11 +396,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .handphone {background:url(../img/Images-19.png) no-repeat 0px -325px;}
 
 .scene.mascott{position:relative;left: -27%;top: -2%;}
-.scene.mascott.purple{top: 11%;left: -35%;}
-
-.scene.mascott.blue{left: -35%;} 
-.scene.mascott.green{left: -35%;}
-.scene.mascott.yellow{left: -35%;}
+.scene.mascott.purple{top: 11%;}
 
 .scene.mascott .layer > div{ 
 	width: 1280px;
@@ -627,6 +624,10 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){ 
+  .scene.mascott.purple{left: -35%;} 
+.scene.mascott.blue{left: -35%;} 
+.scene.mascott.green{left: -35%;}
+.scene.mascott.yellow{left: -35%;}
   .credential .cre-info{ margin-top: 57px;}
   .container-fluid.aboutus,.container-fluid.contactus,.container-fluid.process{margin: 1.3%;}
   #cd-main-nav {overflow: hidden;}
@@ -762,7 +763,7 @@ Main Components
 	.cre ul.scene, .sol ul.scene {margin-bottom:0;}
 	.credential .box{position:inherit;bottom:0px; margin-bottom:0px; padding-bottom:20px;}
 	.credential .box-bg {width:100%;}
-	.credential .cre-info { margin-top: -157px;}
+	.credential .cre-info { margin-top: -86px;}
 	.credential .cre-info .col-sm-10 {padding-right:0;}
 	.credential .cre-info .crecol-2 {padding-left:0; }
 	.credential .col-ppl .photo img {max-width:240px;}

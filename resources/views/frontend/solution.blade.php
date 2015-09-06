@@ -17,21 +17,31 @@
                     <div class="greybox"></div> 
 
                     <div class="cd-background-wrapper">
-                        <figure class="cd-floating-background"> 
+                        <figure class="cd-floating-background">
+                            @if ($dir = $solution->frontImage->dir) 
                             <ul class="scene">
                                 <li class="layer" data-depth="0.30"><img src="{{ $solution->frontImage->dir }}" width="100%"/></li>
-                            </ul>   
+                            </ul>  
+                            @endif
                         </figure>
                     </div> 
 
                     <div class="row panel-body overlap">
-                        <p class="col-xs-12 col-sm-5 panel-title">
+                        <p class="col-xs-12 hidden-text text-center panel-title">
                             {{ $solution->translate(Session::get('locale'))->name }}
                         </p>
-                        <p class="col-xs-12 col-sm-7 hidden-text panel-title-desc">
+                        <div class="clearfix"></div>
+                        <br/> 
+                        <p class="col-xs-12 hidden-text text-center panel-title-desc">
                             {{ $solution->translate(Session::get('locale'))->desc }}
-                        </p>
+                        </p> 
                     </div> 
+                    <div class="row" style="position: absolute;bottom: 12%;left: 8%;z-index:1;">
+                        <div class="col-xs-12 visible-xs-block">
+                            <div class="threedot js-showtitle"><i class="icon-btn-link"></i></div>
+                        </div> 
+                    </div>   
+
                 </div>
             </div>
             @if (($count % 3 == 0) || ($count == $solutions->count())) 
