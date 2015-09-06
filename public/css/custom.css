@@ -736,11 +736,12 @@ Main Components
 @media (max-width:768px){
   .maincol-left {
       position: absolute;
-      bottom: 2%;
+      bottom: 3%;
   }
   .maincol-right { 
     position: absolute;
     top: 5%;
+    width: 100%;
   }
   #fullpage #section0 .content-wrapper{margin-top: -5%;}
   .project-client-name,.project-name{padding-top: 20px;}
