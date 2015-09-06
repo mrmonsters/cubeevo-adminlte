@@ -19,36 +19,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   $(document).ready(function() { 
 
-  if(isMobile){
-    if($('.cre-box').length > 0){
-      $(window).scroll(function () {
-       $('.cre-box').each(function () {
-          if (isScrolledIntoView(this) === true) { 
-            $(this).find('.hidden-text').fadeIn();
-              $(this).find('.greybox').fadeIn();
-          }
-       }); 
-     });
-
-     $('.cre-box').each(function () {
-        if (isScrolledIntoView(this) === true) { 
-            $(this).find('.hidden-text').fadeIn();
-            $(this).find('.greybox').fadeIn();
-        }
-     });
-    }
-  } 
-
-  function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-  }
-
   $('.cd-nav-trigger').click(function(){
     if($('.btn-back').length > 0){
       if($(this).hasClass('menu-is-open')){

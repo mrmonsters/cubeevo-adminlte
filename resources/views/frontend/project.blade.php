@@ -25,6 +25,9 @@
                         <p class="col-sm-12 hidden-text panel-title">
                             {{ $project->translate(Session::get('locale'))->client_name }}
                         </p>
+                        <div class="col-xs-12 visible-xs-block" style="padding:6px;">
+                            <div class="threedot"><i class="icon-btn-link"></i></div>
+                        </div>
                      </div>
                 </div>
             </div>

@@ -26,7 +26,10 @@
                     <div class="row panel-body overlap">
                         <p class="col-sm-12 hidden-text panel-title">
                             {{ $category->translate(Session::get('locale'))->name }}
-                        </p>  
+                        </p> 
+                        <div class="col-xs-12 visible-xs-block" style="padding:6px;">
+                            <div class="threedot"><i class="icon-btn-link"></i></div>
+                        </div>
                     </div>  
                 </div>
             </div>
