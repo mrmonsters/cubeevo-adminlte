@@ -754,7 +754,7 @@ Main Components
 	img.mas-1 {height:auto;}
 	#cd-main-nav .inner {padding: 15px 15%; }
 	/*.maincol-right {float:none;}*/
-	.maincol-left {}
+	.maincol-left {width: 100%;}
 	.credential .blankbox {height:auto;}
 	.mob-hide{display:none;}
 	.mob-visible {display:inline;}
