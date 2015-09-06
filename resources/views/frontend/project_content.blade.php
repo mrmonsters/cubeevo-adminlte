@@ -54,7 +54,7 @@
                                         <br>
                                         <br>
                                         <p class="desctitle" style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'WEBSITE' : '网址' }}</p>
-                                        <a href="{{ $project->web_link }}">{{ $project->web_link }}</a>
+                                        <a href="{{ $project->web_link }}" target="_blank">{{ $project->web_link }}</a>
                                         @endif
                                         </div>
                                         <div class="col-sm-5 col-sm-offset-1 crecol-2">

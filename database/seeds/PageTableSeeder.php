@@ -54,8 +54,13 @@ class PageTableSeeder extends Seeder
 														<h3 class="text-black"><b>形立方</b></h3>
 														<p class="text-black">
 														形立方的标志概念和灵感是基于最基本的设计元素， <br class="hidden-xs"/>魔术方块，形状，格框以及线条所组成的。形立方<br class="hidden-xs"/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="hidden-xs"/>不必要的框架；形立方也讲究【活力】，在打造<br class="hidden-xs"/>品牌的过程中就是展现活力。</p>
-														<a href="#" class="text-black"><i class="icon-btn-link"></i> 更多资讯</a><br/>
-														<a href="#"  data-toggle="modal" data-target="#homevideo" style="display:block;padding-top:15px;padding-bottom: 9px;"><i class="icon-video"></i></a>
+														<div class="col-xs-2 col-sm-12 nopadding">
+														<a href="#" class="text-black"><i class="icon-btn-link"></i> <span class="hidden-xs">更多资讯</a><br/><br class="visible-xs"/>
+														</div>
+														<div class="col-xs-2 col-sm-12 nopadding">
+															<a href="#" data-toggle="modal" data-target="#homevideo" class="visible-xs"><i class="icon-video-play-link"></i></a>
+															<a href="#" data-toggle="modal" data-target="#homevideo" class="hidden-xs" style="display:block;padding-top:15px;padding-bottom: 9px;"><i class="icon-video"></i></a>
+														</div> 
 													</div> 
 												</div>
 											</div> 
@@ -242,8 +247,13 @@ class PageTableSeeder extends Seeder
 														<p class="text-black">
 														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
 														</p>
-														<a href="#" class="text-black"><i class="icon-btn-link"></i> More Information</a><br/>
-														<a href="#"  data-toggle="modal" data-target="#homevideo" style="padding-bottom: 9px;display:block;padding-top:15px"><i class="icon-video"></i></a>
+														<div class="col-xs-2 col-sm-12 nopadding">
+														<a href="#" class="text-black"><i class="icon-btn-link"></i> <span class="hidden-xs">More Information</a><br/><br class="visible-xs"/>
+														</div>
+														<div class="col-xs-2 col-sm-12 nopadding">
+															<a href="#" data-toggle="modal" data-target="#homevideo" class="visible-xs"><i class="icon-video-play-link"></i></a>
+															<a href="#" data-toggle="modal" data-target="#homevideo" class="hidden-xs" style="display:block;padding-top:15px;padding-bottom: 9px;"><i class="icon-video"></i></a>
+														</div> 
 													</div> 
 												</div>
 											</div> 
