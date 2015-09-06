@@ -28,7 +28,7 @@
                             {{ $category->translate(Session::get('locale'))->name }}
                         </p>  
                     </div> 
-                    <div class="row" style="position: absolute;bottom: 10%;left: 6%;z-index:1;">
+                    <div class="row" style="position: absolute;bottom: 12%;left: 8%;z-index:1;">
                         <div class="col-xs-12 visible-xs-block">
                             <div class="threedot js-showtitle"><i class="icon-btn-link"></i></div>
                         </div> 
