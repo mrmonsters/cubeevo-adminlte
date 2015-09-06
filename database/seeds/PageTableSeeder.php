@@ -43,7 +43,7 @@ class PageTableSeeder extends Seeder
 								<div class="section" id="section0">
 									<div class="col-xs-12 col-md-6 maincol-right"> 
 										<ul class="scene visible-xs-block" style="padding-left: 0px;">
-											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
+											<li class="layer" data-depth="0.50"><img src="/img/Images-30.svg" width="100%"></li>
 										</ul>
 									</div> 
 									<div class="col-xs-12 col-md-6 maincol-left clearfix">
@@ -235,7 +235,7 @@ class PageTableSeeder extends Seeder
 								<div class="section en" id="section0">
 									<div class="col-md-6 maincol-right"> 
 										<ul class="scene visible-xs-block" style="padding-left: 0px;">
-											<li class="layer" data-depth="0.50"><img src="/img/Images-30.png" width="100%"></li>
+											<li class="layer" data-depth="0.50"><img src="/img/Images-30.svg" width="100%"></li>
 										</ul>
 									</div> 
 									<div class="col-xs-12 col-md-6 maincol-left clearfix">
