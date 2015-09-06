@@ -46,7 +46,7 @@ Route::get('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
 // Contact us routes
 Route::get('admin/manage/message', 'MessageController@index');
 Route::get('admin/manage/message/show/{msg_id}', 'MessageController@show');
-Route::put('admin/manage/message/destroy/{msg_id}', 'MessageController@destroy');
+Route::get('admin/manage/message/destroy/{msg_id}', 'MessageController@destroy');
 
 // Category routes...
 Route::get('admin/manage/category', 'CategoryController@index');
