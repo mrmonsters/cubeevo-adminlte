@@ -30,7 +30,7 @@ class FileController extends Controller {
 	public function index()
 	{
 		//
-		$files = Files::all();
+		$files = Files::where('delete', '=', false)->get();
 
 		return view('management.file.index')->with('files', $files);
 	}

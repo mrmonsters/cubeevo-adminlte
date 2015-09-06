@@ -74,6 +74,9 @@ class HomeController extends Controller {
 		$project = Project::where('slug', '=', $slug)->where('status', Status::ACTIVE)
 			->where('delete', false)
 			->first();
+		if($project == null){
+			return Redirect::to('/');
+		}
 
 		return view('frontend.project_content')->with('project', $project)
 			->with('backbtn', URL::previous());

@@ -286,7 +286,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre .contbox {position: relative;;min-height: 260px;}
 .sol .contbox ul,.cre .contbox ul {margin: 0px;padding: 0px; }
 
-.credential .blankbox{height: 600px; width: 100%;}
+.credential .blankbox{height: 600px; width: 100%;margin-bottom: -1px;}
 .credential .whitebg {background-color:#ffffff ; }
 .credential .box{position: absolute;bottom:0px; margin-bottom:1.3%; color:#fff; }
 .credential .box-content{padding:10px;width: 99%;}
@@ -316,7 +316,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .slick-prev-wrapper{cursor:pointer;position: absolute;right: 5%;top: 33%;z-index: 5}
 .slick-next-wrapper{cursor:pointer;position: absolute;right: 5%;top: 50%;z-index: 5}
 
-.container-fluid.process{margin: 1.3%;background-color: #eee;padding-top: 80px;}
+.container-fluid.process{margin: 1.3%;background-color: #eee;padding-top: 80px;border: 1px solid #fff;}
 .process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
 .process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;margin-left: 0.5%;}
@@ -327,7 +327,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
 .process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
-.container-fluid.aboutus{margin: 1.3%;background-color: #eee;padding-top: 80px;}
+.container-fluid.aboutus{margin: 1.3%;background-color: #eee;padding-top: 80px;border: 1px solid #fff;}
 .aboutus .tagline {color:#f7941a; font-size:55px;}
 .aboutus .sub-tagline {color:#fff; font-size:20px; margin-bottom:50px;font-weight: lighter;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
@@ -349,7 +349,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .aboutus .career .job {overflow:hidden; margin-bottom: 30px; margin-top:10px;}
 .aboutus .career .job button {border: 1px solid #fff; background: none; color: #fff; padding: 10px 20px; border-radius: 0; float:right;}
 
-.container-fluid.contactus{margin: 1.3%;background-color: #eee;padding-top: 80px;}
+.container-fluid.contactus{margin: 1.3%;background-color: #eee;padding-top: 80px;border: 1px solid #fff;}
 .contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;} 
 .contactus ul { list-style:none; padding:0; overflow:hidden;}
 .contactus li {padding-left:26px;}
@@ -604,6 +604,7 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 @media (min-width:768px){ 
+  #cd-main-nav {overflow: hidden;}
   .cre-info{padding: 0px 1.3%;}
   .txtorange span{display: block;}
   .slick-prev-wrapper{top: 43%;} 

@@ -56,6 +56,11 @@ Description for project management
 								@endif
 							</td>
 							<td>
+								@if ($project->status == '2')
+								<a href="{{ url('admin/manage/project/setInactive/' . $project->id) }}" class="btn btn-default">Set Inactive</a>
+								@elseif ($project->status == '1')
+								<a href="{{ url('admin/manage/project/setActive/' . $project->id) }}" class="btn btn-default">Set Active</a>
+								@endif
 								<a href="{{ url('admin/manage/project/edit/' . $project->id) }}" class="btn btn-default">Edit</a>
 								<a href="{{ url('admin/manage/project/destroy/' . $project->id) }}" class="btn btn-danger">Delete</a>
 							</td>

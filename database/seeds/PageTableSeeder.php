@@ -799,11 +799,11 @@ class PageTableSeeder extends Seeder
 										<div class="col-xs-6 about-369txt nopadding">
 											<div class="col-xs-12 col-sm-4 nopadding">
 												<p class="text-left">Branding<br>
-												Advertising Planning<br>
-												Broadcast Ad Planning<br></p>
+												Advertising<br>
+												Broadcast Ad<br></p>
 											</div>
 											<div class="col-xs-12 col-sm-4 nopadding">
-												<p class="text-left">Digital Graphic Design<br>
+												<p class="text-left">Digital Graphic<br>
 												Graphic Design<br>
 												Photography<br></p>
 											</div>

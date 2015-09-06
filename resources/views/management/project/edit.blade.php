@@ -158,10 +158,10 @@ Description for project management
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')"><i class="fa fa-image"></i> Gallery</a>
 										</div> 
 									</div>
 								</div>
@@ -175,10 +175,10 @@ Description for project management
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')"><i class="fa fa-image"></i> Gallery</a>
 										</div>
 									</div>
 								</div>
@@ -192,10 +192,10 @@ Description for project management
 									<p><strong>Brand Image</strong></p>
 									<div class="row">
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')"><i class="fa fa-image"></i> Gallery</a>
 										</div>
 									</div>
 								</div>
@@ -210,11 +210,14 @@ Description for project management
 								<div class="caption" style="text-align: center;">
 									<p><strong>Mascott Image</strong></p>
 									<div class="row">
-										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img"><i class="fa fa-cloud-upload"></i> Upload New</a>
+										<div class="col-xs-4">
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img"><i class="fa fa-cloud-upload"></i> Upload </a>
 										</div>
-										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										<div class="col-xs-4">
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')"><i class="fa fa-image"></i> Gallery</a>
+										</div> 
+										<div class="col-xs-4">
+											<a href="#" class="btn btn-block btn-default" role="button" onclick="removeExist('mascott_img_id');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
 									</div>
 								</div>
@@ -559,6 +562,12 @@ $(document).ready(function()
 function useExist(imgType)
 {
 	$('#selected_img').val(imgType);
+}
+
+function removeExist(imgType)
+{
+	$('#mascott_img').remove();
+	$('#mascott_img_id').val(''); 
 }
 
 function selectImg(imgId, imgSrc)

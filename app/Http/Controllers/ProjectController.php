@@ -570,4 +570,63 @@ class ProjectController extends Controller {
 		return Redirect::to('admin/manage/project')->with('response', $response);
 	}
 
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$project  = Project::find($id); 
+
+		if (isset($project) && isset($project->id))
+		{
+			$project->status = 1;
+			$project->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Project [#".$project->id."] set to Inacative successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Project not found.";
+		}
+
+		return Redirect::to('admin/manage/project')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$project  = Project::find($id);
+
+		if (isset($project) && isset($project->id))
+		{
+			$project->status = 2;
+			$project->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Project [#".$project->id."] set to Active successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Project not found.";
+		}
+
+		return Redirect::to('admin/manage/project')->with('response', $response);
+	}
+
 }

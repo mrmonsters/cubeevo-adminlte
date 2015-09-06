@@ -41,7 +41,7 @@ Route::post('manage/block/store', 'BlockController@store');
 // File routes
 Route::get('admin/manage/file', 'FileController@index');
 Route::get('admin/manage/file/show/{file_id}', 'FileController@show');
-Route::put('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
+Route::get('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
 
 // Contact us routes
 Route::get('admin/manage/message', 'MessageController@index');
@@ -61,6 +61,9 @@ Route::get('admin/manage/project/create', 'ProjectController@create');
 Route::get('admin/manage/project/edit/{project_id}', 'ProjectController@edit');
 Route::put('manage/project/update/{project_id}', 'ProjectController@update');
 Route::post('manage/project/store', 'ProjectController@store');
+Route::get('admin/manage/project/setActive/{project_id}', 'ProjectController@setActive');
+Route::get('admin/manage/project/setInactive/{project_id}', 'ProjectController@setInactive');
+Route::get('admin/manage/project/destroy/{project_id}', 'ProjectController@destroy');
 
 // Solution routes...
 Route::get('admin/manage/solution', 'SolutionController@index');
