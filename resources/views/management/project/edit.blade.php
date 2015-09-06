@@ -305,9 +305,9 @@ Description for project management
 						@foreach ($imgIds as $id)
 						@if ($id != '')
 							<div class="col-md-3">
-								@if (substr(Files::find($id)->type, 0, 5) == 'image')
+								@if (isset(Files::find($id)->type) && substr(Files::find($id)->type, 0, 5) == 'image')
 								<img src="{{ Files::find($id)->dir }}" class="img-thumbnail" width="100%" />
-								@elseif (substr(Files::find($id)->type, 0, 5) == 'video')
+								@elseif (isset(Files::find($id)->type) && substr(Files::find($id)->type, 0, 5) == 'video')
 								<video controls width="100%">
 									<source src="{{ Files::find($id)->dir }}">
 								</video>
