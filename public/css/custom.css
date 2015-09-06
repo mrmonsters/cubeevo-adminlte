@@ -24,7 +24,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
   height: 45px;
   display: inline-block;
   background-size: auto 100%;
-  background-image:url('../img/Programmer Needs-19.png');   
+  background-image:url('../img/Programmer Needs-19.svg');   
   background-repeat: no-repeat;
   position: relative;
   top: 1.2em;
@@ -137,21 +137,21 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cd-social a {
 	text-indent:10000px;
 	display:block;
-	width:40px;
-  height:40px;
+	width:30px;
+  height:30px;
 	border: 0 none !important;
 }
 .cd-social .cd-scfb {
-  background:url(../img/Images-13.png) no-repeat 0 0;
+  background:url(../img/Images-13.svg) no-repeat 0 0;
 }
 .cd-social .cd-scin {
-  background:url(../img/Images-15.png) no-repeat 0 0;
+  background:url(../img/Images-15.svg) no-repeat 0 0;
 }
 .cd-social .cd-scyt {
   background:url(../img/Images-14.svg) no-repeat 0 0;
 }
 .cd-social .cd-scyt:hover ,.cd-social .cd-scin:hover ,.cd-social .cd-scfb:hover {
-  background-position-y: -42px;
+  background-position-y: -31px;
 }
 
 .mob-hide {display:inline;}
@@ -375,31 +375,31 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .container-fluid.contactus{margin: 4.5%;background-color: #eee;padding-top: 80px;}
 .contactus .contactdetails {background:#FFF; padding:40px 0; font-size:12px;} 
 .contactus ul { list-style:none; padding:0; overflow:hidden;}
-.contactus li {text-indent:35px;    padding: 5px 0px;}
+.contactus li {text-indent:35px;}
 .contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}  
 .contactus .active .form-control{border-color: #f7941a;}
-.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -54px;}
+.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
 .contactus .form-control {font-size:16px;background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:45px; height:45px;   margin-bottom: 20px;}
 .contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
 .contactus .active textarea{border:1px solid #f7941a;outline:transparent;}
 .contactus label {visibility:hidden;margin-top: 0px;margin-bottom: 18px;}
 .contactus label.unhide {visibility:visible; padding-left:45px;}
-.icon,.contactus .icon {width:40px; height:40px; display:block; position:absolute;margin-top: -3px;}
-.contactus .cont-name {background:url(../img/Images-19.png) no-repeat 0px 0px;}
-.contactus .cont-mail {background:url(../img/Images-19.png) no-repeat 0px -45px;}
-.contactus .cont-contact {background:url(../img/Images-19.png) no-repeat 0px -107px;}
-.contactus .cont-title {background:url(../img/Images-19.png) no-repeat 0px -161px;}
-.contactus .cont-msg {background:url(../img/Images-19.png) no-repeat 0px -218px;}
+.icon,.contactus .icon {width:30px; height:30px; display:block; position:absolute;}
+.contactus .cont-name {background:url(../img/Images-19.svg) no-repeat 0px 0px;}
+.contactus .cont-mail {background:url(../img/Images-19.svg) no-repeat 0px -40px;}
+.contactus .cont-contact {background:url(../img/Images-19.svg) no-repeat 0px -80px;}
+.contactus .cont-title {background:url(../img/Images-19.svg) no-repeat 0px -120px;}
+.contactus .cont-msg {background:url(../img/Images-19.svg) no-repeat 0px -160px;}
 .contactus button {width:150px; border: 1px solid #f7941a; background: none; color:#f7941a; padding:10px 30px; border-radius:0; margin-bottom:20px;}
 
 /* Icon */
 .contactus .list-with-icon{text-indent: 26px;line-height: 1.4em;}
-.icon.phone, .contactus .phone {background:url(../img/Images-19.png) no-repeat 0px -273px;width: 30px;height: 30px;}
-.icon.mail,.contactus .mail {background:url(../img/Images-19.png) no-repeat 0px -377px;width: 30px;height: 30px;}
-.contactus .fax {background:url(../img/Images-19.png) no-repeat 0px -325px;width: 30px;height: 30px;}
-.contactus .handphone {background:url(../img/Images-19.png) no-repeat 0px -433px;width: 30px;height: 30px;}
-.icon.mail-white{background-position-x:-75px;}
-.icon.phone-white{background-position-x:-75px;}
+.icon.phone, .contactus .phone {background:url(../img/Images-19.svg) no-repeat 0px -203px;width: 30px;height: 30px;}
+.icon.mail,.contactus .mail {background:url(../img/Images-19.svg) no-repeat 0px -280px;width: 30px;height: 30px;}
+.contactus .fax {background:url(../img/Images-19.svg) no-repeat 0px -245px;width: 30px;height: 30px;}
+.contactus .handphone {background:url(../img/Images-19.svg) no-repeat 0px -325px;width: 30px;height: 30px;}
+.icon.mail-white{background-position-x:-55px;}
+.icon.phone-white{background-position-x:-55px;}
 
 .scene.mascott{position:relative;left: -27%;top: -2%;}
 .scene.mascott.purple{top: 11%;}
