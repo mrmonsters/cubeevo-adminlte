@@ -21,10 +21,10 @@
     	<div class="cre-of1"><img src="{{ $project->mascottImage->dir }}" class="project-mascott"></div>
         @endif
         </div>
-        <div class="col-sm-12 cre-info">
+        <div class="col-sm-12 cre-info" style="background-color:{{ $project->sec_color_code }}">
             <div class="box">
-                <div class="box-bg" style="background-color:{{ $project->pri_color_code }}"></div>
-                <div class="box-content"> 
+                <div class="box-bg"></div>
+                <div class="box-content"  style="background-color:{{ $project->pri_color_code }}"> 
                     <div class="row">
                         <div class="col-sm-9 col-sm-9 col-sm-offset-2">
                             <div class="row">
@@ -38,7 +38,7 @@
                                 <div class="col-sm-10">
                                     <p class="desctitle project-name" style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
                                 	<h3>{{ (Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
-                                    <h4>{{ $project->translate(Session::get('locale'))->sub_heading }}</h4>
+                                    @if(!empty($project->translate(Session::get('locale'))->sub_heading))<h4>{{ $project->translate(Session::get('locale'))->sub_heading }}</h4>@endif
                                     
                                     <div style="padding-top:14%;">
                                     	<div class="col-sm-6 crecol-1">
