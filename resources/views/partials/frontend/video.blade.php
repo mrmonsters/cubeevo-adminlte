@@ -1,18 +1,17 @@
 <?php
 
-$videoUrl = $block->value;
-$segments = explode("/", $videoUrl);
-$value    = end($segments);
+use App\Models\Files;
+
+$file = Files::find($block->value);
 
 ?>
 
 <div class="row">
     <div class="col-xs-12 nopadding">
 	    <div class="videoWrapper">
-	    	<!--
-	        <iframe id="video" src="https://player.vimeo.com/video/50600924" frameborder="0"></iframe>
-	        -->
-	        <iframe id="video" src="https://player.vimeo.com/video/{{ $value }}" frameborder="0"></iframe>
+            <video id="video" controls>
+                <source src="{{ (isset($file)) ? $file->dir : '' }}" type="{{ (isset($file)) ? $file->type : '' }}">
+            </video>
 	    </div>
 	</div>
 </div>
@@ -24,7 +23,7 @@ $value    = end($segments);
     padding-top: 25px;
     height: 0;
 }
-.videoWrapper iframe {
+.videoWrapper video {
     position: absolute;
     top: 0;
     left: 0;

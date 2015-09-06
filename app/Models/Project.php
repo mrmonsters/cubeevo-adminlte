@@ -11,7 +11,13 @@ class Project extends Model implements TranslatableContract {
 
 	protected $table                = 'projects';
 	protected $primaryKey           = 'id';
-	protected $fillable             = ['name', 'background', 'challenge', 'result', 'sub_heading', 'client_name', 'web_link', 'grid_img_id', 'grid_bg_img_id', 'brand_img_id', 'pri_color_code', 'sec_color_code', 'txt_color_code', 'year', 'sort_order', 'status'];
+	protected $fillable             = array(
+		'name', 'background', 'challenge', 'result', 'sub_heading', 
+		'client_name', 'web_link', 'grid_img_id', 'grid_bg_img_id', 'brand_img_id', 
+		'mascott_img_id', 'video_img_id', 'pri_color_code', 'sec_color_code', 'txt_color_code', 
+		'txt_heading_color_code', 'year', 'sort_order', 'status', 'slug',
+		'category_id'
+	);
 	protected $translator           = 'App\Models\ProjectTranslation';
 	protected $translatedAttributes = ['name', 'background', 'challenge', 'result', 'sub_heading', 'client_name'];
 

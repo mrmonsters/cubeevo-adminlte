@@ -62,8 +62,14 @@ class ProjectController extends Controller {
 	public function store(Request $req, FileHelper $fileHelper)
 	{
 		//
-		$response = array();
-		$data     = $req->input();
+		$response     = array();
+		$data         = $req->input();
+		$gridImgId    = '';
+		$gridBgImgId  = '';
+		$brandImgId   = '';
+		$mascottImgId = '';
+		$videoImgId   = '';
+		$newImgIds    = array();
 
 		if (isset($data) && !empty($data))
 		{
@@ -76,9 +82,7 @@ class ProjectController extends Controller {
 			}
 			else
 			{
-				$files     = $req->file();
-				$project   = new Project;
-				$newImgIds = array();
+				$files = $req->file();
 
 				if (isset($files) && !empty($files))
 				{
@@ -86,23 +90,23 @@ class ProjectController extends Controller {
 					{
 						if ($key == 'new_grid_img_id')
 						{
-							$project->grid_img_id = $fileHelper->uploadNewFile($val);
+							$gridImgId = $fileHelper->uploadNewFile($val);
 						}
 						else if ($key == 'new_grid_bg_img_id')
 						{
-							$project->grid_bg_img_id = $fileHelper->uploadNewFile($val);
+							$gridBgImgId = $fileHelper->uploadNewFile($val);
 						}
 						else if ($key == 'new_brand_img_id')
 						{
-							$project->brand_img_id = $fileHelper->uploadNewFile($val);
+							$brandImgId = $fileHelper->uploadNewFile($val);
 						}
 						else if ($key == 'new_mascott_img_id')
 						{
-							$project->mascott_img_id = $fileHelper->uploadNewFile($val);
+							$mascottImgId = $fileHelper->uploadNewFile($val);
 						}
 						else if ($key == 'new_video_img_id')
 						{
-							$project->video_img_id = $fileHelper->uploadNewFile($val);
+							$videoImgId = $fileHelper->uploadNewFile($val);
 						}
 						else if ($key == 'new_project_img_id')
 						{
@@ -126,37 +130,23 @@ class ProjectController extends Controller {
 					}
 				}
 
-				if (isset($data['grid_img_id']) && $data['grid_img_id'] != null)
-				{
-					$project->grid_img_id    = $data['grid_img_id'];
-				}
-				if (isset($data['grid_bg_img_id']) && $data['grid_bg_img_id'] != null)
-				{
-					$project->grid_bg_img_id = $data['grid_bg_img_id'];
-				}
-				if (isset($data['brand_img_id']) && $data['brand_img_id'] != null)
-				{
-					$project->brand_img_id 	 = $data['brand_img_id'];
-				}
-				if (isset($data['video_img_id']) && $data['video_img_id'] != null)
-				{
-					$project->video_img_id   = $data['video_img_id'];
-				}
-				if (isset($data['mascott_img_id']) && $data['mascott_img_id'] != null)
-				{
-					$project->mascott_img_id = $data['mascott_img_id'];
-				}
+				$projectData = array();
+				$projectData = $this->_saveProjectImg($gridImgId, $data, 'grid_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($gridBgImgId, $data, 'grid_bg_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($brandImgId, $data, 'brand_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($videoImgId, $data, 'video_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($mascottImgId, $data, 'mascott_img_id', $projectData);
 
-				$project->category_id    = $data['category_id'];
-				$project->pri_color_code = $data['pri_color_code'];
-				$project->sec_color_code = $data['sec_color_code'];
-				$project->txt_heading_color_code = $data['txt_heading_color_code'];
-				$project->txt_color_code = $data['txt_color_code'];
-				$project->web_link		 = $data['web_link'];
-				$project->year           = $data['year'];
-				$project->slug 			 = str_replace(" ", "-", $data['slug']);
-				$project->sort_order     = $data['sort_order'];
-				$project->save();
+				$projectData['category_id']            = $data['category_id'];
+				$projectData['pri_color_code']         = $data['pri_color_code'];
+				$projectData['sec_color_code']         = $data['sec_color_code'];
+				$projectData['txt_color_code']         = $data['txt_color_code'];
+				$projectData['txt_heading_color_code'] = $data['txt_heading_color_code'];
+				$projectData['web_link']               = $data['web_link'];
+				$projectData['year']                   = $data['year'];
+				$projectData['slug']                   = str_replace(" ", "-", $data['slug']);
+				$projectData['sort_order']             = $data['sort_order'];
+				$project = Project::create($projectData);
 
 				$projData   = array();
 				$attributes = array('name', 'background', 'challenge', 'result', 'sub_heading', 'client_name');
@@ -178,6 +168,8 @@ class ProjectController extends Controller {
 					ProjectTranslation::create($projData);
 				}
 
+				dd($newImgIds);
+
 				if (isset($data['block']) && !empty($data['block']))
 				{
 					foreach ($data['block']['type'] as $k => $v)
@@ -192,16 +184,27 @@ class ProjectController extends Controller {
 								$block['type']  = Block::IMAGE;
 								if (isset($newImgIds[$k]) && $newImgIds[$k] != '')
 								{
-									$block['value'] = $newImgIds[$k];
+									$val = explode(",", $newImgIds[$k]);
+									$block['value'] = $val[0];
 								}
 								else
 								{
-									$block['value'] = $data['block']['value'][$k];
+									$val = explode(",", $data['block']['value'][$k]);
+									$block['value'] = $val[0];
 								}
 								break;
 							case Block::VIDEO:
 								$block['type']  = Block::VIDEO;
-								$block['value'] = $data['block']['value'][$k];
+								if (isset($newImgIds[$k]) && $newImgIds[$k] != '')
+								{
+									$val = explode(",", $newImgIds[$k]);
+									$block['value'] = $val[0];
+								}
+								else
+								{
+									$val = explode(",", $data['block']['value'][$k]);
+									$block['value'] = $val[0];
+								}
 								break;
 							case Block::GALLERY:
 								$block['type'] = Block::GALLERY;
@@ -295,10 +298,15 @@ class ProjectController extends Controller {
 	public function update($id, Request $req, FileHelper $fileHelper)
 	{
 		//
-		$response  = array();
-		$data      = $req->input();
-		$project   = Project::find($id);
-		$newImgIds = array();
+		$response     = array();
+		$data         = $req->input();
+		$project      = Project::find($id);
+		$gridImgId    = '';
+		$gridBgImgId  = '';
+		$brandImgId   = '';
+		$mascottImgId = '';
+		$videoImgId   = '';
+		$newImgIds    = array();
 
 		if (isset($data) && $project->id)
 		{
@@ -358,62 +366,24 @@ class ProjectController extends Controller {
 						}
 					}
 				}
-				
-				if (isset($gridImgId))
-				{
-					$project->grid_img_id = $gridImgId;
-				}
-				else if (isset($data['grid_img_id']) && $data['grid_img_id'] != null)
-				{
-					$project->grid_img_id    = $data['grid_img_id'];
-				}
 
-				if (isset($gridBgImgId))
-				{
-					$project->grid_bg_img_id = $gridBgImgId;
-				}
-				else if (isset($data['grid_bg_img_id']) && $data['grid_bg_img_id'] != null)
-				{
-					$project->grid_bg_img_id = $data['grid_bg_img_id'];
-				}
+				$projectData = array();
+				$projectData = $this->_saveProjectImg($gridImgId, $data, 'grid_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($gridBgImgId, $data, 'grid_bg_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($brandImgId, $data, 'brand_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($videoImgId, $data, 'video_img_id', $projectData);
+				$projectData = $this->_saveProjectImg($mascottImgId, $data, 'mascott_img_id', $projectData);
 
-				if (isset($brandImgId))
-				{
-					$project->brand_img_id = $brandImgId;
-				}
-				else if (isset($data['brand_img_id']) && $data['brand_img_id'] != null)
-				{
-					$project->brand_img_id 	 = $data['brand_img_id'];
-				}
-
-				if (isset($videoImgId))
-				{
-					$project->video_img_id = $videoImgId;
-				}
-				else if (isset($data['video_img_id']) && $data['video_img_id'] != null)
-				{
-					$project->video_img_id   = $data['video_img_id'];
-				}
-
-				if (isset($mascottImgId))
-				{
-					$project->mascott_img_id = $mascottImgId;
-				}
-				else if (isset($data['mascott_img_id']) && $data['mascott_img_id'] != null)
-				{
-					$project->mascott_img_id = $data['mascott_img_id'];
-				}
-
-				$project->category_id	 = $data['category_id'];
-				$project->pri_color_code = $data['pri_color_code'];
-				$project->sec_color_code = $data['sec_color_code'];
-				$project->txt_color_code = $data['txt_color_code'];
-				$project->txt_heading_color_code = $data['txt_heading_color_code'];
-				$project->web_link		 = $data['web_link'];
-				$project->year           = $data['year'];
-				$project->slug 			 = str_replace(" ", "-", $data['slug']);
-				$project->sort_order     = $data['sort_order'];
-				$project->save();
+				$projectData['category_id']            = $data['category_id'];
+				$projectData['pri_color_code']         = $data['pri_color_code'];
+				$projectData['sec_color_code']         = $data['sec_color_code'];
+				$projectData['txt_color_code']         = $data['txt_color_code'];
+				$projectData['txt_heading_color_code'] = $data['txt_heading_color_code'];
+				$projectData['web_link']               = $data['web_link'];
+				$projectData['year']                   = $data['year'];
+				$projectData['slug']                   = str_replace(" ", "-", $data['slug']);
+				$projectData['sort_order']             = $data['sort_order'];
+				$project->update($projectData);
 
 				$projData   = array();
 				$attributes = array('name', 'background', 'challenge', 'result', 'sub_heading', 'client_name');
@@ -460,16 +430,27 @@ class ProjectController extends Controller {
 								$block['type']  = Block::IMAGE;
 								if (isset($newImgIds[$k]) && $newImgIds[$k] != '')
 								{
-									$block['value'] = $newImgIds[$k];
+									$val = explode(",", $newImgIds[$k]);
+									$block['value'] = $val[0];
 								}
 								else
 								{
-									$block['value'] = $data['block']['value'][$k];
+									$val = explode(",", $data['block']['value'][$k]);
+									$block['value'] = $val[0];
 								}
 								break;
 							case Block::VIDEO:
 								$block['type']  = Block::VIDEO;
-								$block['value'] = $data['block']['value'][$k];
+								if (isset($newImgIds[$k]) && $newImgIds[$k] != '')
+								{
+									$val = explode(",", $newImgIds[$k]);
+									$block['value'] = $val[0];
+								}
+								else
+								{
+									$val = explode(",", $data['block']['value'][$k]);
+									$block['value'] = $val[0];
+								}
 								break;
 							case Block::GALLERY:
 								$block['type'] = Block::GALLERY;
@@ -589,7 +570,7 @@ class ProjectController extends Controller {
 			$project->save();
 
 			$response['code'] = Status::SUCCESS;
-			$response['msg']  = "Project [#".$project->id."] set to Inacative successfully.";
+			$response['msg']  = "Project [#".$project->id."] is deactivated successfully.";
 		}
 		else
 		{
@@ -618,7 +599,7 @@ class ProjectController extends Controller {
 			$project->save();
 
 			$response['code'] = Status::SUCCESS;
-			$response['msg']  = "Project [#".$project->id."] set to Active successfully.";
+			$response['msg']  = "Project [#".$project->id."] is activated successfully.";
 		}
 		else
 		{
@@ -627,6 +608,30 @@ class ProjectController extends Controller {
 		}
 
 		return Redirect::to('admin/manage/project')->with('response', $response);
+	}
+
+	protected function _saveProjectImg($img, $input, $key, $projectData)
+	{
+		if (is_array($projectData))
+		{
+			if (isset($img) && $img != '')
+			{
+				$projectData[$key] = $img;
+			}
+			else if (isset($input[$key]))
+			{
+				if ($input[$key] != '')
+				{
+					$projectData[$key] = $input[$key];
+				}
+				else
+				{
+					$projectData[$key] = null;
+				}
+			}
+
+			return $projectData;
+		}
 	}
 
 }
