@@ -25,10 +25,12 @@
                         <p class="col-sm-12 hidden-text panel-title">
                             {{ $project->translate(Session::get('locale'))->client_name }}
                         </p>
-                        <div class="col-xs-12 visible-xs-block" style="padding:6px;">
-                            <div class="threedot"><i class="icon-btn-link"></i></div>
-                        </div>
-                     </div>
+                     </div> 
+                    <div class="row" style="position: absolute;bottom: 10%;left: 6%;z-index:1;">
+                        <div class="col-xs-12 visible-xs-block">
+                            <div class="threedot js-showtitle"><i class="icon-btn-link"></i></div>
+                        </div> 
+                    </div> 
                 </div>
             </div>
             @if (($count % 2 == 0) || ($count == $projects->count())) 

@@ -308,6 +308,10 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .cre .scene{left:-5%;}
 .cre .comingsoon {}
 
+  .sol .hidden-text, .cre .hidden-text{
+    display: none;
+  }
+
 .project-block-content > .row{background-color: #fff;}
 .slick-dots{bottom: 0px;}
 .slick-dots li button:before{font-size: 11px;}
@@ -626,9 +630,6 @@ Main Components
   .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
     display: block;
   }
-  .sol .hidden-text, .cre .hidden-text{
-    display: none;
-  }
   .content-section{display: none;}
   .cd-vertical-nav {  
   	top: 50%; 
@@ -717,6 +718,7 @@ Main Components
 }
 
 @media (max-width:768px){
+  #fullpage #section0 .content-wrapper{margin-top: -5%;}
   .project-client-name,.project-name{padding-top: 20px;}
   .crecol-2{padding-top: 50px;}
 	img.mas-1 {height:auto;}

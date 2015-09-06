@@ -19,6 +19,20 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   $(document).ready(function() { 
 
+  $('.js-showtitle').click(function(){
+    if($(this).hasClass('active')){
+      $(this).removeClass('active'); 
+      var _parent = $(this).parent().parent().parent();
+      _parent.find('.greybox').fadeOut();
+      _parent.find('.panel-title').fadeOut(); 
+    }else{ 
+      var _parent = $(this).parent().parent().parent();
+      _parent.find('.greybox').fadeIn();
+      _parent.find('.panel-title').fadeIn(); 
+      $(this).addClass('active');
+    }
+  });
+
   $('.cd-nav-trigger').click(function(){
     if($('.btn-back').length > 0){
       if($(this).hasClass('menu-is-open')){

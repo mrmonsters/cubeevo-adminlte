@@ -9,11 +9,11 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" onClick="location.href='{{ url('credential/' . $category->slug) }}';" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;background-size:cover;' : '#666; min-height: 281px;' }}">
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($dir = $category->backgroundImage->dir) ? 'url(\'..'.$dir.'\'); background-repeat: no-repeat;background-size:cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
                     <div class="greybox"></div> 
 
-                    <div class="cd-background-wrapper">
+                    <div class="cd-background-wrapper" onClick="location.href='{{ url('credential/' . $category->slug) }}';">
                         <figure class="cd-floating-background">
                             @if ($dir = $category->frontImage->dir) 
                             <ul class="scene">
@@ -23,14 +23,16 @@
                         </figure>
                     </div> 
 
-                    <div class="row panel-body overlap">
+                    <div class="row panel-body overlap" onClick="location.href='{{ url('credential/' . $category->slug) }}';">
                         <p class="col-sm-12 hidden-text panel-title">
                             {{ $category->translate(Session::get('locale'))->name }}
-                        </p> 
-                        <div class="col-xs-12 visible-xs-block" style="padding:6px;">
-                            <div class="threedot"><i class="icon-btn-link"></i></div>
-                        </div>
-                    </div>  
+                        </p>  
+                    </div> 
+                    <div class="row" style="position: absolute;bottom: 10%;left: 6%;z-index:1;">
+                        <div class="col-xs-12 visible-xs-block">
+                            <div class="threedot js-showtitle"><i class="icon-btn-link"></i></div>
+                        </div> 
+                    </div> 
                 </div>
             </div>
             @if (($count % 3 == 0) || ($count == $categories->count())) 
