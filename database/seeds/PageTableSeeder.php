@@ -245,7 +245,7 @@ class PageTableSeeder extends Seeder
 													<div class="col-sm-push-4 col-md-push-5  col-sm-6">
 														<h3 class="text-black"><b>CUBEEVO</b></h3>
 														<p class="text-black">
-														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.
+														Cubeevo\'s logo design came from the concept of a Rubik\'s Cube. By adapting the element of using lines it formed the letter "E", for Evolution. See the irregular lengths of the lines? Yeah, we did that on purpose, with purpose. The philosophy behind this is our flexibility<span class="hidden-xs">. Now, you might be thinking the lines are incomplete, but think flexibly - our flexibility allows as to adapt to various changes and challenges.</span><span class="visible-xs-inline">...</span>
 														</p>
 														<div class="col-xs-2 col-sm-12 nopadding">
 														<a href="#" class="text-black"><i class="icon-btn-link"></i> <span class="hidden-xs">More Information</a><br/><br class="visible-xs"/>
@@ -645,7 +645,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">申请</a>
 						      </div>
 						    </div>
 						  </div>
@@ -675,7 +675,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">申请</a>
 						      </div>
 						    </div>
 						  </div>
@@ -699,7 +699,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">申请</a>
 						      </div>
 						    </div>
 						  </div>
@@ -724,7 +724,7 @@ class PageTableSeeder extends Seeder
 							      </ul> 
 						      </div>
 						      <div class="modal-footer"> 
-						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">呈交</a>
+						        <a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">申请</a>
 						      </div>
 						    </div>
 						  </div>
