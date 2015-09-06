@@ -205,7 +205,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 	color: #ffffff;
   margin-top: 10%;
 }
-#fullpage .content-wrapper .row{padding: 0px 8px 7px 5px;} 
+#fullpage .content-wrapper .row{padding: 0px 8px 9px 5px;} 
 #fullpage .content-wrapper .row h3{ margin: 20px 0px 0px 0px;}
 #fullpage .content-wrapper .row p{ margin-bottom: 7px;text-align: justify;line-height: 1.3em;}
 .content-wrapper__fixed{ 
@@ -736,7 +736,7 @@ Main Components
 @media (max-width:768px){
   .maincol-left {
       position: absolute;
-      bottom: 3%;
+      bottom: 2.8%;
   }
   .maincol-right { 
     position: absolute;
