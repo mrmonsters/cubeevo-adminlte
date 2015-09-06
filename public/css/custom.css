@@ -305,6 +305,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .credential .col-ppl p {text-align:center; font-size:12px;}
 .credential .crecol-1 {padding-left:0;}
 .credential .crecol-1,.credential .crecol-2{text-align: justify;}
+.cre .scene{left:-5%;}
 .cre .comingsoon {}
 
 .project-block-content > .row{background-color: #fff;}
