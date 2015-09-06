@@ -423,7 +423,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row about-txt " style="position:relative;"> 
 								<div class="col-lg-12 mob-visible">
-									<div class="about-img3"><img src="/img/Images-08.png"></div>
+									<div class="about-img3"><img src="/img/Images-08.svg"></div>
 								</div>
 								<div class="col-sm-9 col-sm-offset-2">
 									<div class="col-sm-5">
@@ -744,7 +744,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								<div class="row about-txt " style="position:relative;"> 
 								<div class="col-lg-12 mob-visible">
-									<div class="about-img3"><img src="/img/Images-08.png"></div>
+									<div class="about-img3"><img src="/img/Images-08.svg"></div>
 								</div>
 								<div class="col-sm-9 col-sm-offset-2">
 									<div class="col-sm-5">
