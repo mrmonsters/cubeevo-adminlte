@@ -221,7 +221,14 @@ class ProjectController extends Controller {
 									{
 										for ($x = 0; $x < count($imgIds); $x++)
 										{
-											$images[$sortOrders[$x]] = $imgIds[$x];
+											if (array_key_exists($sortOrders[$x], $images))
+											{
+												$images[] = $imgIds[$x];
+											}
+											else
+											{
+												$images[$sortOrders[$x]] = $imgIds[$x];
+											}
 										}
 										ksort($images);
 									}
@@ -420,6 +427,7 @@ class ProjectController extends Controller {
 				{
 					foreach ($data['block']['type'] as $k => $v)
 					{
+						$block = array();
 						$block['id'] = $k;
 						$block['project_id'] = $project->id;
 						$block['sort_order'] = $data['block']['sort'][$k];
@@ -467,7 +475,14 @@ class ProjectController extends Controller {
 									{
 										for ($x = 0; $x < count($imgIds); $x++)
 										{
-											$images[$sortOrders[$x]] = $imgIds[$x];
+											if (array_key_exists($sortOrders[$x], $images))
+											{
+												$images[] = $imgIds[$x];
+											}
+											else
+											{
+												$images[$sortOrders[$x]] = $imgIds[$x];
+											}
 										}
 										ksort($images);
 									}
