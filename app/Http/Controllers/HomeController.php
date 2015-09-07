@@ -42,23 +42,30 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		$page = Page::where('slug', '=', '/')->where('status', Status::ACTIVE)
+	public function getStaticPages($slug)
+	{	 
+		$slug = ($slug == '/')?$slug:'/'.$slug; 
+		$page = Page::where('slug', '=', $slug)->where('status', Status::ACTIVE)
 			->where('delete', false)
-			->first();
+			->first();   
 
-		return view('frontend.index')->with('page', $page);
-	}
-
-	public function getAboutUs()
-	{
-		$page = Page::where('slug', '=', '/about-us')->where('status', Status::ACTIVE)
+		if(!$page): 
+			$page = Page::where('slug', '=', '/')->where('status', Status::ACTIVE)
 			->where('delete', false)
-			->first();
+			->first();   
+		endif;
 
-		return view('frontend.index')->with('page', $page);
-	}
+		$meta_title = $page->meta_title;
+		$meta_keyword = $page->meta_keyword;
+		$meta_desc = $page->meta_desc;
+
+		return view('frontend.index')->with([
+			'page'=> $page,
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			]);
+	} 
 
 	public function getCredential()
 	{
@@ -102,15 +109,6 @@ class HomeController extends Controller {
 			->get();
 
 		return view('frontend.solution')->with('solutions', $solutions);
-	}
-
-	public function getProcess()
-	{
-		$page = Page::where('slug', '=', '/process')->where('status', Status::ACTIVE)
-			->where('delete', false)
-			->first();
-
-		return view('frontend.index')->with('page', $page);
 	}
 
 	public function getContactUs()

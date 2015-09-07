@@ -10,14 +10,11 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-Route::get('/', 'HomeController@index');
-Route::get('/about-us', 'HomeController@getAboutUs');
+ 
 Route::get('/credential', 'HomeController@getCredential');
 Route::get('/credential/{slug}', 'HomeController@getCredentialProject');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');
-Route::get('/solution', 'HomeController@getSolution');
-Route::get('/process', 'HomeController@getProcess');
+Route::get('/solution', 'HomeController@getSolution'); 
 Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
 Route::post('/contact-us/submit', 'HomeController@submitMessage');
@@ -97,3 +94,6 @@ Route::post('password/email', 'Auth\PasswordController@postEmail');
 // Password reset routes...
 Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
 Route::post('password/reset', 'Auth\PasswordController@postReset');
+
+/*if no matching router , all goes to here*/
+Route::any('{all}','HomeController@getStaticPages')->where('all', '.*');
