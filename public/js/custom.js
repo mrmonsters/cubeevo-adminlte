@@ -14,10 +14,25 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
         builtboxsize(); 
       });
     }  
+
     $('.blanket').fadeOut();
   });
 
   $(document).ready(function() { 
+ 
+  if($('.brandImage').length > 0){
+    var _viewportHeight = $(window).height(); 
+    $('.brandImage').css('height',_viewportHeight);
+  }
+
+  function adjustprojectcontentimage(){  
+    var _viewportHeight = $(window).height(); 
+    $('.brandImage').css('height',_viewportHeight);
+  }
+
+  $(window).resize(function() { 
+    adjustprojectcontentimage(); 
+  });
 
   $('.js-showtitle').click(function(){
     if($(this).hasClass('active')){

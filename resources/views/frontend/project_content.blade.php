@@ -14,7 +14,6 @@
 <div class="container-fluid credential">
     <div class="row"> 
         <div class="col-sm-12 nopadding brandImage" style="background-image:url('{{ $project->brandImage->dir }}');">
-            <img src="{{ $project->brandImage->dir }}" width="100%">
         </div>
         <div class="col-sm-12 blankbox">
         @if (isset($project->mascottImage->dir))
