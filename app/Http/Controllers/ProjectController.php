@@ -482,7 +482,7 @@ class ProjectController extends Controller {
 								break;
 						}
 
-						$blockObject = Block::find($k);
+						$blockObject = $project->blocks()->where('id', $k)->where('delete', false)->first();
 
 						if (isset($blockObject))
 						{
