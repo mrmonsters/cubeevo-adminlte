@@ -283,7 +283,7 @@ Description for project management
 				</legend>
 				<input type="hidden" id="deleted_block" name="deleted_block" value="" />
 				<div id="block-box-body">
-					<input type="hidden" id="block-count" value="{{ $project->blocks()->get()->last()->id + 1}}" />
+					<input type="hidden" id="block-count" value="{{ (!$project->blocks()->get()->isEmpty()) ? $project->blocks()->get()->last()->id + 1 : Block::all()->last()->id + 1 }}" />
 					<input type="hidden" id="current-modal-field" />
 					<?php $blockCount = 0; ?>
 					@foreach ($project->blocks()->get() as $block)
