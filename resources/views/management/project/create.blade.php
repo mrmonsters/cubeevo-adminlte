@@ -403,7 +403,7 @@ Description for project management
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="modal">Choose from existing image collection</h4>
 			</div>
-			<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
+			<div id="lazy-container" class="modal-body" style="max-height: 450px; overflow-y: auto;">
 				<?php $count = 0; ?>
 				<?php $images = Files::where('status', '=', STATUS::ACTIVE)->get(); ?>
 				@foreach ($images as $image)
@@ -414,7 +414,7 @@ Description for project management
 					<div class="col-xs-6 col-md-3">
 						<button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
 							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
-							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail" width="100%">
+							<img data-original="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail lazy-img" width="100%">
 							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
 							<video width="100%">
 								<source src="{{ $image->dir }}" />
@@ -439,7 +439,7 @@ Description for project management
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="modal">Choose from existing image collection</h4>
 			</div>
-			<div class="modal-body" style="max-height: 450px; overflow-y: auto;">
+			<div id="lazy-project-container" class="modal-body" style="max-height: 450px; overflow-y: auto;">
 				<?php $count = 0; ?>
 				<?php $images = Files::where('status', '=', STATUS::ACTIVE)->get(); ?>
 				@foreach ($images as $image)
@@ -450,7 +450,7 @@ Description for project management
 					<div class="col-xs-6 col-md-3">
 						<div class="thumbnail" style="text-align: center;">
 							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
-							<img src="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail" width="100%">
+							<img data-original="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail lazy-project-img" width="100%">
 							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
 							<video width="100%">
 								<source src="{{ $image->dir }}" />
@@ -492,6 +492,14 @@ $(document).ready(function()
 
 function useExist(imgType)
 {
+	$(function()
+	{
+		$('.lazy-img').lazyload(
+		{
+			container: '#lazy-container'
+		});
+	});
+
 	$('#selected_img').val(imgType);
 }
 
@@ -605,6 +613,14 @@ function addProjectImg(cnt)
 
 function prepareModal(img, sort, thumbnail)
 {
+	$(function()
+	{
+		$('.lazy-project-img').lazyload(
+		{
+			container: '#lazy-project-container'
+		});
+	});
+	
 	$('#current-modal-field').val(img + "," + sort + "," + thumbnail);
 
 	var imgIds = $('#' + img).val().split(',');
