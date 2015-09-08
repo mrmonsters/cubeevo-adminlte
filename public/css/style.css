@@ -32,8 +32,7 @@ Primary style
 }
 
 html {
-  font-size: 62.5%;
-  height: 100%;
+  font-size: 62.5%; 
 }
 
 body {
@@ -42,8 +41,7 @@ body {
   color: #000000;
   background-color: #fff;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+  -moz-osx-font-smoothing: grayscale; 
 }
 b{
   font-family: "微軟正黑體","Conv_DINNextLTPro-Bold", sans-serif;
