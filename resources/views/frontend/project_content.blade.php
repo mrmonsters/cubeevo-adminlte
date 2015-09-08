@@ -86,15 +86,30 @@
 </div> 
 @endsection
 
-@section('addon-script')
+@section('frontend-addon-script')
 <script type="text/javascript">
-$(function(){
-  $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
+$(document).ready(function()
+{
+    $('.video-btn').click(function()
+    {
+        var video = $(this).siblings('.video');
+        if (video.get(0).play)
+        {
+            video.get(0).play();
+        }
+        $(this).hide();
+        return false;
+    });
 
-  // If you want to keep full screen on window resize
-  $(window).resize(function(){
-    $('#video').css({ width: $(window).innerWidth() + 'px', height: $(window).innerHeight() + 'px' });
-  });
+    $('.video').click(function()
+    {
+        if (this.pause)
+        {
+            this.pause();
+            $(this).siblings('.video-btn').show();
+        }
+        return false;
+    });
 });
 </script>
 @endsection
