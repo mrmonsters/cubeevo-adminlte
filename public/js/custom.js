@@ -16,26 +16,59 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     }  
 
     $('.blanket').fadeOut();
+
   });
 
-  $(document).ready(function() { 
- 
-  /*$('a').on('click', function(event){ 
-    event.preventDefault();
-    //stop if nav animation is running 
-    if( !isLateralNavAnimating ) {
-      if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
-      $('.content.active').removeClass('animateIn').addClass('animateOut'); 
-      $('.nextcontent').removeClass('standby').addClass('animateIn'); 
-      $('.nextcontent').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-        //animation is over
-        $('.content.active').remove(); 
-        $(this).addClass('active').removeClass('nextcontent');
-        $('body').append('<div class="content nextcontent standby">next content</div>')
-        isLateralNavAnimating = false; 
-      });
+  $(document).ready(function() {  
+
+  function ChangeUrl(page, url) {
+      if (typeof (history.pushState) != "undefined") {  
+          $('body').addClass('navigation-is-open');
+          var isLateralNavAnimating = false;
+          $.get( url, function( data ) {  
+            if( !isLateralNavAnimating ) {
+              console.log('go');
+              if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
+              $('.content.active').removeClass('animateIn').addClass('animateOut'); 
+              $('.nextcontent').html(data).removeClass('standby').addClass('animateIn'); 
+              $('.nextcontent').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+                //animation is over
+                $('.content.active').remove(); 
+                $(this).addClass('active').removeClass('nextcontent');
+                $('body').append('<div class="content nextcontent standby"></div>')
+                isLateralNavAnimating = false; 
+              });
+            }
+          }); 
+          var obj = { Page: page, Url: url };
+          history.pushState(obj, obj.Page, obj.Url);
+      } else {
+          alert("Browser does not support HTML5.");
+      }
+  }
+
+  $('a,.js-link').click(function(){ 
+
+    var _baseUrl = $('body').data('baseurl');
+    var _url = $(this).attr('href'); 
+    if(_url == undefined){ 
+      var _url = $(this).data('url');
     }
-  });*/
+    var _isExternalLink = ($(this).attr('target') == undefined)?false:true; 
+
+    var _isWhiteList = false; 
+console.log(_url);
+    if(_url == _baseUrl+'/locale/en' || _url == _baseUrl+'/locale/cn' || _url == '#' ){
+      _isWhiteList = true;
+    }
+
+    if(_isExternalLink == false && _isWhiteList == false){ 
+console.log('start ajax'); 
+      ChangeUrl('Page1', _url);
+      return false;
+    }   
+
+   })  
 
   if($('.brandImage').length > 0){
     var _viewportHeight = $(window).height(); 

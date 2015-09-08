@@ -4,8 +4,7 @@ use App\Models\Files;
 
 $file = Files::find($block->value);
 
-?>
-
+?> 
 <div class="row">
     <div class="col-xs-12 nopadding">
 	    <div class="videoWrapper">
