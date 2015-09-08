@@ -18,15 +18,15 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     $('.blanket').fadeOut();
   });
 
-  $(document).ready(function() { 
-  $(window).scroll(function(){
-    if($('.js-back-to-top').length > 0 ){ 
-      $('.js-back-to-top').click(function(){ 
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false; 
-      });
-    }
-  });
+  $(document).ready(function() {  
+    
+  if($('.js-back-to-top').length > 0 ){ 
+    $('.js-back-to-top').click(function(){ 
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false; 
+    });
+  } 
+
   if($('.brandImage').length > 0){
     var _viewportHeight = $(window).height(); 
     $('.brandImage').css('height',_viewportHeight);
