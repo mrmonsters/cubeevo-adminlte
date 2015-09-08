@@ -15,6 +15,9 @@
 <script type="text/javascript" src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
 <!-- Bootstrap Color Picker -->
 <script type="text/javascript" src="{{ asset('/plugins/colorpicker/bootstrap-colorpicker.min.js') }}"></script>
+<!-- jQuery Lazy Load-->
+<script type="text/javascript" src="{{ asset('/js/jquery.lazyload.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/jquery.scrollstop.js') }}"></script>
 <!-- Addon Scripts -->
 @yield('addon-script')
 
