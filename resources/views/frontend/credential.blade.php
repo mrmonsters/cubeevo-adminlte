@@ -24,7 +24,7 @@
                     </div> 
 
                     <div class="row panel-body overlap" onClick="location.href='{{ url('credential/' . $category->slug) }}';">
-                        <p class="col-sm-12 hidden-text panel-title">
+                        <p class="col-sm-12 hidden-text panel-title text-uppercase">
                             {{ $category->translate(Session::get('locale'))->name }}
                         </p>  
                     </div> 
