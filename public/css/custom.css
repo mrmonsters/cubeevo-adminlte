@@ -235,7 +235,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .container-fluid.sol{height:100%;} 
 .container-fluid.sol > .row{height: 100%;}
 .container-fluid.sol > .row > div{min-height: 252px;}
-.sol .contbox .layer > img{max-width:500px;margin: 0 auto;}
+.sol .contbox .layer > img{margin: 0 auto;}
 .sol p, .cre p{
 	margin-bottom: 0px;
 }
@@ -608,7 +608,7 @@ Main Components
     white-space: nowrap;
     z-index: 10;}
 .mascott{ visibility: hidden; }.animated { visibility: visible !important; }
-.home-content{height: 100%;}
+.home-content{height: 100%;position: relative;}
 .home-content > .row{position: absolute;bottom: 15%;width: 100%;}
 .brandImage{
     position: relative;
