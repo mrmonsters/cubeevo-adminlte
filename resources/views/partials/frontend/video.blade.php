@@ -9,7 +9,7 @@ $file = Files::find($block->value);
 <div class="row">
     <div class="col-xs-12 nopadding">
 	    <div class="videoWrapper">
-            <video class="video">
+            <video class="video js-video">
                 <source src="{{ (isset($file)) ? $file->dir : '' }}" type="{{ (isset($file)) ? $file->type : '' }}">
             </video>
             <a href="#" class="smart-object video-btn">

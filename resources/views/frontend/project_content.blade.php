@@ -101,7 +101,7 @@ $(document).ready(function()
         return false;
     });
 
-    $('.video').click(function()
+    $('.js-video').click(function()
     {
         if (this.pause)
         {
