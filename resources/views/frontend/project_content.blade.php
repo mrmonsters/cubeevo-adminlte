@@ -10,8 +10,9 @@
 .container-fluid.credential{background-color:{{ $project->pri_color_code }}  }
 .slick-prev-wrapper.slick-arrow{background-color: {{ $project->pri_color_code }};}
 .slick-next-wrapper.slick-arrow{background-color: {{ $project->pri_color_code }};}
+.back-to-top{z-index: 5;width: 45px;height: 45px;background-color: {{ $project->pri_color_code }};padding: 13px 10px;cursor:pointer;}
 </style>
-<div class="container-fluid credential">
+<div class="container-fluid credential"> 
     <div class="row"> 
         <div class="col-sm-12 nopadding brandImage" style="background-image:url('{{ $project->brandImage->dir }}');">
         </div>
@@ -22,6 +23,14 @@
         </div>
         <div class="col-sm-12 cre-info" style="background-color:{{ $project->sec_color_code }}">
             <div class="box">
+                <div class="js-back-to-top back-to-top smart-object"> 
+                    <div class="arrow-top arrow">
+                        <div class="arrow-bar-1 smart-transition"></div>
+                        <div class="arrow-bar-2 smart-transition"></div>
+                        <div style="position:relative;top:5px;" class="arrow-bar-1 smart-transition"></div>
+                        <div style="position:relative;top:5px;" class="arrow-bar-2 smart-transition"></div>
+                    </div>
+                </div>
                 <div class="box-bg"></div>
                 <div class="box-content" style="background-color:{{ $project->pri_color_code }}"> 
                     <div class="row">
