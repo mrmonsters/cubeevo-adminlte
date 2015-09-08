@@ -3,6 +3,18 @@
 	@include('partials.frontend.htmlheader')
 
 	<body>
+		<?php /*?>
+			<div class="content active animateIn">  
+				<!-- Navigation -->
+				@include('partials.frontend.menu') 
+				<!-- Main content -->
+				@yield('frontend-content') 
+				<!-- Scripts -->
+				@include('partials.frontend.scripts')
+			</div>
+			<div class="content nextcontent standby"> 
+			</div> 
+		<?php */?> 
 		<div class="blanket" style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 9999; background-color: #676464;">
 	    <div class="loader" style="position: absolute;
 		    top: 50%;

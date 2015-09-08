@@ -20,6 +20,23 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   $(document).ready(function() { 
  
+  /*$('a').on('click', function(event){ 
+    event.preventDefault();
+    //stop if nav animation is running 
+    if( !isLateralNavAnimating ) {
+      if($(this).parents('.csstransitions').length > 0 ) isLateralNavAnimating = true; 
+      $('.content.active').removeClass('animateIn').addClass('animateOut'); 
+      $('.nextcontent').removeClass('standby').addClass('animateIn'); 
+      $('.nextcontent').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
+        //animation is over
+        $('.content.active').remove(); 
+        $(this).addClass('active').removeClass('nextcontent');
+        $('body').append('<div class="content nextcontent standby">next content</div>')
+        isLateralNavAnimating = false; 
+      });
+    }
+  });*/
+
   if($('.brandImage').length > 0){
     var _viewportHeight = $(window).height(); 
     $('.brandImage').css('height',_viewportHeight);
