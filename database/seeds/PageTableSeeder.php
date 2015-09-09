@@ -1064,7 +1064,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								</div>
 								<div class="row">
-								<div class="col-sm-11 col-sm-offset-1 process-flow">
+								<div class="col-sm-10 col-sm-offset-1 process-flow">
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>
@@ -1148,7 +1148,7 @@ class PageTableSeeder extends Seeder
 								</div>
 								</div>
 								<div class="row">
-								<div class="col-sm-11 col-sm-offset-1 process-flow">
+								<div class="col-sm-10 col-sm-offset-1 process-flow">
 									<div class="flow">
 										<div class="left"><div class="box">
 											<span>01</span>

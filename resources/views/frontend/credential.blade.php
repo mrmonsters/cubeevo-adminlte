@@ -45,7 +45,7 @@
             switch ($leftoutclass) {
                 case '1':
                     # code...
-                    $class = 'hidden-sm col-sm-6 col-lg-4';
+                    $class = 'hidden-sm col-sm-6 col-lg-4 col-md-12';
                     break;
 
                 case '2':
