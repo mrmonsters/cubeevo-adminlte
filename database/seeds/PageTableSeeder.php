@@ -202,7 +202,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>贴心</b></h3>
 													<p>
-													形立方聆听客户声音，理解客户需求，务求和谐的<br class="hidden-xs"/>合作关系，共创最好的作品！
+													形立方聆听客户声音，理解客户需求，务求<br class="visible-md"/>和谐的<br class="visible-lg"/>合作关系，共创最好的作品！
 													</p>
 												</div> 
 											</div> 
