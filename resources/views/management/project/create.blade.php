@@ -148,11 +148,11 @@ Description for project management
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
-										</div>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')"><i class="fa fa-image"></i> Gallery</a>
+										</div> 
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('grid_img_id', 'grid_img');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
@@ -168,10 +168,10 @@ Description for project management
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')"><i class="fa fa-image"></i> Gallery</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('grid_bg_img_id', 'grid_bg_img');return false;"><i class="fa fa-remove"></i> Remove</a>
@@ -188,10 +188,10 @@ Description for project management
 									<p><strong>Brand Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img">Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
 										</div>
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')">Use Existing</a>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')"><i class="fa fa-image"></i> Gallery</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('brand_img_id', 'brand_img');return false;"><i class="fa fa-remove"></i> Remove</a>
@@ -210,11 +210,11 @@ Description for project management
 									<p><strong>Mascott Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img">Upload New</a>
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-mascott-img"><i class="fa fa-cloud-upload"></i> Upload </a>
 										</div>
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')">Use Existing</a>
-										</div>
+											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')"><i class="fa fa-image"></i> Gallery</a>
+										</div> 
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('mascott_img_id', 'mascott_img');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
@@ -223,6 +223,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="mascott_img_id" name="mascott_img_id" />
+						<?php /*
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="video_img" class="img-thumbnail" src="" alt="" width="100%">
@@ -243,6 +244,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="video_img_id" name="video_img_id" />
+						*/ ?>
 						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
@@ -549,6 +551,11 @@ function selectImg(imgId, imgSrc)
 		{
 			$('#video_img').attr('src', imgSrc);
 		}
+		else
+		{
+			$('input.' + imgType).val(imgId);
+			$('img.' + imgType).attr('src', imgSrc);
+		}
 	}
 }
 
@@ -688,7 +695,23 @@ function addBlock()
 		+ '<div class="form-group">'
 		+ '<label for="block-sort" class="control-label">Sort Order</label>'
 		+ '<input type="text" id="project_block_sort_'+count+'" class="form-control" name="block[sort][]" />'
-		+ '</div><hr />'
+		+ '</div>'
+		+ '<div class="row">'
+		+ '<div class="col-md-4">'
+		+ '<img class="img-thumbnail thumbnail_'+count+'" src="" alt="" width="100%">'
+		+ '</div>'
+		+ '</div>'				
+		+ '<div class="form-group">'
+		+ '<label for="block-sort" class="control-label">Thumbnail</label>'
+		+ '<div class="input-group">'
+		+ '<input type="text" id="" class="form-control thumbnail_'+count+'" name="block[thumbnail]['+count+']" readonly />'
+		+ '<span class="input-group-btn">'
+		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-thumbnail-'+count+'">Upload</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-upload" onclick="useExist(\'thumbnail_'+count+'\')">Choose</button>'
+		+ '</span>'
+		+ '</div>'
+		+ '</div>'
+		+ '<hr />'
 		+ '<div class="modal fade" id="modal-new-project-img-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">'
 		+ '<div class="modal-dialog" role="document">'
 		+ '<div class="modal-content">'
@@ -704,6 +727,25 @@ function addBlock()
 		+ '</div>'
 		+ '<div class="modal-footer">'
 		+ '<button type="button" class="btn btn-default" onclick="addProjectImg('+count+')">Add More</button>'
+		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal fade" id="modal-thumbnail-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-thumbnail">'
+		+ '<div class="modal-dialog" role="document">'
+		+ '<div class="modal-content">'
+		+ '<div class="modal-header">'
+		+ '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+		+ '<h4 class="modal-title" id="modal">Upload new thumbnails</h4>'
+		+ '</div>'
+		+ '<div class="modal-body">'
+		+ '<div class="form-group" id="new_thumbnail_container_'+count+'">'
+		+ '<label for="new_thumbnail" class="control-label">New Thumbnail</label>'
+		+ '<input type="file" class="form-control new_thumbnail" id="new_thumbnail" name="new_thumbnail['+count+'][]" />'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal-footer">'
 		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
 		+ '</div>'
 		+ '</div>'
@@ -737,6 +779,7 @@ function removeBlock(count)
 	$('#project_img_sort_order_' + count).attr('disabled', true);
 	$('#project_block_sort_' + count).attr('disabled', true);
 	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
+	$('#new_thumbnail_container_' + count).find('.new_thumbnail').attr('disabled', true);
 }
 </script>
 @endsection

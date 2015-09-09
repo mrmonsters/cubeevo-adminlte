@@ -6,7 +6,7 @@ class Block extends Model {
 
 	//
 	protected $table = 'project_blocks';
-	protected $fillable = ['project_id', 'type', 'value', 'sort_order', 'status', 'delete'];
+	protected $fillable = ['project_id', 'thumbnail_id', 'type', 'value', 'sort_order', 'status', 'delete'];
 
 	const IMAGE   = 'img';
 	const VIDEO   = 'vid';
@@ -15,5 +15,10 @@ class Block extends Model {
 	public function project()
 	{
 		return $this->belongsTo('App\Models\Project');
+	}
+
+	public function thumbnail()
+	{
+		return $this->hasOne('App\Models\Files', 'id', 'thumbnail_id');
 	}
 }

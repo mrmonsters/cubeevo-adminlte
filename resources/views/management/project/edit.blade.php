@@ -235,6 +235,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="mascott_img_id" name="mascott_img_id" value="{{ ($project->mascott_img_id) ? $project->mascott_img_id : '' }}" />
+						<?php /*
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="video_img" class="img-thumbnail" src="{{ ($project->video_img_id) ? $project->videoImage->dir : '' }}" alt="{{ ($project->video_img_id) ? $project->videoImage->name : '' }}">
@@ -255,6 +256,7 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="video_img_id" name="video_img_id" value="{{ ($project->video_img_id) ? $project->video_img_id : '' }}" />
+						*/ ?>
 					</div>
 					<!--
 					<div class="row">
@@ -324,13 +326,28 @@ Description for project management
 								<input type="hidden" id="project_img_sort_order_{{ $blockCount }}" name="project_img_sort_order[{{ $block->id }}]" />
 								<span class="input-group-btn">
 									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-{{ $blockCount }}">Upload</button>
-									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids_{{ $blockCount }}', 'project_img_sort_order_{{ $blockCount }}', 'selected-img-container-{{ $blockCount }}')">Choose</button>
+									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="useExist('')">Choose</button>
 								</span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="block-sort" class="control-label">Sort Order</label>
 							<input type="text" id="project_block_sort_{{ $blockCount }}" class="form-control" name="block[sort][{{ $block->id }}]" value="{{ $block->sort_order }}" />
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<img class="img-thumbnail thumbnail_{{ $blockCount }}" src="{{ ($block->thumbnail_id) ? $block->thumbnail->dir : '' }}" alt="{{ ($block->thumbnail_id) ? $block->thumbnail->name : '' }}" width="100%">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="block-sort" class="control-label">Thumbnail</label>
+							<div class="input-group">
+								<input type="text" class="form-control thumbnail_{{ $blockCount }}" name="block[thumbnail][{{ $block->id }}]" value="{{ (isset($block->thumbnail_id)) ? $block->thumbnail_id : '' }}" readonly />
+								<span class="input-group-btn">
+									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-thumbnail-{{ $blockCount }}">Upload</button>
+									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-upload" onclick="useExist('thumbnail_{{ $blockCount }}')">Choose</button>
+								</span>
+							</div>
 						</div>
 						<hr />
 						<div class="modal fade" id="modal-new-project-img-{{ $blockCount }}" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">
@@ -348,6 +365,25 @@ Description for project management
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-default" onclick="addProjectImg({{ $block->id }})">Add More</button>
+										<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal fade" id="modal-thumbnail-{{ $blockCount }}" tabindex="-1" role="dialog" aria-labelledby="modal-thumbnail">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+										<h4 class="modal-title" id="modal">Upload new thumbnails</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group" id="new_thumbnail_container_{{ $block->id }}">
+											<label for="new_thumbnail" class="control-label">New Thumbnail</label>
+											<input type="file" class="form-control new_thumbnail" id="new_thumbnail" name="new_thumbnail[{{ $block->id }}][]" />
+										</div>
+									</div>
+									<div class="modal-footer">
 										<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>
 									</div>
 								</div>
@@ -639,6 +675,11 @@ function selectImg(imgId, imgSrc)
 		{
 			$('#video_img').attr('src', imgSrc);
 		}
+		else
+		{
+			$('input.' + imgType).val(imgId);
+			$('img.' + imgType).attr('src', imgSrc);
+		}
 	}
 }
 
@@ -785,6 +826,7 @@ function addBlock()
 		+ '<option value="gal">Gallery</option>'
 		+ '</select>'
 		+ '</div>'
+		+ '<div id="selected-img-container-'+count+'" class="row"></div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
 		+ '<div class="input-group">'
@@ -792,14 +834,30 @@ function addBlock()
 		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order['+count+']" />' 
 		+ '<span class="input-group-btn">'
 		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
-		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\')">Choose</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\', \'selected-img-container-'+count+'\')">Choose</button>'
 		+ '</span>'
 		+ '</div>'
 		+ '</div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-sort" class="control-label">Sort Order</label>'
 		+ '<input type="text" id="project_block_sort_'+count+'" class="form-control" name="block[sort]['+count+']" />'
-		+ '</div><hr />'
+		+ '</div>'
+		+ '<div class="row">'
+		+ '<div class="col-md-4">'
+		+ '<img class="img-thumbnail thumbnail_'+count+'" src="" alt="" width="100%">'
+		+ '</div>'
+		+ '</div>'				
+		+ '<div class="form-group">'
+		+ '<label for="block-sort" class="control-label">Thumbnail</label>'
+		+ '<div class="input-group">'
+		+ '<input type="text" id="" class="form-control thumbnail_'+count+'" name="block[thumbnail]['+count+']" readonly />'
+		+ '<span class="input-group-btn">'
+		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-thumbnail-'+count+'">Upload</button>'
+		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-upload" onclick="useExist(\'thumbnail_'+count+'\')">Choose</button>'
+		+ '</span>'
+		+ '</div>'
+		+ '</div>'
+		+ '<hr />'
 		+ '<div class="modal fade" id="modal-new-project-img-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-new-project-img">'
 		+ '<div class="modal-dialog" role="document">'
 		+ '<div class="modal-content">'
@@ -815,6 +873,25 @@ function addBlock()
 		+ '</div>'
 		+ '<div class="modal-footer">'
 		+ '<button type="button" class="btn btn-default" onclick="addProjectImg('+count+')">Add More</button>'
+		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal fade" id="modal-thumbnail-'+count+'" tabindex="-1" role="dialog" aria-labelledby="modal-thumbnail">'
+		+ '<div class="modal-dialog" role="document">'
+		+ '<div class="modal-content">'
+		+ '<div class="modal-header">'
+		+ '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>'
+		+ '<h4 class="modal-title" id="modal">Upload new thumbnails</h4>'
+		+ '</div>'
+		+ '<div class="modal-body">'
+		+ '<div class="form-group" id="new_thumbnail_container_'+count+'">'
+		+ '<label for="new_thumbnail" class="control-label">New Thumbnail</label>'
+		+ '<input type="file" class="form-control new_thumbnail" id="new_thumbnail" name="new_thumbnail['+count+'][]" />'
+		+ '</div>'
+		+ '</div>'
+		+ '<div class="modal-footer">'
 		+ '<button type="button" class="btn btn-primary" data-dismiss="modal">Done</button>'
 		+ '</div>'
 		+ '</div>'
@@ -864,6 +941,7 @@ function removeBlock(count, blockId)
 	$('#project_img_sort_order_' + count).attr('disabled', true);
 	$('#project_block_sort_' + count).attr('disabled', true);
 	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
+	$('#new_thumbnail_container_' + count).find('.new_thumbnail').attr('disabled', true);
 }
 </script>
 @endsection
