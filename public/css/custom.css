@@ -346,8 +346,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .container-fluid.process{margin: 4.5%;background-color: #eee;padding-top: 80px;}
 .process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
-.process .flow .left {width:50%; height:100px; margin-right:50%; background:url(../img/processflowL.png) no-repeat right;margin-left: 0.5%;}
-.process .flow .right {width:50%; height:100px; margin-left:49.6%; background:url(../img/processflowR.png) no-repeat left;}
+.process .flow .left {width:50%; height:106px; margin-right:50%; background:url(../img/processflowL.svg) no-repeat right;margin-left: 0.5%;}
+.process .flow .right {width:50%; height:106px; margin-left:49.6%; background:url(../img/processflowR.svg) no-repeat left;}
 .process .flow .box  {width: 507px; padding:22px 90px; position:relative;height: 100%}
 .process .flow .left .box {float:right;}
 /*.process .flow .right .box {float:left;}*/
@@ -640,6 +640,8 @@ Main Components
   }
 }
 @media (min-width:768px){     
+.process .flow .left .box span {bottom: -7px;}
+.process .flow .right .box span {bottom: -7px;}
   .project-mascott{display: block;width: 60%;float: right;}
   .back-to-top{position: fixed !important;bottom: 100px;right: 6% !important;}
   .credential .box{margin-top: -120px;}
@@ -795,7 +797,7 @@ Main Components
 	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
 	.process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
 	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 60px 40px !important; position:relative;clear: both;width: 100%;}
-	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 40px; left:inherit; line-height: 1.5em;}
+	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 41px; left:inherit; line-height: 1.5em;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;}
 }
 
