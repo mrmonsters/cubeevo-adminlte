@@ -11,13 +11,15 @@ $file = Files::find($block->value);
 	    <div class="videoWrapper">
             <video class="video js-video" poster="{{ ($block->thumbnail_id) ? $block->thumbnail->dir : '' }}" preload="none">
                 <source src="{{ (isset($file)) ? $file->dir : '' }}" type="{{ (isset($file)) ? $file->type : '' }}">
-            </video>
+            </video> 
             <a href="#" class="smart-object video-btn">
-                <div class="arrow-right arrow">
-                    <div class="arrow-bar-1 smart-transition"></div>
-                    <div class="arrow-bar-2 smart-transition"></div>
+                <div class="play-button-wrapper"> 
+                        <div class="arrow-right arrow">
+                            <div class="arrow-bar-1 smart-transition"></div>
+                            <div class="arrow-bar-2 smart-transition"></div>
+                        </div>
                 </div>
-            </a>
+            </a> 
 	    </div>
 	</div>
 </div>
@@ -39,9 +41,8 @@ $file = Files::find($block->value);
 .video-btn {
     position: absolute;
     top: 48%;
-    left: 48%;
-    background-color: #267481;
-    height: 45px;
-    width: 45px;
+    left: 48%; 
+    height: 65px;
+    width: 65px;
 }
 </style>

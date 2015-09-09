@@ -345,7 +345,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 
 .container-fluid.process{margin: 4.5%;background-color: #eee;padding-top: 80px;}
 .process-flow{padding: 0px;}
-.process .flow {background:url(../img/processBG.png) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
+.process .flow {background:url(../img/processBG.svg) no-repeat center; padding:40px 0; margin:40px 0; color:#333;}
 .process .flow .left {width:50%; height:106px; margin-right:50%; background:url(../img/processflowL.svg) no-repeat right;margin-left: 0.5%;}
 .process .flow .right {width:50%; height:106px; margin-left:49.6%; background:url(../img/processflowR.svg) no-repeat left;}
 .process .flow .box  {width: 507px; padding:22px 90px; position:relative;height: 100%}
