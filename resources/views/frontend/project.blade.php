@@ -6,9 +6,7 @@
         <?php $count = 0; ?>
         <?php echo '<div class="row">'; ?>
         @foreach ($projects as $project)
-            <?php $count++; ?>
-            @if ($count % 2 == 1) 
-            @endif
+            <?php $count++; ?> 
             <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($dir = $project->backgroundImage->dir) ? 'url(\'..'.$dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
                     <div class="greybox" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" ></div>
@@ -32,9 +30,7 @@
                         </div> 
                     </div> 
                 </div>
-            </div>
-            @if (($count % 2 == 0) || ($count == $projects->count())) 
-            @endif
+            </div> 
         @endforeach   
         @if($count < 9)
 
