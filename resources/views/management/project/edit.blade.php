@@ -95,7 +95,7 @@ Description for project management
 					</div>
 					<div class="form-group">
 						<label for="web_link" class="control-label">Website Link</label>
-						<input id="web_link" name="web_link" type="text" class="form-control" value="{{ $project->web_link }}" required />
+						<input id="web_link" name="web_link" type="text" class="form-control" value="{{ $project->web_link }}" />
 					</div>
 					<div class="form-group">
 						<label for="slug" class="control-label">URL Key</label>
