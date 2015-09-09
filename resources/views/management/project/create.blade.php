@@ -704,7 +704,7 @@ function addBlock()
 		+ '<div class="form-group">'
 		+ '<label for="block-sort" class="control-label">Thumbnail</label>'
 		+ '<div class="input-group">'
-		+ '<input type="text" id="" class="form-control thumbnail_'+count+'" name="block[thumbnail]['+count+']" readonly />'
+		+ '<input type="text" id="thumbnail_'+count+'" class="form-control thumbnail_'+count+'" name="block[thumbnail]['+count+']" readonly />'
 		+ '<span class="input-group-btn">'
 		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-thumbnail-'+count+'">Upload</button>'
 		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-upload" onclick="useExist(\'thumbnail_'+count+'\')">Choose</button>'
@@ -779,6 +779,7 @@ function removeBlock(count)
 	$('#project_img_sort_order_' + count).attr('disabled', true);
 	$('#project_block_sort_' + count).attr('disabled', true);
 	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
+	$('#thumbnail_' + count).attr('disabled', true);
 	$('#new_thumbnail_container_' + count).find('.new_thumbnail').attr('disabled', true);
 }
 </script>
