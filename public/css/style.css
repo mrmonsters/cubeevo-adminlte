@@ -194,10 +194,10 @@ Main Components
 #cd-nav li a:hover, #cd-nav li a:active, #cd-nav li a.selected {
 	color:#f7941e;
 }
-#cd-nav li:last-child a {
+#cd-nav li.locale a {
   border-bottom: none;
   display:inline-block;
-  height: 100%;
+  height: 25px;
 }
 
 .cd-nav-trigger {
