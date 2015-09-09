@@ -10,7 +10,7 @@
 .container-fluid.credential{background-color:{{ $project->pri_color_code }}  }
 .slick-prev-wrapper.slick-arrow{background-color: {{ $project->pri_color_code }};}
 .slick-next-wrapper.slick-arrow{background-color: {{ $project->pri_color_code }};}
-.back-to-top{z-index: 5;width: 45px;height: 45px;background-color: {{ $project->pri_color_code }};padding: 13px 10px;cursor:pointer;}
+.back-to-top{z-index: 5;width: 44px;height: 45px;background-color: {{ $project->pri_color_code }};padding: 13px 10px;cursor:pointer;}
 </style>
 <div class="container-fluid credential"> 
     <div class="row"> 
