@@ -53,7 +53,7 @@ class PageTableSeeder extends Seeder
 													<div class="col-sm-push-4 col-md-push-5 col-sm-7">
 														<h3 class="text-black"><b>形立方</b></h3>
 														<p class="text-black">
-														形立方的标志概念和灵感是基于最基本的设计元素， <br class="hidden-xs"/>魔术方块，形状，格框以及线条所组成的。形立方<br class="hidden-xs"/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="hidden-xs"/>不必要的框架；形立方也讲究【活力】，在打造<br class="hidden-xs"/>品牌的过程中就是展现活力。</p>
+														形立方的标志概念和灵感是基于最基本的设计元素， <br class="visible-lg"/>魔术方块，形状，格框以及线条所组成的。形立方<br class="visible-lg"/>追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="visible-lg"/>不必要的框架；形立方也讲究【活力】，在打造<br class="visible-lg"/>品牌的过程中就是展现活力。</p>
 														<div class="col-xs-2 col-sm-12 nopadding">
 														<a href="#" class="text-black"><i class="icon-btn-link"></i> <span class="hidden-xs">更多资讯</a><br/><br class="visible-xs"/>
 														</div>
@@ -83,7 +83,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>灵活</b></h3>
 													<p>
-													形立方追求灵活，弹性，务必让合作过程更加灵活，<br class="hidden-xs"/>只为达致客户最理想的成果。
+													形立方追求灵活，弹性，务必让合作过程更加灵活，<br class="visible-lg"/>只为达致客户最理想的成果。
 													</p>
 												</div> 
 											</div> 
@@ -107,7 +107,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>活力</b></h3>
 													<p>
-													形立方无时无刻都精力充沛，<br class="visible-xs"/>为企业带来正能量！
+													形立方无时无刻都精力充沛，<br class="hidden-lg"/>为企业带来正能量！
 													</p>
 												</div> 
 											</div> 
@@ -130,7 +130,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>破格</b></h3>
 													<p>
-													形立方在创业上不仅仅是大胆，还会打破框框，<br class="hidden-xs"/>为客户打造专属形象！
+													形立方在创业上不仅仅是大胆，还会打<br class="visible-md"/>破框框，<br class="visible-lg"/>为客户打造专属形象！
 													</p>
 												</div> 
 											</div> 
@@ -154,7 +154,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>美感</b></h3>
 													<p>
-													形立方的根本是创意设计，大前提必须是美感触觉，<br class="hidden-xs"/>为客户建立完美形象！
+													形立方的根本是创意设计，大前提必须是美感触觉，<br class="visible-lg"/>为客户建立完美形象！
 													</p>
 												</div> 
 											</div> 
@@ -178,7 +178,7 @@ class PageTableSeeder extends Seeder
 												<div class="col-sm-push-4 col-md-push-5  col-sm-7">
 													<h3><b>创意</b></h3>
 													<p>
-													形立方的创意是一种天赋，精心打造独一无二的作品<br class="hidden-xs"/>便是最大成就！
+													形立方的创意是一种天赋，精心打造独一无二的作品<br class="visible-lg"/>便是最大成就！
 													</p>
 												</div> 
 											</div> 
@@ -454,7 +454,7 @@ class PageTableSeeder extends Seeder
 									<div class="col-sm-9 col-sm-offset-2" style="z-index:5;">
 									    <br/>
 										<h2 class="txtwhite"><span></span>愿景</h2>
-										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="visible-xs"/>品牌因创新而活。 ”</h1>
+										<h1 class="tagline text-center">“ 创意因品牌而生, &nbsp;<br class="hidden-lg"/>品牌因创新而活。 ”</h1>
 										<h3 class="sub-tagline text-center">形立方立意是要为品牌注入创新元素, <br class="visible-xs"/>激活品牌新生命。</h3>
 									</div>
 								</div>
