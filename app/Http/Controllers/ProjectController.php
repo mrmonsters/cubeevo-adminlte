@@ -70,6 +70,7 @@ class ProjectController extends Controller {
 		$mascottImgId = '';
 		$videoImgId   = '';
 		$newImgIds    = array();
+		$thumbnails   = array();
 
 		if (isset($data) && !empty($data))
 		{
@@ -127,6 +128,25 @@ class ProjectController extends Controller {
 								}
 							}
 						}
+						else if ($key == 'new_thumbnail')
+						{
+							foreach ($val as $id => $img)
+							{
+								if (is_array($img) && !empty($img))
+								{
+									$imgs = array();
+									foreach ($img as $k => $v)
+									{
+										if (isset($v))
+										{
+											$imgs[] = $fileHelper->uploadNewFile($v);
+										}
+									}
+
+									$thumbnails[$id] = implode(",", $imgs);
+								}
+							}
+						}
 					}
 				}
 
@@ -167,8 +187,6 @@ class ProjectController extends Controller {
 
 					ProjectTranslation::create($projData);
 				}
-
-				dd($newImgIds);
 
 				if (isset($data['block']) && !empty($data['block']))
 				{
@@ -243,6 +261,10 @@ class ProjectController extends Controller {
 								break;
 						}
 
+						$val = explode(",", $data['block']['thumbnail'][$k]);
+						$val = ($val[0] != '') ? $val[0] : null;
+						$block['thumbnail_id'] = (isset($thumbnails[$k]) && $thumbnails[$k] != '') ? $thumbnails[$k] : $val;
+
 						Block::create($block);	
 					}
 				}	
@@ -314,6 +336,7 @@ class ProjectController extends Controller {
 		$mascottImgId = '';
 		$videoImgId   = '';
 		$newImgIds    = array();
+		$thumbnails   = array();
 
 		if (isset($data) && $project->id)
 		{
@@ -368,6 +391,25 @@ class ProjectController extends Controller {
 									}
 
 									$newImgIds[$id] = implode(",", $imgs);
+								}
+							}
+						}
+						else if ($key == 'new_thumbnail')
+						{
+							foreach ($val as $id => $img)
+							{
+								if (is_array($img) && !empty($img))
+								{
+									$imgs = array();
+									foreach ($img as $k => $v)
+									{
+										if (isset($v))
+										{
+											$imgs[] = $fileHelper->uploadNewFile($v);
+										}
+									}
+
+									$thumbnails[$id] = implode(",", $imgs);
 								}
 							}
 						}
@@ -496,6 +538,10 @@ class ProjectController extends Controller {
 								$block['value'] = $images;
 								break;
 						}
+
+						$val = explode(",", $data['block']['thumbnail'][$k]);
+						$val = ($val[0] != '') ? $val[0] : null;
+						$block['thumbnail_id'] = (isset($thumbnails[$k]) && $thumbnails[$k] != '') ? $thumbnails[$k] : $val;
 
 						$blockObject = $project->blocks()->where('id', $k)->where('delete', false)->first();
 
