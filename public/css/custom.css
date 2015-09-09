@@ -746,7 +746,7 @@ Main Components
 @media (max-width:1024px){
 	.process .flow {margin:40px -75px;}
 	.process .flow .left .box {padding:25px 80px 25px 40px;}
-	.process .flow .right .box {padding:25px 40px 25px 80px;} 
+  .process .flow .right .box {padding: 25px 30px 25px 110px;}
 }
 
 @media (max-width:768px){
