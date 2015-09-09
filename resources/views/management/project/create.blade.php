@@ -49,27 +49,27 @@ Description for project management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="name" class="control-label">Name</label>
-										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 									<div class="form-group">
 										<label for="background" class="control-label">Background</label>
-										<textarea id="background" name="background[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
+										<textarea id="background" name="background[{{ $locale->id }}]" type="text" class="form-control" rows="4" required></textarea>
 									</div>
 									<div class="form-group">
 										<label for="challenge" class="control-label">Challenge</label>
-										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
+										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4" required></textarea>
 									</div>
 									<div class="form-group">
 										<label for="result" class="control-label">Result</label>
-										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4"></textarea>
+										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4" required></textarea>
 									</div>
 									<div class="form-group">
 										<label for="client_name" class="control-label">Client Name</label>
-										<input id="client_name" name="client_name[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="client_name" name="client_name[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 									<div class="form-group">
 										<label for="sub_heading" class="control-label">Sub Heading</label>
-										<input id="sub_heading" name="sub_heading[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="sub_heading" name="sub_heading[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 								</div>
 							@endforeach
@@ -86,7 +86,7 @@ Description for project management
 					</div>
 					<div class="form-group">
 						<label for="web_link" class="control-label">Website Link</label>
-						<input id="web_link" name="web_link" type="text" class="form-control" />
+						<input id="web_link" name="web_link" type="text" class="form-control" required />
 					</div>
 					<div class="form-group">
 						<label for="slug" class="control-label">URL Key</label>
@@ -94,13 +94,13 @@ Description for project management
 					</div>
 					<div class="form-group">
 						<label for="year" class="control-label">Year</label>
-						<input id="year" name="year" type="text" class="form-control" />
+						<input id="year" name="year" type="text" class="form-control" required />
 					</div>
 					<div class="row">
 						<div class="col-sm-4 form-group">
 							<label for="pri_color_code" class="control-label">Primary Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" />
+								<input id="pri_color_code" name ="pri_color_code" type="text" class="form-control" required />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
@@ -109,7 +109,7 @@ Description for project management
 						<div class="col-sm-4 form-group">
 							<label for="sec_color_code" class="control-label">Secondary Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" />
+								<input id="sec_color_code" name ="sec_color_code" type="text" class="form-control" required />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
@@ -118,9 +118,9 @@ Description for project management
 					</div>
 					<div class="row">
 						<div class="form-group col-sm-4">
-							<label for="txt_heading_color_code" class="control-label">Text Color</label>
+							<label for="txt_heading_color_code" class="control-label">Text Heading Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="txt_heading_color_code" name ="txt_heading_color_code" type="text" class="form-control" value="" />
+								<input id="txt_heading_color_code" name ="txt_heading_color_code" type="text" class="form-control" value="" required />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
@@ -129,7 +129,7 @@ Description for project management
 						<div class="form-group col-sm-4">
 							<label for="txt_color_code" class="control-label">Text Color</label>
 							<div class="input-group colorpicker-element">
-								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="" />
+								<input id="txt_color_code" name ="txt_color_code" type="text" class="form-control" value="" required />
 								<div class="input-group-addon">
 									<i style="background-color: rgb(0,0,0);"></i>
 								</div>
