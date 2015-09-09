@@ -235,24 +235,25 @@ Description for project management
 							</div>
 						</div>
 						<input type="hidden" id="mascott_img_id" name="mascott_img_id" value="{{ ($project->mascott_img_id) ? $project->mascott_img_id : '' }}" />
-						<!--
 						<div class="col-md-4">
 							<div class="thumbnail">
 								<img id="video_img" class="img-thumbnail" src="{{ ($project->video_img_id) ? $project->videoImage->dir : '' }}" alt="{{ ($project->video_img_id) ? $project->videoImage->name : '' }}">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Video Image</strong></p>
 									<div class="row">
-										<div class="col-xs-6">
+										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-video-img"><i class="fa fa-cloud-upload"></i> Upload New</a> 
 										</div>
-										<div class="col-xs-6">
+										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('video_img_id')"><i class="fa fa-image"></i> Use Existing</a>
+										</div>
+										<div class="col-xs-4">
+										<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('video_img_id', 'video_img');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						-->
 						<input type="hidden" id="video_img_id" name="video_img_id" value="{{ ($project->video_img_id) ? $project->video_img_id : '' }}" />
 					</div>
 					<!--
@@ -510,10 +511,12 @@ Description for project management
 						<button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
 							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
 							<img data-original="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail lazy-img" width="100%">
+							<?php /*
 							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
 							<video width="100%">
 								<source src="{{ $image->dir }}" />
 							</video>
+							*/ ?>
 							@endif
 						</button>
 					</div>
@@ -547,10 +550,12 @@ Description for project management
 						<div class="thumbnail" style="text-align: center;">
 							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
 							<img data-original="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail lazy-project-img" width="100%">
+							<?php /*
 							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
 							<video width="100%">
 								<source src="{{ $image->dir }}" />
 							</video>
+							*/ ?>
 							@endif
 							<input type="checkbox" class="project_img" value="{{ $image->id }}" data-img="{{ $image->dir }}" data-type="{{ substr($image->type, 0, 5) }}" onclick="selectProjectImg()" {{ (isset($projImage)) ? 'checked' : '' }} />
 							<span><b>Use {{ (isset($image->type) && substr($image->type, 0, 5) == 'video') ? 'Video' : 'Image' }}</b></span>
