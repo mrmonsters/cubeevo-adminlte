@@ -15,12 +15,7 @@
 <div class="container-fluid credential"> 
     <div class="row"> 
         <div class="col-sm-12 nopadding brandImage" style="background-image:url('{{ ($project->brand_img_id) ? $project->brandImage->dir : '' }}');">
-        </div>
-        <div class="col-sm-12 blankbox">
-        @if (isset($project->mascottImage->dir))
-    	<div class="cre-of1"><img src="{{ $project->mascottImage->dir }}" class="project-mascott"></div>
-        @endif
-        </div>
+        </div>  
         <div class="col-sm-12 cre-info" style="background-color:{{ $project->sec_color_code }}">
             <div class="box">
                 <div class="js-back-to-top back-to-top smart-object"> 
@@ -77,7 +72,10 @@
                             <br><br>
                         </div>
                     </div> 
-                </div>
+                </div> 
+                @if (isset($project->mascottImage->dir))
+                <div class="cre-of1"><img src="{{ $project->mascottImage->dir }}" class="project-mascott"></div>
+                @endif 
             </div>
         </div>
     </div> 

@@ -48,7 +48,7 @@ Description for file management
 							</td>
 							<td>
 								<a href="{{ url('admin/manage/file/show/' . $file->id) }}" class="btn btn-default">View</a>
-								<a href="{{ url('admin/manage/file/destroy/' . $file->id) }}" class="btn btn-danger">Delete</a>
+								<a  onclick="javascript: if (confirm('Are you sure you want to delete this?')) { href='{{ url('admin/manage/file/destroy/' . $file->id) }}'} else { alert('Delete Cancelled.') }; "  href="{{ url('admin/manage/file/destroy/' . $file->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

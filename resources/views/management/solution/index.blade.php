@@ -47,7 +47,7 @@ Description for solution management
 							</td>
 							<td>
 								<a href="{{ url('admin/manage/solution/edit/' . $solution->id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/solution/destroy/' . $solution->id) }}" class="btn btn-danger">Delete</a>
+								<a onclick="javascript: if (confirm('Are you sure you want to delete this?')) { href='{{ url('admin/manage/solution/destroy/' . $solution->id) }}'} else { alert('Delete Cancelled.') }; " href="{{ url('admin/manage/solution/destroy/' . $solution->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach

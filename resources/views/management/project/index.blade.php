@@ -62,7 +62,7 @@ Description for project management
 								<a href="{{ url('admin/manage/project/setActive/' . $project->id) }}" class="btn btn-default">Set Active</a>
 								@endif
 								<a href="{{ url('admin/manage/project/edit/' . $project->id) }}" class="btn btn-default">Edit</a>
-								<a href="{{ url('admin/manage/project/destroy/' . $project->id) }}" class="btn btn-danger">Delete</a>
+								<a onclick="javascript: if (confirm('Are you sure you want to delete this?')) { href='{{ url('admin/manage/project/destroy/' . $project->id) }}'} else { alert('Delete Cancelled.') }; " href="{{ url('admin/manage/project/destroy/' . $project->id) }}" class="btn btn-danger">Delete</a>
 							</td>
 						</tr>
 						@endforeach
