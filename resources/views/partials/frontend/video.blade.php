@@ -22,27 +22,4 @@ $file = Files::find($block->value);
             </a> 
 	    </div>
 	</div>
-</div>
-
-<style>
-.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    padding-top: 0px;
-    height: 0;
-}
-.videoWrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.video-btn {
-    position: absolute;
-    top: 48%;
-    left: 48%; 
-    height: 65px;
-    width: 65px;
-}
-</style>
+</div> 
