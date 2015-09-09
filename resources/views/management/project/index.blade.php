@@ -36,7 +36,7 @@ Description for project management
 						@foreach ($projects as $project)
 						<tr>
 							<td>{{ $project->id }}</td>
-							<td ><img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}" width="100px"></td>
+							<td ><img id="grid_img" class="img-thumbnail" src="{{ ($project->grid_img_id) ? $project->frontImage->dir : '' }}" alt="{{ ($project->grid_img_id) ? $project->frontImage->name : '' }}" width="100px"></td>
 							<td class="col-md-3">{{ $project->client_name }}</td>
 							<td>{{ $project->name }}</td> 
 							<td>	
