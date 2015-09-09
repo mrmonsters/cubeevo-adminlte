@@ -48,7 +48,7 @@ Description for category management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="name" class="control-label">Name</label>
-										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $category->translate($locale->language)->name }}" />
+										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $category->translate($locale->language)->name }}" required />
 									</div>
 								</div>
 							@endforeach

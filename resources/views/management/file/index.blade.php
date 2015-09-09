@@ -47,6 +47,11 @@ Description for file management
 								@endif
 							</td>
 							<td>
+								@if ($project->status == '2')
+								<a href="{{ url('admin/manage/file/setInactive/' . $file->id) }}" class="btn btn-default">Set Inactive</a>
+								@elseif ($project->status == '1')
+								<a href="{{ url('admin/manage/file/setActive/' . $file->id) }}" class="btn btn-default">Set Active</a>
+								@endif
 								<a href="{{ url('admin/manage/file/show/' . $file->id) }}" class="btn btn-default">View</a>
 								<a onclick="javascript: if (confirm('Are you sure you want to delete this?')) { href='{{ url('admin/manage/file/destroy/' . $file->id) }}'} else { alert('Delete Cancelled.');return false; }; " href="#"  class="btn btn-danger">Delete</a>
 							</td>

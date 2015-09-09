@@ -48,7 +48,7 @@ Description for category management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="name" class="control-label">Name</label>
-										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 								</div>
 							@endforeach
@@ -57,7 +57,7 @@ Description for category management
 					</div>
 					<div class="form-group">
 						<label for="slug" class="control-label">URL Key</label>
-						<input id="slug" name ="slug" type="text" class="form-control" />
+						<input id="slug" name ="slug" type="text" class="form-control" required />
 					</div>
 					<div class="form-group">
 						<label for="sort_order" class="control-label">Sort Order</label>

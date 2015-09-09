@@ -259,4 +259,61 @@ class SolutionController extends Controller {
 		return Redirect::to('admin/manage/solution')->with('response', $response);
 	}
 
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$solution = Solution::find($id); 
+
+		if (isset($solution) && isset($solution->id))
+		{
+			$solution->status = Status::INACTIVE;
+			$solution->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Solution [#".$solution->id."] is deactivated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Solution not found.";
+		}
+
+		return Redirect::to('admin/manage/solution')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$solution = Solution::find($id);
+
+		if (isset($solution) && isset($solution->id))
+		{
+			$solution->status = Status::ACTIVE;
+			$solution->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Solution [#".$solution->id."] is activated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Solution not found.";
+		}
+
+		return Redirect::to('admin/manage/solution')->with('response', $response);
+	}
 }
