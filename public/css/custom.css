@@ -10,7 +10,10 @@ Custom style
 .h5,h5{font-size: 16px;}
 .p,p{font-size: 14px;}
 .small,small{font-size: 12px }
-a{outline: 0;}
+a,a:hover, a:active, a:focus,{outline: 0;}
+input::-moz-focus-inner { 
+  border: 0; 
+}
 a:hover,a:focus{color: #f7941a;text-decoration: none;}
 
 .btn{border-radius: 0px;}
