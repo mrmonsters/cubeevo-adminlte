@@ -153,7 +153,9 @@ Description for project management
 					<div class="row">
 						<div class="col-md-4">
 							<div class="thumbnail">
+								@if ($project->grid_img_id)
 								<img id="grid_img" class="img-thumbnail" src="{{ $project->frontImage->dir }}" alt="{{ $project->frontImage->name }}" width="100%">
+								@endif
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
@@ -173,7 +175,9 @@ Description for project management
 						<input type="hidden" id="grid_img_id" name="grid_img_id" value="{{ $project->grid_img_id }}" />
 						<div class="col-md-4">
 							<div class="thumbnail">
+								@if ($project->grid_bg_img_id)
 								<img id="grid_bg_img" class="img-thumbnail" src="{{ $project->backgroundImage->dir }}" alt="{{ $project->backgroundImage->name }}" width="100%">
+								@endif
 								<div class="caption" style="text-align: center;">
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
@@ -193,7 +197,9 @@ Description for project management
 						<input type="hidden" id="grid_bg_img_id" name="grid_bg_img_id" value="{{ $project->grid_bg_img_id }}" />
 						<div class="col-md-4">
 							<div class="thumbnail">
-								<img id="brand_img" class="img-thumbnail" src="{{ $project->brandImage->dir }}" alt="{{ $project->brandImage->name }}" width="100%">
+								@if ($project->brand_img_id)
+								<img id="brand_img" class="img-thumbnail" src="{{ $project->brand_img_id }}" alt="{{ $project->brandImage->name }}" width="100%">
+								@endif
 								<div class="caption" style="text-align: center;">
 									<p><strong>Brand Image</strong></p>
 									<div class="row">
@@ -342,7 +348,7 @@ Description for project management
 						<div class="form-group">
 							<label for="block-sort" class="control-label">Thumbnail</label>
 							<div class="input-group">
-								<input type="text" class="form-control thumbnail_{{ $blockCount }}" name="block[thumbnail][{{ $block->id }}]" value="{{ (isset($block->thumbnail_id)) ? $block->thumbnail_id : '' }}" readonly />
+								<input type="text" id="thumbnail_{{ $blockCount }}" class="form-control thumbnail_{{ $blockCount }}" name="block[thumbnail][{{ $block->id }}]" value="{{ (isset($block->thumbnail_id)) ? $block->thumbnail_id : '' }}" readonly />
 								<span class="input-group-btn">
 									<button type="button" id="btn-upload-{{ $blockCount }}" class="btn btn-primary" data-toggle="modal" data-target="#modal-thumbnail-{{ $blockCount }}">Upload</button>
 									<button type="button" id="btn-choose-{{ $blockCount }}" class="btn btn-default" data-toggle="modal" data-target="#modal-upload" onclick="useExist('thumbnail_{{ $blockCount }}')">Choose</button>
@@ -941,6 +947,7 @@ function removeBlock(count, blockId)
 	$('#project_img_sort_order_' + count).attr('disabled', true);
 	$('#project_block_sort_' + count).attr('disabled', true);
 	$('#new_project_img_container_' + count).find('.new_project_img').attr('disabled', true);
+	$('#thumbnail_' + count).attr('disabled', true);
 	$('#new_thumbnail_container_' + count).find('.new_thumbnail').attr('disabled', true);
 }
 </script>

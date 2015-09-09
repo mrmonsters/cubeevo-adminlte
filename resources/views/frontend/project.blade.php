@@ -6,15 +6,17 @@
         <?php $count = 0; ?>
         <?php echo '<div class="row">'; ?>
         @foreach ($projects as $project)
-            <?php $count++; ?> 
-            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($dir = $project->backgroundImage->dir) ? 'url(\'..'.$dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
+            <?php $count++; ?>
+            @if ($count % 2 == 1) 
+            @endif
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ ($project->grid_bg_img_id) ? 'url(\'..'.$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
                 <div class="contbox">
                     <div class="greybox" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" ></div>
                     <div class="cd-background-wrapper" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" >
                         <figure class="cd-floating-background">
-                            @if ($dir = $project->frontImage->dir)
+                            @if ($project->grid_img_id)
                              <ul class="scene">
-                                <li class="layer" data-depth="0.30"><img src="{{ $dir }}" width="100%"/></li>
+                                <li class="layer" data-depth="0.30"><img src="{{ $project->frontImage->dir }}" width="100%"/></li>
                             </ul>
                             @endif
                         </figure>
@@ -30,7 +32,9 @@
                         </div> 
                     </div> 
                 </div>
-            </div> 
+            </div>
+            @if (($count % 2 == 0) || ($count == $projects->count())) 
+            @endif
         @endforeach   
         @if($count < 9)
 
