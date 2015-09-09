@@ -197,6 +197,7 @@ Main Components
 #cd-nav li:last-child a {
   border-bottom: none;
   display:inline-block;
+  height: 100%;
 }
 
 .cd-nav-trigger {
