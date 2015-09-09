@@ -13,6 +13,7 @@ use App\Models\Category;
 use App\Models\CategoryTranslation;
 
 use App\Services\FileHelper;
+use App\Services\ValidationHelper;
 
 class CategoryController extends Controller {
 
@@ -55,14 +56,23 @@ class CategoryController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req, FileHelper $fileHelper)
+	public function store(Request $req, FileHelper $fileHelper, ValidationHelper $validator)
 	{
 		$response = array();
 		$data     = $req->input();
 
 		if (isset($data) && !empty($data))
 		{
-			if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
+			$fields = array('slug');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
@@ -173,7 +183,7 @@ class CategoryController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req, FileHelper $fileHelper)
+	public function update($id, Request $req, FileHelper $fileHelper, ValidationHelper $validator)
 	{
 		//
 		$response = array();
@@ -182,7 +192,16 @@ class CategoryController extends Controller {
 
 		if (isset($data) && $category->id)
 		{
-			if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 1)
+			$fields = array('slug');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Category::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('delete', false)->where('id', '!=', $id)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
@@ -285,6 +304,64 @@ class CategoryController extends Controller {
 		{
 			$response['code'] = Status::ERROR;
 			$response['msg'] = "Category not found.";
+		}
+
+		return Redirect::to('admin/manage/category')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$category = Category::find($id); 
+
+		if (isset($category) && isset($category->id))
+		{
+			$category->status = Status::INACTIVE;
+			$category->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Category [#".$category->id."] is deactivated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Category not found.";
+		}
+
+		return Redirect::to('admin/manage/category')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$category = Category::find($id);
+
+		if (isset($category) && isset($category->id))
+		{
+			$category->status = Status::ACTIVE;
+			$category->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Category [#".$category->id."] is activated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Category not found.";
 		}
 
 		return Redirect::to('admin/manage/category')->with('response', $response);

@@ -47,11 +47,11 @@ Description for solution management
 								<div id="{{ $locale->code }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="name" class="control-label">Name</label>
-										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 									<div class="form-group">
 										<label for="desc" class="control-label">Description</label>
-										<input id="desc" name ="desc[{{ $locale->id }}]" type="text" class="form-control" />
+										<input id="desc" name ="desc[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 								</div>
 							@endforeach

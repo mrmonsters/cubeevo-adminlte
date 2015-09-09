@@ -27,22 +27,22 @@ Route::get('admin/manage/page/create', 'PageController@create');
 Route::get('admin/manage/page/edit/{page_id}', 'PageController@edit');
 Route::put('manage/page/update/{page_id}', 'PageController@update');
 Route::post('manage/page/store', 'PageController@store');
-
-// Block routes...
-Route::get('admin/manage/block', 'BlockController@index');
-Route::get('admin/manage/block/create', 'BlockController@create');
-Route::get('admin/manage/block/edit/{block_id}', 'BlockController@edit');
-Route::put('manage/block/update/{block_id}', 'BlockController@update');
-Route::post('manage/block/store', 'BlockController@store');
+Route::get('admin/manage/page/setActive/{page_id}', 'PageController@setActive');
+Route::get('admin/manage/page/setInactive/{page_id}', 'PageController@setInactive');
+Route::get('admin/manage/page/destroy/{page_id}', 'PageController@destroy');
 
 // File routes
 Route::get('admin/manage/file', 'FileController@index');
 Route::get('admin/manage/file/show/{file_id}', 'FileController@show');
+Route::get('admin/manage/file/setActive/{file_id}', 'FileController@setActive');
+Route::get('admin/manage/file/setInactive/{file_id}', 'FileController@setInactive');
 Route::get('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
 
 // Contact us routes
 Route::get('admin/manage/message', 'MessageController@index');
 Route::get('admin/manage/message/show/{msg_id}', 'MessageController@show');
+Route::get('admin/manage/message/setActive/{msg_id}', 'MessageController@setActive');
+Route::get('admin/manage/message/setInactive/{msg_id}', 'MessageController@setInactive');
 Route::get('admin/manage/message/destroy/{msg_id}', 'MessageController@destroy');
 
 // Category routes...
@@ -51,6 +51,9 @@ Route::get('admin/manage/category/create', 'CategoryController@create');
 Route::get('admin/manage/category/edit/{category_id}', 'CategoryController@edit');
 Route::put('manage/category/update/{category_id}', 'CategoryController@update');
 Route::post('manage/category/store', 'CategoryController@store');
+Route::get('admin/manage/category/setActive/{category_id}', 'CategoryController@setActive');
+Route::get('admin/manage/category/setInactive/{category_id}', 'CategoryController@setInactive');
+Route::get('admin/manage/category/destroy/{category_id}', 'CategoryController@destroy');
 
 // Project routes...
 Route::get('admin/manage/project', 'ProjectController@index');
@@ -68,6 +71,9 @@ Route::get('admin/manage/solution/create', 'SolutionController@create');
 Route::get('admin/manage/solution/edit/{block_id}', 'SolutionController@edit');
 Route::put('manage/solution/update/{block_id}', 'SolutionController@update');
 Route::post('manage/solution/store', 'SolutionController@store');
+Route::get('admin/manage/solution/setActive/{solution_id}', 'SolutionController@setActive');
+Route::get('admin/manage/solution/setInactive/{solution_id}', 'SolutionController@setInactive');
+Route::get('admin/manage/solution/destroy/{solution_id}', 'SolutionController@destroy');
 
 // Setting routes...
 Route::get('admin/manage/setting', 'SettingController@edit');

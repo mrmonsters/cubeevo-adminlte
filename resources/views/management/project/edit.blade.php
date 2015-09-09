@@ -198,7 +198,7 @@ Description for project management
 						<div class="col-md-4">
 							<div class="thumbnail">
 								@if ($project->brand_img_id)
-								<img id="brand_img" class="img-thumbnail" src="{{ $project->brand_img_id }}" alt="{{ $project->brandImage->name }}" width="100%">
+								<img id="brand_img" class="img-thumbnail" src="{{ $project->brandImage->dir }}" alt="{{ $project->brandImage->name }}" width="100%">
 								@endif
 								<div class="caption" style="text-align: center;">
 									<p><strong>Brand Image</strong></p>

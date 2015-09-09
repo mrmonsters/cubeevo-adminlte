@@ -48,11 +48,11 @@ Description for solution management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($count == 1) ? 'active' : '' }}">
 									<div class="form-group">
 										<label for="name" class="control-label">Name</label>
-										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $solution->translate($locale->language)->name }}" />
+										<input id="name" name="name[{{ $locale->id }}]" type="text" class="form-control" value="{{ $solution->translate($locale->language)->name }}" required />
 									</div>
 									<div class="form-group">
 										<label for="desc" class="control-label">Description</label>
-										<input id="desc" name ="desc[{{ $locale->id }}]" type="text" class="form-control" value="{{ $solution->translate($locale->language)->desc }}" />
+										<input id="desc" name ="desc[{{ $locale->id }}]" type="text" class="form-control" value="{{ $solution->translate($locale->language)->desc }}" required />
 									</div>
 								</div>
 							@endforeach

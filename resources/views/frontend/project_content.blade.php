@@ -117,6 +117,18 @@ $(document).ready(function()
         }
         return false;
     });
+
+    $('.video').on('ended', function()
+    {
+        var src = $(this).children('source').attr('src');
+
+        $(this).siblings('.video-btn').show();
+        $(this)[0].src = "";
+        $(this)[0].load();
+        $(this)[0].src = src;
+        
+        return false;
+    });
 });
 </script>
 @endsection

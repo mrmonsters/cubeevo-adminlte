@@ -12,6 +12,8 @@ use App\Models\Locale;
 use App\Models\Page;
 use App\Models\PageTranslation;
 
+use App\Services\ValidationHelper;
+
 class PageController extends Controller {
 
 	/**
@@ -53,7 +55,7 @@ class PageController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req)
+	public function store(Request $req, ValidationHelper $validator)
 	{
 		//
 		$response = array();
@@ -61,7 +63,16 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
+			$fields = array('slug');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('delete', false)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
@@ -161,7 +172,7 @@ class PageController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req)
+	public function update($id, Request $req, ValidationHelper $validator)
 	{
 		//
 		$response = array();
@@ -169,7 +180,16 @@ class PageController extends Controller {
 
 		if (is_array($data) && !empty($data))
 		{
-			if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('id','!=',$id)->get()->count() > 0)
+			$fields = array('slug');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Page::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('delete', false)->where('id','!=',$id)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
@@ -267,4 +287,61 @@ class PageController extends Controller {
 		return Redirect::to('admin/manage/page')->with('response', $response);
 	}
 
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$page     = Page::find($id); 
+
+		if (isset($page) && isset($page->id))
+		{
+			$page->status = Status::INACTIVE;
+			$page->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Page [#".$page->id."] is deactivated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Page not found.";
+		}
+
+		return Redirect::to('admin/manage/page')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$page     = Page::find($id);
+
+		if (isset($page) && isset($page->id))
+		{
+			$page->status = Status::ACTIVE;
+			$page->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Page [#".$page->id."] is activated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Page not found.";
+		}
+
+		return Redirect::to('admin/manage/page')->with('response', $response);
+	}
 }

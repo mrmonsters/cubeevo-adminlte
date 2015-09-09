@@ -109,4 +109,62 @@ class MessageController extends Controller {
 		return Redirect::to('admin/manage/message')->with('response', $response);
 	}
 
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$message  = Message::find($id); 
+
+		if (isset($message) && isset($message->id))
+		{
+			$message->status = Status::INACTIVE;
+			$message->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Message [#".$message->id."] is deactivated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Message not found.";
+		}
+
+		return Redirect::to('admin/manage/message')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$message  = Message::find($id);
+
+		if (isset($message) && isset($message->id))
+		{
+			$message->status = Status::ACTIVE;
+			$message->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Message [#".$message->id."] is activated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Message not found.";
+		}
+
+		return Redirect::to('admin/manage/message')->with('response', $response);
+	}
+
 }

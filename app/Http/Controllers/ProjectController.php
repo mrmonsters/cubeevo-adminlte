@@ -15,6 +15,7 @@ use App\Models\ProjectFile;
 use App\Models\Category;
 
 use App\Services\FileHelper;
+use App\Services\ValidationHelper;
 
 class ProjectController extends Controller {
 
@@ -59,7 +60,7 @@ class ProjectController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $req, FileHelper $fileHelper)
+	public function store(Request $req, FileHelper $fileHelper, ValidationHelper $validator)
 	{
 		//
 		$response     = array();
@@ -74,7 +75,16 @@ class ProjectController extends Controller {
 
 		if (isset($data) && !empty($data))
 		{
-			if (Project::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
+			$fields = array('slug', 'year', 'pri_color_code', 'sec_color_code', 'txt_heading_color_code', 'txt_color_code');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Project::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
@@ -324,7 +334,7 @@ class ProjectController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, Request $req, FileHelper $fileHelper)
+	public function update($id, Request $req, FileHelper $fileHelper, ValidationHelper $validator)
 	{
 		//
 		$response     = array();
@@ -340,7 +350,16 @@ class ProjectController extends Controller {
 
 		if (isset($data) && $project->id)
 		{
-			if (Project::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->get()->count() > 1)
+			$fields = array('slug', 'year', 'pri_color_code', 'sec_color_code', 'txt_heading_color_code', 'txt_color_code');
+
+			if ($result = $validator->validateRequired($fields, $data))
+			{
+				$response['code'] = Status::ERROR;
+				$response['msg']  = $result;
+
+				return Redirect::back()->with('response', $response);
+			}
+			else if (Project::where('slug', '=', $data['slug'])->where('status', Status::ACTIVE)->where('delete', false)->where('id','!=',$id)->get()->count() > 0)
 			{
 				$response['code'] = Status::ERROR;
 				$response['msg']  = "URL key already exist.";
