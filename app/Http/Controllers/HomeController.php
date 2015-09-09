@@ -78,6 +78,10 @@ class HomeController extends Controller {
 
 	public function getProjectContent($slug)
 	{
+		if(empty($slug)):
+			return Redirect::to('/credential/');
+		endif;
+		
 		$project = Project::where('slug', '=', $slug)->where('status', Status::ACTIVE)
 			->where('delete', false)
 			->first();
@@ -125,7 +129,7 @@ class HomeController extends Controller {
 		if(empty($code)):
 			return Redirect::to('/');
 		endif;
-		
+
 		$locale = Locale::where('language', '=', $code)->where('status', Status::ACTIVE)
 			->where('delete', false)
 			->first();

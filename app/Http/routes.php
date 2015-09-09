@@ -12,8 +12,8 @@
 */
  
 Route::get('/credential', 'HomeController@getCredential');
-Route::get('/credential/{slug}', 'HomeController@getCredentialProject');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');
+Route::get('/credential/{slug}', 'HomeController@getCredentialProject'); 
 Route::get('/solution', 'HomeController@getSolution'); 
 Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
