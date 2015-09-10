@@ -647,6 +647,9 @@ Main Components
 .video-block:hover .greybox{ 
     display: block;
 }
+.video-block:hover .greybox.playing, .greybox.playing{
+  display: none;
+}
 .videoWrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */

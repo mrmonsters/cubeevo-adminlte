@@ -106,6 +106,7 @@ $(document).ready(function()
         if (video.get(0).play)
         {
             video.get(0).play();
+            $(this).siblings('.greybox').addClass('playing');
         }
         $(this).hide();
         return false;
@@ -117,6 +118,7 @@ $(document).ready(function()
         {
             this.pause();
             $(this).siblings('.video-btn').show();
+            $(this).siblings('.greybox').addClass('playing');
         }
         return false;
     });
@@ -125,6 +127,7 @@ $(document).ready(function()
     {
         var src = $(this).children('source').attr('src');
 
+        $(this).siblings('.greybox').removeClass('playing');
         $(this).siblings('.video-btn').show();
         $(this)[0].src = "";
         $(this)[0].load();
