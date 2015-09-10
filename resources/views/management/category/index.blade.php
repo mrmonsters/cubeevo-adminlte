@@ -48,9 +48,9 @@ Description for category management
 								@endif
 							</td>
 							<td>
-								@if ($project->status == '2')
+								@if ($category->status == '2')
 								<a href="{{ url('admin/manage/category/setInactive/' . $category->id) }}" class="btn btn-default">Set Inactive</a>
-								@elseif ($project->status == '1')
+								@elseif ($category->status == '1')
 								<a href="{{ url('admin/manage/category/setActive/' . $category->id) }}" class="btn btn-default">Set Active</a>
 								@endif
 								<a href="{{ url('admin/manage/category/edit/' . $category->id) }}" class="btn btn-default">Edit</a>
