@@ -6,8 +6,9 @@ $file = Files::find($block->value);
 
 ?>
 
-<div class="row">
+<div class="row video-block">
     <div class="col-xs-12 nopadding">
+        <div class="greybox"></div>
 	    <div class="videoWrapper">
             <video class="video js-video" poster="{{ ($block->thumbnail_id) ? $block->thumbnail->dir : '' }}" preload="none">
                 <source src="{{ (isset($file)) ? $file->dir : '' }}" type="{{ (isset($file)) ? $file->type : '' }}">
