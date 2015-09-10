@@ -668,18 +668,22 @@ Main Components
 }
 @media (min-width:768px){   
  
-.play-button-wrapper{width: 104px;height: 104px;margin: 25px;} 
+.play-button-wrapper{    
+    width: 68px;
+    height: 70px;
+    margin: 15px;
+  } 
 .video-btn { 
-    height: 154px;
-    width: 154px;
+    height: 100px;
+    width: 100px;
 }
 .videoWrapper .arrow-right.arrow{
-    height: 70px;
+    height: 40px;
      left: 0; 
      top: 0; 
 }
 .videoWrapper .arrow-right.arrow .arrow-bar-1{
-    left: -25px;
+    left: -10px;
     position: relative;
 }
 .videoWrapper .arrow-right.arrow .arrow-bar-2{
@@ -688,7 +692,7 @@ Main Components
 }
 .videoWrapper .arrow-right.arrow .arrow-bar-1,
 .videoWrapper .arrow-right.arrow .arrow-bar-2{
-        width: 45px;
+        width: 2  5px;
 }
 .process .flow .left .box span {bottom: -7px;}
 .process .flow .right .box span {bottom: -7px;}
