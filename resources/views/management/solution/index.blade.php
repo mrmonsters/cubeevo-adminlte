@@ -46,9 +46,9 @@ Description for solution management
 								@endif
 							</td>
 							<td>
-								@if ($project->status == '2')
+								@if ($solution->status == '2')
 								<a href="{{ url('admin/manage/solution/setInactive/' . $solution->id) }}" class="btn btn-default">Set Inactive</a>
-								@elseif ($project->status == '1')
+								@elseif ($solution->status == '1')
 								<a href="{{ url('admin/manage/solution/setActive/' . $solution->id) }}" class="btn btn-default">Set Active</a>
 								@endif
 								<a href="{{ url('admin/manage/solution/edit/' . $solution->id) }}" class="btn btn-default">Edit</a>
