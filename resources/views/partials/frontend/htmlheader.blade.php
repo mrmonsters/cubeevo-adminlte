@@ -9,7 +9,8 @@ use App\Models\Files;
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, minimum-scale=0.8, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="description" content="{{ $meta_desc }}" />
   <meta name="keywords" content="{{ $meta_keyword }}" />
   <!-- Facebook title & description-->
