@@ -49,8 +49,8 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
   margin-top: -1.2em;
   margin-left: -3px;
 }
-.icon-btn-link:hover{
-  background-position:-94px 0px;
+.icon-btn-link:hover{ 
+    background-position-x: -47px;
 }
 .icon-video{
   width: 120px;
