@@ -45,10 +45,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     $('.brandImage').css('height',_viewportHeight);
   }
 
-  $(window).resize(function() { 
-    adjustprojectcontentimage(); 
-  });
-
   $('.js-showtitle').click(function(){
     if($(this).hasClass('active')){
       $(this).removeClass('active'); 
