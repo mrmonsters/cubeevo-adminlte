@@ -17,7 +17,7 @@
                         <figure class="cd-floating-background">
                             @if ($dir = $category->frontImage->dir) 
                             <ul class="scene">
-                                <li class="layer" data-depth="1.0"><img src="{{ $dir }}" width="100%"/></li>
+                                <li class="layer" data-depth="0.10"><img src="{{ $dir }}" width="100%"/></li>
                             </ul>  
                             @endif
                         </figure>

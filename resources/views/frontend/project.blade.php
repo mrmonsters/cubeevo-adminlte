@@ -16,7 +16,7 @@
                         <figure class="cd-floating-background">
                             @if ($project->grid_img_id)
                              <ul class="scene">
-                                <li class="layer" data-depth="1.0"><img src="{{ $project->frontImage->dir }}" width="100%"/></li>
+                                <li class="layer" data-depth="0.10"><img src="{{ $project->frontImage->dir }}" width="100%"/></li>
                             </ul>
                             @endif
                         </figure>

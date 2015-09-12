@@ -20,7 +20,7 @@
                         <figure class="cd-floating-background">
                             @if ($dir = $solution->frontImage->dir) 
                             <ul class="scene">
-                                <li class="layer" data-depth="1.0"><img src="{{ $solution->frontImage->dir }}" width="100%"/></li>
+                                <li class="layer" data-depth="0.10"><img src="{{ $solution->frontImage->dir }}" width="100%"/></li>
                             </ul>  
                             @endif
                         </figure>
