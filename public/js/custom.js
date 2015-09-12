@@ -60,8 +60,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       _parent.find('.panel-title').fadeIn(); 
       _parent.find(' .panel-body.overlap').fadeIn(); 
       _parent.find('.panel-title-desc').fadeIn(); 
-      $(this).addClass('active');
-      $(this).find('.icon-btn-link').addClass('active'); 
+      $(this).addClass('active'); 
     }
   });
 
