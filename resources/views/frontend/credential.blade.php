@@ -68,11 +68,11 @@
                 <div class="extra-info-box__wrapper">
                     <div class="extra-info-box__info">
                     @if(Session::get('locale') == 'en') 
-                     <p class="text-white">We have proven our worthiness.<br/>Work with us.<br/>Together we shall create masterpieces.</p>
-                     <small class="text-white">Please Contact</small> 
+                     <h4 class="text-white">We have proven our worthiness.<br/>Work with us.<br/>Together we shall create masterpieces.</h4>
+                     <p class="text-white" style="padding:0px 0px 10px 0px;display:block;">Please Contact</p> 
                      @else
-                     <p class="text-white">希望这些作品能提高您对我们的信心<br/>更多的精彩作品，只待您跟我们一同完成，<br/>欢迎前来咨询</p>
-                     <small class="text-white" style="padding:10px 0px 10px 0px;display:block;">请联络</small> 
+                     <h4 class="text-white">希望这些作品能提高您对我们的信心<br/>更多的精彩作品，只待您跟我们一同完成，<br/>欢迎前来咨询</h4>
+                     <p class="text-white" style="padding:0px 0px 10px 0px;display:block;">请联络</p> 
                      @endif 
                      <ul class="list-unstyled list-with-icon">
                         <li><i class="icon phone phone-white"></i><a href="tel:+60390109882" class="text-orange" style="padding-left:30px;">+603 9010 9882</a></li>
