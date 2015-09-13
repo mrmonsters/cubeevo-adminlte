@@ -37,6 +37,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
 }
 .active.icon-btn-link{background-position-x:-47px;}
 .icon-btn-link-white{background-position-x:-141px;}
+.active .icon-btn-link-white{background-position-x:-47px;}
 .icon-video-play-link{ 
   width: 45px;
   height: 45px;
