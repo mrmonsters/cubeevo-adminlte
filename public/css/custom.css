@@ -629,7 +629,7 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 .project-mascott{display: none;}
-.back-to-top{position: fixed !important;bottom: 60px;right: 11% !important;} 
+.back-to-top{position: fixed !important;bottom: 60px;right: 6% !important;} 
 
 .play-button-wrapper{width: 34px;height: 34px;margin: 10px;}
 .video-block .greybox{
