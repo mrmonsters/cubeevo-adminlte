@@ -683,6 +683,7 @@ Main Components
 }
 @media (min-width:768px){   
  
+.slick-next-wrapper{top: 37%%;}
 .play-button-wrapper{    
     width: 68px;
     height: 70px;
@@ -713,8 +714,7 @@ Main Components
 .process .flow .right .box span {bottom: -7px;}
   .project-mascott{display: block;width: 60%;float: right;}
   .back-to-top{position: fixed !important;bottom: 100px;right: 6% !important;}
-  .credential .box{margin-top: -120px;}
-  .slick-prev-wrapper{top: 33%;} 
+  .credential .box{margin-top: -120px;} 
   .scene.mascott.purple{left: -35%;} 
   .scene.mascott.blue{left: -35%;} 
   .scene.mascott.green{left: -35%;}
@@ -750,6 +750,7 @@ Main Components
 
 @media (min-width:992px){
   .project-mascott{width: 70%;}
+  .slick-prev-wrapper{top: 33%;} 
   .extra-info-box{background-color:#c5c4c4;padding:2%;}
   .slick-prev-wrapper {
       top: 47%;
