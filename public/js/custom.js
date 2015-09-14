@@ -114,13 +114,13 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     }   
 
     $('.blanket').fadeOut();
-    var timer;
-    
+    var timer; 
     function endAndStartTimer() {
       window.clearTimeout(timer);
       //var millisecBeforeRedirect = 10000; 
       timer = window.setTimeout(function(){$('.blanket').fadeOut();}); 
     }
+    endAndStartTimer();
 
   });
 
