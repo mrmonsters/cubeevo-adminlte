@@ -96,7 +96,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 .modal.in .modal-dialog.homevideo{
   padding: 0px;
-  width: 630px;
+  width: 100%;
 }
 .modal.in .modal-dialog.homevideo .modal-header{
   border:0px;
@@ -682,6 +682,9 @@ Main Components
   }
 }
 @media (min-width:768px){   
+.modal.in .modal-dialog.homevideo{ 
+  width: 630px;
+}
  
 .slick-next-wrapper{top: 37%;}
 .play-button-wrapper{    

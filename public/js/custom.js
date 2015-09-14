@@ -119,11 +119,14 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   $(document).ready(function() {  
     var timer; 
+    var isFadeOut = false;
     function endAndStartTimer() {
-      window.clearTimeout(timer);
-      //var millisecBeforeRedirect = 10000; 
-      console.log('hit');
-      timer = window.setTimeout(function(){$('.blanket').fadeOut();},4000); 
+      if(isFadeOut == false){
+        window.clearTimeout(timer);
+        //var millisecBeforeRedirect = 10000;  
+        timer = window.setTimeout(function(){$('.blanket').fadeOut();},5000); 
+        isFadeOut = true;
+      }
     }
     endAndStartTimer();
     $(".modal, .homevideo .close, .homevideo .btn").click(function() {
