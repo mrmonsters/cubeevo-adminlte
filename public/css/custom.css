@@ -815,6 +815,7 @@ Main Components
 	.panel-title {font-size:25px;}
 	.panel-title-desc {font-size:16px;} 
   .social-block{position: absolute;bottom: 5%;width: 70%;}
+  .slick-next-wrapper{top:38%;}
 }
 
 @media (max-width:1024px){
