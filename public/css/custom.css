@@ -868,7 +868,9 @@ Main Components
 	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 41px; left:inherit; line-height: 1.5em;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;} 
 }
- 
+@media (max-width:500px){
+ .modal-dialog.homevideo{width: 100%;}
+}
 @media (min-width:500px) and (max-width: 892px){
   .scene.mascott{
     left: 0px;

@@ -117,6 +117,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   });
 
   $(document).ready(function() {  
+    $(".modal, .homevideo .close, .homevideo .btn").click(function() {
+      $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
+    });
+    
   // return false is the same as calling .preventDefault() and .stopPropagation()
   $('img').bind("contextmenu",function(e){
       return false;
