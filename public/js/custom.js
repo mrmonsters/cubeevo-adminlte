@@ -112,11 +112,19 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
         return false;
       });
     }   
+
+    $('.blanket').fadeOut();
+    var timer;
+    
+    function endAndStartTimer() {
+      window.clearTimeout(timer);
+      //var millisecBeforeRedirect = 10000; 
+      timer = window.setTimeout(function(){$('.blanket').fadeOut();}); 
+    }
+
   });
 
   $(document).ready(function() {  
- 
-    $('.blanket').fadeOut();
     $(".modal, .homevideo .close, .homevideo .btn").click(function() {
       $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
