@@ -107,6 +107,7 @@ $(document).ready(function()
 	CKEDITOR.config.contentsCss    = cssSources;
 	CKEDITOR.config.allowedContent = true;
 	CKEDITOR.config.height         = '450px';
+	CKEDITOR.config.protectedSource.push(/<i[^>]*><\/i>/g);
 	@foreach ($locales as $locale)
 	CKEDITOR.replace('content_{{ $locale->id }}');
 	@endforeach
