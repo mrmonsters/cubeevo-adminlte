@@ -113,18 +113,19 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       });
     }   
 
-    $('.blanket').fadeOut();
-    var timer; 
-    function endAndStartTimer() {
-      window.clearTimeout(timer);
-      //var millisecBeforeRedirect = 10000; 
-      timer = window.setTimeout(function(){$('.blanket').fadeOut();},4000); 
-    }
-    endAndStartTimer();
+    $('.blanket').fadeOut(); 
 
   });
 
   $(document).ready(function() {  
+    var timer; 
+    function endAndStartTimer() {
+      window.clearTimeout(timer);
+      //var millisecBeforeRedirect = 10000; 
+      console.log('hit');
+      timer = window.setTimeout(function(){$('.blanket').fadeOut();},4000); 
+    }
+    endAndStartTimer();
     $(".modal, .homevideo .close, .homevideo .btn").click(function() {
       $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
