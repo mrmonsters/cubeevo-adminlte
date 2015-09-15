@@ -8,9 +8,8 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       function builtboxsize(){  
         var _boxheight = $('.cre-box').height();  
         if(_boxheight == 0 ){ 
-          var _boxheight = $('.sol-box').height();  
-        }
-        console.log(_boxheight);
+          var _boxheight = $('.sol-box').height();   
+        } 
         $('.extra-info-box').css('height', _boxheight);  
       }   
       builtboxsize(); 
