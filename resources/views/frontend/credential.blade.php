@@ -29,7 +29,7 @@
                         </p>  
                     </div> 
                     <div class="row" style="position: absolute;bottom: 12%;left: 8%;z-index:1;">
-                        <div class="col-xs-12 visible-xs-block visible-md-block">
+                        <div class="col-xs-12 visible-xs-block visible-sm-block visible-md-block">
                             <div class="threedot js-showtitle"><i class="icon-btn-link icon-btn-link-white"></i></div>
                         </div> 
                     </div> 
@@ -50,7 +50,7 @@
 
                 case '2':
                     # code...
-                    $class = 'col-sm-6 col-lg-4 ';
+                    $class = 'col-sm-6 col-lg-8 ';
                     break; 
 
                 case '3':

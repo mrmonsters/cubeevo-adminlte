@@ -24,7 +24,7 @@ a:hover,a:focus{color: #f7941a;text-decoration: none;}
 .text-orange{color: #f7941a;}
 .btn-orange{background-color: #F7941A;border:0px;}  
 .icon-btn-link{
-  width: 45px;
+  width: 45px;  
   height: 45px;
   display: inline-block;
   background-size: auto 100%;
@@ -96,7 +96,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 .modal.in .modal-dialog.homevideo{
   padding: 0px;
-  width: 630px;
+  width: 100%;
 }
 .modal.in .modal-dialog.homevideo .modal-header{
   border:0px;
@@ -339,14 +339,14 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .slick-slider{margin-bottom: 0px}
 .slick-arrow{width: 44px;height: 44px;}
 .slick-prev-wrapper{cursor:pointer;position: absolute;right: 6%;top: 60%;z-index: 5}
-.slick-next-wrapper{cursor:pointer;position: absolute;right: 6%;top: 40%;z-index: 5}
+.slick-next-wrapper{cursor:pointer;position: absolute;right: 6%;top: 31%;z-index: 5}
 
 .container-fluid.process{margin: 4.5%;background-color: #eee;padding-top: 80px;}
 .process-flow{padding: 0px;}
 .process .flow {background:url(../img/processBG.svg) no-repeat center; padding:40px 0 130px 0px; margin:40px 0; color:#333;}
-.process .flow .left {width:50%; height:106px; margin-right:50%; background:url(../img/processflowL.svg) no-repeat right;margin-left: 0.5%;}
-.process .flow .right {width:50%; height:106px; margin-left:49.6%; background:url(../img/processflowR.svg) no-repeat left;}
-.process .flow .box  {width: 507px; padding:22px 90px; position:relative;height: 100%}
+.process .flow .left {width:55%; height:106px; margin-right:50%; background:url(../img/processflowL.svg) no-repeat right;margin-left: -4.4%;}
+.process .flow .right {width:55%; height:106px; margin-left:49.6%; background:url(../img/processflowR.svg) no-repeat left;}
+.process .flow .box  {width: 507px; padding:22px 70px 22px 110px; position:relative;height: 100%}
 .process .flow .left .box {float:right;}
 /*.process .flow .right .box {float:left;}*/
 .process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
@@ -380,7 +380,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .contactus li {text-indent:30px;}
 .contactus-icon {width:20px; height:20px; display:inline-block; margin-right:10px;}  
 .contactus .active .form-control{border-color: #f7941a;}
-.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position: -40px 0px;}
+.contactus .active .cont-msg,.contactus .active .cont-name,.contactus .active .cont-mail,.contactus .active .cont-contact,.contactus .active .cont-title{background-position-x: -40px;}
 .contactus .form-control {font-size:16px;background:none; border-radius:0; box-shadow:none; border-width: 0 0 1px 0; border-bottom:1px solid #333; padding-left:45px; height:45px;   margin-bottom: 20px;}
 .contactus  textarea {width:100%; min-height:180px; border:1px solid #333; background:none; margin-bottom:20px;}
 .contactus .active textarea{border:1px solid #f7941a;outline:transparent;}
@@ -400,8 +400,8 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .icon.mail,.contactus .mail {background:url(../img/Images-19.svg) no-repeat 0px -280px;width: 30px;height: 30px;}
 .contactus .fax {background:url(../img/Images-19.svg) no-repeat 0px -245px;width: 30px;height: 30px;}
 .contactus .handphone {background:url(../img/Images-19.svg) no-repeat 0px -325px;width: 30px;height: 30px;}
-.icon.mail-white{background-position:-55px 0px;}
-.icon.phone-white{background-position:-55px 0px;}
+.icon.mail-white{background-position:-50px -279px}
+.icon.phone-white{background-position:-50px -201px;}
 
 .scene.mascott{position:relative;left: -27%;vertical-align: middle;display: table-cell;}
 .scene.mascott.purple{top: 11%;}
@@ -629,7 +629,7 @@ Main Components
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
 .extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:10%;}
 .project-mascott{display: none;}
-.back-to-top{position: fixed !important;bottom: 60px;right: 6% !important;} 
+.back-to-top{position: fixed !important;bottom: 60px;right: 11% !important;} 
 
 .play-button-wrapper{width: 34px;height: 34px;margin: 10px;}
 .video-block .greybox{
@@ -682,7 +682,11 @@ Main Components
   }
 }
 @media (min-width:768px){   
+.modal.in .modal-dialog.homevideo{ 
+  width: 630px;
+}
  
+.slick-next-wrapper{top: 37%;}
 .play-button-wrapper{    
     width: 68px;
     height: 70px;
@@ -713,8 +717,7 @@ Main Components
 .process .flow .right .box span {bottom: -7px;}
   .project-mascott{display: block;width: 60%;float: right;}
   .back-to-top{position: fixed !important;bottom: 100px;right: 6% !important;}
-  .credential .box{margin-top: -120px;}
-  .slick-prev-wrapper{top: 33%;} 
+  .credential .box{margin-top: -120px;} 
   .scene.mascott.purple{left: -35%;} 
   .scene.mascott.blue{left: -35%;} 
   .scene.mascott.green{left: -35%;}
@@ -731,10 +734,7 @@ Main Components
   } 
   .cre .panel-title {
       text-align: center;
-  }
-  .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
-    display: block;
-  }
+  } 
   .content-section{display: none;}
   .cd-vertical-nav {  
   	top: 50%; 
@@ -750,6 +750,9 @@ Main Components
 
 @media (min-width:992px){
   .project-mascott{width: 70%;}
+  .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
+    display: block;
+  }
   .extra-info-box{background-color:#c5c4c4;padding:2%;}
   .slick-prev-wrapper {
       top: 47%;
@@ -815,6 +818,7 @@ Main Components
 	.panel-title {font-size:25px;}
 	.panel-title-desc {font-size:16px;} 
   .social-block{position: absolute;bottom: 5%;width: 70%;}
+  .slick-next-wrapper{top:38%;}
 }
 
 @media (max-width:1024px){
@@ -860,14 +864,18 @@ Main Components
 	.aboutus .about-369 .col-sm-4 {margin-top:30px;}
 	.aboutus .about-369 .about-369txt {width:100%;padding: 0px;margin-left: 10%;}
 	.panel-title-desc {border-left:0 none;}
-	.process-flow{overflow: hidden;}
-	.process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
-	.process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
-	.process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 80px 40px 40px !important; position:relative;clear: both;width: 100%;}
-	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 41px; left:inherit; line-height: 1.5em;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;} 
 }
- 
+@media (max-width:992px){
+.process-flow{overflow: hidden;}
+  .process .flow {background:url(../img/progress-header.png) no-repeat top right; padding:30px 0; margin:40px -15px; color:#333;}
+  .process .flow .left, .process .flow .right { background:url(../img/progress-side.png) repeat-y right; margin-right: 0; margin-left:0; width: 100%; height:auto;}
+  .process .flow .box  {width:auto; background:url(../img/progress-flow.png) no-repeat right bottom; padding:10px 80px 40px 40px !important; position:relative;clear: both;width: 100%;}
+  .process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 41px; left:inherit; line-height: 1.5em;}
+  }
+@media (max-width:500px){
+ .modal-dialog.homevideo{width: 100%;}
+}
 @media (min-width:500px) and (max-width: 892px){
   .scene.mascott{
     left: 0px;
