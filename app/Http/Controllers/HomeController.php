@@ -180,11 +180,16 @@ class HomeController extends Controller {
 				$message['content'] = $data['content'];
 				$return = Message::create($message);
 
-				$email = Setting::where('code', '=', 'email')->first();
+				$email   = Setting::where('code', '=', 'email')->first();
+				$content = "FROM: ".$data['email']
+					."\nNAME: ".$data['name']
+					."\nPhone: ".$data['phone']
+					."\nSubject: ".$data['subject']
+					."\nContent: ".$data['content'];
 
 				if (isset($email) && isset($email->value) && $email->value != '')
 				{
-					$result = mail($email->value, $data['subject'], $data['content']);
+					$result = mail($email->value, 'Cubeevo Enquiry', $content);
 					$response['code'] = Status::SUCCESS;
 					$response['msg']  = "Your enquiry has been submitted.";
 				}
