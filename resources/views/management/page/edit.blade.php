@@ -40,7 +40,7 @@ Description for static page management
 					</div>
 					<div class="form-group">
 						<label for="meta_title" class="control-label">Site Title</label>
-						<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $page->site_title }}" />
+						<input id="meta_title" name="meta_title" type="text" class="form-control" value="{{ $page->meta_title }}" />
 					</div>
 					<div class="form-group">
 						<label for="meta_keyword" class="control-label">Meta Keyword</label>
