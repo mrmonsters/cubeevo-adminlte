@@ -9,7 +9,7 @@
             <?php $count++; ?>
             @if ($count % 3 == 1) 
             @endif 
-            <div id='cre-box__{{$count}}' class="js-three-d sol-box col-sm-6 col-lg-4" style="background: {{ $solution->pri_color_code }} url('..{{ $solution->backgroundImage->dir }}') no-repeat center center;  -webkit-background-size: cover;
+            <div id='cre-box__{{$count}}' class="js-three-d cre-box col-sm-6 col-lg-4" style="background: {{ $solution->pri_color_code }} url('..{{ $solution->backgroundImage->dir }}') no-repeat center center;  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;background-size: 110% auto;">
@@ -47,7 +47,7 @@
             @if (($count % 3 == 0) || ($count == $solutions->count())) 
             @endif
         @endforeach
-            <div id='cre-box' class="extra-info-box sol-box visible-sm-block visible-md-block col-sm-6">
+            <div id='cre-box' class="extra-info-box cre-box visible-sm-block visible-md-block col-sm-6">
                 <div class="extra-info-box__wrapper">
                     <div class="extra-info-box__info">
                     @if(Session::get('locale') == 'en') 
