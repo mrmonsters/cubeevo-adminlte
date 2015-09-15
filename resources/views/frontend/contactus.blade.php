@@ -63,7 +63,7 @@ $response = Session::get('response');
 				<div class="col-sm-12">	
 					<label class="unhide">{{ (Session::get('locale') == 'en') ? 'MESSAGE' : '讯息' }}</label>
 					<span class="icon cont-msg" style="top:-3px;"></span>
-					<textarea name="content"> </textarea>
+					<textarea name="content" required></textarea>
 				</div>
 			</div>
 			

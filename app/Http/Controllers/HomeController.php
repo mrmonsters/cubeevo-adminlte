@@ -186,10 +186,14 @@ class HomeController extends Controller {
 					."\nPhone: ".$data['phone']
 					."\nSubject: ".$data['subject']
 					."\nContent: ".$data['content'];
+				$emailHeader = "From: enquire@cubeevo.com\n"
+				   . "MIME-Version: 1.0\n"
+				   . "Content-type: text/plain; charset=\"UTF-8\"\n"
+				   . "Content-transfer-encoding: 8bit\n";
 
 				if (isset($email) && isset($email->value) && $email->value != '')
 				{
-					$result = mail($email->value, 'Cubeevo Enquiry', $content);
+					$result = mail($email->value, 'Cubeevo Enquiry', $content,$emailHeader);
 					$response['code'] = Status::SUCCESS;
 					$response['msg']  = "Thank You for contacting us.<br/>Your message has been sent, we'll reply you within 2 working days";
 				}
