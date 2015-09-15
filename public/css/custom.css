@@ -346,9 +346,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow {background:url(../img/processBG.svg) no-repeat center; padding:40px 0 130px 0px; margin:40px 0; color:#333;}
 .process .flow .left {width:55%; height:106px; margin-right:50%; background:url(../img/processflowL.svg) no-repeat right;margin-left: -4.6%;}
 .process .flow .right {width:55%; height:106px; margin-left:49.6%; background:url(../img/processflowR.svg) no-repeat left;}
-.process .flow .box  {width: 507px; padding:12px 70px 22px 110px; position:relative; height: 106px;
-    vertical-align: middle;
-    display: table-cell;}
+.process .flow .box  {width: 507px; padding:12px 70px 22px 110px; position:relative;}
 .process .flow .left .box {float:right;padding :22px 70px 22px 70px;}
 /*.process .flow .right .box {float:left;}*/
 .process .flow .left .box span {color: #f7941a; font-size:25px; position: absolute; right: 50px; bottom: 0px;}
@@ -686,8 +684,7 @@ Main Components
 @media (min-width:768px){    
 .modal.in .modal-dialog.homevideo{ 
   width: 630px;
-}
- 
+} 
 .slick-next-wrapper{top: 37%;}
 .play-button-wrapper{    
     width: 68px;
@@ -751,6 +748,9 @@ Main Components
 }
 
 @media (min-width:992px){ 
+ .process .flow .box  {height: 106px;
+    vertical-align: middle;
+    display: table-cell;}
   .project-mascott{width: 70%;}
   .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
     display: block;
