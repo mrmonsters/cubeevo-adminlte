@@ -683,8 +683,7 @@ Main Components
     left: 1.3%;
   }
 }
-@media (min-width:768px){   
-.process .flow .left .box {float:none;padding :0 70px 0 165px; width: 600px;}
+@media (min-width:768px){    
 .modal.in .modal-dialog.homevideo{ 
   width: 630px;
 }
@@ -752,6 +751,7 @@ Main Components
 }
 
 @media (min-width:992px){
+  .process .flow .left .box {float:none;padding :0 70px 0 165px; width: 100%;}
   .project-mascott{width: 70%;}
   .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
     display: block;
