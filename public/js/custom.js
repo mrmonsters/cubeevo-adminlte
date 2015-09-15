@@ -7,6 +7,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     if($('.extra-info-box').length > 0 ){
       function builtboxsize(){  
         var _boxheight = $('.cre-box').height();  
+        console.log(_boxheight);
         if(_boxheight == 0 ){ 
           var _boxheight = $('.sol-box').height();   
         } 
@@ -127,7 +128,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       if(isFadeOut == false){
         window.clearTimeout(timer);
         //var millisecBeforeRedirect = 10000;  
-        timer = window.setTimeout(function(){$('.blanket').fadeOut();},5000); 
+        timer = window.setTimeout(function(){$('.blanket').fadeOut();},10000); 
         isFadeOut = true;
       }
     }
