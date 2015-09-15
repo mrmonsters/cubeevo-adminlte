@@ -96,7 +96,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 }
 .modal.in .modal-dialog.homevideo{
   padding: 0px;
-  width: 630px;
+  width: 100%;
 }
 .modal.in .modal-dialog.homevideo .modal-header{
   border:0px;
@@ -682,7 +682,11 @@ Main Components
   }
 }
 @media (min-width:768px){   
+.modal.in .modal-dialog.homevideo{ 
+  width: 630px;
+}
  
+.slick-next-wrapper{top: 37%;}
 .play-button-wrapper{    
     width: 68px;
     height: 70px;
@@ -713,8 +717,7 @@ Main Components
 .process .flow .right .box span {bottom: -7px;}
   .project-mascott{display: block;width: 60%;float: right;}
   .back-to-top{position: fixed !important;bottom: 100px;right: 6% !important;}
-  .credential .box{margin-top: -120px;}
-  .slick-prev-wrapper{top: 33%;} 
+  .credential .box{margin-top: -120px;} 
   .scene.mascott.purple{left: -35%;} 
   .scene.mascott.blue{left: -35%;} 
   .scene.mascott.green{left: -35%;}
@@ -815,6 +818,7 @@ Main Components
 	.panel-title {font-size:25px;}
 	.panel-title-desc {font-size:16px;} 
   .social-block{position: absolute;bottom: 5%;width: 70%;}
+  .slick-next-wrapper{top:38%;}
 }
 
 @media (max-width:1024px){
@@ -867,7 +871,9 @@ Main Components
 	.process .flow .left .box span, .process .flow .right .box span {color: #f7941a; font-size:18px; position: absolute; right: 41px; left:inherit; line-height: 1.5em;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;} 
 }
- 
+@media (max-width:500px){
+ .modal-dialog.homevideo{width: 100%;}
+}
 @media (min-width:500px) and (max-width: 892px){
   .scene.mascott{
     left: 0px;

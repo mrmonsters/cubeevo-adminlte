@@ -90,7 +90,7 @@ class HomeController extends Controller {
 		}
 
 		return view('frontend.project_content')->with('project', $project)
-			->with('backbtn', URL::previous());
+			->with('backbtn', url('/credential/'.$project->category->slug));
 	}
 
 	public function getCredentialProject($slug)

@@ -61,4 +61,9 @@ class Project extends Model implements TranslatableContract {
 		return $this->hasMany('App\Models\Block', 'project_id', 'id')->where('delete', false);
 	}
 
+	public function category()
+	{
+		return $this->hasOne('App\Models\Category', 'id', 'category_id');
+	}
+
 }
