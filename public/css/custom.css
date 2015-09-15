@@ -812,7 +812,7 @@ Main Components
 	}
 }
 @media (min-width:1200px){
-  .process .flow .left .box {float:none;padding :0 70px 0 165px; width: 100%;}
+  .process .flow .left .box {float:none;padding :0 70px 0 165px; width: 100%;min-width: 600px;}
   .extra-info-box{background-color:#c5c4c4;padding:1.1%;}  
 }
 
