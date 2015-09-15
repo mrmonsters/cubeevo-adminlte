@@ -867,7 +867,7 @@ Main Components
 	.aboutus .about-369 .about-369txt {width:100%;padding: 0px;margin-left: 10%;}
 	.panel-title-desc {border-left:0 none;}
 	.contactus .col-sm-4 {padding-left:0px; padding-right:0px; margin-top:40px;}
-  .process .flow .box{display: block;} 
+  .process .flow .box{display: block;height: auto;} 
 }
 @media (max-width:992px){
 .process-flow{overflow: hidden;}
