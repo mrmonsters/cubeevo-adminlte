@@ -27,7 +27,7 @@ $response = Session::get('response');
 			@if ($response != null && !empty($response))
 			<div class="col-md-12">
 				<div class="alert alert-{{ ($response['code'] == STATUS::SUCCESS) ? 'success' : 'danger' }} alert-dismissable">
-					<i class="fa fa-{{ ($response['code'] == STATUS::SUCCESS) ? 'check' : 'ban' }}" style="padding: 0 8px;"></i> {{ $response['msg'] }}
+					<i class="fa fa-{{ ($response['code'] == STATUS::SUCCESS) ? 'check' : 'ban' }}" style="padding: 0 8px;"></i> <?php echo $response['msg'];?>
 					<!--<button type="button" class="close" data-dismiss="alert">×</button>-->
 				</div>
 			</div>
@@ -70,7 +70,7 @@ $response = Session::get('response');
 			<div class="col-sm-10 col-sm-offset-1 text-center">
 				<br/> 
 				<br/> 
-				<button class="btn btn-sm btn-default" onclick="submitForm()">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</button>
+				<button class="btn btn-sm btn-default" type="submit">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</button>
 				<br/>
 				<br/>
 				<br/>
