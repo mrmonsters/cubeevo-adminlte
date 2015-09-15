@@ -712,8 +712,8 @@ Main Components
 .videoWrapper .arrow-right.arrow .arrow-bar-2{
         width: 25px;
 }
-.process .flow .left .box span {bottom: -7px;}
-.process .flow .right .box span {bottom: -7px;}
+.process .flow .left .box span {bottom: 0px;}
+.process .flow .right .box span {bottom: 0px;}
   .project-mascott{display: block;width: 60%;float: right;}
   .back-to-top{position: fixed !important;bottom: 100px;right: 6% !important;}
   .credential .box{margin-top: -120px;} 
