@@ -4,6 +4,7 @@ use URL;
 use Session;
 use Redirect;
 use Config;
+use Validator;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
@@ -144,25 +145,58 @@ class HomeController extends Controller {
 
 	public function submitMessage(Request $req)
 	{
-		$data = $req->input(); 
+		$response = array();
+		$data     = $req->input(); 
 		if (isset($data) && !empty($data))
 		{
-			$message = array();
-			$message['name']    = $data['name'];
-			$message['phone']   = $data['phone'];
-			$message['email']   = $data['email'];
-			$message['subject'] = $data['subject'];
-			$message['content'] = $data['content'];
-			$return = Message::create($message);
+			$rules = array(
+				'name'    => 'required',
+				'phone'   => 'required',
+				'email'   => 'required',
+				'subject' => 'required',
+				'content' => 'required',
+			);
 
-			$email = Setting::where('code', '=', 'email')->first();
+			$validator = Validator::make($data, $rules);
 
-			if (isset($email) && isset($email->value) && $email->value != '')
+			if ($validator->fails())
 			{
-				$result = mail($email->value, $data['subject'], $data['content']);
-				return Redirect::back();
+				$msg = array();
+				$messages = $validator->messages();
+				foreach ($messages->all() as $message)
+				{
+					$msg[] = $message;
+				}
+				$response['code'] = Status::ERROR;
+				$response['msg']  = implode(" | ", $msg);
+			}
+			else
+			{
+				$message = array();
+				$message['name']    = $data['name'];
+				$message['phone']   = $data['phone'];
+				$message['email']   = $data['email'];
+				$message['subject'] = $data['subject'];
+				$message['content'] = $data['content'];
+				$return = Message::create($message);
+
+				$email = Setting::where('code', '=', 'email')->first();
+
+				if (isset($email) && isset($email->value) && $email->value != '')
+				{
+					$result = mail($email->value, $data['subject'], $data['content']);
+					$response['code'] = Status::SUCCESS;
+					$response['msg']  = "Your enquiry has been submitted.";
+				}
 			}
 		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Invalid parameters.";
+		}
+
+		return Redirect::back()->with('response', $response);
 	}
 
 }
