@@ -296,7 +296,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0px;} 
 .cre .panel-body.overlap {margin: -25% 0px 0px 0px;}
-.sol .panel-body.overlap {margin: 0px auto;width: 80%;position: absolute;top: 27%;}
+.sol .panel-body.overlap {margin: 0px auto;width: 80%;position: absolute;top: 24%;}
 .container-fluid.cre{background:#A9A6A6;} 	
 .container-fluid.cre .panel-body.overlap{position: absolute;top: 40%;width: 100%;margin: 0px}
 .container-fluid.cre > .row{height: 100%;}
@@ -766,7 +766,8 @@ Main Components
   .process .flow .box  {height: 106px;padding-top: 0px;padding-bottom:0px;vertical-align: middle;display: table-cell;}
 .process .flow .left .box span ,.process .flow .right .box span {bottom: -7px;}
   .project-mascott{width: 70%;} 
-  .extra-info-box{background-color:#c5c4c4;padding:2% !important;}
+  .extra-info-box{background-color:#c5c4c4;padding:1.8%;}
+  .sol .extra-info-box{padding:2% !important;}
   .slick-prev-wrapper {
       top: 47%;
   }
