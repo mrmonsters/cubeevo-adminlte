@@ -682,6 +682,9 @@ Main Components
   }
 }
 @media (min-width:768px){    
+  .content-wrapper__fixed{  
+    height: 98%; 
+  }  
 .modal.in .modal-dialog.homevideo{ 
   width: 630px;
 } 
@@ -747,6 +750,9 @@ Main Components
 }
 
 @media (min-width:992px){  
+  .content-wrapper__fixed{  
+    height: 95.3%; 
+  }  
   .process .flow .box  {height: 106px;padding-top: 0px;padding-bottom:0px;vertical-align: middle;display: table-cell;}
 .process .flow .left .box span ,.process .flow .right .box span {bottom: -7px;}
   .project-mascott{width: 70%;} 
