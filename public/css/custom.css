@@ -15,7 +15,7 @@ input::-moz-focus-inner {
   border: 0; 
 }
 a:hover,a:focus{color: #f7941a;text-decoration: none;}
-
+body.fp-viewing-0{background-color: #000;}/*to fix home page showing one white background in mobile*/
 .btn{border-radius: 0px;}
 .bg-white{background-color: #fff;}
 .bg-orange{background-color: #f7941a;}
