@@ -146,6 +146,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   $('html').bind("mousedown",function(e){
       return false;
   });
+  
   if($('.js-back-to-top').length > 0 ){ 
     $('.js-back-to-top').click(function(){ 
       $("html, body").animate({ scrollTop: 0 }, "slow");
