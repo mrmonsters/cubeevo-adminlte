@@ -751,10 +751,7 @@ Main Components
  .process .flow .box  {height: 106px;
     vertical-align: middle;
     display: table-cell;}
-  .project-mascott{width: 70%;}
-  .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
-    display: block;
-  }
+  .project-mascott{width: 70%;} 
   .extra-info-box{background-color:#c5c4c4;padding:2%;}
   .slick-prev-wrapper {
       top: 47%;
@@ -812,6 +809,9 @@ Main Components
 	}
 }
 @media (min-width:1200px){ 
+  .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
+    display: block;
+  }
   .extra-info-box{background-color:#c5c4c4;padding:1.1%;}  
 }
 
