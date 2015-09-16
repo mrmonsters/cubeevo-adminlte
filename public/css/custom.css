@@ -360,7 +360,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
 .container-fluid.aboutus{margin: 4.5%;background-color: #eee;padding-top: 80px;}
-.aboutus .tagline {color:#f7941a; font-size:55px;white-space: nowrap;}
+.aboutus .tagline {color:#f7941a; font-size:55px;}
 .aboutus .sub-tagline {color:#fff; font-size:20px; margin-bottom:50px;font-weight: lighter;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
 .aboutus .about-txt {margin-top :50px; margin-bottom:80px;}
