@@ -195,7 +195,7 @@ class HomeController extends Controller {
 				{
 					$result = mail($email->value, 'Cubeevo Enquiry', $content,$emailHeader);
 					$response['code'] = Status::SUCCESS;
-					$response['msg']  = "Thank You for contacting us.<br/>Your message has been sent, we'll reply you within 2 working days";
+					$response['msg']  = "Thank You for contacting us.Your message has been sent, we'll reply you within 2 working days";
 				}
 			}
 		}
