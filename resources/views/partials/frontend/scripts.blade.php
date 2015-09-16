@@ -5,6 +5,6 @@
 <script src="{{ asset('js/jquery.parallax.js') }}"></script> 
 <script src="{{ asset('js/slick.min.js') }}"></script> 
 <script src="{{ asset('js/jquery.logosDistort.min.js') }}"></script>
-<script src="{{ asset('js/custom.js') }}"></script> <!-- Resource jQuery -->
+<script src="{{ asset('js/custom.js') }}?v=1"></script> <!-- Resource jQuery -->
 <!-- Addon Scripts -->
 @yield('frontend-addon-script')
