@@ -141,15 +141,9 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   $('html').bind("contextmenu",function(e){
       return false;
   });
-
-  // Here we disable default behaviors for mousedown which include the drag options.
-  $('html').bind("mousedown",function(e){
-      return false;
-  });
-
+ 
   if($('.js-back-to-top').length > 0 ){ 
-    $('.js-back-to-top').click(function(){ 
-      console.log('hit');
+    $('.js-back-to-top').click(function(){  
       $("html, body").animate({ scrollTop: 0 }, "slow");
       return false; 
     });
