@@ -291,7 +291,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   padding-left: 5px;
 }
 .panel-title { float:left; font-size:18px;padding-right: 0px;}
-.panel-title-desc {padding-left:2%; padding-right:10px; float:left; font-size:12px;}
+.panel-title-desc {padding-left:2%; padding-right:10px; float:left;}
 
 /*credential page*/ 
 .cre-box{cursor: pointer;padding: 0px;} 
