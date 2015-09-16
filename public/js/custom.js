@@ -5,11 +5,11 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
   $(window).load(function() { 
     if($('.extra-info-box').length > 0 ){
-      function builtboxsize(){  
-        var _boxheight = $('.cre-box').height();  
-        console.log(_boxheight);
-        if(_boxheight == 0 ){ 
-          var _boxheight = $('.sol-box').height();   
+      function builtboxsize(){     
+          var _boxheight = $('.sol-box').height();  
+          console.log(_boxheight);
+        if(_boxheight == null ){ 
+          var _boxheight = $('.cre-box').height();
         } 
         $('.extra-info-box').css('height', _boxheight);  
       }   
@@ -146,9 +146,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   $('html').bind("mousedown",function(e){
       return false;
   });
-  
+
   if($('.js-back-to-top').length > 0 ){ 
     $('.js-back-to-top').click(function(){ 
+      console.log('hit');
       $("html, body").animate({ scrollTop: 0 }, "slow");
       return false; 
     });

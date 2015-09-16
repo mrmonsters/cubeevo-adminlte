@@ -326,7 +326,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85);
   filter:alpha(opacity=85);}
 .credential .box-bg{position: absolute;width: 98.7%;height: 100%;}
-.credential .cre-of1 {position:absolute; bottom:0; right:0; z-index:2;}
+.credential .cre-of1 {position:absolute; bottom:-8%; right:0; z-index:2;}
 .credential .desctitle { font-size:14px; font-weight:bold;}
 .credential .box-content h3 {margin-top:0px; margin-bottom:18px;}
 .credential .box-content p {margin-bottom:5px;}
@@ -361,7 +361,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
 .process .flow .right .box span {color: #f7941a; font-size:25px; position: absolute; left: 50px; bottom: 0px;}
 
 .container-fluid.aboutus{margin: 4.5%;background-color: #eee;padding-top: 80px;}
-.aboutus .tagline {color:#f7941a; font-size:55px;}
+.aboutus .tagline {color:#f7941a; font-size:55px;white-space: nowrap;}
 .aboutus .sub-tagline {color:#fff; font-size:20px; margin-bottom:50px;font-weight: lighter;}
 .aboutus .about-img1 {position:absolute; bottom:0; right:0; z-index:2;}
 .aboutus .about-txt {margin-top :50px; margin-bottom:80px;}
@@ -766,8 +766,8 @@ Main Components
   }  
   .process .flow .box  {height: 106px;padding-top: 0px;padding-bottom:0px;vertical-align: middle;display: table-cell;}
 .process .flow .left .box span ,.process .flow .right .box span {bottom: -7px;}
-  .project-mascott{width: 70%;} 
-  .extra-info-box{background-color:#c5c4c4;padding:2%;}
+  .project-mascott{width: 62%;} 
+  .extra-info-box{background-color:#c5c4c4;padding:2% !important;}
   .slick-prev-wrapper {
       top: 47%;
   }
