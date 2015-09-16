@@ -13,7 +13,8 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
 .slick-next-wrapper.slick-arrow{background-color: {{ $project->pri_color_code }};}
 .back-to-top{z-index: 50;width: 44px;height: 45px;background-color: {{ $project->pri_color_code }};padding: 13px 10px;cursor:pointer;}
 .play-button-wrapper{background-color: {{ $project->pri_color_code }};}
-.video-btn {background-color: rgba({{$r}},{{$g}},{{$b}}, 0.7); }
+.video-btn {background-color: rgba({{$r}},{{$g}},{{$b}}, 0.7); } 
+.project-block-content > .row > .col-xs-12{background-color: {{ $project->pri_color_code }};}
 </style>
 <div class="container-fluid credential"> 
     <div class="row"> 

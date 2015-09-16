@@ -340,8 +340,7 @@ hr.whitehr {width:97%; border-bottom:1px solid #fff; border-left:0 none; border-
   .sol .hidden-text, .cre .hidden-text{
     display: none;
   }
-
-.project-block-content > .row{background-color: #fff;}
+ 
 .slick-dots{bottom: 0px;}
 .slick-dots li button:before{font-size: 11px;}
 .slick-slider{margin-bottom: 0px}
