@@ -8,8 +8,7 @@ html,body
     width: 100%;
     height: 100%;
     margin: 0px;
-    padding: 0px;
-    overflow-x: hidden; 
+    padding: 0px; 
 }
 .h1,h1{font-size: 55px;}
 .h2,h2{font-size: 40px;}
@@ -766,7 +765,7 @@ Main Components
   }  
   .process .flow .box  {height: 106px;padding-top: 0px;padding-bottom:0px;vertical-align: middle;display: table-cell;}
 .process .flow .left .box span ,.process .flow .right .box span {bottom: -7px;}
-  .project-mascott{width: 62%;} 
+  .project-mascott{width: 70%;} 
   .extra-info-box{background-color:#c5c4c4;padding:2% !important;}
   .slick-prev-wrapper {
       top: 47%;
