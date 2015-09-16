@@ -138,12 +138,12 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
     });
 
   // return false is the same as calling .preventDefault() and .stopPropagation()
-  $('img').bind("contextmenu",function(e){
+  $('html').bind("contextmenu",function(e){
       return false;
   });
 
   // Here we disable default behaviors for mousedown which include the drag options.
-  $('img').bind("mousedown",function(e){
+  $('html').bind("mousedown",function(e){
       return false;
   });
   if($('.js-back-to-top').length > 0 ){ 
