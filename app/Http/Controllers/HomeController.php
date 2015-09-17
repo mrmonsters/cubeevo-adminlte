@@ -122,10 +122,11 @@ class HomeController extends Controller {
 		$meta_desc = 'At CUBEevo, we offer a one-stop solution service ranging from Branding Strategy, Advertising Planning, Broadcast Ad Planning, Packaging Design, Digital Marketing, Graphic Design, Web Design, Photography, Copywriting, Printing & Production.';
 
 		return view('frontend.solution')->with([
-			'solutions', $solutions,
+			'solutions'=> $solutions,
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
-			'meta_desc'=> $meta_desc]);
+			'meta_desc'=> $meta_desc,
+			]);
 	}
 
 	public function getContactUs()
