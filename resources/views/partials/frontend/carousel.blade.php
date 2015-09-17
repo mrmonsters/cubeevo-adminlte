@@ -9,7 +9,7 @@ $imgIds = explode(",", $block->value);
             <?php $count = 0; ?>
             @foreach ($imgIds as $id)
             <div class="item {{ ($count++ == 0) ? 'active' : '' }}" style="max-height: 980px;">
-                <img data-lazy="{{ Files::find($id)->dir }}" alt="{{ Files::find($id)->name }}" width="100%"/> 
+                <img data-lazy="{{ Files::find($id)->dir }}" width="100%"/> 
             </div>
             @endforeach
         </div> 
