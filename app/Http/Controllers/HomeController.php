@@ -117,7 +117,15 @@ class HomeController extends Controller {
 			->orderBy('sort_order')
 			->get();
 
-		return view('frontend.solution')->with('solutions', $solutions);
+		$meta_title = 'At your Service';
+		$meta_keyword = 'Corporate Identity, Branding, Marketing Strategy, Logo Design, Brochure Design, Flyer Design, Catalogue Design, Packaging Design, Web Design, eCommerce, Multimedia, Corporate Video, Explainer Video, Business Video, Booth Design, Menu Design, Billboard Design, Bunting &amp; Banner Design, Print Design, Digital Marketing, Character Design, Mascot Design, Advertising Agency';
+		$meta_desc = 'At CUBEevo, we offer a one-stop solution service ranging from Branding Strategy, Advertising Planning, Broadcast Ad Planning, Packaging Design, Digital Marketing, Graphic Design, Web Design, Photography, Copywriting, Printing & Production.';
+
+		return view('frontend.solution')->with([
+			'solutions', $solutions,
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc]);
 	}
 
 	public function getContactUs()

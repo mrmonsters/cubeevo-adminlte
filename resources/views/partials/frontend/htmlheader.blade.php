@@ -3,7 +3,7 @@ use App\Models\Files;
  
   $meta_desc = (isset($meta_desc) && !empty($meta_desc))?$meta_desc:$site_settings->where('code', 'meta_desc')->first()->value;
   $meta_keyword = (isset($meta_keyword) && !empty($meta_keyword))?$meta_keyword:$site_settings->where('code', 'meta_keyword')->first()->value;
-  $meta_title = (isset($meta_title) && !empty($meta_title))?$meta_title.' - '.$site_settings->where('code', 'site_title')->first()->value:$site_settings->where('code', 'site_title')->first()->value;
+  $meta_title = (isset($meta_title) && !empty($meta_title))?$site_settings->where('code', 'site_title')->first()->value.' - '.$meta_title:$site_settings->where('code', 'site_title')->first()->value;
 
 ?> 
 
@@ -40,7 +40,7 @@ use App\Models\Files;
     <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=1"> <!-- Custom style --> 
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=2"> <!-- Custom style --> 
 
     <script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
     <title>{{ $meta_title }}</title>

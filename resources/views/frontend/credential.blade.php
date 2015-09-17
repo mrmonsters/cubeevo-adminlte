@@ -75,8 +75,8 @@
                      <p class="text-white" style="padding:0px 0px 10px 0px;display:block;">请联络</p> 
                      @endif 
                      <ul class="list-unstyled list-with-icon">
-                        <li><i class="icon phone phone-white"></i><a href="tel:+60390109882" class="text-orange" style="padding-left:30px;">+603 9010 9882</a></li>
-                        <li><i class="icon mail mail-white"></i><a href="mailto:enquire@cubeevo.com" class="text-orange" style="padding-left:30px;">enquire@cubeevo.com</a></li>
+                        <li><i class="icon phone phone-white"></i><a href="tel:+60390109882" class="text-orange" style="padding-left:25px;">+603 9010 9882</a></li>
+                        <li><i class="icon mail mail-white"></i><a href="mailto:enquire@cubeevo.com" class="text-orange" style="padding-left:25px;">enquire@cubeevo.com</a></li>
                     </ul> 
                      </div>
                  </div>
