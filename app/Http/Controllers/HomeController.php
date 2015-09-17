@@ -73,8 +73,17 @@ class HomeController extends Controller {
 		$categories = Category::where('status', '=', Status::ACTIVE)->where('delete', false)
 			->orderBy('sort_order')
 			->get();
+ 
+		$meta_title = 'Our Design Portfolio';
+		$meta_keyword = 'Corporate Identity, Branding, Marketing Strategy, Logo Design, Brochure Design, Flyer Design, Catalogue Design, Packaging Design, Web Design, eCommerce, Multimedia, Corporate Video, Explainer Video, Business Video, Booth Design, Menu Design, Billboard Design, Bunting &amp; Banner Design, Print Design, Digital Marketing, Character Design, Mascot Design, Advertising Agency, Branding Strategy, Advertising Planning, Broadcast Ad Planning, Graphic Design, Photography, Copywriting, Printing & Production';
+		$meta_desc = 'Our creation, innovation, and motivation from ideas to execution, branding to websites, graphics to videos has generated better sales for our clients in Malaysia, and some in Singapore.';
 
-		return view('frontend.credential')->with('categories', $categories);
+		return view('frontend.credential')->with([
+			'categories'=> $categories,
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			]);
 	}
 
 	public function getProjectContent($slug)
