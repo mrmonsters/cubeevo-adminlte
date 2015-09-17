@@ -140,7 +140,15 @@ class HomeController extends Controller {
 
 	public function getContactUs()
 	{
-		return view('frontend.contactus');
+		$meta_title = 'Contact Us';
+		$meta_keyword = 'Contact Us';
+		$meta_desc = 'Contact Us.';
+
+		return view('frontend.contactus')->with([ 
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			]);
 	}
 
 	public function switchLocale($code)
