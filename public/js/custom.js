@@ -6,8 +6,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   $(window).load(function() {
     if($('.extra-info-box').length > 0 ){
       function builtboxsize(){     
-          var _boxheight = $('.sol-box').height();  
-          console.log(_boxheight);
+          var _boxheight = $('.sol-box').height();   
         if(_boxheight == null ){ 
           var _boxheight = $('.cre-box').height();
         } 
@@ -122,19 +121,19 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
   });
 
   $(document).ready(function() {  
-    if($('body').hasClass('fp-viewing-0') == false){
-    var timer; 
-    var isFadeOut = false;
-    function endAndStartTimer() {
-      if(isFadeOut == false){
-        window.clearTimeout(timer);
-        //var millisecBeforeRedirect = 10000;  
-        timer = window.setTimeout(function(){$('.blanket').fadeOut();},10000); 
-        isFadeOut = true;
+    if($('#fullpage').length == 0){ 
+      var timer; 
+      var isFadeOut = false;
+      function endAndStartTimer() {
+        if(isFadeOut == false){
+          window.clearTimeout(timer);
+          //var millisecBeforeRedirect = 10000;  
+          timer = window.setTimeout(function(){$('.blanket').fadeOut();},10000); 
+          isFadeOut = true;
+        }
       }
+      endAndStartTimer();
     }
-    endAndStartTimer();
-  }
     $(".modal, .homevideo .close, .homevideo .btn").click(function() {
       $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
