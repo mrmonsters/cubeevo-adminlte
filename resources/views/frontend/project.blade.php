@@ -61,15 +61,33 @@
                     $class = '';
                     break;
             } 
-            $totalmissingbox = 9 - $count; ?>
+            $totalmissingbox = 9 - $count; 
+            $k = 1;
+            $isChanged = 0;?>
             @for($i= 1 ;$i <= $totalmissingbox; $i++)
-
+            <?php 
+            if($isChanged == 1){ 
+                $current_sm_box_color = 'bg-lightgreybox';
+            }else{
+                $current_sm_box_color = 'bg-greybox';
+            }?>
             <div id='cre-box' class="extra-info-box cre-box hidden-xs 
                 @if($i % 2 != 0)
                     odd
                 @else
                     even
-                @endif  {{$class}}"> 
+                @endif  {{$class}}
+                @if($k % 2 ==0 && $k != 1) 
+                    <?php $k = 0;
+                    if($isChanged == 1){
+                        $isChanged = 0;
+                    }else{
+                        $isChanged = 1;
+                    }?>
+                @endif 
+                {{$current_sm_box_color}}  
+                <?php $k++;?>
+                "> 
             
             </div>
             @endfor

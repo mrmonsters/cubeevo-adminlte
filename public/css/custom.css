@@ -632,9 +632,9 @@ Main Components
 .cre-info{padding: 0px 4.8%;}
 .modal.in .modal-dialog{padding: 3%;}
 .extra-info-box{background-color:#c5c4c4;padding:1.1%;}
-.extra-info-box.even{background-color: #A9A6A6;}
+.bg-greybox{background-color: #A9A6A6;}
 .extra-info-box__wrapper{background-color: #404b54;height: 100%;}
-.extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:3%;}
+.extra-info-box__info{position:absolute;right:10%;bottom:0;padding-bottom:5%;}
 .project-mascott{display: none;}
 .back-to-top{position: fixed !important;bottom: 60px;right: 11% !important;} 
 
@@ -767,7 +767,7 @@ Main Components
   .process .flow .box  {height: 106px;padding-top: 0px;padding-bottom:0px;vertical-align: middle;display: table-cell;}
 .process .flow .left .box span ,.process .flow .right .box span {bottom: -7px;}
   .project-mascott{width: 70%;} 
-  .extra-info-box{background-color:#c5c4c4;padding:1.8%;}
+  .extra-info-box{padding:1.8%;}
   .sol .extra-info-box{padding:2% !important;}
   .slick-prev-wrapper {
       top: 47%;
@@ -825,6 +825,7 @@ Main Components
 	}
 }
 @media (min-width:1200px){ 
+  .extra-info-box.even{background-color: #A9A6A6;}
   .sol .sol-box:hover .greybox,.sol .sol-box:hover .hidden-text, .cre .cre-box:hover .greybox,.cre .cre-box:hover .hidden-text {
     display: block;
   }
