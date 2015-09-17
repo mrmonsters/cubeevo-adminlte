@@ -681,6 +681,7 @@ Main Components
     width: 54px;
     z-index: 5;
 } 
+.alert-success{background-color: #f7941a;}
 @media (min-width:769px){ 
   #cd-main-nav{ 
     overflow: hidden;
