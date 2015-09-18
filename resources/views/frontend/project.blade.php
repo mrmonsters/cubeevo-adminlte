@@ -102,7 +102,9 @@
                         $isChanged = 1;
                     }?>
                 @endif  
+                @if($i < 9)
                 {{$current_sm_box_color}}  
+                @endif
                 <?php $k++;?>
                 "> 
             
