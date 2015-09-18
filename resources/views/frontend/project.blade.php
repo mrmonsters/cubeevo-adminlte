@@ -106,6 +106,9 @@
                 @endif   
                 {{$current_sm_box_color}}  
                 <?php $k++;?>
+                @if($count + $i > 6)
+                hidden-sm hidden-md
+                @endif
                 "> 
             
             </div>
