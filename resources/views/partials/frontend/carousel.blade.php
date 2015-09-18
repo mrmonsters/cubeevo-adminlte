@@ -20,7 +20,7 @@ $imgIds = explode(",", $block->value);
                     animation: spin 1.5s infinite linear;
                     animation-timing-function: ease;
                     -webkit-animation: spin 1.5s infinite linear;
-                    -webkit-animation-timing-function: ease;z-index:2">
+                    -webkit-animation-timing-function: ease;z-index:-1">
                     <div class="loader">
                       <div class="square" ></div>
                       <div class="square"></div>
