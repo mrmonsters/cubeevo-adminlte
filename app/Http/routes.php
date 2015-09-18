@@ -75,6 +75,16 @@ Route::get('admin/manage/solution/setActive/{solution_id}', 'SolutionController@
 Route::get('admin/manage/solution/setInactive/{solution_id}', 'SolutionController@setInactive');
 Route::get('admin/manage/solution/destroy/{solution_id}', 'SolutionController@destroy');
 
+// Job routes...
+Route::get('admin/manage/job', 'JobController@index');
+Route::get('admin/manage/job/create', 'JobController@create');
+Route::get('admin/manage/job/edit/{job_id}', 'JobController@edit');
+Route::put('manage/job/update/{job_id}', 'JobController@update');
+Route::post('manage/job/store', 'JobController@store');
+Route::get('admin/manage/job/setActive/{job_id}', 'JobController@setActive');
+Route::get('admin/manage/job/setInactive/{job_id}', 'JobController@setInactive');
+Route::get('admin/manage/job/destroy/{job_id}', 'JobController@destroy');
+
 // Setting routes...
 Route::get('admin/manage/setting', 'SettingController@edit');
 Route::put('manage/setting/update/', 'SettingController@update');

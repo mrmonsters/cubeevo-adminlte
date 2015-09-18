@@ -582,6 +582,8 @@ class PageTableSeeder extends Seeder
 											<br/>
 										</div>
 									</div>
+									@job__posting@
+									<!--
 									<div class="row">
 										<div class="col-xs-12 col-sm-4">
 											<div class="job">
@@ -617,7 +619,8 @@ class PageTableSeeder extends Seeder
 												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">加入形立方</button>
 											</div>	
 										</div> 
-									</div>  
+									</div> 
+									--> 
 							</div>
 							<div class="row"> 
 								<div class="col-xs-6 pull-right noppading hidden-xs">
@@ -626,6 +629,7 @@ class PageTableSeeder extends Seeder
 							</div>
 						</div>
 
+						<!--
 						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
@@ -728,9 +732,9 @@ class PageTableSeeder extends Seeder
 						      </div>
 						    </div>
 						  </div>
-						</div> 
-
 						</div>
+						</div>
+						--> 
 						',
 					),
 					'en' => array(
@@ -903,6 +907,8 @@ class PageTableSeeder extends Seeder
 											<br/>
 										</div>
 									</div>
+									@job__posting@
+									<!--
 									<div class="row">
 										<div class="col-xs-12 col-sm-4">
 											<div class="job">
@@ -934,7 +940,8 @@ class PageTableSeeder extends Seeder
 												<button type="button" class="btn btn-sm btn-default" data-toggle="modal" data-target="#myModal4">JOIN</button>
 											</div>	
 										</div> 
-									</div>  
+									</div>
+									-->  
 							</div>
 							<div class="row hidden-xs"> 
 								<div class="col-xs-6 pull-right noppading">
@@ -943,6 +950,7 @@ class PageTableSeeder extends Seeder
 							</div>
 						</div>
 
+						<!--
 						<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
@@ -1046,7 +1054,8 @@ class PageTableSeeder extends Seeder
 						    </div>
 						  </div>
 						</div> 
-						</div>',
+						</div>
+						-->',
 					),
 				),
 			),
