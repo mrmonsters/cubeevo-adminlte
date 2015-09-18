@@ -6,6 +6,7 @@ use Redirect;
 use Config;
 use Validator;
 use View;
+use Mail;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
@@ -223,17 +224,24 @@ class HomeController extends Controller {
 				$email   = Setting::where('code', '=', 'email')->first();
 				$content = "FROM: ".$data['email']
 					."\nNAME: ".$data['name']
-					."\nPhone: ".$data['phone']
-					."\nSubject: ".$data['subject']
-					."\nContent: ".$data['content'];
+					."\nPHONE: ".$data['phone']
+					."\nSUBJECT: ".$data['subject']
+					."\nCONTENT: ".$data['content'];
+				/*
 				$emailHeader = "From: enquire@cubeevo.com\n"
 				   . "MIME-Version: 1.0\n"
 				   . "Content-type: text/plain; charset=\"UTF-8\"\n"
 				   . "Content-transfer-encoding: 8bit\n";
+			    */
 
 				if (isset($email) && isset($email->value) && $email->value != '')
 				{
-					$result = mail($email->value, 'Cubeevo Enquiry', $content,$emailHeader);
+					//$result = mail($email->value, 'Cubeevo Enquiry', $content,$emailHeader);
+					Mail::raw($content, function($message)
+					{
+					    $message->from('server@cubeevo.com', 'Cubeevo Admin Panel');
+					    $message->to($email->value)->subject('Cubeevo Enquiry');
+					});
 					$response['code'] = Status::SUCCESS;
 					$response['msg']  = "Thank You for contacting us. We'll reply you within 2 working days";
 				}
