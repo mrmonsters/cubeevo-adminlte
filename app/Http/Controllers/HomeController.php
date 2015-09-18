@@ -237,7 +237,7 @@ class HomeController extends Controller {
 				if (isset($email) && isset($email->value) && $email->value != '')
 				{
 					//$result = mail($email->value, 'Cubeevo Enquiry', $content,$emailHeader);
-					Mail::raw($content, function($message)
+					Mail::raw($content, function($message) use ($email)
 					{
 					    $message->from('server@cubeevo.com', 'Cubeevo Admin Panel');
 					    $message->to($email->value)->subject('Cubeevo Enquiry');
