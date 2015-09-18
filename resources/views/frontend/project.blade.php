@@ -78,8 +78,8 @@
 
                 default: 
                     break;
-            }  
-            $totalmissingbox = ($totalmissingbox > 6)?6:9 - $count;
+            } 
+            $totalmissingbox = 9 - $count;  
             $isChanged = 0;?>
             @for($i= 1 ;$i <= $totalmissingbox; $i++)
                 @if(($totalmissingbox % 2) == 0 && $i == $totalmissingbox) 
