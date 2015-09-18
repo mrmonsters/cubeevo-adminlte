@@ -88,8 +88,8 @@
                         $isChanged = 1;
                     }?>
                 @endif 
-                @if($isChangedAlter)
-                {{$current_sm_box_color}}  
+                @if($isChangedAlter == true)
+                {{$current_sm_box_color}}  {{$isChangedAlter}}
                 @endif
                 <?php $k++;?>
                 "> 
