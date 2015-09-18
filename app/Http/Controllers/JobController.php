@@ -74,7 +74,14 @@ class JobController extends Controller {
 				{
 					if (isset($data[$attribute][$locale->id]))
 					{
-						$jobData[$attribute] = $data[$attribute][$locale->id];
+						if ($attribute == 'qualification')
+						{
+							$jobData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+						}
+						else
+						{
+							$jobData[$attribute] = $data[$attribute][$locale->id];
+						}
 					}
 				}
 
@@ -149,7 +156,14 @@ class JobController extends Controller {
 				{
 					if (isset($data[$attribute][$locale->id]))
 					{
-						$jobData[$attribute] = $data[$attribute][$locale->id];
+						if ($attribute == 'qualification')
+						{
+							$jobData[$attribute] = htmlentities($data[$attribute][$locale->id]);
+						}
+						else
+						{
+							$jobData[$attribute] = $data[$attribute][$locale->id];
+						}
 					}
 				}
 

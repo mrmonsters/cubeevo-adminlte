@@ -55,7 +55,7 @@ Description for job management
 									</div>
 									<div class="form-group">
 										<label for="qualification" class="control-label">Qualification</label>
-										<textarea id="qualification[{{ $locale->id }}]" name="qualification[{{ $locale->id }}]" class="form-control" rows="5">{{ $job->translate($locale->language)->qualification }}</textarea>
+										<textarea id="qualification_{{ $locale->id }}" name="qualification[{{ $locale->id }}]" class="form-control" rows="5">{{ $job->translate($locale->language)->qualification }}</textarea>
 									</div>
 								</div>
 							@endforeach
@@ -77,4 +77,27 @@ Description for job management
 		</div>
 	</div>
 </div>
+@endsection
+
+@section('addon-script')
+<script type="text/javascript">
+$(document).ready(function()
+{
+	var cssSources = [
+		'{{ asset('css/bootstrap.min.css') }}',
+		'{{ asset('css/style.css') }}',
+		'{{ asset('css/animate.css') }}',
+		'{{ asset('css/jquery.fullPage.css') }}',
+		'{{ asset('css/custom.css') }}'
+	];
+
+	CKEDITOR.config.contentsCss    = cssSources;
+	CKEDITOR.config.allowedContent = true;
+	CKEDITOR.config.height         = '250px';
+	CKEDITOR.config.protectedSource.push(/<i[^>]*><\/i>/g);
+	@foreach ($locales as $locale)
+	CKEDITOR.replace('qualification_{{ $locale->id }}');
+	@endforeach
+});
+</script>
 @endsection

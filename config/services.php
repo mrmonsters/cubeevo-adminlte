@@ -15,8 +15,8 @@ return [
 	*/
 
 	'mailgun' => [
-		'domain' => '',
-		'secret' => '',
+		'domain' => 'cubeevo.com',
+		'secret' => 'key-0beff879ad7200e118083f6ec996b67a',
 	],
 
 	'mandrill' => [
