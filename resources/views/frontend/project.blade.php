@@ -64,6 +64,21 @@
                     $class = '';
                     break;
             } 
+            $smleftoutclass = ($count % 2) ;
+            switch ($smleftoutclass) {
+                case '0':
+                    # code... 
+                    $k = 2;
+                    break;
+
+                case '1':
+                    # code... 
+                    $k = 1;
+                    break;  
+                    
+                default: 
+                    break;
+            } 
             $totalmissingbox = 9 - $count;  
             $isChanged = 0;?>
             @for($i= 1 ;$i <= $totalmissingbox; $i++)
