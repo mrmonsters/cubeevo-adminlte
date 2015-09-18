@@ -44,17 +44,20 @@
                 case '1':
                     # code...
                     $class = 'col-sm-6 col-lg-4';
+                    $isChangedAlter = true;
                     break;
 
                 case '2':
                     # code...
                     $class = 'col-sm-6 col-lg-4';
+                    $isChangedAlter = false;
                     break; 
 
 
                 case '3':
                     # code...
                     $class = 'col-sm-6 hidden-md hidden-sm col-lg-4';
+                    $isChangedAlter = false;
                     break; 
 
                 default:
@@ -85,7 +88,9 @@
                         $isChanged = 1;
                     }?>
                 @endif 
+                @if($isChangedAlter)
                 {{$current_sm_box_color}}  
+                @endif
                 <?php $k++;?>
                 "> 
             
