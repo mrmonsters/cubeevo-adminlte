@@ -19,8 +19,7 @@ $count  = 0;
 @endif
 @endforeach
 
-@foreach ($jobs as $job)
-<?php $qualifications = explode("|", $job->translate($locale)->qualification); ?>
+@foreach ($jobs as $job) 
 <div class="modal fade" id="myModal{{ $job->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -29,11 +28,7 @@ $count  = 0;
 				<h4 class="modal-title" id="myModalLabel">{{ $job->translate($locale)->title }}</h4>
 			</div>
 			<div class="modal-body">
-				<ul>
-					@foreach ($qualifications as $q)
-					<li>{{ $q }}</li>
-					@endforeach
-				</ul> 
+				<?php echo $job->translate($locale)->qualification;?>
 			</div>
 			<div class="modal-footer"> 
 				<a href="mailto:enquire@cubeevo.com" class="btn btn-primary btn-orange">{{ ($locale == 'cn') ? '申请' : 'Apply' }}</a>
