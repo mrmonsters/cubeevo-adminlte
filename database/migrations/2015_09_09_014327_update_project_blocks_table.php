@@ -30,7 +30,9 @@ class UpdateProjectBlocksTable extends Migration {
 		//
 		Schema::table('project_blocks', function(Blueprint $table)
 		{
-			$table->dropColumn('thumbnail_id');
+			//DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+			//$table->dropColumn('thumbnail_id');
+			//DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 		});
 	}
 

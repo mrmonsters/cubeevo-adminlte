@@ -65,6 +65,11 @@
                     <i class='fa fa-envelope'></i> <span>Messages</span>
                 </a>
             </li>
+            <li class="{{ (Request::is('admin/manage/job') || Request::is('admin/manage/job/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/job') }}">
+                    <i class='fa fa-suitcase'></i> <span>Jobs Posting</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

@@ -5,6 +5,7 @@ use Session;
 use Redirect;
 use Config;
 use Validator;
+use View;
 use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
@@ -13,6 +14,7 @@ use App\Models\Project;
 use App\Models\Solution;
 use App\Models\Message;
 use App\Models\Setting;
+use App\Models\JobBlock;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
@@ -55,6 +57,18 @@ class HomeController extends Controller {
 			->where('delete', false)
 			->first();   
 		endif;
+
+		if ($page->slug == '/about-us')
+		{
+			$jobs = JobBlock::where('status', '=', Status::ACTIVE)
+				->where('delete', false)
+				->orderBy('sort_order')
+				->get();
+
+			$jobPosting = View::make('partials.frontend.job')->with('jobs', $jobs)
+				->render();
+			$page->translate(Session::get('locale'))->content = str_replace("@job__posting@", $jobPosting, $page->translate(Session::get('locale'))->content);
+		}
 
 		$meta_title = $page->meta_title;
 		$meta_keyword = $page->meta_keyword;
