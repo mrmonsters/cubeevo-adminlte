@@ -139,8 +139,9 @@ $response = Session::get('response');
 </div>
 		
 @section('frontend-addon-script') 
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script> 
+    <script src="https://maps.googleapis.com/maps/api/js"></script> 
     <script>
+  $(window).load(function() {
     function initMap() { 
 	  @if(Session::get('locale') == 'en')
 	  var image = 'img/Map_Pointer.svg'; 
@@ -188,5 +189,7 @@ $response = Session::get('response');
 	  map.setMapTypeId('map_style');
 
   	} 
+  	initMap();
+  });
     </script> 
 @endsection	
