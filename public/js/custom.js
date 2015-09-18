@@ -203,7 +203,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
       var _slickcarousl = $('.slick-carousel').slick({
           dots: false,
-          lazyLoad: 'ondemand',
+          lazyLoad: 'progressive',
           prevArrow : '<div class="bg-orange slick-prev-wrapper smart-object"><div class="arrow-left arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
           nextArrow : '<div class="bg-orange slick-next-wrapper smart-object"><div class="arrow-right arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
       }); 
