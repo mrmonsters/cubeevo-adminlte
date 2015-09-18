@@ -102,7 +102,7 @@
                         $isChanged = 1;
                     }?>
                 @endif  
-                @if($i < $totalmissingbox)
+                @if(($totalmissingbox % 2) == 1 && $i < $totalmissingbox)
                 {{$current_sm_box_color}}  
                 @endif
                 <?php $k++;?>
