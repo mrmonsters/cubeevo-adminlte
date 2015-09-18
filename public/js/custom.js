@@ -16,8 +16,13 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
       $(window).resize(function() { 
         builtboxsize(); 
       });
-    }   
+    }    
 
+    $('.blanket').fadeOut(); 
+
+  });
+
+  $(document).ready(function() {  
     if($('#fullpage').length > 0){ 
       $('#fullpage').fullpage({ 
         afterLoad :  function(anchorLink, index){
@@ -115,12 +120,6 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
         return false;
       });
     }   
-
-    $('.blanket').fadeOut(); 
-
-  });
-
-  $(document).ready(function() {  
     if($('#fullpage').length == 0){ 
       var timer; 
       var isFadeOut = false;
