@@ -44,28 +44,27 @@
                 case '1':
                     # code...
                     $class = 'col-sm-6 col-lg-4';
-                    $isChangedAlter = false;
+                    $k = 1;
                     break;
 
                 case '2':
                     # code...
                     $class = 'col-sm-6 col-lg-4'; 
-                    $isChangedAlter = true;
+                    $k = 2;
                     break; 
 
 
                 case '3':
                     # code...
                     $class = 'col-sm-6 hidden-md hidden-sm col-lg-4';
-                    $isChangedAlter = true;
+                    $k = 1;
                     break; 
 
                 default:
                     $class = '';
                     break;
             } 
-            $totalmissingbox = 9 - $count; 
-            $k = 1;
+            $totalmissingbox = 9 - $count;  
             $isChanged = 0;?>
             @for($i= 1 ;$i <= $totalmissingbox; $i++)
             <?php 
@@ -87,10 +86,8 @@
                     }else{
                         $isChanged = 1;
                     }?>
-                @endif 
-                @if($isChangedAlter == true)
-                {{$current_sm_box_color}}  {{$isChangedAlter}}
-                @endif
+                @endif  
+                {{$current_sm_box_color}}  
                 <?php $k++;?>
                 "> 
             
