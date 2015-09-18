@@ -82,6 +82,8 @@
             $totalmissingbox = 9 - $count;  
             $isChanged = 0;?>
             @for($i= 1 ;$i <= $totalmissingbox; $i++)
+                @if(($totalmissingbox % 2) == 0 && $i == $totalmissingbox) 
+                @else
             <?php 
             if($isChanged == 1){ 
                 $current_sm_box_color = 'bg-greybox';
@@ -101,15 +103,13 @@
                     }else{
                         $isChanged = 1;
                     }?>
-                @endif  
-                @if(($totalmissingbox % 2) == 0 && $i == $totalmissingbox) 
-                @else 
-                {{$current_sm_box_color}} 
-                @endif
+                @endif   
+                {{$current_sm_box_color}}  
                 <?php $k++;?>
                 "> 
             
             </div>
+                @endif
             @endfor
         @endif
         <?php echo '</div>'; ?>
