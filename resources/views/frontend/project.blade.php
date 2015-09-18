@@ -44,20 +44,20 @@
                 case '1':
                     # code...
                     $class = 'col-sm-6 col-lg-4';
-                    $isChangedAlter = true;
+                    $isChangedAlter = false;
                     break;
 
                 case '2':
                     # code...
-                    $class = 'col-sm-6 col-lg-4';
-                    $isChangedAlter = false;
+                    $class = 'col-sm-6 col-lg-4'; 
+                    $isChangedAlter = true;
                     break; 
 
 
                 case '3':
                     # code...
                     $class = 'col-sm-6 hidden-md hidden-sm col-lg-4';
-                    $isChangedAlter = false;
+                    $isChangedAlter = true;
                     break; 
 
                 default:
@@ -89,7 +89,7 @@
                     }?>
                 @endif 
                 @if($isChangedAlter == true)
-                {{$current_sm_box_color}}  {{$isChangedAlter}}
+                {{$current_sm_box_color}}
                 @endif
                 <?php $k++;?>
                 "> 
