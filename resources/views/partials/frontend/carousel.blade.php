@@ -9,7 +9,7 @@ $imgIds = explode(",", $block->value);
             <?php $count = 0; ?>
             @foreach ($imgIds as $id)
             <div class="item {{ ($count++ == 0) ? 'active' : '' }}" style="max-height: 980px;position:relative;">
-                <img data-lazy="{{ Files::find($id)->dir }}" width="100%"/> 
+                <img data-lazy="{{ Files::find($id)->dir }}" width="100%" style="z-index:1"/> 
                 <div class="loader" style="position: absolute;
                     top: 50%;
                     left: 50%;
@@ -20,7 +20,7 @@ $imgIds = explode(",", $block->value);
                     animation: spin 1.5s infinite linear;
                     animation-timing-function: ease;
                     -webkit-animation: spin 1.5s infinite linear;
-                    -webkit-animation-timing-function: ease;">
+                    -webkit-animation-timing-function: ease;z-index:2">
                     <div class="loader">
                       <div class="square" ></div>
                       <div class="square"></div>
