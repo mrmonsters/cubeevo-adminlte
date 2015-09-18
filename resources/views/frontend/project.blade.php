@@ -50,7 +50,7 @@
                 case '2':
                     # code...
                     $class = 'col-sm-6 col-lg-4'; 
-                    $k = 2;
+                    $k = 1;
                     break; 
 
 
