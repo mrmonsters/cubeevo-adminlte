@@ -44,7 +44,7 @@
                 case '1':
                     # code...
                     $class = 'col-sm-6 col-lg-4';
-                    $k = 1;
+                    $k = 2;
                     break;
 
                 case '2':
