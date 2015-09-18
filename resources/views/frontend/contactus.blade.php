@@ -139,8 +139,7 @@ $response = Session::get('response');
 </div>
 		
 @section('frontend-addon-script') 
-  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-   async defer></script> 
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script> 
     <script>
     function initMap() { 
 	  @if(Session::get('locale') == 'en')
