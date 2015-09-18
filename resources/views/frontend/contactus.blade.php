@@ -139,6 +139,8 @@ $response = Session::get('response');
 </div>
 		
 @section('frontend-addon-script') 
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+   async defer></script> 
     <script>
     function initMap() { 
 	  @if(Session::get('locale') == 'en')
@@ -187,14 +189,5 @@ $response = Session::get('response');
 	  map.setMapTypeId('map_style');
 
   	} 
-    </script>
-  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-   async defer></script>
-
-<script type="text/javascript">
-function submitForm()
-{
-	$('#form-contact-us').submit();
-}
-</script>
+    </script> 
 @endsection	
