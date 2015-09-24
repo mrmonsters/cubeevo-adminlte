@@ -85,6 +85,16 @@ Route::get('admin/manage/job/setActive/{job_id}', 'JobController@setActive');
 Route::get('admin/manage/job/setInactive/{job_id}', 'JobController@setInactive');
 Route::get('admin/manage/job/destroy/{job_id}', 'JobController@destroy');
 
+// Profile routes...
+Route::get('admin/manage/profile', 'ProfileController@index');
+Route::get('admin/manage/profile/create', 'ProfileController@create');
+Route::get('admin/manage/profile/edit/{profile_id}', 'ProfileController@edit');
+Route::put('manage/profile/update/{profile_id}', 'ProfileController@update');
+Route::post('manage/profile/store', 'ProfileController@store');
+Route::get('admin/manage/profile/setActive/{profile_id}', 'ProfileController@setActive');
+Route::get('admin/manage/profile/setInactive/{profile_id}', 'ProfileController@setInactive');
+Route::get('admin/manage/profile/destroy/{profile_id}', 'ProfileController@destroy');
+
 // Setting routes...
 Route::get('admin/manage/setting', 'SettingController@edit');
 Route::put('manage/setting/update/', 'SettingController@update');

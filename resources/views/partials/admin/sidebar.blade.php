@@ -70,6 +70,11 @@
                     <i class='fa fa-suitcase'></i> <span>Jobs Posting</span>
                 </a>
             </li>
+            <li class="{{ (Request::is('admin/manage/profile') || Request::is('admin/manage/profile/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/profile') }}">
+                    <i class='fa fa-sitemap'></i> <span>Profile</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
