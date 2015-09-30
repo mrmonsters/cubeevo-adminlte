@@ -18,6 +18,7 @@ Description for file management
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">File</h3>
+				<a href="{{ url('admin/manage/file/create') }}" class="btn btn-primary pull-right">Create</a>
 			</div>
 			<div class="box-body">
 				<table id="tbl-file" class="table">

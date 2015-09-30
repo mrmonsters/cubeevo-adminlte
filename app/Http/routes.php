@@ -33,10 +33,12 @@ Route::get('admin/manage/page/destroy/{page_id}', 'PageController@destroy');
 
 // File routes
 Route::get('admin/manage/file', 'FileController@index');
+Route::get('admin/manage/file/create', 'FileController@create');
 Route::get('admin/manage/file/show/{file_id}', 'FileController@show');
 Route::get('admin/manage/file/setActive/{file_id}', 'FileController@setActive');
 Route::get('admin/manage/file/setInactive/{file_id}', 'FileController@setInactive');
 Route::get('admin/manage/file/destroy/{file_id}', 'FileController@destroy');
+Route::post('manage/file/store', 'FileController@store');
 
 // Contact us routes
 Route::get('admin/manage/message', 'MessageController@index');
