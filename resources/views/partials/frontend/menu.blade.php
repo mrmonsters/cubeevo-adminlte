@@ -1,5 +1,8 @@
 <div id="cd-nav">
-	<a href="#0" class="cd-nav-trigger">Menu<span></span></a>
+	<a href="#0" class="cd-nav-trigger 
+    @if(Request::url() === url('/'))
+        menu-is-open
+    @endif">Menu<span></span></a>
 
     @if(isset($backbtn))
     <a href="{{$backbtn}}" class="smart-object btn-back"> 
@@ -10,7 +13,10 @@
     </a>
     @endif
   
-	<div id="cd-main-nav">
+	<div id="cd-main-nav" 
+    @if(Request::url() ===url('/')) 
+    class="is-visible"
+    @endif>
         <div class="inner">
         
         	<div class="logo">
