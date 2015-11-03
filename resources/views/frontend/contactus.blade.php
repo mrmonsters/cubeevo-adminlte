@@ -96,6 +96,7 @@ $response = Session::get('response');
 				</ul>
 			</div>
 			<div class="col-sm-7 contact-person">
+				<?php /*?>
 				<div class="col-sm-4">
 					<h5>Alvin Lee</h5>
 					<p><i>Account Director</i><br>
@@ -105,6 +106,7 @@ $response = Session::get('response');
 						<li><i class="icon mail"></i><a class="text-orange" href="mailto:alvin@cubeevo.com">alvin@cubeevo.com</a></li>
 					</ul>
 				</div>
+				<?php */?>
 				
 				<div class="col-sm-4">
 					<h5>Timothy Tai</h5>
