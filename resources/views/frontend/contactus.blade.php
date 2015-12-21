@@ -84,11 +84,9 @@ $response = Session::get('response');
 	<div class="row contactdetails" style="position:relative;"> 
 		<div class="col-sm-11 col-sm-offset-1">
 			<div class="col-sm-5 nopadding">
-				<h4>CUBEevo Advertising Sdn. Bhd. <small>(949017-T)</small></h4>
-				<h4>形立方广告有限公司</h4>
-				<br/>
-				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
-				<br/>
+				<h4 style="margin:0px;">CUBEevo Advertising Sdn. Bhd. <small>(949017-T)</small></h4>
+				<h4 style="margin:0px;">形立方广告有限公司</h4> 
+				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5> 
 				<ul class="list-inline">
 					<li><i class="icon phone"></i><h5 class="nopadding"><a class="text-orange" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></li>
 					<li><i class="icon fax"></i><h5 class="nopadding">{{ $settings->where('code', 'fax')->first()->value }}</h5></li>
@@ -98,7 +96,7 @@ $response = Session::get('response');
 			<div class="col-sm-7 contact-person">
 				<?php /*?>
 				<div class="col-sm-4">
-					<h5>Alvin Lee</h5>
+					<h5 style="margin:0px;">Alvin Lee</h5>
 					<p><i>Account Director</i><br>
 					策划总监</p>
 					<ul>
@@ -109,22 +107,22 @@ $response = Session::get('response');
 				<?php */?>
 				
 				<div class="col-sm-4">
-					<h5>Timothy Tai</h5>
+					<h5 style="margin:0px;">Timothy Tai</h5>
 					<p><i>Account Manager</i><br>
 					客户经理</p>
 					<ul>
 						<li><i class="icon handphone"></i><a class="text-orange" href="tel:+60173216004">+6017 321 6004</a></li>
-						<li><i class="icon mail"></i><a class="text-orange" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
+						<li class="hide"><i class="icon mail"></i><a class="text-orange" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
 					</ul>
 				</div>
 				
 				<div class="col-sm-4">
-					<h5>Keith Phang</h5>
+					<h5 style="margin:0px;">Keith Phang</h5>
 					<p><i>Branding Manager</i><br>
 					品牌经理</p>
 					<ul>
 						<li><i class="icon handphone"></i><a class="text-orange" href="tel:+6018 352 4300">+6018 352 4300</a></li>
-						<li><i class="icon mail"></i><a class="text-orange" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
+						<li class="hide"><i class="icon mail"></i><a class="text-orange" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
 					</ul>
 				</div>
 			</div>
