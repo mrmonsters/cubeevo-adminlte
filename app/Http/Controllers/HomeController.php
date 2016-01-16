@@ -166,6 +166,19 @@ class HomeController extends Controller {
 			]);
 	}
 
+	public function getInsights()
+	{
+		$meta_title = 'Insights';
+		$meta_keyword = 'Insights';
+		$meta_desc = 'Insights.';
+
+		return view('frontend.insights')->with([ 
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			]);
+	}
+
 	public function switchLocale($code)
 	{
 		if(empty($code)):
