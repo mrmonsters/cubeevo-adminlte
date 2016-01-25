@@ -14,7 +14,8 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('file_id')->unsigned(true);
+            $table->string('slug')->nullable(true);
+            $table->integer('file_id')->unsigned(true)->nullable(true);
             $table->foreign('file_id')->references('id')->on('files');
             $table->integer('status')->default(2);
             $table->boolean('deleted')->default(false);

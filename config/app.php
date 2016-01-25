@@ -155,6 +155,16 @@ return [
 		 * Vinkla Translator
 		 */
 		'Vinkla\Translator\TranslatorServiceProvider',
+
+		/*
+		 * Sluggable
+		 */
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+
+		/*
+		 * Custom Application Service Providers...
+		 */
+		'App\Providers\ComposerServiceProvider',
 	],
 
 	/*

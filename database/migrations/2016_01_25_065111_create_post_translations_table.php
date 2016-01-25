@@ -18,7 +18,7 @@ class CreatePostTranslationsTable extends Migration
             $table->foreign('post_id')->references('id')->on('posts');
             $table->integer('locale_id')->unsigned(true);
             $table->foreign('locale_id')->references('id')->on('locales');
-            $table->text('title')->nullable();
+            $table->text('title')->nullable(false);
             $table->text('description')->nullable();
             $table->timestamps();
         });

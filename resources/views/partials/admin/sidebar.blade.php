@@ -75,6 +75,11 @@
                     <i class='fa fa-sitemap'></i> <span>Profile</span>
                 </a>
             </li>
+            <li class="{{ (Request::is('admin/manage/post') || Request::is('admin/manage/post/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/post') }}">
+                    <i class='fa fa-quote-left'></i> <span>Blog Post</span>
+                </a>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

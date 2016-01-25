@@ -35,7 +35,7 @@ Description for post management
 						@foreach ($posts as $post)
 						<tr>
 							<td>{{ $post->id }}</td>
-							<td class="col-xs-2"><img id="grid_img" class="img-thumbnail" src="{{ $post->coverImage->dir }}" alt="{{ $post->coverImage->name }}" width="150"></td> 
+							<td class="col-xs-2"><img id="grid_img" class="img-thumbnail" src="{{ (strlen($post->file_id) > 0) ? $post->coverImage->dir : '' }}" alt="{{ (strlen($post->file_id) > 0) ? $post->coverImage->name : '' }}" width="150"></td> 
 							<td class="col-xs-5">{{ $post->title }}</td> 
 							<td class="col-xs-1">{{ $post->sort_order }}</td> 
 							<td>
@@ -49,9 +49,9 @@ Description for post management
 							</td>
 							<td>
 								@if ($post->status == '2')
-								<a href="{{ url('admin/manage/post/setInactive/' . $post->id) }}" class="btn btn-default">Set Inactive</a>
+								<a href="{{ url('admin/manage/post/deactivate/' . $post->id) }}" class="btn btn-default">Set Inactive</a>
 								@elseif ($post->status == '1')
-								<a href="{{ url('admin/manage/post/setActive/' . $post->id) }}" class="btn btn-default">Set Active</a>
+								<a href="{{ url('admin/manage/post/activate/' . $post->id) }}" class="btn btn-default">Set Active</a>
 								@endif
 								<a href="{{ url('admin/manage/post/edit/' . $post->id) }}" class="btn btn-default">Edit</a>
 								<a onclick="javascript: if (confirm('Are you sure you want to delete this?')) { href='{{ url('admin/manage/post/destroy/' . $post->id) }}'} else { alert('Delete Cancelled.');return false; }; " href="#" class="btn btn-danger">Delete</a>
