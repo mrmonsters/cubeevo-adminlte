@@ -10,6 +10,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+Route::controllers([
+	'admin/manage/post' => 'Admin\PostController',
+]);
  
 Route::get('/credential', 'HomeController@getCredential');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');
