@@ -25,7 +25,7 @@ $response = Session::get('response');
 		@foreach($posts as $post)
 		<?php 
 		    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
-		    $content = trim(preg_replace("/<img[^>]+\>/i", " ", $content)); ?>
+		    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content))); ?>
 		<div class="col-sm-8 col-sm-offset-2"> 
 			<a href="{{url('insights/detail/'.$post->slug)}}" class="txtorange">{{$post->translate(Session::get('locale'))->title}}</a>
 			<div><?php echo substr($content,0,100);?></div> 

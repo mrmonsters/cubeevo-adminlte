@@ -20,7 +20,7 @@ html,body{background-color: #20BCC1;}
 			<p>{{ (Session::get('locale') == 'en') ? 'YEAR' : '年份' }}</p>
 			<p class="txtorange"><?php echo date('Y',strtotime($post->created_at));?></p>
 		</div> 
-		<div class="col-sm-8">
+		<div class="col-sm-7">
 			<p>{{ (Session::get('locale') == 'en') ? 'TITLE' : '标题' }}</p>
 			<h2 class="txtorange" style="margin-top:0px;">{{$post->translate(Session::get('locale'))->title}}</h2>
 		</div>
