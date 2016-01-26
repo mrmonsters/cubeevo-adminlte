@@ -26,7 +26,7 @@ html,body{background-color: #20BCC1;}
 		</div>
 	</div>  
 	<div class="row" style="position:relative;">   
-		<div class="col-sm-8 col-sm-offset-4">  
+		<div class="col-sm-7 col-sm-offset-4">  
 			<div><?php echo html_entity_decode($post->translate(Session::get('locale'))->description);?></div>
 		</div>	 
 	<br/>
@@ -38,7 +38,7 @@ html,body{background-color: #20BCC1;}
 	<br/>  
 	</div> 
 	<div class="row" style="position:relative;">   
-		<div class="col-sm-8 col-sm-offset-4 text-center">  
+		<div class="col-sm-7 col-sm-offset-4 text-center">  
 		<hr style="border-color:#ddd;" />
 		<p style="margin-top: -28.5px;padding-bottom: 5px;">{{ (Session::get('locale') == 'en') ? 'SHARE' : '分享' }}</p>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -48,7 +48,7 @@ html,body{background-color: #20BCC1;}
 	</div>
 	@if(count($posts) > 0)
 	<div class="row" style="position:relative;">   
-		<div class="col-sm-8 col-sm-offset-4"> 
+		<div class="col-sm-7 col-sm-offset-4"> 
 		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in:' : '其他文章:' }}:</p> 
 		<div class="row">
 			@foreach($posts as $post) 
