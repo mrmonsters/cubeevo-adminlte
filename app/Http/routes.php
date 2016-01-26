@@ -21,7 +21,8 @@ Route::get('/credential/{slug}', 'HomeController@getCredentialProject');
 Route::get('/solution', 'HomeController@getSolution'); 
 Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
-Route::get('/insights', 'HomeController@getInsights');
+Route::get('/insights/detail/{slug}', 'HomeController@getInsightdetail');
+Route::get('/insights', 'HomeController@getInsights'); 
 Route::post('/contact-us/submit', 'HomeController@submitMessage');
 
 Route::get('admin', 'AdminController@index');

@@ -11,6 +11,7 @@ use App\Models\Status;
 use App\Models\Locale;
 use App\Models\Page;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Project;
 use App\Models\Solution;
 use App\Models\Message;
@@ -166,8 +167,29 @@ class HomeController extends Controller {
 			]);
 	}
 
+	public function getInsightdetail($slug)
+	{
+		if(empty($slug)):
+			return Redirect::to('/insights/');
+		endif;
+
+		$post = Post::where('slug', '=', $slug)->first(); 
+
+		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)->where('slug','!=',$slug)
+			->orderBy('created_at','desc') 
+			->take(4)
+			->get();
+
+		return view('frontend.insightdetail')->with('post', $post)->with('posts', $posts)
+			->with('backbtn', URL::action('HomeController@getCredential'));
+	}
+
 	public function getInsights()
 	{
+		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)
+			->orderBy('sort_order')
+			->get();
+
 		$meta_title = 'Insights';
 		$meta_keyword = 'Insights';
 		$meta_desc = 'Insights.';
@@ -176,6 +198,7 @@ class HomeController extends Controller {
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc,
+			'posts'	=> $posts
 			]);
 	}
 
