@@ -54,26 +54,25 @@ html,body{background-color: #20BCC1;}
 			@foreach($posts as $post) 
 			<?php 
 		    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
-		    $content = preg_replace("/<img[^>]+\>/i", " ", $content); 
+		    $content = strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)); 
 		    ?>
 			<a href="{{url('insights/detail/'.$post->slug)}}" > 
-				<div class="col-sm-3" style="position:relative;"> 
+				<div class="col-xs-6 col-sm-3" style="position:relative;margin-bottom:10px;"> 
 					<div class="thumb-content text-white">
 						<small>-<?php echo date('F d,Y',strtotime($post->created_at));?></small>
 						<br/>
 						<?php echo substr(html_entity_decode($post->translate(Session::get('locale'))->title),0,100);?>
 						<br/>
-						<?php echo substr($content,0,50).'...';?>
+						<?php echo substr($content,0,50);?>
 						<br/>
 						<br/>
 						<small><i class="fa fa-file-text"></i> <u>{{ (Session::get('locale') == 'en') ? 'Read more here' : '阅读详情' }}</u></small>
 					</div> 
 					<img src="{{$post->coverImage->dir}}" width="100%" />
 				</div> 
-			</a>
+			</a> 
 			@endforeach
-		</div>
-		<br/>
+		</div> 
 		</div>
 	</div>
 	@endif
