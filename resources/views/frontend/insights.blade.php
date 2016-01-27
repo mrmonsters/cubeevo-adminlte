@@ -34,7 +34,7 @@ $response = Session::get('response');
 				<div class="post-content col-xs-9"> 
 					<a href="{{url('insights/detail/'.$post->slug)}}">
 					<h3 class="txtorange nopadding">{{$post->translate(Session::get('locale'))->title}}</h3>
-					<div class="text-black"><?php echo substr($content,0,80);?></div> 
+					<div class="text-black"><?php echo substr($content,0,80);?>...</div> 
 					</a>
 				</div>
 				<div class="post-date col-xs-3 text-center"  style="border-left:1px solid black">
