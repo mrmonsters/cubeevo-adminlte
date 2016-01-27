@@ -9,9 +9,7 @@ $settings = Setting::where('status', '=', STATUS::ACTIVE)->get();
 $response = Session::get('response'); 
 ?>
 <style type="text/css">
-	.post{position: relative;}
-	.post-content{position: absolute;top: 12px;left: 40px;padding: 10px;line-height: 200%;}
-	.post-date{position: absolute;left:83%;margin-top: -5%;}
+	.post{border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;padding:20px;margin-bottom: 15px;} 
 </style>
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
@@ -26,20 +24,23 @@ $response = Session::get('response');
 	<br/>
 	<br/>
 	<br/> 
-	<div class="row" style="position:relative;">   
+	<div class="row" style="position:relative;padding:15px;">   
 		@foreach($posts as $post)
 		<?php 
 		    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
 		    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content))); ?>
 		<div class="col-sm-8 col-sm-offset-2 post"> 
-			<img src="{{url('img/Programmer Needs-20.svg')}}" class="hidden-xs" style="max-width:895px;">
-			<div class="post-content"> 
-				<a href="{{url('insights/detail/'.$post->slug)}}" class="txtorange">{{$post->translate(Session::get('locale'))->title}}</a>
-				<div><?php echo substr($content,0,100);?></div> 
-			</div>
-			<div class="post-date">
-				<?php echo date('F d,Y',strtotime($post->created_at));?>
-			</div>
+			<div class="row"> 
+				<div class="post-content col-xs-9"> 
+					<a href="{{url('insights/detail/'.$post->slug)}}">
+					<span class="txtorange">{{$post->translate(Session::get('locale'))->title}}</span>
+					<div class="text-black"><?php echo substr($content,0,100);?></div> 
+					</a>
+				</div>
+				<div class="post-date col-xs-3"  style="border-left:1px solid black">
+					<p style="padding-top:12px;"><?php echo date('F d,Y',strtotime($post->created_at));?></p>
+				</div>
+			</div> 
 		</div>	
 		@endforeach
 	<br/>
