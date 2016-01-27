@@ -40,7 +40,10 @@ html,body{background-color: #20BCC1;}
 	<div class="row" style="position:relative;">   
 		<div class="col-sm-7 col-sm-offset-4 text-center">  
 		<hr style="border-color:#ddd;" />
-		<p style="margin-top: -28.5px;padding-bottom: 5px;">{{ (Session::get('locale') == 'en') ? 'SHARE' : '分享' }}</p>
+		<p style="    padding-bottom: 5px;
+    width: 70px;
+    background: #eee;
+    margin: -28.5px auto 0 auto;">{{ (Session::get('locale') == 'en') ? 'SHARE' : '分享' }}</p>
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
 		<center><div class="addthis_sharing_toolbox"></div></center>
 		<hr style="border-color:#ddd;" />
