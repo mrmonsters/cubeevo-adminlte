@@ -181,7 +181,7 @@ class HomeController extends Controller {
 			->get();
 
 		return view('frontend.insightdetail')->with('post', $post)->with('posts', $posts)
-			->with('backbtn', URL::action('HomeController@getCredential'));
+			->with('backbtn', URL::action('HomeController@getInsights'));
 	}
 
 	public function getInsights()
