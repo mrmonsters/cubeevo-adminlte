@@ -37,7 +37,7 @@ $response = Session::get('response');
 					<div class="text-black"><?php echo substr($content,0,100);?></div> 
 					</a>
 				</div>
-				<div class="post-date col-xs-3"  style="border-left:1px solid black">
+				<div class="post-date col-xs-3 text-center"  style="border-left:1px solid black">
 					<p style="padding-top:12px;"><?php echo date('F d,Y',strtotime($post->created_at));?></p>
 				</div>
 			</div> 
