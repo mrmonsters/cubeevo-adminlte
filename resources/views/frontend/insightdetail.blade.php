@@ -10,10 +10,12 @@ $response = Session::get('response');
 ?> 
 <style type="text/css">
 html,body{background-color: #20BCC1;}
-.thumb-content{position:absolute;top: 0;padding: 15px;}
+.thumb-content{position:absolute;top: 0;padding: 15px;display: none;background: rgba(0,0,0,0.5);width: 100%;height: 100%;} 
+.other-post:hover .thumb-content{display: block;}
 </style>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4efee86c3355840d" async="async"></script>
+
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-2 col-sm-offset-2">
@@ -52,21 +54,21 @@ html,body{background-color: #20BCC1;}
 	@if(count($posts) > 0)
 	<div class="row" style="position:relative;">   
 		<div class="col-sm-7 col-sm-offset-4"> 
-		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in:' : '其他文章:' }}:</p> 
+		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in' : '其他文章:' }}:</p> 
 		<div class="row">
 			@foreach($posts as $post) 
 			<?php 
 		    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
 		    $content = strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)); 
 		    ?>
-			<a href="{{url('insights/detail/'.$post->slug)}}" > 
-				<div class="col-xs-6 col-sm-3" style="position:relative;margin-bottom:10px;"> 
-					<div class="thumb-content text-white">
-						<small>-<?php echo date('F d,Y',strtotime($post->created_at));?></small>
+			<a href="{{url('insights/detail/'.$post->slug)}}" class="other-post"> 
+				<div class="col-xs-6 col-md-3 col-sm-6" style="position:relative;margin-bottom:10px;overflow: hidden;padding-right:0px;margin-left:-6px;"> 
+					<div class="thumb-content text-white"> 
+						<small>-<?php echo date('F d, Y',strtotime($post->created_at));?></small>
 						<br/>
-						<?php echo substr(html_entity_decode($post->translate(Session::get('locale'))->title),0,100);?>
 						<br/>
-						<?php echo substr($content,0,50);?>
+						<p style="margin-bottom:0px;"><?php echo substr(html_entity_decode($post->translate(Session::get('locale'))->title),0,100);?></p> 
+						<small><?php echo substr($content,0,50);?></small>
 						<br/>
 						<br/>
 						<small><i class="fa fa-file-text"></i> <u>{{ (Session::get('locale') == 'en') ? 'Read more here' : '阅读详情' }}</u></small>
@@ -79,6 +81,8 @@ html,body{background-color: #20BCC1;}
 		</div>
 	</div>
 	@endif
+	<br/>
+	<br/>  
 			 
 </div>
 		 

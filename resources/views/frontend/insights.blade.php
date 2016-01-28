@@ -38,7 +38,7 @@ $response = Session::get('response');
 					</a>
 				</div>
 				<div class="post-date col-xs-3 text-center"  style="border-left:1px solid black">
-					<p style="padding-top:12px;"><?php echo date('F d,Y',strtotime($post->created_at));?></p>
+					<p style="padding-top:12px;"><?php echo date('F d, Y',strtotime($post->created_at));?></p>
 				</div>
 			</div> 
 		</div>	
