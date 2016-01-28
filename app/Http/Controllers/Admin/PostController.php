@@ -47,8 +47,7 @@ class PostController extends Controller {
 	 */
 	public function getIndex()
 	{
-		$posts = Post::where('status', 2)
-			->where('deleted', false)
+		$posts = Post::where('deleted', false)
 			->orderBy('created_at', 'DESC')
 			->get();
 
