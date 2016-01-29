@@ -58,8 +58,8 @@ html,body{background-color: #20BCC1;}
 		<div class="row">
 			@foreach($posts as $post) 
 			<?php 
-		    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
-		    $content = strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)); 
+		   // $content = html_entity_decode($post->translate(Session::get('locale'))->description);
+		    //$content = strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)); 
 		    ?>
 			<a href="{{url('insights/detail/'.$post->slug)}}" class="other-post"> 
 				<div class="col-xs-6 col-md-3 col-sm-6" style="position:relative;margin-bottom:10px;overflow: hidden;padding-right:0px;margin-left:-6px;"> 
@@ -68,7 +68,7 @@ html,body{background-color: #20BCC1;}
 						<br/>
 						<br/>
 						<p style="margin-bottom:0px;"><?php echo substr(html_entity_decode($post->translate(Session::get('locale'))->title),0,100);?></p> 
-						<small><?php echo substr($content,0,50);?></small>
+						<?php /*?><small><?php echo substr($content,0,50);?></small><?php */?>
 						<br/>
 						<br/>
 						<small><i class="fa fa-file-text"></i> <u>{{ (Session::get('locale') == 'en') ? 'Read more here' : '阅读详情' }}</u></small>

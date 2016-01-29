@@ -187,7 +187,7 @@ class HomeController extends Controller {
 	public function getInsights()
 	{
 		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)
-			->orderBy('sort_order')
+			->orderBy('created_at','desc') 
 			->get();
 
 		$meta_title = 'Insights';
