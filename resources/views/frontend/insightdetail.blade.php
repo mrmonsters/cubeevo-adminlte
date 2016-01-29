@@ -54,6 +54,8 @@ html,body{background-color: #20BCC1;}
 	@if(count($posts) > 0)
 	<div class="row" style="position:relative;">   
 		<div class="col-sm-7 col-sm-offset-4"> 
+		<br/>
+		<br/> 
 		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in' : '其他文章:' }}:</p> 
 		<div class="row">
 			@foreach($posts as $post) 
@@ -64,7 +66,7 @@ html,body{background-color: #20BCC1;}
 			<a href="{{url('insights/detail/'.$post->slug)}}" class="other-post"> 
 				<div class="col-xs-6 col-md-3 col-sm-6" style="position:relative;margin-bottom:10px;overflow: hidden;padding-right:0px;margin-left:-6px;"> 
 					<div class="thumb-content text-white"> 
-						<small>-<?php echo date('F d, Y',strtotime($post->created_at));?></small>
+						<small><?php echo date('F d, Y',strtotime($post->created_at));?></small>
 						<br/>
 						<br/>
 						<p style="margin-bottom:0px;"><?php echo substr(html_entity_decode($post->translate(Session::get('locale'))->title),0,100);?></p> 
