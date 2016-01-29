@@ -19,7 +19,7 @@ html,body{background-color: #20BCC1;}
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-2 col-sm-offset-2">
-			<p>{{ (Session::get('locale') == 'en') ? 'YEAR' : '年份' }}</p>
+			<p>{{ (Session::get('locale') == 'en') ? 'DATE' : '日期' }}</p>
 			<p class="txtorange"><?php echo date('F d, Y',strtotime($post->created_at));?></p>
 		</div> 
 		<div class="col-sm-7">
