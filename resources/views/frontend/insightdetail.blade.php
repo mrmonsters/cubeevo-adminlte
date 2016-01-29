@@ -10,7 +10,7 @@ $response = Session::get('response');
 ?> 
 <style type="text/css">
 html,body{background-color: #20BCC1;}
-.thumb-content{position:absolute;top: 0;padding: 15px;display: none;background: rgba(0,0,0,0.5);width: 100%;height: 100%;} 
+.thumb-content{position:absolute;top: 0;padding: 15px;display: none;background: rgba(0,0,0,0.5);width: 96%;height: 100%;} 
 .other-post:hover .thumb-content{display: block;}
 </style>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -20,7 +20,7 @@ html,body{background-color: #20BCC1;}
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-2 col-sm-offset-2">
 			<p>{{ (Session::get('locale') == 'en') ? 'YEAR' : '年份' }}</p>
-			<p class="txtorange"><?php echo date('Y',strtotime($post->created_at));?></p>
+			<p class="txtorange"><?php echo date('F d, Y',strtotime($post->created_at));?></p>
 		</div> 
 		<div class="col-sm-7">
 			<p>{{ (Session::get('locale') == 'en') ? 'TITLE' : '标题' }}</p>
