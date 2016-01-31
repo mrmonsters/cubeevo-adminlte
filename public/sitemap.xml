@@ -27,6 +27,10 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>http://www.cubeevo.com/insights</loc>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>http://www.cubeevo.com/process</loc>
   <priority>0.80</priority>
 </url>

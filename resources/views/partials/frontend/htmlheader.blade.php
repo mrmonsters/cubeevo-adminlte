@@ -18,6 +18,8 @@ use App\Models\Files;
   <meta property="og:site_name" content="{{ $meta_title }}"/>
   <meta property="og:image" content="{{ ($id = $site_settings->where('code', 'meta_img_id')->first()->value) ? Files::find($id)->dir : '' }}" />
   <meta property="og:description" content="{{ $meta_desc }}" />
+  <script src="https://use.typekit.net/npl2kox.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
@@ -28,10 +30,10 @@ use App\Models\Files;
     @if(Session::get('locale') == 'en') 
     <style type="text/css">
       body{
-        font-family: "Conv_DINNextLTPro-Light", sans-serif;
+        font-family: "Conv_DINNextLTPro-Light","source-han-sans-simplified-c", sans-serif;
       } 
       b{
-        font-family: "Conv_DINNextLTPro-Bold", sans-serif;
+        font-family: "Conv_DINNextLTPro-Bold","source-han-sans-simplified-c", sans-serif;
       }
     </style>
     @endif 
