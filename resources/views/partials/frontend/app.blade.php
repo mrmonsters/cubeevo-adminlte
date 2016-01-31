@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=4"> <!-- Custom style --> 
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=5"> <!-- Custom style --> 
 
     <script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
 		@include('partials.frontend.scripts')

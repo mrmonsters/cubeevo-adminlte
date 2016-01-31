@@ -14,7 +14,7 @@ $response = Session::get('response');
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-2">
-			<h2 class="txtorange"><span></span>{{ (Session::get('locale') == 'en') ? 'INSIGHTS' : '品牌洞察' }}</h2>
+			<h1 class="txtorange"><span></span>{{ (Session::get('locale') == 'en') ? 'INSIGHTS' : '品牌洞察' }}</h1>
 		</div>
 	</div> 
 	<br/>

@@ -11,8 +11,9 @@ html,body
     padding: 0px; 
 }
 img{  border: none;  } 
-.h1,h1{font-size: 55px;}
-.h2,h2{font-size: 40px;}
+.custom-55{font-size:55px}
+.h1,h1{font-size: 40px;}
+.h2,h2{font-size: 26px;}
 .h3,h3{font-size: 26px;}
 .h4,h4{font-size: 18px;line-height: 1.4em;}
 .h5,h5{font-size: 16px;}

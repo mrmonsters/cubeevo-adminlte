@@ -44,7 +44,7 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                                 </div>
                                 <div class="col-sm-10">
                                     <p class="desctitle project-name" style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'PROJECT' : '项目名称' }}</p>
-                                	<h3>{{ (Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h3>
+                                	<h1 style="margin-top:0px;">{{ (Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(Session::get('locale'))->name }}</h1>
                                     @if($project->translate(Session::get('locale'))->sub_heading)
                                     <h4>{{ $project->translate(Session::get('locale'))->sub_heading }}</h4>
                                     @endif

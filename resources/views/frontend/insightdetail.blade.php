@@ -24,7 +24,7 @@ html,body{background-color: #20BCC1;}
 		</div> 
 		<div class="col-sm-7">
 			<p>{{ (Session::get('locale') == 'en') ? 'TITLE' : '标题' }}</p>
-			<h2 class="txtorange" style="margin-top:0px;">{{$post->translate(Session::get('locale'))->title}}</h2>
+			<h1 class="txtorange" style="margin-top:0px;">{{$post->translate(Session::get('locale'))->title}}</h1>
 		</div>
 	</div>  
 	<div class="row" style="position:relative;">   
