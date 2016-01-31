@@ -42,7 +42,7 @@ use App\Models\Files;
     <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=4"> <!-- Custom style --> 
 
-    <script src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
+    <script async src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
     <title>{{ $meta_title }}</title>
     <?php use App\Models\Setting; ?>
     @if(isset(Setting::where('code', '=', 'ga_key')->first()->value))
