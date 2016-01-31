@@ -3,7 +3,7 @@ use App\Models\Files;
  
   $meta_desc = (isset($meta_desc) && !empty($meta_desc))?$meta_desc:$site_settings->where('code', 'meta_desc')->first()->value;
   $meta_keyword = (isset($meta_keyword) && !empty($meta_keyword))?$meta_keyword:$site_settings->where('code', 'meta_keyword')->first()->value;
-  $meta_title = (isset($meta_title) && !empty($meta_title))?$site_settings->where('code', 'site_title')->first()->value.' - '.$meta_title:$site_settings->where('code', 'site_title')->first()->value;
+  $meta_title = (isset($meta_title) && !empty($meta_title))?$meta_title.' - '.$site_settings->where('code', 'site_title')->first()->value:$site_settings->where('code', 'site_title')->first()->value;
 
 ?> 
 
