@@ -257,7 +257,7 @@ hr.whitehr{width:97%;border-bottom:1px solid #fff;border-left:0 none;border-righ
 .videoWrapper video{position:absolute;top:0;left:0;width:100%;height:100%;}
 .video-btn{position:absolute;top:40%;left:46%;height:54px;width:54px;z-index:5;}
 .alert-success{background-color:#f7941a;color:#fff;} 
-@media (max-width:769px){ .fullpage-wrapper h1 {font-size: 26px;}}
+@media (max-width:769px){ .fullpage-wrapper h1 {font-size: 26px !important;margin-top:10px;}}
 @media (min-width:769px){#cd-main-nav{overflow:hidden;height:98.8%;left:1.3%;}
 }
 @media (min-width:768px){.content-wrapper__fixed{height:98%;}
