@@ -173,7 +173,11 @@ class HomeController extends Controller {
 			return Redirect::to('/insights/');
 		endif;
 
-		$post = Post::where('slug', '=', $slug)->first(); 
+		$post = Post::where('slug', '=', $slug)->first();  
+
+		if(empty($post)):
+			return Redirect::to('/insights/');
+		endif;
 
 		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)->where('slug','!=',$slug)
 			->orderBy('created_at','desc') 
