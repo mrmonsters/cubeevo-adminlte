@@ -27,9 +27,9 @@
                     </div> 
 
                     <div class="row panel-body overlap">
-                        <p class="col-xs-12 hidden-text text-center panel-title">
+                        <h1 class="col-xs-12 hidden-text text-center panel-title text-white">
                             {{ $solution->translate(Session::get('locale'))->name }}
-                        </p>
+                        </h1>
                         <div class="clearfix"></div>
                         <br/> 
                         <p class="col-xs-12 hidden-text text-center panel-title-desc">

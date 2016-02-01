@@ -100,7 +100,7 @@ hr.whitehr{width:97%;border-bottom:1px solid #fff;border-left:0 none;border-righ
 .sol-9{background:#1f9ea0 url(../img/Images-36.png);background-position:right;}
 .panel-body.overlap{position:absolute;left:0;right:0;padding:5% 5% 0 3%;margin:-25% 0px 0px 0px;}
 .panel-body.overlap p{z-index:1;position:relative;color:#fff;padding-left:5px;}
-.panel-title{float:left;font-size:18px;padding-right:0px;}
+.panel-title{float:left;font-size:18px;padding-right:0px;z-index: 1;}
 .panel-title-desc{padding-left:2%;padding-right:10px;float:left;}
 .cre-box{cursor:pointer;padding:0px;}
 .cre .panel-body.overlap{margin:-25% 0px 0px 0px;}
