@@ -11,7 +11,7 @@ $response = Session::get('response');
 <style type="text/css">
 	.post{border-left:1px solid black;border-top:1px solid black;border-right:1px solid black;padding:20px;margin-bottom: 15px;} 
 </style>
-<div class="container-fluid contactus">
+<div class="container-fluid insight">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-10 col-sm-offset-2">
 			<h1 class="txtorange"><span></span>{{ (Session::get('locale') == 'en') ? 'INSIGHTS' : '品牌洞察' }}</h1>

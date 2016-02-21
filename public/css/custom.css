@@ -173,7 +173,7 @@ hr.whitehr{width:97%;border-bottom:1px solid #fff;border-left:0 none;border-righ
 .aboutus .team .profiledesc{margin-bottom:30px;}
 .aboutus .career .job{overflow:hidden;margin-bottom:30px;margin-top:10px;}
 .aboutus .career .job button{border:1px solid #fff;background:none;color:#fff;padding:10px 20px;border-radius:0;float:right;}
-.container-fluid.contactus{margin:4.5%;background-color:#eee;padding-top:80px;}
+.container-fluid.contactus,.container-fluid.insight{margin:4.5%;background-color:#eee;padding-top:80px;}
 .contactus .contactdetails{background:#FFF;padding:40px 0;font-size:12px;}
 .contactus ul{list-style:none;padding:0;overflow:hidden;}
 .contactus li{text-indent:30px;}

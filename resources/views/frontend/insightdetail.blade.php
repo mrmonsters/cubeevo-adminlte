@@ -16,7 +16,7 @@ html,body{background-color: #20BCC1;}
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4efee86c3355840d" async="async"></script>
 
-<div class="container-fluid contactus">
+<div class="container-fluid insight">
 	<div class="row" style="position:relative;"> 
 		<div class="col-sm-2 col-sm-offset-2">
 			<p>{{ (Session::get('locale') == 'en') ? 'DATE' : '日期' }}</p>
