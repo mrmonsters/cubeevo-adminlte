@@ -56,7 +56,7 @@ html,body{background-color: #20BCC1;}
 		<div class="col-sm-7 col-sm-offset-4"> 
 		<br/>
 		<br/> 
-		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in' : '其他文章:' }}:</p> 
+		<p>{{ (Session::get('locale') == 'en') ? 'You may also be interested in' : '其他文章' }}:</p> 
 		<div class="row">
 			@foreach($posts as $post) 
 			<?php 
