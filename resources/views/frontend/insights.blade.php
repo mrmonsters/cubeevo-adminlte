@@ -34,7 +34,7 @@ $response = Session::get('response');
 				<div class="post-content col-xs-9"> 
 					<a href="{{url('insights/detail/'.$post->slug)}}">
 					<h4 class="txtorange nopadding">{{$post->translate(Session::get('locale'))->title}}</h4>
-					<?php $char_count = (Session::get('locale') == 'en')?80:30;?>
+					<?php $char_count = (Session::get('locale') == 'en')?80:50;?>
 					<div class="text-black"><?php echo mb_substr($content,0,$char_count);?>...</div> 
 					</a>
 				</div>
