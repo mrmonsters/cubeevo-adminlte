@@ -184,7 +184,16 @@ class HomeController extends Controller {
 			->take(4)
 			->get();
 
-		return view('frontend.insightdetail')->with('post', $post)->with('posts', $posts)
+	    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
+	    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content))); 
+	    $char_count = (Session::get('locale') == 'en')?80:50;
+	    $desc = mb_substr($content,0,$char_count).'...';
+
+		return view('frontend.insightdetail')->with(['post'=> $post,'posts'=> $posts, 
+			'meta_title'=> $post->translate(Session::get('locale'))->title,
+			'meta_keyword'=> $post->translate(Session::get('locale'))->title,
+			'meta_desc'=> $desc,
+			])
 			->with('backbtn', URL::action('HomeController@getInsights'));
 	}
 
