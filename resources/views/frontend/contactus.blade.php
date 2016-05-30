@@ -168,6 +168,7 @@ $response = Session::get('response');
 	  // Create a map object, and include the MapTypeId to add
 	  // to the map type control.
 	  var mapOptions = {
+        scrollwheel: false,
 	    zoom: 18,
 	   	center: {lat: {{ $settings->where('code', 'gmaps_lat')->first()->value }}, lng: {{ $settings->where('code', 'gmaps_lng')->first()->value }} },
 	    mapTypeControlOptions: {
