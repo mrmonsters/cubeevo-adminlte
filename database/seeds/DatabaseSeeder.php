@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ProjectTableSeeder');
 		$this->call('SolutionTableSeeder');
 		$this->call('SettingTableSeeder');
+		$this->call('SettingTableSeeder_2016_06_22');
 	}
 
 }

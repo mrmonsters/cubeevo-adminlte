@@ -11,4 +11,14 @@ class Setting extends Model {
 	protected $table    = 'settings';
 	protected $fillable = ['name', 'code', 'value'];
 
+	public static function getMetaImage()
+	{
+		if ($imgId = self::where('code', '=', 'meta_img_id')->first()) {
+
+			return Files::find($imgId->value);
+		}
+
+		return false;
+	}
+
 }
