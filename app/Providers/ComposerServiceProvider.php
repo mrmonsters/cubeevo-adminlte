@@ -15,6 +15,9 @@ class ComposerServiceProvider extends ServiceProvider {
 			'App\Http\ViewComposers\SettingsComposer' => [
 				'management.setting.edit',
 			],
+			'App\Http\ViewComposers\FilesComposer'    => [
+				'management.setting.edit',
+			],
 		]);
 	}
 

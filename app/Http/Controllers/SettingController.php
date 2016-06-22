@@ -13,6 +13,11 @@ use App\Services\FileHelper;
 
 class SettingController extends Controller {
 
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -57,8 +62,7 @@ class SettingController extends Controller {
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @return \Illuminate\View\View
 	 */
 	public function edit()
 	{
@@ -68,17 +72,19 @@ class SettingController extends Controller {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param Requests\Admin\SettingFormRequest $request
+	 * @param FileHelper                        $fileHelper
+	 *
+	 * @return mixed
 	 */
-	public function update(Request $req, FileHelper $fileHelper)
+	public function update(Requests\Admin\SettingFormRequest $request, FileHelper $fileHelper)
 	{
 		$response = array();
-		$data     = $req->input();
+		$data     = $request->input();
 
 		if (isset($data) && !empty($data)) {
 
-			$files = $req->file();
+			$files = $request->file();
 
 			if (isset($files) && isset($files['new_meta_img_id'])) {
 
@@ -108,7 +114,7 @@ class SettingController extends Controller {
 				$config = Setting::where('code', '=', $key)->first();
 
 				if (isset($config)) {
-					
+
 					$config->value = $val;
 					$config->save();
 				}
@@ -117,13 +123,13 @@ class SettingController extends Controller {
 			$response['code'] = Status::SUCCESS;
 			$response['msg']  = "Settings have been saved successfully.";
 
-			return Redirect::to('admin/manage/setting')->with('response', $response);
+			return redirect()->to('admin/manage/setting')->with('response', $response);
 		}
 
 		$response['code'] = Status::ERROR;
 		$response['msg']  = "Unable to save settings.";
 
-		return Redirect::back()->with('response', $response);
+		return redirect()->back()->with('response', $response);
 	}
 
 	/**

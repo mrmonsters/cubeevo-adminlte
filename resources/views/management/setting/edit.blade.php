@@ -128,25 +128,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="modal">Choose from existing image collection</h4>
+                    <h4 class="modal-title" id="modal">Choose from existing images</h4>
                 </div>
                 <div class="modal-body" style="max-height: 450px; overflow-y: auto;">
-                    <?php $count = 0; ?>
-                    <?php $images = \App\Models\Files::where('delete', '=', false)->where('status', \App\Models\Status::ACTIVE)->get(); ?>
-                    @foreach ($images as $image)
-                    <?php $count++; ?>
-                    @if ($count % 4 == 1)
-                    <div class="row">
+                    @if (!empty($files))
+                        <ul>
+                            @foreach ($files as $file)
+                                <li><button type="button" class="btn btn-xs btn-default" onclick="selectImg({{ $file['id'] }}, '{{ $file['dir'] }}')">Select</button> <a href="{{ url($file['dir']) }}" target="_blank">{{ $file['name'] }}</a></li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <p>No image is available.</p>
                     @endif
-                        <div class="col-xs-6 col-md-3">
-                            <button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
-                                <img src="{{ $image->dir }}" alt="{{ $image->name }}">
-                            </button>
-                        </div>
-                    @if (($count % 4 == 0) || ($count == $images->count()))
-                    </div>
-                    @endif
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -155,10 +148,11 @@
 
 @section('addon-script')
     <script type="text/javascript">
-    function selectImg(imgId, imgSrc)
-    {
+    function selectImg(imgId, imgSrc) {
+
         $('#meta_img_id').val(imgId);
         $('#meta_img').attr('src', imgSrc);
+        $('#modal-upload').modal('toggle');
     }
     </script>
 @endsection
