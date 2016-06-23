@@ -533,43 +533,7 @@ Description for project management
 	</div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="modal-upload" tabindex="-1" role="dialog" aria-labelledby="modal-upload">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="modal">Choose from existing image collection</h4>
-			</div>
-			<div id="lazy-container" class="modal-body" style="max-height: 450px; overflow-y: auto;">
-				<?php $count = 0; ?>
-				<?php $images = Files::where('status', '=', STATUS::ACTIVE)->get(); ?>
-				@foreach ($images as $image)
-				<?php $count++; ?>
-				@if ($count % 4 == 1)
-				<div class="row">
-				@endif
-					<div class="col-xs-6 col-md-3">
-						<button class="thumbnail" data-dismiss="modal" onclick="selectImg({{ $image->id }}, '{{ $image->dir }}')">
-							@if (isset($image->type) && substr($image->type, 0, 5) == 'image')
-							<img data-original="{{ $image->dir }}" alt="{{ $image->name }}" class="img-thumbnail lazy-img" width="100%">
-							<?php /*
-							@elseif (isset($image->type) && substr($image->type, 0, 5) == 'video')
-							<video width="100%">
-								<source src="{{ $image->dir }}" />
-							</video>
-							*/ ?>
-							@endif
-						</button>
-					</div>
-				@if (($count % 4 == 0) || ($count == $images->count())) 
-				</div>
-        		@endif
-				@endforeach
-			</div>
-		</div>
-	</div>
-</div>
+	@include('partials.admin.media-library', ['files' => $files])
 
 <!-- Project Image - Modal -->
 <div class="modal fade" id="modal-project-img" tabindex="-1" role="dialog" aria-labelledby="modal-project-img">

@@ -18,9 +18,7 @@ use App\Services\ValidationHelper;
 class CategoryController extends Controller {
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
+	 * CategoryController constructor.
 	 */
 	public function __construct()
 	{
@@ -160,20 +158,20 @@ class CategoryController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
 		$response = array();
-		$category = Category::where('id', '=', $id)->where('delete', false)->first();
+		$category = Category::where('id', '=', $id)
+			->where('delete', false)
+			->first();
 
-		if (isset($category) && isset($category->id))
-		{
+		if (isset($category) && $category->exists) {
+
 			return view('management.category.edit')->with('category', $category);
-		}
-		else
-		{
+		} else {
+
 			$response['code'] = Status::ERROR;
 			$response['msg']  = 'Category not found.';
 			
-			return Redirect::back()->with('response', $response);
+			return redirect()->back()->with('response', $response);
 		}
 	}
 
