@@ -190,8 +190,7 @@ class PostController extends Controller {
 	 */
 	public function getDestroy($id)
 	{
-		$post     = $this->_post->find($id);
-		$postData = $post->toArray();
+		$post = $this->_post->find($id);
 
 		if (!$post instanceof Post || !$post->exists) {
 
@@ -200,9 +199,9 @@ class PostController extends Controller {
 
 		try {
 
-			$postData['deleted'] = true;
+			$post->deleted = true;
 
-			$this->_post->update($postData);
+			$post->save();
 
 			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] has been deleted successfully.");
 		} catch (Exception $e) {
@@ -213,19 +212,18 @@ class PostController extends Controller {
 
 	public function getDeactivate($id)
 	{
-		$post     = $this->_post->find($id);
-		$postData = $post->toArray();
+		$post = $this->_post->find($id);
 
 		if (!$post instanceof Post || !$post->exists) {
 
 			return $this->respondError('admin/manage/post', 'Blog post not found.');
 		}
 
-		$postData['status'] = 1;
-
 		try {
 
-			$this->_post->update($postData);
+			$post->status = 1;
+
+			$post->save();
 
 			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] is deactivated successfully.");
 		} catch (Exception $e) {
@@ -244,11 +242,11 @@ class PostController extends Controller {
 			return $this->respondError('admin/manage/post', 'Blog post not found.');
 		}
 
-		$postData['status'] = 2;
-
 		try {
 
-			$this->_post->update($postData);
+			$post->status = 2;
+
+			$post->save();
 
 			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] is activated successfully.");
 		} catch (Exception $e) {
