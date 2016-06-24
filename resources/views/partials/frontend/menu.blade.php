@@ -25,7 +25,7 @@
                 <a href="{{url('/')}}"><img src="{{ asset('img/Programmer Needs-18.png')}}" class="logo-mob" alt="logo"/></a>
             </div>                
     		<ul class="list-unstyled">
-    			<li><a class="@if(Request::url() === url('/')) active @endif " href="{{ url('/') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
+    			<li><a class="@if(Request::url() === url('/cubeevo-dna')) active @endif " href="{{ url('/cubeevo-dna') }}">{{ (Session::get('locale') == 'en') ? 'CUBEEVO\'S DNA' : '形立方性格' }}</a></li>
     			<li><a class="@if(Request::url() === url('/about-us')) active @endif " href="{{ url('/about-us') }}">{{ (Session::get('locale') == 'en') ? 'ABOUT US' : '关于我们' }}</a></li>
     			<li><a class="@if(substr(Route::currentRouteAction(), (strpos(Route::currentRouteAction(), '@') + 1) ) == 'getCredential' || substr(Route::currentRouteAction(), (strpos(Route::currentRouteAction(), '@') + 1) ) == 'getCredentialProject' )) active @endif " href="{{ url('/credential') }}">{{ (Session::get('locale') == 'en') ? 'CREDENTIALS' : '案例与反馈' }}</a></li>
     			<li><a class="@if(Request::url() === url('/solution')) active @endif " href="{{ url('/solution') }}">{{ (Session::get('locale') == 'en') ? 'SOLUTIONS' : '专业服务' }}</a></li>
