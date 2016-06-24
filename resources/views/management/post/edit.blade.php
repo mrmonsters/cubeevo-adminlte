@@ -10,13 +10,13 @@ Blog Post Management
 
 @section('main-content')
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<div class="box box-primary">
 			<div class="box-header with-border">
 				<h3 class="box-title">Edit Blog Post</h3>
 			</div>
 			<form method="POST" action="{{ url('admin/manage/post/update/' . $post->id) }}" accept-charset="UTF-8" enctype="multipart/form-data">
-				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
+				<input name="_token" type="hidden" value="{{ csrf_token() }}" />
 				<div class="box-body">
 					<div class="form-group">
 						<table class="table">
@@ -26,7 +26,9 @@ Blog Post Management
 							</tr>
 							<tr>
 								<td>
-									<img src="{{ (strlen($post->file_id) > 0) ? $post->coverImage->dir : '' }}" width="100%" />
+									@if (!empty($post->file_id) && ($dir = $post->coverImage->dir))
+										<img src="{{ $dir }}" width="100%" />
+									@endif
 								</td>
 								<td>
 									<input id="cover_image" name="cover_image" type="file" class="form-control" />
@@ -35,8 +37,26 @@ Blog Post Management
 						</table>
 					</div>
 					<div class="form-group">
+						<table class="table">
+							<tr>
+								<th class="col-xs-2">Facebook Share Image</th>
+								<th class="col-xs-10">Action</th>
+							</tr>
+							<tr>
+								<td>
+									@if (!empty($post->fb_cover_img_id) && ($dir = $post->fbCoverImage->dir))
+										<img src="{{ $dir }}" width="100%" />
+									@endif
+								</td>
+								<td>
+									<input id="fb_cover" name="fb_cover" type="file" class="form-control" />
+								</td>
+							</tr>
+						</table>
+					</div>
+					<div class="form-group">
 						<label for="slug" class="control-label">Sort Order</label>
-						<input id="slug" name="post[sort_order]" type="text" class="form-control" value="{{ $post->sort_order }}" />
+						<input id="slug" name="sort_order" type="text" class="form-control" value="{{ $post->sort_order }}" />
 					</div>
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
@@ -52,11 +72,11 @@ Blog Post Management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($index != 0) ? : 'active' }}">
 									<div class="form-group">
 										<label for="title_{{ $locale->id }}" class="control-label">Title</label>
-										<input id="title_{{ $locale->id }}" name="post[title][{{ $locale->id }}]" type="text" class="form-control" value="{{ $post->translate($locale->language)->title }}" required />
+										<input id="title_{{ $locale->id }}" name="title[{{ $locale->id }}]" type="text" class="form-control" value="{{ $post->translate($locale->language)->title }}" required />
 									</div>
 									<div class="form-group">
 										<label for="description_{{ $locale->id }}" class="control-label">Description</label>
-										<textarea id="description_{{ $locale->id }}" name ="post[description][{{ $locale->id }}]" class="form-control">{{ $post->translate($locale->language)->description }}</textarea>
+										<textarea id="description_{{ $locale->id }}" name ="description[{{ $locale->id }}]" class="form-control">{{ $post->translate($locale->language)->description }}</textarea>
 									</div>
 								</div>
 							@endforeach
