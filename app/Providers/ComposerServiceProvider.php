@@ -11,8 +11,8 @@ class ComposerServiceProvider extends ServiceProvider {
 			'App\Http\ViewComposers\LocaleComposer'   => [
 				'management.post.create',
 				'management.post.edit',
-			    'management.category.create',
-			    'management.category.edit',
+				'management.category.create',
+				'management.category.edit',
 			],
 			'App\Http\ViewComposers\SettingsComposer' => [
 				'management.setting.edit',
@@ -21,10 +21,13 @@ class ComposerServiceProvider extends ServiceProvider {
 				'management.setting.edit',
 				'management.category.create',
 				'management.category.edit',
-			    'management.project.create',
-			    'management.project.edit',
-			    'management.solution.create',
-			    'management.solution.edit',
+				'management.project.create',
+				'management.project.edit',
+				'management.solution.create',
+				'management.solution.edit',
+			],
+			'App\Http\ViewComposers\HomeComposer'     => [
+				'frontend.index',
 			],
 		]);
 	}
