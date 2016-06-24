@@ -2,14 +2,29 @@
 
 @section('frontend-content')
 
+    <?php
+    $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
+    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
+    ?>
+    <style>
+        .post_0_background{
+            background : url('{{$posts[0]->coverImage->dir}}') !important;
+            background-size: cover !important;
+            height: 100% !important;
+            width: 100% !important;
+            position: relative !important;
+            background-position: center center !important;
+        overflow: hidden;} ;
+    </style>
     <div ng-controller="HomepageCtrl" class="home">
         <div class="wrapper wrapper__home wrapper__home-left col-xs-12 col-md-6 col-sm-6">
             <div class="content-wrapper no-margin">
                 <div class="col-md-push-5 col-md-6 col-xs-11 col-sm-push-5 col-sm-6 left-content">
                     <div class="js-left-content hide @{{ leftcontentFontColor }}" >
-                        <h4>Ever Evolving CUBEevo @{{ leftcontentbackgroundImage }}</h4><br/>
+                        <h4 class="leftcontent_topheading">Ever Evolving CUBEevo @{{ leftcontentbackgroundImage }}</h4><br/>
+                        <div class="leftcontent_client"><p class="text-white">Client</p><h4 class="leftcontent_client_name text-white"></h4></div><br/>
                         <h1 class="h2 leftcontent_heading"></h1>
-                        <p class="">Ready to transform your brand with infinite posibilities <br/>by our transformed
+                        <p class="leftcontent_desc">Ready to transform your brand with infinite posibilities <br/>by our transformed
                             Thinking Caps.</p>
                     </div>
                 </div>
@@ -27,7 +42,7 @@
                         background-size: cover;background-position: center center;"
                      ng-init="projects.push(
                      {'label':'{{ (\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name }}',
-                      }); ">
+                      'client_name': '{{strtoupper($project->translate(\Session::get("locale"))->client_name)}}',});post.push({'label':'{{{$posts[0]->translate(\Session::get('locale'))->title}}}','desc':'{{mb_substr($content,0,$char_count)}}'}); ">
                 </div>
                 <?php $counter++;?>
             @endforeach
