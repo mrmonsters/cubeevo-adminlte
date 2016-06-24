@@ -29,7 +29,7 @@ class SettingTableSeeder_2016_06_22 extends Seeder {
 
 		foreach ($settings as $setting) {
 
-			Setting::create($setting);
+			\App\Models\Setting::create($setting);
 		}
 	}
 
