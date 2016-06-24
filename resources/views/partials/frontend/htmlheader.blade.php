@@ -36,8 +36,9 @@ use App\Models\Files;
         font-family: "Conv_DINNextLTPro-Bold","source-han-sans-simplified-c", sans-serif;
       }
     </style>
-    @endif 
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}"> 
+    @endif
+  <link rel="stylesheet" href="{{ asset('css/utils.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
     <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
     <link rel="stylesheet" href="{{ asset('css/slick.css') }}">  

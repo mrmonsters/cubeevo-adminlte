@@ -119,6 +119,19 @@ class HomeController extends Controller {
 			->with('backbtn', url('/credential/'.$project->category->slug));
 	}
 
+	public function getHomepage()
+	{
+		$meta_title = 'Homepage';
+		$meta_keyword = 'Homepage';
+		$meta_desc = 'Homepage';
+
+		return view('frontend.homepage')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc
+		]);
+	}
+
 	public function getCredentialProject($slug)
 	{
 		if(empty($slug)):
