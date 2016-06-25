@@ -138,7 +138,33 @@ class HomeController extends Controller {
 		$meta_keyword = 'Be Part of The Team';
 		$meta_desc = 'Be Part of The Team';
 
-		return view('frontend.careers')->with([
+		return view('frontend.careers.index')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc
+		]);
+	}
+
+	public function getInternship()
+	{
+		$meta_title = 'Internship';
+		$meta_keyword = 'Internship';
+		$meta_desc = 'Internship';
+
+		return view('frontend.careers.internship')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc
+		]);
+	}
+
+	public function getFullemployment()
+	{
+		$meta_title = 'Full Employment';
+		$meta_keyword = 'Full Employment';
+		$meta_desc = 'Full Employment';
+
+		return view('frontend.careers.fullemployment')->with([
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc

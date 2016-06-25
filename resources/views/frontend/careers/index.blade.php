@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="{{url('/permanent')}}">
+                    <a href="{{url('/full-employment')}}">
                         <div class="row height-half">
                             <div class="bg-wrapper"
                                  style="background-image : url('{{asset('img/Career_Permanent.jpg')}}')">
