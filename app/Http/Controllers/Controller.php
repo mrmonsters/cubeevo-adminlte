@@ -24,4 +24,21 @@ abstract class Controller extends BaseController {
 
         View::share('site_settings', $site_settings);  
 	}
+
+	public function respondError($url = '/', $message = 'Unable to process your request. Please try again.')
+	{
+		return redirect($url)->with('response', [
+			'code' => 0,
+			'msg'  => $message,
+		]);
+	}
+
+	public function respondSuccess($url = '/', $message = null)
+	{
+		return redirect($url)->with('response', [
+			'code' => 1,
+			'msg'  => $message,
+		]);
+	}
+
 }

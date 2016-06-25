@@ -16,15 +16,19 @@ Blog Post Management
 				<h3 class="box-title">Create New Blog Post</h3>
 			</div>
 			<form method="POST" action="{{ url('admin/manage/post/create') }}" accept-charset="UTF-8" enctype="multipart/form-data">
-				<input name="_token" type="hidden" value="{{{ csrf_token() }}}" />
+				<input name="_token" type="hidden" value="{{ csrf_token() }}" />
 				<div class="box-body">
 					<div class="form-group">
 						<label for="cover_image" class="control-label">Cover Image</label>
 						<input id="cover_image" name="cover_image" type="file" class="form-control" />
 					</div>
 					<div class="form-group">
-						<label for="slug" class="control-label">Sort Order</label>
-						<input id="slug" name="post[sort_order]" type="text" class="form-control" value="0" />
+						<label for="fb_cover" class="control-label">Facebook Share Image</label>
+						<input id="fb_cover" name="fb_cover" type="file" class="form-control" />
+					</div>
+					<div class="form-group">
+						<label for="sort" class="control-label">Sort Order</label>
+						<input id="sort" name="sort_order" type="text" class="form-control" value="0" />
 					</div>
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
@@ -40,11 +44,11 @@ Blog Post Management
 								<div id="{{ $locale->language }}" class="tab-pane {{ ($index != 0) ? : 'active' }}">
 									<div class="form-group">
 										<label for="title_{{ $locale->id }}" class="control-label">Title</label>
-										<input id="title_{{ $locale->id }}" name="post[title][{{ $locale->id }}]" type="text" class="form-control" required />
+										<input id="title_{{ $locale->id }}" name="title[{{ $locale->id }}]" type="text" class="form-control" required />
 									</div>
 									<div class="form-group">
 										<label for="description_{{ $locale->id }}" class="control-label">Description</label>
-										<textarea id="description_{{ $locale->id }}" name ="post[description][{{ $locale->id }}]" class="form-control"></textarea>
+										<textarea id="description_{{ $locale->id }}" name ="description[{{ $locale->id }}]" class="form-control"></textarea>
 									</div>
 								</div>
 							@endforeach

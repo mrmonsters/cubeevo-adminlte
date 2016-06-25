@@ -14,7 +14,7 @@ class Post extends Model implements TranslatableContract, SluggableInterface {
 	// database
 	protected $table      = 'posts';
 	protected $primaryKey = 'id';
-	protected $fillable   = ['title', 'description', 'file_id', 'status', 'deleted', 'sort_order'];
+	protected $fillable   = ['title', 'description', 'file_id', 'fb_cover_img_id', 'status', 'deleted', 'sort_order'];
 
 	// translatable
 	protected $translator           = 'App\Models\PostTranslation';
@@ -32,4 +32,10 @@ class Post extends Model implements TranslatableContract, SluggableInterface {
 	{
 		return $this->hasOne('App\Models\Files', 'id', 'file_id');
 	}
+
+	public function fbCoverImage()
+	{
+		return $this->hasOne('App\Models\Files', 'id', 'fb_cover_img_id');
+	}
+
 }

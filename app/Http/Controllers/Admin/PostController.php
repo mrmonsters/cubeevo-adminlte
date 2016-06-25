@@ -12,32 +12,45 @@ use App\Services\FileHelper;
 
 class PostController extends Controller {
 
-	protected $_fileHelper;
 	protected $_locales;
+	protected $_fileHelper;
+	protected $_post;
 
-	protected function _getFileHelper()
+	/**
+	 * Process file upload
+	 *
+	 * @param Post  $post
+	 * @param array $files
+	 */
+	protected function _processFileUpload(Post &$post, $files = array())
 	{
-		if (is_null($this->_fileHelper)) {
+		foreach ($files as $key => $val) {
 
-			$this->_fileHelper = new FileHelper;
+			switch ($key) {
+
+				case 'cover_image':
+					if ($id = $this->_fileHelper->uploadNewFile($val)) {
+
+						$post->file_id = $id;
+					}
+					break;
+				case 'fb_cover':
+					if ($id = $this->_fileHelper->uploadNewFile($val)) {
+
+						$post->fb_cover_img_id = $id;
+					}
+					break;
+			}
 		}
-
-		return $this->_fileHelper;
 	}
 
-	protected function _getLocales()
-	{
-		if (is_null($this->_locales)) {
-
-			$this->_locales = Locale::where('status', 2)->get();
-		}
-
-		return $this->_locales;
-	}
-
-	public function __construct()
+	public function __construct(FileHelper $fileHelper, Post $post)
 	{
 		$this->middleware('auth');
+
+		$this->_locales    = Locale::where('status', App\Models\Status::ACTIVE)->get();
+		$this->_fileHelper = $fileHelper;
+		$this->_post       = $post;
 	}
 
 	/**
@@ -47,11 +60,11 @@ class PostController extends Controller {
 	 */
 	public function getIndex()
 	{
-		$posts = Post::where('deleted', false)
+		$posts = $this->_post->where('deleted', false)
 			->orderBy('created_at', 'DESC')
 			->get();
 
-		return view('management.post.index')->with('posts', $posts);
+		return view('management.post.index')->with(compact('posts'));
 	}
 
 	/**
@@ -67,53 +80,36 @@ class PostController extends Controller {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @return Response
+	 * @param Requests\Admin\BlogPostFormRequest $request
+	 *
+	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	public function postCreate(Request $request)
+	public function postCreate(Requests\Admin\BlogPostFormRequest $request)
 	{
-		$data  = $request->input('post');
+		$data  = $request->all();
 		$files = $request->file();
+		$post  = new Post();
 
-		if (isset($files) && !empty($files)) {
+		$this->_processFileUpload($post, $files);
 
-			foreach ($files as $key => $val) {
-
-				if ($key == 'cover_image') {
-
-					$coverImageId = $this->_getFileHelper()->uploadNewFile($val);
-					break;
-				}
-			}
-		}
-
-		$locales = $this->_getLocales();
-		$post    = new Post;
-
-		if (isset($coverImageId)) {
-
-			$post->file_id = $coverImageId;
-		}
-
-		foreach ($locales as $index => $locale) {
+		foreach ($this->_locales as $index => $locale) {
 
 			App::setLocale($locale->language);
 
 			$post->title       = htmlentities($data['title'][$locale->id]);
 			$post->description = htmlentities($data['description'][$locale->id]);
-			$post->save();
+			$post->sort_order  = $data['sort_order'];
+
+			try {
+
+				$post->save();
+			} catch (Exception $e) {
+
+				return $this->respondError('admin/manage/post', "Unable to process your request. Please try again. [{$e->getMessage()}]");
+			}
 		}
 
-		if (isset($post) && $post->exists()) {
-
-			$response['code'] = 1;
-			$response['msg']  = "Blog post [#".$post->id."] has been created successfully.";
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Unable to process your request. Please try again.";
-		}
-
-		return redirect('/admin/manage/post')->with('response', $response);
+		return $this->respondSuccess('admin/manage/post', "Blog post [#".$post->id."] has been created successfully.");
 	}
 
 	/**
@@ -135,71 +131,55 @@ class PostController extends Controller {
 	 */
 	public function getEdit($id)
 	{
-		$post = Post::find($id);
+		$post = $this->_post->find($id);
 
-		if ($post->exists()) {
+		if (!$post instanceof Post || !$post->exists) {
 
-			return view('management.post.edit')->with('post', $post);
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Blog post not found.";
-
-			return redirect('/admin/manage/post')->with('response', $response);
+			return $this->respondError('/admin/manage/post', "Blog post not found.");
 		}
+
+		return view('management.post.edit')->with(compact('post'));
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param                                    $id
+	 * @param Requests\Admin\BlogPostFormRequest $request
+	 *
+	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	public function postUpdate($id, Request $request)
+	public function postUpdate($id, Requests\Admin\BlogPostFormRequest $request)
 	{
-		$post  = Post::find($id);
-		$data  = $request->input('post');
+		$post  = $this->_post->find($id);
+		$data  = $request->all();
 		$files = $request->file();
 
-		if (isset($files) && !empty($files)) {
+		if (!$post instanceof Post || !$post->exists) {
 
-			foreach ($files as $key => $val) {
-
-				if ($key == 'cover_image') {
-
-					$coverImageId = $this->_getFileHelper()->uploadNewFile($val);
-					break;
-				}
-			}
+			return $this->respondError('/admin/manage/post', 'Blog post not found.');
 		}
 
-		$locales = $this->_getLocales();
+		$this->_processFileUpload($post, $files);
 
-		if (isset($coverImageId)) {
-
-			$post->file_id = $coverImageId;
-		}
-
-		foreach ($locales as $index => $locale) {
+		foreach ($this->_locales as $index => $locale) {
 
 			App::setLocale($locale->language);
 
 			$post->title       = htmlentities($data['title'][$locale->id]);
 			$post->description = htmlentities($data['description'][$locale->id]);
-			$post->save();
+			$post->sort_order  = $data['sort_order'];
+
+			try {
+
+				$post->save();
+			} catch (Exception $e) {
+
+				return $this->respondError('/admin/manage/post', "Unable to process your request. Please try again. [{$e->getMessage()}]");
+			}
 		}
 
-		if (isset($post) && $post->exists()) {
-
-			$response['code'] = 1;
-			$response['msg']  = "Blog post [#".$post->id."] has been updated successfully.";
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Unable to process your request. Please try again.";
-		}
-
-		return redirect('/admin/manage/post')->with('response', $response);
+		return $this->respondSuccess('/admin/manage/post', "Blog post [#{$post->id}] has been updated successfully.");
 	}
 
 	/**
@@ -210,64 +190,69 @@ class PostController extends Controller {
 	 */
 	public function getDestroy($id)
 	{
-		$post     = Post::find($id);
-		$response = array();
+		$post = $this->_post->find($id);
 
-		if (isset($post) && $post->exists()) {
+		if (!$post instanceof Post || !$post->exists) {
 
-			$post->deleted = true;
-			$post->save();
-
-			$response['code'] = 1;
-			$response['msg']  = "Blog post [#".$post->id."] has been deleted successfully.";
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Blog post not found.";
+			$this->respondError('admin/manage/post', "Blog post not found.");
 		}
 
-		return redirect('admin/manage/post')->with('response', $response);
+		try {
+
+			$post->deleted = true;
+
+			$post->save();
+
+			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] has been deleted successfully.");
+		} catch (Exception $e) {
+
+			return $this->respondError('admin/manage/post', "Unable to process your request. Please try again. [{$e->getMessage()}]");
+		}
 	}
 
 	public function getDeactivate($id)
 	{
-		$post     = Post::find($id);
-		$response = array();
+		$post = $this->_post->find($id);
 
-		if (isset($post) && $post->exists()) {
+		if (!$post instanceof Post || !$post->exists) {
 
-			$post->status = 1;
-			$post->save();
-
-			$response['code'] = 1;
-			$response['msg']  = "Blog post [#".$post->id."] is deactivated successfully.";
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Blog post not found.";
+			return $this->respondError('admin/manage/post', 'Blog post not found.');
 		}
 
-		return redirect('admin/manage/post')->with('response', $response);
+		try {
+
+			$post->status = 1;
+
+			$post->save();
+
+			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] is deactivated successfully.");
+		} catch (Exception $e) {
+
+			return $this->respondError('admin/manage/post', "Unable to process your request. Please try again. [{$e->getMessage()}]");
+		}
 	}
 
 	public function getActivate($id)
 	{
-		$post     = Post::find($id);
-		$response = array();
+		$post     = $this->_post->find($id);
+		$postData = $post->toArray();
 
-		if (isset($post) && $post->exists()) {
+		if (!$post instanceof Post || !$post->exists) {
 
-			$post->status = 2;
-			$post->save();
-
-			$response['code'] = 1;
-			$response['msg']  = "Blog post [#".$post->id."] is activated successfully.";
-		} else {
-
-			$response['code'] = 0;
-			$response['msg']  = "Blog post not found.";
+			return $this->respondError('admin/manage/post', 'Blog post not found.');
 		}
 
-		return redirect('admin/manage/post')->with('response', $response);
+		try {
+
+			$post->status = 2;
+
+			$post->save();
+
+			return $this->respondSuccess('admin/manage/post', "Blog post [#{$post->id}] is activated successfully.");
+		} catch (Exception $e) {
+
+			return $this->respondError('admin/manage/post', "Unable to process your request. Please try again. [{$e->getMessage()}]");
+		}
 	}
+
 }

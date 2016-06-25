@@ -39,7 +39,7 @@ class CreateProfileBlockTranslationsTable extends Migration {
 	{
 		//
 		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
-		Schema::drop('job_block_translations');
+		Schema::drop('profile_block_translations');
 		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 

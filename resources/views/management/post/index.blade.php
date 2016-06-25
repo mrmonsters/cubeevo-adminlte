@@ -9,7 +9,6 @@ Blog Post Management
 @endsection
 
 @section('contentheader_description')
-Description for post management
 @endsection
 
 @section('main-content')
