@@ -13,6 +13,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             navigation: true,
             navigationPosition: 'right',
             scrollingSpeed: 1000,
+            // easingcss3: 'cubic-bezier(1.000, 0.000, 0.000, 1.005) 0.5s',
             afterLoad: function (anchorLink, index) {
                 if (index == 1) {
                     $scope.leftcontentFontColor = 'text-black';
@@ -38,7 +39,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                 if (index == 4) {
                     $('.leftcontent_heading').html($scope.post[0].label);
                     $('.leftcontent_client').hide();
-                    $('.leftcontent_desc').html($scope.post[0].desc+'...');
+                    $('.leftcontent_desc').html($scope.post[0].desc + '...');
                     $('.leftcontent_topheading').hide();
                 }
 
@@ -52,9 +53,11 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                 $('.js-left-content').removeClass('hide animated fadeOutUp').addClass('animated fadeInUp');
             },
             onLeave: function (page, next) {
+
                 $('.js-left-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
                 $('.wrapper__home-left .content-wrapper').removeClass('post_0_background').removeClass('leftcontentbackgroundImage_1').removeClass('leftcontentbackgroundImage_2');
                 $('.leftcontent_heading,.leftcontent_desc').removeClass('text-white');
+
                 if (next == 1) {
                     $('.leftcontent_topheading').show();
                 }
@@ -68,7 +71,6 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                 }
                 if (next == 4) {
                     $('.wrapper__home-left .content-wrapper').addClass('post_0_background');
-                    $('.leftcontent_heading,.leftcontent_desc').addClass('text-white');
                 }
             }
         };

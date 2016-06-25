@@ -20,7 +20,7 @@
         <div class="wrapper wrapper__home wrapper__home-left col-xs-12 col-md-6 col-sm-6">
             <div class="content-wrapper no-margin">
                 <div class="col-md-push-5 col-md-6 col-xs-11 col-sm-push-5 col-sm-6 left-content">
-                    <div class="js-left-content hide @{{ leftcontentFontColor }}" >
+                    <div class="js-left-content hide @{{ leftcontentFontColor }} moveOut" >
                         <h4 class="leftcontent_topheading">Ever Evolving CUBEevo @{{ leftcontentbackgroundImage }}</h4><br/>
                         <div class="leftcontent_client"><p class="text-white">Client</p><h4 class="leftcontent_client_name text-white"></h4></div><br/>
                         <h1 class="h2 leftcontent_heading"></h1>
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div full-page options="mainOptions" class="home__background">
-            <div class="section" id="section0">
+            <div class="section moveOut" id="section0">
             </div>
             <?php $counter = 1;?>
             @foreach($projects as $project)
@@ -46,7 +46,7 @@
                 </div>
                 <?php $counter++;?>
             @endforeach
-            <div class="section" id="section3">
+            <div class="section moveOut" id="section3">
                 <div class="col-sm-6 col-sm-push-6 wrapper__right">
                     <div class="wrapper">
                         <div class="row content-wrapper-layer content-wrapper-first-layer">
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section" id="section5">
+            <div class="section moveOut" id="section5">
             </div>
         </div>
     </div>

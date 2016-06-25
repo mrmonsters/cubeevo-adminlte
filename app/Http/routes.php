@@ -23,6 +23,7 @@ Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
 Route::get('/insights/detail/{slug}', 'HomeController@getInsightdetail');
 Route::get('/insights', 'HomeController@getInsights');
+Route::get('/be-part-of-the-team', 'HomeController@getCareers');
 Route::get('/', 'HomeController@getHomepage');
 
 Route::post('/contact-us/submit', 'HomeController@submitMessage');

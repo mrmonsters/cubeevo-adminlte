@@ -132,6 +132,19 @@ class HomeController extends Controller {
 		]);
 	}
 
+	public function getCareers()
+	{
+		$meta_title = 'Be Part of The Team';
+		$meta_keyword = 'Be Part of The Team';
+		$meta_desc = 'Be Part of The Team';
+
+		return view('frontend.careers')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc
+		]);
+	}
+
 	public function getCredentialProject($slug)
 	{
 		if(empty($slug)):

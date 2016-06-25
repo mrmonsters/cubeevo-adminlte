@@ -283,16 +283,53 @@ hr.whitehr{width:97%;border-bottom:1px solid #fff;border-left:0 none;border-righ
 }
 .home__background .wrapper__right .wrapper,
 .home__background .wrapper__right{height: 100%;}
-.home__background .content-wrapper{height: 100%; position: relative;    background-repeat: no-repeat;
+.home__background .content-wrapper{
+    position: relative;
+    background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
-    position: relative;
     background-position: center center;
     overflow: hidden;}
 .home__background .content-wrapper-layer{height: 50%;}
 .home__background .content-wrapper-first-layer{padding-bottom: 15px; }
 .home__background .content-wrapper__content{position: absolute;bottom: 20%}
+.height-half{
+    height: 50%;
+}
+.height-full{
+    height: 100%;
+}
+.bg-wrapper{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    overflow: hidden;
+}
+.bg-grey{background-color:#eee;}
+.careers .bg-wrapper .content-wrapper__content{display:none;position: absolute;bottom: 50px;left:40px;}
+.careers .bg-wrapper:hover .content-wrapper__content{display:block;}
+.careers .bg-wrapper:hover .content-wrapper__bg{background-color:rgba(103, 99, 99, 0.8);cursor: pointer;}
+.careers .left-content-wrapper{
+    background-image: url('../img/Career_01.png');
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left bottom;
+    overflow: hidden}
+.careers .left-content-wrapper__content{margin-top:20%;}
+/*.moveOut{*/
+    /*transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005)  0.5s;*/
+    /*-webkit-transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005)  0.5s; !** Chrome & Safari **!*/
+    /*-moz-transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005)  0.5s; !** Firefox **!*/
+    /*-o-transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005) 0.5s; !** Opera **!*/
+/*}*/
+/*.home .section .moveOut{*/
+    /*transform: translate3d(0, -400px, 0);*/
+/*}*/
 @media (max-width:769px){
 h1 {font-size: 26px !important;}
 .fullpage-wrapper h1{margin-top:20px;}
