@@ -1191,6 +1191,14 @@ a.bg-primary:hover {
     padding-right: 30px;
     padding-left: 30px;
 }
+.padder-xl {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+.padder-xxl {
+    padding-right: 50px;
+    padding-left: 50px;
+}
 
 .padder-md {
     padding-right: 20px;
@@ -1273,7 +1281,7 @@ a.bg-primary:hover {
 }
 
 .b-black {
-    border-color: #3a3f51;
+    border-color: #231F20;
 }
 
 .b-primary {

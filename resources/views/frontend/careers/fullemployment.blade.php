@@ -4,10 +4,12 @@
     <div class="container-fluid outerwrapper">
         <div class="row" style="position:relative;">
             <div class="col-sm-8 col-sm-offset-2">
-                <h1><span></span>{{ (Session::get('locale') == 'en') ? 'For Full Employment' : 'FULL EMPLOYMENT' }}</h1>
+                <h1 class="padder-xxl">{{ (Session::get('locale') == 'en') ? 'For Full Employment' : 'For Full Employment' }}
+                </h1>
+                <div class="fullemployemnt-line"></div>
             </div>
-            <div class="col-sm-5 col-sm-offset-3 m-t-lg">
-                <p c>You are great, talented and passionate about your work? Convince me by showing your enthusiasm and
+            <div class="col-sm-5 col-sm-offset-3 m-t-lg col-lg-4">
+                <p>You are great, talented and passionate about your work? Convince me by showing your enthusiasm and
                     commitment to contribute to our team. We’ll give you the opportunity to shine and enough support to
                     climb. What say you?</p>
             </div>
@@ -21,54 +23,9 @@
             </div>
         </div>
         <div class="row m-t-xxl">
-            <div class="col-sm-8 col-sm-offset-2 m-t-xxl">
+            <div class="col-sm-10 col-sm-offset-1 m-t-xxl">
                 <div class="row">
-                    <div class="col-sm-6 m-b-xxl">
-                        <p>CLIENT SERVICE & SALES EXECUTIVE </p>
-                        <ul>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-6 m-b-xxl">
-                        <p>CLIENT SERVICE & SALES EXECUTIVE </p>
-                        <ul>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                        </ul>
-                        
-                    </div>
-                    <div class="col-sm-6 m-b-xxl">
-                        <p>CLIENT SERVICE & SALES EXECUTIVE </p>
-                        <ul>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                            <li>Good understanding in advertising industries.</li>
-                            <li>Able to work closely with client and creative team.</li>
-                        </ul>
-                    </div>
+                    @include('frontend.careers.employment.listing')
                 </div>
             </div>
         </div>

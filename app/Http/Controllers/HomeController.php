@@ -125,7 +125,7 @@ class HomeController extends Controller {
 		$meta_keyword = 'Homepage';
 		$meta_desc = 'Homepage';
 
-		return view('frontend.homepage')->with([
+		return view('frontend.homepage.index')->with([
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc
