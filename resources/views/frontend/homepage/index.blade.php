@@ -3,9 +3,9 @@
 @section('frontend-content')
 
     <div ng-controller="HomepageCtrl" class="home">
-        <div class="wrapper wrapper__home wrapper__home-left col-xs-12 col-md-6 col-sm-6">
+        <div class="wrapper wrapper__home wrapper__home-left col-xs-6">
             <div class="content-wrapper no-margin">
-                <div class="col-md-push-5 col-md-6 col-xs-11 col-sm-push-3 col-sm-8 col-md-push-5 col-md-6 left-content">
+                <div class="col-xs-10 col-sm-push-3 col-sm-8 col-md-push-5 col-md-6 left-content">
                     <div class="js-left-content hide @{{ leftcontentFontColor }} moveOut">
                         <h4 class="leftcontent_topheading">Ever Evolving CUBEevo @{{ leftcontentbackgroundImage }}</h4>
                         <br/>
@@ -22,7 +22,7 @@
         </div>
         <div full-page options="mainOptions" class="home__background">
             <div class="section moveOut" id="section0" style="background-image: none;">
-                <div class="col-sm-6 col-sm-push-6 wrapper__right">
+                <div class="col-xs-6 col-xs-push-6 wrapper__right">
                     <div class="wrapper height-full">
                         <div class="row height-full">
                             <div class="content-wrapper height-full" style="margin: 15% auto">

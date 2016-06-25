@@ -14,7 +14,7 @@ $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
         overflow: hidden;} ;
 </style>
 
-<div class="col-sm-6 col-sm-push-6 wrapper__right" ng-init="post.push({'label':'{{{$posts[0]->translate(\Session::get('locale'))->title}}}','desc':'{{mb_substr($content,0,$char_count)}}'});">
+<div class="col-xs-6 col-xs-push-6 wrapper__right" ng-init="post.push({'label':'{{{$posts[0]->translate(\Session::get('locale'))->title}}}','desc':'{{mb_substr($content,0,$char_count)}}'});">
     <div class="wrapper">
         <div class="row content-wrapper-layer content-wrapper-first-layer">
             <div class="content-wrapper"
