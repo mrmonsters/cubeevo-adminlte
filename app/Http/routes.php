@@ -14,6 +14,14 @@
 Route::controllers([
 	'admin/manage/post' => 'Admin\PostController',
 ]);
+
+Route::group(['prefix' => 'api/v1'], function () {
+
+	Route::resources([
+		'job-reviews' => 'Admin\Api\JobReview\IndexController',
+	]);
+
+});
  
 Route::get('/credential', 'HomeController@getCredential');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');

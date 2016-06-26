@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddFbCoverToPostsTable extends Migration {
+class AddTypeToJobBlocksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,9 @@ class AddFbCoverToPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('posts', function(Blueprint $table)
+		Schema::table('job_blocks', function(Blueprint $table)
 		{
-			$table->integer('fb_cover_img_id')->unsigned(true)->nullable();
-			$table->foreign('fb_cover_img_id')->references('id')->on('files');
+			$table->integer('type')->nullable();
 		});
 	}
 
@@ -26,9 +25,9 @@ class AddFbCoverToPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('posts', function(Blueprint $table)
+		Schema::table('job_blocks', function(Blueprint $table)
 		{
-
+			$table->dropColumn('type');
 		});
 	}
 
