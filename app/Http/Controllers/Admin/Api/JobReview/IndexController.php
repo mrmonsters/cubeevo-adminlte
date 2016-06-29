@@ -26,22 +26,28 @@ class IndexController extends ApiController {
 			foreach ($collection as $item) {
 
 				$result[$item->id] = [
+					'id'            => $item->id,
 					'name'          => $item->name,
 					'qualification' => $item->qualification,
 					'date'          => $item->date,
+					'created_at'    => $item->created_at,
 				];
 
 				foreach ($this->_locales as $locale) {
 
-					foreach ($item->reviews as $review) {
+					switch ($locale->language) {
 
-						$result[$item->id][$locale->language][] = [
-							'question' => $review->translate($locale->language)->question,
-							'answer'   => $review->translate($locale->language)->answer,
-						];
+						case 'en':
+							$result[$item->id]['reviews'][$locale->language] = $item->enReviews->toArray();
+							break;
+						case 'cn':
+							$result[$item->id]['reviews'][$locale->language] = $item->zhReviews->toArray();
+							break;
 					}
 				}
 			}
+
+			$result = array_values($result);
 		} else if ($collection instanceof JobReviewer) {
 
 			$result = [
@@ -52,12 +58,14 @@ class IndexController extends ApiController {
 
 			foreach ($this->_locales as $locale) {
 
-				foreach ($collection->reviews as $review) {
+				switch ($locale->language) {
 
-					$result[$locale->language][] = [
-						'question' => $review->translate($locale->language)->question,
-						'answer'   => $review->translate($locale->language)->answer,
-					];
+					case 'en':
+						$result['reviews'][$locale->language] = $collection->enReviews->toArray();
+						break;
+					case 'cn':
+						$result['reviews'][$locale->language] = $collection->zhReviews->toArray();
+						break;
 				}
 			}
 		}
@@ -143,18 +151,19 @@ class IndexController extends ApiController {
 
 				App::setLocale($locale->language);
 
-				if (isset($review) && $review->exists) {
+				if (!empty($data['reviews'][$locale->language])) {
 
-					$review->update([
-						'question' => $data['question'][$locale->language],
-						'answer'   => $data['answer'][$locale->language],
-					]);
-				} else {
+					foreach ($data['reviews'][$locale->language] as $review) {
 
-					$review = $reviewer->reviews()->create([
-						'question' => $data['question'][$locale->language],
-						'answer'   => $data['answer'][$locale->language],
-					]);
+						$reviewData = [
+							'question' => $review['question'],
+							'answer'   => $review['answer'],
+							'locale'   => ($locale->language == 'en') ? JobReview::LOCALE_EN : JobReview::LOCALE_ZH,
+							'sort'     => $review['sort'],
+						];
+
+						$reviewer->reviews()->create($reviewData);
+					}
 				}
 			}
 
@@ -196,12 +205,62 @@ class IndexController extends ApiController {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  int  $id
-	 * @return Response
+	 * @param $id
+	 * @param $request
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
 	public function update($id, $request)
 	{
-		//
+		$data     = $request->all();
+		$reviewer = $this->_reviewer->findOrNew($id);
+
+		if ($reviewer->exists) {
+
+			$reviewer->update([
+				'name'          => $data['name'],
+				'qualification' => $data['qualification'],
+				'date'          => $data['date'],
+			]);
+
+			foreach ($this->_locales as $locale) {
+
+				App::setLocale($locale->language);
+
+				if (!empty($data['reviews'][$locale->language])) {
+
+					foreach ($data['reviews'][$locale->language] as $reviewData) {
+
+						if (!empty($reviewData['id'])) { // if id is specified, delete / update
+
+							$review = $this->_review->find($reviewData['id']);
+
+							if (!empty($reviewData['deleted'])) { // delete if 'deleted' flag is specified
+
+								$review->delete();
+							} else { // update if 'deleted' flag is not specified
+
+								$review->update($reviewData);
+							}
+						} else if (empty($reviewData['id'])) { // create new review
+
+							$newReviewData = [
+								'question' => $reviewData['question'],
+								'answer'   => $reviewData['answer'],
+								'locale'   => ($locale->language == 'en') ? JobReview::LOCALE_EN : JobReview::LOCALE_ZH,
+								'sort'     => $reviewData['sort'],
+							];
+
+							$reviewer->reviews()->create($newReviewData);
+						}
+					}
+				}
+			}
+
+			return response()->json($this->transform($this->_format($reviewer)));
+		}
+
+		return response()->json(['msg' => 'Reviewer not found.'], 422);
 	}
 
 	/**

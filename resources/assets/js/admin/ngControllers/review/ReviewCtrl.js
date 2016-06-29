@@ -2,7 +2,40 @@
     "use strict";
 
     cubeevo
-        .controller('ReviewCreateCtrl', ['$scope', function ($scope) {
+        .controller('ReviewIndexCtrl', ['$scope', 'ReviewService', function ($scope, ReviewService) {
+
+            $scope.init = function () {
+
+                var getReviewers = ReviewService.query();
+
+                getReviewers.$promise.then(function (data) {
+
+                    $scope.reviewers = data;
+                }, function (data) {
+
+                    $scope.reviewers = [];
+                });
+            }
+
+            $scope.delReviewer = function (reviewer) {
+
+                var confirmDelete = confirm('Are you sure you want to delete this reviewer?');
+                var index         = $scope.reviewers.indexOf(reviewer);
+
+                if (confirmDelete == true) {
+
+                    ReviewService.remove({ id: reviewer.id }, function (data) {
+
+                        $scope.reviewers.splice(index, 1);
+                        alert('Reviewer [' + reviewer.id + '] has been deleted successfully.');
+                    });
+                } else {
+
+                    alert('Reviewer [' + reviewer.id + '] is not deleted.');
+                }
+            }
+        }])
+        .controller('ReviewCreateCtrl', ['$scope', 'ReviewService', function ($scope, ReviewService) {
 
             function resetReview() {
 
@@ -69,6 +102,17 @@
                         $scope.reviewer.reviews.cn.splice(index, 1);
                         break;
                 }
+            }
+
+            $scope.save = function (review) {
+
+                ReviewService.save(review, function (data) {
+
+                    window.location.href = "http://" + location.host + "/admin/manage/job-review";
+                }, function (data) {
+
+                    alert(data['msg']);
+                });
             }
         }]);
 }) ();

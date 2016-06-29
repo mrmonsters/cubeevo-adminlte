@@ -1,18 +1,17 @@
 <?php namespace App\Models;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Vinkla\Translator\Contracts\Translatable;
 
-class JobReview extends AbstractModel implements Translatable {
+class JobReview extends AbstractModel {
 
-	use \Vinkla\Translator\Translatable;
+	const LOCALE_EN = 0; // english
+	const LOCALE_ZH = 1; // chinese (cn)
+
 	use SoftDeletes;
 
 	protected $table                = 'job_reviews';
 	protected $primaryKey           = 'id';
-	protected $fillable             = ['reviewer_id', 'sort', 'status'];
+	protected $fillable             = ['reviewer_id', 'question', 'answer', 'locale', 'sort', 'status'];
 	protected $dates                = ['deleted_at'];
-	protected $translator           = 'App\Models\JobReviewTranslations';
-	protected $translatedAttributes = ['question', 'answer'];
 
 }

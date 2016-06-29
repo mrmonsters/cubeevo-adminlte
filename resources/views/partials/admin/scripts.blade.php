@@ -23,7 +23,7 @@
 <script type="text/javascript" src="{{ asset('/bower_components/angular-resource/angular-resource.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/admin.js') }}"></script>
 <script type="text/javascript" src="{{ asset('/js/admin-controller.js') }}"></script>
-{{--<script type="text/javascript" src="{{ asset('/js/admin-service.js') }}"></script>--}}
+<script type="text/javascript" src="{{ asset('/js/admin-service.js') }}"></script>
 <!-- Addon Scripts -->
 @yield('addon-script')
 

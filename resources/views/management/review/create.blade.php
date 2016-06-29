@@ -15,7 +15,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Create New Career Review</h3>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-primary" ng-click="save(reviewer)">Save</button>
                     </div>
                 </div>
                 <form class="form-horizontal">
@@ -37,7 +37,7 @@
                         <div class="form-group">
                             <label for="review_date" class="col-sm-2 control-label">Review Date</label>
                             <div class="col-sm-10">
-                                <input id="review_date" name="review_date" type="text" class="form-control" ng-model="reviewer.date" />
+                                <input id="review_date" name="review_date" type="date" class="form-control" ng-model="reviewer.date" />
                             </div>
                         </div>
                         <p class="lead">Review Questions & Answers</p>
@@ -81,8 +81,8 @@
                                             @if ($locale->language == 'en')
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <th>Question</th>
-                                                        <th>Answer</th>
+                                                        <th>Question (EN)</th>
+                                                        <th>Answer (EN)</th>
                                                         <th>Sort</th>
                                                         <th>Action</th>
                                                     </thead>
@@ -99,8 +99,8 @@
                                             @elseif ($locale->language == 'cn')
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <th>Question</th>
-                                                        <th>Answer</th>
+                                                        <th>Question (CN)</th>
+                                                        <th>Answer (CN)</th>
                                                         <th>Sort</th>
                                                         <th>Action</th>
                                                     </thead>

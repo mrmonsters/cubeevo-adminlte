@@ -29,4 +29,14 @@ class JobReviewer extends AbstractModel {
 		return $this->hasMany('App\Models\JobReview', 'reviewer_id', 'id');
 	}
 
+	public function enReviews()
+	{
+		return $this->hasMany('App\Models\JobReview', 'reviewer_id', 'id')->where('locale', JobReview::LOCALE_EN);
+	}
+
+	public function zhReviews()
+	{
+		return $this->hasMany('App\Models\JobReview', 'reviewer_id', 'id')->where('locale', JobReview::LOCALE_ZH);
+	}
+
 }
