@@ -106,6 +106,9 @@ Route::get('admin/manage/job/setActive/{job_id}', 'JobController@setActive');
 Route::get('admin/manage/job/setInactive/{job_id}', 'JobController@setInactive');
 Route::get('admin/manage/job/destroy/{job_id}', 'JobController@destroy');
 
+// Job review routes...
+Route::get('admin/manage/career-review/create', 'JobReviewController@create');
+
 // Profile routes...
 Route::get('admin/manage/profile', 'ProfileController@index');
 Route::get('admin/manage/profile/create', 'ProfileController@create');

@@ -13,6 +13,7 @@ class ComposerServiceProvider extends ServiceProvider {
 				'management.post.edit',
 				'management.category.create',
 				'management.category.edit',
+				'management.review.create',
 			],
 			'App\Http\ViewComposers\SettingsComposer' => [
 				'management.setting.edit',

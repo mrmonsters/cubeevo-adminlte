@@ -3,7 +3,9 @@
 use App\Http\Controllers\Admin\Api\ApiController;
 use App\Http\Requests;
 
+use App;
 use App\Models\JobReviewer;
+use App\Models\JobReview;
 use App\Models\Locale;
 use App\Models\Status;
 use Illuminate\Database\Eloquent\Collection;
@@ -12,6 +14,7 @@ use Illuminate\Http\Request;
 class IndexController extends ApiController {
 
 	protected $_reviewer;
+	protected $_review;
 	protected $_locales;
 
 	protected function _format($collection)
@@ -67,11 +70,12 @@ class IndexController extends ApiController {
 		return $item;
 	}
 
-	public function __construct(JobReviewer $reviewer, Locale $locale)
+	public function __construct(JobReviewer $reviewer, JobReview $review, Locale $locale)
 	{
 		parent::__construct();
 
 		$this->_reviewer = $reviewer;
+		$this->_review   = $review;
 		$this->_locales  = $locale->where('status', Status::ACTIVE)->get();
 	}
 
@@ -120,11 +124,44 @@ class IndexController extends ApiController {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @return Response
+	 * @param Request $request
+	 *
+	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
-		//
+		$data     = $request->all();
+		$reviewer = $this->_reviewer->create([
+			'name'          => $data['name'],
+			'qualification' => $data['qualification'],
+			'date'          => $data['date'],
+		]);
+
+		if ($reviewer->exists) {
+
+			foreach ($this->_locales as $locale) {
+
+				App::setLocale($locale->language);
+
+				if (isset($review) && $review->exists) {
+
+					$review->update([
+						'question' => $data['question'][$locale->language],
+						'answer'   => $data['answer'][$locale->language],
+					]);
+				} else {
+
+					$review = $reviewer->reviews()->create([
+						'question' => $data['question'][$locale->language],
+						'answer'   => $data['answer'][$locale->language],
+					]);
+				}
+			}
+
+			return response()->json($this->transform($this->_format($reviewer)));
+		}
+
+		return response()->json(['msg' => 'Unable to create reviewer.'], 422);
 	}
 
 	/**
@@ -162,7 +199,7 @@ class IndexController extends ApiController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update($id, $request)
 	{
 		//
 	}

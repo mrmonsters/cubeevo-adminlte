@@ -14,13 +14,15 @@ command list :
 gulp --production
 
 */
-var gulp = require('gulp');
-var rename = require('gulp-rename');
+var gulp      = require('gulp');
+var rename    = require('gulp-rename');
 var minifyCss = require('gulp-minify-css');
-var elixir = require('laravel-elixir'); 
+var elixir    = require('laravel-elixir');
 
 elixir.config.sourcemaps = false;
-elixir(function(mix) {
+
+elixir(function (mix) {
+
 	mix.styles([
         "style.css",
         "animate.css", 
@@ -28,7 +30,19 @@ elixir(function(mix) {
         "slick.css",
         "slick-theme.css",
         "custom.css",
-    ], 'public/css/all.css', 'public/css');  
+    ], 'public/css/all.css', 'public/css');
+
+    mix.scripts([
+        'admin/admin.js',
+    ], 'public/js/admin.js');
+
+    mix.scripts([
+        'admin/ngServices/**/*.js'
+    ], 'public/js/admin-service.js');
+
+    mix.scripts([
+        'admin/ngControllers/**/*.js'
+    ], 'public/js/admin-controller.js');
 });   
  
-gulp.task('default', ['watch']);
+// gulp.task('default', ['watch']);

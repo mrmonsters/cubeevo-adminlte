@@ -17,6 +17,7 @@ class CreateJobReviewsTable extends Migration {
 			$table->increments('id');
 			$table->integer('reviewer_id')->unsigned(true);
 			$table->foreign('reviewer_id')->references('id')->on('job_reviewers');
+			$table->integer('sort')->default(0);
 			$table->integer('status')->default(2);
 			$table->timestamps();
 			$table->softDeletes();
