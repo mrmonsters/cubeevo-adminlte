@@ -78,31 +78,43 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <th>Question</th>
-                                                    <th>Answer</th>
-                                                    <th>Sort</th>
-                                                    <th>Action</th>
-                                                </thead>
-                                                <tbody>
-                                                @if ($locale->language == 'en')
-                                                    <tr ng-repeat="review in reviewer.reviews.en | orderBy: 'sort'">
-                                                        <td>@{{ review.question }}</td>
-                                                        <td>@{{ review.answer }}</td>
-                                                        <td>@{{ review.sort }}</td>
-                                                        <td><button type="button" class="btn btn-danger" ng-click="delReview(review, 'en')">Delete</button></td>
-                                                    </tr>
-                                                @elseif ($locale->language == 'cn')
-                                                    <tr ng-repeat="review in reviewer.reviews.cn | orderBy: 'sort'">
-                                                        <td>@{{ review.question }}</td>
-                                                        <td>@{{ review.answer }}</td>
-                                                        <td>@{{ review.sort }}</td>
-                                                        <td><button type="button" class="btn btn-danger" ng-click="delReview(review, 'cn')">Delete</button></td>
-                                                    </tr>
-                                                @endif
-                                                </tbody>
-                                            </table>
+                                            @if ($locale->language == 'en')
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <th>Question</th>
+                                                        <th>Answer</th>
+                                                        <th>Sort</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="review in reviewer.reviews.en | orderBy: 'sort'">
+                                                            <td>@{{ review.question }}</td>
+                                                            <td>@{{ review.answer }}</td>
+                                                            <td>@{{ review.sort }}</td>
+                                                            <td><button type="button" class="btn btn-danger" ng-click="delReview(review, 'en')">Delete</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p ng-show="reviewer.reviews.en.length < 1" class="text-center">No reviews.</p>
+                                            @elseif ($locale->language == 'cn')
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <th>Question</th>
+                                                        <th>Answer</th>
+                                                        <th>Sort</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr ng-repeat="review in reviewer.reviews.cn | orderBy: 'sort'">
+                                                            <td>@{{ review.question }}</td>
+                                                            <td>@{{ review.answer }}</td>
+                                                            <td>@{{ review.sort }}</td>
+                                                            <td><button type="button" class="btn btn-danger" ng-click="delReview(review, 'cn')">Delete</button></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <p ng-show="reviewer.reviews.cn.length < 1" class="text-center">No reviews.</p>
+                                            @endif
                                         </div>
                                     @endforeach
                                 @endif
