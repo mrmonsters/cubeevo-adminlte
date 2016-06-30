@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\JobReviewer;
 use URL;
 use Session;
 use Redirect;
@@ -147,28 +148,22 @@ class HomeController extends Controller {
 
 	public function getInternship()
 	{
-		$meta_title = 'Internship';
+		$meta_title   = 'Internship';
 		$meta_keyword = 'Internship';
-		$meta_desc = 'Internship';
+		$meta_desc    = 'Internship';
+		$reviewers    = JobReviewer::Intern()->get()->sortBy('date');
 
-		return view('frontend.careers.internship')->with([
-			'meta_title'=> $meta_title,
-			'meta_keyword'=> $meta_keyword,
-			'meta_desc'=> $meta_desc
-		]);
+		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers'));
 	}
 
 	public function getFullemployment()
 	{
-		$meta_title = 'Full Employment';
+		$meta_title   = 'Full Employment';
 		$meta_keyword = 'Full Employment';
-		$meta_desc = 'Full Employment';
+		$meta_desc    = 'Full Employment';
+		$reviewers    = JobReviewer::Fulltime()->get();
 
-		return view('frontend.careers.fullemployment')->with([
-			'meta_title'=> $meta_title,
-			'meta_keyword'=> $meta_keyword,
-			'meta_desc'=> $meta_desc
-		]);
+		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers'));
 	}
 
 	public function getCredentialProject($slug)

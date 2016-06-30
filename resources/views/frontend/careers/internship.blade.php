@@ -24,7 +24,7 @@
     </div>
     <div class="container-fluid outerwrapper">
         <div class="row" style="position:relative;">
-            @include('frontend.careers.internship.view')
+            @include('frontend.careers.internship.view', array('reviewers' => $reviewers))
         </div>
     </div>
 @endsection

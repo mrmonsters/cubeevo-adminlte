@@ -25,7 +25,7 @@
                         <div class="form-group">
                             <label for="reviewer_name" class="col-sm-2 control-label">Reviewer's Name</label>
                             <div class="col-sm-10">
-                                <input id="reviewer_name" name="reviewer_name" type="text" class="form-control" ng-model="reviewer.name" />
+                                <input id="reviewer_name" name="reviewer_name" type="text" class="form-control" ng-model="reviewer.name" required />
                             </div>
                         </div>
                         <div class="form-group">
@@ -37,13 +37,13 @@
                         <div class="form-group">
                             <label for="reviewer_qualification" class="col-sm-2 control-label">Reviewer's Qualification</label>
                             <div class="col-sm-10">
-                                <input id="reviewer_qualification" name="reviewer_qualification" type="text" class="form-control" ng-model="reviewer.qualification" />
+                                <input id="reviewer_qualification" name="reviewer_qualification" type="text" class="form-control" ng-model="reviewer.qualification" required />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="review_date" class="col-sm-2 control-label">Review Date</label>
                             <div class="col-sm-10">
-                                <input id="review_date" name="review_date" type="date" class="form-control" ng-model="reviewer.date" />
+                                <input id="review_date" name="review_date" type="date" class="form-control" ng-model="reviewer.date" required />
                             </div>
                         </div>
                         <p class="lead">Review Questions & Answers</p>
@@ -87,10 +87,10 @@
                                             @if ($locale->language == 'en')
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <th>Question (EN)</th>
-                                                        <th>Answer (EN)</th>
-                                                        <th>Sort</th>
-                                                        <th>Action</th>
+                                                        <th class="col-xs-3">Question (EN)</th>
+                                                        <th class="col-xs-6">Answer (EN)</th>
+                                                        <th class="col-xs-1">Sort</th>
+                                                        <th class="col-xs-2">Action</th>
                                                     </thead>
                                                     <tbody>
                                                         <tr ng-repeat="review in reviewer.reviews.en | orderBy: 'sort'">
@@ -105,10 +105,10 @@
                                             @elseif ($locale->language == 'cn')
                                                 <table class="table table-bordered">
                                                     <thead>
-                                                        <th>Question (CN)</th>
-                                                        <th>Answer (CN)</th>
-                                                        <th>Sort</th>
-                                                        <th>Action</th>
+                                                    <th class="col-xs-3">Question (CN)</th>
+                                                    <th class="col-xs-6">Answer (CN)</th>
+                                                    <th class="col-xs-1">Sort</th>
+                                                    <th class="col-xs-2">Action</th>
                                                     </thead>
                                                     <tbody>
                                                         <tr ng-repeat="review in reviewer.reviews.cn | orderBy: 'sort'">

@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('SolutionTableSeeder');
 		$this->call('SettingTableSeeder');
 		$this->call('SettingTableSeeder_2016_06_22');
+		$this->call('JobReviewSeeder');
 	}
 
 }

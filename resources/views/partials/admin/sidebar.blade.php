@@ -70,6 +70,11 @@
                     <i class='fa fa-suitcase'></i> <span>Jobs Posting</span>
                 </a>
             </li>
+            <li class="{{ (Request::is('admin/manage/job-review') || Request::is('admin/manage/job-review/*')) ? 'active' : '' }}">
+                <a href="{{ url('admin/manage/job-review') }}">
+                    <i class='fa fa-pencil-square'></i> <span>Job Review</span>
+                </a>
+            </li>
             <li class="{{ (Request::is('admin/manage/profile') || Request::is('admin/manage/profile/*')) ? 'active' : '' }}">
                 <a href="{{ url('admin/manage/profile') }}">
                     <i class='fa fa-sitemap'></i> <span>Profile</span>

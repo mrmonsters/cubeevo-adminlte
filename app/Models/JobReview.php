@@ -9,9 +9,9 @@ class JobReview extends AbstractModel {
 
 	use SoftDeletes;
 
-	protected $table                = 'job_reviews';
-	protected $primaryKey           = 'id';
-	protected $fillable             = ['reviewer_id', 'question', 'answer', 'locale', 'sort', 'status'];
-	protected $dates                = ['deleted_at'];
+	protected $table      = 'job_reviews';
+	protected $primaryKey = 'id';
+	protected $fillable   = ['reviewer_id', 'question', 'answer', 'locale', 'sort', 'status'];
+	protected $dates      = ['deleted_at'];
 
 }

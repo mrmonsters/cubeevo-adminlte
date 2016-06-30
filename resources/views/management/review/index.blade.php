@@ -24,15 +24,15 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Qualification</th>
-                            <th>Created At</th>
+                            <th>Date</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="reviewer in reviewers | orderBy: '-created_at.date'">
+                            <tr ng-repeat="reviewer in reviewers | orderBy: 'date'">
                                 <td>@{{ reviewer.id }}</td>
                                 <td>@{{ reviewer.name }}</td>
                                 <td>@{{ reviewer.qualification }}</td>
-                                <td>@{{ reviewer.created_at.date | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+                                <td>@{{ reviewer.date }}</td>
                                 <td>
                                     <a href="{{ url('admin/manage/job-review/edit') }}/@{{ reviewer.id }}" class="btn btn-default">Edit</a>
                                     <button type="button" class="btn btn-danger" ng-click="delReviewer(reviewer)">Delete</button>
