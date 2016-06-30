@@ -39,9 +39,11 @@
 
             function resetReview() {
 
-                $scope.review.question = '';
-                $scope.review.answer   = '';
-                $scope.review.sort     = 0;
+                $scope.review = {
+                    question: '',
+                    answer:   '',
+                    sort:     0
+                };
             }
 
             $scope.init = function () {
@@ -119,9 +121,11 @@
 
             function resetReview() {
 
-                $scope.review.question = '';
-                $scope.review.answer   = '';
-                $scope.review.sort     = 0;
+                $scope.review = {
+                    question: '',
+                    answer:   '',
+                    sort:     0
+                };
             }
 
             $scope.init = function () {
@@ -162,7 +166,7 @@
                         if (review.id) {
 
                             index = $scope.reviewer.reviews.cn.indexOf(review);
-console.log(index);
+
                             $scope.reviewer.reviews.cn[index].question = review.question;
                             $scope.reviewer.reviews.cn[index].answer   = review.answer;
                             $scope.reviewer.reviews.cn[index].sort     = review.sort;
@@ -177,19 +181,12 @@ console.log(index);
                         break;
                 }
 
-                // resetReview();
+                resetReview();
             }
             
             $scope.editReview = function (review) {
-// console.log(review);
-                // $scope.review = {
-                //     id:       review.id,
-                //     question: review.question,
-                //     answer:   review.answer,
-                //     sort:     review.sort
-                // };
-                $scope.review = angular.copy(review);
-                console.log($scope.review);
+
+                $scope.review = review;
             }
 
             $scope.delReview = function (review, lang) {
@@ -209,8 +206,32 @@ console.log(index);
                         $scope.reviewer.reviews.cn[index].deleted = 1;
                         break;
                 }
+            }
 
-                console.log($scope.reviewer);
+            $scope.update = function (reviewer) {
+
+                var confirmUpdate = confirm('Are you sure you want to save these changes?');
+
+                if (confirmUpdate == true) {
+
+                    reviewer.date           = reviewer.date.toString('DD-MM-YYYY');
+                    var reviewerData        = {
+                        id:   reviewer.id,
+                        data: JSON.stringify(reviewer)
+                    };
+                    reviewerData["_method"] = 'PUT';
+
+                    ReviewService.update(reviewerData, function (data) {
+
+                        window.location.href = "http://" + location.host + "/admin/manage/job-review";
+                    }, function (data) {
+
+                        alert(data['msg']);
+                    });
+                } else {
+
+                    alert('Reviewer [' + reviewer.id + '] is not updated.');
+                }
             }
 
         }]);

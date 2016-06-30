@@ -205,15 +205,16 @@ class IndexController extends ApiController {
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param $id
-	 * @param $request
+	 * @param         $id
+	 * @param Request $request
 	 *
 	 * @return \Symfony\Component\HttpFoundation\Response
 	 */
-	public function update($id, $request)
+	public function update($id, Request $request)
 	{
 		$data     = $request->all();
 		$reviewer = $this->_reviewer->findOrNew($id);
+		$data     = json_decode($data['data'], true);
 
 		if ($reviewer->exists) {
 

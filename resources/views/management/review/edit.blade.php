@@ -15,7 +15,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Update Job Review</h3>
                     <div class="pull-right">
-                        <button type="button" class="btn btn-primary" ng-click="save(reviewer)">Save</button>
+                        <button type="button" class="btn btn-primary" ng-click="update(reviewer)">Save</button>
                     </div>
                 </div>
                 <form class="form-horizontal">

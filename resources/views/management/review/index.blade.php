@@ -15,7 +15,7 @@
                 <div class="box-header with-border">
                     <h3 class="box-title">Career Review Index</h3>
                     <div class="pull-right">
-                        <a href="create" class="btn btn-primary" ng-click="save(reviewer)">Create</a>
+                        <a href="{{ url('admin/manage/job-review/create') }}" class="btn btn-primary">Create</a>
                     </div>
                 </div>
                 <div class="box-body">
@@ -34,7 +34,7 @@
                                 <td>@{{ reviewer.qualification }}</td>
                                 <td>@{{ reviewer.created_at.date | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
                                 <td>
-                                    <a href="edit/@{{ reviewer.id }}" class="btn btn-default">Edit</a>
+                                    <a href="{{ url('admin/manage/job-review/edit') }}/@{{ reviewer.id }}" class="btn btn-default">Edit</a>
                                     <button type="button" class="btn btn-danger" ng-click="delReviewer(reviewer)">Delete</button>
                                 </td>
                             </tr>
