@@ -72,6 +72,7 @@ class JobReviewController extends Controller {
 		if ($reviewer->exists) {
 
 			$reviewerData                  = $reviewer->toArray();
+			$reviewerData['type']          = ['value' => $reviewer['type']];
 			$reviewerData['reviews']['en'] = $reviewer->enReviews->toArray();
 			$reviewerData['reviews']['cn'] = $reviewer->zhReviews->toArray();
 

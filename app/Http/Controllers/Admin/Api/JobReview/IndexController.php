@@ -51,9 +51,11 @@ class IndexController extends ApiController {
 		} else if ($collection instanceof JobReviewer) {
 
 			$result = [
+				'id'            => $collection->id,
 				'name'          => $collection->name,
 				'qualification' => $collection->qualification,
 				'date'          => $collection->date,
+				'type'          => $collection->type,
 			];
 
 			foreach ($this->_locales as $locale) {
@@ -222,6 +224,7 @@ class IndexController extends ApiController {
 				'name'          => $data['name'],
 				'qualification' => $data['qualification'],
 				'date'          => $data['date'],
+				'type'          => $data['type']['value'],
 			]);
 
 			foreach ($this->_locales as $locale) {

@@ -1,8 +1,21 @@
 (function() {
     "use strict";
 
+    var reviewerType = [
+        {
+            label: 'Internship',
+            value: 1
+        },
+        {
+            label: 'Full Time',
+            value: 2
+        }
+    ];
+
     cubeevo
         .controller('ReviewIndexCtrl', ['$scope', 'ReviewService', function ($scope, ReviewService) {
+
+            $scope.reviewerType = reviewerType;
 
             $scope.init = function () {
 
@@ -46,6 +59,8 @@
                 };
             }
 
+            $scope.reviewerType = reviewerType;
+
             $scope.init = function () {
 
                 $scope.review   = {
@@ -57,6 +72,9 @@
                     name:          '',
                     qualification: '',
                     date:          '',
+                    type:          {
+                        value: 1
+                    },
                     reviews:       {
                         en: [],
                         cn: []
@@ -127,6 +145,8 @@
                     sort:     0
                 };
             }
+
+            $scope.reviewerType = reviewerType;
 
             $scope.init = function () {
 
@@ -211,13 +231,18 @@
             $scope.update = function (reviewer) {
 
                 var confirmUpdate = confirm('Are you sure you want to save these changes?');
+                var date;
+                var reviewerData;
+                var clone;
 
                 if (confirmUpdate == true) {
 
-                    reviewer.date           = reviewer.date.toString('DD-MM-YYYY');
-                    var reviewerData        = {
+                    clone                   = angular.copy(reviewer);
+                    date                    = clone.date;
+                    clone.date              = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+                    reviewerData            = {
                         id:   reviewer.id,
-                        data: JSON.stringify(reviewer)
+                        data: JSON.stringify(clone)
                     };
                     reviewerData["_method"] = 'PUT';
 
@@ -233,6 +258,5 @@
                     alert('Reviewer [' + reviewer.id + '] is not updated.');
                 }
             }
-
         }]);
 }) ();

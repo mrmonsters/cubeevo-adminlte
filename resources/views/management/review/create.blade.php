@@ -29,6 +29,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="reviewer_type" class="col-sm-2 control-label">Reviewer Type</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" id="reviewer_type" ng-model="reviewer.type" ng-options="option as option.label for option in reviewerType track by option.value"></select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="reviewer_qualification" class="col-sm-2 control-label">Reviewer's Qualification</label>
                             <div class="col-sm-10">
                                 <input id="reviewer_qualification" name="reviewer_qualification" type="text" class="form-control" ng-model="reviewer.qualification" />
