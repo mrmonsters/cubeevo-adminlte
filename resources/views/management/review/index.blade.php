@@ -34,7 +34,7 @@
                                 <td>@{{ reviewer.qualification }}</td>
                                 <td>@{{ reviewer.created_at.date | date: 'yyyy-MM-dd HH:mm:ss' }}</td>
                                 <td>
-                                    <a href="edit/@{{ item.id }}" class="btn btn-default">Edit</a>
+                                    <a href="edit/@{{ reviewer.id }}" class="btn btn-default">Edit</a>
                                     <button type="button" class="btn btn-danger" ng-click="delReviewer(reviewer)">Delete</button>
                                 </td>
                             </tr>

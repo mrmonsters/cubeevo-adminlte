@@ -3,13 +3,19 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Models\JobReviewer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class JobReviewController extends Controller {
 
-	public function __construct()
+	protected $_reviewer;
+
+	public function __construct(JobReviewer $jobReviewer)
 	{
 		$this->middleware('auth');
+
+		$this->_reviewer = $jobReviewer;
 	}
 
 	/**
@@ -61,7 +67,18 @@ class JobReviewController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$reviewer = $this->_reviewer->findOrNew($id);
+
+		if ($reviewer->exists) {
+
+			$reviewerData                  = $reviewer->toArray();
+			$reviewerData['reviews']['en'] = $reviewer->enReviews->toArray();
+			$reviewerData['reviews']['cn'] = $reviewer->zhReviews->toArray();
+
+			return view('management.review.edit')->with(compact('reviewerData'));
+		}
+
+		return $this->respondError('admin/manage/job-review', 'Reviewer not found.');
 	}
 
 	/**
