@@ -45,7 +45,8 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
 
                 if (index == 5) {
                     $scope.leftcontentFontColor = 'text-black';
-                    $('.leftcontent_heading').html('CONTACT US');
+                    $('.leftcontent_heading').html('SPEAK TO US TODAY!');
+                    $('.leftcontent_desc').html('Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.');
                     $('.leftcontent_client').hide();
                     $('.leftcontent_topheading').hide();
                 }

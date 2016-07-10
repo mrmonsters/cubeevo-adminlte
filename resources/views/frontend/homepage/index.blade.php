@@ -42,6 +42,7 @@
             <div class="section moveOut" id="section5">
                 @include('frontend.homepage.section.contact')
             </div>
+
         </div>
     </div>
 
