@@ -168,19 +168,26 @@ class HomeController extends Controller {
 
 	public function getCredentialProject($slug)
 	{
-		if(empty($slug)):
-			return Redirect::to('/credential/');
-		endif;
+		if (empty($slug)) {
 
-		$projects = Category::where('slug', '=', $slug)->first()
+			return redirect()->to('/credential/');
+		}
+
+		$backbtn  = URL::action('HomeController@getCredential');
+		$projects = Category::where('slug', '=', $slug)
+			->first()
 			->projects()
 			->where('status', Status::ACTIVE)
 			->where('delete', false)
 			->orderBy('sort_order')
 			->get();
 
-		return view('frontend.project')->with('projects', $projects)
-			->with('backbtn', URL::action('HomeController@getCredential'));
+		if ($projects->count() == 1) {
+
+			return redirect()->to("credential/project/{$projects->first()->slug}");
+		}
+
+		return view('frontend.project')->with(compact('backbtn', 'projects'));
 	}
 
 	public function getSolution()
