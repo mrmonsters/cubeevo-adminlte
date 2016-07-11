@@ -22,16 +22,16 @@ Route::group(['prefix' => 'api/v1'], function () {
 	]);
 
 });
- 
+
 Route::get('/credential', 'HomeController@getCredential');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');
-Route::get('/credential/{slug}', 'HomeController@getCredentialProject'); 
-Route::get('/solution', 'HomeController@getSolution'); 
+Route::get('/credential/{slug}', 'HomeController@getCredentialProject');
+Route::get('/solution', 'HomeController@getSolution');
 Route::get('/locale/{code}', 'HomeController@switchLocale');
 Route::get('/contact-us', 'HomeController@getContactUs');
 Route::get('/insights/detail/{slug}', 'HomeController@getInsightdetail');
 Route::get('/insights', 'HomeController@getInsights');
-Route::get('/be-part-of-the-team', 'HomeController@getCareers');
+Route::get('/join-the-team', 'HomeController@getCareers');
 Route::get('/internship', 'HomeController@getInternship');
 Route::get('/full-employment', 'HomeController@getFullemployment');
 Route::get('/', 'HomeController@getHomepage');
