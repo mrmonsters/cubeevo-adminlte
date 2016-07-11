@@ -19,7 +19,8 @@ $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
         <div class="row content-wrapper-layer content-wrapper-first-layer">
             <div class="content-wrapper"
                  style="background-image : url('{{$posts[1]->coverImage->dir}}')">
-                <div class="col-xs-12 col-md-7 content-wrapper__content">
+                <div class="insight-bg insight-bg-2"></div>
+                <div class="col-xs-12 col-md-7 content-wrapper__content text-white">
                     <?php
                     $content = html_entity_decode($posts[1]->translate(Session::get('locale'))->description);
                     $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
@@ -32,7 +33,8 @@ $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
         <div class="row content-wrapper-layer content-wrapper-second-layer">
             <div class="content-wrapper"
                  style="background-image: url('{{$posts[2]->coverImage->dir}}')">
-                <div class="col-xs-12 col-md-7 content-wrapper__content">
+                <div class="insight-bg insight-bg-3"></div>
+                <div class="col-xs-12 col-md-7 content-wrapper__content text-black">
                     <?php
                     $content = html_entity_decode($posts[2]->translate(Session::get('locale'))->description);
                     $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));

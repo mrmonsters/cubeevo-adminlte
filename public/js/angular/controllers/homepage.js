@@ -19,6 +19,8 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $scope.leftcontentFontColor = 'text-black';
                     $('.leftcontent_heading').html('An Advertising Agency <br/> in Malaysia and Singapore.');
                     $('.leftcontent_client').hide();
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
 
                 if (index == 2) {
@@ -27,6 +29,8 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.leftcontent_heading').html($scope.projects[0].label);
                     $('.leftcontent_topheading').hide();
                     $('.leftcontent_client').show();
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
                 if (index == 3) {
                     $scope.leftcontentFontColor = 'text-black';
@@ -34,6 +38,8 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.leftcontent_heading').html($scope.projects[1].label);
                     $('.leftcontent_topheading').hide();
                     $('.leftcontent_client').show();
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
 
                 if (index == 4) {
@@ -41,6 +47,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.leftcontent_client').hide();
                     $('.leftcontent_desc').html($scope.post[0].desc + '...');
                     $('.leftcontent_topheading').hide();
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
 
                 if (index == 5) {
@@ -49,6 +56,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.leftcontent_desc').html('Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.');
                     $('.leftcontent_client').hide();
                     $('.leftcontent_topheading').hide();
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                 }
 
                 $('.js-left-content').removeClass('hide animated fadeOutUp').addClass('animated fadeInUp');
@@ -67,11 +75,18 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.leftcontent_heading,.leftcontent_desc').addClass('text-white');
                 }
                 if (next == 3) {
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                     $('.wrapper__home-left .content-wrapper').addClass('leftcontentbackgroundImage_2');
                     $('.leftcontent_heading,.leftcontent_desc').addClass('text-white');
                 }
                 if (next == 4) {
+                    $('.wrapper__home-left .insight-bg').addClass('insight-bg-1');
+                    $('.leftcontent_heading,.leftcontent_desc').addClass('text-white');
                     $('.wrapper__home-left .content-wrapper').addClass('post_0_background');
+                }
+                if (next == 5) {
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
+                    $('.wrapper__home-left .insight-bg').addClass('insight-bg-4');
                 }
             }
         };

@@ -2,9 +2,10 @@
 
 @section('frontend-content')
 
-    <div ng-controller="HomepageCtrl" class="home">
+    <div ng-controller="HomepageCtrl" class="home newlanding">
         <div class="wrapper wrapper__home wrapper__home-left col-xs-6">
             <div class="content-wrapper no-margin">
+                <div class="insight-bg"></div>
                 <div class="col-xs-10 col-sm-push-3 col-sm-8 col-md-push-5 col-md-6 left-content">
                     <div class="js-left-content hide @{{ leftcontentFontColor }} moveOut">
                         <h4 class="leftcontent_topheading">Ever Evolving CUBEevo @{{ leftcontentbackgroundImage }}</h4>
