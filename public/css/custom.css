@@ -300,9 +300,18 @@ hr.whitehr {
     background: url(../img/Images-14.svg) no-repeat 0 0;
 }
 
-.cd-social .cd-scyt:hover, .cd-social .cd-scin:hover, .cd-social .cd-scfb:hover {
+.cd-social .cd-sctt {
+    background: url('../img/Programmer Needs-22.svg') no-repeat 0 0;
+}
+
+.cd-social .cd-scgp {
+    background: url('../img/Programmer Needs-23.svg') no-repeat 0 0;
+}
+.cd-social .cd-scyt:hover, .cd-social .cd-scin:hover, .cd-social .cd-scfb:hover, .cd-social .cd-sctt:hover, .cd-social .cd-scgp:hover {
     background-position-y: -31px;
 }
+#cd-nav .cd-social ul{margin-left: -1px;}
+.cd-social .list-inline>li{padding-left:0px;padding-right: 3px;}
 
 .mob-hide {
     display: inline;
