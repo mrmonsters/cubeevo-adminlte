@@ -307,11 +307,19 @@ hr.whitehr {
 .cd-social .cd-scgp {
     background: url('../img/Programmer Needs-23.svg') no-repeat 0 0;
 }
+
 .cd-social .cd-scyt:hover, .cd-social .cd-scin:hover, .cd-social .cd-scfb:hover, .cd-social .cd-sctt:hover, .cd-social .cd-scgp:hover {
     background-position-y: -31px;
 }
-#cd-nav .cd-social ul{margin-left: -1px;}
-.cd-social .list-inline>li{padding-left:0px;padding-right: 3px;}
+
+#cd-nav .cd-social ul {
+    margin-left: -1px;
+}
+
+.cd-social .list-inline > li {
+    padding-left: 0px;
+    padding-right: 3px;
+}
 
 .mob-hide {
     display: inline;
@@ -362,11 +370,11 @@ hr.whitehr {
     background: #27bdbe;
 }
 
-.newlanding #section3{
+.newlanding #section3 {
     background: #FFFFFF;
 }
 
-.newlanding #section5{
+.newlanding #section5 {
     background: #E9E8E8;
 }
 
@@ -1111,13 +1119,14 @@ hr.whitehr {
     left: -55px;
 }
 
-.homepage-line-custom{
-    top:5px;
+.homepage-line-custom {
+    top: 5px;
     position: absolute;
     display: block;
     width: 40px;
     left: -56px;
 }
+
 .internship-line {
     height: 3px;
     width: 43px;
@@ -1656,10 +1665,26 @@ hr.whitehr {
     top: -99px;
 }
 
-.wrapper__right{padding-left: 0px;}
-.wrapper__home-left{padding-right: 0px;}
-.home__background .content-wrapper-first-layer{padding-bottom: 0px;}
-.homepage_contact_us-mobile-line{background-color: #fff;width: 20px;line-height: 1px;position: relative;height: 1px;}
+.wrapper__right {
+    padding-left: 0px;
+}
+
+.wrapper__home-left {
+    padding-right: 0px;
+}
+
+.home__background .content-wrapper-first-layer {
+    padding-bottom: 0px;
+}
+
+.homepage_contact_us-mobile-line {
+    background-color: #fff;
+    width: 20px;
+    line-height: 1px;
+    position: relative;
+    height: 1px;
+}
+
 /*.moveOut{*/
 /*transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005)  0.5s;*/
 /*-webkit-transition: all 0.8s cubic-bezier(1.000, 0.000, 0.000, 1.005)  0.5s; !** Chrome & Safari **!*/
@@ -1670,31 +1695,38 @@ hr.whitehr {
 /*transform: translate3d(0, -400px, 0);*/
 /*}*/
 
-.insight-bg{
+.insight-bg {
     width: 100%;
     height: 100%;
 }
-.insight-bg-4{
+
+.insight-bg-4 {
     background-color: #CECDCC;
 }
-.insight-bg-1{
-    background-color: rgba(247,147,29,0.9);
+
+.insight-bg-1 {
+    background-color: rgba(247, 147, 29, 0.9);
 }
-.insight-bg-2{
-    background-color: rgba(39,189,190,0.7);
+
+.insight-bg-2 {
+    background-color: rgba(39, 189, 190, 0.7);
 }
-.insight-bg-3{
-    background-color: rgba(237,231,9,0.7);
+
+.insight-bg-3 {
+    background-color: rgba(237, 231, 9, 0.7);
 }
+
 #fp-nav ul li, .fp-slidesNav ul li {
     margin: 17px 18px;
 }
-#fp-nav ul li a span, .fp-slidesNav ul li a span{
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
     height: 8px;
     width: 8px;
     margin: -2px 0 0 -4px;
     background: #fff;
 }
+
 @media (max-width: 769px) {
     h1 {
         font-size: 26px !important;
@@ -1706,18 +1738,35 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    .home .wrapper__home-left {
+        position: fixed;
+        left: -0.7%;
+    }
+
     #cd-main-nav {
         overflow: hidden;
         height: 98.8%;
         left: 1.3%;
     }
-    .home__background .content-wrapper-first-layer{padding-bottom: 15px;}
+
+    .home__background .content-wrapper-first-layer {
+        padding-bottom: 15px;
+    }
 }
 
 @media (min-width: 768px) {
-    .homepage-contact-us__country{margin-left: -70px;}
-    .content-wrapper__content-contact-us-heading{text-align: center;}
-    .content-wrapper__content-contact-us-subheading{text-align: center;}
+    .homepage-contact-us__country {
+        margin-left: -70px;
+    }
+
+    .content-wrapper__content-contact-us-heading {
+        text-align: center;
+    }
+
+    .content-wrapper__content-contact-us-subheading {
+        text-align: center;
+    }
+
     .internship-content-1 {
         position: relative;
         top: -60px;
@@ -1858,7 +1907,16 @@ hr.whitehr {
     }
 }
 
+@media (min-width: 879px) {
+    .home .wrapper__home-left {
+        left: -0.5%;
+    }
+}
+
 @media (min-width: 992px) {
+    .home .wrapper__home-left {
+        left: 0.2%;
+    }
     .intern-section-1-bg {
         background-image: url('../img/Career_05-05.svg');
     }
