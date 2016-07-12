@@ -1687,12 +1687,13 @@ hr.whitehr {
     background-color: rgba(237,231,9,0.7);
 }
 #fp-nav ul li, .fp-slidesNav ul li {
-    margin: 17px 7px;
+    margin: 17px 18px;
 }
 #fp-nav ul li a span, .fp-slidesNav ul li a span{
     height: 8px;
     width: 8px;
     margin: -2px 0 0 -4px;
+    background: #fff;
 }
 @media (max-width: 769px) {
     h1 {
