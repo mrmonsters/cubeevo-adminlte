@@ -1678,7 +1678,7 @@ hr.whitehr {
     background-color: #CECDCC;
 }
 .insight-bg-1{
-    background-color: rgba(247,147,29,0.7);
+    background-color: rgba(247,147,29,0.9);
 }
 .insight-bg-2{
     background-color: rgba(39,189,190,0.7);
@@ -1688,6 +1688,11 @@ hr.whitehr {
 }
 #fp-nav ul li, .fp-slidesNav ul li {
     margin: 17px 7px;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    height: 8px;
+    width: 8px;
+    margin: -2px 0 0 -4px;
 }
 @media (max-width: 769px) {
     h1 {

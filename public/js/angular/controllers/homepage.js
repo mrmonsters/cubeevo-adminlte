@@ -13,7 +13,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             navigation: true,
             navigationPosition: 'right',
             scrollingSpeed: 1000,
-            // easingcss3: 'cubic-bezier(1.000, 0.000, 0.000, 1.005) 0.5s',
+             //easingcss3: 'cubic-bezier(1.000, 0.000, 0.000, 1.005) 0.5s',
             afterLoad: function (anchorLink, index) {
                 if (index == 1) {
                     $scope.leftcontentFontColor = 'text-black';
@@ -43,6 +43,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                 }
 
                 if (index == 4) {
+                    console.log($scope.post);
                     $('.leftcontent_heading').html($scope.post[0].label);
                     $('.leftcontent_client').hide();
                     $('.leftcontent_desc').html($scope.post[0].desc + '...');
