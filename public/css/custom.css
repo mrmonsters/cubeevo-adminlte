@@ -208,7 +208,7 @@ hr.whitehr {
 }
 
 .modal-backdrop {
-    background-color: #F7941A;
+    background-color: #000;
 }
 
 .modal-content .btn {
@@ -232,6 +232,12 @@ hr.whitehr {
 
 .modal.in .modal-dialog.homevideo .modal-header {
     border: 0px;
+}
+
+
+.modal.in .modal-dialog.homevideo .modal-content{
+    background: transparent;
+    box-shadow: none;
 }
 
 .cd-section .main h2 {
@@ -279,12 +285,16 @@ hr.whitehr {
     margin: 0 auto;
     overflow: hidden;
 }
-
+.cd-social i{
+    width: 34px;
+    height: 70px;
+    display: block;
+}
 .cd-social a {
     text-indent: 10000px;
     display: block;
     width: 30px;
-    height: 30px;
+    height: 39px;
     border: 0 none !important;
 }
 
@@ -309,7 +319,7 @@ hr.whitehr {
 }
 
 .cd-social .cd-scyt:hover, .cd-social .cd-scin:hover, .cd-social .cd-scfb:hover, .cd-social .cd-sctt:hover, .cd-social .cd-scgp:hover {
-    background-position-y: -31px;
+    background-position-y: -35px;
 }
 
 #cd-nav .cd-social ul {
@@ -1727,6 +1737,19 @@ hr.whitehr {
     background: #fff;
 }
 
+.homepage-contact-us-cta{width: 150px;}
+.bottom-line-grey{height: 1px;width: 30px;background: #231F20;display: block;}
+.bottom-line{height: 1px;width: 20px;background: #fff;display: block;}
+
+.post_0_background{
+    background-size: cover !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: relative !important;
+    background-position: center center !important;
+    overflow: hidden;
+    width: 99.5% !important;
+}
 @media (max-width: 769px) {
     h1 {
         font-size: 26px !important;
@@ -1738,6 +1761,7 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    .homepage-contact-us-cta{width: 200px;}
     .home .wrapper__home-left {
         position: fixed;
         left: -0.7%;
@@ -1781,7 +1805,7 @@ hr.whitehr {
     }
 
     .modal.in .modal-dialog.homevideo {
-        width: 630px;
+        width: 830px;
     }
 
     .slick-next-wrapper {
@@ -2063,6 +2087,12 @@ hr.whitehr {
 }
 
 @media (min-width: 1800px) {
+    .post_0_background{
+        width: 99.5% !important;
+    } 
+    .home .wrapper__home .content-wrapper{
+        width: 99.5% !important;
+    }
     .internship-qna-label {
         right: -230px;
         top: 30px;

@@ -62,34 +62,29 @@
                         <?php use App\Models\Setting; ?>
                         @if(!empty(Setting::where('code', '=', 'facebook_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'facebook_link')->first()->value}}"
-                                   class="cd-scfb" target="_blank">FB</a>
+                                <a href="{{Setting::where('code', '=', 'facebook_link')->first()->value}}" target="_blank"><i class="cd-scfb"></i></a>
                             </li>
                         @endif
                         @if(!empty(Setting::where('code', '=', 'youtube_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'youtube_link')->first()->value}}"
-                                   class="cd-scyt" target="_blank">Youtube</a>
+                                <a href="{{Setting::where('code', '=', 'youtube_link')->first()->value}}" target="_blank"><i class="cd-scyt"></i></a>
                             </li>
                         @endif
                         @if(!empty(Setting::where('code', '=', 'instagram_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'instagram_link')->first()->value}}"
-                                   class="cd-scin" target="_blank">Instagram</a>
+                                <a href="{{Setting::where('code', '=', 'instagram_link')->first()->value}}" target="_blank"><i class="cd-scin"></i></a>
                             </li>
                         @endif
 
                         @if(!empty(Setting::where('code', '=', 'twitter_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'twitter_link')->first()->value}}"
-                                   class="cd-sctt" target="_blank">Twitter</a>
+                                <a href="{{Setting::where('code', '=', 'twitter_link')->first()->value}}" target="_blank"><i class="cd-sctt"></i></a>
                             </li>
                         @endif
 
                         @if(!empty(Setting::where('code', '=', 'google_plus_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'google_plus_link')->first()->value}}"
-                                   class="cd-scgp" target="_blank">Google</a>
+                                <a href="{{Setting::where('code', '=', 'google_plus_link')->first()->value}}" target="_blank"><i class="cd-scgp"></i></a>
                             </li>
                         @endif
                     </ul>

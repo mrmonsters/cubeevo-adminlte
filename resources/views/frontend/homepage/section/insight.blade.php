@@ -7,12 +7,6 @@
     <style>
         .post_0_background {
             background: url('{{$posts[0]->coverImage->dir}}') !important;
-            background-size: cover !important;
-            height: 100% !important;
-            width: 100% !important;
-            position: relative !important;
-            background-position: center center !important;
-            overflow: hidden;
         }
 
         ;
@@ -33,6 +27,9 @@
                             ?>
                             <h2>{{$posts[1]->translate(Session::get('locale'))->title}}</h2>
                             <p>{{mb_substr($content,0,$char_count)}}</p>
+                            <p class="text-white"><i
+                                            class="icon-btn-link text-white"></i> <span
+                                            class="hidden-xs">See More</span></p>
                         </div>
                     </div>
                 </a>
@@ -49,6 +46,10 @@
                             ?>
                             <h2>{{$posts[2]->translate(Session::get('locale'))->title}}</h2>
                             <p>{{mb_substr($content,0,$char_count)}}</p>
+
+                                <p class="text-black"><i
+                                            class="icon-btn-link text-white"></i> <span
+                                            class="hidden-xs">See More</span></p>
                         </div>
                     </div>
                 </a>
