@@ -105,19 +105,34 @@ class HomeController extends Controller {
 
 	public function getProjectContent($slug)
 	{
-		if(empty($slug)):
-			return Redirect::to('/credential/');
-		endif;
-		
-		$project = Project::where('slug', '=', $slug)->where('status', Status::ACTIVE)
-			->where('delete', false)
-			->first();
-		if($project == null){
-			return Redirect::to('/');
+		if (empty($slug)) {
+
+			return redirect()->to('/credential/');
 		}
 
-		return view('frontend.project_content')->with('project', $project)
-			->with('backbtn', url('/credential/'.$project->category->slug));
+		$project = Project::where('slug', '=', $slug)
+			->where('status', Status::ACTIVE)
+			->where('delete', false)
+			->first();
+
+		if (!$project){
+
+			return redirect()->to('/');
+		}
+
+		$backbtn         = url('/credential/' . $project->category->slug);
+		$similarProjects = $project->category->projects()
+			->where('status', Status::ACTIVE)
+			->where('id', '!=', $project->id)
+			->get();
+		$nextCategory    = Category::where('status', '=', Status::ACTIVE)
+			->where('delete', false)
+			->where('id', '!=', $project->category->id)
+			->where('sort_order', '>=', $project->category->sort_order)
+			->orderBy('sort_order')
+			->first();
+
+		return view('frontend.project_content')->with(compact('project', 'backbtn', 'similarProjects', 'nextCategory'));
 	}
 
 	public function getHomepage()

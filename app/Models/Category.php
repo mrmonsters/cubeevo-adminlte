@@ -27,7 +27,7 @@ class Category extends Model implements TranslatableContract {
 
 	public function projects()
 	{
-		return $this->hasMany('App\Models\Project', 'category_id', 'id');
+		return $this->hasMany('App\Models\Project', 'category_id', 'id')->where('delete', false);
 	}
 
 	public function translations()

@@ -52,21 +52,23 @@
             <?php $counter++;?>
         @endforeach
 
-        <div class="hidden-section-4">
-            <a href="{{url('/insights/detail/'.$posts[0]->slug)}}">
-                <div class="leftcontent_desc">
-                    <?php
-                    $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
-                    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
-                    ?>
-                    <h2 class="text-white">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
-                    <p class="text-white">{{mb_substr($content,0,$char_count)}}</p>
-                    <p class="text-white"><i
-                                class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                class="hidden-xs">See More</span></p>
-                </div>
-            </a>
-        </div>
+        @if ($posts->count() > 0 && $posts = $posts->toArray())
+            <div class="hidden-section-4">
+                <a href="{{url('/insights/detail/'.$posts[0]->slug)}}">
+                    <div class="leftcontent_desc">
+                        <?php
+                        $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
+                        $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
+                        ?>
+                        <h2 class="text-white">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
+                        <p class="text-white">{{mb_substr($content,0,$char_count)}}</p>
+                        <p class="text-white"><i
+                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
+                                    class="hidden-xs">See More</span></p>
+                    </div>
+                </a>
+            </div>
+        @endif
 
         <div class="hidden-section-5">
             <h1 class="h2 leftcontent_heading">LET'S GET STARTED</h1>
