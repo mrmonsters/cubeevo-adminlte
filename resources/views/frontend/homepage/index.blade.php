@@ -38,7 +38,7 @@
             <div class="leftcontent_desc text-white">
                 <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
                 <p class="text-white"><i
-                            class="icon-btn-link text-white"></i> <span
+                            class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                             class="hidden-xs">See More</span></p>
             </div>
         </div>
@@ -54,7 +54,7 @@
                 <h2 class="text-white">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
                 <p class="text-white">{{mb_substr($content,0,$char_count)}}</p>
                 <p class="text-white"><i
-                            class="icon-btn-link text-white"></i> <span
+                            class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                             class="hidden-xs">See More</span></p>
             </div>
         </div>

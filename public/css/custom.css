@@ -113,6 +113,9 @@ body.fp-viewing-0 {
     margin-top: -1.2em;
     margin-left: -3px;
 }
+.icon-btn-link-purewhite {
+    background-image: url('../img/Programmer Needs-29.svg');
+}
 
 .active.icon-btn-link {
     background-position: -47px 0px;
@@ -1584,8 +1587,9 @@ hr.whitehr {
 }
 
 .home__background .content-wrapper__content {
-    position: absolute;
-    bottom: 20%
+    position: absolute; 
+    bottom: 10%;
+    left: 3%;
 }
 
 .height-half {
@@ -1750,6 +1754,16 @@ hr.whitehr {
     overflow: hidden;
     width: 99.5% !important;
 }
+.service-icon{
+    width: 100px;
+    margin-top: 15%;
+}
+@media (min-width: 425px) {
+    .service-icon{
+        width: 100px;
+        margin-top: 7%;
+    }
+}
 @media (max-width: 769px) {
     h1 {
         font-size: 26px !important;
@@ -1761,6 +1775,10 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    .service-icon{
+        width: 200px;
+        margin: 13% auto;
+    }
     .homepage-contact-us-cta{width: 200px;}
     .home .wrapper__home-left {
         position: fixed;
@@ -2062,6 +2080,10 @@ hr.whitehr {
 }
 
 @media (min-width: 1200px) {
+    .service-icon{
+        width: 200px;
+        margin: 13% auto;
+    }
     .internship-qna-label {
         right: -180px;
         top: 30px;
@@ -2087,9 +2109,13 @@ hr.whitehr {
 }
 
 @media (min-width: 1800px) {
+    .service-icon{
+        width: 250px;
+        margin: 10% auto;
+    }
     .post_0_background{
         width: 99.5% !important;
-    } 
+    }
     .home .wrapper__home .content-wrapper{
         width: 99.5% !important;
     }

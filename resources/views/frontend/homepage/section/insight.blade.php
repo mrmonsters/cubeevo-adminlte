@@ -28,7 +28,7 @@
                             <h2>{{$posts[1]->translate(Session::get('locale'))->title}}</h2>
                             <p>{{mb_substr($content,0,$char_count)}}</p>
                             <p class="text-white"><i
-                                            class="icon-btn-link text-white"></i> <span
+                                            class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                                             class="hidden-xs">See More</span></p>
                         </div>
                     </div>

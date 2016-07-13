@@ -32,7 +32,7 @@
                                             exciting exposures while you provide your co-operation. Should you be the
                                             one?</p>
                                         <p class="text-white"><i
-                                                    class="icon-btn-link text-white"></i> <span
+                                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                                                     class="hidden-xs">See More</span></p>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                             We’ll give
                                             you the opportunity to shine and enough support to climb. What say you?</p>
                                         <p class="text-white"><i
-                                                    class="icon-btn-link text-white"></i> <span
+                                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                                                     class="hidden-xs">See More</span></p>
                                     </div>
                                 </div>
