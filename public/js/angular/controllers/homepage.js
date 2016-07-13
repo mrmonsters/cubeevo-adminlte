@@ -12,6 +12,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
     var _html3 = $('.hidden-section-3').html();
     var _html4 = $('.hidden-section-4').html();
     var _html5 = $('.hidden-section-5').html();
+    $('#homevideo').modal('show');
     $scope.$watch('projects', function () {
 
         $scope.mainOptions = {
@@ -53,7 +54,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
 
                 $('.js-left-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
                 $('.wrapper__home-left .content-wrapper').removeClass('post_0_background').removeClass('leftcontentbackgroundImage_1').removeClass('leftcontentbackgroundImage_2');
-             
+
                 if (next == 1) {
                     $('.leftcontent_topheading').show();
                 }

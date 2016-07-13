@@ -236,7 +236,10 @@ hr.whitehr {
 .modal.in .modal-dialog.homevideo .modal-header {
     border: 0px;
 }
-
+.homevideo .modal-content{
+    background: transparent;
+    box-shadow: none;
+}
 
 .modal.in .modal-dialog.homevideo .modal-content{
     background: transparent;
@@ -1587,7 +1590,7 @@ hr.whitehr {
 }
 
 .home__background .content-wrapper__content {
-    position: absolute; 
+    position: absolute;
     bottom: 10%;
     left: 3%;
 }
@@ -1764,6 +1767,11 @@ hr.whitehr {
         margin-top: 7%;
     }
 }
+
+.custom-close {
+    position: relative;
+    top:10px;
+}
 @media (max-width: 769px) {
     h1 {
         font-size: 26px !important;
@@ -1775,6 +1783,10 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    .custom-close{
+        right: -57px;
+        top: 77px;
+    }
     .service-icon{
         width: 200px;
         margin: 13% auto;
