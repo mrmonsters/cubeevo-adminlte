@@ -33,18 +33,15 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
             //using index
              switch(index){
               case 1:
-                $('.cd-prev').parent().addClass('hide');
-              break;
-              case 2:
               $('.scene.orange').removeClass('animated fadeOut').addClass('animated slideInRight');
               break;
-              case 3:
+              case 2:
               $('.scene.yellow').removeClass('animated fadeOut').addClass('animated slideInUp');
               break;
-              case 4:
+              case 3:
               $('.scene.red').removeClass('animated fadeOut').addClass('animated fadeInRight');
               break;
-              case 5:
+              case 4:
               $('.scene.purple .body').removeClass('animated fadeOut').addClass('animated zoomInDown');
               $('.scene.purple .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                 setTimeout(function () {
@@ -53,10 +50,10 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
                 }, 1000
               ));
               break;
-              case 6:
+              case 5:
               $('.scene.blue').removeClass('animated fadeOut').addClass('animated slideInRight');
               break;
-              case 7:
+              case 6:
                 $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn');
                 $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                   setTimeout(function () {
@@ -72,26 +69,23 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
           $('.home-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
           switch(index){
               case 1:
-                $('.cd-prev').parent().removeClass('hide');
-              break;
-              case 2:
                 $('.scene.orange').removeClass('animated slideInRight').addClass('animated fadeOut');
               break;
-              case 3:
+              case 2:
                 $('.scene.yellow').removeClass('animated slideInUp').addClass('animated fadeOut');
               break;
-              case 4:
+              case 3:
                 $('.scene.red').removeClass('animated fadeInRight').addClass('animated fadeOut');
               break;
-              case 5:
+              case 4:
                 $('.scene.purple .body').removeClass('animated zoomInDown').addClass('animated fadeOut');
                 $('.scene.purple .cube').removeClass('animated bounceInDown').addClass('animated fadeOut');
                 $('.scene.purple .bg').removeClass('animated fadeIn').addClass('animated fadeOut');
               break;
-              case 6:
+              case 5:
                 $('.scene.blue').removeClass('animated slideInRight').addClass('animated fadeOut');
               break;
-              case 7:
+              case 6:
                 $('.scene.green .body').removeClass('animated fadeIn').addClass('animated fadeOut');
                 $('.scene.green .plant').removeClass('animated fadeIn').addClass('animated fadeOut');
                 $('.cd-next').parent().removeClass('hide');
@@ -121,7 +115,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
         return false;
       });
     }
-      
+
     $(".modal, .homevideo .close, .homevideo .btn").click(function() {
       $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
