@@ -1,11 +1,11 @@
-<?php  
+<?php
 use App\Models\Files;
- 
+
   $meta_desc = (isset($meta_desc) && !empty($meta_desc))?$meta_desc:$site_settings->where('code', 'meta_desc')->first()->value;
   $meta_keyword = (isset($meta_keyword) && !empty($meta_keyword))?$meta_keyword:$site_settings->where('code', 'meta_keyword')->first()->value;
   $meta_title = (isset($meta_title) && !empty($meta_title))?$meta_title.' - '.$site_settings->where('code', 'site_title')->first()->value:$site_settings->where('code', 'site_title')->first()->value;
 
-?> 
+?>
 
 <head>
   <meta charset="UTF-8">
@@ -23,15 +23,15 @@ use App\Models\Files;
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
-    <!--<link rel="stylesheet" href="css/reset.css"> --> 
-    <link rel="stylesheet" href="{{ asset('css/loader.css') }}"> 
+    <!--<link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">  
-    @if(Session::get('locale') == 'en') 
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    @if(Session::get('locale') == 'en')
     <style type="text/css">
       body{
         font-family: "Conv_DINNextLTPro-Light","source-han-sans-simplified-c", sans-serif;
-      } 
+      }
       b{
         font-family: "Conv_DINNextLTPro-Bold","source-han-sans-simplified-c", sans-serif;
       }
@@ -39,11 +39,12 @@ use App\Models\Files;
     @endif
   <link rel="stylesheet" href="{{ asset('css/utils.css') }}">
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}"> 
-    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">  
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=4"> <!-- Custom style --> 
+    <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pace.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v=4"> <!-- Custom style -->
 
     <script async src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
     <title>{{ $meta_title }}</title>

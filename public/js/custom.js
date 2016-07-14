@@ -18,7 +18,6 @@ $(window).load(function () {
             builtboxsize();
         });
     }
-    $('.blanket').fadeOut();
 });
 $(document).ready(function () {
     if ($('#fullpage').length > 0) {
@@ -111,22 +110,7 @@ $(document).ready(function () {
             return false;
         });
     }
-    if ($('#fullpage').length == 0) {
-        var timer;
-        var isFadeOut = false;
-
-        function endAndStartTimer() {
-            if (isFadeOut == false) {
-                window.clearTimeout(timer);
-                timer = window.setTimeout(function () {
-                    $('.blanket').fadeOut();
-                }, 10000);
-                isFadeOut = true;
-            }
-        }
-
-        endAndStartTimer();
-    }
+    
     $(".modal, .homevideo .close, .homevideo .btn").click(function () {
         $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
