@@ -1564,6 +1564,7 @@ hr.whitehr {
 
 .home .wrapper__home-left .content-wrapper {
     background: url(../img/transBG.png) repeat;
+    opacity: 0.9;
 }
 
 #cd-nav {
