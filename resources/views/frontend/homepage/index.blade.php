@@ -61,7 +61,7 @@
                         $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                         ?>
                         <h2 class="text-white">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
-                        <p class="text-white">{{mb_substr($content,0,$char_count)}}</p>
+                        <p class="text-white hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                                     class="hidden-xs">See More</span></p>
@@ -76,11 +76,11 @@
                 <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands.We have our Thinking Caps to help you.</p>
                 <p>So, are you ready to transform?</p>
                 <br/>
-                <p>Having Doubts?</p>
-                <a href="{{url('/credential')}}">
+                <p class="hidden-xs">Having Doubts?</p>
+                <a href="{{url('/credential')}}" class="hidden-xs">
                     <img src="{{asset('img/Programmer Needs-24.svg')}}" class="homepage-contact-us-cta" style="position: relative;left: -4px;top:-9px">
                 </a>
-                <p>That way you can put all your doubts to rest and <br class="visible-lg"/>let us help you transform.</p>
+                <p class="hidden-xs">That way you can put all your doubts to rest and <br class="visible-lg"/>let us help you transform.</p>
             </div>
         </div>
     </div>
