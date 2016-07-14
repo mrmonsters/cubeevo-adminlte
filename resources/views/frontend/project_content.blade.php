@@ -145,9 +145,9 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
     <div class="text-center" style="background-color: #EFEFEF;padding: 50px 0px;">
         <h1 style="margin-top: ">Let's Get Started !</h1>
         <p>Have a Project like this one and would like to discuss more?</p>
-        <div><img src="{{ asset('/img/Programmer Needs-25.svg') }}" width="100px"/></div>
+        <div><a href="{{url('contact-us')}}"><img src="{{ asset('/img/Programmer Needs-25.svg') }}" width="100px"/></a></div>
     </div>
-    <div class="row"> 
+    <div class="row">
         <div class="container-fluid cre">
             @foreach ($similarProjects as $project)
                 <div id='cre-box__0' class="js-three-d cre-box col-sm-6 col-lg-6" style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
