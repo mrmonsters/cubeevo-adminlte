@@ -1,9 +1,9 @@
 <div aria-labelledby="myModalLabel" class="modal fade" id="homevideo" role="dialog" tabindex="-1">
     <div class="modal-dialog homevideo" role="document">
         <div class="modal-content">
-            <div class="modal-header text-right"><a aria-label="Close" class="custom-close" data-dismiss="modal" type="button"> <img src="/img/Programmer Needs-26.svg" width="50px" /> </a></div>
+            <div class="modal-header"><button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button></div>
 
-            <div class="modal-body"><iframe allowfullscreen="" frameborder="0" height="400px" src="https://www.youtube.com/embed/DWdombN1tIA" width="100%"></iframe></div>
+            <div class="modal-body"><iframe frameborder="0" height="400px" src="http://www.youtube.com/embed/SwwXrNGZE2Q" width="600px"></iframe></div>
         </div>
     </div>
 </div>
@@ -13,6 +13,37 @@
 </div>
 
 <div id="fullpage">
+    <div class="section" id="section0">
+        <div class="col-xs-12 col-md-6 maincol-right">
+            <ul class="scene visible-xs-block" style="padding-left: 0px;">
+                <li class="layer" data-depth="0.50"><img src="/img/Images-30.svg" width="100%" /></li>
+            </ul>
+        </div>
+
+        <div class="col-xs-12 col-md-6 maincol-left clearfix">
+            <div class="content-wrapper">
+                <div class="content-section">
+                    <div class="row">
+                        <div class="col-sm-push-4 col-md-push-5 col-sm-7">
+                            <h3 class="text-black"><b>形立方</b></h3>
+
+                            <p class="text-black">形立方的标志概念和灵感是基于最基本的设计元素，<br class="visible-lg" />
+                                魔术方块，形状，格框以及线条所组成的。形立方<br class="visible-lg" />
+                                追求【灵活】，聆听客户意见，灵活变通，跳脱<br class="visible-lg" />
+                                不必要的框架；形立方也讲究【活力】，在打造<br class="visible-lg" />
+                                品牌的过程中就是展现活力。</p>
+
+                            <div class="col-xs-2 col-sm-12 nopadding"><a class="text-black" href="#"><i class="icon-btn-link"></i> <span class="hidden-xs">更多资讯</span></a><br />
+                                &nbsp;</div>
+
+                            <div class="col-xs-2 col-sm-12 nopadding"><a class="visible-xs" data-target="#homevideo" data-toggle="modal" href="#"><i class="icon-video-play-link"></i></a> <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" href="#" style="display:block;padding-top:15px;padding-bottom: 9px;"><i class="icon-video"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="section" id="section1">
         <div class="col-md-6 maincol-right">
             <ul class="scene mascott orange">
