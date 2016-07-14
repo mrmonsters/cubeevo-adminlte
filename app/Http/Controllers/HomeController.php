@@ -132,7 +132,15 @@ class HomeController extends Controller {
 			->orderBy('sort_order')
 			->first();
 
-		return view('frontend.project_content')->with(compact('project', 'backbtn', 'similarProjects', 'nextCategory'));
+		if (!is_null($nextCategory) && $nextCategory instanceof Category) {
+
+			$nextCategoryProjects = $nextCategory->projects;
+		} else {
+
+			$nextCategoryProjects = null;
+		}
+
+		return view('frontend.project_content')->with(compact('project', 'backbtn', 'similarProjects', 'nextCategoryProjects'));
 	}
 
 	public function getHomepage()
