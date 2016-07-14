@@ -1977,8 +1977,11 @@ hr.whitehr {
     }
 
     .internship-qna-label {
-        right: -180px;
+        right: -158px;
         top: 30px;
+    }
+    .internship-qna-label {
+        width: 160px;
     }
 
     .internship-line {
@@ -2101,7 +2104,9 @@ hr.whitehr {
         right: -180px;
         top: 30px;
     }
-
+    .internship-qna-label {
+        width: 180px;
+    }
     .extra-info-box.even {
         background-color: #A9A6A6;
     }
