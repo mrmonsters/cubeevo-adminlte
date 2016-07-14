@@ -52,7 +52,7 @@
             <?php $counter++;?>
         @endforeach
 
-        @if ($posts->count() > 0 && $posts = $posts->toArray())
+        @if ($posts->count() > 0)
             <div class="hidden-section-4">
                 <a href="{{url('/insights/detail/'.$posts[0]->slug)}}">
                     <div class="leftcontent_desc">
