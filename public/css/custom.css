@@ -1769,6 +1769,7 @@ hr.whitehr {
 }
 
 .custom-close {
+    cursor: pointer;
     position: relative;
     top:10px;
 }
