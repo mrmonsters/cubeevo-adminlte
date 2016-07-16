@@ -53,7 +53,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
               case 5:
               $('.scene.blue').removeClass('animated fadeOut').addClass('animated slideInRight');
               break;
-              case 6:
+              case 6粗俗tom.:
                 $('.scene.green .body').removeClass('animated fadeOut').addClass('animated fadeIn');
                 $('.scene.green .body').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
                   setTimeout(function () {

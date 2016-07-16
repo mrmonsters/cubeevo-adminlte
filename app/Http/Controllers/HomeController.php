@@ -228,8 +228,9 @@ class HomeController extends Controller {
 		$meta_keyword = 'Internship';
 		$meta_desc    = 'Internship';
 		$reviewers    = JobReviewer::Intern()->get()->sortBy('date');
+		$backbtn      = url('join-the-team');
 
-		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers'));
+		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers','backbtn'));
 	}
 
 	public function getFullemployment()
@@ -238,8 +239,9 @@ class HomeController extends Controller {
 		$meta_keyword = 'Full Employment';
 		$meta_desc    = 'Full Employment';
 		$reviewers    = JobReviewer::Fulltime()->get();
+        $backbtn      = url('join-the-team');
 
-		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers'));
+		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers','backbtn'));
 	}
 
 	public function getCredentialProject($slug)

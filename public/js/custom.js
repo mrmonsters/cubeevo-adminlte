@@ -22,6 +22,8 @@ $(window).load(function () {
 $(document).ready(function () {
     if ($('#fullpage').length > 0) {
         $('#fullpage').fullpage({
+            navigation: true,
+            navigationPosition: 'right',
             afterLoad: function (anchorLink, index) {
                 var loadedSection = $(this);
                 var contentSection = loadedSection.find('.content-section').html();
