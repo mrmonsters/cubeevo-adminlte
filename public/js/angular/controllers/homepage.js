@@ -78,6 +78,47 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
         };
     });
 
+
+    $("#core-service-1").hover(
+        function() {
+            console.log('hit');
+            $(this).attr("src", "/img/2016.0715_Cubeevo_Visual_Branding.gif");
+        },
+        function() {
+            $(this).attr("src", "/img/Programmer Needs-36.svg");
+        }
+    );
+
+    $("#core-service-2").hover(
+        function() {
+            console.log('hit');
+            $(this).attr("src", "/img/2016.0715_Cubeevo_Thematic_Campaign_Design.gif");
+        },
+        function() {
+            $(this).attr("src", "/img/Programmer Needs-37.svg");
+        }
+    );
+
+    $("#core-service-3").hover(
+        function() {
+            console.log('hit');
+            $(this).attr("src", "/img/2016.0715_Cubeevo_Online_Digital_Platform.gif");
+        },
+        function() {
+            $(this).attr("src", "/img/Programmer Needs-37.svg");
+        }
+    );
+
+    $("#core-service-4").hover(
+        function() {
+            console.log('hit');
+            $(this).attr("src", "/img/2016.0715_Cubeevo_Explainer_Video_Production.gif");
+        },
+        function() {
+            $(this).attr("src", "/img/Programmer Needs-38.svg");
+        }
+    );
+
 });
 
 app.filter('html', function ($sce) {
