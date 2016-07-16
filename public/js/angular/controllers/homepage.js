@@ -105,7 +105,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             $(this).attr("src", "/img/2016.0715_Cubeevo_Online_Digital_Platform.gif");
         },
         function() {
-            $(this).attr("src", "/img/Programmer Needs-37.svg");
+            $(this).attr("src", "/img/Programmer Needs-38.svg");
         }
     );
 
@@ -115,7 +115,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             $(this).attr("src", "/img/2016.0715_Cubeevo_Explainer_Video_Production.gif");
         },
         function() {
-            $(this).attr("src", "/img/Programmer Needs-38.svg");
+            $(this).attr("src", "/img/Programmer Needs-39.svg");
         }
     );
 
