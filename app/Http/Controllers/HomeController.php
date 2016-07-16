@@ -49,16 +49,16 @@ class HomeController extends Controller {
 	 * @return Response
 	 */
 	public function getStaticPages($slug)
-	{	 
-		$slug = ($slug == '/')?$slug:'/'.$slug; 
+	{
+		$slug = ($slug == '/')?$slug:'/'.$slug;
 		$page = Page::where('slug', '=', $slug)->where('status', Status::ACTIVE)
 			->where('delete', false)
-			->first();   
+			->first();
 
-		if(!$page): 
+		if(!$page):
 			$page = Page::where('slug', '=', '/')->where('status', Status::ACTIVE)
 			->where('delete', false)
-			->first();   
+			->first();
 		endif;
 
 		if ($page->slug == '/about-us')
@@ -83,14 +83,67 @@ class HomeController extends Controller {
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc,
 			]);
-	} 
+	}
+
+	public function getVisualBranding()
+	{
+		$meta_title = 'Visual Branding';
+		$meta_keyword = 'Visual Branding';
+		$meta_desc = 'Visual Branding';
+
+		return view('frontend.visual-branding')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
+	public function getThematicCampaign()
+	{
+		$meta_title = 'Thematic Campaign';
+		$meta_keyword = 'Thematic Campaign';
+		$meta_desc = 'Thematic Campaign';
+
+		return view('frontend.thematic-campaign')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
+	public function getOnlineDigitalPlatform()
+	{
+		$meta_title = 'Online Digital Platform';
+		$meta_keyword = 'Online Digital Platform';
+		$meta_desc = 'Online Digital Platform';
+
+		return view('frontend.online-digital-platform')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
+	public function getExplainerVideoProduction()
+	{
+		$meta_title = 'Explainer Video Production';
+		$meta_keyword = 'Explainer Video Production';
+		$meta_desc = 'Explainer Video Production';
+
+		return view('frontend.explainer-video-production')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
 
 	public function getCredential()
 	{
 		$categories = Category::where('status', '=', Status::ACTIVE)->where('delete', false)
 			->orderBy('sort_order')
 			->get();
- 
+
 		$meta_title = 'Our Design Portfolio';
 		$meta_keyword = 'Corporate Identity, Branding, Marketing Strategy, Logo Design, Brochure Design, Flyer Design, Catalogue Design, Packaging Design, Web Design, eCommerce, Multimedia, Corporate Video, Explainer Video, Business Video, Booth Design, Menu Design, Billboard Design, Bunting &amp; Banner Design, Print Design, Digital Marketing, Character Design, Mascot Design, Advertising Agency, Branding Strategy, Advertising Planning, Broadcast Ad Planning, Graphic Design, Photography, Copywriting, Printing & Production';
 		$meta_desc = 'Our creation, innovation, and motivation from ideas to execution, branding to websites, graphics to videos has generated better sales for our clients in Malaysia, and some in Singapore.';
@@ -229,7 +282,7 @@ class HomeController extends Controller {
 		$meta_keyword = 'Contact Us';
 		$meta_desc = 'Contact Us.';
 
-		return view('frontend.contactus')->with([ 
+		return view('frontend.contactus')->with([
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc,
@@ -242,23 +295,23 @@ class HomeController extends Controller {
 			return Redirect::to('/insights/');
 		endif;
 
-		$post = Post::where('slug', '=', $slug)->first();  
+		$post = Post::where('slug', '=', $slug)->first();
 
 		if(empty($post)):
 			return Redirect::to('/insights/');
 		endif;
 
 		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)->where('slug','!=',$slug)
-			->orderBy('created_at','desc') 
+			->orderBy('created_at','desc')
 			->take(4)
 			->get();
 
 	    $content = html_entity_decode($post->translate(Session::get('locale'))->description);
-	    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content))); 
+	    $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
 	    $char_count = (Session::get('locale') == 'en')?80:50;
 	    $desc = mb_substr($content,0,$char_count).'...';
 
-		return view('frontend.insightdetail')->with(['post'=> $post,'posts'=> $posts, 
+		return view('frontend.insightdetail')->with(['post'=> $post,'posts'=> $posts,
 			'meta_title'=> $post->translate(Session::get('locale'))->title,
 			'meta_keyword'=> $post->translate(Session::get('locale'))->title,
 			'meta_desc'=> $desc,
@@ -269,14 +322,14 @@ class HomeController extends Controller {
 	public function getInsights()
 	{
 		$posts = Post::where('status', '=', Status::ACTIVE)->where('deleted', false)
-			->orderBy('created_at','desc') 
+			->orderBy('created_at','desc')
 			->get();
 
 		$meta_title = 'Insights';
 		$meta_keyword = 'Insights';
 		$meta_desc = 'Insights.';
 
-		return view('frontend.insights')->with([ 
+		return view('frontend.insights')->with([
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc,
@@ -305,7 +358,7 @@ class HomeController extends Controller {
 	public function submitMessage(Request $req)
 	{
 		$response = array();
-		$data     = $req->input(); 
+		$data     = $req->input();
 		if (isset($data) && !empty($data))
 		{
 			$rules = array(
