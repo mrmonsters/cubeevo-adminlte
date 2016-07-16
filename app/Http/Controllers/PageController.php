@@ -266,25 +266,23 @@ class PageController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
 		$response = array();
 		$page     = Page::find($id);
 
-		if (isset($page) && isset($page->id))
-		{
+		if (isset($page) && isset($page->id)) {
+
 			$page->delete = true;
 			$page->save();
 
 			$response['code'] = Status::SUCCESS;
-			$response['msg']  = "Page [#".$project->id."] has been deleted successfully.";
-		}
-		else
-		{
+			$response['msg']  = "Page [#" . $page->id . "] has been deleted successfully.";
+		} else {
+
 			$response['code'] = Status::ERROR;
 			$response['msg']  = "Page not found.";
 		}
 
-		return Redirect::to('admin/manage/page')->with('response', $response);
+		return redirect()->to('admin/manage/page')->with(compact('response'));
 	}
 
 	/**
