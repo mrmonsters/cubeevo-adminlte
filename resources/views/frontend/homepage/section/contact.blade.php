@@ -5,7 +5,11 @@
                  style="background-color: #616161">
                 <div class="col-xs-12 content-wrapper__content-contact-us text-white">
                     <h4 class="content-wrapper__content-contact-us-heading m-t-xl"><b>LET'S TALK</b></h4>
-                    <p class="content-wrapper__content-contact-us-subheading hidden-xs">NEW BUSINESS & COLLABORATIONS<span class="hidden-sm hidden-xs"><br/>新业务或合作方案</span></p>
+                    @if (Session::get('locale') == 'cn')
+                        <p class="content-wrapper__content-contact-us-subheading hidden-xs">新业务或合作方案</p>
+                    @else
+                    <p class="content-wrapper__content-contact-us-subheading hidden-xs">NEW BUSINESS & COLLABORATIONS</p>
+                    @endif
                     <br class="hidden-sm hidden-xs hidden-md"/>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
@@ -14,16 +18,25 @@
 
                             <p style="line-height: 1em;">
                                 <small>Timothy Tai <br/>
-                                    Account Manager <span class=" hidden-sm hidden-xs hidden-md">客户经理</span>  <br/>
+                                    @if (Session::get('locale') == 'cn')
+                                        客户经理
+                                        @else
+                                        Account Manager
+                                    @endif<br/>
                                     <a class="text-white" href="tel:+60173216004">+6017 321 6004</a><br/>
-                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></small>
+                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com/a></small>
                             </p>
 
                             <p style="line-height: 1em;">
                                 <small>Keith Phang<br/>
-                                    Branding Manager <span class=" hidden-sm hidden-xs hidden-md">品牌经理</span><br/>
+                                    @if (Session::get('locale') == 'cn')
+                                        品牌经理
+                                    @else
+                                        Branding Manager
+                                    @endif
+                                    <br/>
                                     <a class="text-white" href="tel:+6018 352 4300">+6018 352 4300</a><br/>
-                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></small>
+                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a></small>
                             </p>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-4 col-lg-4">
@@ -32,9 +45,14 @@
 
                                 <p style="line-height: 1em;">
                                     <small>David Lim <br/>
-                                        Account Director <span class=" hidden-sm hidden-xs hidden-md">客户总监</span> <br/>
+                                        @if (Session::get('locale') == 'cn')
+                                            客户总监
+                                        @else
+                                            Account Director
+                                        @endif
+                                        <br/>
                                         <a class="text-white" href="tel:+6590814118">+65 9081 4118</a><br/>
-                                        <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:david@cubeevo.com">david@cubeevo.com</a></small>
+                                        <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a></small>
                                 </p>
                         </div>
                     </div>
@@ -53,9 +71,16 @@
                             <br class="hidden-sm hidden-md hi"/>
 
                             <p style="line-height: 1em;" class="content-wrapper__content-contact-us-address ">
-                                <small style="position: relative">CUBEevo ADVERTISING SDN BHD <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                <small style="position: relative">
+
+                                    @if (Session::get('locale') == 'cn')
+                                        形立方广告有限公司 <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                        (949017-T)
+                                    @else
+                                        CUBEevo ADVERTISING SDN BHD <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                        (949017-T)
+                                    @endif
                                     (949017-T) <br/>
-                                    <span class="hidden-sm hidden-xs hidden-md">形立方广告有限公司<br/>
                                     No. 43-2, Jln Temenggung 21/9<br/>
                                     Bandar Mahkota Cheras<br/>
                                     43200 Batu 9 Cheras<br/>
@@ -72,10 +97,16 @@
                             <br class="hidden-sm hidden-md"/>
 
                             <p style="line-height: 1em;" class="content-wrapper__content-contact-us-address ">
-                                <small style="position: relative">CUBEevo ADVERTISING PTE LTD <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
-                                    (UEN - 201604241R) <br/>
-                                    <span class="hidden-sm hidden-xs hidden-md">
-                                    形立方广告有限公司<br/>
+                                <small style="position: relative">
+
+                                    @if (Session::get('locale') == 'cn')
+                                        形立方广告有限公司 <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                        (UEN - 201604241R)
+                                    @else
+                                        CUBEevo ADVERTISING PTE LTD <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                        (UEN - 201604241R)
+                                    @endif
+                                    <br/>
                                     20 Maxwell Rd<br/>
                                     #09-17, Maxwell House<br/>
                                     Singapore 069113.<br/></span><br/>

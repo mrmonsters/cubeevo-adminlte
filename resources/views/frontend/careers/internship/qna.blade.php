@@ -12,7 +12,7 @@
                             <div class="m-t-lg">
                             @foreach ($reviewer->cnReviews()->get()->sortBy('sort') as $review)
                                 <p>
-                                    Q: {{ $review->question }}<br/>
+                                    Q: <b>{{ $review->question }}</b><br/>
                                     A: {{ $review->answer }}
                                 </p><br/>
                             @endforeach
@@ -21,7 +21,7 @@
                             <div class="m-t-lg">
                                 @foreach ($reviewer->enReviews()->get()->sortBy('sort') as $review)
                                     <p>
-                                        Q: {{ $review->question }}<br/>
+                                        Q: <b>{{ $review->question }}</b><br/>
                                         A: {{ $review->answer }}
                                     </p><br/>
                                 @endforeach

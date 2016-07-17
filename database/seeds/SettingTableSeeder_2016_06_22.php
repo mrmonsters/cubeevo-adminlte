@@ -17,13 +17,13 @@ class SettingTableSeeder_2016_06_22 extends Seeder {
 				'name'  => 'Twitter Link',
 				'code'  => 'twitter_link',
 				'type'  => \App\Models\Setting::USER,
-				'value' => 'https://twitter.com/?lang=en',
+				'value' => 'https://twitter.com/CUBEevoad',
 			),
 			array(
 				'name'  => 'Google Plus Link',
 				'code'  => 'google_plus_link',
 				'type'  => \App\Models\Setting::USER,
-				'value' => 'https://plus.google.com/',
+				'value' => 'https://plus.google.com/+Cubeevo/',
 			),
 		);
 

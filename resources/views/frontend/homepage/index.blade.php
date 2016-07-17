@@ -79,7 +79,7 @@
         <div class="hidden-section-5">
             <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED</h1>
             <div class="leftcontent_desc">
-                <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands.We have
+                <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands. We have
                     our Thinking Caps to help you.</p>
                 <p>So, are you ready to transform?</p>
                 <br/>
