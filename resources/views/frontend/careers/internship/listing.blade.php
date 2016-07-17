@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+<div class="col-xs-12 m-t-xxl">
     <div class="row">
         <div class="col-sm-6 m-b-md col-xs-push-1 col-xs-10">
             <p>CLIENT SERVICE & SALES EXECUTIVE </p>

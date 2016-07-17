@@ -157,6 +157,7 @@ body.fp-viewing-0 {
 
 .icon-video:hover {
     background-position: 0px -69px;
+    cursor: pointer;
 }
 
 h1 {
@@ -1554,7 +1555,11 @@ hr.whitehr {
 
 .home .left-content {
     position: absolute;
-    bottom: 20%;
+    bottom: 35%;
+}
+
+.home .left-content.first{
+    bottom: 25%;
 }
 
 .home .wrapper__home .content-wrapper {
@@ -1621,8 +1626,8 @@ hr.whitehr {
 .careers .bg-wrapper .content-wrapper__content {
     display: none;
     position: absolute;
-    bottom: 50px;
-    left: 40px;
+    bottom: 6%;
+    left: 2%;
 }
 
 .careers .bg-wrapper:hover .content-wrapper__content {
@@ -1656,7 +1661,7 @@ hr.whitehr {
 }
 
 .careers .left-content-wrapper__content {
-    margin-top: 20%;
+    margin-top: 45%;
 }
 
 .line__internship {
@@ -1762,6 +1767,11 @@ hr.whitehr {
     width: 100px;
     margin-top: 15%;
 }
+@media (max-width: 425px) {
+ .mobile-h1{
+     font-size: 22px !important;
+ }
+}
 @media (min-width: 425px) {
     .service-icon{
         width: 100px;
@@ -1785,6 +1795,10 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+
+    .careers .left-content-wrapper__content {
+        margin-top: 20%;
+    }
     .custom-close{
         right: -57px;
         top: 77px;
@@ -1811,6 +1825,12 @@ hr.whitehr {
 }
 
 @media (min-width: 768px) {
+    .careers .left-content-wrapper__content{
+        margin-top: 50%;
+    }
+    .home .left-content {
+        bottom: 35%;
+    }
     .homepage-contact-us__country {
         margin-left: -70px;
     }
@@ -1970,6 +1990,18 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
+    .careers .bg-wrapper .content-wrapper__content {
+        display: none;
+        position: absolute;
+        bottom: 10%;
+        left: 4%;
+    }
+    .careers .left-content-wrapper__content{
+        margin-top: 20%;
+    }
+    .home .left-content {
+        bottom: 20%;
+    }
     .home .wrapper__home-left {
         left: 0.2%;
     }

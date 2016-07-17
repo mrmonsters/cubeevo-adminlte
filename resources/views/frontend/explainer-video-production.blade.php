@@ -13,7 +13,7 @@
         <div class="col-md-7 col-md-push-4">
             <br class="visible-xs"/>
             <img src="{{asset('img/Programmer Needs-69.svg')}}" height="94">
-            <h1 class="text-blue">EXPLAINER VIDEO PRODUCTION</h1>
+            <h1 class="text-ashgreen">EXPLAINER VIDEO PRODUCTION</h1>
             <h2>Why do we need videos for business?</h2>
             <br/>
 

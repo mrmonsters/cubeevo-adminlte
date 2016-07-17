@@ -23,12 +23,12 @@
             <br/>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-sm-7">
                     <img src="{{asset('img/Programmer Needs-57.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
                 </div>
-                <div class="col-md-5">
+                <div class="col-sm-5">
                     <h2 class="text-lightred">Why go for Online?</h2>
                     <p>Are you online? A common question asked in this digital and internet world. A life in internet
                         has made things moving very fast in every second 24/7 nonstop and it has changed the way we live
@@ -46,7 +46,7 @@
             <h1 class="text-blue">What are the tools for online & How do we use it?</h1>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-sm-7">
                     <h2 class="text-lightred">(1) Corporate Website</h2>
                     <p>Having a corporate website is better to have one billboard on highways now whereby online users
                         can obtain your company information much easier. People would like to know more about our
@@ -55,10 +55,10 @@
                         profound company website will help to lift up our company image and also serve as a good
                         advertising tool. Bear in mind, smart consumers now can simply find our competitors in just a
                         few seconds, by online.</p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click <a href="http://www.pltpro.com" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-sm-5">
                     <img src="{{asset('img/Programmer Needs-58.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
@@ -67,7 +67,7 @@
 
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-sm-7">
                     <h2 class="text-lightred">(2) Microsite</h2>
                     <p>Sometimes we prefer things that are simple and nice, perhaps precise. A microsite is a simplified
                         straightforward website specially caters for specific needs and very suitable for campaign
@@ -76,10 +76,10 @@
                         a free gift by filling up questionnaire. This is very powerful tool to engage the audience to
                         know the brand. By having a microsite, you need to have a very specific goal in order to make it
                         achievable.</p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click <a href="http://www.liansin.com.my/haryana" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-sm-5">
                     <img src="{{asset('img/Programmer Needs-59.gif')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-sm-5">
                     <h2 class="text-lightred">(3) E-Commerce</h2>
                     <p>Why limit our business boundaries to a small regime where it could be widened through E-commerce?
                         We could trade countrywide or even worldwide with the present of the E-commerce facility
@@ -100,10 +100,10 @@
                         great marketing tool which is more cost effective and efficient whereby human factors are
                         minimized, because we may not need a middleman or distributor to promote our products anymore.
                         Just discuss with CUBEevo and its team to cater a good one for you. </p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click <a href="http://tk2you.com" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-sm-7">
                     <img src="{{asset('img/Programmer Needs-60.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
@@ -112,12 +112,12 @@
 
             <br/>
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-sm-7">
                     <img src="{{asset('img/Programmer Needs-61.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
                 </div>
-                <div class="col-md-5">
+                <div class="col-sm-5">
                     <h2 class="text-lightred">(4) Social Media</h2>
                     <p>People talk about Facebook & YouTube every day to catch up with the latest trend now. People have
                         become so engaged with it that every other minutes to refresh the page to see new feeds. And of
@@ -134,7 +134,11 @@
 
             <div class="row">
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <img src="{{ asset('img/Programmer Needs-62.svg') }}" class="img-responsive"/>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-2">
+                            <img src="{{ asset('img/Programmer Needs-62.svg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
                     <br/>
                     <p class="text-center">Personal touch</p>
                     <p>Users are able to comment and feedback on the post that encourages interaction and engagement
@@ -142,7 +146,11 @@
                     <br/>
                 </div>
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <img src="{{ asset('img/Programmer Needs-63.svg') }}" class="img-responsive"/>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-2">
+                            <img src="{{ asset('img/Programmer Needs-63.svg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
                     <br/>
                     <p class="text-center">Efficiency</p>
                     <p>Facebook Messenger can be a good communication platform to improve customer service. And
@@ -151,7 +159,11 @@
                     <br/>
                 </div>
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <img src="{{ asset('img/Programmer Needs-64.svg') }}" class="img-responsive"/>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-2">
+                            <img src="{{ asset('img/Programmer Needs-64.svg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
                     <br/>
                     <p class="text-center">Drives traffic</p>
                     <p>It boosts up the website ranking when there is huge traffic coming in. Eventually you can boost
@@ -159,7 +171,11 @@
                     <br/>
                 </div>
                 <div class="col-sm-3 col-md-3 col-xs-6">
-                    <img src="{{ asset('img/Programmer Needs-65.svg') }}" class="img-responsive"/>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-push-2">
+                            <img src="{{ asset('img/Programmer Needs-65.svg') }}" class="img-responsive"/>
+                        </div>
+                    </div>
                     <br/>
                     <p class="text-center">Right target</p>
                     <p>Since Facebook & YouTube has their data to know users’ habit & interest, and hence you can find

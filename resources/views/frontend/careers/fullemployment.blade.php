@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="row m-t-xxl">
-            <div class="col-sm-10 col-sm-offset-1 m-t-xxl">
+            <div class="col-md-12 col-lg-10 col-lg-offset-1 m-t-xxl">
                 <div class="row">
                     @include('frontend.careers.employment.listing')
                 </div>

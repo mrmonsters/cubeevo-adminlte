@@ -1737,7 +1737,9 @@ a.bg-primary:hover {
     color: #00C1F3;
 }
 
-
+.text-ashgreen{
+    color:#4BC2C8;
+}
 .text-lightred{
     color : #F05A4A;
 }

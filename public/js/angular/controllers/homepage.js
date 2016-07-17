@@ -21,7 +21,9 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             scrollingSpeed: 1000,
              //easingcss3: 'cubic-bezier(1.000, 0.000, 0.000, 1.005) 0.5s',
             afterLoad: function (anchorLink, index) {
+                $('.left-content').removeClass('first');
                 if (index == 1) {
+                    $('.left-content').addClass('first');
                     $('.js-left-content').html(_html1);
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');

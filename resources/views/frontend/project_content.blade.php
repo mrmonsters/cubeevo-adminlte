@@ -143,9 +143,15 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
     </div>
 
     <div class="text-center" style="background-color: #EFEFEF;padding: 50px 0px;">
-        <h1 style="margin-top: ">Let's Get Started !</h1>
-        <p>Have a Project like this one and would like to discuss more?</p>
-        <div><a href="{{url('contact-us')}}"><img src="{{ asset('/img/Programmer Needs-25.svg') }}" width="100px"/></a></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h2 style="margin-top: ">Let's Get Started !</h2>
+                    <p>Have a Project like this one and would like to discuss more?</p>
+                    <div><a href="{{url('contact-us')}}"><img src="{{ asset('/img/Programmer Needs-25.svg') }}" width="100px"/></a></div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="container-fluid cre">

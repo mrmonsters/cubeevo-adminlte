@@ -20,7 +20,7 @@
 
         <div class="hidden-section-1">
             <h4 class="leftcontent_topheading">Ever Evolving CUBEevo<span class="bottom-line-grey"></span></h4>
-            <h1 class="h2 leftcontent_heading">An Advertising Agency <br/> in Malaysia and Singapore.</h1>
+            <h1 class="h2 leftcontent_heading mobile-h1">An Advertising Agency <br/> in Malaysia and Singapore.</h1>
             <div class="leftcontent_desc">
                 <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
@@ -40,9 +40,9 @@
                     <p class="text-white">Client<span class="bottom-line"></span></p>
                     <h4 class="leftcontent_client_name text-white">{{strtoupper($project->translate(\Session::get("locale"))->client_name)}}</h4>
                 </div>
-                <h1 class="h2 leftcontent_heading text-white">{{(\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name}}</h1>
+                <h1 class="h2 leftcontent_heading text-white mobile-h1">{{(\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name}}</h1>
                 <div class="leftcontent_desc text-white">
-                    <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
+                    <p class="hidden-xs">{{mb_substr($project->translate(\Session::get("locale"))->background,0,$char_count)}}...</p>
                     <p class="text-white"><i
                                 class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
                                 class="hidden-xs">See More</span></p>
@@ -60,7 +60,7 @@
                         $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
                         $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                         ?>
-                        <h2 class="text-white">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
+                        <h2 class="text-white mobile-h1">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
                         <p class="text-white hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
@@ -71,7 +71,7 @@
         @endif
 
         <div class="hidden-section-5">
-            <h1 class="h2 leftcontent_heading">LET'S GET STARTED</h1>
+            <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED</h1>
             <div class="leftcontent_desc">
                 <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands.We have our Thinking Caps to help you.</p>
                 <p>So, are you ready to transform?</p>
@@ -89,7 +89,7 @@
         <div class="wrapper wrapper__home wrapper__home-left col-xs-6">
             <div class="content-wrapper no-margin">
                 <div class="insight-bg"></div>
-                <div class="col-xs-10 col-sm-push-3 col-sm-8 col-md-push-5 col-md-7 left-content">
+                <div class="col-xs-11 col-sm-11 col-md-push-5 col-md-7 left-content">
                     <div class="js-left-content hide @{{ leftcontentFontColor }} moveOut">
                     </div>
                 </div>
