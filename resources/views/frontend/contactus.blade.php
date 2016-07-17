@@ -11,8 +11,11 @@ $response = Session::get('response');
 <div class="container-fluid contactus">
 	<div class="row" style="position:relative;">
 		<div class="col-sm-10 col-sm-offset-2">
-			<h1 class="txtorange"><span></span>{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</h1>
-			<h5>{{ (Session::get('locale') == 'en') ? 'If there\'s anything that you need from our service, feel free to leave us your contact and information. We can\'t wait to get in touch with you.' : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！' }}</h5>
+			<div>
+				<h1 class="txtorange">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</h1>
+				<div class="heading-line"></div>
+				<h5>{{ (Session::get('locale') == 'en') ? 'If there\'s anything that you need from our service, feel free to leave us your contact and information. We can\'t wait to get in touch with you.' : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！' }}</h5>
+			</div>
 		</div>
 	</div>
 	<br/>

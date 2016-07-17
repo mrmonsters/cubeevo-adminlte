@@ -168,13 +168,14 @@ h1 {
     color: #f7941a;
 }
 
-.txtorange span {
+.heading-line,.txtorange span {
     display: none;
     width: 100px;
-    border-bottom: 1px solid #333;
+    height: 1px;
+    background-color: #333;
     position: absolute;
     margin-left: -110px;
-    margin-top: 20px;
+    bottom: 60px;
 }
 
 .txtwhite {
@@ -1795,7 +1796,9 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
-
+    .heading-line{
+        display: block;
+    }
     .careers .left-content-wrapper__content {
         margin-top: 20%;
     }
@@ -1944,7 +1947,7 @@ hr.whitehr {
         padding: 0px 1.3%;
     }
 
-    .txtorange span {
+    .txtorange .heading-line,.txtorange span {
         display: block;
     }
 
