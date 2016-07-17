@@ -22,6 +22,7 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
 
         .container-fluid.credential {
             background-color: {{ $project->pri_color_code }}
+
         }
 
         .slick-prev-wrapper.slick-arrow {
@@ -148,34 +149,41 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                 <div class="col-xs-12">
                     <h2 style="margin-top: ">Let's Get Started !</h2>
                     <p>Have a Project like this one and would like to discuss more?</p>
-                    <div><a href="{{url('contact-us')}}"><img src="{{ asset('/img/Programmer Needs-25.svg') }}" width="100px"/></a></div>
+                    <div><a href="{{url('contact-us')}}"><img src="{{ asset('/img/Programmer Needs-25.svg') }}"
+                                                              width="100px"/></a></div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="container-fluid cre">
+    <div class="container-fluid cre">
+        <div class="row">
             @foreach ($similarProjects as $project)
-                <div id='cre-box__0' class="js-three-d cre-box col-sm-6 col-lg-6" style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
+                <div id='cre-box__0' class="js-three-d cre-box col-sm-6 col-lg-6"
+                     style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
                     <div class="contbox">
-                        <div class="greybox" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" ></div>
-                        <div class="cd-background-wrapper" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" >
+                        <div class="greybox"
+                             onClick="location.href='{{ url('credential/project/' . $project->slug) }}';"></div>
+                        <div class="cd-background-wrapper"
+                             onClick="location.href='{{ url('credential/project/' . $project->slug) }}';">
                             <figure class="cd-floating-background">
                                 @if ($project->grid_img_id)
                                     <ul class="scene">
-                                        <li class="layer" data-depth="0.20"><img src="{{ $project->frontImage->dir }}" width="100%"/></li>
+                                        <li class="layer" data-depth="0.20"><img src="{{ $project->frontImage->dir }}"
+                                                                                 width="100%"/></li>
                                     </ul>
                                 @endif
                             </figure>
                         </div>
-                        <div class="row panel-body overlap" onClick="location.href='{{ url('credential/project/' . $project->slug) }}';" >
+                        <div class="row panel-body overlap"
+                             onClick="location.href='{{ url('credential/project/' . $project->slug) }}';">
                             <p class="col-sm-12 hidden-text panel-title">
                                 {{ $project->translate(Session::get('locale'))->client_name }}
                             </p>
                         </div>
                         <div class="row" style="position: absolute;bottom: 12%;left: 8%;z-index:1;">
                             <div class="col-xs-12 visible-xs-block visible-sm-block visible-md-block">
-                                <div class="threedot js-showtitle"><i class="icon-btn-link icon-btn-link-white"></i></div>
+                                <div class="threedot js-showtitle"><i class="icon-btn-link icon-btn-link-white"></i>
+                                </div>
                             </div>
                         </div>
                     </div>

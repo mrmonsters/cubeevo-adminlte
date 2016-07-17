@@ -34,10 +34,10 @@
             </div>
         </div>
         <div class="col-sm-6 m-b-md col-md-push-1 col-xs-10 m-b-xxl hidden-xs">
-            <a href="mailto:enquire@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
+            <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
         </div>
         <div class="col-sm-6 m-b-md col-md-push-1 col-xs-10  m-b-xxl hidden-xs">
-            <a href="mailto:enquire@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
+            <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
         </div>
     </div>
 </div>
