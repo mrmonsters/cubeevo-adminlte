@@ -380,12 +380,13 @@ hr.whitehr {
 .cd-social__section {
     border-bottom: 0px;
 }
-.cd-social__section .list-inline > li{
-    height: 26px;padding-right: 10px;
-}
 .cd-social .list-inline > li {
     padding-left: 0px;
     padding-right: 0px;
+}
+
+.cd-social__section .list-inline > li{
+    height: 26px;padding-right: 10px;
 }
 
 .mob-hide {
