@@ -12,7 +12,6 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
     var _html3 = $('.hidden-section-3').html();
     var _html4 = $('.hidden-section-4').html();
     var _html5 = $('.hidden-section-5').html();
-    $('#homevideo').modal('show');
     $scope.$watch('projects', function () {
 
         $scope.mainOptions = {
@@ -120,6 +119,18 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             $(this).attr("src", "/img/Programmer Needs-39.svg");
         }
     );
+
+    function setCookie(c_name,value,exdays){var exdate=new Date();exdate.setDate(exdate.getDate() + exdays);var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());document.cookie=c_name + "=" + c_value;}
+    function getCookie(c_name){var c_value = document.cookie;var c_start = c_value.indexOf(" " + c_name + "=");if (c_start == -1){c_start = c_value.indexOf(c_name + "=");}if (c_start == -1){c_value = null;}else{c_start = c_value.indexOf("=", c_start) + 1;var c_end = c_value.indexOf(";", c_start);if (c_end == -1){c_end = c_value.length;}c_value = unescape(c_value.substring(c_start,c_end));}return c_value;}
+
+    $(document).ready(function(){
+        //Checks if the cookie already exists
+        if (!getCookie('firsttime')){
+            $('#homevideo').modal('show');
+            //Set's the cookie to true so there is a value and the code shouldn't run again.
+            setCookie('firsttime',true);
+        }
+    });
 
 });
 

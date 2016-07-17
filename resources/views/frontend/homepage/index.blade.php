@@ -11,7 +11,10 @@
                     </a>
                 </div>
 
-                <div class="modal-body"><iframe allowfullscreen="" frameborder="0" height="400px" src="https://www.youtube.com/embed/DWdombN1tIA" width="100%"></iframe></div>
+                <div class="modal-body">
+                    <iframe allowfullscreen="" frameborder="0" height="400px"
+                            src="https://www.youtube.com/embed/DWdombN1tIA" width="100%"></iframe>
+                </div>
             </div>
         </div>
     </div>
@@ -24,8 +27,10 @@
             <div class="leftcontent_desc">
                 <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
-                    <a class="visible-xs" data-target="#homevideo" data-toggle="modal"><i class="icon-video-play-link"></i></a>
-                    <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick="" style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;" target="_blank">
+                    <a class="visible-xs" data-target="#homevideo" data-toggle="modal"><i
+                                class="icon-video-play-link"></i></a>
+                    <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick=""
+                       style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;" target="_blank">
                         <i class="icon-video"></i>
                     </a>
                 </div>
@@ -34,21 +39,22 @@
 
         <?php $counter = 2;?>
         @foreach($projects as $project)
-        <div class="hidden-section-{{$counter}}">
-            <a href="{{url('/credential/project/'.$project->slug)}}">
-                <div class="leftcontent_client">
-                    <p class="text-white">Client<span class="bottom-line"></span></p>
-                    <h4 class="leftcontent_client_name text-white">{{strtoupper($project->translate(\Session::get("locale"))->client_name)}}</h4>
-                </div>
-                <h1 class="h2 leftcontent_heading text-white mobile-h1">{{(\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name}}</h1>
-                <div class="leftcontent_desc text-white">
-                    <p class="hidden-xs">{{mb_substr($project->translate(\Session::get("locale"))->background,0,$char_count)}}...</p>
-                    <p class="text-white"><i
-                                class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                class="hidden-xs">See More</span></p>
-                </div>
-            </a>
-        </div>
+            <div class="hidden-section-{{$counter}}">
+                <a href="{{url('/credential/project/'.$project->slug)}}">
+                    <div class="leftcontent_client">
+                        <p class="text-white">Client<span class="bottom-line"></span></p>
+                        <h4 class="leftcontent_client_name text-white">{{strtoupper($project->translate(\Session::get("locale"))->client_name)}}</h4>
+                    </div>
+                    <h1 class="h2 leftcontent_heading text-white mobile-h1">{{(\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name}}</h1>
+                    <div class="leftcontent_desc text-white">
+                        <p class="hidden-xs">{{mb_substr($project->translate(\Session::get("locale"))->background,0,$char_count)}}
+                            ...</p>
+                        <p class="text-white"><i
+                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
+                                    class="hidden-xs">See More</span></p>
+                    </div>
+                </a>
+            </div>
             <?php $counter++;?>
         @endforeach
 
@@ -73,14 +79,17 @@
         <div class="hidden-section-5">
             <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED</h1>
             <div class="leftcontent_desc">
-                <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands.We have our Thinking Caps to help you.</p>
+                <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands.We have
+                    our Thinking Caps to help you.</p>
                 <p>So, are you ready to transform?</p>
                 <br/>
                 <p class="hidden-xs">Having Doubts?</p>
                 <a href="{{url('/credential')}}" class="hidden-xs">
-                    <img src="{{asset('img/Programmer Needs-24.svg')}}" class="homepage-contact-us-cta" style="position: relative;left: -4px;top:-9px">
+                    <img src="{{asset('img/Programmer Needs-24.svg')}}" class="homepage-contact-us-cta"
+                         style="position: relative;left: -4px;top:-9px">
                 </a>
-                <p class="hidden-xs">That way you can put all your doubts to rest and <br class="visible-lg"/>let us help you transform.</p>
+                <p class="hidden-xs">That way you can put all your doubts to rest and <br class="visible-lg"/>let us
+                    help you transform.</p>
             </div>
         </div>
     </div>
@@ -112,5 +121,4 @@
 
         </div>
     </div>
-
 @endsection
