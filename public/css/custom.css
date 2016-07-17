@@ -1707,7 +1707,8 @@ hr.whitehr {
 }
 
 .content-wrapper__content-contact-us {
-
+    height: 100%;
+    overflow: hidden;
 }
 
 .careers .bg-wrapper:hover .content-wrapper__bg {
@@ -1861,6 +1862,10 @@ hr.whitehr {
     top:10px;
 }
 @media (max-width: 769px) {
+
+    .home__background .wrapper__right {
+        padding-left: 0px;
+    }
     .wrapper__home{
         padding: 9px 1px 9px 10px;}
     h1 {
@@ -1900,7 +1905,7 @@ hr.whitehr {
     }
 
     .home__background .content-wrapper-first-layer {
-        padding-bottom: 15px;
+        padding-bottom: 15px !important;
     }
 }
 
@@ -1926,7 +1931,7 @@ hr.whitehr {
     }
 
     .home__background .wrapper__right {
-        padding-left: 0px;
+        padding-left: 15px;
     }
 
     .modal.in .modal-dialog.homevideo {
@@ -2057,6 +2062,9 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
+    .home__background .wrapper__right{
+        padding-left: 15px;
+    }
 
     .cre .project-2 .greybox{
         height: 85.5%;
