@@ -26,14 +26,14 @@
     </p>
 </div>
 <div class="col-sm-5 col-lg-4 col-sm-offset-4 col-lg-offset-5 m-b-n-lg internship-content-1">
-    <p class="m-b-lg">Why do you look out for interns?<br/>
+    <p class="m-b-lg"><b>Why do you look out for interns?</b><br/>
         Every individual is unique and special in their own ways. So as their ideas and creativity in their
         mind. They are fresh and we want new ideas. The world is moving so fast and one way to catch up with
         the latest trend is to get young, to know what the young people are thinking. They are the future
         leaders, so i must keep up with them to stay in the leading position.
     </p>
     <p class="m-b-lg">
-        What qualities that are important to you?<br/>
+        <b>What qualities that are important to you?</b><br/>
         Hardwork beats talent when talent doesn’t work hard. So, to me, working attitude and the passion
         they have on what they are doing are very important. Besides, their personality and interpersonal
         skills are vital because teamwork is another key to success.
@@ -41,13 +41,13 @@
         potential, however could be discover later.
     </p>
     <p class="m-b-lg">
-        Don’t you think it is a bit of wasting time and resources to guide them?<br/>
+        <b>Don’t you think it is a bit of wasting time and resources to guide them?</b><br/>
         That’s true. We practically hold their hands from a to z, coaching, guiding and sometimes solving
         their problems. But, sometimes it surprises me when they exchange different views which are useful
         and mind blowing. Talented people only come by chance, we need to give in order to reap.
     </p>
     <p class="m-b-lg">
-        What would you hope to see in them after the completion of Internship?<br/>
+        <b>What would you hope to see in them after the completion of Internship?</b><br/>
         Like any parents do, to see them being independent in their own style and open minded when receiving
         criticism. Be honest and humble enough to continue learning from others.
         It’s our job and duty to make sure they improved after the completion of internship. The best is we
@@ -55,7 +55,7 @@
         In short, i hope to see a transformed person.
     </p>
     <p class="m-b-lg">
-        Would you keep them?<br/>
+        <b>Would you keep them?</b><br/>
         Yes. Of course, provided they are fit to keep up with our team. Sometimes, we have crazy working
         hours and pressure, to be frank. So, come and join CUBEevo if you dare and ready to be transformed.
         CUBEevo has been recruiting interns since its establishment. The director and the team members are

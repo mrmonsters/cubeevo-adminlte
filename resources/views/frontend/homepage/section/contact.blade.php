@@ -12,7 +12,7 @@
                     @endif
                     <br class="hidden-sm hidden-xs hidden-md"/>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
                             <small><div class="homepage_contact_us-mobile-line visible-xs"></div>MALAYSIA<div class="homepage-line hidden-xs"></div></small>
                             <br class="hidden-sm hidden-xs hidden-md"/>
 
@@ -39,7 +39,7 @@
                                     <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a></small>
                             </p>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-4 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
                             <small><div class="homepage_contact_us-mobile-line visible-xs"></div>SINGAPORE<div class="homepage-line hidden-xs"></div></small>
                                 <br class="hidden-sm hidden-xs hidden-md"/>
 
@@ -66,7 +66,7 @@
                     <h4 class="content-wrapper__content-contact-us-heading m-t-xl"><b>GET IN TOUCH</b></h4>
                     <br class="hidden-xs"/>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-3">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
                             <small class="homepage-contact-us__country"><div class="homepage_contact_us-mobile-line visible-xs"></div>MALAYSIA</small>
                             <br class="hidden-sm hidden-md hi"/>
 
@@ -74,25 +74,24 @@
                                 <small style="position: relative">
 
                                     @if (Session::get('locale') == 'cn')
-                                        形立方广告有限公司 <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
-                                        (949017-T)
+                                        形立方广告有限公司
                                     @else
-                                        CUBEevo ADVERTISING SDN BHD <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
-                                        (949017-T)
+                                        CUBEevo ADVERTISING SDN BHD
                                     @endif
+                                        <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
                                     (949017-T) <br/>
-                                    No. 43-2, Jln Temenggung 21/9<br/>
+                                    43-2, Jln Temenggung 21/9 <br/>
                                     Bandar Mahkota Cheras<br/>
                                     43200 Batu 9 Cheras<br/>
                                     Selangor, Malaysia.<br/></span><br/>
-                                    T:<a class="text-white" href="tel:+60390109882">+603 9010 9882</a><br/>
-                                    F:<a class="text-white" href="tel:+60390759882">+603 9075 9882</a><br/>
-                                    E:<a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
+                                    T: <a class="text-white" href="tel:+60390109882">+603 9010 9882</a><br/>
+                                    F: <a class="text-white" href="tel:+60390759882">+603 9075 9882</a><br/>
+                                    E: <a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
                                 </small>
                             </p>
                             <br/>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-4 col-lg-3">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
                             <small class="homepage-contact-us__country"><div class="homepage_contact_us-mobile-line visible-xs"></div>SINGAPORE</small>
                             <br class="hidden-sm hidden-md"/>
 
@@ -110,7 +109,7 @@
                                     20 Maxwell Rd<br/>
                                     #09-17, Maxwell House<br/>
                                     Singapore 069113.<br/></span><br/>
-                                    T:<a class="text-white" href="tel:+6590814118">+659081 4118</a><br/>
+                                    T: <a class="text-white" href="tel:+6590814118">+659081 4118</a><br/>
                                     E: <a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
                                 </small>
                             </p>

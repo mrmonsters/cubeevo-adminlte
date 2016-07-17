@@ -46,11 +46,11 @@
                 <li><a class="@if(Request::url() === url('/process')) active @endif "
                        href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a>
                 </li>
-                <li><a class="@if(Request::url() === url('/contact-us')) active @endif "
-                       href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a>
-                </li>
                 <li><a class="@if(Request::url() === url('/join-the-team')) active @endif "
                        href="{{ url('/join-the-team') }}">{{ (Session::get('locale') == 'en') ? 'JOIN THE TEAM' : '加入我们' }}</a>
+                </li>
+                <li><a class="@if(Request::url() === url('/contact-us')) active @endif "
+                       href="{{ url('/contact-us') }}">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</a>
                 </li>
                 <li class="locale"><a href="{{ url('locale/en') }}">EN</a> | <a href="{{ url('locale/cn') }}">中文</a>
                 </li>

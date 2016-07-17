@@ -77,7 +77,7 @@
         @endif
 
         <div class="hidden-section-5">
-            <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED</h1>
+            <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED!</h1>
             <div class="leftcontent_desc">
                 <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands. We have
                     our Thinking Caps to help you.</p>
@@ -98,7 +98,7 @@
         <div class="wrapper wrapper__home wrapper__home-left col-xs-6">
             <div class="content-wrapper no-margin">
                 <div class="insight-bg"></div>
-                <div class="col-xs-11 col-sm-11 col-md-push-5 col-md-7 left-content">
+                <div class="col-xs-12 col-sm-12 col-md-push-5 col-md-7 left-content">
                     <div class="js-left-content hide @{{ leftcontentFontColor }} moveOut">
                     </div>
                 </div>

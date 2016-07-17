@@ -46,7 +46,7 @@
             <h1 class="text-blue">What are the tools for online & How do we use it?</h1>
 
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6 text-justify">
                     <h2 class="text-lightred">(1) Corporate Website</h2>
                     <p>Having a corporate website is better to have one billboard on highways now whereby online users
                         can obtain your company information much easier. People would like to know more about our
@@ -58,7 +58,7 @@
                     <p>For live preview, please click <a href="http://www.pltpro.com" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-58.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
@@ -67,7 +67,7 @@
 
 
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6 text-justify">
                     <h2 class="text-lightred">(2) Microsite</h2>
                     <p>Sometimes we prefer things that are simple and nice, perhaps precise. A microsite is a simplified
                         straightforward website specially caters for specific needs and very suitable for campaign
@@ -79,7 +79,7 @@
                     <p>For live preview, please click <a href="http://www.liansin.com.my/haryana" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-59.gif')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
@@ -87,7 +87,7 @@
             </div>
 
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-sm-6 text-justify">
                     <h2 class="text-lightred">(3) E-Commerce</h2>
                     <p>Why limit our business boundaries to a small regime where it could be widened through E-commerce?
                         We could trade countrywide or even worldwide with the present of the E-commerce facility
@@ -103,7 +103,7 @@
                     <p>For live preview, please click <a href="http://tk2you.com" class="text-blue" target="_blank">here</a>.</p>
 
                 </div>
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-60.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
