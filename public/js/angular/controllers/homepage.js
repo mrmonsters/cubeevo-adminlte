@@ -126,9 +126,11 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
     $(document).ready(function(){
         //Checks if the cookie already exists
         if (!getCookie('firsttime')){
-            $('#homevideo').modal('show');
-            //Set's the cookie to true so there is a value and the code shouldn't run again.
-            setCookie('firsttime',true);
+            if($(window).width() >= 770){
+                $('#homevideo').modal('show');
+                //Set's the cookie to true so there is a value and the code shouldn't run again.
+                setCookie('firsttime',true);
+            }
         }
     });
 

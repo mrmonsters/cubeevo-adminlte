@@ -1796,6 +1796,9 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    .home .wrapper__home .content-wrapper {
+        height: 101%;
+    }
     .heading-line{
         display: block;
     }
@@ -1993,6 +1996,9 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
+    .home .wrapper__home .content-wrapper {
+        height: 99.7%;
+    }
     .careers .bg-wrapper .content-wrapper__content {
         display: none;
         position: absolute;
