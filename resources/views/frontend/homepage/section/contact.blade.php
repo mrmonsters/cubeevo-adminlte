@@ -24,7 +24,7 @@
                                         Account Manager
                                     @endif<br/>
                                     <a class="text-white" href="tel:+60173216004">+6017 321 6004</a><br/>
-                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com/a></small>
+                                    <a class="text-white hidden-sm hidden-xs hidden-md" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a></small>
                             </p>
 
                             <p style="line-height: 1em;">
@@ -87,7 +87,7 @@
                                     Selangor, Malaysia.<br/></span><br/>
                                     T:<a class="text-white" href="tel:+60390109882">+603 9010 9882</a><br/>
                                     F:<a class="text-white" href="tel:+60390759882">+603 9075 9882</a><br/>
-                                    E: <a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
+                                    E:<a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
                                 </small>
                             </p>
                             <br/>
