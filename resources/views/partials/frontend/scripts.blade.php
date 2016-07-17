@@ -10,6 +10,7 @@
 <script src="{{ asset('js/nav.js') }}"></script>
 <script src="{{ asset('js/jquery.parallax.js') }}"></script>
 <script src="{{ asset('js/slick.min.js') }}"></script>
+<script src="{{ asset('js/timeline.js') }}"></script>
 <script src="{{ asset('js/jquery.logosDistort.min.js') }}"></script>
 <script src="{{asset('js/angular/libs/angular-fullpage/angular-fullpage.js')}}"></script>
 <script src="{{asset('js/angular/app.js')}}"></script>

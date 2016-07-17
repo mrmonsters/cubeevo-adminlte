@@ -1,0 +1,1742 @@
+
+section.capabilities {
+    padding: 150px 85px 0
+}
+section.capabilities h2.title {
+    font-size: 40px;
+    text-transform: none;
+    text-align: center;
+    letter-spacing: -1px;
+    color: #000;
+    height: auto;
+    margin-bottom: 40px
+}
+.wwdContainer {
+    padding: 0 50px
+}
+.wwdContainer * {
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none
+}
+.wwdContainer .icons-container {
+    width: 100%;
+    position: relative;
+    height: 125px
+}
+.wwdContainer .icon-container {
+    position: absolute
+}
+.wwdContainer .icon-container:nth-child(1) {
+    left: 0
+}
+.wwdContainer .icon-container:nth-child(2) {
+    left: 20%
+}
+.wwdContainer .icon-container:nth-child(3) {
+    left: 40%
+}
+.wwdContainer .icon-container:nth-child(4) {
+    left: 60%
+}
+.wwdContainer .icon-container:nth-child(5) {
+    left: 80%
+}
+.wwdContainer .icon-container:nth-child(6) {
+    left: 100%
+}
+.wwdContainer .ico {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    height: 91px;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding-top: 85px;
+    color: #000;
+    text-decoration: none;
+}
+section.capabilities .ico.identity {
+    background-image: url("../img/capacity-identity.svg")
+}
+section.capabilities .ico.digital {
+    background-image: url("../img/capacity-digital.svg")
+}
+section.capabilities .ico.print {
+    background-image: url("../img/capacity-print.svg")
+}
+section.capabilities .ico.strategy {
+    background-image: url("../img/capacity-marketing.svg")
+}
+.wwdContainer .wwdBarContainer {
+    position: relative
+}
+.wwdContainer .wwdBarContainer .dots {
+    position: relative
+}
+.wwdContainer .wwdBarContainer .dots .dot {
+    height: 15px;
+    margin-left: -6px;
+    margin-top: -5px;
+    position: absolute;
+    width: 15px
+}
+.wwdContainer .wwdBarContainer .dots .dot * {
+    background-size: 15px;
+    height: 15px;
+    position: absolute;
+    width: 15px
+}
+.wwdContainer .wwdBarContainer .dots .dot .black {
+    background-image: url("../img/dot-black.png");
+    width: 0
+}
+.wwdContainer .wwdBarContainer .dots .dot .white {
+    background-image: url("../img/dot-white.png")
+}
+.wwdContainer .wwdBarContainer .wwdBar {
+    background: #f0efee;
+    height: 4px;
+    width: 100%
+}
+.wwdContainer .wwdBarContainer .wwdBar {
+    background: #f0efee;
+    height: 4px;
+    width: 100%
+}
+.wwdContainer .wwdBarContainer .wwdBar .black {
+    background: #000;
+    height: 4px;
+    width: 0
+}
+.wwdContainer .texts {
+    height: 215px;
+    position: relative;
+    margin-top: 40px
+}
+.wwdContainer .texts .text {
+    position: absolute;
+    display: none;
+    font-size: 26px;
+    line-height: 39px;
+    width: 100%;
+    text-align: center
+}
+
+@keyframes bounce {
+    0% {
+        transform:translateY(0)
+    }
+    50% {
+        transform:translateY(-20px)
+    }
+    100% {
+        transform:translateY(0)
+    }
+}
+.wrapper.case-study .heroContainer .arrow.background--dark, .wrapper.case-study .heroContainer .arrow.force-White {
+    background-image: url("../themes/Shellshock/img/design/about-us_arrow_w.png")
+}
+.wrapper.case-study .heroContainer .arrow.background--light, .wrapper.case-study .heroContainer .arrow.force-Black {
+    background-image: url("../themes/Shellshock/img/design/about-us_arrow.png")
+}
+.wrapper.case-study .heroContainer .arrow.hidden {
+    opacity: 0
+}
+.wrapper.case-study .hero {
+    width: 100%
+}
+.wrapper.case-study>section h2 {
+    color: #000;
+    font-family: 'NeutralStd-Bold';
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase
+}
+.wrapper.case-study section.gallery {
+    margin: 0 50px;
+    zoom: 1
+}
+.wrapper.case-study section.gallery:before, .wrapper.case-study section.gallery:after {
+    content: '';
+    display: table
+}
+.wrapper.case-study section.gallery:after {
+    clear: both
+}
+.wrapper.case-study section.outcome {
+    margin: 100px 50px 0;
+    zoom: 1;
+&:before, &:after {
+               content:"";
+               display:table
+           }
+&:after {
+     clear:both
+ }
+}
+.wrapper.case-study section.gallery article {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 10px;
+    clear: both;
+    transition: all 0.8s;
+    -moz-transform: translateY(150px);
+    -ms-transform: translateY(150px);
+    -webkit-transform: translateY(150px);
+    transform: translateY(150px);
+    opacity: 0
+}
+.wrapper.case-study section.gallery article img {
+    -webkit-transform: translate3d(0, 0, 0)
+}
+.wrapper.case-study section.gallery article.full {
+    clear: both
+}
+.wrapper.case-study section.gallery article.seen {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1
+}
+.wrapper.case-study section.gallery article.topleft {
+    width: calc(50% - 5px);
+    float: left;
+    clear: none;
+    height: auto;
+    overflow: hidden
+}
+.wrapper.case-study section.gallery article.bottomleft {
+    width: calc(50% - 5px);
+    float: left;
+    height: auto;
+    clear: none;
+    overflow: hidden
+}
+.wrapper.case-study section.gallery article.left {
+    width: calc(50% - 5px);
+    float: left;
+    height: auto;
+    clear: none;
+    overflow: hidden
+}
+.wrapper.case-study section.gallery article.right {
+    width: calc(50% - 5px);
+    float: right;
+    height: auto;
+    clear: none;
+    overflow: hidden
+}
+.wrapper.case-study section.gallery article.bottomleft img, .wrapper.case-study section.gallery article.topleft img {
+    margin-top: -5px
+}
+.wrapper.case-study section.gallery article.portraitRight {
+    width: calc(50% - 5px);
+    float: right;
+    clear: none
+}
+.wrapper.case-study section.gallery article img {
+    width: 100%
+}
+.wrapper.case-study section.gallery .middleText1 {
+    padding: 85px 150px 95px 41%
+}
+.wrapper.case-study section.gallery .middleText1 h3 {
+    font-size: 26px;
+    margin: 50px 0 0 0;
+    padding: 0;
+    letter-spacing: -0.1px;
+    color: #000
+}
+.wrapper.case-study section.gallery p {
+    padding: 0;
+    font-size: 26px;
+    color: #999;
+    margin: 0;
+    letter-spacing: -0.1px;
+    line-height: 39px;
+    clear: both
+}
+.wrapper.case-study section.gallery .middleText2 {
+    padding: 85px 41% 95px 150px
+}
+.wrapper.case-study section.gallery .middleText2 h3 {
+    font-size: 16px;
+    margin: 0 0 30px 0;
+    padding: 0;
+    letter-spacing: 2px;
+    color: #000;
+    text-transform: uppercase
+}
+.wrapper.case-study .scrollingTitle {
+    max-width: 230px;
+    text-align: left;
+    left: 50px;
+    top: 32px;
+    position: fixed;
+    z-index: 80;
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none
+}
+.wrapper.case-study .scrollingTitle.background--dark, .wrapper.case-study .scrollingTitle.background--dark h1 span, .wrapper.case-study .scrollingTitle.force-White, .wrapper.case-study .scrollingTitle.force-White h1 span {
+    color: #FFF
+}
+.wrapper.case-study .scrollingTitle.force-Black, .wrapper.case-study .scrollingTitle.force-Black h1 span {
+    color: #000
+}
+.wrapper.case-study .scrollingTitle h1 {
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: normal;
+    font-weight: normal;
+    line-height: 15px
+}
+.wrapper.case-study .scrollingTitle h1:before {
+    content: "\2014";
+    -moz-transform: scaleX(3);
+    -ms-transform: scaleX(3);
+    -webkit-transform: scaleX(3);
+    transform: scaleX(3);
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    display: block;
+    height: 25px
+}
+.wrapper.case-study .scrollingTitle h1 label {
+    letter-spacing: -0.2px;
+    margin: 0;
+    font-size: 16px
+}
+.wrapper.case-study .scrollingTitle h1 span {
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.25px;
+    color: #999
+}
+.wrapper.case-study section.project-info {
+    width: 880px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 95px;
+    margin-bottom: 45px
+}
+.wrapper.case-study section.project-info .column.left {
+    font-size: 26px;
+    line-height: 39px;
+    color: #999;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.1px;
+    width: 580px;
+    float: left;
+    color: #777
+}
+.wrapper.case-study section.project-info .column.left p {
+    margin-bottom: 50px
+}
+.wrapper.case-study section.project-info .column.right {
+    font-size: 16px;
+    color: #999;
+    margin: 0 0 0 95px;
+    width: 205px;
+    padding: 0;
+    line-height: 25px;
+    letter-spacing: -0.1px
+}
+.wrapper.case-study section.project-info ul {
+    display: block;
+    overflow: hidden;
+    list-style: none;
+    margin: 0;
+    font-size: 12px
+}
+.wrapper.case-study section.project-info ul li {
+    display: block;
+    color: #999;
+    letter-spacing: -0.2px;
+    margin-bottom: 30px
+}
+.wrapper.case-study section.project-info ul li label {
+    color: #000;
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
+    font-size: 10px;
+    line-height: 18px
+}
+.wrapper.case-study section.project-info ul li a {
+    color: #999;
+    text-decoration: none
+}
+.wrapper.case-study section.project-info ul li a:hover {
+    color: #000
+}
+.wrapper.case-study section.project-info ul li:last-child {
+    margin-right: 0
+}
+.wrapper.case-study section.quote {
+    margin: 90px auto 100px auto
+}
+.wrapper.case-study section.quote img {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    display: block
+}
+.wrapper.case-study section.quote p {
+    margin-top: 0;
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    line-height: 20px;
+    padding: 0 15%;
+    letter-spacing: -0.1px
+}
+.wrapper.case-study section.quote p span {
+    display: block;
+    margin: 30px 0 0 0;
+    font-weight: normal;
+    font-size: 16px;
+    text-align: center
+}
+.wrapper.case-study section.outcome {
+    text-align: center;
+    margin-top: 100px
+}
+.wrapper.case-study section.outcome h2 {
+    margin-bottom: 35px
+}
+.wrapper.case-study section.outcome p {
+    margin: 0 35px 35px auto;
+    font-size: 16px;
+    color: #999;
+    display: inline-block;
+    text-align: center
+}
+.wrapper.case-study section.outcome p:last-child {
+    margin-right: 0
+}
+.wrapper.case-study section.outcome p label {
+    font-size: 40px;
+    color: #000;
+
+    line-height: 48px;
+    margin: 0
+}
+section.blog-detail-c2a {
+    width: 730px;
+    margin: 30px auto 100px
+}
+section.blog-detail-c2a div {
+    max-width: 50%;
+    font-size: 12px
+}
+section.case-study-c2a {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-top: 55px;
+    margin-bottom: 100px
+}
+section.case-study-c2a div {
+    float: none!important;
+    width: auto!important;
+    letter-spacing: 0.25px;
+    font-size: 12px
+}
+section.case-study-c2a div.share-on {
+    margin-bottom: 45px
+}
+section.case-study-c2a div.get-at-us {
+    color: #999;
+    font-size: 26px;
+    line-height: 31px
+}
+section.case-study-c2a div.get-at-us a {
+    display: block;
+    margin: 20px auto 0;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'NeutralStd-Bold';
+    width: 130px;
+    height: 40px;
+    line-height: 45px;
+    background: #eee;
+    position: relative;
+    overflow: hidden
+}
+section.case-study-c2a div.get-at-us a:before {
+    margin-top: -40px;
+    content: "";
+    display: block;
+    height: 40px;
+    background: #000 url("../themes/Shellshock/img/design/c2a-gau-arrow.png") no-repeat center center;
+    background-size: 24px auto;
+    transition: all .25s ease-in-out
+}
+section.case-study-c2a div.get-at-us a:hover:before {
+    margin-top: 0
+}
+section.case-study-c2a div.get-at-us a:hover {
+    color: #FFF
+}
+section.blog-detail-c2a div.share-on {
+    float: right
+}
+section.blog-detail-c2a div.tagged-in {
+    float: left
+}
+section.case-study-c2a div.share-on span, section.blog-detail-c2a div.share-on span, section.blog-detail-c2a div.tagged-in span {
+    color: #999;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 10px
+}
+section.case-study-c2a div.share-on a, section.blog-detail-c2a div.share-on a, section.blog-detail-c2a div.tagged-in a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 12px;
+    padding: 0 4px;
+    margin-left: -4px
+}
+section.case-study-c2a div.share-on a.facebook:hover:before, section.blog-detail-c2a div.share-on a.facebook:hover:before, section.blog-detail-c2a div.tagged-in a.facebook:hover:before {
+    background: #3b5998
+}
+section.case-study-c2a div.share-on a.twitter:hover:before, section.blog-detail-c2a div.share-on a.twitter:hover:before, section.blog-detail-c2a div.tagged-in a.twitter:hover:before {
+    background: #00c7f0
+}
+section.case-study-c2a div.share-on a:last-child, section.blog-detail-c2a div.share-on a:last-child, section.blog-detail-c2a div.tagged-in a:last-child {
+    margin-right: 0
+}
+section.case-study-c2a div.share-on a:hover, section.blog-detail-c2a div.share-on a:hover, section.blog-detail-c2a div.tagged-in a:hover {
+    color: #FFF
+}
+.wrapper.blog-detail .back-to-blogs {
+    position: fixed;
+    z-index: 80;
+    right: 100px;
+    top: 30px;
+    color: #000;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 10px;
+    line-height: 32px;
+    border-right: 1px solid #000;
+    padding: 0 10px 0 32px
+}
+.wrapper.blog-detail .back-to-blogs.background--dark {
+    color: #FFF;
+    border-right-color: #FFF
+}
+.wrapper.blog-detail .back-to-blogs span {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    left: 0
+}
+.wrapper.blog-detail .back-to-blogs span.white {
+    background-image: url("../themes/Shellshock/img/design/ico-btb-white.png")
+}
+.wrapper.blog-detail .back-to-blogs.background--dark span.black {
+    opacity: 0
+}
+.wrapper.blog-detail .back-to-blogs.background--light span.white {
+    opacity: 0
+}
+.wrapper.blog-detail .back-to-blogs span.black {
+    background-image: url("../themes/Shellshock/img/design/ico-btb-black.png")
+}
+.wrapper.blog-detail .hero {
+    width: 100%
+}
+.wrapper.blog-detail section.headline {
+    padding: 55px 50px 45px
+}
+.wrapper.blog-detail section.headline .following {
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    line-height: 16px;
+    -moz-transition-property: none;
+    -webkit-transition-property: none;
+    -o-transition-property: none;
+    transition-property: none
+}
+.wrapper.blog-detail section.headline .following:before {
+    content: "\2014";
+    -moz-transform: scaleX(3);
+    -ms-transform: scaleX(3);
+    -webkit-transform: scaleX(3);
+    transform: scaleX(3);
+    -moz-transform-origin: left;
+    -ms-transform-origin: left;
+    -webkit-transform-origin: left;
+    transform-origin: left;
+    display: block;
+    padding-bottom: 3px
+}
+.wrapper.blog-detail section.headline .following strong {
+    display: block;
+    font-weight: normal
+}
+.wrapper.blog-detail section.headline .following span {
+    color: #999;
+    display: block;
+    margin-top: 3px
+}
+.wrapper.blog-detail section.headline h1 {
+    display: block;
+    padding: 0;
+    font-size: 40px;
+    letter-spacing: -0.2px;
+    font-weight: normal;
+    line-height: 48px;
+    width: 715px;
+    margin: auto
+}
+.wrapper.blog-detail section.headline p {
+    display: block;
+    padding: 0;
+    font-size: 26px;
+    line-height: 31px;
+    letter-spacing: -0.1px;
+    font-weight: normal;
+    width: 715px;
+    margin: 30px auto 0
+}
+.wrapper.blog-detail section.body {
+    width: 730px;
+    padding: 0 70px 45px;
+    margin: auto;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    line-height: 24px;
+    color: #777
+}
+.wrapper.blog-detail section.body p {
+    margin: 1.5em 0
+}
+.wrapper.blog-detail section.body hr {
+    margin: 2em auto;
+    width: 100px;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #999;
+    padding: 0
+}
+.wrapper.blog-detail section.body h1 {
+    color: #000;
+    font-size: 16px;
+    margin: 1.5em 0 2.5em;
+    font-weight: normal;
+    letter-spacing: -0.1px
+}
+.wrapper.blog-detail section.body blockquote {
+    margin: 0;
+    border-left: 2px solid #000;
+    margin-left: -25px;
+    padding-left: 25px
+}
+.wrapper.blog-detail section.body img {
+    width: 100%
+}
+.wrapper.blog-detail section.recent-posts::before {
+    display: none
+}
+.wrapper.blog-detail section.recent-posts {
+    padding-top: 20px
+}
+.wrapper.blog-detail section.recent-posts .articles {
+    min-height: 0
+}
+.wrapper.blog-detail section.disqus {
+    width: 715px;
+    margin: auto;
+    margin-bottom: 80px
+}
+.wrapper.about-us {
+    background: url("../themes/Shellshock/img/design/about-us_bg.jpg") no-repeat top center #000;
+    background-size: 100% auto
+}
+.wrapper.about-us section.hero {
+    padding: 150px 0 0 0
+}
+.wrapper.about-us section.hero:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 40px;
+    height: 67px;
+    background: url("../themes/Shellshock/img/design/about-us_arrow.png") no-repeat;
+    background-size: contain;
+    left: 50px
+}
+.wrapper.about-us section.hero .left {
+    color: #FFF
+}
+.wrapper.about-us section.hero .logocontainer {
+    width: 55px;
+    height: 105px;
+    overflow: hidden
+}
+.wrapper.about-us section.hero .logo {
+    background-image: url("../themes/Shellshock/img/design/shlshk-logo-w-anim.png");
+    width: 96px;
+    height: 184px;
+    background-size: 3744px 184px;
+    -moz-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top
+}
+.wrapper.about-us section.hero .logo.anim {
+    background-position: -3648px;
+    animation: play32 3.25s steps(38) 1
+}
+@keyframes play32 {
+    from {
+        background-position:0
+    }
+    to {
+        background-position:-3648px
+    }
+}
+.wrapper.about-us section.hero .right {
+    color: #999;
+    padding-bottom: 0
+}
+.wrapper.about-us section.hero .right span {
+    color: #FFF;
+    font-family: "AkkuratPro-Bold"
+}
+.wrapper.about-us section.hero .right a {
+    color: #FFF;
+    position: relative;
+    margin: 0;
+    z-index: 1
+}
+.wrapper.about-us section.hero .right a br {
+    display: none
+}
+.wrapper.about-us section.hero .right a:hover {
+    color: #000
+}
+.wrapper.about-us section.capabilities {
+    padding: 100px 50px
+}
+.wrapper.about-us section.capabilities h2.title {
+    color: #FFF;
+    font-size: 26px;
+    line-height: 40px;
+    display: inline
+}
+.wrapper.about-us section.capabilities .container {
+    overflow: hidden;
+    width: 100%;
+    max-width: none
+}
+.wrapper.about-us section.capabilities .column {
+    float: left;
+    width: 25%;
+    padding-right: 10px;
+    margin: 0
+}
+.wrapper.about-us section.capabilities .ico {
+    display: block;
+    width: 55px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 25px 0 20px 0
+}
+.wrapper.about-us section.capabilities .ico.identity {
+    background-image: url("../themes/Shellshock/img/design/capacity-identity-w.svg")
+}
+.wrapper.about-us section.capabilities .ico.digital {
+    background-image: url("../themes/Shellshock/img/design/capacity-digital-w.svg")
+}
+.wrapper.about-us section.capabilities .ico.print {
+    background-image: url("../themes/Shellshock/img/design/capacity-print-w.svg")
+}
+.wrapper.about-us section.capabilities .ico.strategy {
+    background-image: url("../themes/Shellshock/img/design/capacity-marketing-w.png")
+}
+.wrapper.about-us section.capabilities h3 {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #e3d080;
+    letter-spacing: 0.4px;
+}
+.wrapper.about-us section.capabilities p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 21px;
+    color: #999
+}
+.wrapper.about-us section.team {
+    padding: 0 40px 0 50px
+}
+.wrapper.about-us section.team h2.title {
+    color: #FFF;
+    font-size: 26px;
+    line-height: 40px;
+    display: inline;
+    text-transform: none
+}
+.wrapper.about-us section.team .container {
+    overflow: hidden;
+    width: 100%;
+    max-width: none;
+    margin-top: 20px;
+    padding-bottom: 115px
+}
+.wrapper.about-us section.team .column {
+    float: left;
+    width: calc(25% - 10px);
+    margin: 10px 10px 0 0;
+    padding: 0;
+    height: 43vw;
+    background-size: cover;
+    background-position: center;
+    text-decoration: none;
+    position: relative
+}
+.wrapper.about-us section.team .column .hover {
+    background-color: #000;
+    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    perspective: 1000
+}
+.wrapper.about-us section.team .column:hover .hover {
+    opacity: 1
+}
+.wrapper.about-us section.team .column.join {
+    background-image: url("../themes/Shellshock/img/design/team-join.jpg")
+}
+.wrapper.about-us section.team .column.join:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("../themes/Shellshock/img/design/about-us-anim.gif") no-repeat;
+    background-size: cover;
+    opacity: 0
+}
+.wrapper.about-us section.team .column.join:hover:before {
+    opacity: 1
+}
+.wrapper.about-us section.team h3 {
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #FFF;
+    letter-spacing: 0.4px;
+    padding: 30px 30px 0 30px;
+    position: relative
+}
+.wrapper.about-us section.team span {
+    margin: 0;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    color: #FFF;
+    text-transform: uppercase;
+    padding: 0 30px 30px 30px;
+    display: block;
+    position: relative
+}
+.wrapper.about-us section.bottom-links {
+    background: #1d1e1f
+}
+.wrapper.about-us section.bottom-links .box {
+    background: #2c2c2e
+}
+.wrapper.about-us section.bottom-links .box:hover {
+    background: #000
+}
+.wrapper.about-us section.bottom-links .box p strong {
+    color: #FFF
+}
+.mobile-filters-btn {
+    display: none
+}
+body.join-us {
+    background-color: #20232B
+}
+body.join-us noscript, body.contact-us noscript {
+    text-align: center
+}
+body.join-us noscript h1 {
+    color: #FFF
+}
+body.join-us noscript h1, body.contact-us noscript h1 {
+    margin-top: 20%;
+    text-transform: uppercase
+}
+body.join-us noscript p {
+    color: #FFF
+}
+body.join-us noscript p, body.contact-us noscript p {
+    margin: 0 auto;
+    max-width: 700px
+}
+.error404 article {
+    text-align: center
+}
+.error404 article h2 {
+    font-size: 40px;
+    letter-spacing: -0.2px;
+    line-height: 48px
+}
+.error404 article img {
+    max-width: 380px;
+    margin-bottom: 48px
+}
+.error404 article p {
+    color: #aaa
+}
+
+@media (max-width:1200px) {
+    section.hero {
+        padding-bottom: 110px
+    }
+    section.hero .left {
+        float: none;
+        width: auto;
+        padding: 0 50px;
+        font-size: 30px;
+        line-height: 36px
+    }
+    section.hero .left strong.shlshk {
+        font-size: 30px;
+        line-height: 36px
+    }
+    section.hero .right {
+        float: none;
+        width: auto;
+        padding: 0 50px;
+        max-width: none;
+        font-size: 30px;
+        line-height: 45px;
+        margin-top: 75px
+    }
+    section.hero .right a {
+        position: relative
+    }
+    footer {
+        height: auto
+    }
+    footer .info {
+        width: 100%
+    }
+    footer .social {
+        position: relative;
+        left: auto;
+        float: left;
+        width: 38%
+    }
+    footer .letstalk {
+        position: relative;
+        left: auto;
+        float: right;
+        width: 62%
+    }
+    footer .letstalk div a p br {
+        display: inline
+    }
+}
+
+@media (max-width:1100px) {
+    .wrapper.case-study section.quote p {
+        padding: 0 8%
+    }
+    .menuCover ul {
+        font-size: 20px
+    }
+    .wrapper.our-process section .column {
+        float: left
+    }
+    .wrapper.our-process section div.column {
+        width: 35%;
+        max-width: 235px;
+        position: relative
+    }
+    .wrapper.our-process section p.column {
+        width: 65%;
+        margin: 0
+    }
+}
+
+@media (max-width:1050px) {
+    #clock-container p {
+        display: none
+    }
+    .wrapper.blog-detail section.headline {
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 20px
+    }
+    .wrapper.blog-detail section.headline h1, .wrapper.blog-detail section.headline p, .wrapper.blog-detail section.disqus {
+        width: 100%
+    }
+    .wrapper.blog-detail section.disqus {
+        padding: 0 30px
+    }
+    .wrapper.blog-detail section.headline h1 {
+        padding-top: 30px
+    }
+    .wrapper.blog-detail section.headline .following {
+        position: relative
+    }
+    .wrapper.blog-detail section.headline .following::before {
+        display: none
+    }
+    .wrapper.blog-detail section.headline .following strong {
+        display: inline
+    }
+    .wrapper.blog-detail section.headline .following span {
+        color: #000;
+        float: right;
+        margin-top: 0
+    }
+    .wrapper.blog-detail .hero-container {
+        overflow: hidden;
+        position: relative;
+        height: 520px
+    }
+    .wrapper.blog-detail .hero {
+        left: 50%;
+        margin-left: -640px;
+        position: absolute;
+        width: auto
+    }
+    .wrapper.blog-detail section.headline .following span:before {
+        content: "———";
+        display: inline;
+        letter-spacing: -3px;
+        padding-bottom: 3px;
+        padding-right: 7px
+    }
+    .wrapper.case-study section.gallery .middleText2 {
+        padding: 85px 35% 95px 100px
+    }
+    .wrapper.case-study section.gallery .middleText1 {
+        padding: 85px 100px 95px 35%
+    }
+}
+
+@media (max-width:1020px) {
+    .wrapper.blog-detail section.recent-posts article:nth-child(4) {
+        display: none
+    }
+    section.recent-posts .articles .msnry {
+        min-width: 610px
+    }
+    .wrapper.case-study section.project-info {
+        padding: 60px 50px 30px;
+        margin: 0;
+        width: auto
+    }
+    .wrapper.case-study section.project-info .column.left {
+        float: none;
+        max-width: none;
+        margin: 0;
+        padding-bottom: 10px;
+        width: auto
+    }
+    .wrapper.case-study section.project-info .column.right {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        min-width: 0
+    }
+    .wrapper.case-study section.project-info .column.right ul {
+        margin: 0;
+        padding: 0
+    }
+    .wrapper.case-study section.project-info .column.right ul li {
+        display: inline-block;
+        float: left;
+        margin-right: 50px
+    }
+    .wrapper.case-study section.outcome {
+        padding: 0;
+        width: auto;
+        float: none
+    }
+    .wrapper.case-study section.outcome h3 {
+        text-align: center
+    }
+    .wrapper.case-study section.outcome p {
+        display: block;
+        text-align: center;
+        padding-right: 0;
+        width: 100%
+    }
+}
+
+@media (max-width:850px) {
+    .logo.name {
+        left: 30px
+    }
+    .menuCover ul {
+        left: 30px
+    }
+    #clock-container {
+        left: 30px
+    }
+    section.hero, .wrapper.about-us section.hero {
+        padding-left: 70px;
+        padding-right: 70px
+    }
+    section.hero .left, section.hero .right {
+        padding: 0
+    }
+    section.hero .logo {
+        display: block
+    }
+    section.hero .right .br {
+        display: none
+    }
+    section.recent-work {
+        margin: 0 30px
+    }
+    section.capabilities {
+        padding-left: 0px;
+        padding-right: 0px
+    }
+    .menu-btn {
+        right: 30px
+    }
+    body.menuOpen .menu-btn {
+        right: 50px
+    }
+    .wrapper.case-study .scrollingTitle {
+        left: 30px
+    }
+    .wrapper.our-process {
+        padding-left: 30px;
+        padding-right: 30px
+    }
+    .wrapper.our-process section div.column {
+        max-width: 230px
+    }
+    section.bottom-links {
+        padding: 30px 10px
+    }
+    .wrapper.case-study section.project-info {
+        padding: 60px 30px 30px;
+        margin: 0;
+        width: auto
+    }
+    .wrapper.case-study section.gallery {
+        margin: 0 20px
+    }
+    .wrapper.case-study section.outcome {
+        margin: 100px 20px 0
+    }
+    section.case-study-c2a, section.blog-detail-c2a {
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px
+    }
+    .wrapper.about-us section.hero::before {
+        display: none
+    }
+    .wrapper.about-us section.capabilities {
+        padding-left: 70px;
+        padding-right: 70px
+    }
+    .wrapper.about-us section.capabilities .column {
+        width: 50%;
+        padding-right: 50px
+    }
+    .wrapper.about-us section.capabilities .ico {
+        margin-top: 40px
+    }
+    .wrapper.about-us section.team {
+        padding: 0 60px 0 70px
+    }
+    .wrapper.about-us section.team .column {
+        width: calc(50% - 10px);
+        height: 79vw
+    }
+    .wrapper.about-us section.team .container {
+        padding-bottom: 50px
+    }
+    .wrapper.case-study section.gallery .middleText2 {
+        padding: 85px 30% 95px 50px
+    }
+    .wrapper.case-study section.gallery .middleText1 {
+        padding: 85px 50px 95px 30%
+    }
+}
+
+@media (max-width:805px) {
+    .logo.name .minimal {
+        display: inline-block
+    }
+    .logo.name .primary {
+        display: none
+    }
+    .menuCover ul {
+        font-size: 15px
+    }
+}
+
+@media (max-width:767px) {
+    .mobile-filters-btn {
+        display: inline-block;
+        padding: 35px 0 0 10px;
+        text-decoration: none;
+        color: #000
+    }
+    .mobile-filters-btn:hover {
+        color: #FFF
+    }
+    .menu-btn {
+        right: 20px
+    }
+    body.menuOpen .menu-btn {
+        right: 10px
+    }
+    .wrapper.case-study .scrollingTitle {
+        left: 20px
+    }
+    nav {
+        width: 100%;
+        right: -100%
+    }
+    nav section .head {
+        height: 80px
+    }
+    nav section .content {
+        padding: 0 10px 10px 0
+    }
+    nav section .content .box {
+        height: calc(25vw - 15px);
+        min-height: 110px
+    }
+    nav section .content .box p {
+        left: 10px;
+        right: 10px;
+        bottom: 10px
+    }
+    nav section .content .box p label {
+        vertical-align: middle
+    }
+    nav section .content .box p label span.numb {
+        letter-spacing: 1px
+    }
+    nav section .content .box p label span {
+        letter-spacing: -3px
+    }
+    nav section.case-studies .head {
+        margin-top: 30px
+    }
+    nav section.case-studies .head .filter-button-group {
+        padding-left: 10px;
+        line-height: 30px;
+        opacity: 0
+    }
+    nav section.case-studies .head .filter-button-group a {
+        padding-left: 0;
+        display: block
+    }
+    nav section.case-studies .content {
+        top: 110px
+    }
+    nav section.case-studies.filtersOpen .content {
+        top: 250px
+    }
+    nav section.case-studies.filtersOpen .head .filter-button-group {
+        opacity: 1
+    }
+    section.hero, .wrapper.about-us section.hero {
+        padding: 30px 20px 60px 20px
+    }
+    section.hero .left .hello, section.hero .right {
+        margin-top: 30px;
+        line-height: 36px
+    }
+    section.recent-work {
+        margin: 0 10px
+    }
+    section.recent-work .worksWrapper {
+        max-height: none;
+        height: auto
+    }
+    section.recent-work a {
+        position: relative;
+        width: 100%;
+        height: 30vh;
+        min-height: 200px;
+        margin-bottom: 10px
+    }
+    section.recent-work a:nth-child(1) {
+        min-height: 410px
+    }
+    section.recent-work a:nth-child(1) p {
+        bottom: 30px;
+        margin-bottom: 0
+    }
+    section.capabilities {
+        padding: 110px 0 0 0;
+        overflow: hidden
+    }
+    section.capabilities.init .mobileViewPort {
+        opacity: 0
+    }
+    .capabilitiesMobileScroller {
+        -moz-transition-property: none;
+        -webkit-transition-property: none;
+        -o-transition-property: none;
+        transition-property: none;
+        padding-bottom: 250px
+    }
+    .wwdContainer {
+        width: 1000px
+    }
+    section.capabilities .texts {
+        height: 200px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-top: 50px
+    }
+    .wwdContainer .texts .text {
+        width: auto;
+        left: 0;
+        right: 0;
+        padding: 0 20px;
+        font-size: 20px;
+        line-height: 30px
+    }
+    section.recent-posts {
+        padding: 0 10px 50px
+    }
+    section.recent-posts::before {
+        height: 110px
+    }
+    section.recent-posts .articles {
+        min-height: calc(100vw - 20px)
+    }
+    section.recent-posts .articles .msnry {
+        min-width: 100%!important
+    }
+    section.recent-posts article {
+        width: calc(50% - 5px)
+    }
+    section.recent-posts article .img {
+        height: calc(50vw - 15px)
+    }
+    section.recent-posts article .info {
+        padding: 20px
+    }
+    section.recent-posts article.portrait.hasImage .info {
+        top: calc(50vw - 15px)
+    }
+    section.recent-posts article .info p {
+        left: 20px;
+        right: 20px;
+        bottom: 20px
+    }
+    section.recent-posts article .info .date {
+        display: none
+    }
+    section.recent-posts article.squared {
+        height: calc(50vw - 15px)
+    }
+    section.recent-posts article.portrait {
+        height: calc(100vw - 20px)
+    }
+    section.recent-posts .grid-sizer {
+        width: calc(50% - 5px)
+    }
+    footer .letstalk {
+        height: auto;
+        float: none;
+        width: auto
+    }
+    footer .letstalk a {
+        padding: 50px 30px
+    }
+    footer .letstalk div a h2 {
+        font-size: 14px
+    }
+    footer .letstalk div a h3 {
+        font-size: 14px
+    }
+    footer .letstalk div a strong {
+        font-family: 'NeutralStd-Bold';
+        font-size: 10px;
+        font-weight: normal;
+        letter-spacing: 1px
+    }
+    footer .info {
+        height: auto;
+        padding: 30px;
+        font-size: 14px
+    }
+    footer .info * {
+        display: block
+    }
+    footer .info table td.network div {
+        float: none;
+        width: 100%;
+        padding-bottom: 70px;
+        padding-top: 35px;
+        display: block
+    }
+    footer .info td span {
+        position: absolute;
+        bottom: 50px
+    }
+    footer .social {
+        float: none;
+        width: 100%;
+        height: 80px;
+        margin: 0
+    }
+    footer .social .scroller {
+        height: 160px;
+        line-height: 80px;
+        margin-top: -80px
+    }
+    footer .social .scroller div.c2a {
+        height: 80px;
+        line-height: 80px
+    }
+    footer .social .scroller div.btns {
+        height: 80px;
+        line-height: 80px
+    }
+    footer .social .scroller div.btns ul {
+        width: 100%;
+        line-height: 20px
+    }
+    footer .social .scroller div.btns ul li {
+        display: inline-block;
+        padding: 0 13px
+    }
+    footer .social .scroller div.c2a span {
+        height: 80px;
+        line-height: 80px
+    }
+    section.bottom-links .box p strong {
+        font-size: 22px
+    }
+    .wrapper.our-process {
+        padding-top: 32px
+    }
+    .wrapper.our-process section div.column {
+        width: 100%;
+        max-width: 100%
+    }
+    .wrapper.our-process section div.column blockquote {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        font-size: 13px;
+        padding: 0 20% 30px
+    }
+    .wrapper.our-process section p.column {
+        width: 100%;
+        max-width: 100%;
+        letter-spacing: -0.1px
+    }
+    .wrapper.our-process section p.column img {
+        margin-top: 30px
+    }
+    .wrapper.case-study section.project-info {
+        padding: 50px 20px 0 20px
+    }
+    .wrapper.case-study section.project-info .column.left {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0
+    }
+    .wrapper.case-study section.project-info ul {
+        margin-top: 20px
+    }
+    .wrapper.case-study section.project-info ul li:last-child {
+        margin-bottom: 50px
+    }
+    .wrapper.case-study section.gallery .middleText1 {
+        padding: 55px 0 65px 0;
+        margin: 0
+    }
+    .wrapper.case-study section.gallery .middleText1 p {
+        font-size: 16px;
+        line-height: 22px
+    }
+    .wrapper.case-study section.gallery .middleText1 h3 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-top: 30px
+    }
+    .wrapper.case-study section.gallery .middleText2 {
+        padding: 55px 0 65px 0;
+        margin: 0
+    }
+    .wrapper.case-study section.gallery .middleText2 p {
+        font-size: 16px;
+        line-height: 22px
+    }
+    .wrapper.case-study section.gallery .middleText2 h3 {
+        font-size: 16px;
+        line-height: 22px;
+        margin-bottom: 30px
+    }
+    .wrapper.case-study section.gallery article.right, .wrapper.case-study section.gallery article.topleft, .wrapper.case-study section.gallery article.left, .wrapper.case-study section.gallery article.portraitRight, .wrapper.case-study section.gallery article.bottomleft {
+        width: 100%;
+        float: none
+    }
+    .wrapper.case-study section.gallery article.topleft img, .wrapper.case-study section.gallery article.bottomleft img {
+        margin: 0
+    }
+    .wrapper.case-study section.gallery article.portraitRight {
+        height: 108vw
+    }
+    .wrapper.case-study section.gallery article {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1
+    }
+    .wrapper.case-study section.quote p {
+        padding: 0 20px
+    }
+    .wrapper.case-study section.outcome p {
+        margin-bottom: 50px
+    }
+    .wrapper.case-study section.outcome p label {
+        font-size: 22px;
+        line-height: 32px
+    }
+    section.case-study-c2a {
+        margin: 0 30px
+    }
+    section.case-study-c2a div.share-on a {
+        margin-right: 15px
+    }
+    section.case-study-c2a div.share-on a:last-child {
+        margin-right: 0
+    }
+    section.case-study-c2a div, section.blog-detail-c2a div {
+        float: none;
+        width: 100%;
+        margin-bottom: 50px
+    }
+    .wrapper.blog-detail .hero-container {
+        overflow: hidden;
+        position: relative;
+        height: 350px
+    }
+    .wrapper.blog-detail .hero {
+        left: 50%;
+        margin-left: -431px;
+        position: absolute;
+        width: auto;
+        height: 350px
+    }
+    .wrapper.blog-detail section.headline {
+        padding-left: 20px;
+        padding-right: 20px
+    }
+    .wrapper.blog-detail section.headline h1, .wrapper.blog-detail section.headline p {
+        font-size: 26px;
+        line-height: 39px
+    }
+    .wrapper.blog-detail section.disqus {
+        padding: 0 20px
+    }
+    .wrapper.blog-detail section.body {
+        width: auto;
+        padding: 0 20px
+    }
+    .wrapper.blog-detail section.body blockquote {
+        margin: 0
+    }
+    section.case-study-c2a div {
+        width: 100%;
+        max-width: none;
+        float: none;
+        margin-bottom: 100px
+    }
+    section.blog-detail-c2a div {
+        width: 100%;
+        max-width: none;
+        float: none;
+        margin-bottom: 30px
+    }
+    section.case-study-c2a, section.blog-detail-c2a {
+        margin: 30px 20px 0 20px
+    }
+    .logo.name.following.visible {
+        opacity: 0
+    }
+    .logo.name.following {
+        left: 10px;
+        top: 32px
+    }
+    .wrapper.about-us {
+        background-position: left top;
+        background-size: auto
+    }
+    .wrapper.about-us section.hero .right a br {
+        display: inline
+    }
+    .wrapper.about-us section.hero .right .c2aspacer {
+        height: 45px
+    }
+    .wrapper.about-us section.capabilities {
+        padding: 0 30px 70px;
+        text-align: center
+    }
+    .wrapper.about-us section.capabilities .container {
+        padding: 0
+    }
+    .wrapper.about-us section.capabilities .column {
+        width: 100%;
+        padding: 0;
+        float: none
+    }
+    .wrapper.about-us section.capabilities .ico {
+        margin: 40px auto 20px
+    }
+    .wrapper.about-us section.team {
+        padding: 0 0 0 10px
+    }
+    .wrapper.about-us section.team .container {
+        padding: 0;
+        padding-bottom: 30px
+    }
+}
+
+@media (max-width:600px) {
+    section.recent-posts article .info p strong {
+        font-size: 24px;
+        line-height: 28px
+    }
+}
+
+@media (max-width:500px) {
+    nav section .content .box p strong {
+        font-size: 15px;
+        line-height: 18px
+    }
+    nav section .content .box p label {
+        font-size: 9px;
+        margin-bottom: 2px
+    }
+    section.recent-posts article .info p {
+        font-size: 12px;
+        line-height: 18px
+    }
+    section.recent-posts article .info p strong {
+        font-size: 18px;
+        line-height: 22px;
+        padding-bottom: 2px
+    }
+    nav section.case-studies .content .box {
+        float: none;
+        width: auto;
+        min-height: 185px
+    }
+    nav section.case-studies .content .box.removed {
+        min-height: 0
+    }
+    section.bottom-links .box {
+        float: none;
+        width: 100%;
+        display: block
+    }
+    section.bottom-links.fixedHeight .box {
+        height: calc(100vw - 20px)
+    }
+    section.bottom-links .box:nth-child(2) {
+        float: none;
+        margin-top: 10px
+    }
+    section.bottom-links .box p {
+        left: 10px;
+        bottom: 15px;
+        right: 10px
+    }
+    section.bottom-links .box p label {
+        font-size: 11px
+    }
+    section.bottom-links .box p strong {
+        font-size: 16px
+    }
+    .single-case-study section.bottom-links .box .text h3, .single-case-study section.bottom-links .box .text p {
+        left: 25px;
+        bottom: 50px
+    }
+    .single-case-study section.bottom-links .box .text p {
+        bottom: 25px
+    }
+    .wrapper.blog h1 {
+        padding: 130px 50px 80px;
+        font-size: 30px
+    }
+    .wrapper.blog h1 br {
+        display: inline
+    }
+    .wrapper.about-us section.team h3 {
+        padding: 10px 10px 0
+    }
+    .wrapper.about-us section.team span {
+        padding: 0 10px 10px
+    }
+}
+
