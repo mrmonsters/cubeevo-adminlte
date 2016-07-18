@@ -121,7 +121,7 @@
             <br/>
             <div class="row">
                 <div class="col-sm-4">
-                    <img src="{{asset('img/Programmer Needs-77.jpg')}}" class="img-full m-t-md">
+                    <img src="{{asset('img/Programmer Needs-76.jpg')}}" class="img-full m-t-md">
                 </div>
                 <div class="col-sm-8">
                     <h2>Animation Story Video</h2>
@@ -133,7 +133,7 @@
             <br/>
             <div class="row">
                 <div class="col-sm-4">
-                    <img src="{{asset('img/Programmer Needs-76.jpg')}}" class="img-full m-t-md">
+                    <img src="{{asset('img/Programmer Needs-77.jpg')}}" class="img-full m-t-md">
                 </div>
                 <div class="col-sm-8">
                     <h2>White Board Animation Video</h2>

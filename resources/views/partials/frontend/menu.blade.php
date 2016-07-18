@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="smalltext">
-                    &copy; 2015 COPYRIGHT BY <br>
+                    &copy; {{ date('Y') }} COPYRIGHT BY <br>
                     CUBEEVO ADVERTISING SDN. BHD.
                 </div>
             </div>

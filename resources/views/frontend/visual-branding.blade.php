@@ -106,6 +106,7 @@
                             <br/>
                             <br/>
                         </div>
+                        <div class="clear visible-xs"></div>
                         <div class="col-xs-6 col-sm-4 text-center">
                             <br/>
                             <img src="{{asset('img/Programmer Needs-46.svg')}}" class="img-full">
@@ -120,6 +121,7 @@
                             <br/>
                             <br/>
                         </div>
+                        <div class="clear visible-xs"></div>
                         <div class="col-xs-6 col-sm-4 text-center">
                             <br/>
                             <img src="{{asset('img/Programmer Needs-48.svg')}}" class="img-full">

@@ -79,7 +79,7 @@
                     </h4>
                     <br class="hidden-xs"/>
                     <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-4 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
                             <small class="homepage-contact-us__country">
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
                                 <b>MALAYSIA</b>
@@ -107,7 +107,7 @@
                                 </small>
                             </p>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
+                        <div class="col-xs-12 col-sm-12 col-sm-push-4 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
                             <small class="homepage-contact-us__country">
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
                                 <b>SINGAPORE</b>
