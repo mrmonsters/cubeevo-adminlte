@@ -44,7 +44,7 @@
                        href="{{ url('/insights') }}">{{ (Session::get('locale') == 'en') ? 'INSIGHTS' : '品牌洞察' }}</a>
                 </li>
                 <li><a class="@if(Request::url() === url('/process')) active @endif "
-                       href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'LET\'S WORK TOGETHER' : '合作流程' }}</a>
+                       href="{{ url('/process') }}">{{ (Session::get('locale') == 'en') ? 'PROCESS' : '合作流程' }}</a>
                 </li>
                 <li><a class="@if(Request::url() === url('/join-the-team')) active @endif "
                        href="{{ url('/join-the-team') }}">{{ (Session::get('locale') == 'en') ? 'JOIN THE TEAM' : '加入我们' }}</a>

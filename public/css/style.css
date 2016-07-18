@@ -96,7 +96,7 @@ a {
     -webkit-transition: -webkit-transform 0.3s, visibility 0s 0.3s;
     -moz-transition: -moz-transform 0.3s, visibility 0s 0.3s;
     transition: transform 0.3s, visibility 0s 0.3s;
-    padding: 15px 0px 15px 15px;
+    padding: 0px 0px 15px 15px;
 }
 
 #cd-main-nav .inner {
