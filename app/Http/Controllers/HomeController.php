@@ -185,12 +185,15 @@ class HomeController extends Controller {
 			->orderBy('sort_order')
 			->first();
 
-		if ($similarProjects->count() < 1
-			&& !is_null($nextCategory)
-			&& $nextCategory instanceof Category
-		) {
+		if (!is_null($nextCategory) && $nextCategory instanceof Category) {
 
-			$similarProjects = $nextCategory->projects;
+			foreach ($nextCategory->projects as $item) {
+
+				if ($similarProjects->count() < 2) {
+
+					$similarProjects->push($item);
+				}
+			}
 		}
 
 		return view('frontend.project_content')->with(compact('project', 'backbtn', 'similarProjects'));
