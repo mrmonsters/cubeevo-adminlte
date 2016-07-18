@@ -735,7 +735,6 @@ section.case-study-c2a div.share-on a:hover, section.blog-detail-c2a div.share-o
 }
 .wrapper.about-us section.hero .right span {
     color: #FFF;
-    font-family: "AkkuratPro-Bold"
 }
 .wrapper.about-us section.hero .right a {
     color: #FFF;
@@ -943,6 +942,17 @@ body.join-us noscript p, body.contact-us noscript p {
     color: #aaa
 }
 
+@media (min-width:770px) {
+    .wwdContainer{
+        padding: 0px 40px;
+    }
+}
+
+@media (min-width:850px) {
+    .wwdContainer{
+        padding: 0px;
+    }
+}
 @media (max-width:1200px) {
     section.hero {
         padding-bottom: 110px
