@@ -20,6 +20,9 @@ $(window).load(function () {
     }
 });
 $(document).ready(function () {
+    if ($('.home__background').length > 0) {
+        $('.home__background').fullpage.reBuild();
+    }
     if ($('#fullpage').length > 0) {
         $('#fullpage').fullpage({
             navigation: true,

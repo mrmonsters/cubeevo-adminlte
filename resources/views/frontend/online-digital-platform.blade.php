@@ -56,7 +56,8 @@
                         profound company website will help to lift up our company image and also serve as a good
                         advertising tool. Bear in mind, smart consumers now can simply find our competitors in just a
                         few seconds, by online.</p>
-                    <p>For live preview, please click <a href="http://www.pltpro.com" class="text-blue" target="_blank">here</a>.
+                    <p>For live preview, please click <a href="http://www.pltpro.com" class="text-lightred"
+                                                         target="_blank"><i><u>here</u></i></a>.
                     </p>
 
                 </div>
@@ -79,7 +80,7 @@
                         know the brand. By having a microsite, you need to have a very specific goal in order to make it
                         achievable.</p>
                     <p>For live preview, please click <a href="http://www.liansin.com.my/haryana" class="text-lightred"
-                                                         target="_blank">here</a>.</p>
+                                                         target="_blank"><i><u>here</u></i></a>.</p>
 
                 </div>
                 <div class="col-sm-6">
@@ -103,12 +104,14 @@
                         great marketing tool which is more cost effective and efficient whereby human factors are
                         minimized, because we may not need a middleman or distributor to promote our products anymore.
                         Just discuss with CUBEevo and its team to cater a good one for you. </p>
-                    <p>For live preview, please click <a href="http://tk2you.com" class="text-lightred" target="_blank">here</a>.
                     </p>
 
                 </div>
                 <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-60.jpg')}}" class="img-full m-t-md">
+                    <br/>
+                    <br/>
+                    <p>Credit to: http://www.timefortheweb.com/web-design</p>
                     <br/>
                     <br/>
                 </div>
@@ -206,30 +209,30 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <img src="{{ asset('img/Programmer Needs-66.jpg') }}" class="img-full"/>
-                        <br/>
-                        <br/>
+                        <br/><br/>
                         <h4 class="text-lightred">Search Engine Optimization (SEO)</h4>
-                        <p>We need SEO to help in making our website visible to potential customers the minute they look
-                            for
-                            similar products or business by feeding search engine robots the important clues & proper
-                            structured content whereby it could recognize. That’s the beauty of SEO, to optimize the
-                            chances
-                            of being found online naturally. </p>
+                        <h4 style="margin-bottom: 0px">"Feed the bots, get your crops" </h4>
+                        <p>SEO- It's like farming except, you're reaping web visibility.</p><br/>
+                        <p>How do we make our website visible to potential customers?<br/>
+                            Three Letters - SEO. The minute potential customers look for similar products or businesses
+                            by feeding search engine robots the important clues & properly structured content whereby it
+                            could recognize, SEO gets to work by optimizing the chances of being found online naturally.
+                            It's like sowing the seeds and using the search engine robots to fertilize the land. And if
+                            you pray to the God of harvest (SEO) hard enough you reap in the harvest in the form of web
+                            visibility/ web traffic.</p>
                     </div>
                     <div class="col-sm-6">
                         <img src="{{ asset('img/Programmer Needs-67.jpg') }}" class="img-full"/>
-                        <br/>
-                        <br/>
-                        <h4 class="text-lightred">5B: Search Engine Marketing (SEM) </h4>
-                        <p>SEM means you buy creative advertisement space to get your audience find you easily. There
-                            are
-                            several ways to achieve optimized level, common two are Pay Per Click advertising (PPC)
-                            whereby
-                            you need to pay when users clicked on your website, and Paid Inclusion in Search Engines is
-                            to
-                            pay for the advertising space provided by the search engine. The best part of SEM is you can
-                            see
-                            the ranking instantly. </p>
+                        <br/><br/>
+                        <h4 class="text-lightred">Search Engine Marketing (SEM)</h4>
+                        <h4 style="margin-bottom: 0px">"Soar up the ranks, at the speed of light"</h4>
+                        <p>SEM- It's like investing in a rocket except, the rocket is an advertising space.</p><br/>
+                        <p>Search Engine Marketing (SEM) means you buy creative advertisement space to allow your
+                            audience to easily find you. The most common two ways to achieve optimized level are, Pay
+                            Per Click advertising (PPC), whereby you pay when users click on your website, and Paid
+                            Inclusion in Search Engines, where you pay for the advertising space provided by the search
+                            engine. It's like investing in a rocket and launching it. It's faster than waiting naturally
+                            like SEO and the best part is that you can see the ranking instantly.</p>
                     </div>
                 </div>
             </div>
