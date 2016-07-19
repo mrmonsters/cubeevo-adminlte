@@ -12,6 +12,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
     var _html3 = $('.hidden-section-3').html();
     var _html4 = $('.hidden-section-4').html();
     var _html5 = $('.hidden-section-5').html();
+    var _html6 = $('.hidden-section-6').html();
     $scope.$watch('projects', function () {
 
         $scope.mainOptions = {
@@ -38,14 +39,19 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
-
                 if (index == 4) {
                     $('.js-left-content').html(_html4);
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
                 }
 
                 if (index == 5) {
                     $('.js-left-content').html(_html5);
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-4');
+                }
+
+                if (index == 6) {
+                    $('.js-left-content').html(_html6);
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                 }
 
@@ -67,11 +73,15 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
                     $('.wrapper__home-left .content-wrapper').addClass('leftcontentbackgroundImage_2');
                 }
                 if (next == 4) {
+                    $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
+                    $('.wrapper__home-left .content-wrapper').addClass('leftcontentbackgroundImage_3');
+                }
+                if (next == 5) {
                     $('.wrapper__home-left .insight-bg').addClass('insight-bg-1');
                     $('.leftcontent_heading,.leftcontent_desc').addClass('text-white');
                     $('.wrapper__home-left .content-wrapper').addClass('post_0_background');
                 }
-                if (next == 5) {
+                if (next == 6) {
                     $('.wrapper__home-left .insight-bg').removeClass('insight-bg-1');
                     $('.wrapper__home-left .insight-bg').addClass('insight-bg-4');
                 }
