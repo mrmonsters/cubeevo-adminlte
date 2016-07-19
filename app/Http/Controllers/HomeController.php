@@ -185,14 +185,19 @@ class HomeController extends Controller {
 			->orderBy('sort_order')
 			->first();
 
-		if (!is_null($nextCategory) && $nextCategory instanceof Category) {
+		if (is_null($nextCategory) || !$nextCategory instanceof Category) {
 
-			foreach ($nextCategory->projects as $item) {
+			$nextCategory = Category::where('status', '=', Status::ACTIVE)
+				->where('delete', false)
+				->orderBy('sort_order')
+				->first();
+		}
 
-				if ($similarProjects->count() < 2) {
+		foreach ($nextCategory->projects as $item) {
 
-					$similarProjects->push($item);
-				}
+			if ($similarProjects->count() < 2) {
+
+				$similarProjects->push($item);
 			}
 		}
 
