@@ -2,9 +2,10 @@
 
 @section('frontend-content')
     <style>
-        .btn-back{
+        .btn-back {
             background-color: #F05A4A !important;
         }
+
         .arrow-bar-1, .arrow-bar-2 {
             background-color: #fff;
         }
@@ -29,7 +30,7 @@
                     <br/>
                 </div>
                 <div class="col-sm-5">
-                    <h2 class="text-lightblue">Why go for Online?</h2>
+                    <h2 class="text-lightred">Why go for Online?</h2>
                     <p>Are you online? A common question asked in this digital and internet world. A life in internet
                         has made things moving very fast in every second 24/7 nonstop and it has changed the way we live
                         and do business drastically. To stay alive, we are bound to catch up with it or else we would be
@@ -47,7 +48,7 @@
 
             <div class="row">
                 <div class="col-sm-6 text-justify">
-                    <h2 class="text-lightblue">(1) Corporate Website</h2>
+                    <h2 class="text-lightred">(1) Corporate Website</h2>
                     <p>Having a corporate website is better to have one billboard on highways now whereby online users
                         can obtain your company information much easier. People would like to know more about our
                         company before engaging business with us. The fastest way to get that is our company website
@@ -55,7 +56,8 @@
                         profound company website will help to lift up our company image and also serve as a good
                         advertising tool. Bear in mind, smart consumers now can simply find our competitors in just a
                         few seconds, by online.</p>
-                    <p>For live preview, please click <a href="http://www.pltpro.com" class="text-blue" target="_blank">here</a>.</p>
+                    <p>For live preview, please click <a href="http://www.pltpro.com" class="text-blue" target="_blank">here</a>.
+                    </p>
 
                 </div>
                 <div class="col-sm-6">
@@ -68,7 +70,7 @@
 
             <div class="row">
                 <div class="col-sm-6 text-justify">
-                    <h2 class="text-lightblue">(2) Microsite</h2>
+                    <h2 class="text-lightred">(2) Microsite</h2>
                     <p>Sometimes we prefer things that are simple and nice, perhaps precise. A microsite is a simplified
                         straightforward website specially caters for specific needs and very suitable for campaign
                         purpose. It can be either independent website or park under main corporate website. It provides
@@ -76,7 +78,8 @@
                         a free gift by filling up questionnaire. This is very powerful tool to engage the audience to
                         know the brand. By having a microsite, you need to have a very specific goal in order to make it
                         achievable.</p>
-                    <p>For live preview, please click <a href="http://www.liansin.com.my/haryana" class="text-lightblue" target="_blank">here</a>.</p>
+                    <p>For live preview, please click <a href="http://www.liansin.com.my/haryana" class="text-lightred"
+                                                         target="_blank">here</a>.</p>
 
                 </div>
                 <div class="col-sm-6">
@@ -88,7 +91,7 @@
 
             <div class="row">
                 <div class="col-sm-6 text-justify">
-                    <h2 class="text-lightblue">(3) E-Commerce</h2>
+                    <h2 class="text-lightred">(3) E-Commerce</h2>
                     <p>Why limit our business boundaries to a small regime where it could be widened through E-commerce?
                         We could trade countrywide or even worldwide with the present of the E-commerce facility
                         available now. This is mainly because the online world has changed the way we do shopping that
@@ -100,7 +103,8 @@
                         great marketing tool which is more cost effective and efficient whereby human factors are
                         minimized, because we may not need a middleman or distributor to promote our products anymore.
                         Just discuss with CUBEevo and its team to cater a good one for you. </p>
-                    <p>For live preview, please click <a href="http://tk2you.com" class="text-blue" target="_blank">here</a>.</p>
+                    <p>For live preview, please click <a href="http://tk2you.com" class="text-lightred" target="_blank">here</a>.
+                    </p>
 
                 </div>
                 <div class="col-sm-6">
@@ -118,7 +122,7 @@
                     <br/>
                 </div>
                 <div class="col-sm-5">
-                    <h2 class="text-lightblue">(4) Social Media</h2>
+                    <h2 class="text-lightred">(4) Social Media</h2>
                     <p>People talk about Facebook & YouTube every day to catch up with the latest trend now. People have
                         become so engaged with it that every other minutes to refresh the page to see new feeds. And of
                         course, when it becomes so popular it has now become a powerful advertising tool for
@@ -183,43 +187,54 @@
                     <br/>
                 </div>
             </div>
+            <div style="border:1px solid #F05A4A;padding: 30px 40px;">
+                <h2 class="text-lightred">(5) Search Engines</h2>
+                <p>You may have a company website already but is it useful or has it achieved the purpose you were
+                    intended?
+                    A website needs to be updated consistently to catch up with the ever changing business environment.
+                    It
+                    is a total meaningless website built in the jungle that people get lost in finding you. Therefore,
+                    for
+                    an effective website, the utmost important thing to do is to drive traffic via Search Engine
+                    Optimization (SEO) & Search Engine Marketing (SEM). Next is conversion by allowing your visitors to
+                    contact you and close the deal. Therefore, both SEO & SEM is very important to enable people to
+                    locate
+                    your website when they type a few keywords on the search bar.
+                </p>
+                <br/>
 
-            <h2 class="text-lightblue">(5) Search Engines</h2>
-            <p>You may have a company website already but is it useful or has it achieved the purpose you were intended?
-                A website needs to be updated consistently to catch up with the ever changing business environment. It
-                is a total meaningless website built in the jungle that people get lost in finding you. Therefore, for
-                an effective website, the utmost important thing to do is to drive traffic via Search Engine
-                Optimization (SEO) & Search Engine Marketing (SEM). Next is conversion by allowing your visitors to
-                contact you and close the deal. Therefore, both SEO & SEM is very important to enable people to locate
-                your website when they type a few keywords on the search bar.
-            </p>
-            <br/>
-
-            <div class="row">
-                <div class="col-sm-6">
-                    <img src="{{ asset('img/Programmer Needs-66.jpg') }}" class="img-full"/>
-                    <br/>
-                    <br/>
-                    <h4 class="text-lightblue">Search Engine Optimization (SEO)</h4>
-                    <p>We need SEO to help in making our website visible to potential customers the minute they look for
-                        similar products or business by feeding search engine robots the important clues & proper
-                        structured content whereby it could recognize. That’s the beauty of SEO, to optimize the chances
-                        of being found online naturally. </p>
-                </div>
-                <div class="col-sm-6">
-                    <img src="{{ asset('img/Programmer Needs-67.jpg') }}" class="img-full"/>
-                    <br/>
-                    <br/>
-                    <h4 class="text-lightblue">5B: Search Engine Marketing (SEM) </h4>
-                    <p>SEM means you buy creative advertisement space to get your audience find you easily. There are
-                        several ways to achieve optimized level, common two are Pay Per Click advertising (PPC) whereby
-                        you need to pay when users clicked on your website, and Paid Inclusion in Search Engines is to
-                        pay for the advertising space provided by the search engine. The best part of SEM is you can see
-                        the ranking instantly. </p>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="{{ asset('img/Programmer Needs-66.jpg') }}" class="img-full"/>
+                        <br/>
+                        <br/>
+                        <h4 class="text-lightred">Search Engine Optimization (SEO)</h4>
+                        <p>We need SEO to help in making our website visible to potential customers the minute they look
+                            for
+                            similar products or business by feeding search engine robots the important clues & proper
+                            structured content whereby it could recognize. That’s the beauty of SEO, to optimize the
+                            chances
+                            of being found online naturally. </p>
+                    </div>
+                    <div class="col-sm-6">
+                        <img src="{{ asset('img/Programmer Needs-67.jpg') }}" class="img-full"/>
+                        <br/>
+                        <br/>
+                        <h4 class="text-lightred">5B: Search Engine Marketing (SEM) </h4>
+                        <p>SEM means you buy creative advertisement space to get your audience find you easily. There
+                            are
+                            several ways to achieve optimized level, common two are Pay Per Click advertising (PPC)
+                            whereby
+                            you need to pay when users clicked on your website, and Paid Inclusion in Search Engines is
+                            to
+                            pay for the advertising space provided by the search engine. The best part of SEM is you can
+                            see
+                            the ranking instantly. </p>
+                    </div>
                 </div>
             </div>
-
-            <h2 class="text-lightblue">(6) Google Display Network (GDN)</h2>
+            <br/>
+            <h2 class="text-lightred">(6) Google Display Network (GDN)</h2>
             <p>You view many sites every single day. Do you know all the possible advertisement pop up on front of you
                 are from the Google’s arrangement? You can do so to advertise around the world by using GDN as long as
                 you have simple texts, an image, or a video to play. You are what you search, I know, it is terrifying.

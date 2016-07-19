@@ -14,7 +14,7 @@ $response = Session::get('response');
 			<div>
 				<h1 class="txtorange">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</h1>
 				<div class="heading-line"></div>
-				<h5>{{ (Session::get('locale') == 'en') ? 'If there\'s anything that you need from our service, feel free to leave us your contact and information. We can\'t wait to get in touch with you.' : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！' }}</h5>
+				<h5><?php echo (Session::get('locale') == 'en') ? "If there's anything that you need from our service, feel free to leave us your contact and information. <br/>We can't wait to get in touch with you." : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！';?></h5>
 			</div>
 		</div>
 	</div>
@@ -85,48 +85,79 @@ $response = Session::get('response');
 	</div>
 
 	<div class="row contactdetails" style="position:relative;">
-		<div class="col-sm-11 col-sm-offset-1">
-			<div class="col-sm-5 nopadding">
-				<h4 style="margin:0px;">CUBEevo Advertising Sdn. Bhd. <small>(949017-T)</small></h4>
-				<h4 style="margin:0px;">形立方广告有限公司</h4>
-				<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
-				<ul class="list-inline">
-					<li><i class="icon phone"></i><h5 class="nopadding"><a class="text-orange" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></li>
-					<li><i class="icon fax"></i><h5 class="nopadding">{{ $settings->where('code', 'fax')->first()->value }}</h5></li>
-					<li><i class="icon mail" style="margin-top: -3px;"></i><h5 class="nopadding"><a class="text-orange" href="mailto:{{ $settings->where('code', 'email')->first()->value }}">{{ $settings->where('code', 'email')->first()->value }}</a></h5></li>
-				</ul>
+		<div class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+			<div class="col-sm-12 nopadding">
+				<small class="contactus-country-label"><b>MALAYSIA</b></small>
+				<hr/>
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<h4 style="margin:0px;"><b>CUBEevo Advertising Sdn. Bhd.</b> <br class="visible-xs"/><small>(949017-T)</small></h4>
+						<h4 style="margin:0px;"><b>形立方广告有限公司</b></h4>
+						<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
+						<div class="row">
+							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon phone"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></div>
+							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon fax"></i><h5 style="padding-left: 27px;margin-top: 0px;">{{ $settings->where('code', 'fax')->first()->value }}</h5></div>
+							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;"><i class="icon mail" style="margin-top: -3px;"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="mailto:{{ $settings->where('code', 'email')->first()->value }}">{{ $settings->where('code', 'email')->first()->value }}</a></h5></div>
+						</div>
+						<br/>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="row">
+							<div class="col-sm-6">
+								<h5 style="margin:0px;">Timothy Tai</h5>
+								<p><i>Account Manager</i><br>
+									客户经理</p>
+								<ul>
+									<li><i class="icon handphone"></i><a class="text-black" href="tel:+60173216004">+6017 321 6004</a></li>
+									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
+								</ul>
+								<br/>
+							</div>
+
+							<div class="col-sm-6">
+								<h5 style="margin:0px;">Keith Phang</h5>
+								<p><i>Branding Manager</i><br>
+									品牌经理</p>
+								<ul>
+									<li><i class="icon handphone"></i><a class="text-black" href="tel:+6018 352 4300">+6018 352 4300</a></li>
+									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
+								</ul>
+								<br/>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-sm-7 contact-person">
-				<?php /*?>
-				<div class="col-sm-4">
-					<h5 style="margin:0px;">Alvin Lee</h5>
-					<p><i>Account Director</i><br>
-					策划总监</p>
-					<ul>
-						<li><i class="icon handphone"></i><a class="text-orange" href="tel:+60173318916">+6017 331 8916</a></li>
-						<li><i class="icon mail"></i><a class="text-orange" href="mailto:alvin@cubeevo.com">alvin@cubeevo.com</a></li>
-					</ul>
-				</div>
-				<?php */?>
+			<br/>
 
-				<div class="col-sm-4">
-					<h5 style="margin:0px;">Timothy Tai</h5>
-					<p><i>Account Manager</i><br>
-					客户经理</p>
-					<ul>
-						<li><i class="icon handphone"></i><a class="text-orange" href="tel:+60173216004">+6017 321 6004</a></li>
-						<li class="hide"><i class="icon mail"></i><a class="text-orange" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
-					</ul>
-				</div>
-
-				<div class="col-sm-4">
-					<h5 style="margin:0px;">Keith Phang</h5>
-					<p><i>Branding Manager</i><br>
-					品牌经理</p>
-					<ul>
-						<li><i class="icon handphone"></i><a class="text-orange" href="tel:+6018 352 4300">+6018 352 4300</a></li>
-						<li class="hide"><i class="icon mail"></i><a class="text-orange" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
-					</ul>
+			<div class="col-sm-12 nopadding">
+				<small class="contactus-country-label"><b>SINGAPORE</b></small>
+				<hr/>
+				<div class="row">
+					<div class="col-xs-12 col-md-6">
+						<h4 style="margin:0px;"><b>CUBEevo Advertising Pte. Ltd</b> <br class="visible-xs"/><small>(UEN - 201604341R)</small></h4>
+						<h4 style="margin:0px;"><b>形立方广告有限公司</b></h4>
+						<h5>20 Maxwell Rd, #09-17,Maxwell House <br/>Singapore 069113</h5>
+						<div class="row">
+							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon phone"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="tel:+6590814118">+65 9081 4118</a></h5></div>
+							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;"><i class="icon mail" style="margin-top: -3px;"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a></h5></div>
+						</div>
+						<br/>
+					</div>
+					<div class="col-xs-12 col-md-6">
+						<div class="row">
+							<div class="col-sm-6">
+								<h5 style="margin:0px;">David Lim</h5>
+								<p><i>Account Director</i><br>
+									客户总监</p>
+								<ul>
+									<li><i class="icon handphone"></i><a class="text-black" href="tel:+6590814118">+65 9081 4118</a></li>
+									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:david@cubeevo.com">david@cubeevo.com</a></li>
+								</ul>
+							</div>
+							<br/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

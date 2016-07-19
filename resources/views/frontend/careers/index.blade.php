@@ -7,7 +7,7 @@
             <div class="col-sm-6 no-padder height-full left-content-wrapper vcenter">
                 <div class="row">
                     <div class="col-sm-6 col-sm-push-4">
-                        <h2>Be Part of the Team</h2>
+                        <h2 class="text-orange">Be Part of the Team</h2>
                         <p>Working here is fun, the team members are friendly and helpful! Apart from work, we are
                             generally relaxed
                             because we believe great ideas creep in when our mind is free! Thinking outside the box is
