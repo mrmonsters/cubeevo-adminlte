@@ -373,6 +373,18 @@ hr.whitehr {
     background-position-y: -35px;
 }
 
+.icon-button {
+    background: url(../img/Programmer-Needs-24.svg) no-repeat -3px -1px;
+    width: 200px;
+    height: 50px;
+    display: block;
+    background-size: 100% auto;
+    margin-bottom: 4px;
+}
+
+.icon-button:hover {
+    background-position-y: -48px;
+}
 #cd-nav .cd-social ul {
     margin-left: -1px;
 }
@@ -651,7 +663,7 @@ hr.whitehr {
     margin: 0px auto;
     width: 80%;
     position: absolute;
-    top: 24%;
+    top: 0px;
 }
 
 .container-fluid.cre {
@@ -2251,10 +2263,6 @@ hr.whitehr {
     .internship-qna-label {
         right: -230px;
         top: 30px;
-    }
-
-    .content-wrapper__content-contact-us {
-        margin: 65px auto;
     }
 
     .panel-title {

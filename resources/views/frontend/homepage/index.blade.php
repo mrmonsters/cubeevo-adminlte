@@ -85,8 +85,7 @@
                 <br/>
                 <p class="hidden-xs">Having Doubts?</p>
                 <a href="{{url('/credential')}}" class="hidden-xs">
-                    <img src="{{asset('img/Programmer Needs-24.svg')}}" class="homepage-contact-us-cta"
-                         style="position: relative;left: -4px;top:-9px">
+                    <i class="icon-button"></i>
                 </a>
                 <p class="hidden-xs">That way you can put all your doubts to rest and <br class="visible-lg"/>let us
                     help you transform.</p>
