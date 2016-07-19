@@ -169,9 +169,10 @@ h1 {
     color: #f7941a;
 }
 
-.showmarginleftmobile{
+.showmarginleftmobile {
     margin-left: 10px;
 }
+
 .heading-line, .txtorange span {
     display: none;
     width: 100px;
@@ -182,7 +183,7 @@ h1 {
     bottom: 78px;
 }
 
-.contactus-country-label{
+.contactus-country-label {
     position: relative;
     top: 33px;
     width: 100px;
@@ -1938,6 +1939,13 @@ hr.whitehr {
     width: 260px;
 }
 
+.core-service {
+    max-width: 228px;
+}
+.core-service-heading{
+    font-size:14px;
+}
+
 @media (max-width: 425px) {
     .mobile-h1 {
         font-size: 22px !important;
@@ -1977,9 +1985,10 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
-    .showmarginleftmobile{
+    .showmarginleftmobile {
         margin-left: 0px;
     }
+
     #cd-main-nav {
         padding: 0px 0px 15px 15px;
     }
@@ -2025,6 +2034,10 @@ hr.whitehr {
 }
 
 @media (min-width: 768px) {
+
+    .core-service-heading{
+        font-size:16px;
+    }
     .careers .left-content-wrapper__content {
         margin-top: 50%;
     }
