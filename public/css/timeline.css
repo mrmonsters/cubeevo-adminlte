@@ -12,7 +12,8 @@ section.capabilities h2.title {
     margin-bottom: 40px
 }
 .wwdContainer {
-    padding: 0 50px
+    padding: 0 50px;
+    margin-left:150px;
 }
 .wwdContainer * {
     -moz-transition-property: none;
@@ -942,9 +943,10 @@ body.join-us noscript p, body.contact-us noscript p {
     color: #aaa
 }
 
-@media (min-width:770px) {
+@media (min-width:790px) {
     .wwdContainer{
         padding: 0px 40px;
+        margin-left:150px;
     }
 }
 
