@@ -39,3 +39,9 @@
         </div>
     </div>
 </div>
+
+
+<img src="{{asset('/img/2016.0715_Cubeevo_Visual_Branding.gif')}}" width="1">
+<img src="{{asset('/img/2016.0715_Cubeevo_Thematic_Campaign_Design.gif')}}" width="1">
+<img src="{{asset('/img/2016.0715_Cubeevo_Online_Digital_Platform.gif')}}" width="1">
+<img src="{{asset('/img/2016.0715_Cubeevo_Explainer_Video_Production.gif')}}" width="1">
