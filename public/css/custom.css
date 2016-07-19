@@ -1747,8 +1747,14 @@ hr.whitehr {
 }
 
 .careers .bg-wrapper:hover .content-wrapper__bg {
-    background-color: rgba(103, 99, 99, 0.8);
     cursor: pointer;
+
+}
+.careers .bg-wrapper:hover .content-wrapper__bg-1 {
+    background-color: rgba(39, 189, 190, 0.8);
+}
+.careers .bg-wrapper:hover .content-wrapper__bg-2{
+    background-color: rgba(247, 148, 26, 0.8);
 }
 
 .intern-section-1-bg {

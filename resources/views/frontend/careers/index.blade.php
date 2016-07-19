@@ -22,7 +22,7 @@
                         <div class="row height-half" style="padding-bottom: 15px;">
                             <div class="bg-wrapper"
                                  style="background-image : url('{{asset('img/Career_Intern.jpg')}}')">
-                                <div class="height-full content-wrapper__bg">
+                                <div class="height-full content-wrapper__bg content-wrapper__bg-1">
                                     <div class="col-xs-12  col-sm-11 col-md-7 content-wrapper__content">
                                         <h2 class="text-white">INTERNSHIP</h2>
                                         <p class="text-white">Are you looking for a platform to showcase your brilliant
@@ -43,7 +43,7 @@
                         <div class="row height-half">
                             <div class="bg-wrapper"
                                  style="background-image : url('{{asset('img/Career_Permanent.jpg')}}')">
-                                <div class="height-full content-wrapper__bg">
+                                <div class="height-full content-wrapper__bg content-wrapper__bg-2">
                                     <div class="col-xs-12 col-sm-11 col-md-7 content-wrapper__content">
                                         <h2 class="text-white">Full Employment</h2>
                                         <p class="text-white">You are great, talented and passionate about your work?
