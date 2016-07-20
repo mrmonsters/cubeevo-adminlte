@@ -92,13 +92,13 @@
                             <p style="line-height: 1em;" class="content-wrapper__content-contact-us-address ">
                                 <small style="position: relative">
                                     @if (Session::get('locale') == 'cn')
-                                        形立方广告有限公司
+                                        形立方广告有限公司 (949017-T)
                                     @else
-                                        CUBEevo ADVERTISING <span class="hidden-xs">SDN BHD</span><span
-                                                class="visible-xs">S/B</span>
+                                        CUBEevo ADVERTISING SDN BHD (949017-T)
                                     @endif
+                                    <br/>
                                     <span class="homepage-line homepage-line-custom hidden-xs"></span>
-                                    <span class="hidden-xs">(949017-T)</span> <br/>
+                                     <br/>
                                 <span class="hidden-xs hidden-sm hidden-md"> 43-2, Jln Temenggung 21/9 <br/>
                                 Bandar Mahkota Cheras<br/>
                                 43200 Batu 9 Cheras<br/>
@@ -127,7 +127,7 @@
                                     @else
                                         CUBEevo ADVERTISING PTE LTD
                                     @endif
-                                    <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
+                                    <span class="homepage-line homepage-line-custom hidden-xs"></span>
                                    <span class="hidden-xs">(UEN - 201604241R)</span><br/>
                                 <span class="hidden-xs hidden-sm hidden-md">20 Maxwell Rd<br/>
                                 #09-17, Maxwell House<br/>

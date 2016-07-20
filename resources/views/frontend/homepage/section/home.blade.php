@@ -9,13 +9,13 @@
 
                 <a href="{{url('/thematic-campaign')}}" class="service-icon text-black visible-xs">
                     <img src="{{asset('/img/Programmer Needs-37.svg')}}" class="center-block core-service core-service-2" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Thematic</span> Campaign<br/> Design</h5>
+                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Thematic</span> Campaign<br/> <span class="hidden-xs">Design</span></h5>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 vcenter hidden-xs">
                 <a href="{{url('/thematic-campaign')}}" class="service-icon text-black">
                     <img src="{{asset('/img/Programmer Needs-37.svg')}}" class="center-block core-service core-service-2" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Thematic</span> Campaign<br/> Design</h5>
+                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Thematic</span> Campaign<br/> <span class="hidden-xs">Design</span></h5>
                 </a>
             </div>
         </div>
@@ -23,17 +23,17 @@
             <div class="col-xs-12 col-sm-6 vcenter">
                 <a href="{{url('/online-digital-platform')}}" class="service-icon text-black">
                     <img src="{{asset('/img/Programmer Needs-38.svg')}}" class="center-block core-service core-service-3" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Online</span> Digital<br/> Platform</h5>
+                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Online</span> Digital<br/> <span class="hidden-xs">Platform</span></h5>
                 </a>
                 <a href="{{url('/explainer-video-production')}}" class="service-icon text-black visible-xs">
                     <img src="{{asset('/img/Programmer Needs-39.svg')}}" class="center-block core-service core-service-4" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Explainer</span> Video<br/> Production</h5>
+                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Explainer</span> Video<br/> <span class="hidden-xs">Production</span></h5>
                 </a>
             </div>
             <div class="col-xs-12 col-sm-6 vcenter hidden-xs">
                 <a href="{{url('/explainer-video-production')}}" class="service-icon text-black">
                     <img src="{{asset('/img/Programmer Needs-39.svg')}}" class="center-block core-service core-service-4" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Explainer</span> Video<br/> Production</h5>
+                    <h5 class="core-service-heading text-center text-uppercase"><span class="hidden-xs">Explainer</span> Video<br/> <span class="hidden-xs">Production</span></h5>
                 </a>
             </div>
         </div>
