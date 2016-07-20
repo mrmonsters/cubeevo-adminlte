@@ -19,7 +19,8 @@ class HomeComposer {
 
 			$this->_postCollection = $this->_post
 				->where('deleted', '=', 0)
-				->where('status', '=', Status::ACTIVE);
+				->where('status', '=', Status::ACTIVE)
+				->orderBy('created_at', 'desc');
 
 			if ($qty && is_numeric($qty)) {
 
@@ -27,9 +28,7 @@ class HomeComposer {
 			}
 		}
 
-		return $this->_postCollection
-			->get()
-			->sortByDesc('created_at');
+		return $this->_postCollection->get();
 	}
 
 	protected function _getAllActiveProjects($qty = null)
@@ -38,7 +37,8 @@ class HomeComposer {
 
 			$this->_projectCollection = $this->_project
 				->where('delete', '=', 0)
-				->where('status', '=', Status::ACTIVE);
+				->where('status', '=', Status::ACTIVE)
+				->orderBy('created_at', 'desc');
 
 			if ($qty && is_numeric($qty)) {
 
@@ -46,9 +46,7 @@ class HomeComposer {
 			}
 		}
 
-		return $this->_projectCollection
-			->get()
-			->sortByDesc('created_at');
+		return $this->_projectCollection->get();
 	}
 
 	public function __construct(Post $post, Project $project)
