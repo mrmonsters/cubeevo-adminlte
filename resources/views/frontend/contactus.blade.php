@@ -91,9 +91,13 @@ $response = Session::get('response');
 				<hr/>
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
-						<h4 style="margin:0px;"><b>CUBEevo Advertising Sdn. Bhd.</b> <br class="visible-xs"/><small>(949017-T)</small></h4>
-						<h4 style="margin:0px;"><b>形立方广告有限公司</b></h4>
-						<h5><?php echo $settings->where('code', 'address')->first()->value ;?></h5>
+						<h4 style="margin:0px;">
+							{{ (Session::get('locale') == 'en') ? 'CUBEevo Advertising Sdn. Bhd.' : '形立方广告有限公司' }}
+							<br class="visible-xs"/><small>(949017-T)</small></h4>
+						<h5>No 43-2, Jalan Temenggung 21/9,
+							Bandar Mahkota Cheras, <br class="visible-xs"/>43200 Batu Cheras 9 Cheras, Selangor</h5>
+						<p>Latitude : 3<sup>o</sup>03'14.16"N</p>
+						<p>Longitude : 101<sup>o</sup>47'16.6"E</p>
 						<div class="row">
 							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon phone"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="tel:{{ $settings->where('code', 'phone')->first()->value }}">{{ $settings->where('code', 'phone')->first()->value }}</a></h5></div>
 							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon fax"></i><h5 style="padding-left: 27px;margin-top: 0px;">{{ $settings->where('code', 'fax')->first()->value }}</h5></div>
@@ -105,22 +109,18 @@ $response = Session::get('response');
 						<div class="row">
 							<div class="col-sm-6">
 								<h5 style="margin:0px;">Timothy Tai</h5>
-								<p><i>Account Manager</i><br>
-									客户经理</p>
+								<p><i>{{ (Session::get('locale') == 'en') ? 'Account Manager' : '客户经理' }}</i><br></p>
 								<ul>
 									<li><i class="icon handphone"></i><a class="text-black" href="tel:+60173216004">+6017 321 6004</a></li>
-									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:timothy@cubeevo.com">timothy@cubeevo.com</a></li>
 								</ul>
 								<br/>
 							</div>
 
 							<div class="col-sm-6">
 								<h5 style="margin:0px;">Keith Phang</h5>
-								<p><i>Branding Manager</i><br>
-									品牌经理</p>
+								<p><i>{{ (Session::get('locale') == 'en') ? 'Branding Manager' : '品牌经理' }}</i></p>
 								<ul>
 									<li><i class="icon handphone"></i><a class="text-black" href="tel:+6018 352 4300">+6018 352 4300</a></li>
-									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:keith@cubeevo.com">keith@cubeevo.com</a></li>
 								</ul>
 								<br/>
 							</div>
@@ -135,8 +135,9 @@ $response = Session::get('response');
 				<hr/>
 				<div class="row">
 					<div class="col-xs-12 col-md-6">
-						<h4 style="margin:0px;"><b>CUBEevo Advertising Pte. Ltd</b> <br class="visible-xs"/><small>(UEN - 201604341R)</small></h4>
-						<h4 style="margin:0px;"><b>形立方广告有限公司</b></h4>
+						<h4 style="margin:0px;"><b>
+								{{ (Session::get('locale') == 'en') ? 'CUBEevo Advertising Pte. Ltd' : '形立方广告有限公司' }}
+								</b> <br class="visible-xs"/><small>(UEN - 201604341R)</small></h4>
 						<h5>20 Maxwell Rd, #09-17,Maxwell House <br/>Singapore 069113</h5>
 						<div class="row">
 							<div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;white-space: nowrap;"><i class="icon phone"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a class="text-black" href="tel:+6590814118">+65 9081 4118</a></h5></div>
@@ -148,8 +149,7 @@ $response = Session::get('response');
 						<div class="row">
 							<div class="col-sm-6">
 								<h5 style="margin:0px;">David Lim</h5>
-								<p><i>Account Director</i><br>
-									客户总监</p>
+								<p><i>{{ (Session::get('locale') == 'en') ? 'Account Director' : '客户总监' }}</i><br></p>
 								<ul>
 									<li><i class="icon handphone"></i><a class="text-black" href="tel:+6590814118">+65 9081 4118</a></li>
 									<li class=""><i class="icon mail"></i><a class="text-black" href="mailto:david@cubeevo.com">david@cubeevo.com</a></li>
@@ -163,13 +163,13 @@ $response = Session::get('response');
 		</div>
 	</div>
 
-	<div class="row contactdetails" style="position:relative;padding:0px;">
-		<div style="overflow:hidden;height:500px;width:100%;">
-			<div id="map-canvas" style="height:500px;width:100%;"></div>
-			<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
-			<a class="google-map-code" href="http://premium-wordpress-themes.org" id="get-map-data">premium wordpress themes</a>
-		</div>
-	</div>
+	{{--<div class="row contactdetails" style="position:relative;padding:0px;">--}}
+		{{--<div style="overflow:hidden;height:500px;width:100%;">--}}
+			{{--<div id="map-canvas" style="height:500px;width:100%;"></div>--}}
+			{{--<style>#gmap_canvas img{max-width:none!important;background:none!important}</style>--}}
+			{{--<a class="google-map-code" href="http://premium-wordpress-themes.org" id="get-map-data">premium wordpress themes</a>--}}
+		{{--</div>--}}
+	{{--</div>--}}
 </div>
 
 @section('frontend-addon-script')

@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <h1 class="text-blue">What are the tools for online & How do we use it?</h1>
+            <h1 class="text-lightblue">What are the tools for online & How do we use it?</h1>
 
             <div class="row">
                 <div class="col-sm-6 text-justify">

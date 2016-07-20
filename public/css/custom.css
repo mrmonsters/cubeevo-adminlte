@@ -173,6 +173,10 @@ h1 {
     margin-left: 10px;
 }
 
+/*dangerous code here*/
+.container-fluid > .row > div > div{
+    position: relative;
+}
 .heading-line, .txtorange span {
     display: none;
     width: 100px;
@@ -180,7 +184,7 @@ h1 {
     background-color: #333;
     position: absolute;
     margin-left: -110px;
-    bottom: 78px;
+    top: 20px;
 }
 
 .contactus-country-label {
@@ -1991,6 +1995,10 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+
+    .careers .left-content{
+        margin-top: -30%;
+    }
     .showmarginleftmobile {
         margin-left: 0px;
     }
@@ -2040,7 +2048,13 @@ hr.whitehr {
 }
 
 @media (min-width: 768px) {
-
+    .wwdContainer{
+        padding: 0 30px;
+        margin-left: 0px;
+    }
+    #cd-main-nav .inner{
+        overflow: hidden;
+    }
     .core-service-heading{
         font-size:16px;
     }
@@ -2193,6 +2207,9 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
+    .wwdContainer{
+        padding: 0 50px;
+    }
     .home__background .wrapper__right {
         padding-left: 15px;
     }
