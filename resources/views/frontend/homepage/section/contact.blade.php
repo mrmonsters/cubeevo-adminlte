@@ -98,7 +98,7 @@
                                                 class="visible-xs">S/B</span>
                                     @endif
                                     <span class="homepage-line homepage-line-custom hidden-xs"></span>
-                                    (949017-T) <br/>
+                                    <span class="hidden-xs">(949017-T)</span> <br/>
                                 <span class="hidden-xs hidden-sm hidden-md"> 43-2, Jln Temenggung 21/9 <br/>
                                 Bandar Mahkota Cheras<br/>
                                 43200 Batu 9 Cheras<br/>
@@ -128,7 +128,7 @@
                                         CUBEevo ADVERTISING PTE LTD
                                     @endif
                                     <span class="homepage-line homepage-line-custom hidden-xs"></span><br/>
-                                    (UEN - 201604241R)<br/>
+                                   <span class="hidden-xs">(UEN - 201604241R)</span><br/>
                                 <span class="hidden-xs hidden-sm hidden-md">20 Maxwell Rd<br/>
                                 #09-17, Maxwell House<br/>
                                 Singapore 069113.<br/>
