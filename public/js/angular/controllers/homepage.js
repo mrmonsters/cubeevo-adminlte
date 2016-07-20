@@ -137,9 +137,9 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             //Generic swipe handler for all directions
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
                 if(direction == 'up'){
-                    $.fn.fullpage.moveSectionUp();
-                }else{
                     $.fn.fullpage.moveSectionDown();
+                }else{
+                    $.fn.fullpage.moveSectionUp();
                 }
             }
         });

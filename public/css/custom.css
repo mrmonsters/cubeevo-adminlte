@@ -1896,7 +1896,7 @@ hr.whitehr {
 
 .service-icon {
     width: 100px;
-    margin-top: 15%;
+    margin-top: 8%;
 }
 
 .cre .project-2 .greybox {
@@ -1948,7 +1948,7 @@ hr.whitehr {
 }
 
 .core-service {
-    max-width: 228px;
+    max-width: 88px;
 }
 .core-service-heading{
     font-size:14px;
@@ -2006,6 +2006,9 @@ hr.whitehr {
 
 @media (min-width: 769px) {
 
+    .core-service {
+        max-width:228px;
+    }
     .careers .left-content{
         margin-top: -30%;
     }
