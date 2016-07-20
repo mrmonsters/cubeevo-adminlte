@@ -705,6 +705,7 @@ hr.whitehr {
 }
 
 .container-fluid.cre > .row > div {
+    min-height: 262px;
 }
 
 .cre-1, .cre-2, .cre-3, .cre-4, .cre-5, .cre-6, .cre-7, .cre-8 {
@@ -750,6 +751,7 @@ hr.whitehr {
 
 .cre .contbox {
     position: relative;
+    min-height: 371px;
 }
 
 .sol .contbox ul, .cre .contbox ul {
