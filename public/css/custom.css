@@ -174,9 +174,10 @@ h1 {
 }
 
 /*dangerous code here*/
-.container-fluid > .row > div > div{
+.container-fluid > .row > div > div {
     position: relative;
 }
+
 .heading-line, .txtorange span {
     display: none;
     width: 100px;
@@ -1735,8 +1736,6 @@ hr.whitehr {
 .careers .bg-wrapper .content-wrapper__content {
     display: none;
     position: absolute;
-    bottom: 6%;
-    left: 2%;
 }
 
 .careers .bg-wrapper:hover .content-wrapper__content {
@@ -1752,11 +1751,13 @@ hr.whitehr {
     cursor: pointer;
 
 }
+
 .careers .bg-wrapper:hover .content-wrapper__bg-1 {
-    background-color: rgba(39, 189, 190, 0.6);
+    background-color: rgba(39, 189, 190, 0.8);
 }
-.careers .bg-wrapper:hover .content-wrapper__bg-2{
-    background-color: rgba(247, 148, 26, 0.6);
+
+.careers .bg-wrapper:hover .content-wrapper__bg-2 {
+    background-color: rgba(247, 148, 26, 0.8);
 }
 
 .intern-section-1-bg {
@@ -1950,8 +1951,9 @@ hr.whitehr {
 .core-service {
     max-width: 88px;
 }
-.core-service-heading{
-    font-size:14px;
+
+.core-service-heading {
+    font-size: 14px;
 }
 
 @media (max-width: 425px) {
@@ -1994,7 +1996,8 @@ hr.whitehr {
     .careers .bg-wrapper .content-wrapper__bg-1 {
         background-color: rgba(39, 189, 190, 0.6);
     }
-    .careers .bg-wrapper .content-wrapper__bg-2{
+
+    .careers .bg-wrapper .content-wrapper__bg-2 {
         background-color: rgba(247, 148, 26, 0.6);
     }
 
@@ -2004,14 +2007,27 @@ hr.whitehr {
 
 }
 
+.careers .left-content {
+    margin-top: -30%;
+}
+
 @media (min-width: 769px) {
+    .careers .bg-wrapper .content-wrapper__content {
+        display: none;
+        position: absolute;
+        bottom: 6%;
+        left: 2%;
+    }
+
+    .vcenter-mobile {
+        display: block;
+        height: auto;
+    }
 
     .core-service {
-        max-width:228px;
+        max-width: 228px;
     }
-    .careers .left-content{
-        margin-top: -30%;
-    }
+
     .showmarginleftmobile {
         margin-left: 0px;
     }
@@ -2061,16 +2077,19 @@ hr.whitehr {
 }
 
 @media (min-width: 768px) {
-    .wwdContainer{
+    .wwdContainer {
         padding: 0 30px;
         margin-left: 0px;
     }
-    #cd-main-nav .inner{
+
+    #cd-main-nav .inner {
         overflow: hidden;
     }
-    .core-service-heading{
-        font-size:16px;
+
+    .core-service-heading {
+        font-size: 16px;
     }
+
     .careers .left-content-wrapper__content {
         margin-top: 50%;
     }
@@ -2220,9 +2239,10 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
-    .wwdContainer{
+    .wwdContainer {
         padding: 0 50px;
     }
+
     .home__background .wrapper__right {
         padding-left: 15px;
     }
@@ -2525,9 +2545,8 @@ hr.whitehr {
     }
 
     /*h1 {*/
-        /*margin-top: 80px;*/
+    /*margin-top: 80px;*/
     /*}*/
-
     .aboutus .tagline {
         font-size: 30px;
     }

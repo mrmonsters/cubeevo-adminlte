@@ -23,17 +23,19 @@
                             <div class="bg-wrapper"
                                  style="background-image : url('{{asset('img/Career_Intern.jpg')}}')">
                                 <div class="height-full content-wrapper__bg content-wrapper__bg-1">
-                                    <div class="col-xs-12  col-sm-11 col-md-7 content-wrapper__content">
-                                        <h2 class="text-white">INTERNSHIP</h2>
-                                        <p class="text-white">Are you looking for a platform to showcase your brilliant
-                                            ideas?
-                                            We are looking for young talents who is hardworking with right attitudes. We
-                                            provide
-                                            exciting exposures while you provide your co-operation. Should you be the
-                                            one?</p>
-                                        <p class="text-white"><i
-                                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                                    class="hidden-xs">See More</span></p>
+                                    <div class="col-xs-12  col-sm-11 col-md-7 content-wrapper__content vcenter vcenter-mobile">
+                                        <div class="vcenter vcenter-mobile">
+                                            <h2 class="text-white">INTERNSHIP</h2>
+                                            <p class="text-white hidden-xs">Are you looking for a platform to showcase your brilliant
+                                                ideas?
+                                                We are looking for young talents who is hardworking with right attitudes. We
+                                                provide
+                                                exciting exposures while you provide your co-operation. Should you be the
+                                                one?</p>
+                                            <p class="text-white hidden-xs"><i
+                                                        class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
+                                                        class="hidden-xs">See More</span></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -44,16 +46,18 @@
                             <div class="bg-wrapper"
                                  style="background-image : url('{{asset('img/Career_Permanent.jpg')}}')">
                                 <div class="height-full content-wrapper__bg content-wrapper__bg-2">
-                                    <div class="col-xs-12 col-sm-11 col-md-7 content-wrapper__content">
-                                        <h2 class="text-white">Full Employment</h2>
-                                        <p class="text-white">You are great, talented and passionate about your work?
-                                            Convince
-                                            me by showing your enthusiasm and commitment to contribute to our team.
-                                            We’ll give
-                                            you the opportunity to shine and enough support to climb. What say you?</p>
-                                        <p class="text-white"><i
-                                                    class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                                    class="hidden-xs">See More</span></p>
+                                    <div class="col-xs-12 col-sm-11 col-md-7 content-wrapper__content vcenter vcenter-mobile">
+                                        <div class="vcenter vcenter-mobile">
+                                            <h2 class="text-white">Full Employment</h2>
+                                            <p class="text-white hidden-xs">You are great, talented and passionate about your work?
+                                                Convince
+                                                me by showing your enthusiasm and commitment to contribute to our team.
+                                                We’ll give
+                                                you the opportunity to shine and enough support to climb. What say you?</p>
+                                            <p class="text-white hidden-xs"><i
+                                                        class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
+                                                        class="hidden-xs">See More</span></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
