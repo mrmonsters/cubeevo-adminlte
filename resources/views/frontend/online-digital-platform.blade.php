@@ -190,50 +190,48 @@
                     <br/>
                 </div>
             </div>
-            <div style="border:1px solid #F05A4A;padding: 30px 40px;">
-                <h2 class="text-lightred">(5) Search Engines</h2>
-                <p>You may have a company website already but is it useful or has it achieved the purpose you were
-                    intended?
-                    A website needs to be updated consistently to catch up with the ever changing business environment.
-                    It
-                    is a total meaningless website built in the jungle that people get lost in finding you. Therefore,
-                    for
-                    an effective website, the utmost important thing to do is to drive traffic via Search Engine
-                    Optimization (SEO) & Search Engine Marketing (SEM). Next is conversion by allowing your visitors to
-                    contact you and close the deal. Therefore, both SEO & SEM is very important to enable people to
-                    locate
-                    your website when they type a few keywords on the search bar.
-                </p>
-                <br/>
+            <h2 class="text-lightred">(5) Search Engines</h2>
+            <p>You may have a company website already but is it useful or has it achieved the purpose you were
+                intended?
+                A website needs to be updated consistently to catch up with the ever changing business environment.
+                It
+                is a total meaningless website built in the jungle that people get lost in finding you. Therefore,
+                for
+                an effective website, the utmost important thing to do is to drive traffic via Search Engine
+                Optimization (SEO) & Search Engine Marketing (SEM). Next is conversion by allowing your visitors to
+                contact you and close the deal. Therefore, both SEO & SEM is very important to enable people to
+                locate
+                your website when they type a few keywords on the search bar.
+            </p>
+            <br/>
 
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img src="{{ asset('img/Programmer Needs-66.jpg') }}" class="img-full"/>
-                        <br/><br/>
-                        <h4 class="text-lightred">Search Engine Optimization (SEO)</h4>
-                        <h4 style="margin-bottom: 0px">"Feed the bots, get your crops" </h4>
-                        <p>SEO- It's like farming except, you're reaping web visibility.</p><br/>
-                        <p>How do we make our website visible to potential customers?<br/>
-                            Three Letters - SEO. The minute potential customers look for similar products or businesses
-                            by feeding search engine robots the important clues & properly structured content whereby it
-                            could recognize, SEO gets to work by optimizing the chances of being found online naturally.
-                            It's like sowing the seeds and using the search engine robots to fertilize the land. And if
-                            you pray to the God of harvest (SEO) hard enough you reap in the harvest in the form of web
-                            visibility/ web traffic.</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <img src="{{ asset('img/Programmer Needs-67.jpg') }}" class="img-full"/>
-                        <br/><br/>
-                        <h4 class="text-lightred">Search Engine Marketing (SEM)</h4>
-                        <h4 style="margin-bottom: 0px">"Soar up the ranks, at the speed of light"</h4>
-                        <p>SEM- It's like investing in a rocket except, the rocket is an advertising space.</p><br/>
-                        <p>Search Engine Marketing (SEM) means you buy creative advertisement space to allow your
-                            audience to easily find you. The most common two ways to achieve optimized level are, Pay
-                            Per Click advertising (PPC), whereby you pay when users click on your website, and Paid
-                            Inclusion in Search Engines, where you pay for the advertising space provided by the search
-                            engine. It's like investing in a rocket and launching it. It's faster than waiting naturally
-                            like SEO and the best part is that you can see the ranking instantly.</p>
-                    </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="{{ asset('img/Programmer Needs-66.jpg') }}" class="img-full"/>
+                    <br/><br/>
+                    <h4 class="text-lightred">Search Engine Optimization (SEO)</h4>
+                    <h4 style="margin-bottom: 0px">"Feed the bots, get your crops" </h4>
+                    <p>SEO- It's like farming except, you're reaping web visibility.</p><br/>
+                    <p>How do we make our website visible to potential customers?<br/>
+                        Three Letters - SEO. The minute potential customers look for similar products or businesses
+                        by feeding search engine robots the important clues & properly structured content whereby it
+                        could recognize, SEO gets to work by optimizing the chances of being found online naturally.
+                        It's like sowing the seeds and using the search engine robots to fertilize the land. And if
+                        you pray to the God of harvest (SEO) hard enough you reap in the harvest in the form of web
+                        visibility/ web traffic.</p>
+                </div>
+                <div class="col-sm-6">
+                    <img src="{{ asset('img/Programmer Needs-67.jpg') }}" class="img-full"/>
+                    <br/><br/>
+                    <h4 class="text-lightred">Search Engine Marketing (SEM)</h4>
+                    <h4 style="margin-bottom: 0px">"Soar up the ranks, at the speed of light"</h4>
+                    <p>SEM- It's like investing in a rocket except, the rocket is an advertising space.</p><br/>
+                    <p>Search Engine Marketing (SEM) means you buy creative advertisement space to allow your
+                        audience to easily find you. The most common two ways to achieve optimized level are, Pay
+                        Per Click advertising (PPC), whereby you pay when users click on your website, and Paid
+                        Inclusion in Search Engines, where you pay for the advertising space provided by the search
+                        engine. It's like investing in a rocket and launching it. It's faster than waiting naturally
+                        like SEO and the best part is that you can see the ranking instantly.</p>
                 </div>
             </div>
             <br/>

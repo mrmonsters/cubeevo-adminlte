@@ -652,27 +652,24 @@ hr.whitehr {
     position: absolute;
     left: 0;
     right: 0;
-    padding: 5% 5% 0 3%;
-    margin: -25% 0px 0px 0px;
 }
 
 .panel-body.overlap p {
     z-index: 1;
     position: relative;
     color: #fff;
-    padding-left: 5px;
+    /*padding-left: 5px;*/
 }
 
 .panel-title {
     float: left;
     font-size: 18px;
-    padding-right: 0px;
     z-index: 1;
 }
 
 .panel-title-desc {
-    padding-left: 2%;
-    padding-right: 10px;
+    /*padding-left: 2%;*/
+    /*padding-right: 10px;*/
     float: left;
 }
 
@@ -776,6 +773,7 @@ hr.whitehr {
     margin-bottom: 1.3%;
     color: #fff;
     margin-top: -85px;
+    margin-bottom: 0px;
 }
 
 .credential .box-content {
@@ -1755,10 +1753,10 @@ hr.whitehr {
 
 }
 .careers .bg-wrapper:hover .content-wrapper__bg-1 {
-    background-color: rgba(39, 189, 190, 0.8);
+    background-color: rgba(39, 189, 190, 0.6);
 }
 .careers .bg-wrapper:hover .content-wrapper__bg-2{
-    background-color: rgba(247, 148, 26, 0.8);
+    background-color: rgba(247, 148, 26, 0.6);
 }
 
 .intern-section-1-bg {
@@ -1992,6 +1990,18 @@ hr.whitehr {
     .fullpage-wrapper h1 {
         margin-top: 20px;
     }
+
+    .careers .bg-wrapper .content-wrapper__bg-1 {
+        background-color: rgba(39, 189, 190, 0.6);
+    }
+    .careers .bg-wrapper .content-wrapper__bg-2{
+        background-color: rgba(247, 148, 26, 0.6);
+    }
+
+    .careers .bg-wrapper .content-wrapper__content {
+        display: block;
+    }
+
 }
 
 @media (min-width: 769px) {
@@ -2511,9 +2521,9 @@ hr.whitehr {
         max-width: 240px;
     }
 
-    h1 {
-        margin-top: 80px;
-    }
+    /*h1 {*/
+        /*margin-top: 80px;*/
+    /*}*/
 
     .aboutus .tagline {
         font-size: 30px;
