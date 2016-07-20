@@ -2008,10 +2008,13 @@ hr.whitehr {
 }
 
 .careers .left-content {
-    margin-top: -30%;
+    margin-top: -50%;
 }
 
 @media (min-width: 769px) {
+    .careers .left-content{
+        margin-top: -30%;
+    }
     .careers .bg-wrapper .content-wrapper__content {
         display: none;
         position: absolute;

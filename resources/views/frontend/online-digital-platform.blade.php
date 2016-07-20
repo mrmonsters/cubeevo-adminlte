@@ -106,12 +106,11 @@
                         Just discuss with CUBEevo and its team to cater a good one for you. </p>
                     </p>
 
+                    <p>For live preview, please click <a href="http://tk2you.com/site/" class="text-lightred"
+                                                         target="_blank"><i><u>here</u></i></a>.</p>
                 </div>
                 <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-60.jpg')}}" class="img-full m-t-md">
-                    <br/>
-                    <br/>
-                    <p>Credit to: http://www.timefortheweb.com/web-design</p>
                     <br/>
                     <br/>
                 </div>

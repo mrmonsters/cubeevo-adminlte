@@ -20,6 +20,7 @@ $(window).load(function () {
     }
 });
 $(document).ready(function () {
+
     if ($('.home__background').length > 0) {
         $('.home__background').fullpage.reBuild();
     }
@@ -168,6 +169,17 @@ $(document).ready(function () {
     });
     $('.contactus .form-control,.contactus textarea').blur(function () {
         $(this).parent().removeClass('active');
+    });
+
+    $('.js-show-video-1').click(function () {
+        $('.modal-body').html($('.content-1').html());
+    });
+    $('.js-show-video-2').click(function () {
+        $('.modal-body').html($('.content-2').html());
+    });
+
+    $('.modal-header,.modal-dialog').click(function () {
+        $('.modal').modal('hide');
     });
     var _slickcarousl = $('.slick-carousel').slick({
         dots: false,

@@ -92,9 +92,9 @@
                             <p style="line-height: 1em;" class="content-wrapper__content-contact-us-address ">
                                 <small style="position: relative">
                                     @if (Session::get('locale') == 'cn')
-                                        形立方广告有限公司 <br class="visible-sm visible-md"/>(949017-T)
+                                        形立方广告有限公司 <br class="visible-sm visible-md visible-lg"/>(949017-T)
                                     @else
-                                        CUBEevo ADVERTISING SDN BHD <br class="visible-sm visible-md"/>(949017-T)
+                                        CUBEevo ADVERTISING SDN BHD <br class="visible-sm visible-md visible-lg"/>(949017-T)
                                     @endif
                                     <br/>
                                     <span class="homepage-line homepage-line-custom hidden-xs"></span>
@@ -127,7 +127,7 @@
                                     @else
                                         CUBEevo ADVERTISING PTE LTD
                                     @endif
-                                        <br class="visible-sm visible-md"/>
+                                        <br class="visible-sm visible-md visible-lg"/>
                                     <span class="homepage-line homepage-line-custom hidden-xs"></span>
                                    <span class="hidden-xs">(UEN - 201604241R)</span><br class="hidden-xs"/><br class="hidden-xs"/>
                                 <span class="hidden-xs hidden-sm hidden-md">20 Maxwell Rd<br/>

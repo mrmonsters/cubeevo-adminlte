@@ -13,7 +13,7 @@
         <div class="col-md-7 col-md-push-4">
             <br class="visible-xs"/>
             <img src="{{asset('img/Programmer Needs-69.svg')}}" height="94">
-            <h1 class="text-ashgreen">EXPLAINER VIDEO PRODUCTION</h1>
+            <h1 class="text-lightblue">EXPLAINER VIDEO PRODUCTION</h1>
             <h2>Why do we need videos for business?</h2>
             <br/>
 
@@ -44,7 +44,7 @@
                             <img src="{{asset('img/Programmer Needs-71.svg')}}" class="img-full">
                         </div>
                     </div>
-                    <h2 class="text-blue">Cost Saving</h2>
+                    <h2 class="text-lightblue">Cost Saving</h2>
                     <p>In fact, this explainer video is the best video production that you can control the content. To
                         compare with real shoot videos, motion graphic video can save your cost on talents, props,
                         shooting crew & equipment rental fees. </p>
@@ -57,7 +57,7 @@
                             <img src="{{asset('img/Programmer Needs-72.svg')}}" class="img-full">
                         </div>
                     </div>
-                    <h2 class="text-blue">Branding Image</h2>
+                    <h2 class="text-lightblue">Branding Image</h2>
                     <p>In order to keep your brand up in the market, professional and trendy you must have an explainer
                         video to keep up with competitors and also make your customers feeling proud to have chosen
                         you.</p>
@@ -73,7 +73,7 @@
                             <img src="{{asset('img/Programmer Needs-73.svg')}}" class="img-full">
                         </div>
                     </div>
-                    <h2 class="text-blue">Simplicity</h2>
+                    <h2 class="text-lightblue">Simplicity</h2>
                     <p>It’s a superb useful marketing tool nowadays. Firstly, it is not wordy but simple to understand
                         as the explainer video goes along to clarify your intended idea. With that at hand, you can
                         simply use it to do an attractive fabulous presentation to your customers instead of the old
@@ -92,7 +92,7 @@
                             <img src="{{asset('img/Programmer Needs-74.svg')}}" class="img-full">
                         </div>
                     </div>
-                    <h2 class="text-blue">Drive Traffic & Sales</h2>
+                    <h2 class="text-lightblue">Drive Traffic & Sales</h2>
                     <p>I bet you have seen many of these explainer videos on social media like Facebook and noticed how
                         many thousands of people have watched, commented and forwarded to friends without limit. You too
                         wish to have one explainer video that will go viral on the internet and boost your website
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <h2 class="text-blue">Why wait, get in touch with us !</h2>
+            <h2 class="text-lightblue">Why wait, get in touch with us !</h2>
             <p>This explainer video is proven to be very effective and popular among many successful businesses in this
                 era. Find out more about our explainer video production and the following are three types of explainer
                 videos available to suit your need:</p>
@@ -127,7 +127,7 @@
                     <h2>Animation Story Video</h2>
                     <p>Explain with simulation method to tell audience about the brand story or business DNA, suitable
                         for young & funky brands. </p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click <a href="https://www.youtube.com/embed/ZH9w52m9we4" class="text-blue js-show-video js-show-video-1" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
                 </div>
             </div>
             <br/>
@@ -140,7 +140,7 @@
                     <p>Explain with sketch drawing style or puzzle up paper cutting. It is straight forward on
                         explaining corporate introduction, suitable for companies in both education field and technical
                         field.</p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click <a href="https://www.youtube.com/embed/zDZFcDGpL4U" class="text-blue js-show-video js-show-video-2" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
                 </div>
             </div>
             <br/>
@@ -150,4 +150,30 @@
             <br/>
         </div>
     </div>
+
+    <div aria-labelledby="myModalLabel" class="modal fade" id="mediaModal1" role="dialog" tabindex="-1">
+
+        <div class="modal-dialog homevideo" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-right">
+                    <a aria-label="Close" class="custom-close" data-dismiss="modal" type="button">
+                        <img src="{{url("/img/Programmer Needs-26.svg")}}" width="50px">
+                    </a>
+                </div>
+
+                <div class="modal-body">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-2 hide">
+        <iframe allowfullscreen="" frameborder="0" height="400px"
+                src="https://www.youtube.com/embed/zDZFcDGpL4U" width="100%"></iframe>
+    </div>
+    <div class="content-1 hide">
+        <iframe allowfullscreen="" frameborder="0" height="400px"
+                src="https://www.youtube.com/embed/ZH9w52m9we4" width="100%"></iframe>
+    </div>
+
 @endsection
