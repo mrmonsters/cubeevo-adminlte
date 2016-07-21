@@ -2660,6 +2660,10 @@ hr.whitehr {
 }
 
 @media (min-width: 500px) and (max-width: 892px) {
+    .service-icon {
+        width: 100%;
+        margin-top: 0;
+    }
     #cd-nav .logo {
         text-align: center;
     }
