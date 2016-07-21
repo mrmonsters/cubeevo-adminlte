@@ -2663,6 +2663,11 @@ hr.whitehr {
     .service-icon {
         width: 100%;
         margin-top: 0;
+    }.core-service {
+         max-width: 130px;
+     }
+    #cd-nav ul{
+        margin: 15% auto 0px;
     }
     #cd-nav .logo {
         text-align: center;

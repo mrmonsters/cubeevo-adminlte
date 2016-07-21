@@ -14,7 +14,7 @@
                 <div>
                     <h1 class="txtorange">{{ (Session::get('locale') == 'en') ? 'CONTACT US' : '联络我们' }}</h1>
                     <div class="heading-line"></div>
-                    <h5><?php echo (Session::get('locale') == 'en') ? "If there's anything that you need from our service, feel free to leave us your contact and information. <br/>We can't wait to get in touch with you." : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！';?></h5>
+                    <h5><?php echo (Session::get('locale') == 'en') ? "If there's anything that you need from our service, feel free to leave us your contact and information. <br class='hidden-sm'/>We can't wait to get in touch with you." : '任何服务方案需求，欢迎留下您的联系方式，我们迫不及待想与您愉快聊天！';?></h5>
                 </div>
             </div>
         </div>
@@ -84,6 +84,9 @@
                 <br/>
                 <button class="btn btn-sm btn-default"
                         type="submit">{{ (Session::get('locale') == 'en') ? 'SEND' : '呈交' }}</button>
+                <br/>
+                <br/>
+                <br/>
                 <br/>
                 <br/>
                 <br/>

@@ -115,6 +115,10 @@ a {
     text-align: center;
 }
 
+#cd-nav .logo img.logo-nav {
+    max-width: 487px;
+}
+
 #cd-nav .logo img.logo-mob {
     display: none;
 }
@@ -475,10 +479,6 @@ a {
     #cd-nav .logo img.logo-mob {
         width: 80%;
         display: inline;
-    }
-
-    #cd-nav .logo img.logo-nav {
-        display: none;
     }
 
     #cd-nav ul {

@@ -14,11 +14,23 @@
         <div class="inner">
 
             <div class="logo">
-                <a href="{{url('/')}}"><img src="{{ asset('img/Programmer Needs-17.png') }}" width="110%"
-                                            class="logo-nav" style="margin-left: -5%;" alt="logo"/></a>
+                <div class="row">
+                    <div class="col-sm-push-7 col-sm-5 col-md-12  col-md-push-0 hidden-xs">
+                        <a href="{{url('/')}}">
+                            <img src="{{ asset('img/Programmer Needs-17.png') }}" width="110%"
+                                 class="logo-nav" style="margin-left: -5%;" alt="logo"/>
+                        </a>
+                    </div>
+                </div>
 
-                <a href="{{url('/')}}"><img src="{{ asset('img/Programmer Needs-18.png')}}" class="logo-mob"
-                                            alt="logo"/></a>
+                <div class="row">
+                    <div class="col-xs-push-2 col-xs-10 visible-xs">
+                        <a href="{{url('/')}}">
+                            <img src="{{ asset('img/Programmer Needs-18.png')}}"
+                                 width="100%" alt="logo"/>
+                        </a>
+                    </div>
+                </div>
             </div>
             <ul class="list-unstyled">
                 <li><a class="@if(Request::url() === url('/cubeevo-dna')) active @endif "
@@ -56,29 +68,34 @@
                         <?php use App\Models\Setting; ?>
                         @if(!empty(Setting::where('code', '=', 'facebook_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'facebook_link')->first()->value}}" target="_blank"><i class="cd-scfb"></i></a>
+                                <a href="{{Setting::where('code', '=', 'facebook_link')->first()->value}}"
+                                   target="_blank"><i class="cd-scfb"></i></a>
                             </li>
                         @endif
                         @if(!empty(Setting::where('code', '=', 'youtube_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'youtube_link')->first()->value}}" target="_blank"><i class="cd-scyt"></i></a>
+                                <a href="{{Setting::where('code', '=', 'youtube_link')->first()->value}}"
+                                   target="_blank"><i class="cd-scyt"></i></a>
                             </li>
                         @endif
                         @if(!empty(Setting::where('code', '=', 'instagram_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'instagram_link')->first()->value}}" target="_blank"><i class="cd-scin"></i></a>
+                                <a href="{{Setting::where('code', '=', 'instagram_link')->first()->value}}"
+                                   target="_blank"><i class="cd-scin"></i></a>
                             </li>
                         @endif
 
                         @if(!empty(Setting::where('code', '=', 'twitter_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'twitter_link')->first()->value}}" target="_blank"><i class="cd-sctt"></i></a>
+                                <a href="{{Setting::where('code', '=', 'twitter_link')->first()->value}}"
+                                   target="_blank"><i class="cd-sctt"></i></a>
                             </li>
                         @endif
 
                         @if(!empty(Setting::where('code', '=', 'google_plus_link')->first()->value))
                             <li>
-                                <a href="{{Setting::where('code', '=', 'google_plus_link')->first()->value}}" target="_blank"><i class="cd-scgp"></i></a>
+                                <a href="{{Setting::where('code', '=', 'google_plus_link')->first()->value}}"
+                                   target="_blank"><i class="cd-scgp"></i></a>
                             </li>
                         @endif
                     </ul>
