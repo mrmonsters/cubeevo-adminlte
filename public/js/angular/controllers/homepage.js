@@ -150,7 +150,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
         }
         //Checks if the cookie already exists
         if (!getCookie('firsttime')){
-            if($(window).width() >= 770){
+            if($(window).width() >= 765){
                 $('#homevideo').modal('show');
                 //Set's the cookie to true so there is a value and the code shouldn't run again.
                 setCookie('firsttime',true);
