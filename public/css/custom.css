@@ -1799,7 +1799,7 @@ hr.whitehr {
 }
 
 .author-name {
-    position: absolute;
+    position: absolute !important;
     right: -80px;
     width: 62px;
     top: -99px;
@@ -1956,6 +1956,9 @@ hr.whitehr {
     font-size: 14px;
 }
 
+#cd-nav .logo {
+    text-align: right;
+}
 @media (max-width: 425px) {
     .mobile-h1 {
         font-size: 22px !important;
@@ -2012,6 +2015,9 @@ hr.whitehr {
 }
 
 @media (min-width: 769px) {
+    #cd-nav .logo {
+        text-align: right;
+    }
     .careers .left-content{
         margin-top: -30%;
     }
@@ -2080,6 +2086,11 @@ hr.whitehr {
 }
 
 @media (min-width: 768px) {
+    .careers .bg-wrapper .content-wrapper__content {
+        position: absolute;
+        bottom: 6%;
+        left: 2%;
+    }
     .wwdContainer {
         padding: 0 30px;
         margin-left: 0px;
@@ -2649,6 +2660,14 @@ hr.whitehr {
 }
 
 @media (min-width: 500px) and (max-width: 892px) {
+    #cd-nav .logo {
+        text-align: center;
+    }
+    .icon-button{
+        background: url(../img/Programmer-Needs-24.svg) no-repeat -5px -1px;
+        width: 275px;
+        height: 69px
+    }
     .scene.mascott {
         left: 0px;
     }

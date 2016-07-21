@@ -66,7 +66,7 @@
                         $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
                         $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                         ?>
-                        <h2 class="text-white mobile-h1">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
+                        <h2 class="text-white mobile-h1 text-uppercase">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
                         <p class="text-white hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span

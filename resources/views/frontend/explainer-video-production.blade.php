@@ -127,7 +127,7 @@
                     <h2>Animation Story Video</h2>
                     <p>Explain with simulation method to tell audience about the brand story or business DNA, suitable
                         for young & funky brands. </p>
-                    <p>For live preview, please click <a href="https://www.youtube.com/embed/ZH9w52m9we4" class="text-blue js-show-video js-show-video-1" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
+                    <p>For live preview, please click <a href="https://www.youtube.com/embed/zDZFcDGpL4U" class="text-blue js-show-video js-show-video-1" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
                 </div>
             </div>
             <br/>
@@ -140,7 +140,7 @@
                     <p>Explain with sketch drawing style or puzzle up paper cutting. It is straight forward on
                         explaining corporate introduction, suitable for companies in both education field and technical
                         field.</p>
-                    <p>For live preview, please click <a href="https://www.youtube.com/embed/zDZFcDGpL4U" class="text-blue js-show-video js-show-video-2" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
+                    <p>For live preview, please click <a href="https://www.youtube.com/embed/CzgQBAWIh_Y" class="text-blue js-show-video js-show-video-2" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
                 </div>
             </div>
             <br/>
@@ -173,7 +173,7 @@
     </div>
     <div class="content-1 hide">
         <iframe allowfullscreen="" frameborder="0" height="400px"
-                src="https://www.youtube.com/embed/ZH9w52m9we4" width="100%"></iframe>
+                src="https://www.youtube.com/embed/CzgQBAWIh_Y" width="100%"></iframe>
     </div>
 
 @endsection

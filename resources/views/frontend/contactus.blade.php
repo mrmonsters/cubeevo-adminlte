@@ -106,8 +106,8 @@
                                 <br class="visible-xs"/>
                                 <small>(949017-T)</small>
                             </h4>
-                            <h5>No 43-2, Jalan Temenggung 21/9,
-                                Bandar Mahkota Cheras, <br/>43200 Batu Cheras 9 Cheras, Selangor Darul Ehsan, Malaysia
+                            <h5>No 43-2, Jalan Temenggung 21/9, <br class="visible-xs"/>
+                                Bandar Mahkota Cheras, <br/>43200 Batu Cheras 9 Cheras, <br class="visible-xs"/>Selangor Darul Ehsan, Malaysia
                             </h5>
                             <p>Latitude : 3<sup>o</sup>03'14.16"N , Longitude : 101<sup>o</sup>47'16.6"E</p>
                             <div class="row">

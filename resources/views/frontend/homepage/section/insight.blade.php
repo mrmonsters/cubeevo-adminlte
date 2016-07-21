@@ -17,7 +17,7 @@
                             $content = html_entity_decode($posts[1]->translate(Session::get('locale'))->description);
                             $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                             ?>
-                            <h2 class=" mobile-h1">{{$posts[1]->translate(Session::get('locale'))->title}}</h2>
+                            <h2 class=" mobile-h1 text-uppercase">{{$posts[1]->translate(Session::get('locale'))->title}}</h2>
                             <p class="hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                             <p class="text-white"><i
                                             class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
@@ -36,7 +36,7 @@
                             $content = html_entity_decode($posts[2]->translate(Session::get('locale'))->description);
                             $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                             ?>
-                            <h2 class=" mobile-h1">{{$posts[2]->translate(Session::get('locale'))->title}}</h2>
+                            <h2 class=" mobile-h1 text-uppercase">{{$posts[2]->translate(Session::get('locale'))->title}}</h2>
                             <p class=" hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
 
                                 <p class="text-black"><i

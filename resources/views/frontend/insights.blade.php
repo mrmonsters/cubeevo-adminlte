@@ -21,12 +21,12 @@ $response = Session::get('response');
 			</div>
 		</div>
 	</div>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
-	<br/>
+	<br class="hidden-xs hidden-sm"/>
+	<br class="hidden-xs hidden-sm"/>
+	<br class="hidden-xs hidden-sm"/>
+	<br class="hidden-xs hidden-sm"/>
+	<br class="hidden-xs hidden-sm"/>
+	<br class="hidden-xs hidden-sm"/>
 	<br/>
 	<div class="row" style="position:relative;padding:15px;">
 		@foreach($posts as $post)

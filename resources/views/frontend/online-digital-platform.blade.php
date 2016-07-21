@@ -118,12 +118,12 @@
 
             <br/>
             <div class="row">
-                <div class="col-sm-7">
+                <div class="col-sm-6">
                     <img src="{{asset('img/Programmer Needs-61.jpg')}}" class="img-full m-t-md">
                     <br/>
                     <br/>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-sm-6">
                     <h2 class="text-lightred">(4) Social Media</h2>
                     <p>People talk about Facebook & YouTube every day to catch up with the latest trend now. People have
                         become so engaged with it that every other minutes to refresh the page to see new feeds. And of
