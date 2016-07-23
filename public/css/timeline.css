@@ -61,17 +61,23 @@ section.capabilities h2.title {
     color: #000;
     text-decoration: none;
 }
-section.capabilities .ico.identity {
-    background-image: url("../img/capacity-identity.svg")
+section.capabilities .ico.step1 {
+    background-image: url("../img/Process_Research.svg")
 }
-section.capabilities .ico.digital {
-    background-image: url("../img/capacity-digital.svg")
+section.capabilities .ico.step2 {
+    background-image: url("../img/Process_Familiarsation.svg")
 }
-section.capabilities .ico.print {
-    background-image: url("../img/capacity-print.svg")
+section.capabilities .ico.step3 {
+    background-image: url("../img/Process_Diagnosis.svg")
 }
-section.capabilities .ico.strategy {
-    background-image: url("../img/capacity-marketing.svg")
+section.capabilities .ico.step4 {
+    background-image: url("../img/Process_Planning.svg")
+}
+section.capabilities .ico.step5 {
+    background-image: url("../img/Process_Execution.svg")
+}
+section.capabilities .ico.step6 {
+    background-image: url("../img/Process_Evaluation.svg")
 }
 .wwdContainer .wwdBarContainer {
     position: relative
@@ -93,11 +99,11 @@ section.capabilities .ico.strategy {
     width: 15px
 }
 .wwdContainer .wwdBarContainer .dots .dot .black {
-    background-image: url("../img/dot-black.png");
+    background-image: url("../img/Dot-Black-01.svg");
     width: 0
 }
 .wwdContainer .wwdBarContainer .dots .dot .white {
-    background-image: url("../img/dot-white.png")
+    background-image: url("../img/Dot-White-01.svg")
 }
 .wwdContainer .wwdBarContainer .wwdBar {
     background: #f0efee;
