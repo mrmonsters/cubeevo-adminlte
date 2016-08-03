@@ -14,6 +14,9 @@
                             good, but we
                             want someone can tear up the box! </p>
                     </div>
+                    <div class="visible-xs text-center" style="width: 100%;position: absolute;bottom: 0px;">
+                        <img src="{{asset('img/Scroll Down Arrow.gif')}}"/>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 height-full no-padder">
