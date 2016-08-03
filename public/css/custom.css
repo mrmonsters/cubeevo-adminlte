@@ -1989,7 +1989,7 @@ hr.whitehr {
     }
 
     h1 {
-        font-size: 26px !important;
+        font-size: 26px;
     }
 
     .fullpage-wrapper h1 {
@@ -2684,4 +2684,67 @@ hr.whitehr {
     .scene.mascott .layer > img {
         width: 100% !important;
     }
+}
+
+.panelwrapper{
+    position:fixed !important;
+    width:100%;
+    height:100%;
+    background-color:#E5E5E5;
+    overflow: auto;
+}
+.panelHeight-3{
+    height:33.3333vh;
+    padding: 20px;
+}
+
+.panelHeight-5{
+    height:50vh;
+    padding: 20px;
+}
+
+.panelHeight-10{
+    height:100vh;
+    padding: 20px;
+}
+
+.panelHeight-full{
+    height:100vh;
+    padding: 20px;
+}
+.panelBody{
+    position: relative;
+    height: 100%;
+}
+.panelBody:hover .panel-title{
+    display: block;
+}
+.panelBody.active .greybox,.panelBody:hover .greybox{
+    opacity: 0.5;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: block;
+}
+.panelBody.active .panel-title{
+    display: block;
+}
+.panelBody .threedot{
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+}
+.panelBody .panel-title,.panelBody.inactive .panel-title{
+    display: none;
+}
+.panelBody .greybox,.panelBody.inactive .greybox{
+    display: none;
+}
+@media (max-width: 767px) {
+    .panelHeight-10, .panelHeight-3{
+        height:50vh
+    }
+
 }

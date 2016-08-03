@@ -268,12 +268,16 @@ class HomeController extends Controller {
 			->orderBy('sort_order')
 			->get();
 
-		if ($projects->count() == 1) {
-
+		$project_count = $projects->count();
+		if ($project_count == 1) {
 			return redirect()->to("credential/project/{$projects->first()->slug}");
+		}else{
+			if($project_count >= 9 ){
+				$project_count=9;
+			}
+			$template_file = 'frontend.project.template-'.$project_count;
 		}
-
-		return view('frontend.project')->with(compact('backbtn', 'projects'));
+		return view($template_file)->with(compact('backbtn', 'projects'));
 	}
 
 	public function getSolution()

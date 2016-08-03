@@ -132,6 +132,17 @@ $(document).ready(function () {
         $('.brandImage').css('height', _viewportHeight);
     }
 
+    $('.js-showtitle-2').click(function () {
+        var _parent = $(this).parent().parent();
+        if (_parent.hasClass('active')) {
+            _parent.removeClass('active');
+            _parent.addClass('inactive');
+        } else {
+            _parent.addClass('active');
+            _parent.removeClass('inactive');
+        }
+    });
+
     $('.js-showtitle').click(function () {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');

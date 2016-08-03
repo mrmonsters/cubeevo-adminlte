@@ -60,7 +60,7 @@ app.controller('HomepageCtrl', function ($scope, $http, $sce) {
             onLeave: function (page, next) {
 
                 $('.js-left-content').removeClass('animated fadeInUp').addClass('animated fadeOutUp');
-                $('.wrapper__home-left .content-wrapper').removeClass('post_0_background').removeClass('leftcontentbackgroundImage_1').removeClass('leftcontentbackgroundImage_2');
+                $('.wrapper__home-left .content-wrapper').removeClass('post_0_background').removeClass('leftcontentbackgroundImage_1').removeClass('leftcontentbackgroundImage_2').removeClass('leftcontentbackgroundImage_3');
 
                 if (next == 1) {
                     $('.leftcontent_topheading').show();
