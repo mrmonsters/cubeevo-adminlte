@@ -2696,16 +2696,19 @@ hr.whitehr {
 .panelHeight-3{
     height:33.3333vh;
     padding: 20px;
+    cursor: pointer;
 }
 
 .panelHeight-5{
     height:50vh;
     padding: 20px;
+    cursor: pointer;
 }
 
 .panelHeight-10{
     height:100vh;
     padding: 20px;
+    cursor: pointer;
 }
 
 .panelHeight-full{
