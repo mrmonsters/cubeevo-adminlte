@@ -2660,6 +2660,17 @@ hr.whitehr {
 }
 
 @media (min-width: 500px) and (max-width: 892px) {
+    .careers .bg-wrapper .content-wrapper__bg-1{
+        background-color: rgba(39, 189, 190, 0.8);
+    }
+    .careers .left-content{
+        margin-top: -70%;
+    }
+
+    .careers .bg-wrapper .content-wrapper__bg-2 {
+        background-color: rgba(247, 148, 26, 0.8);
+    }
+
     .service-icon {
         width: 100%;
         margin-top: 0;
@@ -2674,8 +2685,9 @@ hr.whitehr {
     }
     .icon-button{
         background: url(../img/Programmer-Needs-24.svg) no-repeat -5px -1px;
-        width: 275px;
-        height: 69px
+        width: 236px;
+        height: 58px;
+        background-size: cover;
     }
     .scene.mascott {
         left: 0px;
@@ -2683,6 +2695,10 @@ hr.whitehr {
 
     .scene.mascott .layer > img {
         width: 100% !important;
+    }
+    .careers .left-content-wrapper {
+        background-size: auto 37%;
+        background-position: 81% 100%;
     }
 }
 

@@ -6,7 +6,7 @@
         <div class="height-full">
             <div class="col-sm-6 no-padder height-full left-content-wrapper vcenter">
                 <div class="row">
-                    <div class="col-sm-6 col-sm-push-4 left-content">
+                    <div class="col-sm-8 col-lg-6 col-sm-push-2 col-lg-push-4 left-content">
                         <h2 class="text-orange">Be Part of the Team</h2>
                         <p>Working here is fun, the team members are friendly and helpful! Apart from work, we are
                             generally relaxed

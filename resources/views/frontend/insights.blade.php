@@ -17,7 +17,7 @@
             margin-bottom: 15px;
         }
     </style>
-    <div class="container-fluid insight">
+    <div class="container-fluid insight" style="min-height: 100%;">
         <div class="row" style="position:relative;">
             <div class="col-sm-10 col-sm-offset-2">
                 <div>
@@ -54,35 +54,6 @@
                     </div>
                 </div>
             @endforeach
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
         </div>
 
     </div>
