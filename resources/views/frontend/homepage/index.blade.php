@@ -31,7 +31,7 @@
                         <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120"/>
                     </a>
                     <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick=""
-                       style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;" target="_blank">
+                       style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;cursor: pointer;" target="_blank">
                         <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120"/>
                     </a>
                 </div>
