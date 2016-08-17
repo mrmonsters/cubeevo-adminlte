@@ -2,7 +2,7 @@
 
 @section('frontend-content')
     <div class="container-fluid">
-        <div class="row">
+        <div class="row js-detect-mouse-move">
             @if (isset($solutions) && !$solutions->isEmpty())
                 @foreach ($solutions as $solution)
                     <div class="col-sm-4 panelHeight-3"

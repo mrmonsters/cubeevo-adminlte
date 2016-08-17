@@ -201,4 +201,18 @@ $(document).ready(function () {
         prevArrow: '<div class="bg-orange slick-prev-wrapper smart-object"><div class="arrow-left arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
         nextArrow: '<div class="bg-orange slick-next-wrapper smart-object"><div class="arrow-right arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
     });
+
+    if ($('.js-detect-mouse-move').length > 0) {
+        var movementStrength = 25;
+        var height = movementStrength / $(window).height();
+        var width = movementStrength / $(window).width();
+
+        $('.js-detect-mouse-move').mousemove(function (e) { 
+            var pageX = e.pageX - ($(window).width() / 2);
+            var pageY = e.pageY - ($(window).height() / 2);
+            var newvalueX = width * pageX * -1 - 25;
+            var newvalueY = height * pageY * -1 - 50;
+            $('.panelHeight-3').css('background-position', newvalueX + 'px ' + newvalueY + 'px');
+        });
+    }
 });
