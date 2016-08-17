@@ -115,7 +115,7 @@
                     <h2>Motion Graphic video</h2>
                     <p>Explain with info graphics & simple character, suitable for corporate profile & product
                         introduction purpose. </p>
-                    <p>For live preview, please click <a href="#" class="text-blue">here</a>.</p>
+                    <p>For live preview, please click  <a href="https://www.youtube.com/embed/fQDZQKvRVwM" class="text-blue js-show-video js-show-video-3" data-target="#mediaModal1" data-toggle="modal" >here</a>.</p>
                 </div>
             </div>
             <br/>
@@ -167,6 +167,10 @@
         </div>
     </div>
 
+    <div class="content-3 hide">
+        <iframe allowfullscreen="" frameborder="0" height="400px"
+                src="https://www.youtube.com/embed/fQDZQKvRVwM" width="100%"></iframe>
+    </div>
     <div class="content-2 hide">
         <iframe allowfullscreen="" frameborder="0" height="400px"
                 src="https://www.youtube.com/embed/zDZFcDGpL4U" width="100%"></iframe>

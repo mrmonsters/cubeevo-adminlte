@@ -188,6 +188,9 @@ $(document).ready(function () {
     $('.js-show-video-2').click(function () {
         $('.modal-body').html($('.content-2').html());
     });
+    $('.js-show-video-3').click(function () {
+        $('.modal-body').html($('.content-3').html());
+    });
 
     $('.modal-header,.modal-dialog').click(function () {
         $('.modal').modal('hide');

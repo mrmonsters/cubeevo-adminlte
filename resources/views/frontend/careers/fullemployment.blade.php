@@ -4,7 +4,7 @@
     <div class="container-fluid outerwrapper">
         <div class="row" style="position:relative;">
             <div class="col-sm-8 col-sm-offset-2">
-                <h1 class="padder-xxl">{{ (Session::get('locale') == 'en') ? 'For Full Employment' : 'For Full Employment' }}
+                <h1 class="padder-xxl">{{ (Session::get('locale') == 'en') ? 'FOR FULL EMPLOYMENT' : '全职工作' }}
                 </h1>
                 <div class="fullemployemnt-line"></div>
             </div>

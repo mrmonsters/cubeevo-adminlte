@@ -1244,7 +1244,7 @@ hr.whitehr {
 }
 
 .internship-qna-label {
-    position: absolute;
+    position: absolute !important;
     width: 185px;
 }
 

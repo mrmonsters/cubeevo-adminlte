@@ -27,11 +27,12 @@
             <div class="leftcontent_desc">
                 <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
-                    <a class="visible-xs" data-target="#homevideo" data-toggle="modal"><i
-                                class="icon-video-play-link"></i></a>
+                    <a class="visible-xs" data-target="#homevideo" data-toggle="modal">
+                        <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120"/>
+                    </a>
                     <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick=""
                        style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;" target="_blank">
-                        <i class="icon-video"></i>
+                        <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120"/>
                     </a>
                 </div>
             </div>
