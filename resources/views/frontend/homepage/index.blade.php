@@ -32,7 +32,7 @@
                     </a>
                     <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick=""
                        style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;cursor: pointer;" target="_blank">
-                        <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120"/>
+                        <img src="{{asset('/img/2016.0804_Cubeevo_Website_Rocket_2.gif')}}" width="120" title="Click to Watch Video"/>
                     </a>
                 </div>
             </div>
@@ -94,7 +94,7 @@
         </div>
     </div>
 
-    <div ng-controller="HomepageCtrl" class="home newlanding">
+    <div ng-controller="HomepageCtrl" class="home newlanding" style="height: 100%;">
         <div class="wrapper wrapper__home wrapper__home-left col-xs-6">
             <div class="content-wrapper no-margin">
                 <div class="insight-bg"></div>
@@ -104,8 +104,8 @@
                 </div>
             </div>
         </div>
-        <div full-page options="mainOptions" class="home__background">
-            <div class="section moveOut" id="section0" style="background-image: none;">
+        <div full-page options="mainOptions" class="home__background" style="height: 100%;">
+            <div class="section moveOut" id="section0" style="background-image: none;height: 100%;">
                 @include('frontend.homepage.section.home')
             </div>
 
