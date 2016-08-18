@@ -13,9 +13,9 @@
                             because we believe great ideas creep in when our mind is free! Thinking outside the box is
                             good, but we
                             want someone can tear up the box! </p>
-                    </div>
-                    <div class="visible-xs text-center" style="width: 100%;position: absolute;bottom: 0px;">
-                        <img src="{{asset('img/Scroll Down Arrow.gif')}}"/>
+                        <div class="visible-xs" style="width: 100%;">
+                            <img src="{{asset('img/Scroll Down Arrow.gif')}}"/>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
                                     <div class="col-xs-12 col-sm-11 col-md-7 content-wrapper__content vcenter vcenter-mobile visible-xs">
                                         <div class="vcenter vcenter-mobile">
                                             <div>
-                                            <h2 class="text-white">Full Employment</h2>
+                                            <h2 class="text-white">FULL EMPLOYMENT</h2>
                                             <p class="text-white hidden-xs">You are great, talented and passionate about your work?
                                                 Convince
                                                 me by showing your enthusiasm and commitment to contribute to our team.
@@ -82,7 +82,7 @@
 
                                     <div class="col-xs-12 col-sm-11 col-md-7 content-wrapper__content hidden-xs">
                                             <div>
-                                                <h2 class="text-white">Full Employment</h2>
+                                                <h2 class="text-white">FULL EMPLOYMENT</h2>
                                                 <p class="text-white hidden-xs">You are great, talented and passionate about your work?
                                                     Convince
                                                     me by showing your enthusiasm and commitment to contribute to our team.

@@ -80,7 +80,8 @@ section.capabilities .ico.step6 {
     background-image: url("../img/Process_Evaluation.svg")
 }
 .wwdContainer .wwdBarContainer {
-    position: relative
+    position: relative;
+    left: -13px;
 }
 .wwdContainer .wwdBarContainer .dots {
     position: relative
