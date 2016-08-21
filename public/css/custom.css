@@ -1632,6 +1632,7 @@ hr.whitehr {
     height: 72px;
     left: 50%;
     bottom: 20px;
+    margin-left: 20px;
 }
 
 .arrows path {

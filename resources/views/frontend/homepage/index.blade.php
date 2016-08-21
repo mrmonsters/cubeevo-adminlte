@@ -60,7 +60,7 @@
         @endforeach
 
         @if ($posts->count() > 0)
-            <div class="hidden-section-5">
+            <div class="hidden-section-6">
                 <a href="{{url('/insights/detail/'.$posts[0]->slug)}}">
                     <div class="leftcontent_desc">
                         <?php
@@ -77,7 +77,7 @@
             </div>
         @endif
 
-        <div class="hidden-section-6">
+        <div class="hidden-section-7">
             <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED !</h1>
             <div class="leftcontent_desc">
                 <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands. We have
