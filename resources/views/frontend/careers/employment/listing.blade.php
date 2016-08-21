@@ -1,7 +1,7 @@
 <div class="col-xs-12">
     <div class="row">
         <div class="col-sm-push-3 col-md-6 m-b-md col-md-push-1 col-xs-10">
-            <p>CLIENT SERVICE & SALES EXECUTIVE </p>
+            <h4>CLIENT SERVICE & SALES EXECUTIVE </h4>
             <ul class="padder">
                 <li>Good understanding in advertising industries.</li>
                 <li>Able to work closely with client and creative team.</li>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="col-sm-push-3 col-md-6 m-b-md col-md-push-1 col-xs-10">
-            <p>CLIENT SERVICE & SALES EXECUTIVE </p>
+            <h4>CLIENT SERVICE & SALES EXECUTIVE </h4>
             <ul class="padder">
                 <li>Good understanding in advertising industries.</li>
                 <li>Able to work closely with client and creative team.</li>

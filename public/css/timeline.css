@@ -51,8 +51,8 @@ section.capabilities h2.title {
     background-repeat: no-repeat;
     background-size: 100%;
     display: inline-block;
-    height: 91px;
-    width: 80px;
+    height: auto;
+    width: 110px;
     margin-left: -50px;
     text-align: center;
     font-size: 10px;
@@ -81,7 +81,6 @@ section.capabilities .ico.step6 {
 }
 .wwdContainer .wwdBarContainer {
     position: relative;
-    left: -13px;
 }
 .wwdContainer .wwdBarContainer .dots {
     position: relative
