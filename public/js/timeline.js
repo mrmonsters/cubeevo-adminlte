@@ -41,7 +41,7 @@ var wwdFullT = 0;
 
 function wwdStart(auto) {
     var width = parseInt($(".wwdContainer .wwdBar").width(), 10);
-    var t = width * 10;
+    var t = width * 25;
     wwdFullT = t;
     var delay = (auto == !0) ? 4000 : 0;
     delay = 0;
