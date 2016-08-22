@@ -32,7 +32,7 @@
                     </a>
                     <a class="hidden-xs" data-target="#homevideo" data-toggle="modal" onclick=""
                        style="z-index:999;display:block;padding-top:15px;padding-bottom: 9px;cursor: pointer;" target="_blank">
-                        <img src="{{asset('/img/Rocket_Tablet_Desktop.gif')}}" width="100%" title="Click to Watch Video" style="border:1px solid #000;max-width: 450px"/>
+                        <img src="{{asset('/img/Rocket_Tablet_Desktop.gif')}}" width="86%" title="Click to Watch Video" style="border:1px solid #000;max-width: 450px"/>
                     </a>
                 </div>
             </div>
