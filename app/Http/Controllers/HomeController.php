@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\JobReviewer;
+use Illuminate\Support\Facades\App;
 use URL;
 use Session;
 use Redirect;
@@ -39,6 +40,8 @@ class HomeController extends Controller {
 		{
 			Session::set('locale', 'en');
 		}
+
+		App::setLocale(Session::get('locale'));
 
 		return parent::__construct();
 	}
@@ -219,14 +222,14 @@ class HomeController extends Controller {
 
 	public function getCareers()
 	{
-		$meta_title = 'Be Part of The Team';
+		$meta_title   = 'Be Part of The Team';
 		$meta_keyword = 'Be Part of The Team';
-		$meta_desc = 'Be Part of The Team';
+		$meta_desc    = 'Be Part of The Team';
 
 		return view('frontend.careers.index')->with([
-			'meta_title'=> $meta_title,
-			'meta_keyword'=> $meta_keyword,
-			'meta_desc'=> $meta_desc
+			'meta_title'   => $meta_title,
+			'meta_keyword' => $meta_keyword,
+			'meta_desc'    => $meta_desc,
 		]);
 	}
 
@@ -236,9 +239,10 @@ class HomeController extends Controller {
 		$meta_keyword = 'Internship';
 		$meta_desc    = 'Internship';
 		$reviewers    = JobReviewer::Intern()->get()->sortBy('date');
+		$jobs         = JobBlock::Intern()->get()->where('delete', '=', 0)->sortByDesc('sort_order');
 		$backbtn      = url('join-the-team');
 
-		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers','backbtn'));
+		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers', 'jobs', 'backbtn'));
 	}
 
 	public function getFullemployment()
@@ -247,9 +251,10 @@ class HomeController extends Controller {
 		$meta_keyword = 'Full Employment';
 		$meta_desc    = 'Full Employment';
 		$reviewers    = JobReviewer::Fulltime()->get();
-        $backbtn      = url('join-the-team');
+		$jobs         = JobBlock::Fulltime()->get()->where('delete', '=', 0)->sortByDesc('sort_order');
+		$backbtn      = url('join-the-team');
 
-		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers','backbtn'));
+		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers', 'jobs', 'backbtn'));
 	}
 
 	public function getCredentialProject($slug)

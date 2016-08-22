@@ -60,7 +60,10 @@ class JobController extends Controller {
 
 		if (isset($data))
 		{
-			$job        = JobBlock::create(array('sort_order' => $data['sort_order']));
+			$job        = JobBlock::create(array(
+				'type'       => $data['type'],
+				'sort_order' => $data['sort_order'],
+			));
 			$jobData    = array();
 			$attributes = array('title', 'desc', 'qualification');
 			$locales    = Locale::where('status', '=', Status::ACTIVE)->get();
@@ -141,6 +144,7 @@ class JobController extends Controller {
 		if (isset($data) && $job->id)
 		{
 			$job->sort_order = $data['sort_order'];
+			$job->type       = $data['type'];
 			$job->save();
 
 			$jobData    = array();

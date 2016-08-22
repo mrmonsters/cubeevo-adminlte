@@ -1,43 +1,31 @@
 <div class="col-xs-12 m-t-xxl">
-    <div class="row">
-        <div class="col-sm-push-3 col-md-6 col-md-push-1 m-b-md col-xs-push-1 col-xs-10">
-            <h4>CLIENT SERVICE & SALES EXECUTIVE </h4>
-            <ul class="padder">
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-            </ul>
-            <div class="visible-xs visible-sm m-t-lg">
-                <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
-            </div>
+    @if ($jobs->count() > 0)
+        <div class="row">
+            @foreach ($jobs as $index => $job)
+                <div class="col-sm-push-3 col-md-6 col-md-push-1 m-b-md col-xs-push-1 col-xs-10">
+                    <h4>{{ strtoupper($job->title) }} </h4>
+                    <?php echo html_entity_decode($job->qualification); ?>
+                    {{--<ul class="padder">--}}
+                        {{--<li>Good understanding in advertising industries.</li>--}}
+                        {{--<li>Able to work closely with client and creative team.</li>--}}
+                        {{--<li>Good understanding in advertising industries.</li>--}}
+                        {{--<li>Able to work closely with client and creative team.</li>--}}
+                        {{--<li>Good understanding in advertising industries.</li>--}}
+                        {{--<li>Able to work closely with client and creative team.</li>--}}
+                        {{--<li>Good understanding in advertising industries.</li>--}}
+                    {{--</ul>--}}
+                    <div class="visible-xs visible-sm m-t-lg">
+                        <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
+                    </div>
+                </div>
+            @endforeach
+            @foreach ($jobs as $index => $job)
+                <div class="col-sm-6 m-b-md col-xs-push-1 col-xs-10 m-b-xxl hidden-xs hidden-sm">
+                    <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
+                </div>
+            @endforeach
         </div>
-        <div class="col-sm-push-3 col-md-6 m-b-md col-md-push-1  col-xs-push-1 col-xs-10">
-            <h4>CLIENT SERVICE & SALES EXECUTIVE </h4>
-            <ul class="padder">
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-                <li>Good understanding in advertising industries.</li>
-                <li>Able to work closely with client and creative team.</li>
-            </ul>
-            <div class="visible-xs visible-sm m-t-lg">
-                <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
-            </div>
-        </div>
-        <div class="col-sm-6 m-b-md col-xs-push-1 col-xs-10 m-b-xxl hidden-xs hidden-sm">
-            <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
-        </div>
-        <div class="col-sm-6 m-b-md col-xs-push-1 col-xs-10 m-b-xxl hidden-xs hidden-sm">
-            <a href="mailto:career@cubeevo.com" class="btn btn-orange__apply m-b-xxl">Apply</a>
-        </div>
-    </div>
+    @else
+        <p class="text-center">There is no internship available.</p>
+    @endif
 </div>

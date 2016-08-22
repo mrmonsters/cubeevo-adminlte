@@ -62,6 +62,13 @@ Description for job management
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="type" class="control-label">Type</label>
+						<select id="type" name="type" class="form-control">
+							<option value="1">Intern</option>
+							<option value="2" selected>Full Time</option>
+						</select>
+					</div>
+					<div class="form-group">
 						<label for="sort_order" class="control-label">Sort Order</label>
 						<input id="sort_order" name ="sort_order" type="text" class="form-control" />
 					</div>

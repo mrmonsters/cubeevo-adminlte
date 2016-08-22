@@ -75,9 +75,9 @@ class HomeComposer {
 	public function compose(View $view)
 	{
 		$posts    = $this->_getAllActivePosts(3);
-		$projects = $this->_getAllActiveProjects(3);
+		$projects = $this->_getAllActiveProjects(4);
 		$char_count = (\Session::get('locale') == 'en')?120:50; 
-
+//dd($projects);
 		return $view->with(compact('posts', 'projects','char_count'));
 	}
 

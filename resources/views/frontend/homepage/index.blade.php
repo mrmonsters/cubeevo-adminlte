@@ -38,9 +38,8 @@
             </div>
         </div>
 
-        <?php $counter = 2;?>
-        @foreach($projects as $project)
-            <div class="hidden-section-{{$counter}}">
+        @foreach($projects as $index => $project)
+            <div class="hidden-section-{{ $index + 2 }}">
                 <a href="{{url('/credential/project/'.$project->slug)}}">
                     <div class="leftcontent_client">
                         <p class="text-white">Client<span class="bottom-line"></span></p>
@@ -56,7 +55,6 @@
                     </div>
                 </a>
             </div>
-            <?php $counter++;?>
         @endforeach
 
         @if ($posts->count() > 0)
