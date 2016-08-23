@@ -2301,6 +2301,9 @@ hr.whitehr {
 }
 
 @media (min-width: 992px) {
+    .jobs .job ul{
+        min-height: 270px;
+    }
     .wwdContainer {
         padding: 0 50px;
     }
