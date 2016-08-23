@@ -239,7 +239,7 @@ class HomeController extends Controller {
 		$meta_keyword = 'Internship';
 		$meta_desc    = 'Internship';
 		$reviewers    = JobReviewer::Intern()->get()->sortBy('date');
-		$jobs         = JobBlock::Intern()->where('delete', '=', 0)->get()->sortByDesc('sort_order');
+		$jobs         = JobBlock::Intern()->where('delete', '=', 0)->get()->sortBy('sort_order');
 		$backbtn      = url('join-the-team');
 
 		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers', 'jobs', 'backbtn'));
@@ -251,7 +251,7 @@ class HomeController extends Controller {
 		$meta_keyword = 'Full Employment';
 		$meta_desc    = 'Full Employment';
 		$reviewers    = JobReviewer::Fulltime()->get();
-		$jobs         = JobBlock::Fulltime()->where('delete', '=', 0)->get()->sortByDesc('sort_order');
+		$jobs         = JobBlock::Fulltime()->where('delete', '=', 0)->get()->sortBy('sort_order');
 		$backbtn      = url('join-the-team');
 
 		return view('frontend.careers.fullemployment')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers', 'jobs', 'backbtn'));

@@ -2,7 +2,7 @@
     @if ($jobs->count() > 0)
         <div class="row">
             @foreach ($jobs as $index => $job)
-                <div class="col-sm-push-3 col-md-6 m-b-md col-md-push-1 col-xs-10">
+                <div class="col-sm-push-2 col-md-5 col-md-push-1 col-lg-6 col-lg-push-1 m-b-md col-xs-push-1 col-xs-10 col-sm-8">
                     <h4>{{ strtoupper($job->title) }} </h4>
                     <?php echo html_entity_decode($job->qualification); ?>
                     <div class="m-t-lg">
