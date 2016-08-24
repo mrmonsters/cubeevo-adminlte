@@ -118,9 +118,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 panelHeight-3 background-8 hidden-xs" style="background-color: #C5C4C4;">
-            </div>
-            <div class="col-sm-4 panelHeight-3 background-9 hidden-xs" style="background-color: #A9A6A6;">
+            <div class="col-sm-8 panelHeight-3 background-8 hidden-xs" style="background-color: #C5C4C4;">
+                <div class="panelBody" style="background-color: #404b54">
+                    <div class="" style="position: absolute;bottom: 5px;left: 20px;">
+                        @if(Session::get('locale') == 'en')
+                            <h4 class="text-white">We have proven our worthiness.<br/>Work with us.<br/>Together we shall create masterpieces.</h4>
+                            <p class="text-white" style="padding:0px 0px 10px 0px;display:block;">Please Contact</p>
+                        @else
+                            <h4 class="text-white">希望这些作品能提高您对我们的信心<br/>更多的精彩作品，只待您跟我们一同完成，<br/>欢迎前来咨询</h4>
+                            <p class="text-white" style="padding:0px 0px 10px 0px;display:block;">请联络</p>
+                        @endif
+                        <ul class="list-unstyled list-with-icon">
+                            <li><i class="icon phone phone-white"></i><a href="tel:+60390109882" class="text-orange" style="padding-left:25px;">+603 9010 9882</a></li>
+                            <li><i class="icon mail mail-white"></i><a href="mailto:enquire@cubeevo.com" class="text-orange" style="padding-left:25px;">enquire@cubeevo.com</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
