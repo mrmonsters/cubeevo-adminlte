@@ -157,7 +157,9 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
     </div>
     <div class="container-fluid cre">
         <div class="row">
+            <?php $counter = 0;?>
             @foreach ($similarProjects as $project)
+                @if($counter < 2)
                 <div id='cre-box__0' class="js-three-d cre-box col-sm-6 col-lg-6"
                      style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
                     <div class="contbox">
@@ -188,6 +190,8 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                         </div>
                     </div>
                 </div>
+                    <?php $counter++;?>
+                    @endif
             @endforeach
         </div>
     </div>
