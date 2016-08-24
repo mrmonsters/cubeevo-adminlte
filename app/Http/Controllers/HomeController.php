@@ -193,30 +193,43 @@ class HomeController extends Controller {
 			->where('status', Status::ACTIVE)
 			->where('id', '!=', $project->id)
 			->get();
-		$nextCategory    = Category::where('status', '=', Status::ACTIVE)
+		$categories    = Category::where('status', '=', Status::ACTIVE)
 			->where('delete', false)
 			->where('id', '!=', $project->category->id)
 			->where('sort_order', '>=', $project->category->sort_order)
 			->orderBy('sort_order')
-			->first();
+			->take(2)
+			->get();
 
-		if (is_null($nextCategory) || !$nextCategory instanceof Category) {
+		$this->_pushCategoryProjectsToCollection($similarProjects, $categories); // first attempt
 
-			$nextCategory = Category::where('status', '=', Status::ACTIVE)
+		if ($similarProjects->count() < 2) {
+
+			$categories = Category::where('status', '=', Status::ACTIVE)
 				->where('delete', false)
+				->where('id', '!=', $project->category->id)
 				->orderBy('sort_order')
-				->first();
-		}
+				->take(2)
+				->get();
 
-		foreach ($nextCategory->projects as $item) {
-
-			if ($similarProjects->count() < 2) {
-
-				$similarProjects->push($item);
-			}
+			$this->_pushCategoryProjectsToCollection($similarProjects, $categories); // second attempt
 		}
 
 		return view('frontend.project_content')->with(compact('project', 'backbtn', 'similarProjects'));
+	}
+
+	protected function _pushCategoryProjectsToCollection(&$collection, $categories) {
+
+		foreach ($categories as $category) {
+
+			foreach ($category->projects as $item) {
+
+				if ($collection->count() < 2) {
+
+					$collection->push($item);
+				}
+			}
+		}
 	}
 
 	public function getHomepage()
