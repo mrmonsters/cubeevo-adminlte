@@ -222,7 +222,7 @@ class HomeController extends Controller {
 
 		foreach ($categories as $category) {
 
-			foreach ($category->projects as $item) {
+			foreach ($category->activeProjects as $item) {
 
 				if ($collection->count() < 2) {
 
