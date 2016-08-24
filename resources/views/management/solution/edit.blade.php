@@ -71,6 +71,10 @@ Description for solution management
 						</div>
 					</div>
 					<div class="form-group">
+						<label for="link" class="control-label">Link</label>
+						<input id="link" name ="link" type="text" class="form-control" value="{{ $solution->link }}" />
+					</div>
+					<div class="form-group">
 						<label for="sort_order" class="control-label">Sort Order</label>
 						<input id="sort_order" name ="sort_order" type="text" class="form-control" value="{{ $solution->sort_order }}" />
 					</div>
@@ -82,7 +86,7 @@ Description for solution management
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img">Upload New</a>
 										</div>
 										<div class="col-xs-6">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')">Use Existing</a>
@@ -99,8 +103,8 @@ Description for solution management
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
 										<div class="col-xs-6">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a> 
-									
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img">Upload New</a>
+
 										</div>
 										<div class="col-xs-6">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')">Use Existing</a>

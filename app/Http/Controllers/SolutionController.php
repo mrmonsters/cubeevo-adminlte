@@ -24,7 +24,7 @@ class SolutionController extends Controller {
 	{
 		$this->middleware('auth');
 	}
-	
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -86,6 +86,7 @@ class SolutionController extends Controller {
 			}
 
 			$solution->pri_color_code = $data['pri_color_code'];
+			$solution->link = $data['link'];
 			$solution->sort_order     = $data['sort_order'];
 			$solution->save();
 
@@ -112,7 +113,7 @@ class SolutionController extends Controller {
 			$response['code'] = STATUS::SUCCESS;
 			$response['msg']  = "Solution [#".$solution->id."] has been created successfully.";
 
-			return Redirect::to('admin/manage/solution')->with('response', $response);			
+			return Redirect::to('admin/manage/solution')->with('response', $response);
 		}
 
 		$response['code'] = STATUS::ERROR;
@@ -184,6 +185,7 @@ class SolutionController extends Controller {
 			}
 
 			$solution->pri_color_code = $data['pri_color_code'];
+			$solution->link = $data['link'];
 			$solution->sort_order     = $data['sort_order'];
 			$solution->save();
 
@@ -269,7 +271,7 @@ class SolutionController extends Controller {
 	{
 		//
 		$response = array();
-		$solution = Solution::find($id); 
+		$solution = Solution::find($id);
 
 		if (isset($solution) && isset($solution->id))
 		{

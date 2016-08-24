@@ -9,7 +9,8 @@
                          style="background: <?php echo $solution->pri_color_code ;?> url('{{$solution->backgroundImage->dir}}');background-repeat: no-repeat;background-size:cover;background-position:center center;">
                         <div class="panelBody vcenter" style="position: relative">
                             <div class="greybox"></div>
-                            <div class="text-center text-white panel-title" style="padding:5% 10%;">
+                            <div class="text-center text-white panel-title" style="padding:5% 10%;"
+                                 onClick="location.href='{{ ($solution->link)?url($solution->link):'#' }}';">
                                 <h1 class="h4">
                                     {{ $solution->translate(Session::get('locale'))->name }}
                                 </h1>

@@ -11,7 +11,7 @@ class Solution extends Model implements TranslatableContract {
 
 	protected $table                = 'solutions';
 	protected $primaryKey           = 'id';
-	protected $fillable             = ['name', 'desc', 'grid_img_id', 'grid_bg_img_id', 'pri_color_code', 'sort_order', 'status'];
+	protected $fillable             = ['link','name', 'desc', 'grid_img_id', 'grid_bg_img_id', 'pri_color_code', 'sort_order', 'status'];
 	protected $translator           = 'App\Models\SolutionTranslation';
 	protected $translatedAttributes = ['name', 'desc'];
 
