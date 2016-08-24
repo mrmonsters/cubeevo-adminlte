@@ -2,6 +2,7 @@
     <style>
         .post_0_background {
             background: url('{{$posts[0]->coverImage->dir}}') !important;
+            background-size: cover !important;
         };
     </style>
 

@@ -2792,6 +2792,7 @@ hr.whitehr {
 }
 .panelBody.active .greybox,.panelBody:hover .greybox{
     opacity: 0.5;
+    top:0;
     background-color: #000;
     width: 100%;
     height: 100%;
