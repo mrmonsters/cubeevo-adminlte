@@ -176,7 +176,12 @@ class HomeController extends Controller {
 			return redirect()->to('/');
 		}
 
-		if ($project->category->projects->count() < 2) {
+		$count = $project->category
+			->projects()
+			->where('status', '=', 2)
+			->count();
+
+		if ($count < 2) {
 
 			$backbtn = url('/credential');
 		} else {
