@@ -176,7 +176,14 @@ class HomeController extends Controller {
 			return redirect()->to('/');
 		}
 
-		$backbtn         = url('/credential/' . $project->category->slug);
+		if ($project->category->projects->count() < 2) {
+
+			$backbtn = url('/credential');
+		} else {
+
+			$backbtn = url('/credential/' . $project->category->slug);
+		}
+
 		$similarProjects = $project->category->projects()
 			->where('status', Status::ACTIVE)
 			->where('id', '!=', $project->id)
@@ -264,24 +271,29 @@ class HomeController extends Controller {
 			return redirect()->to('/credential/');
 		}
 
-		$backbtn  = URL::action('HomeController@getCredential');
-		$projects = Category::where('slug', '=', $slug)
+		$backbtn       = URL::action('HomeController@getCredential');
+		$projects      = Category::where('slug', '=', $slug)
 			->first()
 			->projects()
 			->where('status', Status::ACTIVE)
 			->where('delete', false)
 			->orderBy('sort_order')
 			->get();
-
 		$project_count = $projects->count();
+
 		if ($project_count == 1) {
+
 			return redirect()->to("credential/project/{$projects->first()->slug}");
-		}else{
-			if($project_count >= 9 ){
-				$project_count=9;
+		} else {
+
+			if ($project_count >= 9) {
+
+				$project_count = 9;
 			}
-			$template_file = 'frontend.project.template-'.$project_count;
+
+			$template_file = 'frontend.project.template-' . $project_count;
 		}
+
 		return view($template_file)->with(compact('backbtn', 'projects'));
 	}
 
