@@ -28,6 +28,7 @@ class IndexController extends ApiController {
 				$result[$item->id] = [
 					'id'            => $item->id,
 					'name'          => $item->name,
+					'status'          => $item->status,
 					'qualification' => $item->qualification,
 					'date'          => $item->date,
 					'created_at'    => $item->created_at,
@@ -189,7 +190,7 @@ class IndexController extends ApiController {
 
 			return response()->json($this->transform($this->_format($item)));
 		}
-		
+
 		return response()->json('Reviewer not found.', 422);
 	}
 

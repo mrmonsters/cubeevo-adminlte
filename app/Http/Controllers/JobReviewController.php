@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\JobReviewer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\Status;
+use Redirect;
 
 class JobReviewController extends Controller {
 
@@ -102,6 +104,64 @@ class JobReviewController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setInactive($id)
+	{
+		//
+		$response = array();
+		$job      = $this->_reviewer->find($id);
+
+		if (isset($job) && isset($job->id))
+		{
+			$job->status = Status::INACTIVE;
+			$job->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Job Review [#".$job->id."] is deactivated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Job review not found.";
+		}
+
+		return Redirect::to('admin/manage/job-review')->with('response', $response);
+	}
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function setActive($id)
+	{
+		//
+		$response = array();
+		$job      = $this->_reviewer->find($id);
+
+		if (isset($job) && isset($job->id))
+		{
+			$job->status = Status::ACTIVE;
+			$job->save();
+
+			$response['code'] = Status::SUCCESS;
+			$response['msg']  = "Job review [#".$job->id."] is activated successfully.";
+		}
+		else
+		{
+			$response['code'] = Status::ERROR;
+			$response['msg']  = "Job review not found.";
+		}
+
+		return Redirect::to('admin/manage/job-review')->with('response', $response);
 	}
 
 }
