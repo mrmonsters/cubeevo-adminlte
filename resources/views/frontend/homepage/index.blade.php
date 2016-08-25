@@ -22,10 +22,10 @@
     <div class="hide">
 
         <div class="hidden-section-1">
-            <h4 class="leftcontent_topheading">Ever Evolving CUBEevo<span class="bottom-line-grey"></span></h4>
-            <h1 class="h2 leftcontent_heading mobile-h1">An Advertising Agency <br/> in Malaysia and Singapore.</h1>
+            <h4 class="leftcontent_topheading">{{ (Session::get('locale') == 'en') ? 'Ever Evolving CUBEevo' : '创意从未歇息的形立方' }}<span class="bottom-line-grey"></span></h4>
+            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An Advertising Agency <br/> in Malaysia and Singapore.' : '一家横跨马来西亚与新加坡两地的广告公司。' !!}</h1>
             <div class="leftcontent_desc">
-                <p>Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.</p>
+                <p>{{ (Session::get('locale') == 'en') ? 'Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.' : '务求为您打造无限商机的品牌形象。' }}</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
                     <a class="visible-xs" data-target="#homevideo" data-toggle="modal">
                         <img src="{{asset('/img/Rocket_Mobile.gif')}}" width="120" style="border:1px solid #000;"/>
@@ -42,7 +42,7 @@
             <div class="hidden-section-{{ $index + 2 }}">
                 <a href="{{url('/credential/project/'.$project->slug)}}">
                     <div class="leftcontent_client">
-                        <p class="text-white">Client<span class="bottom-line"></span></p>
+                        <p class="text-white">{!!  (Session::get('locale') == 'en') ? 'Client' : '客户' !!}<span class="bottom-line"></span></p>
                         <h4 class="leftcontent_client_name text-white">{{strtoupper($project->translate(\Session::get("locale"))->client_name)}}</h4>
                     </div>
                     <h1 class="h2 leftcontent_heading text-white mobile-h1">{{(\Session::get('locale') == 'en') ? mb_strtoupper($project->translate(Session::get('locale'))->name) : $project->translate(\Session::get('locale'))->name}}</h1>
@@ -51,7 +51,7 @@
                             ...</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                    class="hidden-xs">See More</span></p>
+                                    class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'See More' : '详情' !!}</span></p>
                     </div>
                 </a>
             </div>
@@ -69,25 +69,25 @@
                         <p class="text-white hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                    class="hidden-xs">See More</span></p>
+                                    class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'See More' : '详情' !!}</span></p>
                     </div>
                 </a>
             </div>
         @endif
 
         <div class="hidden-section-7">
-            <h1 class="h2 leftcontent_heading mobile-h1">LET'S GET STARTED !</h1>
+            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'LET\'S GET STARTED !' : '就是现在！' !!}</h1>
             <div class="leftcontent_desc">
-                <p>There are infinite possibilities that you can transform <br class="visible-lg"/>your brands. We have
-                    our Thinking Caps to help you.</p>
-                <p>So, are you ready to transform?</p>
+                <p>{!!  (Session::get('locale') == 'en') ? 'There are infinite possibilities that you can transform <br class="visible-lg"/>your brands. We have
+                    our Thinking Caps to help you.' : '眼下各个企业用着各类方案打造品牌，我们非常乐意凭着别树一格的思路创意助你一臂之力。' !!}</p>
+                <p>{!!  (Session::get('locale') == 'en') ? 'So, are you ready to transform?' : '您是否愿意踏上这条转变之路？' !!}</p>
                 <br/>
-                <p class="hidden-xs">Having Doubts?</p>
+                <p class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'Having Doubts?' : '还在顾虑？' !!}</p>
                 <a href="{{url('/credential')}}" class="hidden-xs">
                     <i class="icon-button"></i>
                 </a>
-                <p class="hidden-xs">That way you can put all your doubts to rest and <br class="visible-lg"/>let us
-                    help you transform.</p>
+                <p class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'That way you can put all your doubts to rest and <br class="visible-lg"/>let us
+                    help you transform.' : '你肯定会放下心里最后一块石头。' !!}</p>
             </div>
         </div>
     </div>

@@ -114,9 +114,9 @@ $(document).ready(function () {
     $(".modal, .homevideo .close, .homevideo .btn").click(function () {
         $(".homevideo iframe").attr("src", $(".homevideo iframe").attr("src"));
     });
-    // $('html').bind("contextmenu", function (e) {
-    //     return false;
-    // });
+    $('html').bind("contextmenu", function (e) {
+        return false;
+    });
     if ($('.js-back-to-top').length > 0) {
         $('.js-back-to-top').click(function () {
             $("html, body").animate({scrollTop: 0}, "slow");
@@ -202,17 +202,17 @@ $(document).ready(function () {
         nextArrow: '<div class="bg-orange slick-next-wrapper smart-object"><div class="arrow-right arrow"><div class="arrow-bar-1 smart-transition"></div><div class="arrow-bar-2 smart-transition"></div></div></div>',
     });
 
-    if ($('.js-detect-mouse-move').length > 0) {
-        var movementStrength = 25;
-        var height = movementStrength / $(window).height();
-        var width = movementStrength / $(window).width();
-
-        $('.js-detect-mouse-move').mousemove(function (e) { 
-            var pageX = e.pageX - ($(window).width() / 2);
-            var pageY = e.pageY - ($(window).height() / 2);
-            var newvalueX = width * pageX * -1 - 25;
-            var newvalueY = height * pageY * -1 - 50;
-            $('.panelHeight-3').css('background-position', newvalueX + 'px ' + newvalueY + 'px');
-        });
-    }
+    // if ($('.js-detect-mouse-move').length > 0) {
+    //     var movementStrength = 25;
+    //     var height = movementStrength / $(window).height();
+    //     var width = movementStrength / $(window).width();
+    //
+    //     $('.js-detect-mouse-move').mousemove(function (e) {
+    //         var pageX = e.pageX - ($(window).width() / 2);
+    //         var pageY = e.pageY - ($(window).height() / 2);
+    //         var newvalueX = width * pageX * -1 - 25;
+    //         var newvalueY = height * pageY * -1 - 50;
+    //         $('.panelHeight-3').css('background-position', newvalueX + 'px ' + newvalueY + 'px');
+    //     });
+    // }
 });

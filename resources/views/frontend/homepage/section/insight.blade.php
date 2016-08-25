@@ -22,7 +22,7 @@
                             <p class="hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                             <p class="text-white"><i
                                             class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
-                                            class="hidden-xs">See More</span></p>
+                                            class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'See More' : '详情' !!}</span></p>
                         </div>
                     </div>
                 </a>
@@ -42,7 +42,7 @@
 
                                 <p class="text-black"><i
                                             class="icon-btn-link text-white"></i> <span
-                                            class="hidden-xs">See More</span></p>
+                                            class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'See More' : '详情' !!}</span></p>
                         </div>
                     </div>
                 </a>

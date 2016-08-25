@@ -234,9 +234,9 @@ class HomeController extends Controller {
 
 	public function getHomepage()
 	{
-		$meta_title = 'Homepage';
-		$meta_keyword = 'Homepage';
-		$meta_desc = 'Homepage';
+		$meta_title = 'Advertising Agency Malaysia | Creative Agency Malaysia | Branding Agency Malaysia | Design Agency Malaysia';
+		$meta_keyword = 'Advertising Agency, Design Agency, Creative Agency, Branding Agency, Corporate Identity, Branding Strategy, Marketing Strategy, Logo Design, Brochure Design, Flyer Design, Catalogue Design, Packaging Design, Unique Web Design, Multimedia, Corporate Video,';
+		$meta_desc = "We're CUBEevo, a Creative Agency in Malaysia & Singapore - giving brands a complete transformation.  Are you ready to transform? Let’s talk How!";
 
 		return view('frontend.homepage.index')->with([
 			'meta_title'=> $meta_title,
