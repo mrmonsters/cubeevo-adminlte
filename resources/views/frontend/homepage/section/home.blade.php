@@ -4,7 +4,7 @@
             <div class="col-xs-12 col-sm-8 col-sm-push-2  col-md-push-0 col-md-6 vcenter">
                 <a href="{{url('/visual-branding')}}" class="service-icon text-black">
                     <img src="{{asset('/img/Programmer Needs-36.svg')}}" class="center-block core-service core-service-1" width="100%">
-                    <h5 class="core-service-heading text-center text-uppercase">{!!  (Session::get('locale') == 'en') ? 'See More' : '详情' !!}{!!  (Session::get('locale') == 'en') ? '<span class="hidden-xs">Visual</span> Branding' : '品牌视觉形象打造' !!}</h5>
+                    <h5 class="core-service-heading text-center text-uppercase">{!!  (Session::get('locale') == 'en') ? '<span class="hidden-xs">Visual</span> Branding' : '品牌视觉形象打造' !!}</h5>
                 </a>
 
                 <a href="{{url('/thematic-campaign')}}" class="service-icon text-black visible-xs visible-sm">

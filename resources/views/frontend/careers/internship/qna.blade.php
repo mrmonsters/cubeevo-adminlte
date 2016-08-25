@@ -10,7 +10,7 @@
                         </div>
                         @if (Session::get('locale') == 'cn')
                             <div class="m-t-lg">
-                            @foreach ($reviewer->cnReviews()->get()->sortBy('sort') as $review)
+                            @foreach ($reviewer->zhReviews()->get()->sortBy('sort') as $review)
                                 <p>
                                     Q: <b>{{ $review->question }}</b><br/>
                                     A: {{ $review->answer }}

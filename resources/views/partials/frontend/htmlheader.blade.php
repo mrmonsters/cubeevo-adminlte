@@ -25,6 +25,9 @@ use App\Models\Files;
     <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+  <script async src="https://use.typekit.net/npl2kox.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
     @if(Session::get('locale') == 'en')
     <style type="text/css">
       body{
