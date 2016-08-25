@@ -15,7 +15,7 @@
                                     {{ $solution->translate(Session::get('locale'))->name }}
                                 </h1>
                                 <p class="text-center text-white">
-                                    {{ $solution->translate(Session::get('locale'))->desc}}
+                                    {!! $solution->translate(Session::get('locale'))->desc !!}
                                 </p>
                             </div>
 
