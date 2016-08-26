@@ -161,20 +161,12 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
             @foreach ($similarProjects as $project)
                 @if($counter < 2)
                 <div id='cre-box__0' class="js-three-d cre-box col-sm-6 col-lg-6"
-                     style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->backgroundImage->dir.'\') no-repeat; background-size: cover;' : '#666; min-height: 281px;' }}">
+                     style="background: {{ ($project->grid_bg_img_id) ? 'url(\''.url().$project->brandImage->dir.'\') no-repeat; background-size: cover;background-position:center center;' : '#666; min-height: 281px;' }}">
                     <div class="contbox">
                         <div class="greybox"
                              onClick="location.href='{{ url('credential/project/' . $project->slug) }}';"></div>
                         <div class="cd-background-wrapper"
                              onClick="location.href='{{ url('credential/project/' . $project->slug) }}';">
-                            <figure class="cd-floating-background">
-                                @if ($project->grid_img_id)
-                                    <ul class="scene">
-                                        <li class="layer" data-depth="0.20"><img src="{{ $project->frontImage->dir }}"
-                                                                                 width="100%"/></li>
-                                    </ul>
-                                @endif
-                            </figure>
                         </div>
                         <div class="row panel-body overlap"
                              onClick="location.href='{{ url('credential/project/' . $project->slug) }}';">

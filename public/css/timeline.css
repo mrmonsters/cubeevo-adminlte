@@ -86,17 +86,17 @@ section.capabilities .ico.step6 {
     position: relative
 }
 .wwdContainer .wwdBarContainer .dots .dot {
-    height: 15px;
+    height: 12px;
     margin-left: -6px;
     margin-top: -5px;
     position: absolute;
-    width: 15px
+    width: 12px
 }
 .wwdContainer .wwdBarContainer .dots .dot * {
-    background-size: 15px;
-    height: 15px;
+    background-size: 12px;
+    height: 12px;
     position: absolute;
-    width: 15px
+    width: 12px
 }
 .wwdContainer .wwdBarContainer .dots .dot .black {
     background-image: url("../img/Dot-Black-01.svg");

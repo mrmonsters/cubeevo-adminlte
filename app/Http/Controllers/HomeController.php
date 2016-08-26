@@ -80,11 +80,18 @@ class HomeController extends Controller {
 		$meta_keyword = $page->meta_keyword;
 		$meta_desc = $page->meta_desc;
 
+		if ($page->slug == '/visual-branding' || $page->slug == '/explainer-video-production' || $page->slug == '/online-digital-platform' || $page->slug == '/thematic-campaign') {
+			$backbtn = url('solution');
+		}else{
+			$backbtn = null;
+		}
+
 		return view('frontend.index')->with([
 			'page'=> $page,
 			'meta_title'=> $meta_title,
 			'meta_keyword'=> $meta_keyword,
 			'meta_desc'=> $meta_desc,
+			'backbtn'=>$backbtn
 			]);
 	}
 
@@ -264,7 +271,7 @@ class HomeController extends Controller {
 		$meta_keyword = 'Internship';
 		$meta_desc    = 'Internship';
 		$reviewers    = JobReviewer::Intern()->get()->sortBy('date');
-		$jobs         = JobBlock::Intern()->where('delete', '=', 0)->get()->sortBy('sort_order');
+		$jobs         = JobBlock::Intern()->where('delete', '=', 0)->where('status','=',2)->get()->sortBy('sort_order');
 		$backbtn      = url('join-the-team');
 
 		return view('frontend.careers.internship')->with(compact('meta_title', 'meta_keyword', 'meta_desc', 'reviewers', 'jobs', 'backbtn'));
@@ -471,7 +478,7 @@ class HomeController extends Controller {
 					    $message->to($email->value)->subject('Cubeevo Enquiry');
 					});
 					$response['code'] = Status::SUCCESS;
-					$response['msg']  = "Thank You for contacting us. We'll reply you within 2 working days";
+					$response['msg']  = "Thank You for contacting us. We'll reply you within 24 business hours";
 				}
 			}
 		}

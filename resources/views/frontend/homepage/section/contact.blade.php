@@ -4,7 +4,7 @@
             <div class="content-wrapper__content-contact-us text-white vcenter" style="background-color: #616161;">
                 <div class="col-xs-12 ">
 
-                    <h4 class="content-wrapper__content-contact-us-heading"><b>LET'S TALK</b></h4>
+                    <h4 class="content-wrapper__content-contact-us-heading"><b>{{ (Session::get('locale') == 'en') ? "LET'S TALK" : '欢迎咨询' }}</b></h4>
                     @if (Session::get('locale') == 'cn')
                         <p class="content-wrapper__content-contact-us-subheading hidden-xs">新业务或合作方案</p>
                     @else
@@ -16,7 +16,7 @@
                         <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
                             <small>
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>MALAYSIA</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'MALAYSIA' : '马来西亚' }}</b>
                                 <div class="homepage-line hidden-xs"></div>
                             </small>
                             <br class="hidden-sm hidden-xs hidden-md"/>
@@ -51,7 +51,7 @@
                         <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
                             <small>
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>SINGAPORE</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'SINGAPORE' : '新加坡' }}</b>
                                 <div class="homepage-line hidden-xs"></div>
                             </small>
                             <br class="hidden-sm hidden-xs hidden-md"/>
@@ -78,14 +78,14 @@
             <div class="content-wrapper__content-contact-us text-white vcenter" style="background-color: #3A3839;">
                 <div class="col-xs-12 ">
 
-                    <h4 class="content-wrapper__content-contact-us-heading"><b>GET IN TOUCH</b>
+                    <h4 class="content-wrapper__content-contact-us-heading"><b>{{ (Session::get('locale') == 'en') ? 'GET IN TOUCH' : '保持联系' }}</b>
                     </h4>
                     <br class="hidden-xs"/>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-sm-push-4 col-md-12 col-md-push-5 col-lg-push-2 col-lg-4">
                             <small class="homepage-contact-us__country">
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>MALAYSIA</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'MALAYSIA' : '马来西亚' }}</b>
                             </small>
                             <br class="hidden-sm hidden-md"/>
 
@@ -115,7 +115,7 @@
                         <div class="col-xs-12 col-sm-12 col-sm-push-4 col-md-12 col-md-push-5 col-lg-push-3 col-lg-4">
                             <small class="homepage-contact-us__country">
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>SINGAPORE</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'SINGAPORE' : '新加坡' }}</b>
                             </small>
                             <br class="hidden-sm hidden-md"/>
 

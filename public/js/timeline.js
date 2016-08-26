@@ -41,7 +41,7 @@ var wwdFullT = 0;
 
 function wwdStart(auto) {
     var width = parseInt($(".wwdContainer .wwdBar").width(), 10);
-    var t = width * 25;
+    var t = width * 20;
     wwdFullT = t;
     var delay = (auto == !0) ? 4000 : 0;
     delay = 0;
@@ -69,7 +69,7 @@ function wwdStart(auto) {
     }, timeReset, function() {
         $.when(showDot($(".dot.notShowed:eq(0)"))).done(function() {
             $(".wwdContainer .wwdBar .black").css({
-                height: "4px",
+                height: "3px",
                 width: "0px"
             });
             animateWWDblackBar(t)
@@ -167,7 +167,7 @@ function showDot(OBJ) {
         OBJ = $(".dot:eq(" + OBJ + ")")
     }
     OBJ.addClass("showed").removeClass("notShowed").find(".black").stop(!0, !1).animate({
-        width: "15px"
+        width: "12px"
     }, 250);
     var index = OBJ.prevAll(".dot").length;
     $(".wwdContainer .ico").eq(index).stop(!0, !1).animate({

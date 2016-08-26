@@ -100,7 +100,7 @@
         <div class="row contactdetails" style="position:relative;">
             <div class="col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
                 <div class="col-sm-12 nopadding">
-                    <small class="contactus-country-label"><b>MALAYSIA</b></small>
+                    <small class="contactus-country-label"><b>{{ (Session::get('locale') == 'en') ? 'MALAYSIA' : '马来西亚' }}</b></small>
                     <hr/>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
@@ -166,7 +166,7 @@
                 <br/>
 
                 <div class="col-sm-12 nopadding">
-                    <small class="contactus-country-label"><b>SINGAPORE</b></small>
+                    <small class="contactus-country-label"><b>{{ (Session::get('locale') == 'en') ? 'SINGAPORE' : '新加坡' }}</b></small>
                     <hr/>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
