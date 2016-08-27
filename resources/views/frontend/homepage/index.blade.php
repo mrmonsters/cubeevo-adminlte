@@ -84,7 +84,11 @@
                 <br/>
                 <p class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'Having Doubts?' : '还在顾虑？' !!}</p>
                 <a href="{{url('/credential')}}" class="hidden-xs">
-                    <i class="icon-button"></i>
+                    @if (Session::get('locale') == 'cn')
+                        <i class="icon-button icon-button-cn"></i>
+                        @else
+                        <i class="icon-button"></i>
+                    @endif
                 </a>
                 <p class="hidden-xs">{!!  (Session::get('locale') == 'en') ? 'That way you can put all your doubts to rest and <br class="visible-lg"/>let us
                     help you transform.' : '你肯定会放下心里最后一块石头。' !!}</p>
