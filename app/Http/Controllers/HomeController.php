@@ -241,7 +241,10 @@ class HomeController extends Controller {
 
 	public function getHomepage()
 	{
-		return view('frontend.homepage.index');
+		$meta_title = Setting::where('code', 'homepage_title')->first();
+		return view('frontend.homepage.index')->with([
+			'meta_title'   => $meta_title->value
+		]);
 	}
 
 	public function getCareers()
