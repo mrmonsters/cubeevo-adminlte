@@ -42,6 +42,14 @@
                                         <input id="gmaps_lng" name="gmaps_lng" type="text" class="form-control" value="{{ $settings['gmaps_lng']['value'] }}" />
                                     </div>
                                     <div class="form-group">
+                                        <label for="homepage_featured_project" class="control-label">{{ $settings['homepage_featured_project']['name'] }}(Please key in 4 Project ids separated by comma. Ex: 1,2,3,5)</label>
+                                        <input id="homepage_featured_project" name="homepage_featured_project" type="text" class="form-control" value="{{ $settings['homepage_featured_project']['value'] }}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="homepage_title" class="control-label">{{ $settings['homepage_title']['name'] }}</label>
+                                        <input id="homepage_title" name="homepage_title" type="text" class="form-control" value="{{ $settings['homepage_title']['value'] }}" />
+                                    </div>
+                                    <div class="form-group">
                                         <label for="site_title" class="control-label">{{ $settings['site_title']['name'] }}</label>
                                         <input id="site_title" name="site_title" type="text" class="form-control" value="{{ $settings['site_title']['value'] }}" />
                                     </div>

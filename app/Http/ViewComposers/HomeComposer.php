@@ -5,80 +5,88 @@ use Illuminate\Contracts\View\View;
 
 use App\Models\Post;
 use App\Models\Project;
+use App\Models\Setting;
 
-class HomeComposer {
 
-	protected $_post;
-	protected $_project;
-	protected $_postCollection    = null;
-	protected $_projectCollection = null;
+class HomeComposer
+{
 
-	protected function _getAllActivePosts($qty = null)
-	{
-		if (!$this->_postCollection) {
+    protected $_post;
+    protected $_project;
+    protected $_postCollection = null;
+    protected $_projectCollection = null;
 
-			$this->_postCollection = $this->_post
-				->where('deleted', '=', 0)
-				->where('status', '=', Status::ACTIVE)
-				->orderBy('created_at', 'desc');
+    protected function _getAllActivePosts($qty = null)
+    {
+        if (!$this->_postCollection) {
 
-			if ($qty && is_numeric($qty)) {
+            $this->_postCollection = $this->_post
+                ->where('deleted', '=', 0)
+                ->where('status', '=', Status::ACTIVE)
+                ->orderBy('created_at', 'desc');
 
-				$this->_postCollection->take($qty);
-			}
-		}
+            if ($qty && is_numeric($qty)) {
 
-		return $this->_postCollection->get();
-	}
+                $this->_postCollection->take($qty);
+            }
+        }
 
-	protected function _getAllActiveProjects($qty = null)
-	{
-		if (!$this->_projectCollection) {
+        return $this->_postCollection->get();
+    }
 
-			$this->_projectCollection = $this->_project
-				->where('delete', '=', 0)
-				->where('status', '=', Status::ACTIVE)
-				->orderBy('created_at', 'desc');
+    protected function _getAllActiveProjects($qty = null)
+    {
+        if (!$this->_projectCollection) {
 
-			if ($qty && is_numeric($qty)) {
+            $this->_projectCollection = $this->_project
+                ->where('delete', '=', 0)
+                ->where('status', '=', Status::ACTIVE)
+                ->orderBy('created_at', 'desc');
 
-				$this->_projectCollection->take($qty);
-			}
-		}
+            if ($qty && is_numeric($qty)) {
 
-		return $this->_projectCollection->get();
-	}
+                $this->_projectCollection->take($qty);
+            }
+        }
 
-	public function __construct(Post $post, Project $project)
-	{
-		$this->_post    = $post;
-		$this->_project = $project;
-	}
+        return $this->_projectCollection->get();
+    }
 
-	public function hex2rgb($hex) {
-		$hex = str_replace("#", "", $hex);
+    public function __construct(Post $post, Project $project)
+    {
+        $this->_post = $post;
+        $this->_project = $project;
+    }
 
-		if(strlen($hex) == 3) {
-			$r = hexdec(substr($hex,0,1).substr($hex,0,1));
-			$g = hexdec(substr($hex,1,1).substr($hex,1,1));
-			$b = hexdec(substr($hex,2,1).substr($hex,2,1));
-		} else {
-			$r = hexdec(substr($hex,0,2));
-			$g = hexdec(substr($hex,2,2));
-			$b = hexdec(substr($hex,4,2));
-		}
-		$rgb = array($r, $g, $b);
-		//return implode(",", $rgb); // returns the rgb values separated by commas
-		return $rgb; // returns an array with the rgb values
-	}
+    public function hex2rgb($hex)
+    {
+        $hex = str_replace("#", "", $hex);
 
-	public function compose(View $view)
-	{
-		$posts    = $this->_getAllActivePosts(3);
-		$projects = $this->_getAllActiveProjects(4);
-		$char_count = (\Session::get('locale') == 'en')?120:50; 
+        if (strlen($hex) == 3) {
+            $r = hexdec(substr($hex, 0, 1) . substr($hex, 0, 1));
+            $g = hexdec(substr($hex, 1, 1) . substr($hex, 1, 1));
+            $b = hexdec(substr($hex, 2, 1) . substr($hex, 2, 1));
+        } else {
+            $r = hexdec(substr($hex, 0, 2));
+            $g = hexdec(substr($hex, 2, 2));
+            $b = hexdec(substr($hex, 4, 2));
+        }
+        $rgb = array($r, $g, $b);
+        //return implode(",", $rgb); // returns the rgb values separated by commas
+        return $rgb; // returns an array with the rgb values
+    }
+
+    public function compose(View $view)
+    {
+
+        $featured_project_ids = Setting::where('code', 'homepage_featured_project')->first();
+        $featured_project_arr = explode(',', $featured_project_ids->value);
+        $posts = $this->_getAllActivePosts(3);
+        $projects = Project::where('delete', '=', 0)
+            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))->get();
+        $char_count = (\Session::get('locale') == 'en') ? 120 : 50;
 //dd($projects);
-		return $view->with(compact('posts', 'projects','char_count'));
-	}
+        return $view->with(compact('posts', 'projects', 'char_count'));
+    }
 
 }

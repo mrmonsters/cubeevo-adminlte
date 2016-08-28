@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
-		
+
 		$this->call('UserTableSeeder');
 		$this->call('LocaleTableSeeder');
 		$this->call('PageTableSeeder');
@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('SolutionTableSeeder');
 		$this->call('SettingTableSeeder');
 		$this->call('SettingTableSeeder_2016_06_22');
+		$this->call('SettingTableSeeder_2016_08_28');
 		$this->call('JobReviewSeeder');
 	}
 

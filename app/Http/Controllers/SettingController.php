@@ -91,6 +91,20 @@ class SettingController extends Controller {
 				$metaImgId = $fileHelper->uploadNewFile($files['new_meta_img_id']);
 			}
 
+			if($data['homepage_featured_project']){
+				$arr = explode(',',$data['homepage_featured_project'] );
+				if(count($arr) < 4){
+					$response['code'] = Status::ERROR;
+					$response['msg']  = "Homepage featured project cannot less than 4.";
+					return redirect()->back()->with('response', $response);
+				}
+				if(count($arr) > 4){
+					$response['code'] = Status::ERROR;
+					$response['msg']  = "Homepage featured project cannot more than 4.";
+					return redirect()->back()->with('response', $response);
+				}
+			}
+			
 			$settings                     = array();
 			$settings['ga_key']           = $data['ga_key'];
 			$settings['gmaps_lat']        = $data['gmaps_lat'];
@@ -98,6 +112,8 @@ class SettingController extends Controller {
 			$settings['address']          = $data['address'];
 			$settings['phone']            = $data['phone'];
 			$settings['fax']              = $data['fax'];
+			$settings['homepage_title']   = $data['homepage_title'];
+			$settings['homepage_featured_project']            = $data['homepage_featured_project'];
 			$settings['email']            = $data['email'];
 			$settings['facebook_link']    = $data['facebook_link'];
 			$settings['youtube_link']     = $data['youtube_link'];
