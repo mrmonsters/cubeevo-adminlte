@@ -401,7 +401,7 @@ hr.whitehr {
     width: 200px;
     height: 50px;
     display: block;
-    background-size: 100% auto;
+    background-size: 200px auto;
     margin-bottom: 4px;
 }
 .icon-button-cn{
@@ -409,7 +409,7 @@ hr.whitehr {
 
 }
 .icon-button:hover {
-    background-position-y: -48px;
+    background-position-y: -49px;
 }
 
 #cd-nav .cd-social ul {
@@ -2737,12 +2737,6 @@ hr.whitehr {
     }
     #cd-nav .logo {
         text-align: center;
-    }
-    .icon-button{
-        background: url(../img/Programmer-Needs-24.svg) no-repeat -5px -1px;
-        width: 236px;
-        height: 58px;
-        background-size: cover;
     }
     .scene.mascott {
         left: 0px;
