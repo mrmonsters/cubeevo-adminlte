@@ -397,9 +397,9 @@ hr.whitehr {
 }
 
 .icon-button {
-    background: url(../img/Programmer-Needs-24.svg) no-repeat -3px -1px;
+    background: url(../img/Programmer-Needs-24.svg) no-repeat -3px -2px;
     width: 200px;
-    height: 50px;
+    height: 100px;
     display: block;
     background-size: 100% auto;
     margin-bottom: 4px;
@@ -409,7 +409,7 @@ hr.whitehr {
 
 }
 .icon-button:hover {
-    background-position-y: -48px;
+    background-position-y: -49px;
 }
 
 #cd-nav .cd-social ul {
