@@ -81,11 +81,16 @@ class HomeComposer
 
         $featured_project_ids = Setting::where('code', 'homepage_featured_project')->first();
         $featured_project_arr = explode(',', $featured_project_ids->value);
+        $order_query = 'FIELD(id';
+        foreach ($featured_project_arr as $k => $v){
+            $order_query .= ',"'.$v.'"';
+        }
+        $order_query .= ')';
         $posts = $this->_getAllActivePosts(3);
         $projects = Project::where('delete', '=', 0)
-            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))->get();
+            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))
+            ->orderByRaw($order_query)->get();
         $char_count = (\Session::get('locale') == 'en') ? 120 : 50;
-//dd($projects);
         return $view->with(compact('posts', 'projects', 'char_count'));
     }
 
