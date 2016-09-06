@@ -1736,6 +1736,9 @@ a.bg-primary:hover {
 .text-blue {
     color: #00C1F3;
 }
+.text-brightred{
+    color:#f15c4a;
+}
 
 .text-ashgreen{
     color:#4BC2C8;

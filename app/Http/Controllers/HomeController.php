@@ -95,6 +95,34 @@ class HomeController extends Controller {
 			]);
 	}
 
+	public function getAnnualReport()
+	{
+		$meta_title = 'Annual Report';
+		$meta_keyword = 'Annual Report';
+		$meta_desc = 'Annual Report';
+
+		return view('frontend.annual-report')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
+
+	public function getPackagingDesign()
+	{
+		$meta_title = 'Packaging Design';
+		$meta_keyword = 'Packaging Design';
+		$meta_desc = 'Packaging Design';
+
+		return view('frontend.packaging-design')->with([
+			'meta_title'=> $meta_title,
+			'meta_keyword'=> $meta_keyword,
+			'meta_desc'=> $meta_desc,
+			'backbtn' => url('/')
+		]);
+	}
+
 	public function getVisualBranding()
 	{
 		$meta_title = 'Visual Branding';
