@@ -80,7 +80,7 @@ class HomeController extends Controller {
 		$meta_keyword = $page->meta_keyword;
 		$meta_desc = $page->meta_desc;
 
-		if ($page->slug == '/visual-branding' || $page->slug == '/explainer-video-production' || $page->slug == '/online-digital-platform' || $page->slug == '/thematic-campaign') {
+		if ($page->slug == '/visual-branding' || $page->slug == '/explainer-video-production' || $page->slug == '/online-digital-platform' || $page->slug == '/thematic-campaign' || $page->slug == '/annual-report' || $page->slug == '/packaging-design') {
 			$backbtn = url('solution');
 		}else{
 			$backbtn = null;
