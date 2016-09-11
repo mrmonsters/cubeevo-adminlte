@@ -11,7 +11,7 @@
 <script src="{{ asset('js/slick.min.js') }}"></script>
 <script src="{{ asset('js/timeline.min.js') }}"></script>
 <script src="{{ asset('js/jquery.logosDistort.min.js') }}"></script>
-<script src="{{asset('js/angular/libs/angular-fullpage/angular-fullpage.min.js')}}"></script>
+<script src="{{asset('js/angular/libs/angular-fullpage/angular-fullpage.js')}}"></script>
 <script src="{{asset('js/angular/app.js')}}"></script>
 <script src="{{asset('js/angular/controllers/homepage.js')}}"></script>
 <script src="{{ asset('js/custom.min.js') }}?v=5"></script> <!-- Resource jQuery -->
