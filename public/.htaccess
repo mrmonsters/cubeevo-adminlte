@@ -14,6 +14,13 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
+# Add correct content-type for fonts
+AddType application/vnd.ms-fontobject .eot
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType font/x-woff .woff
+AddType image/svg+xml .svg
+
 # compress text, html, javascript, css, xml:
 AddOutputFilterByType DEFLATE text/plain
 AddOutputFilterByType DEFLATE text/html
@@ -21,14 +28,20 @@ AddOutputFilterByType DEFLATE text/xml
 AddOutputFilterByType DEFLATE text/css
 AddOutputFilterByType DEFLATE text/javascript
 AddOutputFilterByType DEFLATE application/xml
-AddOutputFilterByType DEFLATE image/svg+xml 
+AddOutputFilterByType DEFLATE image/svg+xml
 AddOutputFilterByType DEFLATE application/xhtml+xml
 AddOutputFilterByType DEFLATE application/rss+xml
 AddOutputFilterByType DEFLATE application/javascript
-AddOutputFilterByType DEFLATE application/x-javascript 
+AddOutputFilterByType DEFLATE application/x-javascript
+AddOutputFilterByType DEFLATE font/ttf font/otf image/svg+xml
 
 <IfModule mod_expires.c>
 ExpiresActive On
+ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+ExpiresByType font/ttf "access plus 1 year"
+ExpiresByType font/otf "access plus 1 year"
+ExpiresByType font/x-woff "access plus 1 year"
+ExpiresByType image/svg+xml "access plus 1 year"
 ExpiresByType image/jpg "access 1 year"
 ExpiresByType image/jpeg "access 1 year"
 ExpiresByType image/gif "access 1 year"

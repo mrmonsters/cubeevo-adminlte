@@ -1,8 +1,8 @@
 
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-<script src="{{asset('js/angular/libs/angular-resource/angular-resource.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.4.7/angular-resource.min.js"></script>
 <script src="{{ asset('js/jquery-2.1.4.js') }}"></script>
-<script src="{{asset('js/jquery.touchSwipe.min.js')}}"></script>
+<script src="{{ asset('js/jquery.touchSwipe.min.js')}}"></script>
 <script src="{{ asset('js/pace.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery.fullPage.min.js') }}"></script>
