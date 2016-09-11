@@ -26,28 +26,6 @@ use App\Models\Files;
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-  <script async src="https://use.typekit.net/npl2kox.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
-    @if(Session::get('locale') == 'en')
-    <style type="text/css">
-      body{
-        font-family: "Conv_DINNextLTPro-Light","source-han-sans-simplified-c", sans-serif;
-      }
-      b{
-        font-family: "Conv_DINNextLTPro-Bold","source-han-sans-simplified-c", sans-serif;
-      }
-    </style>
-    @endif
-  <link rel="stylesheet" href="{{ asset('css/utils.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.fullPage.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/perspectiveRules.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/pace.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/slick-theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/timeline.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.min.css') }}?v=5"> <!-- Custom style -->
-
     <script async src="{{ asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
     <title>{{ $meta_title }}</title>
     <?php use App\Models\Setting; ?>
