@@ -205,8 +205,7 @@
                                         <li><i class="icon handphone"></i><a class="text-black" href="tel:+6590814118">+65
                                                 9081 4118</a></li>
                                         <li class=""><i class="icon mail"></i><a class="text-black"
-                                                                                 href="mailto:david@cubeevo.com">david@cubeevo
-                                                .com</a></li>
+                                                                                 href="mailto:david@cubeevo.com">david@cubeevo.com</a></li>
                                     </ul>
                                 </div>
                                 <br/>
