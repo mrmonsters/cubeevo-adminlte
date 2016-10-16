@@ -14,25 +14,25 @@ class SettingTableSeeder_2016_10_16 extends Seeder {
     {
         $settings = array(
             array(
-                'name'  => 'Sub Homepage Title',
+                'name'  => 'Singapore Homepage Title',
                 'code'  => 'sub_homepage_title',
                 'type'  => \App\Models\Setting::SITE,
                 'value' => 'Advertising Agency | Creative & Branding Agency In Singapore & Malaysia',
             ),
             array(
-                'name'  => 'Sub Homepage Featured Project',
+                'name'  => 'Singapore Homepage Featured Project',
                 'code'  => 'sub_homepage_featured_project',
                 'type'  => \App\Models\Setting::SITE,
-                'value' => '1,2,3,5',
+                'value' => '38,30,12,14',
             ),
             array(
-                'name'  => 'Sub Homepage Meta Keyword',
+                'name'  => 'Singapore Homepage Meta Keyword',
                 'code'  => 'sub_homepage_meta_keyword',
                 'type'  => \App\Models\Setting::SITE,
                 'value' => 'Advertising Agency | Creative & Branding Agency In Singapore & Malaysia',
             ),
             array(
-                'name'  => 'Sub Homepage Meta Description',
+                'name'  => 'Singapore Homepage Meta Description',
                 'code'  => 'sub_homepage_meta_desc',
                 'type'  => \App\Models\Setting::SITE,
                 'value' => 'Advertising Agency | Creative & Branding Agency In Singapore & Malaysia',
