@@ -104,7 +104,7 @@ class SettingController extends Controller {
 					return redirect()->back()->with('response', $response);
 				}
 			}
-			
+
 			$settings                     = array();
 			$settings['ga_key']           = $data['ga_key'];
 			$settings['gmaps_lat']        = $data['gmaps_lat'];
@@ -114,6 +114,8 @@ class SettingController extends Controller {
 			$settings['fax']              = $data['fax'];
 			$settings['homepage_title']   = $data['homepage_title'];
 			$settings['homepage_featured_project']            = $data['homepage_featured_project'];
+			$settings['sub_homepage_title']   = $data['sub_homepage_title'];
+			$settings['sub_homepage_featured_project']            = $data['sub_homepage_featured_project'];
 			$settings['email']            = $data['email'];
 			$settings['facebook_link']    = $data['facebook_link'];
 			$settings['youtube_link']     = $data['youtube_link'];
@@ -123,6 +125,8 @@ class SettingController extends Controller {
 			$settings['site_title']       = $data['site_title'];
 			$settings['meta_keyword']     = $data['meta_keyword'];
 			$settings['meta_desc']        = $data['meta_desc'];
+			$settings['sub_homepage_meta_keyword']     = $data['sub_homepage_meta_keyword'];
+			$settings['sub_homepage_meta_desc']        = $data['sub_homepage_meta_desc'];
 			$settings['meta_img_id']      = (isset($metaImgId) && $metaImgId != '') ? $metaImgId : $data['meta_img_id'];
 
 			foreach ($settings as $key => $val) {

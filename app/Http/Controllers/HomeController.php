@@ -267,6 +267,18 @@ class HomeController extends Controller {
 		}
 	}
 
+	public function getSubhomepage()
+	{
+		$meta_title = Setting::where('code', 'sub_homepage_title')->first();
+		$meta_keyword = Setting::where('code', 'sub_homepage_meta_keyword')->first();
+		$meta_desc = Setting::where('code', 'sub_homepage_meta_desc')->first();
+		return view('frontend.homepage.subhomepage')->with([
+			'meta_title'   => $meta_title->value,
+			'meta_keyword' => $meta_keyword->value,
+			'meta_desc'    => $meta_desc->value
+		]);
+	}
+
 	public function getHomepage()
 	{
 		$meta_title = Setting::where('code', 'homepage_title')->first();

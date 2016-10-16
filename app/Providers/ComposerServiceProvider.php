@@ -29,7 +29,8 @@ class ComposerServiceProvider extends ServiceProvider {
 				'management.solution.edit',
 			],
 			'App\Http\ViewComposers\HomeComposer'     => [
-				'frontend.homepage.index'
+				'frontend.homepage.index',
+				'frontend.homepage.subhomepage',
 			],
 		]);
 	}

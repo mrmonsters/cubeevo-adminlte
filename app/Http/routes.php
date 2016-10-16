@@ -24,6 +24,8 @@ Route::group(['prefix' => 'api/v1'], function () {
 });
 
 Route::get('/credential', 'HomeController@getCredential');
+Route::get('/singapore', 'HomeController@getSubhomepage');
+Route::get('/Singapore', 'HomeController@getSubhomepage');
 Route::get('/credential/project/{slug}', 'HomeController@getProjectContent');
 Route::get('/credential/{slug}', 'HomeController@getCredentialProject');
 Route::get('/solution', 'HomeController@getSolution');

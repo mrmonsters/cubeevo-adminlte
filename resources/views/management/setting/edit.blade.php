@@ -78,6 +78,24 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <hr/>
+
+                                    <div class="form-group">
+                                        <label for="sub_homepage_title" class="control-label">{{ $settings['sub_homepage_title']['name'] }}</label>
+                                        <input id="sub_homepage_title" name="sub_homepage_title" type="text" class="form-control" value="{{ $settings['sub_homepage_title']['value'] }}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sub_homepage_meta_keyword" class="control-label">{{ $settings['sub_homepage_meta_keyword']['name'] }}</label>
+                                        <input id="sub_homepage_meta_keyword" name="sub_homepage_meta_keyword" type="text" class="form-control" value="{{ $settings['sub_homepage_meta_keyword']['value'] }}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sub_homepage_meta_desc" class="control-label">{{ $settings['sub_homepage_meta_desc']['name'] }}</label>
+                                        <input id="sub_homepage_meta_desc" name="sub_homepage_meta_desc" type="text" class="form-control" value="{{ $settings['sub_homepage_meta_desc']['value'] }}" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="sub_homepage_featured_project" class="control-label">{{ $settings['sub_homepage_featured_project']['name'] }}(Please key in 4 Project ids separated by comma. Ex: 1,2,3,5)</label>
+                                        <input id="sub_homepage_featured_project" name="sub_homepage_featured_project" type="text" class="form-control" value="{{ $settings['sub_homepage_featured_project']['value'] }}" />
+                                    </div>
                                 </div>
                                 <div id="user" class="tab-pane">
                                     <div class="form-group">

@@ -90,8 +90,22 @@ class HomeComposer
         $projects = Project::where('delete', '=', 0)
             ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))
             ->orderByRaw($order_query)->get();
+
+
+        $sub_featured_project_ids = Setting::where('code', 'sub_homepage_featured_project')->first();
+        $sub_featured_project_arr = explode(',', $sub_featured_project_ids->value);
+        $order_query = 'FIELD(id';
+        foreach ($sub_featured_project_arr as $k => $v){
+            $order_query .= ',"'.$v.'"';
+        }
+        $order_query .= ')';
+        $sub_homepage_projects = Project::where('delete', '=', 0)
+            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))
+            ->orderByRaw($order_query)->get();
+
+
         $char_count = (\Session::get('locale') == 'en') ? 120 : 50;
-        return $view->with(compact('posts', 'projects', 'char_count'));
+        return $view->with(compact('posts', 'projects', 'char_count','sub_homepage_projects'));
     }
 
 }

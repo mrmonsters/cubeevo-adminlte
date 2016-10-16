@@ -16,33 +16,20 @@
                         <div class="col-xs-12 col-sm-12 col-sm-push-5 col-md-12 col-md-push-5 col-lg-push-5 col-lg-4">
                             <small>
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>{{ (Session::get('locale') == 'en') ? 'MALAYSIA' : '马来西亚' }}</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'SINGAPORE' : '新加坡' }}</b>
                                 <div class="homepage-line hidden-xs"></div>
                             </small>
                             <br class="hidden-sm hidden-xs hidden-md"/>
 
                             <p style="line-height: 1em;">
-                                <small>Timothy Tai <br/>
+                                <small>David Lim <br/>
                                     @if (Session::get('locale') == 'cn')
-                                        客户经理
+                                        客户总监
                                     @else
-                                        Account Manager
-                                    @endif<br/>
-                                    <a class="text-white" href="tel:+60173216004">+6017 321 6004</a><br/>
-                                    <a class="text-white hidden-sm hidden-xs hidden-md"
-                                       href="mailto:enquire@cubeevo.com">enquire@cubeevo
-                                        .com</a></small>
-                            </p>
-
-                            <p style="line-height: 1em;" class="hidden-xs">
-                                <small>Keith Phang<br/>
-                                    @if (Session::get('locale') == 'cn')
-                                        品牌经理
-                                    @else
-                                        Branding Manager
+                                        Account Director
                                     @endif
                                     <br/>
-                                    <a class="text-white" href="tel:+6018 352 4300">+6018 352 4300</a><br/>
+                                    <a class="text-white" href="tel:+6590814118">+65 9081 4118</a><br/>
                                     <a class="text-white hidden-sm hidden-xs hidden-md"
                                        href="mailto:enquire@cubeevo.com">enquire@cubeevo
                                         .com</a></small>
@@ -60,36 +47,35 @@
                     </h4>
                     <br class="hidden-xs"/>
                     <div class="row">
+                        <br class="visible-xs">
                         <div class="col-xs-12 col-sm-12 col-sm-push-4 col-md-12 col-md-push-5 col-lg-push-5 col-lg-4">
                             <small class="homepage-contact-us__country">
                                 <div class="homepage_contact_us-mobile-line visible-xs"></div>
-                                <b>{{ (Session::get('locale') == 'en') ? 'MALAYSIA' : '马来西亚' }}</b>
+                                <b>{{ (Session::get('locale') == 'en') ? 'SINGAPORE' : '新加坡' }}</b>
                             </small>
                             <br class="hidden-sm hidden-md"/>
 
                             <p style="line-height: 1em;" class="content-wrapper__content-contact-us-address ">
                                 <small style="position: relative">
-                                    @if (Session::get('locale') == 'cn')
-                                        形立方广告有限公司 <br class="visible-sm visible-md visible-lg"/>(949017-T)
-                                    @else
-                                        CUBEevo ADVERTISING SDN BHD <br class="visible-sm visible-md visible-lg"/>(949017-T)
-                                    @endif
-                                    <br/>
-                                    <span class="homepage-line homepage-line-custom hidden-xs"></span>
-                                     <br class="hidden-xs"/>
-                                <span class="hidden-xs hidden-sm hidden-md"> 43-2, Jln Temenggung 21/9 <br/>
-                                Bandar Mahkota Cheras<br/>
-                                43200 Batu 9 Cheras<br/>
-                                Selangor, Malaysia.<br/></span><br class="hidden-xs"/>
 
-                                    <span class="hidden-xs">T:</span> <a class="text-white" href="tel:+60390109882">+603 9010 9882</a><br/>
-                                    <span class="hidden-xs">F: <a class="text-white" href="tel:+60390759882">+603 9075 9882</a><br/>
-                                    </span>
+                                    @if (Session::get('locale') == 'cn')
+                                        形立方广告有限公司
+                                    @else
+                                        CUBEevo ADVERTISING PTE LTD
+                                    @endif
+                                    <br class="visible-sm visible-md visible-lg"/>
+                                    <span class="homepage-line homepage-line-custom hidden-xs"></span>
+                                    <span class="hidden-xs">(UEN - 201604241R)</span><br class="hidden-xs"/><br class="hidden-xs"/>
+                                <span class="hidden-xs hidden-sm hidden-md">20 Maxwell Rd<br/>
+                                #09-17, Maxwell House<br/>
+                                Singapore 069113.<br/>
+                               <br/></span><br/>
+                                    <span class="hidden-xs">T:</span> <a class="text-white" href="tel:+6590814118">+659081 4118</a><br/>
                                     <span class="hidden-xs">E:</span> <a class="text-white" href="mailto:enquire@cubeevo.com">enquire@cubeevo.com</a>
                                 </small>
                             </p>
                         </div>
-                        <br class="visible-xs">
+
                     </div>
                 </div>
             </div>
