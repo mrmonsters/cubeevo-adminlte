@@ -6,6 +6,7 @@ use Illuminate\Contracts\View\View;
 use App\Models\Post;
 use App\Models\Project;
 use App\Models\Setting;
+use DB;
 
 
 class HomeComposer
@@ -14,6 +15,7 @@ class HomeComposer
     protected $_post;
     protected $_project;
     protected $_postCollection = null;
+    protected $_randomPostCollection = null;
     protected $_projectCollection = null;
 
     protected function _getAllActivePosts($qty = null)
@@ -32,6 +34,24 @@ class HomeComposer
         }
 
         return $this->_postCollection->get();
+    }
+
+    protected function _getAllActiveRandomPosts($qty = null)
+    {
+        if (!$this->_randomPostCollection) {
+
+            $this->_randomPostCollection = $this->_post
+                ->where('deleted', '=', 0)
+                ->where('status', '=', Status::ACTIVE)
+                ->orderBy(DB::raw('RAND()'));
+
+            if ($qty && is_numeric($qty)) {
+
+                $this->_randomPostCollection->take($qty);
+            }
+        }
+
+        return $this->_randomPostCollection->get();
     }
 
     protected function _getAllActiveProjects($qty = null)
@@ -87,6 +107,7 @@ class HomeComposer
         }
         $order_query .= ')';
         $posts = $this->_getAllActivePosts(3);
+        $randomPosts = $this->_getAllActiveRandomPosts(3);
         $projects = Project::where('delete', '=', 0)
             ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))
             ->orderByRaw($order_query)->get();
@@ -105,7 +126,7 @@ class HomeComposer
 
 
         $char_count = (\Session::get('locale') == 'en') ? 120 : 50;
-        return $view->with(compact('posts', 'projects', 'char_count','sub_homepage_projects'));
+        return $view->with(compact('posts', 'projects', 'char_count','sub_homepage_projects','randomPosts'));
     }
 
 }

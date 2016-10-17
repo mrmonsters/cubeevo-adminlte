@@ -22,10 +22,10 @@
     <div class="hide">
 
         <div class="hidden-section-1">
-            <h4 class="leftcontent_topheading">{{ (Session::get('locale') == 'en') ? 'Ever Evolving CUBEevo' : '创意从未歇息的形立方' }}<span class="bottom-line-grey"></span></h4>
-            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An Advertising Agency <br/> in Singapore and Malaysia.' : '一家横跨新加坡与马来西亚两地的广告公司。' !!}</h1>
+            <h4 class="leftcontent_topheading">{{ (Session::get('locale') == 'en') ? '"Brands give creativity a definition, innovativity give Brands an evolution". We at CUBEevo' : '创意从未歇息的形立方' }}<span class="bottom-line-grey"></span></h4>
+            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An advertising agency <br/>in Singapore,' : '一家横跨新加坡与马来西亚两地的广告公司。' !!}</h1>
             <div class="leftcontent_desc">
-                <p>{{ (Session::get('locale') == 'en') ? 'Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.' : '务求为您打造无限商机的品牌形象。' }}</p>
+                <p>{{ (Session::get('locale') == 'en') ? 'want our work to have the element of creativity to bring out the lifeliness of every brand.' : '务求为您打造无限商机的品牌形象。' }}</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
                     <a class="visible-xs" data-target="#homevideo" data-toggle="modal">
                         <img src="{{asset('/img/Rocket_Mobile.gif')}}" width="120" style="border:1px solid #000;"/>
@@ -57,15 +57,15 @@
             </div>
         @endforeach
 
-        @if ($posts->count() > 0)
+        @if ($randomPosts->count() > 0)
             <div class="hidden-section-6">
-                <a href="{{url('/insights/detail/'.$posts[0]->slug)}}">
+                <a href="{{url('/insights/detail/'.$randomPosts[0]->slug)}}">
                     <div class="leftcontent_desc">
                         <?php
-                        $content = html_entity_decode($posts[0]->translate(Session::get('locale'))->description);
+                        $content = html_entity_decode($randomPosts[0]->translate(Session::get('locale'))->description);
                         $content = trim(strip_tags(preg_replace("/<img[^>]+\>/i", " ", $content)));
                         ?>
-                        <h2 class="text-white mobile-h1 text-uppercase">{{$posts[0]->translate(Session::get('locale'))->title}}</h2>
+                        <h2 class="text-white mobile-h1 text-uppercase">{{$randomPosts[0]->translate(Session::get('locale'))->title}}</h2>
                         <p class="text-white hidden-xs">{{mb_substr($content,0,$char_count)}}</p>
                         <p class="text-white"><i
                                     class="icon-btn-link icon-btn-link-purewhite text-white"></i> <span
