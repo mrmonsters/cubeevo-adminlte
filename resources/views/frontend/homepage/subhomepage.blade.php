@@ -114,7 +114,7 @@
             @include('frontend.homepage.section.project')
 
             <div class="section moveOut" id="section3">
-                @include('frontend.homepage.section.insight')
+                @include('frontend.homepage.section.randominsight')
             </div>
 
             <div class="section moveOut" id="section5">
