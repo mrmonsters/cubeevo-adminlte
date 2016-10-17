@@ -121,7 +121,7 @@ class HomeComposer
         }
         $order_query .= ')';
         $sub_homepage_projects = Project::where('delete', '=', 0)
-            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($featured_project_arr))
+            ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($sub_featured_project_arr))
             ->orderByRaw($order_query)->get();
 
 
