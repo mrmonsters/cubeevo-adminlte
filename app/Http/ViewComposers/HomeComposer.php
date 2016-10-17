@@ -115,14 +115,14 @@ class HomeComposer
 
         $sub_featured_project_ids = Setting::where('code', 'sub_homepage_featured_project')->first();
         $sub_featured_project_arr = explode(',', $sub_featured_project_ids->value);
-        $order_query = 'FIELD(id';
+        $sub_featured_order_query = 'FIELD(id';
         foreach ($sub_featured_project_arr as $k => $v){
-            $order_query .= ',"'.$v.'"';
+            $sub_featured_order_query .= ',"'.$v.'"';
         }
-        $order_query .= ')';
+        $sub_featured_order_query .= ')';
         $sub_homepage_projects = Project::where('delete', '=', 0)
             ->where('status', '=', Status::ACTIVE)->whereIn('id', array_values($sub_featured_project_arr))
-            ->orderByRaw($order_query)->get();
+            ->orderByRaw($sub_featured_order_query)->get();
 
 
         $char_count = (\Session::get('locale') == 'en') ? 120 : 50;
