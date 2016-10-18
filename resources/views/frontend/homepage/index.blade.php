@@ -23,7 +23,7 @@
 
         <div class="hidden-section-1">
             <h4 class="leftcontent_topheading">{{ (Session::get('locale') == 'en') ? 'Ever Evolving CUBEevo' : '创意从未歇息的形立方' }}<span class="bottom-line-grey"></span></h4>
-            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An Advertising Agency <br/> in Malaysia and Singapore.' : '一家横跨马来西亚与新加坡两地的广告公司。' !!}</h1>
+            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An Advertising Agency <br/> in Malaysia.' : '一家马来西亚的广告公司。' !!}</h1>
             <div class="leftcontent_desc">
                 <p>{{ (Session::get('locale') == 'en') ? 'Ready to transform your brand with infinite possibilities by our transformed Thinking Caps.' : '务求为您打造无限商机的品牌形象。' }}</p>
                 <div class="col-xs-2 col-sm-12 nopadding">

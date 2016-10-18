@@ -22,8 +22,8 @@
     <div class="hide">
 
         <div class="hidden-section-1">
-            <h4 class="leftcontent_topheading">{{ (Session::get('locale') == 'en') ? '"Brands give creativity a definition, innovativity give Brands an evolution". We at CUBEevo' : '创意从未歇息的形立方' }}<span class="bottom-line-grey"></span></h4>
-            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An advertising agency <br/>in Singapore,' : '一家横跨新加坡与马来西亚两地的广告公司。' !!}</h1>
+            <h4 class="leftcontent_topheading"><?php echo (Session::get('locale') == 'en') ? '<span class="hidden-xs">"Brands give creativity a definition, innovativity give Brands an evolution".</span> We at CUBEevo' : '创意从未歇息的形立方' ;?><span class="bottom-line-grey"></span></h4>
+            <h1 class="h2 leftcontent_heading mobile-h1">{!!  (Session::get('locale') == 'en') ? 'An advertising agency <br/>in Singapore,' : '一家新加坡的广告公司。' !!}</h1>
             <div class="leftcontent_desc">
                 <p>{{ (Session::get('locale') == 'en') ? 'want our work to have the element of creativity to bring out the lifeliness of every brand.' : '务求为您打造无限商机的品牌形象。' }}</p>
                 <div class="col-xs-2 col-sm-12 nopadding">
