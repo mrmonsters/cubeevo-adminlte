@@ -99,9 +99,11 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                                                 <br>
                                                 <br>
                                                 <br>
+                                                @if($project->translate(Session::get('locale'))->challenge)
                                                 <p class="desctitle"
                                                    style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE CHALLENGE' : '项目概述' }}</p>
                                                 {{ $project->translate(Session::get('locale'))->challenge }}
+                                                @endif
                                                 @if (isset($project->web_link) && $project->web_link != '')
                                                     <br>
                                                     <br>
@@ -113,9 +115,11 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                                                 @endif
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1 crecol-2">
+                                                @if($project->translate(Session::get('locale'))->result)
                                                 <p class="desctitle"
                                                    style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'THE RESULT' : '最终成果' }}</p>
                                                 {{ $project->translate(Session::get('locale'))->result }}
+                                                    @endif
                                             </div>
                                         </div>
                                     </div>

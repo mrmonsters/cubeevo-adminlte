@@ -5,8 +5,8 @@
                 @foreach ($collection as $reviewer)
                     <div class="col-md-6">
                         <div class="b-b b-black b-3x m-t-lg">
-                            <p style="width: 100%;">{{ strtoupper($reviewer->name) }}<br/> {{ strtoupper($reviewer->qualification) }} <span
-                                        class="pull-right"> {{ strtoupper(date_format(new DateTime($reviewer->date), 'd M Y')) }} </span></p>
+                            <p style="width: 100%;">{{ strtoupper($reviewer->name) }}<br/><span
+                                        class="pull-right"> {{ strtoupper(date_format(new DateTime($reviewer->date), 'd M Y')) }} </span> {{ strtoupper($reviewer->qualification) }} </p>
                         </div>
                         @if (Session::get('locale') == 'cn')
                             <div class="m-t-lg">

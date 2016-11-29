@@ -57,11 +57,11 @@ Description for project management
 									</div>
 									<div class="form-group">
 										<label for="challenge" class="control-label">Challenge</label>
-										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4" required></textarea>
+										<textarea id="challenge" name="challenge[{{ $locale->id }}]" type="text" class="form-control" rows="4" ></textarea>
 									</div>
 									<div class="form-group">
 										<label for="result" class="control-label">Result</label>
-										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4" required></textarea>
+										<textarea id="result" name="result[{{ $locale->id }}]" type="text" class="form-control" rows="4" ></textarea>
 									</div>
 									<div class="form-group">
 										<label for="client_name" class="control-label">Client Name</label>
@@ -148,11 +148,11 @@ Description for project management
 									<p><strong>Grid Front Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-img"><i class="fa fa-cloud-upload"></i> Upload</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_img_id')"><i class="fa fa-image"></i> Gallery</a>
-										</div> 
+										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('grid_img_id', 'grid_img');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
@@ -168,7 +168,7 @@ Description for project management
 									<p><strong>Grid Background Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-grid-bg-img"><i class="fa fa-cloud-upload"></i> Upload</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('grid_bg_img_id')"><i class="fa fa-image"></i> Gallery</a>
@@ -188,7 +188,7 @@ Description for project management
 									<p><strong>Brand Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-brand-img"><i class="fa fa-cloud-upload"></i> Upload</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('brand_img_id')"><i class="fa fa-image"></i> Gallery</a>
@@ -214,11 +214,11 @@ Description for project management
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('mascott_img_id')"><i class="fa fa-image"></i> Gallery</a>
-										</div> 
+										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-danger" role="button" onclick="removeImg('mascott_img_id', 'mascott_img');return false;"><i class="fa fa-remove"></i> Remove</a>
 										</div>
-									</div> 
+									</div>
 								</div>
 							</div>
 						</div>
@@ -231,7 +231,7 @@ Description for project management
 									<p><strong>Video Image</strong></p>
 									<div class="row">
 										<div class="col-xs-4">
-											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-video-img">Upload New</a> 
+											<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-video-img">Upload New</a>
 										</div>
 										<div class="col-xs-4">
 											<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-upload" onclick="useExist('video_img_id')">Use Existing</a>
@@ -250,7 +250,7 @@ Description for project management
 							<div class="thumbnail">
 								<div class="caption" style="text-align: center;">
 									<p><strong>Project Images</strong></p>
-									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img">Upload New</a> 
+									<a href="#" class="btn btn-block btn-primary" role="button" data-toggle="modal" data-target="#modal-new-project-img">Upload New</a>
 									<a href="#" class="btn btn-block btn-default" role="button" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal('project_img_ids', 'project_img_sort_order')">Use Existing</a>
 								</div>
 							</div>
@@ -441,7 +441,7 @@ Description for project management
 							</div>
 						</div>
 					</div>
-				@if (($count % 4 == 0) || ($count == $images->count())) 
+				@if (($count % 4 == 0) || ($count == $images->count()))
 				</div>
         		@endif
 				@endforeach
@@ -602,7 +602,7 @@ function prepareModal(img, sort, thumbnail)
 			container: '#lazy-project-container'
 		});
 	});
-	
+
 	$('#current-modal-field').val(img + "," + sort + "," + thumbnail);
 
 	var imgIds = $('#' + img).val().split(',');
@@ -649,7 +649,7 @@ function addBlock()
 		+ '<label for="block-value-'+count+'" class="control-label">Value</label>'
 		+ '<div class="input-group">'
 		+ '<input type="text" id="project_img_ids_'+count+'" class="form-control" name="block[value][]" readonly />'
-		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />' 
+		+ '<input type="hidden" id="project_img_sort_order_'+count+'" name="project_img_sort_order[]" />'
 		+ '<span class="input-group-btn">'
 		+ '<button type="button" id="btn-upload-'+count+'" class="btn btn-primary" data-toggle="modal" data-target="#modal-new-project-img-'+count+'">Upload</button>'
 		+ '<button type="button" id="btn-choose-'+count+'" class="btn btn-default" data-toggle="modal" data-target="#modal-project-img" onclick="prepareModal(\'project_img_ids_'+count+'\', \'project_img_sort_order_'+count+'\',\'selected-img-container-'+count+'\')">Choose</button>'
@@ -664,7 +664,7 @@ function addBlock()
 		+ '<div class="col-md-4">'
 		+ '<img class="img-thumbnail thumbnail_'+count+'" src="" alt="" width="100%">'
 		+ '</div>'
-		+ '</div>'				
+		+ '</div>'
 		+ '<div class="form-group">'
 		+ '<label for="block-sort" class="control-label">Thumbnail</label>'
 		+ '<div class="input-group">'
