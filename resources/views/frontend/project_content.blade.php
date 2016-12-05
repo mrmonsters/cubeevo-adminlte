@@ -110,7 +110,13 @@ list($r, $g, $b) = sscanf($project->pri_color_code, "#%02x%02x%02x");?>
                                                     <br>
                                                     <p class="desctitle"
                                                        style="color:{{ $project->txt_heading_color_code }}">{{ (Session::get('locale') == 'en') ? 'WEBSITE' : '网址' }}</p>
-                                                    <a href="{{ $project->web_link }}"
+                                                <?php
+                                                    $urlStr = $project->web_link;
+                                                    $parsed = parse_url($project->web_link);
+                                                if (empty($parsed['scheme'])) {
+                                                    $urlStr = 'http://' . ltrim($urlStr, '/');
+                                                }?>
+                                                    <a href="<?php echo $urlStr;?>"
                                                        target="_blank"><?php echo preg_replace('#^https?://#', '', $project->web_link);?></a>
                                                 @endif
                                             </div>
