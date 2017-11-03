@@ -149,16 +149,6 @@
                                     <br/>
                                 </div>
 
-                                <div class="col-sm-6">
-                                    <h5 style="margin:0px;">Keith Phang</h5>
-                                    <p><i>{{ (Session::get('locale') == 'en') ? 'Branding Manager' : '品牌经理' }}</i></p>
-                                    <ul>
-                                        <li><i class="icon handphone"></i><a class="text-black"
-                                                                             href="tel:+6018 352 4300">+6018 352
-                                                4300</a></li>
-                                    </ul>
-                                    <br/>
-                                </div>
                             </div>
                         </div>
                     </div>

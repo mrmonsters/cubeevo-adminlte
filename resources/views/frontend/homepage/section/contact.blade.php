@@ -33,20 +33,6 @@
                                        href="mailto:enquire@cubeevo.com">enquire@cubeevo
                                         .com</a></small>
                             </p>
-
-                            <p style="line-height: 1em;" class="hidden-xs">
-                                <small>Keith Phang<br/>
-                                    @if (Session::get('locale') == 'cn')
-                                        品牌经理
-                                    @else
-                                        Branding Manager
-                                    @endif
-                                    <br/>
-                                    <a class="text-white" href="tel:+6018 352 4300">+6018 352 4300</a><br/>
-                                    <a class="text-white hidden-sm hidden-xs hidden-md"
-                                       href="mailto:enquire@cubeevo.com">enquire@cubeevo
-                                        .com</a></small>
-                            </p>
                         </div>
                     </div>
                 </div>
