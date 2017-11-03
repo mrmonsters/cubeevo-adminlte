@@ -173,7 +173,7 @@
                                         <div class="col-sm-4 showmarginleftmobile"
                                              style="margin-top: 0px;white-space: nowrap;">
                                             <i class="icon phone"></i><h5 style="padding-left: 27px;margin-top: 0px;"><a
-                                                        class="text-black" href="tel:+6590814118">+65 9081 4118</a></h5>
+                                                        class="text-black" href="tel:+6590814118">+65 8355 5863</a></h5>
                                         </div>
                                         <div class="col-sm-4 showmarginleftmobile" style="margin-top: 0px;"><i
                                                     class="icon mail"
@@ -192,8 +192,7 @@
                                     <p><i>{{ (Session::get('locale') == 'en') ? 'Account Director' : '客户总监' }}</i><br>
                                     </p>
                                     <ul>
-                                        <li><i class="icon handphone"></i><a class="text-black" href="tel:+6590814118">+65
-                                                9081 4118</a></li>
+                                        <li><i class="icon handphone"></i><a class="text-black" href="tel:+6583555863">+65 8355 5863</a></li>
                                         <li class=""><i class="icon mail"></i><a class="text-black"
                                                                                  href="mailto:david@cubeevo.com">david@cubeevo.com</a></li>
                                     </ul>
